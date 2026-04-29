@@ -241,7 +241,7 @@ function bindEvents() {
   els.showFavsBtn.addEventListener("click", () => setMode("favorites", getModeDirection("favorites")));
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
-  els.notificationBtn.addEventListener("click", toggleNotifications);
+  els.notificationBtn?.addEventListener("click", toggleNotifications);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn?.addEventListener("click", importSchedule);
