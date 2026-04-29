@@ -42,10 +42,22 @@ const browserApi = {
 
   tabs: {
     create({ url }) {
-      window.open(url, "_blank", "noopener");
+      openExternalUrl(url);
     }
   }
 };
+
+function openExternalUrl(url) {
+  if (isMobileLike()) {
+    window.location.href = url;
+    return;
+  }
+  window.open(url, "_blank", "noopener");
+}
+
+function isMobileLike() {
+  return Boolean(navigator.userAgentData?.mobile) || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
+}
 
 function parseStoredState(raw) {
   if (!raw) return {};
@@ -69,6 +81,7 @@ const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No
 const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null };
 const els = {};
+const autoSaveTimers = {};
 
 init();
 
@@ -106,7 +119,7 @@ function cleanupLegacyCaches() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","saveTokenBtn","proxyInput","saveProxyBtn","timezoneInput","saveTimezoneBtn","anilistInput","saveAnilistBtn","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","anilistInput","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -177,7 +190,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","proxyUrl","timezone","anilistUsername"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -185,7 +198,6 @@ async function loadState() {
   state.customPlatforms = data.customPlatforms || {};
   state.viewMode = data.viewMode || "today";
   els.tokenInput.value = data.animeScheduleToken || "";
-  els.proxyInput.value = data.proxyUrl || "";
   els.timezoneInput.value = data.timezone || "Europe/Madrid";
   els.anilistInput.value = data.anilistUsername || "";
 }
@@ -198,10 +210,9 @@ function bindEvents() {
   els.showAllBtn.addEventListener("click", () => setMode("all"));
   els.showTodayBtn.addEventListener("click", () => setMode("today"));
   els.showFavsBtn.addEventListener("click", () => setMode("favorites"));
-  els.saveTokenBtn.addEventListener("click", saveToken);
-  els.saveProxyBtn.addEventListener("click", saveProxy);
-  els.saveTimezoneBtn.addEventListener("click", saveTimezone);
-  els.saveAnilistBtn.addEventListener("click", saveAnilistUsername);
+  els.tokenInput.addEventListener("input", () => debounceAutoSave("token", saveToken));
+  els.timezoneInput.addEventListener("change", saveTimezone);
+  els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn.addEventListener("click", importSchedule);
   els.openAnimeScheduleBtn.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
@@ -217,10 +228,10 @@ function setSettingsOpen(open) {
 }
 
 async function setMode(mode) { state.viewMode = mode; await browserApi.storage.local.set({ viewMode: mode }); render(); }
-async function saveToken() { const token = els.tokenInput.value.trim(); if (!token) return showStatus("Pega primero el token.", "error"); await browserApi.storage.local.set({ animeScheduleToken: token }); showStatus("Token guardado.", "success"); }
-async function saveProxy() { const url = els.proxyInput.value.trim(); await browserApi.storage.local.set({ proxyUrl: url }); showStatus(url ? "Proxy guardado." : "Proxy eliminado (se usarán proxies públicos).", "success"); }
-async function saveTimezone() { const timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone }); showStatus("Zona horaria guardada.", "success"); }
-async function saveAnilistUsername() { const username = els.anilistInput.value.trim(); if (!username) return showStatus("Pon tu usuario de AniList.", "error"); await browserApi.storage.local.set({ anilistUsername: username }); showStatus("Usuario AniList guardado.", "success"); }
+function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
+async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
+async function saveTimezone() { await browserApi.storage.local.set({ timezone: els.timezoneInput.value.trim() || "Europe/Madrid" }); }
+async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
 async function syncAnilist() {
   try {
@@ -307,13 +318,6 @@ async function fetchAnimeSeason(season, year, timezone, token) {
   const sameOriginResult = await tryFetch("api", () => fetch(`/api/anime?${params}&api_token=${encodeURIComponent(token)}`), [404]);
   if (sameOriginResult) return sameOriginResult;
 
-  const customProxy = els.proxyInput?.value?.trim();
-  if (customProxy) {
-    const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
-    const res = await tryFetch("worker", () => fetch(proxyUrl), [404]);
-    if (res) return res;
-  }
-
   const result =
     await tryFetch("direct", () => fetch(directUrl), [404]) ||
     await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(directUrl)}`)) ||
@@ -351,15 +355,7 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const sameOriginResult = await tryFetch("api", () => fetch(`/api/timetable?${params}&api_token=${encodeURIComponent(token)}`), [404]);
   if (sameOriginResult) return sameOriginResult;
 
-  // 2. Custom proxy URL configured in settings
-  const customProxy = els.proxyInput?.value?.trim();
-  if (customProxy) {
-    const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
-    const res = await tryFetch("worker", () => fetch(proxyUrl), [404]);
-    if (res) return res;
-  }
-
-  // 3. Public CORS proxies as last resort
+  // 2. Public CORS proxies as last resort
   const result =
     await tryFetch("direct", () => fetch(urlWithToken)) ||
     await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`)) ||
@@ -375,7 +371,7 @@ function getFriendlyFetchError(error) {
     return "AnimeSchedule rechazo el token. Comprueba que has pegado un API token valido.";
   }
   if (/(:403|Forbidden)/i.test(error.message || "")) {
-    return "AnimeSchedule bloqueo la peticion. Prueba con el proxy local o revisa el token.";
+    return "AnimeSchedule bloqueo la peticion. Revisa el token o el backend local.";
   }
   if (error instanceof TypeError && /fetch/i.test(error.message || "")) {
     return "No se pudo conectar con AnimeSchedule. Comprueba tu conexión a Internet e inténtalo de nuevo.";

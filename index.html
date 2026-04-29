@@ -56,19 +56,9 @@
           <input id="tokenInput" autocomplete="off" placeholder="Pega aquí tu API token" />
         </label>
 
-        <label>URL del proxy (Cloudflare Worker)
-          <input id="proxyInput" autocomplete="off" placeholder="https://anime-proxy.tu-usuario.workers.dev" />
-        </label>
-
         <label>Zona horaria
           <select id="timezoneInput"></select>
         </label>
-
-        <div class="button-row">
-          <button id="saveTokenBtn" class="secondary-btn" type="button">Guardar token</button>
-          <button id="saveProxyBtn" class="secondary-btn" type="button">Guardar proxy</button>
-          <button id="saveTimezoneBtn" class="secondary-btn" type="button">Guardar zona</button>
-        </div>
 
         <hr />
 
@@ -76,8 +66,7 @@
         <label>Usuario de AniList
           <input id="anilistInput" autocomplete="off" placeholder="Tu usuario público" />
         </label>
-        <div class="button-row two">
-          <button id="saveAnilistBtn" class="secondary-btn" type="button">Guardar usuario</button>
+        <div class="button-row">
           <button id="syncAnilistBtn" class="primary-btn" type="button">Sincronizar</button>
         </div>
 
@@ -86,6 +75,6 @@
       </section>
     </div>
   </main>
-  <script src="./app.js?v=12"></script>
+  <script src="./app.js?v=13"></script>
 </body>
 </html>
