@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
   <title>Anime Countdown</title>
-  <link rel="stylesheet" href="./styles.css?v=13" />
+  <link rel="stylesheet" href="./styles.css?v=14" />
 </head>
 <body>
   <main class="app">
@@ -47,7 +47,7 @@
 
         <section class="settings-group">
           <h3>Horarios</h3>
-          <p class="hint">Importa los próximos episodios desde AnimeSchedule y cruza favoritos con AniList.</p>
+          <p class="hint">Carga los proximos episodios desde el horario compartido y cruza favoritos con AniList.</p>
           <button id="importBtn" class="primary-btn" type="button">Actualizar horarios</button>
           <button id="openAnimeScheduleBtn" class="secondary-btn" type="button">Abrir AnimeSchedule</button>
           <div id="importPreview" class="preview"></div>
@@ -55,8 +55,8 @@
 
         <hr />
 
-        <label>Token de AnimeSchedule
-          <input id="tokenInput" autocomplete="off" placeholder="Pega aquí tu API token" />
+        <label>Token de AnimeSchedule local
+          <input id="tokenInput" autocomplete="off" placeholder="Solo si desactivas el JSON compartido" />
         </label>
 
         <label>Zona horaria
@@ -80,6 +80,7 @@
       </section>
     </div>
   </main>
-  <script src="./app.js?v=13"></script>
+  <script src="./config.js?v=14"></script>
+  <script src="./app.js?v=14"></script>
 </body>
 </html>

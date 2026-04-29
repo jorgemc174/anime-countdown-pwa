@@ -75,12 +75,15 @@ function parseStoredState(raw) {
 
 const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
+const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
+const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
+const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {} };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {}, lastSharedSync: "" };
 const els = {};
 const autoSaveTimers = {};
 let swipeStart = null;
@@ -94,6 +97,7 @@ async function init() {
     bindElements();
     populateTimezoneOptions();
     await loadState();
+    await refreshSharedSchedule({ silent: true });
     bindEvents();
     registerServiceWorker();
     updateNotificationButton();
@@ -195,7 +199,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -205,6 +209,7 @@ async function loadState() {
   state.timezone = data.timezone || "Europe/Madrid";
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
+  state.lastSharedSync = data.lastSharedSync || "";
   els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
@@ -361,6 +366,11 @@ async function syncAnilist() {
 
 async function importSchedule() {
   try {
+    if (isSharedScheduleConfigured()) {
+      await refreshSharedSchedule({ silent: false });
+      return;
+    }
+
     const token = els.tokenInput.value.trim();
     const timezone = els.timezoneInput.value.trim() || "Europe/Madrid";
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
@@ -392,6 +402,96 @@ async function importSchedule() {
       showStatus(`Importados ${imported.length} episodios de las proximas ${DEFAULT_IMPORT_WEEKS} semanas.`, "success");
     }
   } catch (error) { els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
+}
+
+function isSharedScheduleConfigured() {
+  return Boolean(SHARED_SCHEDULE_URL);
+}
+
+async function refreshSharedSchedule({ silent = false } = {}) {
+  if (!isSharedScheduleConfigured()) return false;
+
+  try {
+    if (!silent) {
+      els.importPreview.innerHTML = `<div class="empty-message">Cargando horarios compartidos...</div>`;
+      showStatus("Actualizando horarios compartidos...", "success");
+    }
+
+    const rows = await fetchSharedSchedule();
+    const imported = rows.map(mapSharedRelease).map(enrichScheduleItem);
+    const localOnly = state.releases.filter((item) => !["animeschedule-api", "shared-json"].includes(item.source));
+    state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
+    applyAnilistToReleases();
+    applyCustomToReleases();
+    state.lastSharedSync = new Date().toISOString();
+    await browserApi.storage.local.set({ releases: state.releases, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
+    renderPreview(imported);
+    render();
+    checkReleaseNotifications();
+
+    if (!silent) {
+      showStatus(`Actualizados ${imported.length} episodios desde la base compartida.`, "success");
+    }
+    return true;
+  } catch (error) {
+    if (!silent) {
+      els.importPreview.innerHTML = "";
+      showStatus(getFriendlyFetchError(error), "error");
+    } else {
+      console.warn("No se pudo cargar la base compartida.", error);
+    }
+    return false;
+  }
+}
+
+async function fetchSharedSchedule() {
+  const now = new Date();
+  const until = new Date(now.getTime() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000);
+  const url = withCacheBuster(SHARED_SCHEDULE_URL);
+  const response = await fetch(url, { cache: "no-store", headers: { accept: "application/json" } });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    throw new Error(`El horario compartido respondio ${response.status}: ${body.slice(0, 120)}`);
+  }
+
+  const json = await response.json();
+  const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
+  return rows.filter((row) => {
+    const releaseAt = Date.parse(row.releaseDate || row.release_date || "");
+    return Number.isFinite(releaseAt) && releaseAt >= now.getTime() && releaseAt <= until.getTime();
+  });
+}
+
+function mapSharedRelease(row) {
+  const releaseDate = row.release_date || row.releaseDate;
+  const title = row.title || "Sin titulo";
+  const episodeNumber = row.episode_number ?? row.episodeNumber ?? "?";
+  return {
+    id: row.id || stableId("schedule", title, episodeNumber, releaseDate),
+    animeKey: row.anime_key || row.animeKey || stableId(title),
+    title,
+    route: row.route || "",
+    episode: row.episode || `Ep ${episodeNumber}`,
+    episodeNumber,
+    airType: row.air_type || row.airType || "SUB",
+    delayed: Boolean(row.delayed),
+    releaseDate: new Date(releaseDate).toISOString(),
+    service: row.service || "No legal platform",
+    serviceUrl: normalizeUrl(row.service_url || row.serviceUrl || ""),
+    allServices: row.all_services || row.allServices || [],
+    hasAllowedPlatform: row.has_allowed_platform ?? row.hasAllowedPlatform ?? Boolean(row.service_url || row.serviceUrl),
+    source: "shared-json",
+    favorite: false,
+    coverUrl: normalizeUrl(row.cover_url || row.coverUrl || ""),
+    customUrl: "",
+    customPlatformName: ""
+  };
+}
+
+function withCacheBuster(url) {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}_=${Date.now()}`;
 }
 
 function getCurrentSeason() {
