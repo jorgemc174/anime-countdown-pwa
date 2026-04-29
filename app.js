@@ -63,6 +63,7 @@ function parseStoredState(raw) {
 
 const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
+const DEFAULT_IMPORT_WEEKS = 4;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
@@ -105,7 +106,7 @@ function cleanupLegacyCaches() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","saveTokenBtn","proxyInput","saveProxyBtn","timezoneInput","saveTimezoneBtn","weeksInput","saveWeeksBtn","anilistInput","saveAnilistBtn","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","saveTokenBtn","proxyInput","saveProxyBtn","timezoneInput","saveTimezoneBtn","anilistInput","saveAnilistBtn","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -176,7 +177,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","proxyUrl","timezone","weeksToImport","anilistUsername"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","proxyUrl","timezone","anilistUsername"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -186,7 +187,6 @@ async function loadState() {
   els.tokenInput.value = data.animeScheduleToken || "";
   els.proxyInput.value = data.proxyUrl || "";
   els.timezoneInput.value = data.timezone || "Europe/Madrid";
-  els.weeksInput.value = data.weeksToImport || 12;
   els.anilistInput.value = data.anilistUsername || "";
 }
 
@@ -201,7 +201,6 @@ function bindEvents() {
   els.saveTokenBtn.addEventListener("click", saveToken);
   els.saveProxyBtn.addEventListener("click", saveProxy);
   els.saveTimezoneBtn.addEventListener("click", saveTimezone);
-  els.saveWeeksBtn.addEventListener("click", saveWeeks);
   els.saveAnilistBtn.addEventListener("click", saveAnilistUsername);
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn.addEventListener("click", importSchedule);
@@ -221,7 +220,6 @@ async function setMode(mode) { state.viewMode = mode; await browserApi.storage.l
 async function saveToken() { const token = els.tokenInput.value.trim(); if (!token) return showStatus("Pega primero el token.", "error"); await browserApi.storage.local.set({ animeScheduleToken: token }); showStatus("Token guardado.", "success"); }
 async function saveProxy() { const url = els.proxyInput.value.trim(); await browserApi.storage.local.set({ proxyUrl: url }); showStatus(url ? "Proxy guardado." : "Proxy eliminado (se usarán proxies públicos).", "success"); }
 async function saveTimezone() { const timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone }); showStatus("Zona horaria guardada.", "success"); }
-async function saveWeeks() { const weeks = Number(els.weeksInput.value || 12); if (!Number.isFinite(weeks) || weeks < 1 || weeks > 26) return showStatus("Semanas debe estar entre 1 y 26.", "error"); await browserApi.storage.local.set({ weeksToImport: Math.floor(weeks) }); showStatus(`Se importarán ${Math.floor(weeks)} semanas.`, "success"); }
 async function saveAnilistUsername() { const username = els.anilistInput.value.trim(); if (!username) return showStatus("Pon tu usuario de AniList.", "error"); await browserApi.storage.local.set({ anilistUsername: username }); showStatus("Usuario AniList guardado.", "success"); }
 
 async function syncAnilist() {
@@ -247,18 +245,18 @@ async function importSchedule() {
     const timezone = els.timezoneInput.value.trim() || "Europe/Madrid";
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
     const curr = getCurrentSeason();
-    const next = getNextSeason(curr);
+    const weeks = getNextWeeks(DEFAULT_IMPORT_WEEKS);
     els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}…</div>`;
     const rawItems = [];
-    for (const { season, year } of [curr, next]) {
-      const response = await fetchAnimeSeason(season, year, timezone, token);
-      if (response.status === 404) { console.warn(`Sin datos: temporada ${season}/${year}`); continue; }
+    for (const week of weeks) {
+      const response = await fetchTimetable(week, timezone, token);
+      if (response.status === 404) { console.warn(`Sin datos: semana ${week.year}/${week.week}`); continue; }
       if (!response.ok) throw new Error(`AnimeSchedule API respondió ${response.status}`);
       const data = await response.json();
       rawItems.push(...extractArray(data));
     }
     const normalized = normalizeSchedule(rawItems);
-    const imported = normalized.map(enrichScheduleItem).filter(Boolean);
+    const imported = normalized.map(enrichScheduleItem);
     state.releases = mergeDuplicateItems(mergeById(state.releases, imported));
     applyAnilistToReleases();
     applyCustomToReleases();
@@ -268,9 +266,9 @@ async function importSchedule() {
     if (rawItems.length === 0) {
       showStatus("La API devolvió datos vacíos. Comprueba tu token de AnimeSchedule.", "error");
     } else if (imported.length === 0) {
-      showStatus(`Se recibieron ${normalized.length} animes pero ninguno tiene plataforma reconocida (Crunchyroll/Netflix/Prime). Sincroniza AniList o asocia links manualmente.`, "error");
+      showStatus("AnimeSchedule no devolvio episodios SUB con fecha en el rango importado.", "warn");
     } else {
-      showStatus(`Importados ${imported.length} animes de la temporada ${curr.season} ${curr.year}.`, "success");
+      showStatus(`Importados ${imported.length} episodios de las proximas ${DEFAULT_IMPORT_WEEKS} semanas.`, "success");
     }
   } catch (error) { els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
 }
@@ -373,6 +371,12 @@ async function fetchTimetable(weekInfo, timezone, token) {
 }
 
 function getFriendlyFetchError(error) {
+  if (/(:401|Unauthorized)/i.test(error.message || "")) {
+    return "AnimeSchedule rechazo el token. Comprueba que has pegado un API token valido.";
+  }
+  if (/(:403|Forbidden)/i.test(error.message || "")) {
+    return "AnimeSchedule bloqueo la peticion. Prueba con el proxy local o revisa el token.";
+  }
   if (error instanceof TypeError && /fetch/i.test(error.message || "")) {
     return "No se pudo conectar con AnimeSchedule. Comprueba tu conexión a Internet e inténtalo de nuevo.";
   }
@@ -429,7 +433,6 @@ function enrichScheduleItem(item) {
   const key = getAnimeKey(item);
   const match = findAnilistMatch(item);
   const hasAllowedPlatform = item.hasAllowedPlatform !== false;
-  if (!hasAllowedPlatform && !match) return null;
   return {
     ...item,
     favorite: Boolean(item.favorite || match || state.anilistLibrary.some((anime) => getAnimeKey(anime) === key)),

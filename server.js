@@ -34,8 +34,13 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    if (url.pathname === "/api/animeschedule/timetables") {
-      await proxyTimetable(req, res, url);
+    if (url.pathname === "/api/anime") {
+      await proxyAnimeSchedule(req, res, url, "anime");
+      return;
+    }
+
+    if (url.pathname === "/api/timetable" || url.pathname === "/api/animeschedule/timetables") {
+      await proxyAnimeSchedule(req, res, url, "timetables");
       return;
     }
 
@@ -46,15 +51,21 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-async function proxyTimetable(req, res, url) {
-  const token = req.headers.authorization || "";
-  const target = new URL(`${API_BASE}/timetables`);
-  for (const [key, value] of url.searchParams) target.searchParams.set(key, value);
+async function proxyAnimeSchedule(req, res, url, endpoint) {
+  const target = new URL(`${API_BASE}/${endpoint}`);
+  for (const [key, value] of url.searchParams) {
+    target.searchParams.set(key, value);
+  }
+
+  const rawToken = url.searchParams.get("api_token") || "";
+  const authorization = rawToken
+    ? (rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`)
+    : req.headers.authorization || "";
 
   const response = await fetch(target, {
     headers: {
-      accept: "application/json",
-      authorization: token
+      accept: "application/json, */*",
+      ...(authorization && { authorization })
     }
   });
 
