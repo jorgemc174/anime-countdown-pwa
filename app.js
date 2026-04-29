@@ -130,7 +130,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","testNotifBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -224,6 +224,13 @@ function bindEvents() {
     setSettingsOpen(els.settingsPanel.classList.contains("hidden"));
   });
   els.closeSettingsBtn.addEventListener("click", () => setSettingsOpen(false));
+  document.addEventListener("click", (e) => {
+    if (!els.settingsPanel.classList.contains("hidden") &&
+        !els.settingsPanel.contains(e.target) &&
+        !els.settingsBtn.contains(e.target)) {
+      setSettingsOpen(false);
+    }
+  });
   els.showAllBtn.addEventListener("click", () => setMode("all", getModeDirection("all")));
   els.showTodayBtn.addEventListener("click", () => setMode("today", getModeDirection("today")));
   els.showFavsBtn.addEventListener("click", () => setMode("favorites", getModeDirection("favorites")));
@@ -236,6 +243,7 @@ function bindEvents() {
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
   els.themeBtn.addEventListener("click", toggleTheme);
+  els.testNotifBtn?.addEventListener("click", addTestRelease);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.animeList.addEventListener("click", handleListClick);
   bindSwipeNavigation();
@@ -838,6 +846,32 @@ async function associatePlatform(key) { const sample = findItemByKey(key); const
 async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
 
 async function openOrAsk(item) { const url = getBestWatchUrl(item); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
+async function addTestRelease() {
+  const releaseDate = new Date(Date.now() + 30000).toISOString();
+  const testItem = {
+    id: "__test_notif__",
+    title: "Demon Slayer",
+    episode: "Ep. 1",
+    episodeNumber: 1,
+    releaseDate,
+    service: "Crunchyroll",
+    serviceUrl: "",
+    coverUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-PEn1CTc93blC.jpg",
+    favorite: true,
+    source: "test",
+    customUrl: "",
+    customPlatformName: "",
+  };
+  state.releases = state.releases.filter(item => item.id !== "__test_notif__");
+  state.releases.push(testItem);
+  const notifKey = `${testItem.id}|${releaseDate}`;
+  delete state.notifiedReleaseIds[notifKey];
+  await browserApi.storage.local.set({ releases: state.releases, notifiedReleaseIds: state.notifiedReleaseIds });
+  render();
+  showStatus("Serie de prueba añadida. Notificación en ~30s.", "success");
+  setTimeout(checkReleaseNotifications, 32000);
+}
+
 async function resetAll() {
   if (!confirm("¿Seguro que quieres borrar todos tus favoritos?")) return;
   state.releases = state.releases.map(item => ({ ...item, favorite: false }));
