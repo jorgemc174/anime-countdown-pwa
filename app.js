@@ -313,7 +313,7 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const customProxy = els.proxyInput?.value?.trim();
   if (customProxy) {
     const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
-    const res = await tryFetch("worker", () => fetch(proxyUrl));
+    const res = await tryFetch("worker", () => fetch(proxyUrl), [404]);
     if (res) return res;
   }
 
