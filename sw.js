@@ -1,9 +1,9 @@
-const CACHE_NAME = "anime-countdown-pwa-v11";
+const CACHE_NAME = "anime-countdown-pwa-v13";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=11",
-  "./app.js?v=11",
+  "./styles.css",
+  "./app.js?v=13",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
@@ -12,6 +12,15 @@ const ASSETS = [
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
   self.skipWaiting();
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = event.notification.data?.url || "./";
+
+  event.waitUntil(
+    self.clients.openWindow ? self.clients.openWindow(url) : Promise.resolve()
+  );
 });
 
 self.addEventListener("activate", (event) => {

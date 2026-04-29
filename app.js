@@ -76,10 +76,11 @@ function parseStoredState(raw) {
 const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const DEFAULT_IMPORT_WEEKS = 4;
+const NOTIFICATION_LEAD_MS = 15 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, notificationEnabled: false, notifiedReleaseIds: {} };
 const els = {};
 const autoSaveTimers = {};
 
@@ -93,8 +94,12 @@ async function init() {
     populateTimezoneOptions();
     await loadState();
     bindEvents();
+    registerServiceWorker();
+    updateNotificationButton();
     render();
     setInterval(render, 1000);
+    setInterval(checkReleaseNotifications, 60000);
+    checkReleaseNotifications();
   } catch (error) {
     showFatal(error);
   }
@@ -105,12 +110,6 @@ function redirectToLocalServer() {
 }
 
 function cleanupLegacyCaches() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.getRegistrations()
-      .then((registrations) => registrations.forEach((registration) => registration.unregister()))
-      .catch(() => {});
-  }
-
   if ("caches" in window) {
     caches.keys()
       .then((keys) => keys.filter((key) => key.startsWith("anime-countdown-pwa-")).forEach((key) => caches.delete(key)))
@@ -118,8 +117,13 @@ function cleanupLegacyCaches() {
   }
 }
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","anilistInput","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -190,13 +194,15 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
   state.customLinks = data.customLinks || {};
   state.customPlatforms = data.customPlatforms || {};
   state.viewMode = data.viewMode || "today";
+  state.notificationEnabled = Boolean(data.notificationEnabled);
+  state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = data.timezone || "Europe/Madrid";
   els.anilistInput.value = data.anilistUsername || "";
@@ -212,6 +218,7 @@ function bindEvents() {
   els.showFavsBtn.addEventListener("click", () => setMode("favorites"));
   els.tokenInput.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
+  els.notificationBtn.addEventListener("click", toggleNotifications);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn.addEventListener("click", importSchedule);
@@ -232,6 +239,48 @@ function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[ke
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveTimezone() { await browserApi.storage.local.set({ timezone: els.timezoneInput.value.trim() || "Europe/Madrid" }); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
+
+async function toggleNotifications() {
+  if (!("Notification" in window)) return showStatus("Este navegador no soporta notificaciones.", "error");
+
+  if (Notification.permission === "denied") {
+    state.notificationEnabled = false;
+    await browserApi.storage.local.set({ notificationEnabled: false });
+    updateNotificationButton();
+    return showStatus("Las notificaciones estan bloqueadas en el navegador.", "error");
+  }
+
+  if (!state.notificationEnabled) {
+    const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
+    if (permission !== "granted") {
+      state.notificationEnabled = false;
+      await browserApi.storage.local.set({ notificationEnabled: false });
+      updateNotificationButton();
+      return showStatus("No se activaron las notificaciones.", "warn");
+    }
+    state.notificationEnabled = true;
+    await browserApi.storage.local.set({ notificationEnabled: true });
+    updateNotificationButton();
+    showStatus("Notificaciones activadas.", "success");
+    checkReleaseNotifications();
+    return;
+  }
+
+  state.notificationEnabled = false;
+  await browserApi.storage.local.set({ notificationEnabled: false });
+  updateNotificationButton();
+  showStatus("Notificaciones desactivadas.", "success");
+}
+
+function updateNotificationButton() {
+  if (!els.notificationBtn) return;
+  if (!("Notification" in window)) {
+    els.notificationBtn.textContent = "Notificaciones no disponibles";
+    els.notificationBtn.disabled = true;
+    return;
+  }
+  els.notificationBtn.textContent = state.notificationEnabled && Notification.permission === "granted" ? "Desactivar notificaciones" : "Activar notificaciones";
+}
 
 async function syncAnilist() {
   try {
@@ -274,6 +323,7 @@ async function importSchedule() {
     await browserApi.storage.local.set({ releases: state.releases, animeScheduleToken: token, timezone });
     renderPreview(imported);
     render();
+    checkReleaseNotifications();
     if (rawItems.length === 0) {
       showStatus("La API devolvió datos vacíos. Comprueba tu token de AnimeSchedule.", "error");
     } else if (imported.length === 0) {
@@ -538,6 +588,48 @@ async function removePlatform(key) { delete state.customPlatforms[key]; delete s
 
 async function openOrAsk(item) { const url = getBestWatchUrl(item); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
 async function resetAll() { if(!confirm("¿Seguro que quieres borrar todos los datos?")) return; state.releases=[]; state.anilistLibrary=[]; state.customLinks={}; state.customPlatforms={}; await browserApi.storage.local.set({ releases: [], anilistLibrary: [], customLinks: {}, customPlatforms: {} }); render(); showStatus("Datos borrados.", "success"); }
+
+async function checkReleaseNotifications() {
+  if (!state.notificationEnabled || !("Notification" in window) || Notification.permission !== "granted") return;
+  const now = Date.now();
+  const favorites = getFavoriteItems();
+  const upcoming = getOneNextPerSeries(favorites.length ? favorites : state.releases);
+  let changed = false;
+
+  for (const item of upcoming) {
+    const releaseAt = new Date(item.releaseDate).getTime();
+    if (!Number.isFinite(releaseAt)) continue;
+    const diff = releaseAt - now;
+    if (diff > NOTIFICATION_LEAD_MS || diff < -5 * 60 * 1000) continue;
+    const key = `${item.id}|${new Date(item.releaseDate).toISOString()}`;
+    if (state.notifiedReleaseIds[key]) continue;
+
+    state.notifiedReleaseIds[key] = true;
+    changed = true;
+    await showReleaseNotification(item);
+  }
+
+  if (changed) await browserApi.storage.local.set({ notifiedReleaseIds: state.notifiedReleaseIds });
+}
+
+async function showReleaseNotification(item) {
+  const title = `${item.title} ${item.episode}`;
+  const body = `Sale pronto en ${item.customPlatformName || item.service || "tu plataforma"}.`;
+  const url = getBestWatchUrl(item) || location.href;
+  const options = { body, icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: `anime-${item.id}`, renotify: true, data: { url } };
+
+  try {
+    const registration = "serviceWorker" in navigator ? await navigator.serviceWorker.ready : null;
+    if (registration?.showNotification) {
+      await registration.showNotification(title, options);
+      return;
+    }
+  } catch (error) {
+    console.warn("No se pudo mostrar la notificacion desde el service worker.", error);
+  }
+
+  new Notification(title, options);
+}
 
 function render() { setActiveTab(); renderNextModern(); renderListModern(); }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
