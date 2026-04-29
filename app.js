@@ -421,7 +421,7 @@ async function refreshSharedSchedule({ silent = false } = {}) {
 
     const rows = await fetchSharedSchedule();
     const imported = rows.map(mapSharedRelease).map(enrichScheduleItem);
-    const localOnly = state.releases.filter((item) => !["animeschedule-api", "shared-json"].includes(item.source));
+    const localOnly = state.releases.filter((item) => item.source !== "animeschedule-api" && !String(item.source || "").startsWith("shared-json"));
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     applyCustomToReleases();
@@ -719,7 +719,7 @@ async function fetchAnilistLibrary(username) {
 function buildAnilistMap(library) {
   const map = {};
   for (const anime of library) {
-    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, favorite: true };
+    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, episode: anime.episode, episodeNumber: anime.episodeNumber, releaseDate: anime.releaseDate, favorite: true };
     for (const key of buildTitleKeys(data.titles)) map[key] = data;
   }
   return map;
@@ -748,7 +748,28 @@ function bigrams(v) { const s=String(v||""); const r=[]; for(let i=0;i<s.length-
 function buildTitleKeys(titles) { const keys = new Set(); for (const title of titles) for (const alias of buildTitleAliases(title)) { const n = normalizeTitle(alias), st = stableId(alias); if(n) keys.add(n); if(st) keys.add(st); } return [...keys]; }
 function buildTitleAliases(title) { const v=String(title||""); return [...new Set([v, v.replace(/\s*(season|s)\s*\d+$/i,""), v.replace(/\s*part\s*\d+$/i,""), v.replace(/\s*\([^)]*\)\s*$/i,""), v.replace(/\s*(2nd|3rd|4th|5th|second|third|fourth|fifth)\s+season$/i,""), v.replace(/\s*(cour|part)\s*\d+$/i,""), v.replace(/[:\-–—]/g," "), v.replace(/&/g,"and")])].map(x=>x.trim()).filter(Boolean); }
 
-function applyAnilistToReleases() { state.releases = state.releases.map(item => { const match = findAnilistMatch(item); return match ? { ...item, favorite: true, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, coverUrl: match.coverUrl || item.coverUrl, serviceUrl: item.hasAllowedPlatform === false ? "" : item.serviceUrl } : item; }); }
+function applyAnilistToReleases() { state.releases = state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const timing = getAnilistTimingOverride(item, match); return { ...item, ...timing, favorite: true, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, coverUrl: match.coverUrl || item.coverUrl, serviceUrl: item.hasAllowedPlatform === false ? "" : item.serviceUrl }; }); }
+function getAnilistTimingOverride(item, match) {
+  if (!match.releaseDate) return {};
+  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
+  if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode)) return {};
+  if (itemEpisode !== matchEpisode) return {};
+  const itemTime = Date.parse(item.releaseDate || "");
+  const matchTime = Date.parse(match.releaseDate || "");
+  if (!Number.isFinite(matchTime) || itemTime === matchTime) return {};
+  return {
+    episode: match.episode || item.episode,
+    episodeNumber: match.episodeNumber ?? item.episodeNumber,
+    releaseDate: new Date(matchTime).toISOString(),
+    delayed: Number.isFinite(itemTime) ? matchTime > itemTime : item.delayed,
+    source: item.source === "shared-json" ? "shared-json+anilist" : item.source
+  };
+}
+function parseEpisodeNumber(value) {
+  const match = String(value ?? "").match(/\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : NaN;
+}
 function applyCustomToReleases() { state.releases = state.releases.map(applyCustom); state.anilistLibrary = state.anilistLibrary.map(applyCustom); }
 function applyCustom(item) { const key=getAnimeKey(item); return { ...item, customUrl: state.customLinks[key] || item.customUrl || "", customPlatformName: state.customPlatforms[key] || item.customPlatformName || "" }; }
 
