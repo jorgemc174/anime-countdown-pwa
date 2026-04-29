@@ -245,22 +245,15 @@ async function importSchedule() {
   try {
     const token = els.tokenInput.value.trim();
     const timezone = els.timezoneInput.value.trim() || "Europe/Madrid";
-    const weeks = Number(els.weeksInput.value || 12);
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
-    els.importPreview.innerHTML = `<div class="empty-message">Importando ${weeks} semanas...</div>`;
+    const curr = getCurrentSeason();
+    const next = getNextSeason(curr);
+    els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}…</div>`;
     const rawItems = [];
-    for (const weekInfo of getNextWeeks(Math.max(1, Math.min(26, weeks)))) {
-      const response = await fetchTimetable(weekInfo, timezone, token);
-
-      // Algunas semanas futuras pueden no existir todavía en AnimeSchedule.
-      // Si pasa, saltamos esa semana en vez de romper toda la importación.
-      if (response.status === 404) {
-        console.warn(`Semana sin timetable: ${weekInfo.week}/${weekInfo.year}`);
-        continue;
-      }
-
+    for (const { season, year } of [curr, next]) {
+      const response = await fetchAnimeSeason(season, year, timezone, token);
+      if (response.status === 404) { console.warn(`Sin datos: temporada ${season}/${year}`); continue; }
       if (!response.ok) throw new Error(`AnimeSchedule API respondió ${response.status}`);
-
       const data = await response.json();
       rawItems.push(...extractArray(data));
     }
@@ -269,17 +262,68 @@ async function importSchedule() {
     state.releases = mergeDuplicateItems(mergeById(state.releases, imported));
     applyAnilistToReleases();
     applyCustomToReleases();
-    await browserApi.storage.local.set({ releases: state.releases, animeScheduleToken: token, timezone, weeksToImport: weeks });
+    await browserApi.storage.local.set({ releases: state.releases, animeScheduleToken: token, timezone });
     renderPreview(imported);
     render();
     if (rawItems.length === 0) {
       showStatus("La API devolvió datos vacíos. Comprueba tu token de AnimeSchedule.", "error");
     } else if (imported.length === 0) {
-      showStatus(`Se recibieron ${normalized.length} episodios pero ninguno tiene plataforma reconocida (Crunchyroll/Netflix/Prime). Sincroniza AniList o asocia links manualmente.`, "error");
+      showStatus(`Se recibieron ${normalized.length} animes pero ninguno tiene plataforma reconocida (Crunchyroll/Netflix/Prime). Sincroniza AniList o asocia links manualmente.`, "error");
     } else {
-      showStatus(`Importados ${imported.length} episodios.`, "success");
+      showStatus(`Importados ${imported.length} animes de la temporada ${curr.season} ${curr.year}.`, "success");
     }
   } catch (error) { els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
+}
+
+function getCurrentSeason() {
+  const m = new Date().getMonth() + 1;
+  const y = new Date().getFullYear();
+  return { season: m <= 3 ? "winter" : m <= 6 ? "spring" : m <= 9 ? "summer" : "fall", year: y };
+}
+
+function getNextSeason({ season, year }) {
+  const map = { winter: "spring", spring: "summer", summer: "fall", fall: "winter" };
+  return { season: map[season], year: season === "fall" ? year + 1 : year };
+}
+
+async function fetchAnimeSeason(season, year, timezone, token) {
+  const params = new URLSearchParams({ season, year, tz: timezone });
+  const directUrl = `${API_BASE}/anime?${params}&api_token=${encodeURIComponent(token)}`;
+  const errors = [];
+
+  async function tryFetch(name, fetchFn, passThroughStatuses = []) {
+    try {
+      const res = await fetchFn();
+      const text = await res.text();
+      const t = text.trimStart();
+      const isJson = t.startsWith("{") || t.startsWith("[");
+      if (passThroughStatuses.includes(res.status) && isJson) {
+        return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
+      }
+      if (!res.ok) { errors.push(`${name}:${res.status}:${text.slice(0, 80)}`); return null; }
+      if (!isJson) { errors.push(`${name}:no-json`); return null; }
+      return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
+    } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
+  }
+
+  const sameOriginResult = await tryFetch("api", () => fetch(`/api/anime?${params}&api_token=${encodeURIComponent(token)}`), [404]);
+  if (sameOriginResult) return sameOriginResult;
+
+  const customProxy = els.proxyInput?.value?.trim();
+  if (customProxy) {
+    const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
+    const res = await tryFetch("worker", () => fetch(proxyUrl), [404]);
+    if (res) return res;
+  }
+
+  const result =
+    await tryFetch("direct", () => fetch(directUrl), [404]) ||
+    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(directUrl)}`)) ||
+    await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(directUrl)}`)) ||
+    await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(directUrl)}`));
+
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
+  return result;
 }
 
 async function fetchTimetable(weekInfo, timezone, token) {
@@ -335,7 +379,7 @@ function getFriendlyFetchError(error) {
   return error.message || "No se pudo actualizar horarios.";
 }
 
-function extractArray(data) { if (Array.isArray(data)) return data; if (Array.isArray(data.data)) return data.data; if (Array.isArray(data.timetables)) return data.timetables; return []; }
+function extractArray(data) { if (Array.isArray(data)) return data; if (Array.isArray(data.data)) return data.data; if (Array.isArray(data.timetables)) return data.timetables; if (Array.isArray(data.anime)) return data.anime; return []; }
 
 function normalizeSchedule(items) {
   const out = [];

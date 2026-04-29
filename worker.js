@@ -18,7 +18,8 @@ export default {
     }
 
     const incoming = new URL(request.url);
-    const target = new URL("https://animeschedule.net/api/v3/timetables");
+    const endpoint = incoming.searchParams.has("season") ? "anime" : "timetables";
+    const target = new URL(`https://animeschedule.net/api/v3/${endpoint}`);
     for (const [k, v] of incoming.searchParams) target.searchParams.set(k, v);
 
     const rawToken = incoming.searchParams.get("api_token") || "";
