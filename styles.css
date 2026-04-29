@@ -1,8 +1,8 @@
 :root {
   color-scheme: dark;
   --bg: #0c0d10;
-  --surface: rgba(20, 22, 27, 0.88);
-  --surface-2: rgba(28, 31, 38, 0.92);
+  --surface: #14161b;
+  --surface-2: #1c1f26;
   --line: rgba(255, 255, 255, 0.09);
   --text: #f4f5f7;
   --muted: #9aa3b2;
@@ -167,19 +167,19 @@ h3 {
 
 .status-box.error {
   color: #ffd1d1;
-  background: rgba(72, 20, 20, 0.94);
+  background: #481414;
   border-color: rgba(216, 95, 95, 0.42);
 }
 
 .status-box.success {
   color: #c9f7db;
-  background: rgba(16, 54, 34, 0.94);
+  background: #103622;
   border-color: rgba(120, 214, 163, 0.35);
 }
 
 .status-box.warn {
   color: #ffe1b7;
-  background: rgba(70, 45, 16, 0.94);
+  background: #462d10;
   border-color: rgba(233, 185, 111, 0.42);
 }
 
