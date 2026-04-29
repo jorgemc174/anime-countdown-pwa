@@ -379,14 +379,14 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
-  animation: list-in 220ms var(--ease);
+  animation: list-in 360ms var(--ease);
   will-change: opacity, transform;
 }
 
 .anime-list.is-switching {
   opacity: 0;
   transform: translateX(var(--swipe-shift, 10px));
-  transition: opacity 140ms var(--ease), transform 140ms var(--ease);
+  transition: opacity 210ms var(--ease), transform 210ms var(--ease);
 }
 
 .section-title,
@@ -415,7 +415,7 @@ h3 {
   cursor: pointer;
   transform: translateZ(0);
   transition: background 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
-  animation: card-in 220ms var(--ease) both;
+  animation: card-in 320ms var(--ease) both;
 }
 
 .anime-card:hover {

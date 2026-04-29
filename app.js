@@ -248,16 +248,16 @@ async function setMode(mode, direction = 0) {
 
 async function animateModeChange(direction, update) {
   const list = els.animeList;
-  const shift = direction >= 0 ? "12px" : "-12px";
+  const shift = direction >= 0 ? "42px" : "-42px";
   if (!list || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
     await update();
     return;
   }
   list.style.setProperty("--swipe-shift", shift);
   list.classList.add("is-switching");
-  await wait(120);
+  await wait(190);
   await update();
-  list.style.setProperty("--swipe-shift", direction >= 0 ? "-12px" : "12px");
+  list.style.setProperty("--swipe-shift", direction >= 0 ? "-42px" : "42px");
   requestAnimationFrame(() => list.classList.remove("is-switching"));
 }
 
