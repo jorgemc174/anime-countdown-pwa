@@ -80,13 +80,16 @@ const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
-const NOTIFICATION_GRACE_MS = 10 * 60 * 1000;
+const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
+const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
+const QUARTER_HOUR_MS = 15 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {}, lastSharedSync: "" };
 const els = {};
 const autoSaveTimers = {};
+let quarterNotificationTimer = null;
 let swipeStart = null;
 
 init();
@@ -105,8 +108,7 @@ async function init() {
     render();
     setInterval(updateLiveCountdowns, 1000);
     setInterval(refreshExpiredItems, 60000);
-    setInterval(checkReleaseNotifications, 60000);
-    checkReleaseNotifications();
+    startNotificationScheduler();
   } catch (error) {
     showFatal(error);
   }
@@ -879,6 +881,45 @@ async function resetAll() {
   await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary });
   render();
   showStatus("Favoritos borrados.", "success");
+}
+
+function startNotificationScheduler() {
+  checkReleaseNotifications();
+  setInterval(() => {
+    if (document.visibilityState === "visible") checkReleaseNotifications();
+  }, VISIBLE_NOTIFICATION_CHECK_MS);
+  scheduleQuarterHourNotificationCheck();
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      checkReleaseNotifications();
+      scheduleQuarterHourNotificationCheck();
+    }
+  });
+  window.addEventListener("focus", () => checkReleaseNotifications());
+}
+
+function scheduleQuarterHourNotificationCheck() {
+  clearTimeout(quarterNotificationTimer);
+  const delay = getDelayToNextQuarterHour();
+  quarterNotificationTimer = setTimeout(() => {
+    checkReleaseNotifications();
+    setTimeout(checkReleaseNotifications, 5000);
+    scheduleQuarterHourNotificationCheck();
+  }, delay);
+}
+
+function getDelayToNextQuarterHour(date = new Date()) {
+  const next = new Date(date);
+  next.setSeconds(0, 0);
+  const minute = next.getMinutes();
+  const quarterMinutes = QUARTER_HOUR_MS / 60000;
+  const nextQuarter = Math.ceil((minute + 0.001) / quarterMinutes) * quarterMinutes;
+  if (nextQuarter >= 60) {
+    next.setHours(next.getHours() + 1, 0, 0, 0);
+  } else {
+    next.setMinutes(nextQuarter, 0, 0);
+  }
+  return Math.max(1000, next.getTime() - date.getTime());
 }
 
 async function checkReleaseNotifications() {

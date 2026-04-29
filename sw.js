@@ -2,7 +2,7 @@ const CACHE_NAME = "anime-countdown-pwa-v15";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css",
+  "./styles.css?v=15",
   "./config.js?v=15",
   "./app.js?v=15",
   "./schedule.json",
