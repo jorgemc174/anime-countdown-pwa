@@ -98,7 +98,7 @@ async function init() {
     registerServiceWorker();
     updateNotificationButton();
     render();
-    setInterval(render, 1000);
+    setInterval(updateLiveCountdowns, 1000);
     setInterval(checkReleaseNotifications, 60000);
     checkReleaseNotifications();
   } catch (error) {
@@ -248,16 +248,17 @@ async function setMode(mode, direction = 0) {
 
 async function animateModeChange(direction, update) {
   const list = els.animeList;
-  const shift = direction >= 0 ? "42px" : "-42px";
+  const exitShift = direction >= 0 ? "-42px" : "42px";
+  const enterShift = direction >= 0 ? "42px" : "-42px";
   if (!list || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
     await update();
     return;
   }
-  list.style.setProperty("--swipe-shift", shift);
+  list.style.setProperty("--swipe-shift", exitShift);
   list.classList.add("is-switching");
   await wait(190);
   await update();
-  list.style.setProperty("--swipe-shift", direction >= 0 ? "-42px" : "42px");
+  list.style.setProperty("--swipe-shift", enterShift);
   requestAnimationFrame(() => list.classList.remove("is-switching"));
 }
 
@@ -691,6 +692,17 @@ async function showReleaseNotification(item) {
 }
 
 function render() { setActiveTab(); renderNextModern(); renderListModern(); }
+function updateLiveCountdowns() {
+  if (state.currentNext) {
+    const nextCountdown = els.nextRelease.querySelector(".next-countdown");
+    if (nextCountdown) nextCountdown.textContent = getCountdown(state.currentNext.releaseDate).text;
+  }
+  els.animeList.querySelectorAll(".anime-card").forEach((card) => {
+    const item = findItemById(card.dataset.id);
+    const countdown = card.querySelector(".countdown");
+    if (item && countdown) countdown.textContent = getCountdown(item.releaseDate).text;
+  });
+}
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
 function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return getOneNextPerSeries(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(state.releases); }
 function getFavoriteItems() { const scheduled = state.releases.filter(item => item.favorite); const scheduledKeys = new Set(scheduled.map(getSeriesKey)); const placeholders = state.anilistLibrary.filter(item => item.favorite && !scheduledKeys.has(getSeriesKey(item))).map(applyCustom); return mergeDuplicateItems([...scheduled, ...placeholders]); }
