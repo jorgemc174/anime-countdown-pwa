@@ -630,13 +630,15 @@ select {
   }
 
   .header {
-    align-items: stretch;
-    flex-direction: column;
-    gap: 12px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .settings-top-btn {
-    width: 100%;
+    width: auto;
+    flex: 0 0 auto;
+    margin-left: auto;
     justify-content: space-between;
   }
 
