@@ -87,12 +87,7 @@ async function init() {
 }
 
 function redirectToLocalServer() {
-  const isLocalHost = ["127.0.0.1", "localhost"].includes(location.hostname);
-  // Si estamos en localhost:3000, no redirijamos
-  if (location.port === "3000") return false;
-  if (location.protocol !== "http:" || !isLocalHost || location.port === "5175") return false;
-  location.replace("http://127.0.0.1:5175/index.html?v=11");
-  return true;
+  return false;
 }
 
 function cleanupLegacyCaches() {
@@ -278,19 +273,19 @@ async function importSchedule() {
 }
 
 async function fetchTimetable(weekInfo, timezone, token) {
-  const params = `year=${weekInfo.year}&week=${weekInfo.week}&tz=${encodeURIComponent(timezone)}`;
-  const headers = { "Accept": "application/json", "Authorization": `Bearer ${token}` };
+  const params = new URLSearchParams({ year: weekInfo.year, week: weekInfo.week, tz: timezone, api_token: token });
+  const apiUrl = `${API_BASE}/timetables?${params}`;
+
   try {
-    return await fetch(`${API_BASE}/timetables?${params}`, { headers });
-  } catch (error) {
-    console.error("Error al obtener timetable:", error);
-    throw error;
-  }
+    return await fetch(apiUrl, { headers: { accept: "application/json" } });
+  } catch (_) {}
+
+  return fetch(`https://corsproxy.io/?url=${encodeURIComponent(apiUrl)}`, { headers: { accept: "application/json" } });
 }
 
 function getFriendlyFetchError(error) {
   if (error instanceof TypeError && /fetch/i.test(error.message || "")) {
-    return "El proxy local no responde. Cierra esta pestaña, asegúrate de abrir http://127.0.0.1:5175/index.html?v=11 y vuelve a actualizar.";
+    return "No se pudo conectar con AnimeSchedule. Comprueba tu conexión a Internet e inténtalo de nuevo.";
   }
   return error.message || "No se pudo actualizar horarios.";
 }
