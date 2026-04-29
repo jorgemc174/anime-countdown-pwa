@@ -88,6 +88,8 @@ async function init() {
 
 function redirectToLocalServer() {
   const isLocalHost = ["127.0.0.1", "localhost"].includes(location.hostname);
+  // Si estamos en localhost:3000, no redirijamos
+  if (location.port === "3000") return false;
   if (location.protocol !== "http:" || !isLocalHost || location.port === "5175") return false;
   location.replace("http://127.0.0.1:5175/index.html?v=11");
   return true;
@@ -279,10 +281,10 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const params = `year=${weekInfo.year}&week=${weekInfo.week}&tz=${encodeURIComponent(timezone)}`;
   const headers = { "Accept": "application/json", "Authorization": `Bearer ${token}` };
   try {
-    return await fetch(`/api/animeschedule/timetables?${params}`, { headers });
+    return await fetch(`${API_BASE}/timetables?${params}`, { headers });
   } catch (error) {
-    console.warn("Proxy local no disponible.", error);
-    throw new TypeError("Proxy local no disponible");
+    console.error("Error al obtener timetable:", error);
+    throw error;
   }
 }
 
