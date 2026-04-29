@@ -284,35 +284,34 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const directUrl = `${API_BASE}/timetables?${params}`;
   const urlWithToken = `${directUrl}&api_token=${encodeURIComponent(token)}`;
   const bearer = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
-  const reqHeaders = { accept: "application/json", authorization: bearer };
+  const errors = [];
 
-  // Reads the response, validates the body is JSON, and returns a buffered Response or null.
-  async function tryFetch(fetchFn) {
+  // Validates the response body is JSON; collects diagnostic info on failure.
+  async function tryFetch(name, fetchFn) {
     try {
       const res = await fetchFn();
       if (res.status === 404) return res;
-      if (!res.ok) return null;
+      if (!res.ok) { errors.push(`${name}:${res.status}`); return null; }
       const text = await res.text();
       const t = text.trimStart();
-      if (!t.startsWith("{") && !t.startsWith("[")) return null;
+      if (!t.startsWith("{") && !t.startsWith("[")) { errors.push(`${name}:no-json`); return null; }
       return new Response(text, { status: 200, headers: { "content-type": "application/json; charset=utf-8" } });
-    } catch (_) { return null; }
+    } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
   }
 
   const result =
-    await tryFetch(() => fetch(directUrl, { headers: reqHeaders })) ||
-    await tryFetch(() => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: reqHeaders })) ||
-    await tryFetch(() => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
-    await tryFetch(async () => {
-      const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
-      if (!ao.ok) return null;
-      const envelope = await ao.json();
-      const contents = envelope.contents ?? "";
-      const httpCode = envelope.status?.http_code ?? 200;
-      return new Response(contents, { status: httpCode, headers: { "content-type": "application/json; charset=utf-8" } });
-    });
+    // 1. Direct with api_token in query param — simple CORS request, no preflight needed
+    await tryFetch("direct", () => fetch(urlWithToken)) ||
+    // 2. Direct with Authorization header (triggers preflight, may fail on some servers)
+    await tryFetch("direct-auth", () => fetch(directUrl, { headers: { authorization: bearer } })) ||
+    // 3. corsproxy.io
+    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: { authorization: bearer } })) ||
+    // 4. codetabs
+    await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
+    // 5. allorigins raw (returns body directly, no JSON envelope)
+    await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(urlWithToken)}`));
 
-  if (!result) throw new Error("No se pudo conectar con AnimeSchedule. Comprueba tu token y tu conexión a Internet.");
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}). Comprueba token y conexión.`);
   return result;
 }
 
