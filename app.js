@@ -83,6 +83,7 @@ const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {} };
 const els = {};
 const autoSaveTimers = {};
+let swipeStart = null;
 
 init();
 
@@ -227,6 +228,7 @@ function bindEvents() {
   els.resetBtn.addEventListener("click", resetAll);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.animeList.addEventListener("click", handleListClick);
+  bindSwipeNavigation();
 }
 
 function setSettingsOpen(open) {
@@ -236,6 +238,33 @@ function setSettingsOpen(open) {
 }
 
 async function setMode(mode) { state.viewMode = mode; await browserApi.storage.local.set({ viewMode: mode }); render(); }
+function bindSwipeNavigation() {
+  const panel = document.querySelector(".main-panel");
+  if (!panel) return;
+  panel.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    swipeStart = { x: touch.clientX, y: touch.clientY, time: Date.now() };
+  }, { passive: true });
+  panel.addEventListener("touchend", (event) => {
+    if (!swipeStart || event.changedTouches.length !== 1) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - swipeStart.x;
+    const dy = touch.clientY - swipeStart.y;
+    const dt = Date.now() - swipeStart.time;
+    swipeStart = null;
+    if (dt > 700 || Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
+    goToAdjacentMode(dx < 0 ? 1 : -1);
+  }, { passive: true });
+}
+
+function goToAdjacentMode(direction) {
+  const modes = ["all", "today", "favorites"];
+  const current = Math.max(0, modes.indexOf(state.viewMode));
+  const next = Math.min(modes.length - 1, Math.max(0, current + direction));
+  if (next !== current) setMode(modes[next]);
+}
+
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
