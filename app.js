@@ -76,7 +76,7 @@ function parseStoredState(raw) {
 const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const DEFAULT_IMPORT_WEEKS = 4;
-const NOTIFICATION_LEAD_MS = 15 * 60 * 1000;
+const NOTIFICATION_LEAD_MS = 0;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
