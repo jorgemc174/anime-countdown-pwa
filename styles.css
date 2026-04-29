@@ -12,6 +12,11 @@
   --ok: #78d6a3;
   --danger: #d85f5f;
   --radius: 8px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -104,7 +109,7 @@ h3 {
   border-radius: var(--radius);
   cursor: pointer;
   font-weight: 750;
-  transition: background 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+  transition: background 180ms var(--ease), border-color 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
 }
 
 .settings-top-btn:hover,
@@ -194,6 +199,39 @@ h3 {
   }
 }
 
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes list-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--swipe-shift, 10px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -203,6 +241,7 @@ h3 {
   grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   align-items: start;
+  transition: opacity 180ms var(--ease);
 }
 
 .main-panel {
@@ -311,16 +350,43 @@ h3 {
 }
 
 .tab {
+  position: relative;
   min-height: 36px;
   padding: 7px 10px;
   color: var(--muted);
   background: transparent;
+  overflow: hidden;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  z-index: -1;
+  background: rgba(233, 185, 111, 0.12);
+  border-radius: calc(var(--radius) - 2px);
+  opacity: 0;
+  transform: scaleX(0.72);
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+}
+
+.tab.active::before {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .anime-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
+  animation: list-in 220ms var(--ease);
+  will-change: opacity, transform;
+}
+
+.anime-list.is-switching {
+  opacity: 0;
+  transform: translateX(var(--swipe-shift, 10px));
+  transition: opacity 140ms var(--ease), transform 140ms var(--ease);
 }
 
 .section-title,
@@ -347,11 +413,20 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   cursor: pointer;
+  transform: translateZ(0);
+  transition: background 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
+  animation: card-in 220ms var(--ease) both;
 }
 
 .anime-card:hover {
   background: var(--surface-2);
   border-color: rgba(233, 185, 111, 0.34);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.anime-card:active {
+  transform: translateY(0) scale(0.995);
 }
 
 .cover {
@@ -495,6 +570,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 24px 58px rgba(0, 0, 0, 0.44);
+  animation: panel-in 190ms var(--ease);
+  overscroll-behavior: contain;
 }
 
 .settings-head {
@@ -716,5 +793,19 @@ select {
 
   .button-row.two {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
   }
 }

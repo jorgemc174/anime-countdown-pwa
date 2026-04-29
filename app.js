@@ -215,9 +215,9 @@ function bindEvents() {
     setSettingsOpen(els.settingsPanel.classList.contains("hidden"));
   });
   els.closeSettingsBtn.addEventListener("click", () => setSettingsOpen(false));
-  els.showAllBtn.addEventListener("click", () => setMode("all"));
-  els.showTodayBtn.addEventListener("click", () => setMode("today"));
-  els.showFavsBtn.addEventListener("click", () => setMode("favorites"));
+  els.showAllBtn.addEventListener("click", () => setMode("all", getModeDirection("all")));
+  els.showTodayBtn.addEventListener("click", () => setMode("today", getModeDirection("today")));
+  els.showFavsBtn.addEventListener("click", () => setMode("favorites", getModeDirection("favorites")));
   els.tokenInput.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
   els.notificationBtn.addEventListener("click", toggleNotifications);
@@ -237,7 +237,31 @@ function setSettingsOpen(open) {
   els.settingsBtn.setAttribute("aria-expanded", String(open));
 }
 
-async function setMode(mode) { state.viewMode = mode; await browserApi.storage.local.set({ viewMode: mode }); render(); }
+async function setMode(mode, direction = 0) {
+  if (mode === state.viewMode) return;
+  await animateModeChange(direction, async () => {
+    state.viewMode = mode;
+    await browserApi.storage.local.set({ viewMode: mode });
+    render();
+  });
+}
+
+async function animateModeChange(direction, update) {
+  const list = els.animeList;
+  const shift = direction >= 0 ? "12px" : "-12px";
+  if (!list || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
+    await update();
+    return;
+  }
+  list.style.setProperty("--swipe-shift", shift);
+  list.classList.add("is-switching");
+  await wait(120);
+  await update();
+  list.style.setProperty("--swipe-shift", direction >= 0 ? "-12px" : "12px");
+  requestAnimationFrame(() => list.classList.remove("is-switching"));
+}
+
+function wait(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
 function bindSwipeNavigation() {
   const panel = document.querySelector(".main-panel");
   if (!panel) return;
@@ -262,7 +286,12 @@ function goToAdjacentMode(direction) {
   const modes = ["all", "today", "favorites"];
   const current = Math.max(0, modes.indexOf(state.viewMode));
   const next = Math.min(modes.length - 1, Math.max(0, current + direction));
-  if (next !== current) setMode(modes[next]);
+  if (next !== current) setMode(modes[next], direction);
+}
+
+function getModeDirection(mode) {
+  const modes = ["all", "today", "favorites"];
+  return Math.sign(modes.indexOf(mode) - modes.indexOf(state.viewMode));
 }
 
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
