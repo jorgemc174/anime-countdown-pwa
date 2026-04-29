@@ -291,16 +291,18 @@ async function fetchTimetable(weekInfo, timezone, token) {
   async function tryFetch(name, fetchFn) {
     try {
       const res = await fetchFn();
-      if (res.status === 404) return res;
-      if (!res.ok) { errors.push(`${name}:${res.status}`); return null; }
       const text = await res.text();
       const t = text.trimStart();
-      if (!t.startsWith("{") && !t.startsWith("[")) { errors.push(`${name}:no-json`); return null; }
-      return new Response(text, { status: 200, headers: { "content-type": "application/json; charset=utf-8" } });
+      if (!t.startsWith("{") && !t.startsWith("[")) { errors.push(`${name}:${res.status}-no-json`); return null; }
+      return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
     } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
   }
 
-  // 1. Custom Cloudflare Worker proxy (set in settings)
+  // 1. Same-origin API route (Vercel deployment) — no CORS, works for everyone automatically
+  const sameOriginResult = await tryFetch("api", () => fetch(`/api/timetable?${params}&api_token=${encodeURIComponent(token)}`));
+  if (sameOriginResult) return sameOriginResult;
+
+  // 2. Custom proxy URL configured in settings
   const customProxy = els.proxyInput?.value?.trim();
   if (customProxy) {
     const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
@@ -308,14 +310,14 @@ async function fetchTimetable(weekInfo, timezone, token) {
     if (res) return res;
   }
 
-  // 2. Direct (simple CORS, no preflight — works if API allows it)
+  // 3. Public CORS proxies as last resort
   const result =
     await tryFetch("direct", () => fetch(urlWithToken)) ||
     await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`)) ||
     await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
     await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(urlWithToken)}`));
 
-  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}). Despliega el worker.js en Cloudflare y configura la URL en Ajustes.`);
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
   return result;
 }
 
