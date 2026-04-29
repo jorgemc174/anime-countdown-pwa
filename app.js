@@ -130,7 +130,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -201,7 +201,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync","theme"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -212,9 +212,11 @@ async function loadState() {
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   state.lastSharedSync = data.lastSharedSync || "";
+  state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
+  applyTheme(state.theme);
 }
 
 function bindEvents() {
@@ -233,6 +235,7 @@ function bindEvents() {
   els.importBtn?.addEventListener("click", importSchedule);
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
+  els.themeBtn.addEventListener("click", toggleTheme);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.animeList.addEventListener("click", handleListClick);
   bindSwipeNavigation();
@@ -339,14 +342,28 @@ async function toggleNotifications() {
   showStatus("Notificaciones desactivadas.", "success");
 }
 
+function applyTheme(theme) {
+  document.documentElement.classList.toggle("light", theme === "light");
+  if (els.themeBtn) els.themeBtn.setAttribute("aria-checked", theme === "light" ? "true" : "false");
+}
+
+async function toggleTheme() {
+  state.theme = state.theme === "light" ? "dark" : "light";
+  applyTheme(state.theme);
+  await browserApi.storage.local.set({ theme: state.theme });
+}
+
 function updateNotificationButton() {
   if (!els.notificationBtn) return;
   if (!("Notification" in window)) {
-    els.notificationBtn.textContent = "Notificaciones no disponibles";
     els.notificationBtn.disabled = true;
+    els.notificationBtn.setAttribute("aria-checked", "false");
+    const label = document.getElementById("notificationLabel");
+    if (label) label.textContent = "Notificaciones (no disponible)";
     return;
   }
-  els.notificationBtn.textContent = state.notificationEnabled && Notification.permission === "granted" ? "Desactivar notificaciones" : "Activar notificaciones";
+  const active = state.notificationEnabled && Notification.permission === "granted";
+  els.notificationBtn.setAttribute("aria-checked", active ? "true" : "false");
 }
 
 async function syncAnilist() {
@@ -789,12 +806,46 @@ async function handleListClick(event) {
   if (action === "delete") { state.releases = state.releases.filter(item => item.id !== id); await saveReleases(); render(); }
 }
 
-async function toggleFavorite(key) { const should = !getAllItems().some(item => getAnimeKey(item) === key && item.favorite); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item); await saveAllLists(); render(); }
+async function toggleFavorite(key) {
+  const should = !getAllItems().some(item => getAnimeKey(item) === key && item.favorite);
+  state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item);
+  state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item);
+  await saveAllLists();
+
+  const btn = els.animeList.querySelector(`[data-action="favorite"][data-key="${CSS.escape(key)}"]`);
+
+  if (!should && (state.viewMode === "favorites" || state.viewMode === "today")) {
+    const card = btn?.closest(".anime-card");
+    if (card) card.remove();
+    if (!els.animeList.querySelector(".anime-card")) render();
+    renderNextModern();
+    return;
+  }
+
+  if (btn) {
+    btn.className = `favorite-btn ${should ? "favorite" : "add"}`;
+    btn.setAttribute("aria-label", should ? "Quitar de favoritos" : "Añadir a favoritos");
+    btn.innerHTML = should
+      ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`
+      : "+";
+    if (should) {
+      btn.classList.add("pop");
+    }
+  }
+  renderNextModern();
+}
 async function associatePlatform(key) { const sample = findItemByKey(key); const name = prompt("Nombre de la plataforma que quieres mostrar:", state.customPlatforms[key] || sample?.customPlatformName || "Mi plataforma"); if (name === null) return; const cleanName = name.trim(); if(!cleanName) return showStatus("Nombre vacío.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link inválido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); applyCustomToReleases(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
 async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
 
 async function openOrAsk(item) { const url = getBestWatchUrl(item); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
-async function resetAll() { if(!confirm("¿Seguro que quieres borrar todos los datos?")) return; state.releases=[]; state.anilistLibrary=[]; state.customLinks={}; state.customPlatforms={}; await browserApi.storage.local.set({ releases: [], anilistLibrary: [], customLinks: {}, customPlatforms: {} }); render(); showStatus("Datos borrados.", "success"); }
+async function resetAll() {
+  if (!confirm("¿Seguro que quieres borrar todos tus favoritos?")) return;
+  state.releases = state.releases.map(item => ({ ...item, favorite: false }));
+  state.anilistLibrary = state.anilistLibrary.map(item => ({ ...item, favorite: false }));
+  await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary });
+  render();
+  showStatus("Favoritos borrados.", "success");
+}
 
 async function checkReleaseNotifications() {
   if (!state.notificationEnabled || !("Notification" in window) || Notification.permission !== "granted") return;

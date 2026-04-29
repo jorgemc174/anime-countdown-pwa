@@ -10,6 +10,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
   <title>Anime Countdown</title>
+  <script>
+    try {
+      const s = JSON.parse(localStorage.getItem("animeCountdownStorage") || "{}");
+      if (s.theme === "light") document.documentElement.classList.add("light");
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="./styles.css?v=14" />
 </head>
 <body>
@@ -58,7 +64,14 @@
           <select id="timezoneInput"></select>
         </label>
 
-        <button id="notificationBtn" class="secondary-btn" type="button">Activar notificaciones</button>
+        <div class="toggle-row">
+          <span id="notificationLabel">Notificaciones</span>
+          <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false"></button>
+        </div>
+        <div class="toggle-row">
+          <span>Modo claro</span>
+          <button id="themeBtn" class="toggle-switch" type="button" role="switch" aria-checked="false"></button>
+        </div>
 
         <hr />
         <button id="resetBtn" class="danger-btn" type="button">Borrar datos</button>
