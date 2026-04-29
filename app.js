@@ -782,7 +782,7 @@ async function saveAllLists() { await browserApi.storage.local.set({ releases: s
 function showStatus(message,type="") { els.statusBox.textContent=message; els.statusBox.className=`status-box ${type}`; setTimeout(()=>{ els.statusBox.className="status-box hidden"; },6000); }
 function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensión</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
 function renderNextModern() {
-  const items = getVisibleItems();
+  const items = getNextHighlightItems();
   if (!items.length) {
     state.currentNext = null;
     els.nextRelease.className = "next-release empty";
@@ -795,6 +795,11 @@ function renderNextModern() {
   const c = getCountdown(item.releaseDate);
   els.nextRelease.className = "next-release";
   els.nextRelease.innerHTML = `${renderCover(item, "next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`;
+}
+
+function getNextHighlightItems() {
+  if (state.viewMode === "all") return getOneNextPerSeries(state.releases);
+  return getOneNextPerSeries(getFavoriteItems());
 }
 
 function renderListModern() {
