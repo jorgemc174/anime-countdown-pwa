@@ -273,14 +273,33 @@ async function importSchedule() {
 }
 
 async function fetchTimetable(weekInfo, timezone, token) {
-  const params = new URLSearchParams({ year: weekInfo.year, week: weekInfo.week, tz: timezone, api_token: token });
-  const apiUrl = `${API_BASE}/timetables?${params}`;
+  const params = new URLSearchParams({ year: weekInfo.year, week: weekInfo.week, tz: timezone });
+  const directUrl = `${API_BASE}/timetables?${params}`;
+  const urlWithToken = `${directUrl}&api_token=${encodeURIComponent(token)}`;
+  const bearer = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+  const reqHeaders = { accept: "application/json", authorization: bearer };
 
+  // 1. Direct (works if the API allows CORS with a valid token)
   try {
-    return await fetch(apiUrl, { headers: { accept: "application/json" } });
+    const res = await fetch(directUrl, { headers: reqHeaders });
+    if (res.ok || res.status === 404) return res;
   } catch (_) {}
 
-  return fetch(`https://corsproxy.io/?url=${encodeURIComponent(apiUrl)}`, { headers: { accept: "application/json" } });
+  // 2. corsproxy.io — forwards Authorization header upstream
+  try {
+    const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: reqHeaders });
+    if (res.ok || res.status === 404) return res;
+  } catch (_) {}
+
+  // 3. allorigins.win fallback
+  const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
+  if (!ao.ok) throw new Error(`Error de red: ${ao.status}`);
+  const json = await ao.json();
+  const httpCode = json.status?.http_code ?? 200;
+  return new Response(json.contents, {
+    status: httpCode,
+    headers: { "content-type": "application/json; charset=utf-8" }
+  });
 }
 
 function getFriendlyFetchError(error) {
