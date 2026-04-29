@@ -21,9 +21,17 @@ export default {
     const target = new URL("https://animeschedule.net/api/v3/timetables");
     for (const [k, v] of incoming.searchParams) target.searchParams.set(k, v);
 
+    const rawToken = incoming.searchParams.get("api_token") || "";
+    const authHeader = rawToken
+      ? (rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`)
+      : "";
+
     try {
       const res = await fetch(target, {
-        headers: { accept: "application/json" },
+        headers: {
+          accept: "application/json",
+          ...(authHeader && { authorization: authHeader }),
+        },
       });
       const body = await res.arrayBuffer();
       return new Response(body, {

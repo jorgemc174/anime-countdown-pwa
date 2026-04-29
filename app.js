@@ -288,19 +288,25 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const errors = [];
 
   // Reads response, validates it's JSON, returns buffered Response or null.
-  async function tryFetch(name, fetchFn) {
+  // passThroughStatuses: status codes to return as-is (if body is JSON) without treating as error.
+  async function tryFetch(name, fetchFn, passThroughStatuses = []) {
     try {
       const res = await fetchFn();
       const text = await res.text();
       const t = text.trimStart();
+      const isJson = t.startsWith("{") || t.startsWith("[");
+      if (passThroughStatuses.includes(res.status) && isJson) {
+        return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
+      }
       if (!res.ok) { errors.push(`${name}:${res.status}:${text.slice(0, 80)}`); return null; }
-      if (!t.startsWith("{") && !t.startsWith("[")) { errors.push(`${name}:no-json`); return null; }
+      if (!isJson) { errors.push(`${name}:no-json`); return null; }
       return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
     } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
   }
 
-  // 1. Same-origin API route (Vercel deployment) — no CORS, works for everyone automatically
-  const sameOriginResult = await tryFetch("api", () => fetch(`/api/timetable?${params}&api_token=${encodeURIComponent(token)}`));
+  // 1. Same-origin API route (Vercel deployment) — no CORS, works for everyone automatically.
+  //    Pass 404 through: AnimeSchedule uses it to signal a week has no data yet.
+  const sameOriginResult = await tryFetch("api", () => fetch(`/api/timetable?${params}&api_token=${encodeURIComponent(token)}`), [404]);
   if (sameOriginResult) return sameOriginResult;
 
   // 2. Custom proxy URL configured in settings
