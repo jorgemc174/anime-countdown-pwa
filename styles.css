@@ -47,6 +47,10 @@ select {
 
 button {
   -webkit-tap-highlight-color: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
 }
 
 .app {
@@ -98,33 +102,30 @@ h3 {
 }
 
 .settings-top-btn,
-.icon-btn,
 .primary-btn,
 .secondary-btn,
 .danger-btn,
-.tab,
 .small-btn,
-.favorite-btn {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  cursor: pointer;
+.icon-btn,
+.favorite-btn,
+.tab {
   font-weight: 750;
-  transition: background 180ms var(--ease), border-color 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
-  display: flex;
+  transition: background 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
 }
 
-.favorite-btn.add {
-  align-items: flex-start;
-  padding-top: 4px;
+.tab,
+.settings-top-btn {
+  min-height: 40px;
+  padding: 0 14px;
 }
 
-.settings-top-btn:hover,
-.icon-btn:hover,
-.primary-btn:hover,
+.small-btn {
+  min-height: 30px;
+  padding: 6px 8px;
+}
 .secondary-btn:hover,
 .danger-btn:hover,
 .tab:hover,
@@ -160,7 +161,6 @@ h3 {
 .small-btn.primary-link {
   color: #17130d;
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  border-color: transparent;
 }
 
 .status-box {
@@ -347,25 +347,25 @@ h3 {
 
 .toolbar {
   display: grid;
-  gap: 6px;
-  margin-bottom: 14px;
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
 
-.toolbar.three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
+  .toolbar.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
 .tab {
   position: relative;
-  min-height: 36px;
-  padding: 7px 10px;
+  min-height: 38px;
+  padding: 0 14px;
   color: var(--muted);
-  background: transparent;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius);
 }
 
 .tab::before {
@@ -528,7 +528,7 @@ h3 {
 
 .small-btn {
   min-height: 30px;
-  padding: 6px 8px;
+  padding: 6px 12px;
   color: var(--soft);
   background: rgba(255, 255, 255, 0.055);
   font-size: 12px;
@@ -542,6 +542,7 @@ h3 {
   background: rgba(255, 255, 255, 0.04);
   font-size: 16px;
   line-height: 1;
+  padding-bottom: 4px;
 }
 
 .empty-message {
