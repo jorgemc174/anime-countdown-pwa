@@ -83,10 +83,11 @@ const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
+const ANILIST_REFRESH_MS = 60 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {}, lastSharedSync: "" };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "" };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -109,6 +110,7 @@ async function init() {
     setInterval(updateLiveCountdowns, 1000);
     setInterval(refreshExpiredItems, 60000);
     startNotificationScheduler();
+    startAnilistAutoRefresh();
   } catch (error) {
     showFatal(error);
   }
@@ -203,7 +205,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync","lastAnilistSync","theme"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -214,6 +216,7 @@ async function loadState() {
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   state.lastSharedSync = data.lastSharedSync || "";
+  state.lastAnilistSync = data.lastAnilistSync || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
@@ -381,16 +384,54 @@ async function syncAnilist() {
     const username = els.anilistInput.value.trim();
     if (!username) return showStatus("Pon tu usuario de AniList.", "error");
     showStatus("Sincronizando AniList...", "success");
-    const library = await fetchAnilistLibrary(username);
-    state.anilistLibrary = library.map((item) => applyCustom(item));
-    state.anilistMap = buildAnilistMap(library);
-    await browserApi.storage.local.set({ anilistUsername: username, anilistLibrary: state.anilistLibrary, anilistMap: state.anilistMap });
-    applyAnilistToReleases();
-    applyCustomToReleases();
-    await saveReleases();
+    const library = await refreshAnilistData(username);
     render();
     showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
   } catch (error) { showStatus(error.message, "error"); }
+}
+
+function startAnilistAutoRefresh() {
+  maybeRefreshAnilist({ silent: true });
+  setInterval(() => maybeRefreshAnilist({ silent: true }), ANILIST_REFRESH_MS);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") maybeRefreshAnilist({ silent: true });
+  });
+}
+
+async function maybeRefreshAnilist({ silent = true } = {}) {
+  const data = await browserApi.storage.local.get(["anilistUsername"]);
+  const username = String(data.anilistUsername || els.anilistInput?.value || "").trim();
+  if (!username) return null;
+  const last = Date.parse(state.lastAnilistSync || "");
+  if (Number.isFinite(last) && Date.now() - last < ANILIST_REFRESH_MS) return null;
+  try {
+    const library = await refreshAnilistData(username);
+    render();
+    checkReleaseNotifications();
+    if (!silent) showStatus(`AniList actualizado: ${library.length} animes.`, "success");
+    return library;
+  } catch (error) {
+    console.warn("No se pudo refrescar AniList.", error);
+    if (!silent) showStatus(error.message || "No se pudo actualizar AniList.", "error");
+    return null;
+  }
+}
+
+async function refreshAnilistData(username) {
+  const library = await fetchAnilistLibrary(username);
+  state.anilistLibrary = library.map((item) => applyCustom(item));
+  state.anilistMap = buildAnilistMap(library);
+  state.lastAnilistSync = new Date().toISOString();
+  applyAnilistToReleases();
+  applyCustomToReleases();
+  await browserApi.storage.local.set({
+    anilistUsername: username,
+    anilistLibrary: state.anilistLibrary,
+    anilistMap: state.anilistMap,
+    releases: state.releases,
+    lastAnilistSync: state.lastAnilistSync
+  });
+  return library;
 }
 
 async function importSchedule() {
@@ -1088,7 +1129,7 @@ function renderNextModern() {
 
 function getNextHighlightItems() {
   if (state.viewMode === "all") return getOneNextPerSeries(state.releases);
-  if (state.viewMode === "today") return getRemainingTodayItems(state.releases);
+  if (state.viewMode === "today") return getRemainingTodayItems(getFavoriteItems());
   return getOneNextPerSeries(getFavoriteItems());
 }
 

@@ -12,6 +12,8 @@ La PWA lee `schedule.json`, un archivo compartido que GitHub Actions puede actua
 
 El token no se publica en la app. Solo se guarda el resultado ya normalizado en `schedule.json`.
 
+El generador tambien consulta AniList de forma publica para corregir retrasos cuando encuentra el mismo anime y el mismo numero de episodio. Si AniList tiene una fecha distinta, `schedule.json` guarda esa fecha corregida para todos los usuarios.
+
 Versión web instalable en móvil de la extensión.
 
 ## Qué mantiene
