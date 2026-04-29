@@ -113,37 +113,68 @@ function bindElements() {
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
 
+function getUTCOffset(zone) {
+  try {
+    const formatter = new Intl.DateTimeFormat("en-US", { timeZone: zone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+    const parts = formatter.formatToParts(new Date());
+    const date = new Date();
+    const utcDate = new Date(date.toLocaleString("en-US", { timeZone: "UTC" }));
+    const tzDate = new Date(date.toLocaleString("en-US", { timeZone: zone }));
+    const offset = (utcDate - tzDate) / (1000 * 60 * 60);
+    const sign = offset <= 0 ? "+" : "-";
+    const absOffset = Math.abs(offset);
+    const hours = Math.floor(absOffset);
+    const minutes = Math.round((absOffset - hours) * 60);
+    return `${sign}${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+  } catch (e) {
+    return "+00:00";
+  }
+}
+
 function populateTimezoneOptions() {
-  const fallbackZones = [
-    "Europe/Madrid",
-    "Europe/London",
-    "Europe/Paris",
-    "Europe/Berlin",
-    "Europe/Rome",
-    "Europe/Lisbon",
-    "America/New_York",
-    "America/Chicago",
-    "America/Denver",
-    "America/Los_Angeles",
-    "America/Mexico_City",
-    "America/Bogota",
-    "America/Lima",
-    "America/Santiago",
-    "America/Argentina/Buenos_Aires",
-    "Asia/Tokyo",
-    "Asia/Seoul",
-    "Asia/Shanghai",
-    "Asia/Singapore",
-    "Australia/Sydney",
-    "UTC"
+  const zones = [
+    { name: "UTC", offset: "+00:00" },
+    { zone: "Europe/London" },
+    { zone: "Europe/Madrid" },
+    { zone: "Europe/Paris" },
+    { zone: "Europe/Berlin" },
+    { zone: "Europe/Rome" },
+    { zone: "Europe/Istanbul" },
+    { zone: "Asia/Dubai" },
+    { zone: "Asia/Kolkata" },
+    { zone: "Asia/Bangkok" },
+    { zone: "Asia/Shanghai" },
+    { zone: "Asia/Tokyo" },
+    { zone: "Asia/Seoul" },
+    { zone: "Australia/Sydney" },
+    { zone: "Pacific/Auckland" },
+    { zone: "America/Los_Angeles" },
+    { zone: "America/Denver" },
+    { zone: "America/Chicago" },
+    { zone: "America/New_York" },
+    { zone: "America/Argentina/Buenos_Aires" },
+    { zone: "America/Sao_Paulo" },
   ];
-  const zones = typeof Intl.supportedValuesOf === "function"
-    ? Intl.supportedValuesOf("timeZone")
-    : fallbackZones;
+  
   const preferred = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Madrid";
-  const ordered = [...new Set(["Europe/Madrid", preferred, ...zones])].filter(Boolean);
-  els.timezoneInput.innerHTML = ordered
-    .map((zone) => `<option value="${escapeHtml(zone)}">${escapeHtml(zone.replaceAll("_", " "))}</option>`)
+  
+  const options = zones.map((item) => {
+    const zone = item.zone || item.name;
+    const offset = item.offset || getUTCOffset(zone);
+    const zoneName = zone.includes("/") ? zone.split("/")[1].replaceAll("_", " ") : zone;
+    const display = `${zoneName} (UTC ${offset})`;
+    return { zone, display };
+  });
+  
+  // Sort preferred first
+  const preferredIndex = options.findIndex((o) => o.zone === preferred);
+  if (preferredIndex > 0) {
+    const [preferred] = options.splice(preferredIndex, 1);
+    options.unshift(preferred);
+  }
+  
+  els.timezoneInput.innerHTML = options
+    .map((o) => `<option value="${escapeHtml(o.zone)}">${escapeHtml(o.display)}</option>`)
     .join("");
 }
 
