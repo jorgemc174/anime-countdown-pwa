@@ -1,9 +1,9 @@
-const CACHE_NAME = "anime-countdown-pwa-v1";
+const CACHE_NAME = "anime-countdown-pwa-v11";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./app.js",
+  "./styles.css?v=11",
+  "./app.js?v=11",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
@@ -28,9 +28,12 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
-      return fetch(request).catch(() => caches.match("./index.html"));
+    fetch(request).then((response) => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+      return response;
+    }).catch(() => {
+      return caches.match(request).then((cached) => cached || caches.match("./index.html"));
     })
   );
 });
