@@ -119,10 +119,14 @@ h3 {
 }
 
 .settings-top-btn {
-  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
   padding: 0 14px;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .icon-btn {
@@ -613,7 +617,9 @@ select {
   }
 
   .settings {
-    position: static;
+    position: sticky;
+    top: 10px;
+    order: -1;
     max-height: none;
   }
 }
@@ -631,6 +637,7 @@ select {
 
   .settings-top-btn {
     width: 100%;
+    justify-content: space-between;
   }
 
   .next-release {

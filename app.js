@@ -80,7 +80,7 @@ const NOTIFICATION_LEAD_MS = 15 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, notificationEnabled: false, notifiedReleaseIds: {} };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {} };
 const els = {};
 const autoSaveTimers = {};
 
@@ -201,10 +201,11 @@ async function loadState() {
   state.customLinks = data.customLinks || {};
   state.customPlatforms = data.customPlatforms || {};
   state.viewMode = data.viewMode || "today";
+  state.timezone = data.timezone || "Europe/Madrid";
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   els.tokenInput.value = data.animeScheduleToken || "";
-  els.timezoneInput.value = data.timezone || "Europe/Madrid";
+  els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
 }
 
@@ -237,7 +238,7 @@ function setSettingsOpen(open) {
 async function setMode(mode) { state.viewMode = mode; await browserApi.storage.local.set({ viewMode: mode }); render(); }
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
-async function saveTimezone() { await browserApi.storage.local.set({ timezone: els.timezoneInput.value.trim() || "Europe/Madrid" }); }
+async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
 async function toggleNotifications() {
@@ -644,8 +645,12 @@ function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?"
 function renderPreview(items) { const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
 function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
-function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(d); }
-function isToday(value) { const d=new Date(value), n=new Date(); return !Number.isNaN(d.getTime()) && d.getFullYear()===n.getFullYear() && d.getMonth()===n.getMonth() && d.getDate()===n.getDate(); }
+function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(d); }
+function isToday(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
+function getSelectedTimezone() { return state.timezone || els.timezoneInput?.value?.trim() || "Europe/Madrid"; }
+function getDateKeyInZone(date, timeZone) {
+  return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
+}
 
 function getNextWeeks(amount) { const weeks=[]; const start=new Date(); for(let i=0;i<amount;i++) { const d=new Date(start); d.setDate(start.getDate()+i*7); const iso=getIsoWeek(d); const key=`${iso.year}-${iso.week}`; if(!weeks.some(w=>`${w.year}-${w.week}`===key)) weeks.push(iso); } return weeks; }
 function getIsoWeek(date) { const t=new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())); const day=t.getUTCDay()||7; t.setUTCDate(t.getUTCDate()+4-day); const yStart=new Date(Date.UTC(t.getUTCFullYear(),0,1)); return { year:t.getUTCFullYear(), week:Math.ceil((((t-yStart)/86400000)+1)/7) }; }
