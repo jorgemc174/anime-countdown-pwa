@@ -5,8 +5,17 @@ const ASSETS = [
   "./styles.css",
   "./app.js?v=13",
   "./manifest.json",
+  "./favicon.ico",
+  "./icons/favicon.ico",
+  "./icons/favicon-16.png",
+  "./icons/favicon-32.png",
+  "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icons/icon-256.png",
+  "./icons/icon-384.png",
+  "./icons/icon-512.png",
+  "./icons/icon-maskable-192.png",
+  "./icons/icon-maskable-512.png"
 ];
 
 self.addEventListener("install", (event) => {

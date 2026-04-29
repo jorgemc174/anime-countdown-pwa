@@ -532,7 +532,29 @@ function getStreams(item) { if (Array.isArray(item.streams)) return item.streams
 function normalizeStream(stream) { const platform = String(stream.platform || stream.name || "").toLowerCase(); const service = platformToService(platform); return { platform, service, url: stream.url || "" }; }
 function platformToService(platform) { if (platform.includes("crunchyroll")) return "Crunchyroll"; if (platform.includes("netflix")) return "Netflix"; if (platform.includes("amazon") || platform.includes("prime")) return "Prime Video"; return null; }
 function chooseBestStream(streams) { return [...streams].sort((a,b) => (SERVICE_PRIORITY[a.service] || 99) - (SERVICE_PRIORITY[b.service] || 99))[0] || null; }
-function isDelayed(item) { const status = String(item.status || item.airingStatus || "").trim().toLowerCase(); return Boolean(item.delayed === true || item.isDelayed === true || item.delayedFrom || item.delayedUntil || status === "delayed" || status === "postponed"); }
+function isDelayed(item) {
+  const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
+  if (["delayed", "postponed", "on break", "hiatus"].includes(status)) return true;
+
+  const releaseAt = Date.parse(item.episodeDate || item.episode_date || item.airDate || item.air_date || "");
+  return isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil) ||
+    isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil);
+}
+
+function isActiveDelayRange(releaseAt, fromValue, untilValue) {
+  if (!Number.isFinite(releaseAt)) return false;
+  const from = parseRealDate(fromValue);
+  const until = parseRealDate(untilValue);
+  if (!from && !until) return false;
+  return (!from || releaseAt >= from) && (!until || releaseAt <= until);
+}
+
+function parseRealDate(value) {
+  const raw = String(value || "").trim();
+  if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return null;
+  const time = Date.parse(raw);
+  return Number.isFinite(time) ? time : null;
+}
 function buildCoverUrl(item) { const direct = [item.image, item.imageUrl, item.coverUrl, item.poster, item.posterUrl, item.coverImage, item.thumbnail, item.thumbnailUrl].filter(Boolean).map(normalizeUrl).find(Boolean); if (direct) return direct; const route = String(item.imageVersionRoute || "").trim(); return route ? `${IMAGE_BASE}${route}` : ""; }
 
 function enrichScheduleItem(item) {
@@ -676,7 +698,16 @@ async function showReleaseNotification(item) {
   const title = `${item.title} ${item.episode}`;
   const body = `Sale pronto en ${item.customPlatformName || item.service || "tu plataforma"}.`;
   const url = getBestWatchUrl(item) || location.href;
-  const options = { body, icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: `anime-${item.id}`, renotify: true, data: { url } };
+  const coverUrl = normalizeUrl(item.coverUrl);
+  const options = {
+    body,
+    icon: coverUrl || "./icons/icon-192.png",
+    image: coverUrl || undefined,
+    badge: "./icons/icon-192.png",
+    tag: `anime-${item.id}`,
+    renotify: true,
+    data: { url }
+  };
 
   try {
     const registration = "serviceWorker" in navigator ? await navigator.serviceWorker.ready : null;
@@ -704,9 +735,10 @@ function updateLiveCountdowns() {
   });
 }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return getOneNextPerSeries(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(state.releases); }
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return getOneTodayPerSeries(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(state.releases); }
 function getFavoriteItems() { const scheduled = state.releases.filter(item => item.favorite); const scheduledKeys = new Set(scheduled.map(getSeriesKey)); const placeholders = state.anilistLibrary.filter(item => item.favorite && !scheduledKeys.has(getSeriesKey(item))).map(applyCustom); return mergeDuplicateItems([...scheduled, ...placeholders]); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const upcoming=sortByDate(eps.filter(item => new Date(item.releaseDate) > new Date())); result.push(upcoming[0] || sortByDate(eps).at(-1)); } return sortByDate(result); }
 
 function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
 function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Próximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
