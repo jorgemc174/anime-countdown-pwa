@@ -105,7 +105,7 @@ function cleanupLegacyCaches() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","saveTokenBtn","timezoneInput","saveTimezoneBtn","weeksInput","saveWeeksBtn","anilistInput","saveAnilistBtn","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","saveTokenBtn","proxyInput","saveProxyBtn","timezoneInput","saveTimezoneBtn","weeksInput","saveWeeksBtn","anilistInput","saveAnilistBtn","syncAnilistBtn","resetBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -176,7 +176,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","weeksToImport","anilistUsername"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","proxyUrl","timezone","weeksToImport","anilistUsername"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -184,6 +184,7 @@ async function loadState() {
   state.customPlatforms = data.customPlatforms || {};
   state.viewMode = data.viewMode || "today";
   els.tokenInput.value = data.animeScheduleToken || "";
+  els.proxyInput.value = data.proxyUrl || "";
   els.timezoneInput.value = data.timezone || "Europe/Madrid";
   els.weeksInput.value = data.weeksToImport || 12;
   els.anilistInput.value = data.anilistUsername || "";
@@ -198,6 +199,7 @@ function bindEvents() {
   els.showTodayBtn.addEventListener("click", () => setMode("today"));
   els.showFavsBtn.addEventListener("click", () => setMode("favorites"));
   els.saveTokenBtn.addEventListener("click", saveToken);
+  els.saveProxyBtn.addEventListener("click", saveProxy);
   els.saveTimezoneBtn.addEventListener("click", saveTimezone);
   els.saveWeeksBtn.addEventListener("click", saveWeeks);
   els.saveAnilistBtn.addEventListener("click", saveAnilistUsername);
@@ -217,6 +219,7 @@ function setSettingsOpen(open) {
 
 async function setMode(mode) { state.viewMode = mode; await browserApi.storage.local.set({ viewMode: mode }); render(); }
 async function saveToken() { const token = els.tokenInput.value.trim(); if (!token) return showStatus("Pega primero el token.", "error"); await browserApi.storage.local.set({ animeScheduleToken: token }); showStatus("Token guardado.", "success"); }
+async function saveProxy() { const url = els.proxyInput.value.trim(); await browserApi.storage.local.set({ proxyUrl: url }); showStatus(url ? "Proxy guardado." : "Proxy eliminado (se usarán proxies públicos).", "success"); }
 async function saveTimezone() { const timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone }); showStatus("Zona horaria guardada.", "success"); }
 async function saveWeeks() { const weeks = Number(els.weeksInput.value || 12); if (!Number.isFinite(weeks) || weeks < 1 || weeks > 26) return showStatus("Semanas debe estar entre 1 y 26.", "error"); await browserApi.storage.local.set({ weeksToImport: Math.floor(weeks) }); showStatus(`Se importarán ${Math.floor(weeks)} semanas.`, "success"); }
 async function saveAnilistUsername() { const username = els.anilistInput.value.trim(); if (!username) return showStatus("Pon tu usuario de AniList.", "error"); await browserApi.storage.local.set({ anilistUsername: username }); showStatus("Usuario AniList guardado.", "success"); }
@@ -281,12 +284,10 @@ async function importSchedule() {
 
 async function fetchTimetable(weekInfo, timezone, token) {
   const params = new URLSearchParams({ year: weekInfo.year, week: weekInfo.week, tz: timezone });
-  const directUrl = `${API_BASE}/timetables?${params}`;
-  const urlWithToken = `${directUrl}&api_token=${encodeURIComponent(token)}`;
-  const bearer = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+  const urlWithToken = `${API_BASE}/timetables?${params}&api_token=${encodeURIComponent(token)}`;
   const errors = [];
 
-  // Validates the response body is JSON; collects diagnostic info on failure.
+  // Reads response, validates it's JSON, returns buffered Response or null.
   async function tryFetch(name, fetchFn) {
     try {
       const res = await fetchFn();
@@ -299,19 +300,22 @@ async function fetchTimetable(weekInfo, timezone, token) {
     } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
   }
 
+  // 1. Custom Cloudflare Worker proxy (set in settings)
+  const customProxy = els.proxyInput?.value?.trim();
+  if (customProxy) {
+    const proxyUrl = `${customProxy.replace(/\/$/, "")}?${params}&api_token=${encodeURIComponent(token)}`;
+    const res = await tryFetch("worker", () => fetch(proxyUrl));
+    if (res) return res;
+  }
+
+  // 2. Direct (simple CORS, no preflight — works if API allows it)
   const result =
-    // 1. Direct with api_token in query param — simple CORS request, no preflight needed
     await tryFetch("direct", () => fetch(urlWithToken)) ||
-    // 2. Direct with Authorization header (triggers preflight, may fail on some servers)
-    await tryFetch("direct-auth", () => fetch(directUrl, { headers: { authorization: bearer } })) ||
-    // 3. corsproxy.io
-    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: { authorization: bearer } })) ||
-    // 4. codetabs
+    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`)) ||
     await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
-    // 5. allorigins raw (returns body directly, no JSON envelope)
     await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(urlWithToken)}`));
 
-  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}). Comprueba token y conexión.`);
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}). Despliega el worker.js en Cloudflare y configura la URL en Ajustes.`);
   return result;
 }
 

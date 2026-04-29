@@ -56,6 +56,10 @@
           <input id="tokenInput" autocomplete="off" placeholder="Pega aquí tu API token" />
         </label>
 
+        <label>URL del proxy (Cloudflare Worker)
+          <input id="proxyInput" autocomplete="off" placeholder="https://anime-proxy.tu-usuario.workers.dev" />
+        </label>
+
         <label>Zona horaria
           <select id="timezoneInput"></select>
         </label>
@@ -66,6 +70,7 @@
 
         <div class="button-row">
           <button id="saveTokenBtn" class="secondary-btn" type="button">Guardar token</button>
+          <button id="saveProxyBtn" class="secondary-btn" type="button">Guardar proxy</button>
           <button id="saveTimezoneBtn" class="secondary-btn" type="button">Guardar zona</button>
           <button id="saveWeeksBtn" class="secondary-btn" type="button">Guardar semanas</button>
         </div>
