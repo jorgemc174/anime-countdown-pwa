@@ -362,7 +362,7 @@ async function syncAnilist() {
     applyCustomToReleases();
     await saveReleases();
     render();
-    showStatus(`AniList sincronizado: ${library.length} animes en emisiﾃｳn.`, "success");
+    showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
   } catch (error) { showStatus(error.message, "error"); }
 }
 
@@ -378,12 +378,12 @@ async function importSchedule() {
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
     const curr = getCurrentSeason();
     const weeks = getNextWeeks(DEFAULT_IMPORT_WEEKS);
-    if (els.importPreview) els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}窶ｦ</div>`;
+    if (els.importPreview) els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}…</div>`;
     const rawItems = [];
     for (const week of weeks) {
       const response = await fetchTimetable(week, timezone, token);
       if (response.status === 404) { console.warn(`Sin datos: semana ${week.year}/${week.week}`); continue; }
-      if (!response.ok) throw new Error(`AnimeSchedule API respondiﾃｳ ${response.status}`);
+      if (!response.ok) throw new Error(`AnimeSchedule API respondió ${response.status}`);
       const data = await response.json();
       rawItems.push(...extractArray(data));
     }
@@ -397,7 +397,7 @@ async function importSchedule() {
     render();
     checkReleaseNotifications();
     if (rawItems.length === 0) {
-      showStatus("La API devolviﾃｳ datos vacﾃｭos. Comprueba tu token de AnimeSchedule.", "error");
+      showStatus("La API devolvió datos vacíos. Comprueba tu token de AnimeSchedule.", "error");
     } else if (imported.length === 0) {
       showStatus("AnimeSchedule no devolvio episodios SUB con fecha en el rango importado.", "warn");
     } else {
@@ -538,7 +538,7 @@ async function fetchAnimeSeason(season, year, timezone, token) {
     await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(directUrl)}`)) ||
     await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(directUrl)}`));
 
-  if (!result) throw new Error(`Sin conexiﾃｳn con AnimeSchedule (${errors.join(" | ")}).`);
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
   return result;
 }
 
@@ -576,7 +576,7 @@ async function fetchTimetable(weekInfo, timezone, token) {
     await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
     await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(urlWithToken)}`));
 
-  if (!result) throw new Error(`Sin conexiﾃｳn con AnimeSchedule (${errors.join(" | ")}).`);
+  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
   return result;
 }
 
@@ -588,7 +588,7 @@ function getFriendlyFetchError(error) {
     return "AnimeSchedule bloqueo la peticion. Revisa el token o el backend local.";
   }
   if (error instanceof TypeError && /fetch/i.test(error.message || "")) {
-    return "No se pudo conectar con AnimeSchedule. Comprueba tu conexiﾃｳn a Internet e intﾃｩntalo de nuevo.";
+    return "No se pudo conectar con AnimeSchedule. Comprueba tu conexión a Internet e inténtalo de nuevo.";
   }
   return error.message || "No se pudo actualizar horarios.";
 }
@@ -602,7 +602,7 @@ function normalizeSchedule(items) {
     if (airType !== "sub") continue;
     const releaseDate = item.episodeDate || item.episode_date || item.airDate || item.air_date;
     if (!releaseDate) continue;
-    const title = item.title || item.romaji || item.english || item.native || "Sin tﾃｭtulo";
+    const title = item.title || item.romaji || item.english || item.native || "Sin título";
     const episodeNumber = item.episodeNumber ?? item.episode_number ?? item.episode ?? "?";
     const streams = getStreams(item).map(normalizeStream).filter(Boolean);
     const allowed = streams.filter((stream) => stream.service);
@@ -682,16 +682,16 @@ function enrichScheduleItem(item) {
 async function fetchAnilistLibrary(username) {
   const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status nextAiringEpisode { episode airingAt } } } } } }`;
   const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { userName: username } }) });
-  if (!response.ok) throw new Error(`AniList respondiﾃｳ ${response.status}`);
+  if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
   const json = await response.json();
-  if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolviﾃｳ error");
+  if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return (json.data?.MediaListCollection?.lists || []).flatMap((list) => list.entries || []).filter((entry) => {
     const media = entry.media;
     return media?.status === "RELEASING" && Boolean(media?.nextAiringEpisode?.airingAt);
   }).map((entry) => {
     const media = entry.media;
     const titles = [media.title?.romaji, media.title?.english, media.title?.native, ...(media.synonyms || [])].filter(Boolean);
-    const title = media.title?.english || media.title?.romaji || media.title?.native || "Sin tﾃｭtulo";
+    const title = media.title?.english || media.title?.romaji || media.title?.native || "Sin título";
     return {
       id: `anilist-${media.id}`,
       animeKey: stableId(title),
@@ -790,11 +790,11 @@ async function handleListClick(event) {
 }
 
 async function toggleFavorite(key) { const should = !getAllItems().some(item => getAnimeKey(item) === key && item.favorite); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item); await saveAllLists(); render(); }
-async function associatePlatform(key) { const sample = findItemByKey(key); const name = prompt("Nombre de la plataforma que quieres mostrar:", state.customPlatforms[key] || sample?.customPlatformName || "Mi plataforma"); if (name === null) return; const cleanName = name.trim(); if(!cleanName) return showStatus("Nombre vacﾃｭo.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link invﾃ｡lido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); applyCustomToReleases(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
+async function associatePlatform(key) { const sample = findItemByKey(key); const name = prompt("Nombre de la plataforma que quieres mostrar:", state.customPlatforms[key] || sample?.customPlatformName || "Mi plataforma"); if (name === null) return; const cleanName = name.trim(); if(!cleanName) return showStatus("Nombre vacío.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link inválido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); applyCustomToReleases(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
 async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
 
-async function openOrAsk(item) { const url = getBestWatchUrl(item); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ﾂｿQuieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
-async function resetAll() { if(!confirm("ﾂｿSeguro que quieres borrar todos los datos?")) return; state.releases=[]; state.anilistLibrary=[]; state.customLinks={}; state.customPlatforms={}; await browserApi.storage.local.set({ releases: [], anilistLibrary: [], customLinks: {}, customPlatforms: {} }); render(); showStatus("Datos borrados.", "success"); }
+async function openOrAsk(item) { const url = getBestWatchUrl(item); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
+async function resetAll() { if(!confirm("¿Seguro que quieres borrar todos los datos?")) return; state.releases=[]; state.anilistLibrary=[]; state.customLinks={}; state.customPlatforms={}; await browserApi.storage.local.set({ releases: [], anilistLibrary: [], customLinks: {}, customPlatforms: {} }); render(); showStatus("Datos borrados.", "success"); }
 
 async function checkReleaseNotifications() {
   if (!state.notificationEnabled || !("Notification" in window) || Notification.permission !== "granted") return;
@@ -898,13 +898,13 @@ function getOneNextPerSeries(items) { const now = new Date(); const groups = new
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
-function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay prﾃｳximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Prﾃｳximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} ﾂｷ ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
-function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Prﾃｳximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
+function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
+function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Próximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
 function createCard(item) { const c=getCountdown(item.releaseDate); const service=item.customPlatformName || item.service; const openLabel=item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(item.service); const card=document.createElement("article"); card.className="anime-card"; card.dataset.id=item.id; card.dataset.action="open"; const favSymbol = item.favorite ? "Fav" : "+"; card.innerHTML=`${renderCover(item,"cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate)?'<span class="today-pill">HOY</span>':""}</div></div><button class="favorite-btn" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${favSymbol}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-blue">SUB</span><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${item.delayed?'<span class="badge badge-orange">Delayed</span>':'<span class="badge badge-green">Normal</span>'}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button><button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar</button>${item.customUrl ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar</button>` : ""}${item.source !== "anilist-library" ? `<button class="small-btn" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">Eliminar</button>` : ""}</div></div>`; return card; }
 function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
-function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} ﾂｷ ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} mﾃ｡s...`; els.importPreview.appendChild(more); } }
+function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
-function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha invﾃ｡lida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
+function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
 function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(d); }
 function isToday(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
 function getSelectedTimezone() { return state.timezone || els.timezoneInput?.value?.trim() || "Europe/Madrid"; }
@@ -938,7 +938,7 @@ function escapeHtml(v) { return String(v??"").replaceAll("&","&amp;").replaceAll
 async function saveReleases() { await browserApi.storage.local.set({ releases: state.releases }); }
 async function saveAllLists() { await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary }); }
 function showStatus(message,type="") { els.statusBox.textContent=message; els.statusBox.className=`status-box ${type}`; setTimeout(()=>{ els.statusBox.className="status-box hidden"; },6000); }
-function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensiﾃｳn</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
+function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensión</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
 function renderNextModern() {
   const items = getNextHighlightItems();
   if (!items.length) {
@@ -948,7 +948,7 @@ function renderNextModern() {
       els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">¡Fin del día!</div><div class="next-title">Hoy no sale nada más</div><div class="next-episode">Revisa abajo los estrenos de hoy.</div></div>`;
       return;
     }
-    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay prﾃｳximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`;
+    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`;
     return;
   }
 
@@ -956,7 +956,7 @@ function renderNextModern() {
   state.currentNext = item;
   const c = getCountdown(item.releaseDate);
   els.nextRelease.className = "next-release";
-  els.nextRelease.innerHTML = `${renderCover(item, "next-cover")}<div class="next-content"><div class="next-label">Prﾃｳximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} ﾂｷ ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`;
+  els.nextRelease.innerHTML = `${renderCover(item, "next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`;
 }
 
 function getNextHighlightItems() {
@@ -974,7 +974,7 @@ function renderListModern() {
   }
 
   const title = state.viewMode === "today" ? "Estrenos de hoy" : state.viewMode === "favorites" ? "Favoritos" : "Proximos estrenos";
-  els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title} ﾂｷ ${visible.length}</div>`);
+  els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title} · ${visible.length}</div>`);
   visible.forEach((item) => els.animeList.appendChild(createCardModern(item)));
 }
 
@@ -990,6 +990,6 @@ function createCardModern(item) {
   card.className = "anime-card";
   card.dataset.id = item.id;
   card.dataset.action = "open";
-  card.innerHTML = `${renderCover(item, "cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? "&#10084;" : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `${renderCover(item, "cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? "♥" : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
