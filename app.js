@@ -930,11 +930,12 @@ async function showReleaseNotification(item) {
   const url = getBestWatchUrl(item) || location.href;
   const coverUrl = normalizeUrl(item.coverUrl);
   const fallbackIcon = toAbsoluteUrl("./icons/icon-192.png");
+  const badgeIcon = toAbsoluteUrl("./icons/notification-badge.svg");
   const options = {
     body,
     icon: coverUrl || fallbackIcon,
     image: coverUrl || undefined,
-    badge: fallbackIcon,
+    badge: badgeIcon,
     tag: `anime-${item.id}`,
     renotify: true,
     requireInteraction: true,
