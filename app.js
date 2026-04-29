@@ -80,6 +80,7 @@ const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
+const NOTIFICATION_GRACE_MS = 10 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
@@ -103,6 +104,7 @@ async function init() {
     updateNotificationButton();
     render();
     setInterval(updateLiveCountdowns, 1000);
+    setInterval(refreshExpiredItems, 60000);
     setInterval(checkReleaseNotifications, 60000);
     checkReleaseNotifications();
   } catch (error) {
@@ -210,7 +212,7 @@ async function loadState() {
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   state.lastSharedSync = data.lastSharedSync || "";
-  els.tokenInput.value = data.animeScheduleToken || "";
+  if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
 }
@@ -223,13 +225,13 @@ function bindEvents() {
   els.showAllBtn.addEventListener("click", () => setMode("all", getModeDirection("all")));
   els.showTodayBtn.addEventListener("click", () => setMode("today", getModeDirection("today")));
   els.showFavsBtn.addEventListener("click", () => setMode("favorites", getModeDirection("favorites")));
-  els.tokenInput.addEventListener("input", () => debounceAutoSave("token", saveToken));
+  els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
   els.notificationBtn.addEventListener("click", toggleNotifications);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
-  els.importBtn.addEventListener("click", importSchedule);
-  els.openAnimeScheduleBtn.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
+  els.importBtn?.addEventListener("click", importSchedule);
+  els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.animeList.addEventListener("click", handleListClick);
@@ -371,12 +373,12 @@ async function importSchedule() {
       return;
     }
 
-    const token = els.tokenInput.value.trim();
+    const token = els.tokenInput?.value?.trim() || "";
     const timezone = els.timezoneInput.value.trim() || "Europe/Madrid";
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
     const curr = getCurrentSeason();
     const weeks = getNextWeeks(DEFAULT_IMPORT_WEEKS);
-    els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}…</div>`;
+    if (els.importPreview) els.importPreview.innerHTML = `<div class="empty-message">Importando temporada ${curr.season} ${curr.year}…</div>`;
     const rawItems = [];
     for (const week of weeks) {
       const response = await fetchTimetable(week, timezone, token);
@@ -401,7 +403,7 @@ async function importSchedule() {
     } else {
       showStatus(`Importados ${imported.length} episodios de las proximas ${DEFAULT_IMPORT_WEEKS} semanas.`, "success");
     }
-  } catch (error) { els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
+  } catch (error) { if (els.importPreview) els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
 }
 
 function isSharedScheduleConfigured() {
@@ -413,7 +415,7 @@ async function refreshSharedSchedule({ silent = false } = {}) {
 
   try {
     if (!silent) {
-      els.importPreview.innerHTML = `<div class="empty-message">Cargando horarios compartidos...</div>`;
+      if (els.importPreview) els.importPreview.innerHTML = `<div class="empty-message">Cargando horarios compartidos...</div>`;
       showStatus("Actualizando horarios compartidos...", "success");
     }
 
@@ -435,7 +437,7 @@ async function refreshSharedSchedule({ silent = false } = {}) {
     return true;
   } catch (error) {
     if (!silent) {
-      els.importPreview.innerHTML = "";
+      if (els.importPreview) els.importPreview.innerHTML = "";
       showStatus(getFriendlyFetchError(error), "error");
     } else {
       console.warn("No se pudo cargar la base compartida.", error);
@@ -775,14 +777,14 @@ async function checkReleaseNotifications() {
   if (!state.notificationEnabled || !("Notification" in window) || Notification.permission !== "granted") return;
   const now = Date.now();
   const favorites = getFavoriteItems();
-  const upcoming = getOneNextPerSeries(favorites.length ? favorites : state.releases);
+  const candidates = getDueNotificationItems(favorites.length ? favorites : state.releases, now);
   let changed = false;
 
-  for (const item of upcoming) {
+  for (const item of candidates) {
     const releaseAt = new Date(item.releaseDate).getTime();
     if (!Number.isFinite(releaseAt)) continue;
     const diff = releaseAt - now;
-    if (diff > NOTIFICATION_LEAD_MS || diff < -5 * 60 * 1000) continue;
+    if (diff > NOTIFICATION_LEAD_MS || diff < -NOTIFICATION_GRACE_MS) continue;
     const key = `${item.id}|${new Date(item.releaseDate).toISOString()}`;
     if (state.notifiedReleaseIds[key]) continue;
 
@@ -794,18 +796,41 @@ async function checkReleaseNotifications() {
   if (changed) await browserApi.storage.local.set({ notifiedReleaseIds: state.notifiedReleaseIds });
 }
 
+function getDueNotificationItems(items, now = Date.now()) {
+  const due = items.filter((item) => {
+    const releaseAt = new Date(item.releaseDate).getTime();
+    if (!Number.isFinite(releaseAt)) return false;
+    const diff = releaseAt - now;
+    return diff <= NOTIFICATION_LEAD_MS && diff >= -NOTIFICATION_GRACE_MS;
+  });
+  return sortByDate(dedupeNotificationItems(due));
+}
+
+function dedupeNotificationItems(items) {
+  const map = new Map();
+  for (const item of items) {
+    const key = item.id || getEpisodeKey(item);
+    const current = map.get(key);
+    if (!current || scoreItem(item) > scoreItem(current)) map.set(key, item);
+  }
+  return [...map.values()];
+}
+
 async function showReleaseNotification(item) {
   const title = `${item.title} ${item.episode}`;
-  const body = `Sale pronto en ${item.customPlatformName || item.service || "tu plataforma"}.`;
+  const body = `Ya disponible en ${item.customPlatformName || item.service || "tu plataforma"}.`;
   const url = getBestWatchUrl(item) || location.href;
   const coverUrl = normalizeUrl(item.coverUrl);
+  const fallbackIcon = toAbsoluteUrl("./icons/icon-192.png");
   const options = {
     body,
-    icon: coverUrl || "./icons/icon-192.png",
+    icon: coverUrl || fallbackIcon,
     image: coverUrl || undefined,
-    badge: "./icons/icon-192.png",
+    badge: fallbackIcon,
     tag: `anime-${item.id}`,
     renotify: true,
+    requireInteraction: true,
+    timestamp: new Date(item.releaseDate).getTime(),
     data: { url }
   };
 
@@ -822,6 +847,14 @@ async function showReleaseNotification(item) {
   new Notification(title, options);
 }
 
+function toAbsoluteUrl(url) {
+  try {
+    return new URL(url, location.href).href;
+  } catch (error) {
+    return url;
+  }
+}
+
 function render() { setActiveTab(); renderNextModern(); renderListModern(); }
 function updateLiveCountdowns() {
   if (state.currentNext) {
@@ -834,17 +867,18 @@ function updateLiveCountdowns() {
     if (item && countdown) countdown.textContent = getCountdown(item.releaseDate).text;
   });
 }
+function refreshExpiredItems() { render(); }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
 function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return getOneTodayPerSeries(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(state.releases); }
 function getFavoriteItems() { const scheduled = state.releases.filter(item => item.favorite); const scheduledKeys = new Set(scheduled.map(getSeriesKey)); const placeholders = state.anilistLibrary.filter(item => item.favorite && !scheduledKeys.has(getSeriesKey(item))).map(applyCustom); return mergeDuplicateItems([...scheduled, ...placeholders]); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
-function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const upcoming=sortByDate(eps.filter(item => new Date(item.releaseDate) > new Date())); result.push(upcoming[0] || sortByDate(eps).at(-1)); } return sortByDate(result); }
+function getOneTodayPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 
 function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
 function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Próximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
 function createCard(item) { const c=getCountdown(item.releaseDate); const service=item.customPlatformName || item.service; const openLabel=item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(item.service); const card=document.createElement("article"); card.className="anime-card"; card.dataset.id=item.id; card.dataset.action="open"; card.innerHTML=`${renderCover(item,"cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate)?'<span class="today-pill">HOY</span>':""}</div></div><button class="favorite-btn" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite?"★":"☆"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-blue">SUB</span><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${item.delayed?'<span class="badge badge-orange">Delayed</span>':'<span class="badge badge-green">Normal</span>'}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button><button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar</button>${item.customUrl ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar</button>` : ""}${item.source !== "anilist-library" ? `<button class="small-btn" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">Eliminar</button>` : ""}</div></div>`; return card; }
 function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
-function renderPreview(items) { const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
+function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
 function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
 function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(d); }
