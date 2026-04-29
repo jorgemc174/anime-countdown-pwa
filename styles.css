@@ -545,6 +545,16 @@ h3 {
   padding-bottom: 4px;
 }
 
+.favorite-btn.add {
+  padding-bottom: 6px;
+}
+
+.favorite-btn.favorite {
+  background: var(--accent);
+  color: var(--surface-2);
+  padding-bottom: 0;
+}
+
 .empty-message {
   padding: 22px 12px;
   color: var(--muted);
