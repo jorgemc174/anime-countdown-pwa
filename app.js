@@ -258,7 +258,8 @@ async function importSchedule() {
 
       if (!response.ok) throw new Error(`AnimeSchedule API respondió ${response.status}`);
 
-      const data = await response.json();
+      let data;
+      try { data = await response.json(); } catch (_) { console.warn(`Respuesta no-JSON semana ${weekInfo.week}/${weekInfo.year}, omitida.`); continue; }
       rawItems.push(...extractArray(data));
     }
     const imported = normalizeSchedule(rawItems).map(enrichScheduleItem).filter(Boolean);
@@ -279,7 +280,7 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const bearer = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
   const reqHeaders = { accept: "application/json", authorization: bearer };
 
-  // 1. Direct (works if the API allows CORS with a valid token)
+  // 1. Direct (works if the API has CORS headers)
   try {
     const res = await fetch(directUrl, { headers: reqHeaders });
     if (res.ok || res.status === 404) return res;
@@ -291,15 +292,26 @@ async function fetchTimetable(weekInfo, timezone, token) {
     if (res.ok || res.status === 404) return res;
   } catch (_) {}
 
-  // 3. allorigins.win fallback
-  const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
-  if (!ao.ok) throw new Error(`Error de red: ${ao.status}`);
-  const json = await ao.json();
-  const httpCode = json.status?.http_code ?? 200;
-  return new Response(json.contents, {
-    status: httpCode,
-    headers: { "content-type": "application/json; charset=utf-8" }
-  });
+  // 3. codetabs proxy
+  try {
+    const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`);
+    if (res.ok || res.status === 404) return res;
+  } catch (_) {}
+
+  // 4. allorigins.win — wraps response in a JSON envelope, validate before using
+  try {
+    const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
+    if (ao.ok) {
+      const json = await ao.json();
+      const contents = json.contents;
+      const httpCode = json.status?.http_code ?? 200;
+      if (contents && typeof contents === "string" && (contents.trimStart().startsWith("{") || contents.trimStart().startsWith("["))) {
+        return new Response(contents, { status: httpCode, headers: { "content-type": "application/json; charset=utf-8" } });
+      }
+    }
+  } catch (_) {}
+
+  throw new Error("No se pudo conectar con AnimeSchedule. Comprueba tu token y tu conexión a Internet.");
 }
 
 function getFriendlyFetchError(error) {
