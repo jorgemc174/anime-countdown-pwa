@@ -149,12 +149,20 @@ h3 {
 }
 
 .status-box {
-  margin-bottom: 14px;
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+  z-index: 80;
+  width: min(360px, calc(100vw - 28px));
+  margin: 0;
   padding: 10px 12px;
   color: var(--soft);
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36);
+  animation: toast-in 160ms ease-out;
+  line-height: 1.35;
 }
 
 .status-box.error {
@@ -175,6 +183,17 @@ h3 {
   border-color: rgba(233, 185, 111, 0.42);
 }
 
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -184,10 +203,6 @@ h3 {
   grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   align-items: start;
-}
-
-body.settings-open .content-grid {
-  grid-template-columns: minmax(0, 1fr) 330px;
 }
 
 .main-panel {
@@ -468,14 +483,18 @@ body.settings-open .content-grid {
 }
 
 .settings {
-  position: sticky;
-  top: 16px;
-  max-height: calc(100vh - 32px);
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(20px, env(safe-area-inset-right));
+  z-index: 60;
+  width: min(360px, calc(100vw - 40px));
+  max-height: calc(100vh - 32px - env(safe-area-inset-top));
   overflow: auto;
   padding: 14px;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.44);
 }
 
 .settings-head {
@@ -611,16 +630,15 @@ select {
 }
 
 @media (max-width: 820px) {
-  .content-grid,
-  body.settings-open .content-grid {
+  .content-grid {
     grid-template-columns: 1fr;
   }
 
   .settings {
-    position: sticky;
-    top: 10px;
-    order: -1;
-    max-height: none;
+    top: max(58px, env(safe-area-inset-top));
+    right: 12px;
+    width: min(380px, calc(100vw - 24px));
+    max-height: calc(100vh - 76px - env(safe-area-inset-top));
   }
 }
 
@@ -633,6 +651,13 @@ select {
     align-items: flex-start;
     flex-direction: row;
     gap: 10px;
+  }
+
+  .status-box {
+    left: 12px;
+    right: 12px;
+    top: max(10px, env(safe-area-inset-top));
+    width: auto;
   }
 
   .settings-top-btn {
