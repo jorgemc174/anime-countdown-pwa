@@ -258,18 +258,24 @@ async function importSchedule() {
 
       if (!response.ok) throw new Error(`AnimeSchedule API respondió ${response.status}`);
 
-      let data;
-      try { data = await response.json(); } catch (_) { console.warn(`Respuesta no-JSON semana ${weekInfo.week}/${weekInfo.year}, omitida.`); continue; }
+      const data = await response.json();
       rawItems.push(...extractArray(data));
     }
-    const imported = normalizeSchedule(rawItems).map(enrichScheduleItem).filter(Boolean);
+    const normalized = normalizeSchedule(rawItems);
+    const imported = normalized.map(enrichScheduleItem).filter(Boolean);
     state.releases = mergeDuplicateItems(mergeById(state.releases, imported));
     applyAnilistToReleases();
     applyCustomToReleases();
     await browserApi.storage.local.set({ releases: state.releases, animeScheduleToken: token, timezone, weeksToImport: weeks });
     renderPreview(imported);
     render();
-    showStatus(`Importados ${imported.length} episodios.`, "success");
+    if (rawItems.length === 0) {
+      showStatus("La API devolvió datos vacíos. Comprueba tu token de AnimeSchedule.", "error");
+    } else if (imported.length === 0) {
+      showStatus(`Se recibieron ${normalized.length} episodios pero ninguno tiene plataforma reconocida (Crunchyroll/Netflix/Prime). Sincroniza AniList o asocia links manualmente.`, "error");
+    } else {
+      showStatus(`Importados ${imported.length} episodios.`, "success");
+    }
   } catch (error) { els.importPreview.innerHTML = ""; showStatus(getFriendlyFetchError(error), "error"); }
 }
 
@@ -280,38 +286,34 @@ async function fetchTimetable(weekInfo, timezone, token) {
   const bearer = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
   const reqHeaders = { accept: "application/json", authorization: bearer };
 
-  // 1. Direct (works if the API has CORS headers)
-  try {
-    const res = await fetch(directUrl, { headers: reqHeaders });
-    if (res.ok || res.status === 404) return res;
-  } catch (_) {}
+  // Reads the response, validates the body is JSON, and returns a buffered Response or null.
+  async function tryFetch(fetchFn) {
+    try {
+      const res = await fetchFn();
+      if (res.status === 404) return res;
+      if (!res.ok) return null;
+      const text = await res.text();
+      const t = text.trimStart();
+      if (!t.startsWith("{") && !t.startsWith("[")) return null;
+      return new Response(text, { status: 200, headers: { "content-type": "application/json; charset=utf-8" } });
+    } catch (_) { return null; }
+  }
 
-  // 2. corsproxy.io — forwards Authorization header upstream
-  try {
-    const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: reqHeaders });
-    if (res.ok || res.status === 404) return res;
-  } catch (_) {}
+  const result =
+    await tryFetch(() => fetch(directUrl, { headers: reqHeaders })) ||
+    await tryFetch(() => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`, { headers: reqHeaders })) ||
+    await tryFetch(() => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
+    await tryFetch(async () => {
+      const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
+      if (!ao.ok) return null;
+      const envelope = await ao.json();
+      const contents = envelope.contents ?? "";
+      const httpCode = envelope.status?.http_code ?? 200;
+      return new Response(contents, { status: httpCode, headers: { "content-type": "application/json; charset=utf-8" } });
+    });
 
-  // 3. codetabs proxy
-  try {
-    const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`);
-    if (res.ok || res.status === 404) return res;
-  } catch (_) {}
-
-  // 4. allorigins.win — wraps response in a JSON envelope, validate before using
-  try {
-    const ao = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(urlWithToken)}`);
-    if (ao.ok) {
-      const json = await ao.json();
-      const contents = json.contents;
-      const httpCode = json.status?.http_code ?? 200;
-      if (contents && typeof contents === "string" && (contents.trimStart().startsWith("{") || contents.trimStart().startsWith("["))) {
-        return new Response(contents, { status: httpCode, headers: { "content-type": "application/json; charset=utf-8" } });
-      }
-    }
-  } catch (_) {}
-
-  throw new Error("No se pudo conectar con AnimeSchedule. Comprueba tu token y tu conexión a Internet.");
+  if (!result) throw new Error("No se pudo conectar con AnimeSchedule. Comprueba tu token y tu conexión a Internet.");
+  return result;
 }
 
 function getFriendlyFetchError(error) {
