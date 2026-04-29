@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anime Countdown</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Anime Countdown</p>
+        <h1>SUB Tracker</h1>
+      </div>
+      <button id="settingsBtn" class="settings-top-btn">⚙️ Ajustes</button>
+    </header>
+
+    <section id="statusBox" class="status-box hidden"></section>
+    <section id="nextRelease" class="next-release empty">
+      <div class="next-title">Cargando...</div>
+    </section>
+
+    <section class="toolbar three">
+      <button id="showAllBtn" class="tab">Todos</button>
+      <button id="showTodayBtn" class="tab active">Hoy</button>
+      <button id="showFavsBtn" class="tab">Favoritos</button>
+    </section>
+
+    <section id="animeList" class="anime-list"></section>
+
+    <section id="settingsPanel" class="settings hidden">
+      <h2>Ajustes</h2>
+
+      <section class="settings-group">
+        <h3>Importar horarios</h3>
+        <p class="hint">Importa horarios cercanos desde AnimeSchedule; AniList genera el siguiente capítulo si corresponde.</p>
+        <button id="importBtn" class="primary-btn">Actualizar horarios SUB</button>
+        <button id="openAnimeScheduleBtn" class="secondary-btn">Abrir AnimeSchedule</button>
+        <div id="importPreview" class="preview"></div>
+      </section>
+
+      <hr />
+
+      <label>Token de AnimeSchedule
+        <input id="tokenInput" placeholder="Pega aquí tu API token" />
+      </label>
+      <button id="saveTokenBtn" class="primary-btn">Guardar token</button>
+
+      <hr />
+
+      <label>Zona horaria
+        <input id="timezoneInput" placeholder="Europe/Madrid" />
+      </label>
+      <button id="saveTimezoneBtn" class="primary-btn">Guardar zona horaria</button>
+
+      <label>Semanas futuras a importar
+        <input id="weeksInput" type="number" min="1" max="26" placeholder="2" />
+      </label>
+      <button id="saveWeeksBtn" class="primary-btn">Guardar semanas</button>
+
+      <hr />
+
+      <h2>AniList</h2>
+      <label>Usuario de AniList
+        <input id="anilistInput" placeholder="Tu usuario público de AniList" />
+      </label>
+      <button id="saveAnilistBtn" class="primary-btn">Guardar usuario AniList</button>
+      <button id="syncAnilistBtn" class="secondary-btn">Sincronizar AniList</button>
+
+      <hr />
+      <button id="resetBtn" class="danger-btn">Borrar datos</button>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

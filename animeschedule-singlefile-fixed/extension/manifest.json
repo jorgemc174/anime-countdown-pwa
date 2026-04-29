@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Anime Countdown Fixed",
+  "version": "4.1.0",
+  "description": "Anime countdown usando AniList para detectar próximos capítulos e inferir horario de plataforma.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://animeschedule.net/*",
+    "https://graphql.anilist.co/*",
+    "https://www.crunchyroll.com/*",
+    "https://crunchyroll.com/*",
+    "https://www.netflix.com/*",
+    "https://netflix.com/*",
+    "https://www.primevideo.com/*",
+    "https://primevideo.com/*",
+    "https://www.amazon.com/*",
+    "https://amazon.com/*",
+    "https://img.animeschedule.net/*",
+    "https://s4.anilist.co/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Anime Countdown",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
