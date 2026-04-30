@@ -1,4 +1,4 @@
-const CACHE_NAME = "anime-countdown-pwa-v54";
+const CACHE_NAME = "anime-countdown-pwa-v55";
 const ASSETS = [
   "./",
   "./index.html",

@@ -133,7 +133,7 @@ async function init() {
     updateNotificationButton();
     render();
     setInterval(updateLiveCountdowns, 1000);
-    setInterval(refreshExpiredItems, 60000);
+    scheduleMidnightRefresh();
     startNotificationScheduler();
     startAnilistAutoRefresh();
     startPublicAnilistAutoRefresh();
@@ -1620,8 +1620,16 @@ function toAbsoluteUrl(url) {
 function render() { setActiveTab(); renderNextModern(); renderListModern(); renderSettingsPlatformFilter(); }
 function updateLiveCountdowns() {
   if (state.currentNext) {
+    const c = getCountdown(state.currentNext.releaseDate);
     const nextCountdown = els.nextRelease.querySelector(".next-countdown");
-    if (nextCountdown) nextCountdown.textContent = getCountdown(state.currentNext.releaseDate).text;
+    if (nextCountdown) nextCountdown.textContent = c.text;
+    if (c.expired) {
+      if (state.viewMode === "all" || state.viewMode === "favorites") {
+        render();
+        return;
+      }
+      renderNextModern();
+    }
   }
   els.animeList.querySelectorAll(".anime-card").forEach((card) => {
     const item = findItemById(card.dataset.id);
@@ -1629,7 +1637,24 @@ function updateLiveCountdowns() {
     if (item && countdown) countdown.textContent = getCountdown(item.releaseDate).text;
   });
 }
-function refreshExpiredItems() { render(); }
+
+function scheduleMidnightRefresh() {
+  try {
+    const tz = getSelectedTimezone();
+    const now = new Date();
+    const parts = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).formatToParts(now);
+    const h = parseInt(parts.find((p) => p.type === "hour")?.value || "0") % 24;
+    const m = parseInt(parts.find((p) => p.type === "minute")?.value || "0");
+    const s = parseInt(parts.find((p) => p.type === "second")?.value || "0");
+    const msUntilMidnight = 86400000 - (h * 3600 + m * 60 + s) * 1000;
+    setTimeout(() => {
+      if (state.viewMode === "today") render();
+      scheduleMidnightRefresh();
+    }, msUntilMidnight);
+  } catch (e) {
+    setTimeout(scheduleMidnightRefresh, 3600000);
+  }
+}
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
 function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return sortByDate(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(getCatalogItems()); }
 function getDisplayService(item) {
