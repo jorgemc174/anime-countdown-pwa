@@ -87,7 +87,7 @@ const ANILIST_REFRESH_MS = 60 * 60 * 1000;
 const SERVICE_PRIORITY = { "Crunchyroll": 1, "Netflix": 2, "Prime Video": 3, "Disney+": 4, "HIDIVE": 5, "Hulu": 6, "YouTube": 7, "No legal platform": 99, "AniList": 100 };
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "" };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "" };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -134,7 +134,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -205,7 +205,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","notifiedReleaseIds","lastSharedSync","lastAnilistSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","theme"]);
   state.releases = data.releases || [];
   state.anilistLibrary = data.anilistLibrary || [];
   state.anilistMap = data.anilistMap || {};
@@ -214,6 +214,7 @@ async function loadState() {
   state.viewMode = data.viewMode || "today";
   state.timezone = data.timezone || "Europe/Madrid";
   state.notificationEnabled = Boolean(data.notificationEnabled);
+  state.showAnilistScore = data.showAnilistScore !== false;
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   state.lastSharedSync = data.lastSharedSync || "";
   state.lastAnilistSync = data.lastAnilistSync || "";
@@ -222,6 +223,7 @@ async function loadState() {
   els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
   applyTheme(state.theme);
+  updateScoreButton();
 }
 
 function bindEvents() {
@@ -248,6 +250,7 @@ function bindEvents() {
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
   els.themeBtn.addEventListener("click", toggleTheme);
+  els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.animeList.addEventListener("click", handleListClick);
   bindSwipeNavigation();
@@ -363,6 +366,17 @@ async function toggleTheme() {
   state.theme = state.theme === "light" ? "dark" : "light";
   applyTheme(state.theme);
   await browserApi.storage.local.set({ theme: state.theme });
+}
+
+async function toggleAnilistScore() {
+  state.showAnilistScore = !state.showAnilistScore;
+  updateScoreButton();
+  await browserApi.storage.local.set({ showAnilistScore: state.showAnilistScore });
+  render();
+}
+
+function updateScoreButton() {
+  if (els.scoreBtn) els.scoreBtn.setAttribute("aria-checked", state.showAnilistScore ? "true" : "false");
 }
 
 function updateNotificationButton() {
@@ -741,6 +755,7 @@ function enrichScheduleItem(item) {
     anilistId: match?.anilistId || item.anilistId,
     anilistTitle: match?.title || item.anilistTitle,
     anilistUrl: match?.siteUrl || item.anilistUrl,
+    anilistScore: match?.anilistScore ?? item.anilistScore,
     coverUrl: match?.coverUrl || item.coverUrl,
     service: hasAllowedPlatform ? item.service : (matchHasPlatform ? match.service : "No legal platform"),
     serviceUrl: hasAllowedPlatform ? item.serviceUrl : (matchHasPlatform ? match.serviceUrl : ""),
@@ -752,7 +767,7 @@ function enrichScheduleItem(item) {
 }
 
 async function fetchAnilistLibrary(username) {
-  const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } } }`;
+  const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress score media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } } }`;
   const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { userName: username } }) });
   if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
   const json = await response.json();
@@ -785,11 +800,17 @@ async function fetchAnilistLibrary(username) {
       coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
       anilistId: media.id,
       anilistUrl: media.siteUrl || "",
+      anilistScore: normalizeAnilistScore(entry.score),
       totalEpisodes: media.episodes || null,
       customUrl: "",
       customPlatformName: ""
     };
   });
+}
+
+function normalizeAnilistScore(score) {
+  const value = Number(score);
+  return Number.isFinite(value) && value > 0 ? value : null;
 }
 
 function getAnilistStreams(media) {
@@ -817,7 +838,7 @@ function normalizeAnilistStream(site, url) {
 function buildAnilistMap(library) {
   const map = {};
   for (const anime of library) {
-    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, episode: anime.episode, episodeNumber: anime.episodeNumber, releaseDate: anime.releaseDate, favorite: true, service: anime.service, serviceUrl: anime.serviceUrl, allServices: anime.allServices, hasAllowedPlatform: anime.hasAllowedPlatform };
+    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, anilistScore: anime.anilistScore, episode: anime.episode, episodeNumber: anime.episodeNumber, releaseDate: anime.releaseDate, favorite: true, service: anime.service, serviceUrl: anime.serviceUrl, allServices: anime.allServices, hasAllowedPlatform: anime.hasAllowedPlatform };
     for (const key of buildTitleKeys(data.titles)) map[key] = data;
   }
   return map;
@@ -846,7 +867,7 @@ function bigrams(v) { const s=String(v||""); const r=[]; for(let i=0;i<s.length-
 function buildTitleKeys(titles) { const keys = new Set(); for (const title of titles) for (const alias of buildTitleAliases(title)) { const n = normalizeTitle(alias), st = stableId(alias); if(n) keys.add(n); if(st) keys.add(st); } return [...keys]; }
 function buildTitleAliases(title) { const v=String(title||""); return [...new Set([v, v.replace(/\s*(season|s)\s*\d+$/i,""), v.replace(/\s*part\s*\d+$/i,""), v.replace(/\s*\([^)]*\)\s*$/i,""), v.replace(/\s*(2nd|3rd|4th|5th|second|third|fourth|fifth)\s+season$/i,""), v.replace(/\s*(cour|part)\s*\d+$/i,""), v.replace(/[:\-]+/g," "), v.replace(/&/g,"and")])].map(x=>x.trim()).filter(Boolean); }
 
-function applyAnilistToReleases() { state.releases = state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const timing = getAnilistTimingOverride(item, match); const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList"); const useMatchPlatform = item.hasAllowedPlatform === false && matchHasPlatform; return { ...item, ...timing, favorite: true, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, coverUrl: match.coverUrl || item.coverUrl, service: useMatchPlatform ? match.service : item.service, serviceUrl: useMatchPlatform ? match.serviceUrl : (item.hasAllowedPlatform === false ? "" : item.serviceUrl), allServices: useMatchPlatform ? match.allServices : item.allServices, hasAllowedPlatform: item.hasAllowedPlatform !== false || useMatchPlatform }; }); }
+function applyAnilistToReleases() { state.releases = state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const timing = getAnilistTimingOverride(item, match); const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList"); const useMatchPlatform = item.hasAllowedPlatform === false && matchHasPlatform; return { ...item, ...timing, favorite: true, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, anilistScore: match.anilistScore ?? item.anilistScore, coverUrl: match.coverUrl || item.coverUrl, service: useMatchPlatform ? match.service : item.service, serviceUrl: useMatchPlatform ? match.serviceUrl : (item.hasAllowedPlatform === false ? "" : item.serviceUrl), allServices: useMatchPlatform ? match.allServices : item.allServices, hasAllowedPlatform: item.hasAllowedPlatform !== false || useMatchPlatform }; }); }
 function getAnilistTimingOverride(item, match) {
   if (!match.releaseDate) return {};
   const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
@@ -1115,7 +1136,7 @@ function getIsoWeek(date) { const t=new Date(Date.UTC(date.getFullYear(),date.ge
 function mergeById(a,b) { const map=new Map(); [...a,...b].forEach(item => map.set(item.id, { ...map.get(item.id), ...item })); return [...map.values()]; }
 function dedupeByEpisode(items) { return mergeDuplicateItems(items); }
 function mergeDuplicateItems(items) { const map=new Map(); for(const item of items) { const key=getEpisodeKey(item); const current=map.get(key); if(!current || scoreItem(item)>scoreItem(current)) map.set(key, mergeItem(item,current)); else map.set(key, mergeItem(current,item)); } return sortByDate([...map.values()]); }
-function mergeItem(win, lose={}) { return { ...win, favorite:Boolean(win.favorite||lose.favorite), coverUrl:win.coverUrl||lose.coverUrl||"", serviceUrl:win.serviceUrl||lose.serviceUrl||"", allServices:win.allServices?.length ? win.allServices : (lose.allServices || []), hasAllowedPlatform:Boolean(win.hasAllowedPlatform||lose.hasAllowedPlatform), customUrl:win.customUrl||lose.customUrl||"", customPlatformName:win.customPlatformName||lose.customPlatformName||"", anilistId:win.anilistId||lose.anilistId, anilistTitle:win.anilistTitle||lose.anilistTitle, anilistUrl:win.anilistUrl||lose.anilistUrl }; }
+function mergeItem(win, lose={}) { return { ...win, favorite:Boolean(win.favorite||lose.favorite), coverUrl:win.coverUrl||lose.coverUrl||"", serviceUrl:win.serviceUrl||lose.serviceUrl||"", allServices:win.allServices?.length ? win.allServices : (lose.allServices || []), hasAllowedPlatform:Boolean(win.hasAllowedPlatform||lose.hasAllowedPlatform), customUrl:win.customUrl||lose.customUrl||"", customPlatformName:win.customPlatformName||lose.customPlatformName||"", anilistId:win.anilistId||lose.anilistId, anilistTitle:win.anilistTitle||lose.anilistTitle, anilistUrl:win.anilistUrl||lose.anilistUrl, anilistScore:win.anilistScore ?? lose.anilistScore }; }
 function scoreItem(item) { let s=0; if(item.customUrl)s+=100; if(item.serviceUrl)s+=85; if(item.service==="Crunchyroll")s+=80; if(item.service==="Netflix")s+=60; if(item.service==="Prime Video")s+=50; if(item.source==="animeschedule-api")s+=40; if(item.coverUrl)s+=10; if(item.favorite)s+=5; if(item.source==="anilist-library")s-=20; return s; }
 function sortByDate(items) { return [...items].sort((a,b)=>new Date(a.releaseDate||"9999-12-31")-new Date(b.releaseDate||"9999-12-31")); }
 function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
@@ -1152,8 +1173,9 @@ function renderNextModern() {
   const item = items[0];
   state.currentNext = item;
   const c = getCountdown(item.releaseDate);
+  const scoreText = getAnilistScoreText(item);
   els.nextRelease.className = "next-release";
-  els.nextRelease.innerHTML = `${renderCover(item, "next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`;
+  els.nextRelease.innerHTML = `${renderCover(item, "next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(item.customPlatformName || item.service)}${scoreText ? ` · ${escapeHtml(scoreText)}` : ""}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`;
 }
 
 function getNextHighlightItems() {
@@ -1180,6 +1202,7 @@ function createCardModern(item) {
   const service = item.customPlatformName || item.service;
   const openLabel = item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(item.service);
   const delayedBadge = item.delayed ? '<span class="badge badge-orange">Delayed</span>' : "";
+  const scoreBadge = getAnilistScoreBadge(item);
   const customButton = item.customUrl
     ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar link</button>`
     : `<button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar link</button>`;
@@ -1187,6 +1210,24 @@ function createCardModern(item) {
   card.className = "anime-card";
   card.dataset.id = item.id;
   card.dataset.action = "open";
-  card.innerHTML = `${renderCover(item, "cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `${renderCover(item, "cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${scoreBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
+}
+
+function getAnilistScoreBadge(item) {
+  if (!state.showAnilistScore) return "";
+  const score = formatAnilistScore(item.anilistScore);
+  return score ? `<span class="badge badge-score">AniList ${escapeHtml(score)}</span>` : "";
+}
+
+function getAnilistScoreText(item) {
+  if (!state.showAnilistScore) return "";
+  const score = formatAnilistScore(item.anilistScore);
+  return score ? `AniList ${score}` : "";
+}
+
+function formatAnilistScore(score) {
+  const value = Number(score);
+  if (!Number.isFinite(value) || value <= 0) return "";
+  return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(/\.0$/, "");
 }
