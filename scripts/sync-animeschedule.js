@@ -79,17 +79,18 @@ async function applyAnilistCorrections(releases) {
         continue;
       }
 
+      const delayedByDate = isLaterCalendarDay(anilistTime, currentTime);
       corrected++;
       out.push({
         ...release,
         releaseDate: anilistDate,
-        delayed: anilistTime > currentTime ? true : release.delayed,
+        delayed: delayedByDate,
         anilistId: media.id,
         anilistTitle: media.title?.romaji || media.title?.english || release.title,
         anilistUrl: media.siteUrl || "",
         coverUrl: media.coverImage?.large || media.coverImage?.medium || release.coverUrl,
         correctedByAniList: true,
-        originalReleaseDate: release.releaseDate
+        originalReleaseDate: delayedByDate ? (release.originalReleaseDate || release.releaseDate) : (release.originalReleaseDate || "")
       });
     }
   }
@@ -244,19 +245,21 @@ function chooseBestStream(streams) {
 
 function isDelayed(item) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
-  if (["delayed", "postponed", "on break", "hiatus"].includes(status)) return true;
-
   const releaseAt = Date.parse(item.episodeDate || item.episode_date || item.airDate || item.air_date || "");
-  return isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil) ||
+  const originalAt = parseRealDate(item.originalReleaseDate || item.original_release_date || item.scheduledDate || item.scheduled_date || item.expectedDate || item.expected_date);
+  const changedDay = isLaterCalendarDay(releaseAt, originalAt) ||
+    isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil) ||
     isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil);
+  if (changedDay) return true;
+  return ["postponed indefinitely", "on break", "hiatus", "cancelled"].includes(status);
 }
 
 function isActiveDelayRange(releaseAt, fromValue, untilValue) {
   if (!Number.isFinite(releaseAt)) return false;
   const from = parseRealDate(fromValue);
   const until = parseRealDate(untilValue);
-  if (!from && !until) return false;
-  return (!from || releaseAt >= from) && (!until || releaseAt <= until);
+  if (!from || !until) return false;
+  return isLaterCalendarDay(until, from) && isSameCalendarDay(releaseAt, until);
 }
 
 function parseRealDate(value) {
@@ -264,6 +267,27 @@ function parseRealDate(value) {
   if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return null;
   const time = Date.parse(raw);
   return Number.isFinite(time) ? time : null;
+}
+
+function getCalendarDayKey(time) {
+  if (!Number.isFinite(time)) return "";
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Madrid",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date(time));
+}
+
+function isSameCalendarDay(a, b) {
+  const ak = getCalendarDayKey(a), bk = getCalendarDayKey(b);
+  return Boolean(ak && bk && ak === bk);
+}
+
+function isLaterCalendarDay(actualTime, plannedTime) {
+  const actualDay = getCalendarDayKey(actualTime);
+  const plannedDay = getCalendarDayKey(plannedTime);
+  return Boolean(actualDay && plannedDay && actualDay > plannedDay);
 }
 
 function buildCoverUrl(item) {
