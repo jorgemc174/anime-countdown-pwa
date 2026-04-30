@@ -1070,6 +1070,26 @@ select {
   margin: 0 0 6px;
 }
 
+.platform-filter-panel {
+  margin-top: 4px;
+}
+
+.platform-filter-panel summary {
+  min-height: 34px;
+  padding: 8px 10px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.platform-filter-panel[open] summary {
+  margin-bottom: 8px;
+}
+
 .platform-filter-settings {
   display: flex;
   gap: 6px;

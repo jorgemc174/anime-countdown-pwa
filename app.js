@@ -929,8 +929,8 @@ async function verifyPlatformsWithJustWatch() {
   const countryEntry = JUSTWATCH_COUNTRIES.find((c) => c.code === state.jwCountry) || JUSTWATCH_COUNTRIES[0];
   const candidates = getOneNextPerSeries([...state.releases, ...state.anilistLibrary])
     .filter((item) => {
-      const displayed = getDisplayService(item);
-      return displayed !== "Crunchyroll" && displayed !== "No legal platform";
+      const service = item.service || "No legal platform";
+      return service !== "Crunchyroll" && service !== "No legal platform";
     })
     .slice(0, JUSTWATCH_SEARCH_LIMIT);
   const cache = new Map();
@@ -955,9 +955,9 @@ async function fetchJustWatchAvailabilityWithFallback(item, countryCode, languag
 
   for (const query of queries) {
     const result = await fetchJustWatchAvailability(item, countryCode, language, query);
-    if (result.matched) return result;
+    if (result.verified) return result;
   }
-  return { matched: false };
+  return { verified: false };
 }
 
 async function fetchJustWatchAvailability(item, countryCode = "ES", language = "es", searchQuery = "") {
@@ -976,15 +976,16 @@ async function fetchJustWatchAvailability(item, countryCode = "ES", language = "
 
   try {
     const response = await fetch("https://apis.justwatch.com/graphql", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-    if (!response.ok) return { matched: false };
+    if (!response.ok) return { verified: false };
     const json = await response.json();
     const nodes = (json.data?.popularTitles?.edges || []).map((edge) => edge.node).filter(Boolean);
     const match = findJustWatchMatch(item, nodes);
-    if (!match) return { matched: false };
-    return { matched: true, availability: getJustWatchAllowedAvailability(match) };
+    if (!match) return { verified: false };
+    const availability = getJustWatchAllowedAvailability(match);
+    return availability ? { verified: true, availability } : { verified: false };
   } catch (error) {
     console.warn("No se pudo verificar JustWatch.", error);
-    return { matched: false };
+    return { verified: false };
   }
 }
 
@@ -1003,7 +1004,7 @@ function findJustWatchMatch(item, nodes) {
     }
     if (score > bestScore) { bestScore = score; best = node; }
   }
-  return bestScore >= 0.80 ? best : null;
+  return bestScore >= 0.9 ? best : null;
 }
 
 function getJustWatchAllowedAvailability(node) {
@@ -1031,12 +1032,20 @@ function justWatchOfferToService(offer) {
 }
 
 function applyJustWatchAvailabilityToSeries(seriesKey, result) {
-  if (result == null) return;
-  const availability = result.matched ? result.availability : null;
+  const availability = result?.verified ? result.availability : null;
   const applyTo = (item) => {
     if (getSeriesKey(item) !== seriesKey) return item;
+    const currentService = item.service || "No legal platform";
+    if (currentService === "Crunchyroll" || currentService === "No legal platform") return item;
     if (!availability) {
-      return { ...item, service: "No legal platform", serviceUrl: "", allServices: [], hasAllowedPlatform: false, jwVerified: true };
+      return {
+        ...item,
+        service: "No legal platform",
+        serviceUrl: "",
+        allServices: [],
+        hasAllowedPlatform: false,
+        jwVerified: false
+      };
     }
     const keepUrl = item.serviceUrl && item.service === availability.service;
     return {
@@ -1349,13 +1358,16 @@ function applyAnilistToReleases() { state.releases = state.releases.map(item => 
 function getAnilistOverride(item, match) {
   const nextTime = Date.parse(match.releaseDate || "");
   const itemTime = Date.parse(item.releaseDate || "");
+  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
+  const canOverrideTiming = item.source === "anilist-library" || (Number.isFinite(itemEpisode) && Number.isFinite(matchEpisode) && itemEpisode === matchEpisode);
   const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList");
   const override = {
     title: match.title || item.title,
-    episode: match.episode || item.episode,
-    episodeNumber: match.episodeNumber ?? item.episodeNumber,
-    releaseDate: Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate,
-    delayed: Boolean(item.delayed) || (Number.isFinite(nextTime) && Number.isFinite(itemTime) ? nextTime > itemTime : false),
+    episode: canOverrideTiming ? (match.episode || item.episode) : item.episode,
+    episodeNumber: canOverrideTiming ? (match.episodeNumber ?? item.episodeNumber) : item.episodeNumber,
+    releaseDate: canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate,
+    delayed: Boolean(item.delayed) || (canOverrideTiming && Number.isFinite(nextTime) && Number.isFinite(itemTime) ? nextTime > itemTime : false),
     source: item.source === "shared-json" ? "shared-json+anilist" : item.source
   };
   if (matchHasPlatform) {
