@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=15" />
+  <link rel="stylesheet" href="./styles.css?v=17" />
 </head>
 <body>
   <main class="app">
@@ -70,12 +70,15 @@
         </div>
 
         <hr />
-        <button id="testNotifBtn" class="secondary-btn" type="button">Probar notificación (30s)</button>
+        <div class="toggle-row">
+          <span id="notificationLabel">Activar notificación</span>
+          <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false" aria-labelledby="notificationLabel"></button>
+        </div>
         <button id="resetBtn" class="danger-btn" type="button">Borrar datos</button>
       </section>
     </div>
   </main>
-  <script src="./config.js?v=15"></script>
-  <script src="./app.js?v=15"></script>
+  <script src="./config.js?v=17"></script>
+  <script src="./app.js?v=17"></script>
 </body>
 </html>
