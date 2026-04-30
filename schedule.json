@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-30T14:26:36.950Z",
+  "updatedAt": "2026-04-30T16:39:31.990Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -19,7 +19,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/isekai-nonbiri-nouka-2-5944576c31e6b6265824fbba88094629.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
+      "anilistId": 197824,
+      "anilistTitle": "Isekai Nonbiri Nouka 2",
+      "anilistUrl": "https://anilist.co/anime/197824"
     },
     {
       "id": "schedule-tongari-boushi-no-atelier-5-2026-04-27t16-01-00-02-00",
@@ -38,7 +41,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tongari-boushi-no-atelier-cd90bdf783fe243c9475f6efbc9c5b55.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147105-rwOX8qyUy8gV.jpg",
+      "anilistId": 147105,
+      "anilistTitle": "Tongari Boushi no Atelier",
+      "anilistUrl": "https://anilist.co/anime/147105"
     },
     {
       "id": "schedule-ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-4-2026-04-27t17-00-00-02-00",
@@ -56,7 +62,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-e8fb8acff87d8300775177d56225c70f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
+      "anilistId": 189987,
+      "anilistTitle": "Ponkotsu Fuuki Iin to Skirt take ga Futekisetsu na JK no Hanashi",
+      "anilistUrl": "https://anilist.co/anime/189987"
     },
     {
       "id": "schedule-liar-game-4-2026-04-27t18-00-00-02-00",
@@ -74,7 +83,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197754-Q5KqcUhIdypp.png",
+      "anilistId": 197754,
+      "anilistTitle": "LIAR GAME",
+      "anilistUrl": "https://anilist.co/anime/197754"
     },
     {
       "id": "schedule-hyakki-yakoushou-4-2026-04-28t14-56-00-02-00",
@@ -90,7 +102,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hyakki-yakoushou-1f18de70b037a7556d8c54de9e78002f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207675-h3TZK82jG5aD.png",
+      "anilistId": 207675,
+      "anilistTitle": "Hyakki Yakou Shou",
+      "anilistUrl": "https://anilist.co/anime/207675"
     },
     {
       "id": "schedule-higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season-4-2026-04-28t15-30-00-02-00",
@@ -108,25 +123,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
-    },
-    {
-      "id": "schedule-marriagetoxin-4-2026-04-28t16-30-00-02-00",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-28T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
+      "anilistId": 195268,
+      "anilistTitle": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.  Season 2",
+      "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
       "id": "schedule-aishiteru-game-wo-owarasetai-3-2026-04-28t16-30-00-02-00",
@@ -144,7 +144,31 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
+    },
+    {
+      "id": "schedule-marriagetoxin-4-2026-04-28t16-30-00-02-00",
+      "animeKey": "marriagetoxin",
+      "title": "MARRIAGETOXIN",
+      "route": "marriagetoxin",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-04-28T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
+      "anilistId": 199547,
+      "anilistTitle": "MARRIAGETOXIN",
+      "anilistUrl": "https://anilist.co/anime/199547"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-4-2026-04-28t16-31-00-02-00",
@@ -162,7 +186,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186744-nFH4y2slUrO4.jpg",
+      "anilistId": 186744,
+      "anilistTitle": "Replica Datte, Koi wo Suru.",
+      "anilistUrl": "https://anilist.co/anime/186744"
     },
     {
       "id": "schedule-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-4-2026-04-28t17-00-00-02-00",
@@ -180,7 +207,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-55a3516a2ab9a15ce04946bee1aa68a1.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg",
+      "anilistId": 169580,
+      "anilistTitle": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "anilistUrl": "https://anilist.co/anime/169580"
     },
     {
       "id": "schedule-hidarikiki-no-eren-4-2026-04-28t18-00-00-02-00",
@@ -198,7 +228,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158036-KfXv0BFBUsWl.jpg",
+      "anilistId": 158036,
+      "anilistTitle": "Hidarikiki no Eren",
+      "anilistUrl": "https://anilist.co/anime/158036"
     },
     {
       "id": "schedule-tadaima-ojamasaremasu-4-2026-04-28t19-35-00-02-00",
@@ -216,7 +249,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tadaima-ojamasaremasu-3337aacece2e72516c4db0dc3c81b81a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202985-lyp5TYpTnqSg.jpg",
+      "anilistId": 202985,
+      "anilistTitle": "Tadaima, Ojamasaremasu!",
+      "anilistUrl": "https://anilist.co/anime/202985"
     },
     {
       "id": "schedule-megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-4-2026-04-28t20-05-00-02-00",
@@ -234,7 +270,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-28d4da6c66cf6030a28bcbb1d6f0701a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206951-qiHcrw7pwzuq.jpg",
+      "anilistId": 206951,
+      "anilistTitle": "Megami \"Isekai Tensei Nani ni Naritai Desu ka\" Ore \"Yuusha no Rokkotsu de\"",
+      "anilistUrl": "https://anilist.co/anime/206951"
     },
     {
       "id": "schedule-ugoku-neko-mukashibanashi-29-2026-04-29t13-01-00-02-00",
@@ -250,7 +289,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188529-6o9byjahRpEx.jpg",
+      "anilistId": 188529,
+      "anilistTitle": "Ugoku! Neko Mukashi Banashi",
+      "anilistUrl": "https://anilist.co/anime/188529"
     },
     {
       "id": "schedule-youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4-8-2026-04-29t14-30-00-02-00",
@@ -269,7 +311,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-0f70af5aae.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
+      "anilistId": 98659,
+      "anilistTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+      "anilistUrl": "https://anilist.co/anime/98659"
     },
     {
       "id": "schedule-daikenja-riddle-no-jikan-gyakkou-5-2026-04-29t14-56-00-02-00",
@@ -285,7 +330,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/daikenja-riddle-no-jikan-gyakkou-b859b1edda830b072ce34e7d334a4d4e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210375-Nfj4cciZ35un.jpg",
+      "anilistId": 210375,
+      "anilistTitle": "Daikenja Riddle no Jikan Gyakko",
+      "anilistUrl": "https://anilist.co/anime/210375"
     },
     {
       "id": "schedule-kanojo-okarishimasu-5-4-2026-04-29t15-01-00-02-00",
@@ -304,7 +352,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113813-SnljeXpU3Pw7.jpg",
+      "anilistId": 113813,
+      "anilistTitle": "Kanojo, Okarishimasu",
+      "anilistUrl": "https://anilist.co/anime/113813"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-4-2026-04-29t16-00-00-02-00",
@@ -322,7 +373,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-5-2026-04-29t16-00-00-02-00",
@@ -341,7 +395,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198939-95aqzBr0Lzcv.jpg",
+      "anilistId": 198939,
+      "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "anilistUrl": "https://anilist.co/anime/198939"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-7-2026-04-29t16-01-00-02-00",
@@ -360,7 +417,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dorohedoro-zoku-hen-6b60961c563aa8550a075a63453a727c.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
+      "anilistId": 173172,
+      "anilistTitle": "Dorohedoro Season 2",
+      "anilistUrl": "https://anilist.co/anime/173172"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-4-2026-04-29t17-45-00-02-00",
@@ -378,7 +438,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otaku-ni-yasashii-gal-wa-inai-0044e17a044b4096940344b888dc701e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199588-M2vtWicvqNbU.jpg",
+      "anilistId": 199588,
+      "anilistTitle": "Otaku ni Yasashii Gal wa Inai!?",
+      "anilistUrl": "https://anilist.co/anime/199588"
     },
     {
       "id": "schedule-nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-5-2026-04-29t18-00-00-02-00",
@@ -396,7 +459,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-e9a9f97614179f78feeca6dab07b5ff4.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
+      "anilistId": 201817,
+      "anilistTitle": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+      "anilistUrl": "https://anilist.co/anime/201817"
     },
     {
       "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-5-2026-04-29t18-15-00-02-00",
@@ -415,7 +481,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-3f9ccd499c7ce154a09cd234fb435666.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
+      "anilistId": 194317,
+      "anilistTitle": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/194317"
     },
     {
       "id": "schedule-ganbare-nakamura-kun-6-2026-04-29t19-00-00-02-00",
@@ -433,7 +502,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganbare-nakamura-kun-be98d5c86e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180228-MuZ7adbGiYVj.jpg",
+      "anilistId": 180228,
+      "anilistTitle": "Ganbare! Nakamura-kun!!",
+      "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
       "id": "schedule-koala-enikki-31-2026-04-30t13-01-00-02-00",
@@ -449,7 +521,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
+      "anilistId": 194389,
+      "anilistTitle": "Koala Enikki",
+      "anilistUrl": "https://anilist.co/anime/194389"
     },
     {
       "id": "schedule-himekishi-wa-barbaroi-no-yome-4-2026-04-30t14-31-00-02-00",
@@ -467,7 +542,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
+      "anilistId": 182483,
+      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
+      "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
       "id": "schedule-ganso-bandori-chan-30-2026-04-30t15-01-00-02-00",
@@ -483,7 +561,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-5-2026-04-30t16-00-00-02-00",
@@ -502,7 +583,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-4-2026-04-30t16-00-00-02-00",
@@ -512,8 +596,8 @@
       "episode": "Ep 4",
       "episodeNumber": "4",
       "airType": "SUB",
-      "delayed": true,
-      "releaseDate": "2026-04-30T14:30:00.000Z",
+      "delayed": false,
+      "releaseDate": "2026-04-30T14:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
       "allServices": [
@@ -523,9 +607,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
       "anilistId": 177508,
       "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-04-30T14:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-5-2026-04-30t17-30-00-02-00",
@@ -536,7 +618,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-04-30T14:56:00.000Z",
+      "releaseDate": "2026-04-30T15:30:00.000Z",
       "service": "Netflix",
       "serviceUrl": "https://www.netflix.com/title/82031882",
       "allServices": [
@@ -546,9 +628,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
       "anilistId": 186497,
       "anilistTitle": "Koori no Jouheki",
-      "anilistUrl": "https://anilist.co/anime/186497",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-04-30T15:30:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/186497"
     },
     {
       "id": "schedule-kirio-fanclub-5-2026-04-30t18-00-00-02-00",
@@ -731,7 +811,7 @@
       "episode": "Ep 5",
       "episodeNumber": "5",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-01T15:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
@@ -741,24 +821,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-4-2026-05-01t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-01T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-snowball-earth-5-2026-05-01t17-30-00-02-00",
@@ -777,6 +839,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-4-2026-05-01t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-01T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-6-2026-05-01t18-01-00-02-00",
@@ -840,7 +920,7 @@
       "episode": "Ep 5",
       "episodeNumber": "5",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-02T09:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
@@ -959,6 +1039,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-5-2026-05-02t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-5-2026-05-02t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -975,22 +1071,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-5-2026-05-02t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-5-2026-05-02t18-01-00-02-00",
@@ -1158,22 +1238,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-03T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-4-2026-05-03t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -1192,6 +1256,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-03T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-5-2026-05-03t11-00-00-02-00",
@@ -1327,7 +1407,7 @@
       "episode": "Ep 4",
       "episodeNumber": "4",
       "airType": "SUB",
-      "delayed": false,
+      "delayed": true,
       "releaseDate": "2026-05-03T16:01:00.000Z",
       "service": "No legal platform",
       "serviceUrl": "",
@@ -1376,7 +1456,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-04T13:30:00.000Z",
+      "releaseDate": "2026-05-04T14:00:00.000Z",
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41YU3bT",
       "allServices": [
@@ -1386,9 +1466,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
       "anilistId": 197824,
       "anilistTitle": "Isekai Nonbiri Nouka 2",
-      "anilistUrl": "https://anilist.co/anime/197824",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-04T14:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/197824"
     },
     {
       "id": "schedule-tongari-boushi-no-atelier-6-2026-05-04t16-01-00-02-00",
@@ -1407,7 +1485,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tongari-boushi-no-atelier-cd90bdf783fe243c9475f6efbc9c5b55.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147105-rwOX8qyUy8gV.jpg",
+      "anilistId": 147105,
+      "anilistTitle": "Tongari Boushi no Atelier",
+      "anilistUrl": "https://anilist.co/anime/147105"
     },
     {
       "id": "schedule-ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-5-2026-05-04t17-00-00-02-00",
@@ -1418,7 +1499,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-04T14:24:00.000Z",
+      "releaseDate": "2026-05-04T15:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371923/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt",
       "allServices": [
@@ -1428,9 +1509,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
       "anilistId": 189987,
       "anilistTitle": "Ponkotsu Fuuki Iin to Skirt take ga Futekisetsu na JK no Hanashi",
-      "anilistUrl": "https://anilist.co/anime/189987",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-04T15:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/189987"
     },
     {
       "id": "schedule-liar-game-5-2026-05-04t18-00-00-02-00",
@@ -1441,7 +1520,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-04T15:00:00.000Z",
+      "releaseDate": "2026-05-04T16:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
       "allServices": [
@@ -1451,9 +1530,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197754-Q5KqcUhIdypp.png",
       "anilistId": 197754,
       "anilistTitle": "LIAR GAME",
-      "anilistUrl": "https://anilist.co/anime/197754",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-04T16:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/197754"
     },
     {
       "id": "schedule-hyakki-yakoushou-5-2026-05-05t14-56-00-02-00",
@@ -1469,7 +1546,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hyakki-yakoushou-1f18de70b037a7556d8c54de9e78002f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207675-h3TZK82jG5aD.png",
+      "anilistId": 207675,
+      "anilistTitle": "Hyakki Yakou Shou",
+      "anilistUrl": "https://anilist.co/anime/207675"
     },
     {
       "id": "schedule-higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season-5-2026-05-05t15-30-00-02-00",
@@ -1480,7 +1560,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-05T13:00:00.000Z",
+      "releaseDate": "2026-05-05T13:30:00.000Z",
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41UUpAl",
       "allServices": [
@@ -1490,32 +1570,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
       "anilistId": 195268,
       "anilistTitle": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.  Season 2",
-      "anilistUrl": "https://anilist.co/anime/195268",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T13:30:00.000Z"
-    },
-    {
-      "id": "schedule-marriagetoxin-5-2026-05-05t16-30-00-02-00",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-05T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
-      "anilistId": 199547,
-      "anilistTitle": "MARRIAGETOXIN",
-      "anilistUrl": "https://anilist.co/anime/199547",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T14:30:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
       "id": "schedule-aishiteru-game-wo-owarasetai-4-2026-05-05t16-30-00-02-00",
@@ -1526,7 +1581,7 @@
       "episodeNumber": "4",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-05T14:00:00.000Z",
+      "releaseDate": "2026-05-05T14:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
       "allServices": [
@@ -1536,32 +1591,28 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
       "anilistId": 194393,
       "anilistTitle": "Aishiteru Game wo Owarasetai",
-      "anilistUrl": "https://anilist.co/anime/194393",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T14:30:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/194393"
     },
     {
-      "id": "schedule-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-5-2026-05-05t17-00-00-02-00",
-      "animeKey": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
-      "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
-      "route": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+      "id": "schedule-marriagetoxin-5-2026-05-05t16-30-00-02-00",
+      "animeKey": "marriagetoxin",
+      "title": "MARRIAGETOXIN",
+      "route": "marriagetoxin",
       "episode": "Ep 5",
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-05T14:30:00.000Z",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
       "allServices": [
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg",
-      "anilistId": 169580,
-      "anilistTitle": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
-      "anilistUrl": "https://anilist.co/anime/169580",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T15:00:00.000Z"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
+      "anilistId": 199547,
+      "anilistTitle": "MARRIAGETOXIN",
+      "anilistUrl": "https://anilist.co/anime/199547"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-5-2026-05-05t16-31-00-02-00",
@@ -1579,7 +1630,31 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186744-nFH4y2slUrO4.jpg",
+      "anilistId": 186744,
+      "anilistTitle": "Replica Datte, Koi wo Suru.",
+      "anilistUrl": "https://anilist.co/anime/186744"
+    },
+    {
+      "id": "schedule-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-5-2026-05-05t17-00-00-02-00",
+      "animeKey": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+      "title": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "route": "class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-05T15:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg",
+      "anilistId": 169580,
+      "anilistTitle": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "anilistUrl": "https://anilist.co/anime/169580"
     },
     {
       "id": "schedule-hidarikiki-no-eren-5-2026-05-05t18-00-00-02-00",
@@ -1590,7 +1665,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-05T15:00:00.000Z",
+      "releaseDate": "2026-05-05T16:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
       "allServices": [
@@ -1600,9 +1675,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158036-KfXv0BFBUsWl.jpg",
       "anilistId": 158036,
       "anilistTitle": "Hidarikiki no Eren",
-      "anilistUrl": "https://anilist.co/anime/158036",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T16:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/158036"
     },
     {
       "id": "schedule-tadaima-ojamasaremasu-5-2026-05-05t19-35-00-02-00",
@@ -1613,7 +1686,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-05T16:29:00.000Z",
+      "releaseDate": "2026-05-05T17:35:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
       "allServices": [
@@ -1623,9 +1696,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202985-lyp5TYpTnqSg.jpg",
       "anilistId": 202985,
       "anilistTitle": "Tadaima, Ojamasaremasu!",
-      "anilistUrl": "https://anilist.co/anime/202985",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T17:35:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/202985"
     },
     {
       "id": "schedule-megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-5-2026-05-05t20-05-00-02-00",
@@ -1636,7 +1707,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-05T16:59:00.000Z",
+      "releaseDate": "2026-05-05T18:05:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371665",
       "allServices": [
@@ -1646,9 +1717,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206951-qiHcrw7pwzuq.jpg",
       "anilistId": 206951,
       "anilistTitle": "Megami \"Isekai Tensei Nani ni Naritai Desu ka\" Ore \"Yuusha no Rokkotsu de\"",
-      "anilistUrl": "https://anilist.co/anime/206951",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-05T18:05:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/206951"
     },
     {
       "id": "schedule-ugoku-neko-mukashibanashi-30-2026-05-06t13-01-00-02-00",
@@ -1664,7 +1733,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188529-6o9byjahRpEx.jpg",
+      "anilistId": 188529,
+      "anilistTitle": "Ugoku! Neko Mukashi Banashi",
+      "anilistUrl": "https://anilist.co/anime/188529"
     },
     {
       "id": "schedule-youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4-9-2026-05-06t14-30-00-02-00",
@@ -1683,7 +1755,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-0f70af5aae.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
+      "anilistId": 98659,
+      "anilistTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+      "anilistUrl": "https://anilist.co/anime/98659"
     },
     {
       "id": "schedule-daikenja-riddle-no-jikan-gyakkou-6-2026-05-06t14-56-00-02-00",
@@ -1699,31 +1774,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/daikenja-riddle-no-jikan-gyakkou-b859b1edda830b072ce34e7d334a4d4e.jpg"
-    },
-    {
-      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-6-2026-05-06t16-00-00-02-00",
-      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
-      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-06T13:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198939-95aqzBr0Lzcv.jpg",
-      "anilistId": 198939,
-      "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
-      "anilistUrl": "https://anilist.co/anime/198939",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-06T14:00:00.000Z"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210375-Nfj4cciZ35un.jpg",
+      "anilistId": 210375,
+      "anilistTitle": "Daikenja Riddle no Jikan Gyakko",
+      "anilistUrl": "https://anilist.co/anime/210375"
     },
     {
       "id": "schedule-kanojo-okarishimasu-5-5-2026-05-06t15-01-00-02-00",
@@ -1742,7 +1796,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113813-SnljeXpU3Pw7.jpg",
+      "anilistId": 113813,
+      "anilistTitle": "Kanojo, Okarishimasu",
+      "anilistUrl": "https://anilist.co/anime/113813"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-5-2026-05-06t16-00-00-02-00",
@@ -1760,7 +1817,32 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
+    },
+    {
+      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-6-2026-05-06t16-00-00-02-00",
+      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-06T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
+      "allServices": [
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198939-95aqzBr0Lzcv.jpg",
+      "anilistId": 198939,
+      "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "anilistUrl": "https://anilist.co/anime/198939"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-8-2026-05-06t16-01-00-02-00",
@@ -1779,31 +1861,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dorohedoro-zoku-hen-6b60961c563aa8550a075a63453a727c.jpg"
-    },
-    {
-      "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-6-2026-05-06t18-15-00-02-00",
-      "animeKey": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
-      "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
-      "route": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-06T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
-      "anilistId": 194317,
-      "anilistTitle": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/194317",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-06T16:15:00.000Z"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
+      "anilistId": 173172,
+      "anilistTitle": "Dorohedoro Season 2",
+      "anilistUrl": "https://anilist.co/anime/173172"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-5-2026-05-06t17-45-00-02-00",
@@ -1814,7 +1875,7 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-06T14:45:00.000Z",
+      "releaseDate": "2026-05-06T15:45:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371662/gals-cant-be-kind-to-otaku",
       "allServices": [
@@ -1824,9 +1885,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199588-M2vtWicvqNbU.jpg",
       "anilistId": 199588,
       "anilistTitle": "Otaku ni Yasashii Gal wa Inai!?",
-      "anilistUrl": "https://anilist.co/anime/199588",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-06T15:45:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/199588"
     },
     {
       "id": "schedule-nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-6-2026-05-06t18-00-00-02-00",
@@ -1837,7 +1896,7 @@
       "episodeNumber": "6",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-06T15:00:00.000Z",
+      "releaseDate": "2026-05-06T16:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371642",
       "allServices": [
@@ -1847,9 +1906,29 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
       "anilistId": 201817,
       "anilistTitle": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
-      "anilistUrl": "https://anilist.co/anime/201817",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-06T16:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/201817"
+    },
+    {
+      "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-6-2026-05-06t18-15-00-02-00",
+      "animeKey": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
+      "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "route": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-06T16:15:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
+      "allServices": [
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
+      "anilistId": 194317,
+      "anilistTitle": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/194317"
     },
     {
       "id": "schedule-ganbare-nakamura-kun-7-2026-05-06t19-00-00-02-00",
@@ -1860,7 +1939,7 @@
       "episodeNumber": "7",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-06T15:30:00.000Z",
+      "releaseDate": "2026-05-06T17:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
       "allServices": [
@@ -1870,9 +1949,7 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180228-MuZ7adbGiYVj.jpg",
       "anilistId": 180228,
       "anilistTitle": "Ganbare! Nakamura-kun!!",
-      "anilistUrl": "https://anilist.co/anime/180228",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-06T17:00:00.000Z"
+      "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
       "id": "schedule-koala-enikki-32-2026-05-07t13-01-00-02-00",
@@ -1888,7 +1965,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
+      "anilistId": 194389,
+      "anilistTitle": "Koala Enikki",
+      "anilistUrl": "https://anilist.co/anime/194389"
     },
     {
       "id": "schedule-himekishi-wa-barbaroi-no-yome-5-2026-05-07t14-31-00-02-00",
@@ -1906,31 +1986,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
-    },
-    {
-      "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
-      "animeKey": "dr-stone-science-future-part-3",
-      "title": "Dr. Stone: Science Future Part 3",
-      "route": "dr-stone-science-future-part-3",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-07T13:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
-      "anilistId": 199221,
-      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
-      "anilistUrl": "https://anilist.co/anime/199221",
-      "correctedByAniList": true,
-      "originalReleaseDate": "2026-05-07T14:00:00.000Z"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
+      "anilistId": 182483,
+      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
+      "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
       "id": "schedule-ganso-bandori-chan-31-2026-05-07t15-01-00-02-00",
@@ -1946,7 +2005,32 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
+    },
+    {
+      "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
+      "animeKey": "dr-stone-science-future-part-3",
+      "title": "Dr. Stone: Science Future Part 3",
+      "route": "dr-stone-science-future-part-3",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-07T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
+      "allServices": [
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
@@ -1964,7 +2048,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-6-2026-05-07t17-30-00-02-00",
@@ -1982,7 +2069,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
+      "anilistId": 186497,
+      "anilistTitle": "Koori no Jouheki",
+      "anilistUrl": "https://anilist.co/anime/186497"
     },
     {
       "id": "schedule-kirio-fanclub-6-2026-05-07t18-00-00-02-00",
@@ -2161,24 +2251,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-5-2026-05-08t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-08T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-6-2026-05-08t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -2195,6 +2267,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-5-2026-05-08t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-08T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-7-2026-05-08t18-01-00-02-00",
@@ -2377,6 +2467,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2393,22 +2499,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-6-2026-05-09t18-01-00-02-00",
@@ -2592,22 +2682,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meikyuu-no-shiori-5bcce6727a.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-10T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-5-2026-05-10t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2626,6 +2700,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-10T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-6-2026-05-10t11-00-00-02-00",
@@ -2817,7 +2907,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/isekai-nonbiri-nouka-2-5944576c31e6b6265824fbba88094629.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
+      "anilistId": 197824,
+      "anilistTitle": "Isekai Nonbiri Nouka 2",
+      "anilistUrl": "https://anilist.co/anime/197824"
     },
     {
       "id": "schedule-tongari-boushi-no-atelier-7-2026-05-11t16-01-00-02-00",
@@ -2836,7 +2929,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tongari-boushi-no-atelier-cd90bdf783fe243c9475f6efbc9c5b55.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147105-rwOX8qyUy8gV.jpg",
+      "anilistId": 147105,
+      "anilistTitle": "Tongari Boushi no Atelier",
+      "anilistUrl": "https://anilist.co/anime/147105"
     },
     {
       "id": "schedule-ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-6-2026-05-11t17-00-00-02-00",
@@ -2854,7 +2950,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-e8fb8acff87d8300775177d56225c70f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
+      "anilistId": 189987,
+      "anilistTitle": "Ponkotsu Fuuki Iin to Skirt take ga Futekisetsu na JK no Hanashi",
+      "anilistUrl": "https://anilist.co/anime/189987"
     },
     {
       "id": "schedule-liar-game-6-2026-05-11t18-00-00-02-00",
@@ -2872,7 +2971,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197754-Q5KqcUhIdypp.png",
+      "anilistId": 197754,
+      "anilistTitle": "LIAR GAME",
+      "anilistUrl": "https://anilist.co/anime/197754"
     },
     {
       "id": "schedule-hyakki-yakoushou-6-2026-05-12t14-56-00-02-00",
@@ -2888,7 +2990,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hyakki-yakoushou-1f18de70b037a7556d8c54de9e78002f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207675-h3TZK82jG5aD.png",
+      "anilistId": 207675,
+      "anilistTitle": "Hyakki Yakou Shou",
+      "anilistUrl": "https://anilist.co/anime/207675"
     },
     {
       "id": "schedule-higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season-6-2026-05-12t15-30-00-02-00",
@@ -2906,25 +3011,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
-    },
-    {
-      "id": "schedule-marriagetoxin-6-2026-05-12t16-30-00-02-00",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-12T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
+      "anilistId": 195268,
+      "anilistTitle": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.  Season 2",
+      "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
       "id": "schedule-aishiteru-game-wo-owarasetai-5-2026-05-12t16-30-00-02-00",
@@ -2942,7 +3032,31 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
+    },
+    {
+      "id": "schedule-marriagetoxin-6-2026-05-12t16-30-00-02-00",
+      "animeKey": "marriagetoxin",
+      "title": "MARRIAGETOXIN",
+      "route": "marriagetoxin",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-12T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
+      "anilistId": 199547,
+      "anilistTitle": "MARRIAGETOXIN",
+      "anilistUrl": "https://anilist.co/anime/199547"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-6-2026-05-12t16-31-00-02-00",
@@ -2960,7 +3074,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186744-nFH4y2slUrO4.jpg",
+      "anilistId": 186744,
+      "anilistTitle": "Replica Datte, Koi wo Suru.",
+      "anilistUrl": "https://anilist.co/anime/186744"
     },
     {
       "id": "schedule-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-6-2026-05-12t17-00-00-02-00",
@@ -2978,7 +3095,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-55a3516a2ab9a15ce04946bee1aa68a1.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg",
+      "anilistId": 169580,
+      "anilistTitle": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "anilistUrl": "https://anilist.co/anime/169580"
     },
     {
       "id": "schedule-hidarikiki-no-eren-6-2026-05-12t18-00-00-02-00",
@@ -2996,7 +3116,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158036-KfXv0BFBUsWl.jpg",
+      "anilistId": 158036,
+      "anilistTitle": "Hidarikiki no Eren",
+      "anilistUrl": "https://anilist.co/anime/158036"
     },
     {
       "id": "schedule-tadaima-ojamasaremasu-6-2026-05-12t19-35-00-02-00",
@@ -3014,7 +3137,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tadaima-ojamasaremasu-3337aacece2e72516c4db0dc3c81b81a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202985-lyp5TYpTnqSg.jpg",
+      "anilistId": 202985,
+      "anilistTitle": "Tadaima, Ojamasaremasu!",
+      "anilistUrl": "https://anilist.co/anime/202985"
     },
     {
       "id": "schedule-megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-6-2026-05-12t20-05-00-02-00",
@@ -3032,7 +3158,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-28d4da6c66cf6030a28bcbb1d6f0701a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206951-qiHcrw7pwzuq.jpg",
+      "anilistId": 206951,
+      "anilistTitle": "Megami \"Isekai Tensei Nani ni Naritai Desu ka\" Ore \"Yuusha no Rokkotsu de\"",
+      "anilistUrl": "https://anilist.co/anime/206951"
     },
     {
       "id": "schedule-ugoku-neko-mukashibanashi-31-2026-05-13t13-01-00-02-00",
@@ -3048,7 +3177,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188529-6o9byjahRpEx.jpg",
+      "anilistId": 188529,
+      "anilistTitle": "Ugoku! Neko Mukashi Banashi",
+      "anilistUrl": "https://anilist.co/anime/188529"
     },
     {
       "id": "schedule-youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4-10-2026-05-13t14-30-00-02-00",
@@ -3067,7 +3199,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-0f70af5aae.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
+      "anilistId": 98659,
+      "anilistTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+      "anilistUrl": "https://anilist.co/anime/98659"
     },
     {
       "id": "schedule-daikenja-riddle-no-jikan-gyakkou-7-2026-05-13t14-56-00-02-00",
@@ -3083,7 +3218,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/daikenja-riddle-no-jikan-gyakkou-b859b1edda830b072ce34e7d334a4d4e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210375-Nfj4cciZ35un.jpg",
+      "anilistId": 210375,
+      "anilistTitle": "Daikenja Riddle no Jikan Gyakko",
+      "anilistUrl": "https://anilist.co/anime/210375"
     },
     {
       "id": "schedule-kanojo-okarishimasu-5-6-2026-05-13t15-01-00-02-00",
@@ -3102,7 +3240,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113813-SnljeXpU3Pw7.jpg",
+      "anilistId": 113813,
+      "anilistTitle": "Kanojo, Okarishimasu",
+      "anilistUrl": "https://anilist.co/anime/113813"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-6-2026-05-13t16-00-00-02-00",
@@ -3120,7 +3261,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-7-2026-05-13t16-00-00-02-00",
@@ -3139,7 +3283,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198939-95aqzBr0Lzcv.jpg",
+      "anilistId": 198939,
+      "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "anilistUrl": "https://anilist.co/anime/198939"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-9-2026-05-13t16-01-00-02-00",
@@ -3158,7 +3305,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dorohedoro-zoku-hen-6b60961c563aa8550a075a63453a727c.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
+      "anilistId": 173172,
+      "anilistTitle": "Dorohedoro Season 2",
+      "anilistUrl": "https://anilist.co/anime/173172"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-6-2026-05-13t17-45-00-02-00",
@@ -3176,7 +3326,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otaku-ni-yasashii-gal-wa-inai-0044e17a044b4096940344b888dc701e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199588-M2vtWicvqNbU.jpg",
+      "anilistId": 199588,
+      "anilistTitle": "Otaku ni Yasashii Gal wa Inai!?",
+      "anilistUrl": "https://anilist.co/anime/199588"
     },
     {
       "id": "schedule-nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-7-2026-05-13t18-00-00-02-00",
@@ -3194,7 +3347,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-e9a9f97614179f78feeca6dab07b5ff4.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
+      "anilistId": 201817,
+      "anilistTitle": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+      "anilistUrl": "https://anilist.co/anime/201817"
     },
     {
       "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-7-2026-05-13t18-15-00-02-00",
@@ -3213,7 +3369,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-3f9ccd499c7ce154a09cd234fb435666.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
+      "anilistId": 194317,
+      "anilistTitle": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/194317"
     },
     {
       "id": "schedule-ganbare-nakamura-kun-8-2026-05-13t19-00-00-02-00",
@@ -3231,7 +3390,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganbare-nakamura-kun-be98d5c86e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180228-MuZ7adbGiYVj.jpg",
+      "anilistId": 180228,
+      "anilistTitle": "Ganbare! Nakamura-kun!!",
+      "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
       "id": "schedule-koala-enikki-33-2026-05-14t13-01-00-02-00",
@@ -3247,7 +3409,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
+      "anilistId": 194389,
+      "anilistTitle": "Koala Enikki",
+      "anilistUrl": "https://anilist.co/anime/194389"
     },
     {
       "id": "schedule-himekishi-wa-barbaroi-no-yome-6-2026-05-14t14-31-00-02-00",
@@ -3265,7 +3430,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
+      "anilistId": 182483,
+      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
+      "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
       "id": "schedule-ganso-bandori-chan-32-2026-05-14t15-01-00-02-00",
@@ -3281,7 +3449,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
@@ -3300,7 +3471,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
@@ -3318,7 +3492,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-7-2026-05-14t17-30-00-02-00",
@@ -3336,7 +3513,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
+      "anilistId": 186497,
+      "anilistTitle": "Koori no Jouheki",
+      "anilistUrl": "https://anilist.co/anime/186497"
     },
     {
       "id": "schedule-kirio-fanclub-7-2026-05-14t18-00-00-02-00",
@@ -3519,7 +3699,7 @@
       "episode": "Ep 6",
       "episodeNumber": "6",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-15T15:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
@@ -3529,24 +3709,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-15T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-snowball-earth-7-2026-05-15t17-30-00-02-00",
@@ -3565,6 +3727,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-15T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-8-2026-05-15t18-01-00-02-00",
@@ -3628,7 +3808,7 @@
       "episode": "Ep 6",
       "episodeNumber": "6",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-16T09:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
@@ -3747,6 +3927,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -3763,22 +3959,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-7-2026-05-16t18-01-00-02-00",
@@ -3946,22 +4126,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-17T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-6-2026-05-17t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -3980,6 +4144,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-17T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-7-2026-05-17t11-00-00-02-00",
@@ -4171,7 +4351,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/isekai-nonbiri-nouka-2-5944576c31e6b6265824fbba88094629.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
+      "anilistId": 197824,
+      "anilistTitle": "Isekai Nonbiri Nouka 2",
+      "anilistUrl": "https://anilist.co/anime/197824"
     },
     {
       "id": "schedule-tongari-boushi-no-atelier-8-2026-05-18t16-01-00-02-00",
@@ -4190,7 +4373,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tongari-boushi-no-atelier-cd90bdf783fe243c9475f6efbc9c5b55.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147105-rwOX8qyUy8gV.jpg",
+      "anilistId": 147105,
+      "anilistTitle": "Tongari Boushi no Atelier",
+      "anilistUrl": "https://anilist.co/anime/147105"
     },
     {
       "id": "schedule-ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-7-2026-05-18t17-00-00-02-00",
@@ -4208,7 +4394,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-e8fb8acff87d8300775177d56225c70f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
+      "anilistId": 189987,
+      "anilistTitle": "Ponkotsu Fuuki Iin to Skirt take ga Futekisetsu na JK no Hanashi",
+      "anilistUrl": "https://anilist.co/anime/189987"
     },
     {
       "id": "schedule-liar-game-7-2026-05-18t18-00-00-02-00",
@@ -4226,7 +4415,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197754-Q5KqcUhIdypp.png",
+      "anilistId": 197754,
+      "anilistTitle": "LIAR GAME",
+      "anilistUrl": "https://anilist.co/anime/197754"
     },
     {
       "id": "schedule-hyakki-yakoushou-7-2026-05-19t14-56-00-02-00",
@@ -4242,7 +4434,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hyakki-yakoushou-1f18de70b037a7556d8c54de9e78002f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207675-h3TZK82jG5aD.png",
+      "anilistId": 207675,
+      "anilistTitle": "Hyakki Yakou Shou",
+      "anilistUrl": "https://anilist.co/anime/207675"
     },
     {
       "id": "schedule-higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-2nd-season-7-2026-05-19t15-30-00-02-00",
@@ -4260,25 +4455,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
-    },
-    {
-      "id": "schedule-marriagetoxin-7-2026-05-19t16-30-00-02-00",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-19T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
+      "anilistId": 195268,
+      "anilistTitle": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.  Season 2",
+      "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
       "id": "schedule-aishiteru-game-wo-owarasetai-6-2026-05-19t16-30-00-02-00",
@@ -4296,7 +4476,31 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
+    },
+    {
+      "id": "schedule-marriagetoxin-7-2026-05-19t16-30-00-02-00",
+      "animeKey": "marriagetoxin",
+      "title": "MARRIAGETOXIN",
+      "route": "marriagetoxin",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-19T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
+      "anilistId": 199547,
+      "anilistTitle": "MARRIAGETOXIN",
+      "anilistUrl": "https://anilist.co/anime/199547"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-7-2026-05-19t16-31-00-02-00",
@@ -4314,7 +4518,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186744-nFH4y2slUrO4.jpg",
+      "anilistId": 186744,
+      "anilistTitle": "Replica Datte, Koi wo Suru.",
+      "anilistUrl": "https://anilist.co/anime/186744"
     },
     {
       "id": "schedule-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-7-2026-05-19t17-00-00-02-00",
@@ -4332,7 +4539,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta-55a3516a2ab9a15ce04946bee1aa68a1.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg",
+      "anilistId": 169580,
+      "anilistTitle": "Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta",
+      "anilistUrl": "https://anilist.co/anime/169580"
     },
     {
       "id": "schedule-hidarikiki-no-eren-7-2026-05-19t18-00-00-02-00",
@@ -4350,7 +4560,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158036-KfXv0BFBUsWl.jpg",
+      "anilistId": 158036,
+      "anilistTitle": "Hidarikiki no Eren",
+      "anilistUrl": "https://anilist.co/anime/158036"
     },
     {
       "id": "schedule-tadaima-ojamasaremasu-7-2026-05-19t19-35-00-02-00",
@@ -4368,7 +4581,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tadaima-ojamasaremasu-3337aacece2e72516c4db0dc3c81b81a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202985-lyp5TYpTnqSg.jpg",
+      "anilistId": 202985,
+      "anilistTitle": "Tadaima, Ojamasaremasu!",
+      "anilistUrl": "https://anilist.co/anime/202985"
     },
     {
       "id": "schedule-megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-7-2026-05-19t20-05-00-02-00",
@@ -4386,7 +4602,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de-28d4da6c66cf6030a28bcbb1d6f0701a.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206951-qiHcrw7pwzuq.jpg",
+      "anilistId": 206951,
+      "anilistTitle": "Megami \"Isekai Tensei Nani ni Naritai Desu ka\" Ore \"Yuusha no Rokkotsu de\"",
+      "anilistUrl": "https://anilist.co/anime/206951"
     },
     {
       "id": "schedule-ugoku-neko-mukashibanashi-32-2026-05-20t13-01-00-02-00",
@@ -4402,7 +4621,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188529-6o9byjahRpEx.jpg",
+      "anilistId": 188529,
+      "anilistTitle": "Ugoku! Neko Mukashi Banashi",
+      "anilistUrl": "https://anilist.co/anime/188529"
     },
     {
       "id": "schedule-youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4-11-2026-05-20t14-30-00-02-00",
@@ -4421,7 +4643,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-0f70af5aae.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
+      "anilistId": 98659,
+      "anilistTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+      "anilistUrl": "https://anilist.co/anime/98659"
     },
     {
       "id": "schedule-daikenja-riddle-no-jikan-gyakkou-8-2026-05-20t14-56-00-02-00",
@@ -4437,7 +4662,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/daikenja-riddle-no-jikan-gyakkou-b859b1edda830b072ce34e7d334a4d4e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210375-Nfj4cciZ35un.jpg",
+      "anilistId": 210375,
+      "anilistTitle": "Daikenja Riddle no Jikan Gyakko",
+      "anilistUrl": "https://anilist.co/anime/210375"
     },
     {
       "id": "schedule-kanojo-okarishimasu-5-7-2026-05-20t15-01-00-02-00",
@@ -4456,7 +4684,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113813-SnljeXpU3Pw7.jpg",
+      "anilistId": 113813,
+      "anilistTitle": "Kanojo, Okarishimasu",
+      "anilistUrl": "https://anilist.co/anime/113813"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-7-2026-05-20t16-00-00-02-00",
@@ -4474,7 +4705,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-8-2026-05-20t16-00-00-02-00",
@@ -4493,7 +4727,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198939-95aqzBr0Lzcv.jpg",
+      "anilistId": 198939,
+      "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "anilistUrl": "https://anilist.co/anime/198939"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-10-2026-05-20t16-01-00-02-00",
@@ -4512,7 +4749,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dorohedoro-zoku-hen-6b60961c563aa8550a075a63453a727c.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
+      "anilistId": 173172,
+      "anilistTitle": "Dorohedoro Season 2",
+      "anilistUrl": "https://anilist.co/anime/173172"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-7-2026-05-20t17-45-00-02-00",
@@ -4530,7 +4770,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otaku-ni-yasashii-gal-wa-inai-0044e17a044b4096940344b888dc701e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199588-M2vtWicvqNbU.jpg",
+      "anilistId": 199588,
+      "anilistTitle": "Otaku ni Yasashii Gal wa Inai!?",
+      "anilistUrl": "https://anilist.co/anime/199588"
     },
     {
       "id": "schedule-nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-8-2026-05-20t18-00-00-02-00",
@@ -4548,7 +4791,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken-e9a9f97614179f78feeca6dab07b5ff4.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
+      "anilistId": 201817,
+      "anilistTitle": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+      "anilistUrl": "https://anilist.co/anime/201817"
     },
     {
       "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-8-2026-05-20t18-15-00-02-00",
@@ -4567,7 +4813,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-3f9ccd499c7ce154a09cd234fb435666.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
+      "anilistId": 194317,
+      "anilistTitle": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/194317"
     },
     {
       "id": "schedule-ganbare-nakamura-kun-9-2026-05-20t19-00-00-02-00",
@@ -4585,7 +4834,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganbare-nakamura-kun-be98d5c86e.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180228-MuZ7adbGiYVj.jpg",
+      "anilistId": 180228,
+      "anilistTitle": "Ganbare! Nakamura-kun!!",
+      "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
       "id": "schedule-koala-enikki-34-2026-05-21t13-01-00-02-00",
@@ -4601,7 +4853,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
+      "anilistId": 194389,
+      "anilistTitle": "Koala Enikki",
+      "anilistUrl": "https://anilist.co/anime/194389"
     },
     {
       "id": "schedule-himekishi-wa-barbaroi-no-yome-7-2026-05-21t14-31-00-02-00",
@@ -4619,7 +4874,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
+      "anilistId": 182483,
+      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
+      "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
       "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
@@ -4635,7 +4893,10 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
@@ -4654,7 +4915,10 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
@@ -4672,7 +4936,10 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-8-2026-05-21t17-30-00-02-00",
@@ -4690,7 +4957,10 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
+      "anilistId": 186497,
+      "anilistTitle": "Koori no Jouheki",
+      "anilistUrl": "https://anilist.co/anime/186497"
     },
     {
       "id": "schedule-kirio-fanclub-8-2026-05-21t18-00-00-02-00",
@@ -4857,7 +5127,7 @@
       "episode": "Ep 7",
       "episodeNumber": "7",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-22T15:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
@@ -4867,24 +5137,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-22T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
@@ -4903,6 +5155,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-22T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-9-2026-05-22t18-01-00-02-00",
@@ -4966,7 +5236,7 @@
       "episode": "Ep 7",
       "episodeNumber": "7",
       "airType": "SUB",
-      "delayed": true,
+      "delayed": false,
       "releaseDate": "2026-05-23T09:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
@@ -5085,6 +5355,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5101,22 +5387,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -5284,22 +5554,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-24T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-7-2026-05-24t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -5318,6 +5572,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-24T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-8-2026-05-24t11-00-00-02-00",
