@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=30" />
+  <link rel="stylesheet" href="./styles.css?v=54" />
 </head>
 <body>
   <main class="app">
@@ -63,6 +63,9 @@
         <label>Zona horaria
           <select id="timezoneInput"></select>
         </label>
+        <label>País (verificar plataformas)
+          <select id="countryInput"></select>
+        </label>
 
         <div class="toggle-row">
           <span>Modo claro</span>
@@ -74,6 +77,10 @@
         </div>
 
         <hr />
+        <p class="settings-filter-label">Mis suscripciones</p>
+        <div id="platformFilterContainer" class="platform-filter-settings"></div>
+
+        <hr />
         <div class="toggle-row">
           <span id="notificationLabel">Activar notificación</span>
           <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false" aria-labelledby="notificationLabel"></button>
@@ -82,7 +89,7 @@
       </section>
     </div>
   </main>
-  <script src="./config.js?v=30"></script>
-  <script src="./app.js?v=30"></script>
+  <script src="./config.js?v=54"></script>
+  <script src="./app.js?v=54"></script>
 </body>
 </html>
