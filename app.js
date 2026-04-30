@@ -767,7 +767,7 @@ function enrichScheduleItem(item) {
 }
 
 async function fetchAnilistLibrary(username) {
-  const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress score media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } } }`;
+  const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress score media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } } }`;
   const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { userName: username } }) });
   if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
   const json = await response.json();
@@ -800,7 +800,7 @@ async function fetchAnilistLibrary(username) {
       coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
       anilistId: media.id,
       anilistUrl: media.siteUrl || "",
-      anilistScore: normalizeAnilistScore(entry.score),
+      anilistScore: normalizeAnilistScore(entry.score, media.averageScore, media.meanScore),
       totalEpisodes: media.episodes || null,
       customUrl: "",
       customPlatformName: ""
@@ -808,8 +808,8 @@ async function fetchAnilistLibrary(username) {
   });
 }
 
-function normalizeAnilistScore(score) {
-  const value = Number(score);
+function normalizeAnilistScore(...scores) {
+  const value = scores.map(Number).find((score) => Number.isFinite(score) && score > 0);
   return Number.isFinite(value) && value > 0 ? value : null;
 }
 
