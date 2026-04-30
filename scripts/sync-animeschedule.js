@@ -66,31 +66,34 @@ async function applyAnilistCorrections(releases) {
     for (const release of group) {
       const next = media?.nextAiringEpisode;
       const releaseEpisode = parseEpisodeNumber(release.episodeNumber || release.episode);
-      if (!next?.airingAt || !Number.isFinite(releaseEpisode) || releaseEpisode !== Number(next.episode)) {
+      const nextEpisode = Number(next?.episode);
+      const strongTitleMatch = media ? getAnilistReleaseMatchScore(release, media) >= 0.9 : false;
+      const releaseTime = Date.parse(release.releaseDate);
+      const nextTime = Date.parse(next?.airingAt ? new Date(next.airingAt * 1000).toISOString() : "");
+      const canCorrectEpisode = Number.isFinite(releaseEpisode) && Number.isFinite(nextEpisode) &&
+        releaseEpisode === 1 && nextEpisode > 1 && strongTitleMatch;
+      const canCorrectDelayDay = Number.isFinite(releaseEpisode) && releaseEpisode === nextEpisode &&
+        Number.isFinite(releaseTime) && Number.isFinite(nextTime) && isLaterCalendarDay(nextTime, releaseTime);
+      if (!media || (!canCorrectEpisode && !canCorrectDelayDay && !media.id)) {
         out.push(release);
         continue;
       }
 
-      const anilistDate = new Date(next.airingAt * 1000).toISOString();
-      const currentTime = Date.parse(release.releaseDate);
-      const anilistTime = Date.parse(anilistDate);
-      if (!Number.isFinite(currentTime) || !Number.isFinite(anilistTime) || Math.abs(anilistTime - currentTime) < 5 * 60 * 1000) {
-        out.push(release);
-        continue;
-      }
-
-      const delayedByDate = isLaterCalendarDay(anilistTime, currentTime);
       corrected++;
       out.push({
         ...release,
-        releaseDate: anilistDate,
-        delayed: delayedByDate,
+        ...(canCorrectEpisode ? { episode: `Ep ${nextEpisode}`, episodeNumber: String(nextEpisode) } : {}),
+        ...(canCorrectDelayDay ? {
+          releaseDate: replaceCalendarDayKeepTime(releaseTime, nextTime),
+          delayed: true,
+          originalReleaseDate: release.originalReleaseDate || release.releaseDate,
+          anilistDayCorrection: true
+        } : {}),
         anilistId: media.id,
         anilistTitle: media.title?.romaji || media.title?.english || release.title,
         anilistUrl: media.siteUrl || "",
         coverUrl: media.coverImage?.large || media.coverImage?.medium || release.coverUrl,
-        correctedByAniList: true,
-        originalReleaseDate: delayedByDate ? (release.originalReleaseDate || release.releaseDate) : (release.originalReleaseDate || "")
+        correctedByAniList: (canCorrectEpisode || canCorrectDelayDay) || undefined
       });
     }
   }
@@ -123,6 +126,19 @@ async function findAnilistMedia(release) {
   }
 
   return bestScore >= 0.62 ? best : null;
+}
+
+function getAnilistReleaseMatchScore(release, media) {
+  const releaseTitles = [release.title, release.route, release.animeKey].filter(Boolean);
+  const mediaTitles = [
+    media.title?.romaji,
+    media.title?.english,
+    media.title?.native,
+    ...(media.synonyms || [])
+  ].filter(Boolean);
+  let best = 0;
+  for (const left of releaseTitles) for (const right of mediaTitles) best = Math.max(best, titleSimilarityScore(left, right));
+  return best;
 }
 
 async function searchAnilist(search) {
@@ -288,6 +304,40 @@ function isLaterCalendarDay(actualTime, plannedTime) {
   const actualDay = getCalendarDayKey(actualTime);
   const plannedDay = getCalendarDayKey(plannedTime);
   return Boolean(actualDay && plannedDay && actualDay > plannedDay);
+}
+
+function replaceCalendarDayKeepTime(timeToKeep, daySourceTime) {
+  const timeZone = "Europe/Madrid";
+  const dayParts = getDateTimePartsInZone(new Date(daySourceTime), timeZone);
+  const timeParts = getDateTimePartsInZone(new Date(timeToKeep), timeZone);
+  const localIso = `${dayParts.year}-${dayParts.month}-${dayParts.day}T${timeParts.hour}:${timeParts.minute}:${timeParts.second}`;
+  return zonedLocalIsoToUtcIso(localIso, timeZone);
+}
+
+function getDateTimePartsInZone(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).formatToParts(date);
+  const get = (type) => parts.find((p) => p.type === type)?.value || "00";
+  return { year: get("year"), month: get("month"), day: get("day"), hour: get("hour"), minute: get("minute"), second: get("second") };
+}
+
+function zonedLocalIsoToUtcIso(localIso, timeZone) {
+  let guess = new Date(`${localIso}Z`).getTime();
+  for (let i = 0; i < 3; i++) {
+    const parts = getDateTimePartsInZone(new Date(guess), timeZone);
+    const asUtc = Date.parse(`${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}Z`);
+    const target = Date.parse(`${localIso}Z`);
+    guess += target - asUtc;
+  }
+  return new Date(guess).toISOString();
 }
 
 function buildCoverUrl(item) {

@@ -86,7 +86,7 @@ const QUARTER_HOUR_MS = 15 * 60 * 1000;
 const ANILIST_REFRESH_MS = 60 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 6 * 60 * 60 * 1000;
 const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
-const JUSTWATCH_SEARCH_LIMIT = 60;
+const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
   "Prime Video": 4, "Netflix": 5, "Disney+": 6,
@@ -233,7 +233,7 @@ function populateTimezoneOptions() {
 async function loadState() {
   const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastPublicAnilistSync","theme"]);
   state.releases = (data.releases || []).map(sanitizePlatformFields);
-  state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields);
+  state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
   state.customLinks = data.customLinks || {};
   state.customPlatforms = data.customPlatforms || {};
@@ -380,13 +380,16 @@ async function saveJwCountry() {
   showStatus(`Verificando plataformas para ${name}...`, "success");
   await verifyPlatformsWithJustWatch();
   applyCustomToReleases();
-  await browserApi.storage.local.set({ releases: state.releases });
+  await saveAllLists();
   render();
   showStatus(`Plataformas actualizadas para ${name}.`, "success");
 }
 
 function getDetectedPlatforms() {
   const platforms = new Set();
+  for (const platform of Object.keys(SERVICE_PRIORITY)) {
+    if (platform !== "No legal platform") platforms.add(platform);
+  }
   for (const item of [...state.releases, ...state.anilistLibrary]) {
     const svc = getDisplayService(item);
     if (svc && svc !== "No legal platform") platforms.add(svc);
@@ -565,11 +568,13 @@ async function maybeRefreshAnilist({ silent = true } = {}) {
 
 async function refreshAnilistData(username) {
   const library = await fetchAnilistLibrary(username);
-  state.anilistLibrary = library.map((item) => applyCustom(item));
+  state.anilistLibrary = library.map(stripAnilistOnlyTiming).map((item) => applyCustom(item));
   state.anilistMap = buildAnilistMap(library);
   state.lastAnilistSync = new Date().toISOString();
   clearStaleAnilistFavorites();
   applyAnilistToReleases();
+  reconcileAnilistFavoritesWithSchedule();
+  await verifyPlatformsWithJustWatch();
   applyCustomToReleases();
   await browserApi.storage.local.set({
     anilistUsername: username,
@@ -652,9 +657,11 @@ async function refreshSharedSchedule({ silent = false } = {}) {
     const localOnly = state.releases.filter((item) => item.source !== "animeschedule-api" && !String(item.source || "").startsWith("shared-json"));
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
+    reconcileAnilistFavoritesWithSchedule();
+    await verifyPlatformsWithJustWatch();
     applyCustomToReleases();
     state.lastSharedSync = new Date().toISOString();
-    await browserApi.storage.local.set({ releases: state.releases, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
+    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
     renderPreview(imported);
     render();
     checkReleaseNotifications();
@@ -688,7 +695,7 @@ async function fetchSharedSchedule() {
   const json = await response.json();
   const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
   return rows.filter((row) => {
-    const releaseDate = row.releaseDate || row.release_date || "";
+    const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt) || releaseAt > until.getTime()) return false;
     return releaseAt >= now.getTime() || isToday(releaseDate);
@@ -696,7 +703,7 @@ async function fetchSharedSchedule() {
 }
 
 function mapSharedRelease(row) {
-  const releaseDate = row.release_date || row.releaseDate;
+  const releaseDate = getSharedSubReleaseDate(row);
   const title = row.title || "Sin titulo";
   const episodeNumber = row.episode_number ?? row.episodeNumber ?? "?";
   return sanitizePlatformFields({
@@ -929,12 +936,22 @@ function sanitizePlatformFields(item) {
   };
 }
 
+function stripAnilistOnlyTiming(item) {
+  if (item.source !== "anilist-library") return item;
+  return {
+    ...item,
+    releaseDate: "",
+    delayed: false,
+    anilistAiringDate: item.anilistAiringDate || item.releaseDate || ""
+  };
+}
+
 async function verifyPlatformsWithJustWatch() {
   const countryEntry = JUSTWATCH_COUNTRIES.find((c) => c.code === state.jwCountry) || JUSTWATCH_COUNTRIES[0];
-  const candidates = getOneNextPerSeries([...state.releases, ...state.anilistLibrary])
+  const candidates = getOneNextPerSeries(state.releases)
     .filter((item) => {
       const service = item.service || "No legal platform";
-      return service !== "Crunchyroll" && service !== "No legal platform";
+      return service !== "Crunchyroll";
     })
     .slice(0, JUSTWATCH_SEARCH_LIMIT);
   const cache = new Map();
@@ -1039,7 +1056,7 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
   const applyTo = (item) => {
     if (getSeriesKey(item) !== seriesKey) return item;
     const currentService = item.service || "No legal platform";
-    if (currentService === "Crunchyroll" || currentService === "No legal platform") return item;
+    if (currentService === "Crunchyroll") return item;
     if (!availability) {
       return {
         ...item,
@@ -1105,6 +1122,37 @@ function isLaterCalendarDay(actualTime, plannedTime) {
   const plannedDay = getCalendarDayKey(plannedTime);
   return Boolean(actualDay && plannedDay && actualDay > plannedDay);
 }
+function replaceCalendarDayKeepTime(timeToKeep, daySourceTime) {
+  const tz = getSelectedTimezone();
+  const dayParts = getDateTimePartsInZone(new Date(daySourceTime), tz);
+  const timeParts = getDateTimePartsInZone(new Date(timeToKeep), tz);
+  const localIso = `${dayParts.year}-${dayParts.month}-${dayParts.day}T${timeParts.hour}:${timeParts.minute}:${timeParts.second}`;
+  return zonedLocalIsoToUtcIso(localIso, tz);
+}
+function getDateTimePartsInZone(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).formatToParts(date);
+  const get = (type) => parts.find((p) => p.type === type)?.value || "00";
+  return { year: get("year"), month: get("month"), day: get("day"), hour: get("hour"), minute: get("minute"), second: get("second") };
+}
+function zonedLocalIsoToUtcIso(localIso, timeZone) {
+  let guess = new Date(`${localIso}Z`).getTime();
+  for (let i = 0; i < 3; i++) {
+    const parts = getDateTimePartsInZone(new Date(guess), timeZone);
+    const asUtc = Date.parse(`${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}Z`);
+    const target = Date.parse(`${localIso}Z`);
+    guess += target - asUtc;
+  }
+  return new Date(guess).toISOString();
+}
 function buildCoverUrl(item) { const direct = [item.image, item.imageUrl, item.coverUrl, item.poster, item.posterUrl, item.coverImage, item.thumbnail, item.thumbnailUrl].filter(Boolean).map(normalizeUrl).find(Boolean); if (direct) return direct; const route = String(item.imageVersionRoute || "").trim(); return route ? `${IMAGE_BASE}${route}` : ""; }
 
 function enrichScheduleItem(item) {
@@ -1155,7 +1203,8 @@ async function fetchAnilistLibrary(username) {
       episodeNumber: media.nextAiringEpisode.episode,
       airType: "SUB",
       delayed: false,
-      releaseDate: new Date(media.nextAiringEpisode.airingAt * 1000).toISOString(),
+      releaseDate: "",
+      anilistAiringDate: new Date(media.nextAiringEpisode.airingAt * 1000).toISOString(),
       service: best?.service || "No legal platform",
       serviceUrl: best?.url || "",
       allServices: streams.map((stream) => stream.service),
@@ -1189,7 +1238,6 @@ async function enrichReleasesFromPublicAnilist() {
 
 async function enrichMissingScoresBySearch() {
   const candidates = getOneNextPerSeries(state.releases)
-    .filter((item) => !item.anilistScore)
     .slice(0, PUBLIC_ANILIST_SEARCH_LIMIT);
   const cache = new Map();
 
@@ -1288,20 +1336,52 @@ function mapPublicAnilistMedia(media) {
 function applyPublicAnilistDataToSeries(seriesKey, media) {
   if (!media) return;
   for (const titleKey of buildTitleKeys(media.titles || [media.title])) state.anilistMap[titleKey] = media;
-  state.releases = state.releases.map((item) => getSeriesKey(item) === seriesKey ? {
-    ...item,
-    anilistId: media.anilistId || item.anilistId,
-    anilistTitle: media.title || item.anilistTitle,
-    anilistUrl: media.siteUrl || item.anilistUrl,
-    anilistScore: media.anilistScore ?? item.anilistScore,
-    coverUrl: media.coverUrl || item.coverUrl,
-    ...(media.hasAllowedPlatform ? {
-      service: media.service,
-      serviceUrl: (item.serviceUrl && item.service === media.service) ? item.serviceUrl : (media.serviceUrl || ""),
-      allServices: media.allServices || [media.service],
-      hasAllowedPlatform: true
-    } : {})
-  } : item);
+  state.releases = state.releases.map((item) => {
+    if (getSeriesKey(item) !== seriesKey) return item;
+    const timing = getPublicAnilistTimingCorrection(item, media);
+    return {
+      ...item,
+      ...timing,
+      anilistId: media.anilistId || item.anilistId,
+      anilistTitle: media.title || item.anilistTitle,
+      anilistUrl: media.siteUrl || item.anilistUrl,
+      anilistScore: media.anilistScore ?? item.anilistScore,
+      coverUrl: media.coverUrl || item.coverUrl,
+      ...(media.hasAllowedPlatform ? {
+        service: media.service,
+        serviceUrl: (item.serviceUrl && item.service === media.service) ? item.serviceUrl : (media.serviceUrl || ""),
+        allServices: media.allServices || [media.service],
+        hasAllowedPlatform: true
+      } : {})
+    };
+  });
+}
+
+function getSharedSubReleaseDate(row) {
+  const original = row.originalReleaseDate || row.original_release_date || "";
+  if (row.correctedByAniList && original && !row.anilistDayCorrection) return original;
+  return row.release_date || row.releaseDate || "";
+}
+
+function getPublicAnilistTimingCorrection(item, media) {
+  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const mediaEpisode = parseEpisodeNumber(media.episodeNumber ?? media.episode);
+  const mediaTime = Date.parse(media.releaseDate || "");
+  if (!Number.isFinite(mediaEpisode) || !Number.isFinite(mediaTime)) return {};
+  const itemTime = Date.parse(item.releaseDate || "");
+  if (!Number.isFinite(itemTime)) return {};
+  const sameEpisode = Number.isFinite(itemEpisode) && itemEpisode === mediaEpisode;
+  const suspiciousPremiere = Number.isFinite(itemEpisode) && itemEpisode === 1 && mediaEpisode > 1 && getSeriesMatchScore(item, media) >= 0.9;
+  if (!sameEpisode && !suspiciousPremiere) return {};
+  const movedToLaterDay = isLaterCalendarDay(mediaTime, itemTime);
+  const correctedDate = movedToLaterDay ? replaceCalendarDayKeepTime(itemTime, mediaTime) : item.releaseDate;
+  return {
+    ...(suspiciousPremiere ? { episode: media.episode || `Ep ${mediaEpisode}`, episodeNumber: media.episodeNumber ?? mediaEpisode } : {}),
+    releaseDate: correctedDate,
+    delayed: movedToLaterDay || Boolean(item.delayed),
+    originalReleaseDate: movedToLaterDay ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
+    anilistDayCorrection: movedToLaterDay || Boolean(item.anilistDayCorrection)
+  };
 }
 
 function getAnilistStreams(media) {
@@ -1346,6 +1426,33 @@ function clearStaleAnilistFavorites() {
   });
 }
 
+function reconcileAnilistFavoritesWithSchedule() {
+  if (!state.anilistLibrary.length || !state.releases.length) return;
+  state.releases = state.releases.map((release) => {
+    const match = findAnilistScheduleOwner(release);
+    if (!match) return release;
+    return {
+      ...release,
+      favorite: true,
+      anilistId: match.anilistId || release.anilistId,
+      anilistTitle: match.title || release.anilistTitle,
+      anilistUrl: match.anilistUrl || release.anilistUrl,
+      anilistScore: match.anilistScore ?? release.anilistScore,
+      coverUrl: match.coverUrl || release.coverUrl
+    };
+  });
+}
+
+function findAnilistScheduleOwner(release) {
+  let best = null, bestScore = 0;
+  for (const anime of state.anilistLibrary) {
+    if (anime.anilistId && release.anilistId && String(anime.anilistId) === String(release.anilistId)) return anime;
+    const score = getSeriesMatchScore(release, anime);
+    if (score > bestScore) { bestScore = score; best = anime; }
+  }
+  return bestScore >= 0.78 ? best : null;
+}
+
 function findAnilistMatch(item) {
   if (item.anilistId) {
     const byId = Object.values(state.anilistMap).find((data) => String(data.anilistId) === String(item.anilistId));
@@ -1379,7 +1486,7 @@ function getAnilistOverride(item, match) {
   const itemTime = Date.parse(item.releaseDate || "");
   const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
   const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
-  const canOverrideTiming = item.source === "anilist-library" || (Number.isFinite(itemEpisode) && Number.isFinite(matchEpisode) && itemEpisode === matchEpisode);
+  const canOverrideTiming = item.source === "anilist-library";
   const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList");
   const delayedByDate = canOverrideTiming && isLaterCalendarDay(nextTime, itemTime);
   const override = {
@@ -1405,6 +1512,7 @@ function getAnilistOverride(item, match) {
 }
 function getAnilistTimingOverride(item, match) {
   if (!match.releaseDate) return {};
+  if (item.source !== "anilist-library") return {};
   const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
   const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
   if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode)) return {};
@@ -1705,8 +1813,8 @@ function getDisplayService(item) {
     .sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50))[0];
   return fallback || "No legal platform";
 }
-function getFavoriteItems() { const scheduled = state.releases.filter(item => item.favorite); const scheduledKeys = new Set(scheduled.map(getSeriesKey)); const placeholders = state.anilistLibrary.filter(item => item.favorite && !scheduledKeys.has(getSeriesKey(item))).map(applyCustom); return mergeDuplicateItems([...scheduled, ...placeholders]); }
-function getCatalogItems() { return mergeDuplicateItems([...state.releases, ...state.anilistLibrary.map(applyCustom)]); }
+function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
+function getCatalogItems() { return mergeDuplicateItems(state.releases); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
@@ -1738,6 +1846,20 @@ function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episod
 function getAllItems() { return [...state.releases, ...state.anilistLibrary]; }
 function findItemById(id) { return getAllItems().find(item=>item.id===id); }
 function findItemByKey(key) { return getAllItems().find(item=>getAnimeKey(item)===key); }
+function hasScheduledSeriesMatch(item, scheduledItems = state.releases) {
+  return scheduledItems.some((release) => {
+    if (getSeriesKey(release) === getSeriesKey(item)) return true;
+    return getSeriesMatchScore(release, item) >= 0.78;
+  });
+}
+function getSeriesMatchScore(a, b) {
+  if (a.anilistId && b.anilistId && String(a.anilistId) === String(b.anilistId)) return 1;
+  const aTitles = [a.title, a.anilistTitle, a.route, a.animeKey, ...(a.titles || [])].filter(Boolean);
+  const bTitles = [b.title, b.anilistTitle, b.route, b.animeKey, ...(b.titles || [])].filter(Boolean);
+  let best = 0;
+  for (const left of aTitles) for (const right of bTitles) best = Math.max(best, titleSimilarityScore(left, right));
+  return best;
+}
 function getAnimeKey(item) { return stableId(item.animeKey || item.route || item.title); }
 function getSeriesKey(item) { return stableId(item.anilistId || item.anilistTitle || item.animeKey || item.route || normalizeTitle(item.title)); }
 function stableId(...parts) { return parts.filter(Boolean).join("-").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\p{L}\p{N}]+/gu,"-").replace(/(^-|-$)/g,""); }
