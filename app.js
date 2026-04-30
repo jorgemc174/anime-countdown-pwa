@@ -377,12 +377,10 @@ async function saveJwCountry() {
   state.jwCountry = code;
   await browserApi.storage.local.set({ jwCountry: code });
   const name = JUSTWATCH_COUNTRIES.find((c) => c.code === code)?.name || code;
-  showStatus(`Verificando plataformas para ${name}...`, "success");
-  await verifyPlatformsWithJustWatch();
   applyCustomToReleases();
   await saveAllLists();
   render();
-  showStatus(`Plataformas actualizadas para ${name}.`, "success");
+  showStatus(`País actualizado a ${name}.`, "success");
 }
 
 function getDetectedPlatforms() {
@@ -393,8 +391,7 @@ function getDetectedPlatforms() {
   for (const item of [...state.releases, ...state.anilistLibrary]) {
     const svc = getDisplayService(item);
     if (svc && svc !== "No legal platform") platforms.add(svc);
-    const services = item.jwVerified && item.jwCountry === state.jwCountry ? item.allServices || [] : [];
-    for (const s of services) {
+    for (const s of (item.allServices || [])) {
       if (s && s !== "No legal platform") platforms.add(s);
     }
   }
@@ -574,7 +571,6 @@ async function refreshAnilistData(username) {
   clearStaleAnilistFavorites();
   applyAnilistToReleases();
   reconcileAnilistFavoritesWithSchedule();
-  await verifyPlatformsWithJustWatch();
   applyCustomToReleases();
   await browserApi.storage.local.set({
     anilistUsername: username,
@@ -589,7 +585,6 @@ async function refreshAnilistData(username) {
 async function refreshPublicAnilistData() {
   await enrichReleasesFromPublicAnilist();
   applyAnilistToReleases();
-  await verifyPlatformsWithJustWatch();
   applyCustomToReleases();
   state.lastPublicAnilistSync = new Date().toISOString();
   await browserApi.storage.local.set({
@@ -658,7 +653,7 @@ async function refreshSharedSchedule({ silent = false } = {}) {
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     reconcileAnilistFavoritesWithSchedule();
-    await verifyPlatformsWithJustWatch();
+    await refreshPublicAnilistData();
     applyCustomToReleases();
     state.lastSharedSync = new Date().toISOString();
     await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
@@ -1250,7 +1245,7 @@ async function enrichMissingScoresBySearch() {
 }
 
 async function fetchPublicAnilistSearchMatch(item) {
-  const query = `query ($search: String) { Media(search: $search, type: ANIME) { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } }`;
+  const query = `query ($search: String) { Media(search: $search, type: ANIME) { id title { romaji english native } synonyms format coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } }`;
   const search = item.anilistTitle || item.title;
   try {
     const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { search } }) });
@@ -1286,7 +1281,7 @@ async function fetchPublicAnilistCatalog() {
 }
 
 async function fetchAnilistSeasonPage({ season, year }, page) {
-  const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC) { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
+  const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC) { id title { romaji english native } synonyms format coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
   const variables = { page, season: String(season || "").toUpperCase(), year };
   const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables }) });
   if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
@@ -1322,6 +1317,7 @@ function mapPublicAnilistMedia(media) {
     titles,
     coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
     siteUrl: media.siteUrl || "",
+    anilistFormat: media.format || "",
     anilistScore: normalizeAnilistScore(media.averageScore, media.meanScore),
     episode: media.nextAiringEpisode?.episode ? `Ep ${media.nextAiringEpisode.episode}` : "",
     episodeNumber: media.nextAiringEpisode?.episode || null,
@@ -1345,7 +1341,9 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
       anilistId: media.anilistId || item.anilistId,
       anilistTitle: media.title || item.anilistTitle,
       anilistUrl: media.siteUrl || item.anilistUrl,
+      anilistFormat: media.anilistFormat || item.anilistFormat,
       anilistScore: media.anilistScore ?? item.anilistScore,
+      excludeFromSchedule: item.excludeFromSchedule || (String(media.anilistFormat || "").toUpperCase() === "MOVIE" && parseEpisodeNumber(item.episodeNumber ?? item.episode) === 1),
       coverUrl: media.coverUrl || item.coverUrl,
       ...(media.hasAllowedPlatform ? {
         service: media.service,
@@ -1800,13 +1798,10 @@ function scheduleMidnightRefresh() {
   }
 }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return sortByDate(getFavoriteItems().filter(item => isToday(item.releaseDate))); return getOneNextPerSeries(getCatalogItems()); }
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return sortByDate(getFavoriteItems().filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); return getOneNextPerSeries(getCatalogItems()); }
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
-  if (item.customPlatformName && item.customUrl && !state.hiddenPlatforms.includes(service)) return service;
-  if (service === "Crunchyroll" && !state.hiddenPlatforms.includes(service)) return service;
-  if (!item.jwVerified || item.jwCountry !== state.jwCountry) return "No legal platform";
   if (!state.hiddenPlatforms.includes(service)) return service;
   const fallback = (item.allServices || [])
     .filter((s) => s && s !== "No legal platform" && !state.hiddenPlatforms.includes(s))
@@ -1815,9 +1810,9 @@ function getDisplayService(item) {
 }
 function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
 function getCatalogItems() { return mergeDuplicateItems(state.releases); }
-function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
-function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
+function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
 function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(getDisplayService(item))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
 function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Próximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
@@ -1843,6 +1838,14 @@ function mergeItem(win, lose={}) { return { ...win, favorite:Boolean(win.favorit
 function scoreItem(item) { let s=0; if(item.customUrl)s+=100; if(item.serviceUrl)s+=85; if(item.service==="Crunchyroll")s+=80; if(item.service==="Netflix")s+=60; if(item.service==="Prime Video")s+=50; if(item.source==="animeschedule-api")s+=40; if(item.coverUrl)s+=10; if(item.favorite)s+=5; if(item.source==="anilist-library")s-=20; return s; }
 function sortByDate(items) { return [...items].sort((a,b)=>new Date(a.releaseDate||"9999-12-31")-new Date(b.releaseDate||"9999-12-31")); }
 function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
+function isSchedulableItem(item) {
+  if (item.excludeFromSchedule) return false;
+  const ep = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const haystack = `${item.title || ""} ${item.route || ""} ${item.animeKey || ""} ${item.anilistFormat || ""}`.toLowerCase();
+  if (Number.isFinite(ep) && ep === 1 && (haystack.includes("movie") || haystack.includes("gekijouban") || haystack.includes("film"))) return false;
+  if (Number.isFinite(ep) && ep === 1 && String(item.anilistFormat || "").toUpperCase() === "MOVIE") return false;
+  return true;
+}
 function getAllItems() { return [...state.releases, ...state.anilistLibrary]; }
 function findItemById(id) { return getAllItems().find(item=>item.id===id); }
 function findItemByKey(key) { return getAllItems().find(item=>getAnimeKey(item)===key); }

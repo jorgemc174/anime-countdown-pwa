@@ -68,6 +68,10 @@ async function applyAnilistCorrections(releases) {
       const releaseEpisode = parseEpisodeNumber(release.episodeNumber || release.episode);
       const nextEpisode = Number(next?.episode);
       const strongTitleMatch = media ? getAnilistReleaseMatchScore(release, media) >= 0.9 : false;
+      if (String(media?.format || "").toUpperCase() === "MOVIE" && releaseEpisode === 1 && strongTitleMatch) {
+        corrected++;
+        continue;
+      }
       const releaseTime = Date.parse(release.releaseDate);
       const nextTime = Date.parse(next?.airingAt ? new Date(next.airingAt * 1000).toISOString() : "");
       const canCorrectEpisode = Number.isFinite(releaseEpisode) && Number.isFinite(nextEpisode) &&
@@ -148,6 +152,7 @@ async function searchAnilist(search) {
         id
         title { romaji english native }
         synonyms
+        format
         coverImage { large medium }
         siteUrl
         nextAiringEpisode { episode airingAt }
