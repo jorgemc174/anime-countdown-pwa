@@ -72,6 +72,13 @@ html.light .badge-score {
   background: rgba(240, 148, 58, 0.18);
 }
 
+html.light .score-pill {
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.64);
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
 .toggle-row {
   display: flex;
   align-items: center;
@@ -582,6 +589,23 @@ h3 {
   border-radius: var(--radius);
 }
 
+.cover-stack {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.next-cover-stack {
+  width: 98px;
+}
+
+.cover-stack .score-pill {
+  justify-content: center;
+  width: 100%;
+}
+
 .card-main {
   display: flex;
   min-width: 0;
@@ -594,12 +618,59 @@ h3 {
   gap: 8px;
 }
 
+.card-heading {
+  min-width: 0;
+}
+
+.meta-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.meta-line .meta,
+.meta-line .next-meta {
+  margin-top: 4px;
+}
+
 .anime-title {
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 820;
   line-height: 1.2;
   overflow-wrap: anywhere;
+}
+
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 4px;
+  min-height: 20px;
+  padding: 3px 6px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.score-source {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.score-value {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .anime-episode {
@@ -922,6 +993,10 @@ select {
   .next-cover {
     width: 76px;
     height: 110px;
+  }
+
+  .next-cover-stack {
+    width: 76px;
   }
 
   .next-label {
