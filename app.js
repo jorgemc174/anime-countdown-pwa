@@ -583,7 +583,7 @@ async function refreshAnilistData(username) {
 }
 
 async function refreshPublicAnilistData() {
-  await enrichReleasesFromPublicAnilist();
+  try { await enrichReleasesFromPublicAnilist(); } catch (e) { console.warn("AniList público no disponible:", e.message); }
   applyAnilistToReleases();
   applyCustomToReleases();
   state.lastPublicAnilistSync = new Date().toISOString();
@@ -971,9 +971,9 @@ async function fetchJustWatchAvailabilityWithFallback(item, countryCode, languag
 
   for (const query of queries) {
     const result = await fetchJustWatchAvailability(item, countryCode, language, query);
-    if (result.verified) return result;
+    if (result.matched) return result;
   }
-  return { verified: false };
+  return { matched: false };
 }
 
 async function fetchJustWatchAvailability(item, countryCode = "ES", language = "es", searchQuery = "") {
