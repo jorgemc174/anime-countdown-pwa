@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-30T16:50:46.898Z",
+  "updatedAt": "2026-05-01T04:32:39.416Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -508,25 +508,6 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
-      "id": "schedule-koala-enikki-31-2026-04-30t13-01-00-02-00",
-      "animeKey": "koala-enikki",
-      "title": "Koala Enikki",
-      "route": "koala-enikki",
-      "episode": "Ep 31",
-      "episodeNumber": "31",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-30T11:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
-      "anilistId": 194389,
-      "anilistTitle": "Koala Enikki",
-      "anilistUrl": "https://anilist.co/anime/194389"
-    },
-    {
       "id": "schedule-himekishi-wa-barbaroi-no-yome-4-2026-04-30t14-31-00-02-00",
       "animeKey": "himekishi-wa-barbaroi-no-yome",
       "title": "Himekishi wa Barbaroi no Yome",
@@ -567,6 +548,27 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-4-2026-04-30t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-04-30T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-5-2026-04-30t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -587,27 +589,6 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-4-2026-04-30t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-30T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-5-2026-04-30t17-30-00-02-00",
@@ -823,24 +804,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-snowball-earth-5-2026-05-01t17-30-00-02-00",
-      "animeKey": "snowball-earth",
-      "title": "Snowball Earth",
-      "route": "snowball-earth",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-01T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
       "id": "schedule-kami-no-shizuku-4-2026-05-01t17-30-00-02-00",
       "animeKey": "kami-no-shizuku",
       "title": "Kami no Shizuku",
@@ -857,6 +820,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
+      "id": "schedule-snowball-earth-5-2026-05-01t17-30-00-02-00",
+      "animeKey": "snowball-earth",
+      "title": "Snowball Earth",
+      "route": "snowball-earth",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-01T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-6-2026-05-01t18-01-00-02-00",
@@ -1039,22 +1020,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-5-2026-05-02t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-5-2026-05-02t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1071,6 +1036,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-5-2026-05-02t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-5-2026-05-02t18-01-00-02-00",
@@ -1238,22 +1219,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-03T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-4-2026-05-03t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -1272,6 +1237,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-03T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-5-2026-05-03t11-00-00-02-00",
@@ -1952,6 +1933,28 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
+      "id": "schedule-koala-enikki-31-2026-04-30t13-01-00-02-00",
+      "animeKey": "koala-enikki",
+      "title": "Koala Enikki",
+      "route": "koala-enikki",
+      "episode": "Ep 31",
+      "episodeNumber": "31",
+      "airType": "SUB",
+      "delayed": true,
+      "releaseDate": "2026-05-07T11:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194389-DAbj4TOj5GB9.png",
+      "originalReleaseDate": "2026-04-30T11:01:00.000Z",
+      "anilistDayCorrection": true,
+      "anilistId": 194389,
+      "anilistTitle": "Koala Enikki",
+      "anilistUrl": "https://anilist.co/anime/194389",
+      "correctedByAniList": true
+    },
+    {
       "id": "schedule-koala-enikki-32-2026-05-07t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -2011,6 +2014,27 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-07T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -2031,27 +2055,6 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-07T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-6-2026-05-07t17-30-00-02-00",
@@ -2251,24 +2254,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-snowball-earth-6-2026-05-08t17-30-00-02-00",
-      "animeKey": "snowball-earth",
-      "title": "Snowball Earth",
-      "route": "snowball-earth",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-08T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
       "id": "schedule-kami-no-shizuku-5-2026-05-08t17-30-00-02-00",
       "animeKey": "kami-no-shizuku",
       "title": "Kami no Shizuku",
@@ -2285,6 +2270,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
+      "id": "schedule-snowball-earth-6-2026-05-08t17-30-00-02-00",
+      "animeKey": "snowball-earth",
+      "title": "Snowball Earth",
+      "route": "snowball-earth",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-08T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-7-2026-05-08t18-01-00-02-00",
@@ -2467,22 +2470,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2499,6 +2486,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-6-2026-05-09t18-01-00-02-00",
@@ -2682,22 +2685,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meikyuu-no-shiori-5bcce6727a.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-10T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-5-2026-05-10t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2716,6 +2703,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-10T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-6-2026-05-10t11-00-00-02-00",
@@ -3455,6 +3458,27 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-14T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -3475,27 +3499,6 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-14T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-7-2026-05-14t17-30-00-02-00",
@@ -3711,24 +3714,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-snowball-earth-7-2026-05-15t17-30-00-02-00",
-      "animeKey": "snowball-earth",
-      "title": "Snowball Earth",
-      "route": "snowball-earth",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-15T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
       "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
       "animeKey": "kami-no-shizuku",
       "title": "Kami no Shizuku",
@@ -3745,6 +3730,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
+      "id": "schedule-snowball-earth-7-2026-05-15t17-30-00-02-00",
+      "animeKey": "snowball-earth",
+      "title": "Snowball Earth",
+      "route": "snowball-earth",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-15T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-8-2026-05-15t18-01-00-02-00",
@@ -3927,22 +3930,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -3959,6 +3946,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-7-2026-05-16t18-01-00-02-00",
@@ -4126,22 +4129,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-17T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-6-2026-05-17t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -4160,6 +4147,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-17T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-7-2026-05-17t11-00-00-02-00",
@@ -4899,6 +4902,27 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -4919,27 +4943,6 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-8-2026-05-21t17-30-00-02-00",
@@ -5139,24 +5142,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
-      "animeKey": "snowball-earth",
-      "title": "Snowball Earth",
-      "route": "snowball-earth",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-22T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
       "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
       "animeKey": "kami-no-shizuku",
       "title": "Kami no Shizuku",
@@ -5173,6 +5158,24 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
+      "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
+      "animeKey": "snowball-earth",
+      "title": "Snowball Earth",
+      "route": "snowball-earth",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-22T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-9-2026-05-22t18-01-00-02-00",
@@ -5355,22 +5358,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5387,6 +5374,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -5554,22 +5557,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-24T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-7-2026-05-24t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -5588,6 +5575,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-24T08:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-8-2026-05-24t11-00-00-02-00",
