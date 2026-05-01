@@ -299,7 +299,9 @@ function bindEvents() {
   els.themeBtn.addEventListener("click", toggleTheme);
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
+  els.nextRelease.addEventListener("auxclick", (e) => { if (e.button !== 1 || !state.currentNext) return; e.preventDefault(); const url = getBestWatchUrl(state.currentNext); if (url) window.open(url, "_blank", "noopener"); });
   els.animeList.addEventListener("click", handleListClick);
+  els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
 }
 
@@ -1638,6 +1640,17 @@ async function handleListClick(event) {
   if (action === "customLink") { await associatePlatform(actionEl.dataset.key); return; }
   if (action === "removeCustomLink") { await removePlatform(actionEl.dataset.key); return; }
   if (action === "delete") { state.releases = state.releases.filter(item => item.id !== id); await saveReleases(); render(); }
+}
+
+function handleListAuxClick(event) {
+  if (event.button !== 1) return;
+  const card = event.target.closest(".anime-card");
+  if (!card) return;
+  event.preventDefault();
+  const item = findItemById(card.dataset.id);
+  if (!item) return;
+  const url = getBestWatchUrl(item);
+  if (url) window.open(url, "_blank", "noopener");
 }
 
 async function toggleFavorite(key) {
