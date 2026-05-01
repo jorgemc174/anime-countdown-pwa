@@ -86,6 +86,7 @@ const QUARTER_HOUR_MS = 15 * 60 * 1000;
 const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 10 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
+const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
 const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
 const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
@@ -128,7 +129,6 @@ async function init() {
     bindElements();
     populateTimezoneOptions();
     await loadState();
-    await refreshSharedSchedule({ silent: true });
     bindEvents();
     registerServiceWorker();
     updateNotificationButton();
@@ -138,6 +138,7 @@ async function init() {
     startNotificationScheduler();
     startAnilistAutoRefresh();
     startPublicAnilistAutoRefresh();
+    await refreshSharedSchedule({ silent: true });
   } catch (error) {
     showFatal(error);
   }
@@ -653,6 +654,11 @@ function isSharedScheduleConfigured() {
 
 async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false } = {}) {
   if (!isSharedScheduleConfigured()) return false;
+
+  if (silent && state.releases.length > 0) {
+    const lastSync = Date.parse(state.lastSharedSync || "");
+    if (Number.isFinite(lastSync) && Date.now() - lastSync < SHARED_SCHEDULE_REFRESH_MS) return false;
+  }
 
   try {
     if (!silent) {
