@@ -299,8 +299,10 @@ function bindEvents() {
   els.themeBtn.addEventListener("click", toggleTheme);
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
+  els.nextRelease.addEventListener("mousedown", (e) => { if (e.button === 1) e.preventDefault(); });
   els.nextRelease.addEventListener("auxclick", (e) => { if (e.button !== 1 || !state.currentNext) return; e.preventDefault(); const url = getBestWatchUrl(state.currentNext); if (url) window.open(url, "_blank", "noopener"); });
   els.animeList.addEventListener("click", handleListClick);
+  els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
 }
