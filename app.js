@@ -1860,7 +1860,20 @@ function scheduleMidnightRefresh() {
   }
 }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()); if(state.viewMode==="today") return sortByDate(getFavoriteItems().filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); return getOneNextPerSeries(getCatalogItems()); }
+function adjustDelayedDates(items) {
+  const { year: cy, week: cw } = getIsoWeek(new Date());
+  return items.map(item => {
+    if (!item.delayed || !item.releaseDate) return item;
+    const d = new Date(item.releaseDate);
+    if (isNaN(d.getTime())) return item;
+    const { year, week } = getIsoWeek(d);
+    if (year !== cy || week !== cw) return item;
+    const shifted = new Date(d);
+    shifted.setUTCDate(shifted.getUTCDate() + 7);
+    return { ...item, releaseDate: shifted.toISOString() };
+  });
+}
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return sortByDate(adjustDelayedDates(getFavoriteItems()).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
@@ -1994,9 +2007,9 @@ function renderNextModern() {
 }
 
 function getNextHighlightItems() {
-  if (state.viewMode === "all") return getOneNextPerSeries(getCatalogItems());
-  if (state.viewMode === "today") return getRemainingTodayItems(getFavoriteItems());
-  return getOneNextPerSeries(getFavoriteItems());
+  if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
+  if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
+  return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
 }
 
 function renderListModern() {
