@@ -168,16 +168,20 @@ function bindElements() {
 
 function getUTCOffset(zone) {
   try {
-    const formatter = new Intl.DateTimeFormat("en-US", { timeZone: zone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
-    const parts = formatter.formatToParts(new Date());
-    const date = new Date();
-    const utcDate = new Date(date.toLocaleString("en-US", { timeZone: "UTC" }));
-    const tzDate = new Date(date.toLocaleString("en-US", { timeZone: zone }));
-    const offset = (utcDate - tzDate) / (1000 * 60 * 60);
-    const sign = offset <= 0 ? "+" : "-";
-    const absOffset = Math.abs(offset);
-    const hours = Math.floor(absOffset);
-    const minutes = Math.round((absOffset - hours) * 60);
+    const now = new Date();
+    const getMs = (tz) => {
+      const parts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+      }).formatToParts(now);
+      const get = (type) => Number(parts.find((p) => p.type === type)?.value || "0");
+      return Date.UTC(get("year"), get("month") - 1, get("day"), get("hour") % 24, get("minute"), get("second"));
+    };
+    const offsetMs = getMs(zone) - getMs("UTC");
+    const sign = offsetMs >= 0 ? "+" : "-";
+    const absMinutes = Math.round(Math.abs(offsetMs) / 60000);
+    const hours = Math.floor(absMinutes / 60);
+    const minutes = absMinutes % 60;
     return `${sign}${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
   } catch (e) {
     return "+00:00";
@@ -1414,14 +1418,14 @@ function getPublicAnilistTimingCorrection(item, media) {
   const sameEpisode = Number.isFinite(itemEpisode) && itemEpisode === mediaEpisode;
   const suspiciousPremiere = Number.isFinite(itemEpisode) && itemEpisode === 1 && mediaEpisode > 1 && getSeriesMatchScore(item, media) >= 0.9;
   if (!sameEpisode && !suspiciousPremiere) return {};
-  const movedToLaterDay = isLaterCalendarDay(mediaTime, itemTime);
-  const correctedDate = movedToLaterDay ? replaceCalendarDayKeepTime(itemTime, mediaTime) : item.releaseDate;
+  const changedCalendarDay = !isSameCalendarDay(mediaTime, itemTime);
+  const correctedDate = changedCalendarDay ? replaceCalendarDayKeepTime(itemTime, mediaTime) : item.releaseDate;
   return {
     ...(suspiciousPremiere ? { episode: media.episode || `Ep ${mediaEpisode}`, episodeNumber: media.episodeNumber ?? mediaEpisode } : {}),
     releaseDate: correctedDate,
-    delayed: movedToLaterDay || Boolean(item.delayed),
-    originalReleaseDate: movedToLaterDay ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
-    anilistDayCorrection: movedToLaterDay || Boolean(item.anilistDayCorrection)
+    delayed: changedCalendarDay || Boolean(item.delayed),
+    originalReleaseDate: changedCalendarDay ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
+    anilistDayCorrection: changedCalendarDay || Boolean(item.anilistDayCorrection)
   };
 }
 
@@ -1450,7 +1454,7 @@ function normalizeAnilistStream(site, url) {
 function buildAnilistMap(library) {
   const map = {};
   for (const anime of library) {
-    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, anilistScore: anime.anilistScore, episode: anime.episode, episodeNumber: anime.episodeNumber, releaseDate: anime.releaseDate, favorite: true, service: anime.service, serviceUrl: anime.serviceUrl, allServices: anime.allServices, hasAllowedPlatform: anime.hasAllowedPlatform };
+    const data = { anilistId: anime.anilistId, title: anime.title, titles: anime.titles || [anime.title], coverUrl: anime.coverUrl, siteUrl: anime.anilistUrl, anilistScore: anime.anilistScore, episode: anime.episode, episodeNumber: anime.episodeNumber, releaseDate: anime.releaseDate || anime.anilistAiringDate || "", anilistAiringDate: anime.anilistAiringDate || anime.releaseDate || "", favorite: true, service: anime.service, serviceUrl: anime.serviceUrl, allServices: anime.allServices, hasAllowedPlatform: anime.hasAllowedPlatform };
     for (const key of buildTitleKeys(data.titles)) map[key] = data;
   }
   return map;
@@ -1521,22 +1525,27 @@ function bigrams(v) { const s=String(v||""); const r=[]; for(let i=0;i<s.length-
 function buildTitleKeys(titles) { const keys = new Set(); for (const title of titles) for (const alias of buildTitleAliases(title)) { const n = normalizeTitle(alias), st = stableId(alias); if(n) keys.add(n); if(st) keys.add(st); } return [...keys]; }
 function buildTitleAliases(title) { const v=String(title||""); return [...new Set([v, v.replace(/\s*(season|s)\s*\d+$/i,""), v.replace(/\s*part\s*\d+$/i,""), v.replace(/\s*\([^)]*\)\s*$/i,""), v.replace(/\s*(2nd|3rd|4th|5th|second|third|fourth|fifth)\s+season$/i,""), v.replace(/\s*(cour|part)\s*\d+$/i,""), v.replace(/[:\-]+/g," "), v.replace(/&/g,"and")])].map(x=>x.trim()).filter(Boolean); }
 
-function applyAnilistToReleases() { state.releases = state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const override = getAnilistOverride(item, match); return { ...item, ...override, favorite: match.favorite === true ? true : item.favorite, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, anilistScore: match.anilistScore ?? item.anilistScore, coverUrl: match.coverUrl || item.coverUrl }; }); }
+function applyAnilistToReleases() { state.releases = mergeDuplicateItems(state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const override = getAnilistOverride(item, match); return { ...item, ...override, favorite: match.favorite === true ? true : item.favorite, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, anilistScore: match.anilistScore ?? item.anilistScore, coverUrl: match.coverUrl || item.coverUrl }; })); }
 function getAnilistOverride(item, match) {
-  const nextTime = Date.parse(match.releaseDate || "");
+  const nextTime = Date.parse(getAnilistAiringDate(match));
   const itemTime = Date.parse(item.releaseDate || "");
   const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
   const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
   const canOverrideTiming = item.source === "anilist-library";
+  const canCorrectScheduleTiming = canApplyAnilistDayCorrection(item, match, itemEpisode, matchEpisode, itemTime, nextTime);
   const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList");
-  const delayedByDate = canOverrideTiming && isLaterCalendarDay(nextTime, itemTime);
+  const delayedByDate = (canOverrideTiming || canCorrectScheduleTiming) && !isSameCalendarDay(nextTime, itemTime);
+  const correctedReleaseDate = canCorrectScheduleTiming
+    ? replaceCalendarDayKeepTime(itemTime, nextTime)
+    : (canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate);
   const override = {
     title: match.title || item.title,
     episode: canOverrideTiming ? (match.episode || item.episode) : item.episode,
     episodeNumber: canOverrideTiming ? (match.episodeNumber ?? item.episodeNumber) : item.episodeNumber,
-    releaseDate: canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate,
-    delayed: canOverrideTiming ? delayedByDate : Boolean(item.delayed),
+    releaseDate: correctedReleaseDate,
+    delayed: delayedByDate || Boolean(item.delayed),
     originalReleaseDate: delayedByDate ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
+    anilistDayCorrection: canCorrectScheduleTiming || Boolean(item.anilistDayCorrection),
     source: item.source === "shared-json" ? "shared-json+anilist" : item.source
   };
   if (matchHasPlatform) {
@@ -1551,15 +1560,25 @@ function getAnilistOverride(item, match) {
   }
   return override;
 }
+function getAnilistAiringDate(match) {
+  return match?.releaseDate || match?.anilistAiringDate || "";
+}
+function canApplyAnilistDayCorrection(item, match, itemEpisode, matchEpisode, itemTime, nextTime) {
+  if (!match || item.source === "anilist-library") return false;
+  if (!String(item.source || "").startsWith("shared-json") && item.source !== "animeschedule-api") return false;
+  if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode) || itemEpisode !== matchEpisode) return false;
+  if (!Number.isFinite(itemTime) || !Number.isFinite(nextTime) || isSameCalendarDay(itemTime, nextTime)) return false;
+  return getSeriesMatchScore(item, match) >= 0.78;
+}
 function getAnilistTimingOverride(item, match) {
-  if (!match.releaseDate) return {};
+  if (!getAnilistAiringDate(match)) return {};
   if (item.source !== "anilist-library") return {};
   const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
   const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
   if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode)) return {};
   if (itemEpisode !== matchEpisode) return {};
   const itemTime = Date.parse(item.releaseDate || "");
-  const matchTime = Date.parse(match.releaseDate || "");
+  const matchTime = Date.parse(getAnilistAiringDate(match));
   if (!Number.isFinite(matchTime) || itemTime === matchTime) return {};
   const delayedByDate = isLaterCalendarDay(matchTime, itemTime);
   return {
@@ -1864,7 +1883,7 @@ function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?"
 function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
 function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
-function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}).format(d); }
+function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false}).format(d); }
 function isToday(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
 function getSelectedTimezone() { return state.timezone || els.timezoneInput?.value?.trim() || "Europe/Madrid"; }
 function getDateKeyInZone(date, timeZone) {
