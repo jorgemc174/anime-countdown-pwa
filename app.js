@@ -83,8 +83,9 @@ const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
-const ANILIST_REFRESH_MS = 60 * 60 * 1000;
-const PUBLIC_ANILIST_REFRESH_MS = 6 * 60 * 60 * 1000;
+const ANILIST_REFRESH_MS = 6 * 60 * 60 * 1000;
+const ANILIST_MANUAL_COOLDOWN_MS = 10 * 60 * 1000;
+const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
 const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
@@ -112,7 +113,7 @@ const JUSTWATCH_COUNTRIES = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastPublicAnilistSync: "" };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "" };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -231,7 +232,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastPublicAnilistSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","theme"]);
   state.releases = (data.releases || []).map(sanitizePlatformFields);
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
@@ -250,6 +251,7 @@ async function loadState() {
   state.notifiedReleaseIds = data.notifiedReleaseIds || {};
   state.lastSharedSync = data.lastSharedSync || "";
   state.lastAnilistSync = data.lastAnilistSync || "";
+  state.lastAnilistSyncUsername = data.lastAnilistSyncUsername || "";
   state.lastPublicAnilistSync = data.lastPublicAnilistSync || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
@@ -502,6 +504,12 @@ async function syncAnilist() {
   try {
     const username = els.anilistInput.value.trim();
     if (!username) return showStatus("Pon tu usuario de AniList.", "error");
+    const last = Date.parse(state.lastAnilistSync || "");
+    const isSameUser = state.lastAnilistSyncUsername === username;
+    if (isSameUser && Number.isFinite(last) && Date.now() - last < ANILIST_MANUAL_COOLDOWN_MS) {
+      const minutes = Math.ceil((ANILIST_MANUAL_COOLDOWN_MS - (Date.now() - last)) / 60000);
+      return showStatus(`AniList ya se sincronizó hace poco. Espera ${minutes} min.`, "warn");
+    }
     showStatus("Sincronizando base y AniList...", "success");
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     const library = await refreshAnilistData(username);
@@ -567,6 +575,7 @@ async function refreshAnilistData(username) {
   state.anilistLibrary = library.map(stripAnilistOnlyTiming).map((item) => applyCustom(item));
   state.anilistMap = buildAnilistMap(library);
   state.lastAnilistSync = new Date().toISOString();
+  state.lastAnilistSyncUsername = username;
   clearStaleAnilistFavorites();
   applyAnilistToReleases();
   reconcileAnilistFavoritesWithSchedule();
@@ -576,7 +585,8 @@ async function refreshAnilistData(username) {
     anilistLibrary: state.anilistLibrary,
     anilistMap: state.anilistMap,
     releases: state.releases,
-    lastAnilistSync: state.lastAnilistSync
+    lastAnilistSync: state.lastAnilistSync,
+    lastAnilistSyncUsername: state.lastAnilistSyncUsername
   });
   return library;
 }
