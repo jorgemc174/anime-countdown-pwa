@@ -503,11 +503,10 @@ async function syncAnilist() {
     const username = els.anilistInput.value.trim();
     if (!username) return showStatus("Pon tu usuario de AniList.", "error");
     showStatus("Sincronizando base y AniList...", "success");
-    await refreshSharedSchedule({ silent: true });
+    await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     const library = await refreshAnilistData(username);
-    await refreshPublicAnilistData();
     render();
-    showStatus(`Base sincronizada con AniList: ${library.length} animes en emisión.`, "success");
+    showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
   } catch (error) { showStatus(error.message, "error"); }
 }
 
@@ -638,7 +637,7 @@ function isSharedScheduleConfigured() {
   return Boolean(SHARED_SCHEDULE_URL);
 }
 
-async function refreshSharedSchedule({ silent = false } = {}) {
+async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false } = {}) {
   if (!isSharedScheduleConfigured()) return false;
 
   try {
@@ -653,7 +652,7 @@ async function refreshSharedSchedule({ silent = false } = {}) {
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     reconcileAnilistFavoritesWithSchedule();
-    await refreshPublicAnilistData();
+    if (!skipPublicAnilist) await refreshPublicAnilistData();
     applyCustomToReleases();
     state.lastSharedSync = new Date().toISOString();
     await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
@@ -1176,8 +1175,13 @@ function enrichScheduleItem(item) {
 
 async function fetchAnilistLibrary(username) {
   const query = `query ($userName: String) { MediaListCollection(userName: $userName, type: ANIME) { lists { entries { status progress media { id title { romaji english native } synonyms coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } } }`;
-  const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { userName: username } }) });
-  if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
+  let response;
+  try {
+    response = await postAnilistGraphql(query, { userName: username });
+  } catch (e) {
+    throw new Error("No se pudo conectar con AniList. Comprueba tu conexión a Internet.");
+  }
+  if (!response.ok) throw new Error(getAnilistResponseError(response.status));
   const json = await response.json();
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return (json.data?.MediaListCollection?.lists || []).flatMap((list) => list.entries || []).filter((entry) => {
@@ -1248,7 +1252,7 @@ async function fetchPublicAnilistSearchMatch(item) {
   const query = `query ($search: String) { Media(search: $search, type: ANIME) { id title { romaji english native } synonyms format coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } }`;
   const search = item.anilistTitle || item.title;
   try {
-    const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables: { search } }) });
+    const response = await postAnilistGraphql(query, { search });
     if (!response.ok) return null;
     const json = await response.json();
     const media = json.data?.Media;
@@ -1283,14 +1287,43 @@ async function fetchPublicAnilistCatalog() {
 async function fetchAnilistSeasonPage({ season, year }, page) {
   const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC) { id title { romaji english native } synonyms format coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
   const variables = { page, season: String(season || "").toUpperCase(), year };
-  const response = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ query, variables }) });
-  if (!response.ok) throw new Error(`AniList respondió ${response.status}`);
+  let response;
+  try {
+    response = await postAnilistGraphql(query, variables);
+  } catch (e) {
+    throw new Error("No se pudo conectar con AniList. Comprueba tu conexión a Internet.");
+  }
+  if (!response.ok) throw new Error(getAnilistResponseError(response.status));
   const json = await response.json();
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return {
     hasNextPage: Boolean(json.data?.Page?.pageInfo?.hasNextPage),
     items: (json.data?.Page?.media || []).map(mapPublicAnilistMedia)
   };
+}
+
+async function postAnilistGraphql(query, variables = {}) {
+  const payload = JSON.stringify({ query, variables });
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: payload
+  };
+
+  try {
+    return await fetch("https://graphql.anilist.co", options);
+  } catch (error) {
+    console.warn("Conexion directa con AniList no disponible; se intenta proxy local.", error);
+  }
+
+  const response = await fetch("/api/anilist", options);
+  if (response.status === 404 || response.status === 405) throw new Error("No se pudo conectar con AniList.");
+  return response;
+}
+
+function getAnilistResponseError(status) {
+  if (status === 429) return "AniList está limitando las peticiones. Espera unos minutos y vuelve a sincronizar.";
+  return `AniList respondió ${status}`;
 }
 
 function findPublicAnilistCatalogMatch(item, catalog) {

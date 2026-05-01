@@ -8,6 +8,7 @@ const ROOT = __dirname;
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PORT || 5175);
 const API_BASE = "https://animeschedule.net/api/v3";
+const ANILIST_API = "https://graphql.anilist.co";
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -44,6 +45,11 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
+    if (url.pathname === "/api/anilist") {
+      await proxyAnilist(req, res);
+      return;
+    }
+
     serveStatic(res, url.pathname);
   } catch (error) {
     writeCors(res, 500, { "content-type": "application/json; charset=utf-8" });
@@ -77,10 +83,38 @@ async function proxyAnimeSchedule(req, res, url, endpoint) {
   res.end(Buffer.from(body));
 }
 
+async function proxyAnilist(req, res) {
+  if (req.method !== "POST") {
+    writeCors(res, 405, { "content-type": "application/json; charset=utf-8" });
+    res.end(JSON.stringify({ error: "Metodo no permitido" }));
+    return;
+  }
+
+  const chunks = [];
+  for await (const chunk of req) chunks.push(chunk);
+  const body = Buffer.concat(chunks).toString("utf8");
+
+  const response = await fetch(ANILIST_API, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json"
+    },
+    body
+  });
+
+  const responseBody = await response.text();
+  writeCors(res, response.status, {
+    "content-type": response.headers.get("content-type") || "application/json; charset=utf-8",
+    "cache-control": "no-store"
+  });
+  res.end(responseBody);
+}
+
 function writeCors(res, status, headers = {}) {
   res.writeHead(status, {
     "access-control-allow-origin": "*",
-    "access-control-allow-methods": "GET, OPTIONS",
+    "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "authorization, accept, content-type",
     "access-control-allow-private-network": "true",
     ...headers
