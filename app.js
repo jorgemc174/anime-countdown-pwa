@@ -83,7 +83,7 @@ const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
-const ANILIST_REFRESH_MS = 6 * 60 * 60 * 1000;
+const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 10 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
@@ -666,7 +666,10 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     reconcileAnilistFavoritesWithSchedule();
-    if (!skipPublicAnilist) await refreshPublicAnilistData();
+    if (!skipPublicAnilist) {
+      const lastAl = Date.parse(state.lastPublicAnilistSync || "");
+      if (!Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) await refreshPublicAnilistData();
+    }
     applyCustomToReleases();
     state.lastSharedSync = new Date().toISOString();
     await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
