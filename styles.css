@@ -170,6 +170,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   color: var(--text);
   background:
     linear-gradient(180deg, rgba(233, 185, 111, 0.08), transparent 280px),
@@ -399,6 +400,7 @@ h3 {
 
 .main-panel {
   min-width: 0;
+  overflow-x: hidden;
   touch-action: manipulation;
 }
 
@@ -599,6 +601,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
   will-change: transform, opacity;
+  touch-action: pan-y;
 }
 
 .section-title,
