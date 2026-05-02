@@ -301,6 +301,11 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
+  let titleTapTimer = null;
+  document.querySelector(".header h1")?.addEventListener("click", () => {
+    if (titleTapTimer) { clearTimeout(titleTapTimer); titleTapTimer = null; refreshData(); }
+    else { titleTapTimer = setTimeout(() => { titleTapTimer = null; }, 400); }
+  });
 }
 
 function bindSwipeNavigation() {
