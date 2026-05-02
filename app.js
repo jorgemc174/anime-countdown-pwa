@@ -512,10 +512,11 @@ async function syncAnilist() {
       return showStatus(`AniList ya se sincronizó hace poco. Espera ${minutes} min.`, "warn");
     }
     showStatus("Sincronizando base y AniList...", "success");
-    await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
+    await refreshSharedSchedule({ silent: true, skipPublicAnilist: true, force: true });
     const library = await refreshAnilistData(username);
     showStatus("Verificando plataformas con JustWatch...", "success");
     await verifyPlatformsWithJustWatch();
+    await saveAllLists();
     render();
     showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
   } catch (error) { showStatus(error.message, "error"); }
@@ -650,10 +651,10 @@ function isSharedScheduleConfigured() {
   return Boolean(SHARED_SCHEDULE_URL);
 }
 
-async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false } = {}) {
+async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false, force = false } = {}) {
   if (!isSharedScheduleConfigured()) return false;
 
-  if (silent && state.releases.length > 0) {
+  if (!force && silent && state.releases.length > 0) {
     const lastSync = Date.parse(state.lastSharedSync || "");
     if (Number.isFinite(lastSync) && Date.now() - lastSync < SHARED_SCHEDULE_REFRESH_MS) return false;
   }
@@ -991,9 +992,9 @@ async function fetchJustWatchAvailabilityWithFallback(item, countryCode, languag
 
   for (const query of queries) {
     const result = await fetchJustWatchAvailability(item, countryCode, language, query);
-    if (result.matched) return result;
+    if (result.verified) return result;
   }
-  return { matched: false };
+  return { verified: false };
 }
 
 async function fetchJustWatchAvailability(item, countryCode = "ES", language = "es", searchQuery = "") {
