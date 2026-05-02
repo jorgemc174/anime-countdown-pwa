@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-02T08:01:29.800Z",
+  "updatedAt": "2026-05-02T10:12:44.058Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -16,7 +16,10 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41YU3bT",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
@@ -37,6 +40,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00258001/witch-hat-atelier",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -59,7 +63,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371923/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
@@ -80,6 +86,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -120,7 +127,9 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41UUpAl",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
@@ -141,7 +150,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
@@ -162,6 +173,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -183,6 +195,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -204,6 +217,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -225,6 +239,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -246,6 +261,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -267,6 +283,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371665",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -307,8 +324,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GRVN8MNQY/classroom-of-the-elite",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
@@ -348,6 +367,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6QWV3976/rent-a-girlfriend",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -356,27 +376,6 @@
       "anilistId": 113813,
       "anilistTitle": "Kanojo, Okarishimasu",
       "anilistUrl": "https://anilist.co/anime/113813"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-4-2026-04-29t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-29T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
-      "anilistId": 108632,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-5-2026-04-29t16-00-00-02-00",
@@ -391,6 +390,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -399,6 +399,29 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-4-2026-04-29t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-04-29T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-7-2026-04-29t16-01-00-02-00",
@@ -413,8 +436,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371893/dorohedoro",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Netflix"
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
@@ -435,6 +460,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371662/gals-cant-be-kind-to-otaku",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -456,7 +482,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371642",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
@@ -477,8 +505,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
@@ -499,6 +529,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -520,6 +551,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00362253",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -548,28 +580,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-dr-stone-science-future-part-3-5-2026-04-30t16-00-00-02-00",
-      "animeKey": "dr-stone-science-future-part-3",
-      "title": "Dr. Stone: Science Future Part 3",
-      "route": "dr-stone-science-future-part-3",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-30T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
-      "anilistId": 199221,
-      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
-      "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
       "id": "schedule-kujima-utaeba-ie-hororo-4-2026-04-30t16-00-00-02-00",
       "animeKey": "kujima-utaeba-ie-hororo",
       "title": "Kujima Utaeba Ie Hororo",
@@ -582,6 +592,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -589,6 +600,30 @@
       "anilistId": 177508,
       "anilistTitle": "Kujima Utaeba Ie Hororo",
       "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
+      "id": "schedule-dr-stone-science-future-part-3-5-2026-04-30t16-00-00-02-00",
+      "animeKey": "dr-stone-science-future-part-3",
+      "title": "Dr. Stone: Science Future Part 3",
+      "route": "dr-stone-science-future-part-3",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-04-30T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-koori-no-jouheki-5-2026-04-30t17-30-00-02-00",
@@ -621,10 +656,13 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-04-30T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4vjH3uY",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kirio-fanclub-9e098990bef6c88bf978cd55ae95656d.jpg"
     },
     {
@@ -637,10 +675,14 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-04-30T16:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3OitDyI",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reincarnation-no-kaben-730f2efedbcc7ea2cb4846b0513c757b.jpg"
     },
     {
@@ -656,6 +698,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374363",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -674,6 +717,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371668",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -708,6 +752,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371787",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -726,6 +771,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G63VMXEQY/hitori-no-shita---the-outcast",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -760,6 +806,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371887/an-observation-log-of-my-fiance-who-calls-herself-a-villainess",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -778,8 +825,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G9VHN91DJ/the-angel-next-door-spoils-me-rotten",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season-ffc52fd867ebc7935f03ce7d2788f4a5.jpg"
@@ -797,8 +846,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
@@ -816,7 +867,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
@@ -834,6 +888,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -852,6 +907,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4c8AuUC",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -870,7 +926,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371890",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kamiina-botan-yoeru-sugata-wa-yuri-no-hana-9cdf6f5bd5ab543ae2ab66efdcb057bd.jpg"
@@ -888,29 +946,11 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
-    },
-    {
-      "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-5-2026-05-02t11-30-00-02-00",
-      "animeKey": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4",
-      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 4",
-      "route": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T09:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
     },
     {
       "id": "schedule-boku-no-hero-academia-more-1-2026-05-02t11-30-00-02-00",
@@ -929,6 +969,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/boku-no-hero-academia-more-81307619e4f9bc6c40858cd836210063.jpg"
     },
     {
+      "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-5-2026-05-02t11-30-00-02-00",
+      "animeKey": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4",
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 4",
+      "route": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T09:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
+    },
+    {
       "id": "schedule-mairimashita-iruma-kun-4-5-2026-05-02t12-25-00-02-00",
       "animeKey": "mairimashita-iruma-kun-4",
       "title": "Mairimashita! Iruma-kun 4",
@@ -941,7 +1001,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
@@ -959,6 +1021,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/case-closed",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -975,10 +1038,12 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-02T13:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/season/35232",
+      "allServices": [
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg"
     },
     {
@@ -994,6 +1059,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371875",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1012,8 +1078,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371896/kill-blue",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix",
+        "Bilibili",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -1029,11 +1097,35 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-02T15:45:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/47IDwwj",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
+    },
+    {
+      "id": "schedule-yomi-no-tsugai-5-2026-05-02t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T16:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
     },
     {
       "id": "schedule-akane-banashi-5-2026-05-02t18-00-00-02-00",
@@ -1052,24 +1144,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
-      "id": "schedule-yomi-no-tsugai-5-2026-05-02t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T16:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
       "id": "schedule-kanan-sama-wa-akumade-choroi-5-2026-05-02t18-01-00-02-00",
       "animeKey": "kanan-sama-wa-akumade-choroi",
       "title": "Kanan-sama wa Akumade Choroi",
@@ -1082,7 +1156,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371860/mistress-kanan-is-devilishly-easy",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanan-sama-wa-akumade-choroi-e9fccf95ef972651c3917a49d3eefcd3.jpg"
@@ -1100,7 +1176,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371636/agents-of-the-four-seasons-dance-of-spring",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shunkashuutou-daikousha-haru-no-mai-43521e55d90e5ee85773692bf25e98b0.jpg"
@@ -1118,29 +1196,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374360",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
-    },
-    {
-      "id": "schedule-yuusha-no-kuzu-16-2026-05-02t19-00-00-02-00",
-      "animeKey": "yuusha-no-kuzu",
-      "title": "Yuusha no Kuzu",
-      "route": "yuusha-no-kuzu",
-      "episode": "Ep 16",
-      "episodeNumber": "16",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-needy-girl-overdose-5-2026-05-02t19-00-00-02-00",
@@ -1155,10 +1216,31 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
+      "id": "schedule-yuusha-no-kuzu-16-2026-05-02t19-00-00-02-00",
+      "animeKey": "yuusha-no-kuzu",
+      "title": "Yuusha no Kuzu",
+      "route": "yuusha-no-kuzu",
+      "episode": "Ep 16",
+      "episodeNumber": "16",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-4-2026-05-02t19-01-00-02-00",
@@ -1191,6 +1273,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -1210,8 +1293,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Hulu"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
@@ -1229,26 +1314,14 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365727/rooster-fighter",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-03T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-4-2026-05-03t10-30-00-02-00",
@@ -1263,12 +1336,33 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
         "Netflix"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-4-2026-05-03t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-03T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-5-2026-05-03t11-00-00-02-00",
@@ -1283,6 +1377,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1317,6 +1412,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4cg1Jvq",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -1335,6 +1431,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00375170",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1353,6 +1450,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1371,6 +1469,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374796",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1389,9 +1488,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/one-piece",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
-        "Netflix"
+        "Hulu",
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
@@ -1457,7 +1559,10 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41YU3bT",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
@@ -1478,6 +1583,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00258001/witch-hat-atelier",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -1500,7 +1606,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371923/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
@@ -1521,6 +1629,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1561,7 +1670,9 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41UUpAl",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
@@ -1582,7 +1693,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
@@ -1603,6 +1716,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1624,6 +1738,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1645,6 +1760,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1666,6 +1782,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1687,6 +1804,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1708,6 +1826,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371665",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1748,8 +1867,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GRVN8MNQY/classroom-of-the-elite",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
@@ -1789,6 +1910,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6QWV3976/rent-a-girlfriend",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -1797,27 +1919,6 @@
       "anilistId": 113813,
       "anilistTitle": "Kanojo, Okarishimasu",
       "anilistUrl": "https://anilist.co/anime/113813"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-5-2026-05-06t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-06T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
-      "anilistId": 108632,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-6-2026-05-06t16-00-00-02-00",
@@ -1832,6 +1933,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -1840,6 +1942,29 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-5-2026-05-06t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-06T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-8-2026-05-06t16-01-00-02-00",
@@ -1854,8 +1979,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371893/dorohedoro",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Netflix"
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
@@ -1876,6 +2003,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371662/gals-cant-be-kind-to-otaku",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -1897,7 +2025,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371642",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
@@ -1918,8 +2048,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
@@ -1940,6 +2072,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2002,6 +2135,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00362253",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2030,28 +2164,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
-      "animeKey": "dr-stone-science-future-part-3",
-      "title": "Dr. Stone: Science Future Part 3",
-      "route": "dr-stone-science-future-part-3",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-07T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
-      "anilistId": 199221,
-      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
-      "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
       "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
       "animeKey": "kujima-utaeba-ie-hororo",
       "title": "Kujima Utaeba Ie Hororo",
@@ -2064,6 +2176,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2071,6 +2184,30 @@
       "anilistId": 177508,
       "anilistTitle": "Kujima Utaeba Ie Hororo",
       "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
+      "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
+      "animeKey": "dr-stone-science-future-part-3",
+      "title": "Dr. Stone: Science Future Part 3",
+      "route": "dr-stone-science-future-part-3",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-07T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-koori-no-jouheki-6-2026-05-07t17-30-00-02-00",
@@ -2103,10 +2240,13 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-07T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4vjH3uY",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kirio-fanclub-9e098990bef6c88bf978cd55ae95656d.jpg"
     },
     {
@@ -2119,10 +2259,14 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-07T16:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3OitDyI",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reincarnation-no-kaben-730f2efedbcc7ea2cb4846b0513c757b.jpg"
     },
     {
@@ -2138,6 +2282,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374363",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2156,6 +2301,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371668",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2190,6 +2336,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371787",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2208,6 +2355,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G63VMXEQY/hitori-no-shita---the-outcast",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2226,6 +2374,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371887/an-observation-log-of-my-fiance-who-calls-herself-a-villainess",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2244,8 +2393,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G9VHN91DJ/the-angel-next-door-spoils-me-rotten",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season-ffc52fd867ebc7935f03ce7d2788f4a5.jpg"
@@ -2263,8 +2414,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
@@ -2282,7 +2435,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
@@ -2300,6 +2456,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2318,6 +2475,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4c8AuUC",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -2336,7 +2494,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371890",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kamiina-botan-yoeru-sugata-wa-yuri-no-hana-9cdf6f5bd5ab543ae2ab66efdcb057bd.jpg"
@@ -2354,6 +2514,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2372,6 +2533,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -2391,7 +2553,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
@@ -2409,6 +2573,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/case-closed",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -2425,10 +2590,12 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-09T13:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/season/35232",
+      "allServices": [
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg"
     },
     {
@@ -2444,6 +2611,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371875",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2462,8 +2630,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371896/kill-blue",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix",
+        "Bilibili",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -2479,11 +2649,35 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-09T15:45:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/47IDwwj",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
+    },
+    {
+      "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T16:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
     },
     {
       "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
@@ -2502,24 +2696,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
-      "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T16:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
       "id": "schedule-kanan-sama-wa-akumade-choroi-6-2026-05-09t18-01-00-02-00",
       "animeKey": "kanan-sama-wa-akumade-choroi",
       "title": "Kanan-sama wa Akumade Choroi",
@@ -2532,7 +2708,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371860/mistress-kanan-is-devilishly-easy",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanan-sama-wa-akumade-choroi-e9fccf95ef972651c3917a49d3eefcd3.jpg"
@@ -2550,7 +2728,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371636/agents-of-the-four-seasons-dance-of-spring",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shunkashuutou-daikousha-haru-no-mai-43521e55d90e5ee85773692bf25e98b0.jpg"
@@ -2568,29 +2748,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374360",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
-    },
-    {
-      "id": "schedule-yuusha-no-kuzu-17-2026-05-09t19-00-00-02-00",
-      "animeKey": "yuusha-no-kuzu",
-      "title": "Yuusha no Kuzu",
-      "route": "yuusha-no-kuzu",
-      "episode": "Ep 17",
-      "episodeNumber": "17",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-needy-girl-overdose-6-2026-05-09t19-00-00-02-00",
@@ -2605,10 +2768,31 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
+      "id": "schedule-yuusha-no-kuzu-17-2026-05-09t19-00-00-02-00",
+      "animeKey": "yuusha-no-kuzu",
+      "title": "Yuusha no Kuzu",
+      "route": "yuusha-no-kuzu",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-5-2026-05-09t19-01-00-02-00",
@@ -2641,6 +2825,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -2660,8 +2845,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Hulu"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
@@ -2679,7 +2866,11 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365727/rooster-fighter",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
@@ -2701,22 +2892,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meikyuu-no-shiori-5bcce6727a.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-10T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-5-2026-05-10t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2729,12 +2904,33 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
         "Netflix"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-5-2026-05-10t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-10T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-6-2026-05-10t11-00-00-02-00",
@@ -2749,6 +2945,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2783,6 +2980,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4cg1Jvq",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -2801,6 +2999,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00375170",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2819,6 +3018,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2837,6 +3037,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374796",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -2855,9 +3056,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/one-piece",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
-        "Netflix"
+        "Hulu",
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
@@ -2923,7 +3127,10 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41YU3bT",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
@@ -2944,6 +3151,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00258001/witch-hat-atelier",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -2966,7 +3174,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371923/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
@@ -2987,6 +3197,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3027,7 +3238,9 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41UUpAl",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
@@ -3048,7 +3261,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
@@ -3069,6 +3284,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3090,6 +3306,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3111,6 +3328,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3132,6 +3350,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3153,6 +3372,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3174,6 +3394,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371665",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3214,8 +3435,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GRVN8MNQY/classroom-of-the-elite",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
@@ -3255,6 +3478,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6QWV3976/rent-a-girlfriend",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -3263,27 +3487,6 @@
       "anilistId": 113813,
       "anilistTitle": "Kanojo, Okarishimasu",
       "anilistUrl": "https://anilist.co/anime/113813"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-6-2026-05-13t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-13T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
-      "anilistId": 108632,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-7-2026-05-13t16-00-00-02-00",
@@ -3298,6 +3501,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -3306,6 +3510,29 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-6-2026-05-13t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-13T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-9-2026-05-13t16-01-00-02-00",
@@ -3320,8 +3547,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371893/dorohedoro",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Netflix"
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
@@ -3342,6 +3571,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371662/gals-cant-be-kind-to-otaku",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3363,7 +3593,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371642",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
@@ -3384,8 +3616,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
@@ -3406,6 +3640,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3446,6 +3681,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00362253",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3474,28 +3710,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
-      "animeKey": "dr-stone-science-future-part-3",
-      "title": "Dr. Stone: Science Future Part 3",
-      "route": "dr-stone-science-future-part-3",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-14T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
-      "anilistId": 199221,
-      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
-      "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
       "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
       "animeKey": "kujima-utaeba-ie-hororo",
       "title": "Kujima Utaeba Ie Hororo",
@@ -3508,6 +3722,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3515,6 +3730,30 @@
       "anilistId": 177508,
       "anilistTitle": "Kujima Utaeba Ie Hororo",
       "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
+      "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
+      "animeKey": "dr-stone-science-future-part-3",
+      "title": "Dr. Stone: Science Future Part 3",
+      "route": "dr-stone-science-future-part-3",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-14T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-koori-no-jouheki-7-2026-05-14t17-30-00-02-00",
@@ -3547,10 +3786,13 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-14T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4vjH3uY",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kirio-fanclub-9e098990bef6c88bf978cd55ae95656d.jpg"
     },
     {
@@ -3563,10 +3805,14 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-14T16:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3OitDyI",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reincarnation-no-kaben-730f2efedbcc7ea2cb4846b0513c757b.jpg"
     },
     {
@@ -3582,6 +3828,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374363",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3600,6 +3847,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371668",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3634,6 +3882,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371787",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3652,6 +3901,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G63VMXEQY/hitori-no-shita---the-outcast",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3686,6 +3936,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371887/an-observation-log-of-my-fiance-who-calls-herself-a-villainess",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3704,8 +3955,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G9VHN91DJ/the-angel-next-door-spoils-me-rotten",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season-ffc52fd867ebc7935f03ce7d2788f4a5.jpg"
@@ -3723,8 +3976,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
@@ -3742,7 +3997,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
@@ -3760,6 +4018,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3778,6 +4037,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4c8AuUC",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -3796,7 +4056,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371890",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kamiina-botan-yoeru-sugata-wa-yuri-no-hana-9cdf6f5bd5ab543ae2ab66efdcb057bd.jpg"
@@ -3814,6 +4076,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3832,6 +4095,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -3851,7 +4115,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
@@ -3869,6 +4135,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/case-closed",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -3885,10 +4152,12 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-16T13:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/season/35232",
+      "allServices": [
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg"
     },
     {
@@ -3904,6 +4173,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371875",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3922,8 +4192,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371896/kill-blue",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix",
+        "Bilibili",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -3939,11 +4211,35 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-16T15:45:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/47IDwwj",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
+    },
+    {
+      "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T16:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
     },
     {
       "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
@@ -3962,24 +4258,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
-      "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T16:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
       "id": "schedule-kanan-sama-wa-akumade-choroi-7-2026-05-16t18-01-00-02-00",
       "animeKey": "kanan-sama-wa-akumade-choroi",
       "title": "Kanan-sama wa Akumade Choroi",
@@ -3992,7 +4270,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371860/mistress-kanan-is-devilishly-easy",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanan-sama-wa-akumade-choroi-e9fccf95ef972651c3917a49d3eefcd3.jpg"
@@ -4010,7 +4290,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371636/agents-of-the-four-seasons-dance-of-spring",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shunkashuutou-daikousha-haru-no-mai-43521e55d90e5ee85773692bf25e98b0.jpg"
@@ -4028,29 +4310,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374360",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
-    },
-    {
-      "id": "schedule-yuusha-no-kuzu-18-2026-05-16t19-00-00-02-00",
-      "animeKey": "yuusha-no-kuzu",
-      "title": "Yuusha no Kuzu",
-      "route": "yuusha-no-kuzu",
-      "episode": "Ep 18",
-      "episodeNumber": "18",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-needy-girl-overdose-7-2026-05-16t19-00-00-02-00",
@@ -4065,10 +4330,31 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
+      "id": "schedule-yuusha-no-kuzu-18-2026-05-16t19-00-00-02-00",
+      "animeKey": "yuusha-no-kuzu",
+      "title": "Yuusha no Kuzu",
+      "route": "yuusha-no-kuzu",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-6-2026-05-16t19-01-00-02-00",
@@ -4101,6 +4387,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -4120,8 +4407,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Hulu"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
@@ -4139,26 +4428,14 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365727/rooster-fighter",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-17T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-6-2026-05-17t10-30-00-02-00",
@@ -4173,12 +4450,33 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
         "Netflix"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-17T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-7-2026-05-17t11-00-00-02-00",
@@ -4193,6 +4491,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4227,6 +4526,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4cg1Jvq",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -4245,6 +4545,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00375170",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4263,6 +4564,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4281,6 +4583,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374796",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4299,9 +4602,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/one-piece",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
-        "Netflix"
+        "Hulu",
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
@@ -4367,7 +4673,10 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41YU3bT",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
@@ -4388,6 +4697,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00258001/witch-hat-atelier",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -4410,7 +4720,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371923/the-klutzy-class-monitor-and-the-girl-with-the-short-skirt",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189987-CkTDPfD7vu2Y.jpg",
@@ -4431,6 +4743,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4471,7 +4784,9 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/41UUpAl",
       "allServices": [
-        "Prime Video"
+        "Apple TV+",
+        "Prime Video",
+        "HIDIVE"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195268-HkEv0z9iTCJK.jpg",
@@ -4492,7 +4807,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199547-LAaG3cmKCGhr.jpg",
@@ -4513,6 +4830,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4534,6 +4852,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4555,6 +4874,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371673",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4576,6 +4896,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4597,6 +4918,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4618,6 +4940,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371665",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4658,8 +4981,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GRVN8MNQY/classroom-of-the-elite",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
@@ -4699,6 +5024,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6QWV3976/rent-a-girlfriend",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -4707,27 +5033,6 @@
       "anilistId": 113813,
       "anilistTitle": "Kanojo, Okarishimasu",
       "anilistUrl": "https://anilist.co/anime/113813"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-7-2026-05-20t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-20T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
-      "anilistId": 108632,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-8-2026-05-20t16-00-00-02-00",
@@ -4742,6 +5047,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -4750,6 +5056,29 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-7-2026-05-20t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-20T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108632-lQWnmw7XaNOK.jpg",
+      "anilistId": 108632,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+      "anilistUrl": "https://anilist.co/anime/108632"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-10-2026-05-20t16-01-00-02-00",
@@ -4764,8 +5093,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371893/dorohedoro",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Netflix"
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173172-404XnuOS0DhR.jpg",
@@ -4786,6 +5117,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371662/gals-cant-be-kind-to-otaku",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4807,7 +5139,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371642",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx201817-pyfL9F8muPeq.jpg",
@@ -4828,8 +5162,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg",
@@ -4850,6 +5186,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4890,6 +5227,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00362253",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4918,28 +5256,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
-      "animeKey": "dr-stone-science-future-part-3",
-      "title": "Dr. Stone: Science Future Part 3",
-      "route": "dr-stone-science-future-part-3",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
-      "anilistId": 199221,
-      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
-      "anilistUrl": "https://anilist.co/anime/199221"
-    },
-    {
       "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
       "animeKey": "kujima-utaeba-ie-hororo",
       "title": "Kujima Utaeba Ie Hororo",
@@ -4952,6 +5268,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4959,6 +5276,30 @@
       "anilistId": 177508,
       "anilistTitle": "Kujima Utaeba Ie Hororo",
       "anilistUrl": "https://anilist.co/anime/177508"
+    },
+    {
+      "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
+      "animeKey": "dr-stone-science-future-part-3",
+      "title": "Dr. Stone: Science Future Part 3",
+      "route": "dr-stone-science-future-part-3",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GYEXQKJG6",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199221-TReDQMNhslHu.jpg",
+      "anilistId": 199221,
+      "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
+      "anilistUrl": "https://anilist.co/anime/199221"
     },
     {
       "id": "schedule-koori-no-jouheki-8-2026-05-21t17-30-00-02-00",
@@ -4991,10 +5332,13 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-21T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4vjH3uY",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kirio-fanclub-9e098990bef6c88bf978cd55ae95656d.jpg"
     },
     {
@@ -5007,10 +5351,14 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-21T16:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3OitDyI",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reincarnation-no-kaben-730f2efedbcc7ea2cb4846b0513c757b.jpg"
     },
     {
@@ -5026,6 +5374,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374363",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5044,6 +5393,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371668",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5078,6 +5428,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371787",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5096,6 +5447,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G63VMXEQY/hitori-no-shita---the-outcast",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5114,6 +5466,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371887/an-observation-log-of-my-fiance-who-calls-herself-a-villainess",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5132,8 +5485,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G9VHN91DJ/the-angel-next-door-spoils-me-rotten",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season-ffc52fd867ebc7935f03ce7d2788f4a5.jpg"
@@ -5151,8 +5506,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
@@ -5170,7 +5527,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371869/snowball-earth",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
@@ -5188,6 +5548,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5206,6 +5567,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4c8AuUC",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -5224,7 +5586,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371890",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kamiina-botan-yoeru-sugata-wa-yuri-no-hana-9cdf6f5bd5ab543ae2ab66efdcb057bd.jpg"
@@ -5242,6 +5606,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5260,6 +5625,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -5279,7 +5645,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
@@ -5297,6 +5665,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/case-closed",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix"
       ],
@@ -5313,10 +5682,12 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-23T13:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/season/35232",
+      "allServices": [
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg"
     },
     {
@@ -5332,6 +5703,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371875",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5350,8 +5722,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371896/kill-blue",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Netflix",
+        "Bilibili",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -5367,11 +5741,35 @@
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-05-23T15:45:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/47IDwwj",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
+    },
+    {
+      "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
     },
     {
       "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
@@ -5390,24 +5788,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
-      "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
       "animeKey": "kanan-sama-wa-akumade-choroi",
       "title": "Kanan-sama wa Akumade Choroi",
@@ -5420,7 +5800,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371860/mistress-kanan-is-devilishly-easy",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanan-sama-wa-akumade-choroi-e9fccf95ef972651c3917a49d3eefcd3.jpg"
@@ -5438,7 +5820,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371636/agents-of-the-four-seasons-dance-of-spring",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shunkashuutou-daikousha-haru-no-mai-43521e55d90e5ee85773692bf25e98b0.jpg"
@@ -5456,29 +5840,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374360",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
-    },
-    {
-      "id": "schedule-yuusha-no-kuzu-19-2026-05-23t19-00-00-02-00",
-      "animeKey": "yuusha-no-kuzu",
-      "title": "Yuusha no Kuzu",
-      "route": "yuusha-no-kuzu",
-      "episode": "Ep 19",
-      "episodeNumber": "19",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
-      "allServices": [
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-needy-girl-overdose-8-2026-05-23t19-00-00-02-00",
@@ -5493,10 +5860,31 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
+      "id": "schedule-yuusha-no-kuzu-19-2026-05-23t19-00-00-02-00",
+      "animeKey": "yuusha-no-kuzu",
+      "title": "Yuusha no Kuzu",
+      "route": "yuusha-no-kuzu",
+      "episode": "Ep 19",
+      "episodeNumber": "19",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-7-2026-05-23t19-01-00-02-00",
@@ -5529,6 +5917,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video"
       ],
@@ -5548,8 +5937,10 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Prime Video"
+        "Prime Video",
+        "Hulu"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
@@ -5567,26 +5958,14 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365727/rooster-fighter",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Hulu",
+        "Disney+",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-24T08:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-7-2026-05-24t10-30-00-02-00",
@@ -5601,12 +5980,33 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
         "Netflix"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-24T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-8-2026-05-24t11-00-00-02-00",
@@ -5621,6 +6021,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5655,6 +6056,7 @@
       "service": "Prime Video",
       "serviceUrl": "https://amzn.to/4cg1Jvq",
       "allServices": [
+        "Apple TV+",
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
@@ -5673,6 +6075,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00375170",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5691,6 +6094,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5709,6 +6113,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00374796",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5727,9 +6132,12 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/one-piece",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Prime Video",
-        "Netflix"
+        "Hulu",
+        "Netflix",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
