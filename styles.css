@@ -474,7 +474,7 @@ h3 {
   display: grid;
   gap: 8px;
   margin-bottom: 0;
-  padding: 6px;
+  padding: 6px 6px 2px 6px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -489,7 +489,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   min-height: 24px;
 }
 
@@ -547,8 +547,9 @@ h3 {
   position: absolute;
   top: 6px;
   left: 6px;
+  right: auto;
+  bottom: 2px;
   width: calc((100% - 28px) / 3);
-  height: calc(100% - 12px);
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   border-radius: var(--radius);
   z-index: 0;
