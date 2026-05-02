@@ -125,7 +125,6 @@ init();
 async function init() {
   try {
     cleanupLegacyCaches();
-    if (redirectToLocalServer()) return;
     bindElements();
     populateTimezoneOptions();
     await loadState();
@@ -144,10 +143,6 @@ async function init() {
   }
 }
 
-function redirectToLocalServer() {
-  return false;
-}
-
 function cleanupLegacyCaches() {
   if ("caches" in window) {
     caches.keys()
@@ -162,7 +157,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","importPreview","importBtn","openAnimeScheduleBtn","showAllBtn","showTodayBtn","showFavsBtn","tokenInput","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -1583,26 +1578,6 @@ function canApplyAnilistDayCorrection(item, match, itemEpisode, matchEpisode, it
   if (!Number.isFinite(itemTime) || !Number.isFinite(nextTime) || isSameCalendarDay(itemTime, nextTime)) return false;
   return getSeriesMatchScore(item, match) >= 0.78;
 }
-function getAnilistTimingOverride(item, match) {
-  if (!getAnilistAiringDate(match)) return {};
-  if (item.source !== "anilist-library") return {};
-  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-  const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
-  if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode)) return {};
-  if (itemEpisode !== matchEpisode) return {};
-  const itemTime = Date.parse(item.releaseDate || "");
-  const matchTime = Date.parse(getAnilistAiringDate(match));
-  if (!Number.isFinite(matchTime) || itemTime === matchTime) return {};
-  const delayedByDate = isLaterCalendarDay(matchTime, itemTime);
-  return {
-    episode: match.episode || item.episode,
-    episodeNumber: match.episodeNumber ?? item.episodeNumber,
-    releaseDate: new Date(matchTime).toISOString(),
-    delayed: delayedByDate,
-    originalReleaseDate: delayedByDate ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
-    source: item.source === "shared-json" ? "shared-json+anilist" : item.source
-  };
-}
 function parseEpisodeNumber(value) {
   const match = String(value ?? "").match(/\d+(?:\.\d+)?/);
   return match ? Number(match[0]) : NaN;
@@ -1687,32 +1662,6 @@ async function associatePlatform(key) { const sample = findItemByKey(key); const
 async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
 
 async function openOrAsk(item) { const displayService = getDisplayService(item); const url = getBestWatchUrl(item, displayService); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
-async function addTestRelease() {
-  const releaseDate = new Date(Date.now() + 30000).toISOString();
-  const testItem = {
-    id: "__test_notif__",
-    title: "Demon Slayer",
-    episode: "Ep. 1",
-    episodeNumber: 1,
-    releaseDate,
-    service: "Crunchyroll",
-    serviceUrl: "",
-    coverUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-PEn1CTc93blC.jpg",
-    favorite: true,
-    source: "test",
-    customUrl: "",
-    customPlatformName: "",
-  };
-  state.releases = state.releases.filter(item => item.id !== "__test_notif__");
-  state.releases.push(testItem);
-  const notifKey = `${testItem.id}|${releaseDate}`;
-  delete state.notifiedReleaseIds[notifKey];
-  await browserApi.storage.local.set({ releases: state.releases, notifiedReleaseIds: state.notifiedReleaseIds });
-  render();
-  showStatus("Serie de prueba añadida. Notificación en ~30s.", "success");
-  setTimeout(checkReleaseNotifications, 32000);
-}
-
 async function resetAll() {
   if (!confirm("¿Seguro que quieres borrar todos tus favoritos?")) return;
   state.releases = state.releases.map(item => ({ ...item, favorite: false }));
@@ -1913,9 +1862,6 @@ function getOneNextPerSeries(items) { const now = new Date(); const groups = new
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
-function renderNext() { const items = getVisibleItems(); if(!items.length) { state.currentNext=null; els.nextRelease.className="next-release empty"; els.nextRelease.innerHTML=`<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode==="today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`; return; } const item=items[0]; state.currentNext=item; const c=getCountdown(item.releaseDate); els.nextRelease.className="next-release"; els.nextRelease.innerHTML=`${renderCover(item,"next-cover")}<div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(getDisplayService(item))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}</div></div>`; }
-function renderList() { const visible=getVisibleItems(); els.animeList.innerHTML=""; if(!visible.length) { els.animeList.innerHTML=`<div class="empty-message">No hay episodios para mostrar.</div>`; return; } const title=state.viewMode==="today"?"Favoritos de hoy":state.viewMode==="favorites"?"Favoritos":"Próximos estrenos"; els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title}</div>`); visible.forEach(item => els.animeList.appendChild(createCard(item))); }
-function createCard(item) { const c=getCountdown(item.releaseDate); const service=getDisplayService(item); const openLabel=item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(service); const card=document.createElement("article"); card.className="anime-card"; card.dataset.id=item.id; card.dataset.action="open"; const favSymbol = item.favorite ? "Fav" : "+"; card.innerHTML=`${renderCover(item,"cover")}<div class="card-main"><div class="card-top"><div><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate)?'<span class="today-pill">HOY</span>':""}</div></div><button class="favorite-btn" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${favSymbol}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-blue">SUB</span><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${item.delayed?'<span class="badge badge-orange">Delayed</span>':'<span class="badge badge-green">Normal</span>'}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button><button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar</button>${item.customUrl ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar</button>` : ""}${item.source !== "anilist-library" ? `<button class="small-btn" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">Eliminar</button>` : ""}</div></div>`; return card; }
 function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
 function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
@@ -1974,7 +1920,11 @@ function getBestWatchUrl(item, displayService) {
   const effective = displayService !== undefined ? displayService : getDisplayService(item);
   if (effective === (item.service || "No legal platform")) {
     const serviceUrl = normalizeUrl(item.serviceUrl);
-    if (serviceUrl) return serviceUrl;
+    if (serviceUrl) {
+      if (effective === "Prime Video" && /amzn\.to|amazon\.(com|es|co\.uk|de|fr|it)/.test(serviceUrl))
+        return `https://www.primevideo.com/search?phrase=${encodeURIComponent(item.title)}`;
+      return serviceUrl;
+    }
   }
   return defaultServiceUrl(effective);
 }

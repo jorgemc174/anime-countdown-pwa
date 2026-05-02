@@ -33,10 +33,10 @@ async function main() {
     rawItems.push(...extractArray(data));
   }
 
-  const normalized = normalizeSchedule(rawItems);
+  const normalized = normalizeSchedule(rawItems, timezone);
   const releases = process.env.ANILIST_VERIFY === "false"
     ? normalized
-    : await applyAnilistCorrections(normalized);
+    : await applyAnilistCorrections(normalized, timezone);
   const payload = {
     updatedAt: new Date().toISOString(),
     timezone,
@@ -48,7 +48,7 @@ async function main() {
   console.log(`schedule.json actualizado: ${releases.length} episodios (${rawItems.length} items leidos).`);
 }
 
-async function applyAnilistCorrections(releases) {
+async function applyAnilistCorrections(releases, timeZone) {
   const byAnime = new Map();
   for (const release of releases) {
     const key = release.animeKey || stableId(release.title);
@@ -77,7 +77,7 @@ async function applyAnilistCorrections(releases) {
       const canCorrectEpisode = Number.isFinite(releaseEpisode) && Number.isFinite(nextEpisode) &&
         releaseEpisode === 1 && nextEpisode > 1 && strongTitleMatch;
       const canCorrectDelayDay = Number.isFinite(releaseEpisode) && releaseEpisode === nextEpisode &&
-        Number.isFinite(releaseTime) && Number.isFinite(nextTime) && isLaterCalendarDay(nextTime, releaseTime);
+        Number.isFinite(releaseTime) && Number.isFinite(nextTime) && isLaterCalendarDay(nextTime, releaseTime, timeZone);
       if (!media || (!canCorrectEpisode && !canCorrectDelayDay && !media.id)) {
         out.push(release);
         continue;
@@ -88,7 +88,7 @@ async function applyAnilistCorrections(releases) {
         ...release,
         ...(canCorrectEpisode ? { episode: `Ep ${nextEpisode}`, episodeNumber: String(nextEpisode) } : {}),
         ...(canCorrectDelayDay ? {
-          releaseDate: replaceCalendarDayKeepTime(releaseTime, nextTime),
+          releaseDate: replaceCalendarDayKeepTime(releaseTime, nextTime, timeZone),
           delayed: true,
           originalReleaseDate: release.originalReleaseDate || release.releaseDate,
           anilistDayCorrection: true
@@ -203,7 +203,7 @@ async function fetchAnimeScheduleWeek(week, timezone, token) {
   });
 }
 
-function normalizeSchedule(items) {
+function normalizeSchedule(items, timeZone) {
   const out = [];
   for (const item of items) {
     const airType = String(item.airType || item.air_type || "sub").toLowerCase();
@@ -227,7 +227,7 @@ function normalizeSchedule(items) {
       episode: `Ep ${episodeNumber}`,
       episodeNumber,
       airType: "SUB",
-      delayed: isDelayed(item),
+      delayed: isDelayed(item, timeZone),
       releaseDate: new Date(releaseDate).toISOString(),
       service: best?.service || "No legal platform",
       serviceUrl: hasAllowedPlatform ? normalizeUrl(best.url || "") : "",
@@ -254,9 +254,26 @@ function normalizeStream(stream) {
 }
 
 function platformToService(platform) {
-  if (platform.includes("crunchyroll")) return "Crunchyroll";
-  if (platform.includes("netflix")) return "Netflix";
-  if (platform.includes("amazon") || platform.includes("prime")) return "Prime Video";
+  const v = String(platform || "").toLowerCase().trim();
+  if (!v) return null;
+  if (v.includes("crunchyroll")) return "Crunchyroll";
+  if (v.includes("funimation")) return "Funimation";
+  if (v.includes("hidive")) return "HIDIVE";
+  if (v.includes("netflix")) return "Netflix";
+  if (v.includes("amazon") || v.includes("prime video") || v.includes("primevideo")) return "Prime Video";
+  if (v.includes("disney")) return "Disney+";
+  if (v.includes("hulu") && !v.includes("nohulu")) return "Hulu";
+  if (v.includes("apple tv") || v.includes("appletv") || v === "apple") return "Apple TV+";
+  if (v.includes("hbo") || v.includes("hbomax") || v === "max") return "Max";
+  if (v.includes("paramount")) return "Paramount+";
+  if (v.includes("peacock")) return "Peacock";
+  if (v.includes("vrv")) return "VRV";
+  if (v.includes("wakanim")) return "Wakanim";
+  if (v.includes("bilibili")) return "Bilibili";
+  if (v.includes("aniplus")) return "Aniplus";
+  if (v.includes("muse asia") || v.includes("muse_asia")) return "Muse Asia";
+  if (v.includes("ani-one") || v.includes("anione")) return "Ani-One";
+  if (v.includes("tubi")) return "Tubi";
   return null;
 }
 
@@ -264,23 +281,23 @@ function chooseBestStream(streams) {
   return [...streams].sort((a, b) => (SERVICE_PRIORITY[a.service] || 99) - (SERVICE_PRIORITY[b.service] || 99))[0] || null;
 }
 
-function isDelayed(item) {
+function isDelayed(item, timeZone) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
   const releaseAt = Date.parse(item.episodeDate || item.episode_date || item.airDate || item.air_date || "");
   const originalAt = parseRealDate(item.originalReleaseDate || item.original_release_date || item.scheduledDate || item.scheduled_date || item.expectedDate || item.expected_date);
-  const changedDay = isLaterCalendarDay(releaseAt, originalAt) ||
-    isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil) ||
-    isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil);
+  const changedDay = isLaterCalendarDay(releaseAt, originalAt, timeZone) ||
+    isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil, timeZone) ||
+    isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil, timeZone);
   if (changedDay) return true;
   return ["postponed indefinitely", "on break", "hiatus", "cancelled"].includes(status);
 }
 
-function isActiveDelayRange(releaseAt, fromValue, untilValue) {
+function isActiveDelayRange(releaseAt, fromValue, untilValue, timeZone) {
   if (!Number.isFinite(releaseAt)) return false;
   const from = parseRealDate(fromValue);
   const until = parseRealDate(untilValue);
   if (!from || !until) return false;
-  return isLaterCalendarDay(until, from) && isSameCalendarDay(releaseAt, until);
+  return isLaterCalendarDay(until, from, timeZone) && isSameCalendarDay(releaseAt, until, timeZone);
 }
 
 function parseRealDate(value) {
@@ -290,33 +307,33 @@ function parseRealDate(value) {
   return Number.isFinite(time) ? time : null;
 }
 
-function getCalendarDayKey(time) {
+function getCalendarDayKey(time, timeZone) {
   if (!Number.isFinite(time)) return "";
   return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Europe/Madrid",
+    timeZone: timeZone || "UTC",
     year: "numeric",
     month: "2-digit",
     day: "2-digit"
   }).format(new Date(time));
 }
 
-function isSameCalendarDay(a, b) {
-  const ak = getCalendarDayKey(a), bk = getCalendarDayKey(b);
+function isSameCalendarDay(a, b, timeZone) {
+  const ak = getCalendarDayKey(a, timeZone), bk = getCalendarDayKey(b, timeZone);
   return Boolean(ak && bk && ak === bk);
 }
 
-function isLaterCalendarDay(actualTime, plannedTime) {
-  const actualDay = getCalendarDayKey(actualTime);
-  const plannedDay = getCalendarDayKey(plannedTime);
+function isLaterCalendarDay(actualTime, plannedTime, timeZone) {
+  const actualDay = getCalendarDayKey(actualTime, timeZone);
+  const plannedDay = getCalendarDayKey(plannedTime, timeZone);
   return Boolean(actualDay && plannedDay && actualDay > plannedDay);
 }
 
-function replaceCalendarDayKeepTime(timeToKeep, daySourceTime) {
-  const timeZone = "Europe/Madrid";
-  const dayParts = getDateTimePartsInZone(new Date(daySourceTime), timeZone);
-  const timeParts = getDateTimePartsInZone(new Date(timeToKeep), timeZone);
+function replaceCalendarDayKeepTime(timeToKeep, daySourceTime, timeZone) {
+  const tz = timeZone || "UTC";
+  const dayParts = getDateTimePartsInZone(new Date(daySourceTime), tz);
+  const timeParts = getDateTimePartsInZone(new Date(timeToKeep), tz);
   const localIso = `${dayParts.year}-${dayParts.month}-${dayParts.day}T${timeParts.hour}:${timeParts.minute}:${timeParts.second}`;
-  return zonedLocalIsoToUtcIso(localIso, timeZone);
+  return zonedLocalIsoToUtcIso(localIso, tz);
 }
 
 function getDateTimePartsInZone(date, timeZone) {
