@@ -441,21 +441,16 @@ function bindSwipeNavigation() {
     swipeStart = null;
 
     var w = list.offsetWidth;
-    var outPx = -dir * (w + 20);
+    var outPx = -dir * (w + 30);
 
-    list.style.transition = "transform 300ms cubic-bezier(0.32, 0, 0.67, 0)";
+    list.style.transition = "transform 320ms var(--ease)";
     list.style.transform = "translateX(" + outPx + "px)";
 
     if (preview) {
-      preview.style.transition = "transform 300ms var(--ease)";
+      preview.style.transition = "transform 320ms var(--ease)";
       preview.style.transform = "translateX(0px)";
       preview.style.opacity = "1";
     }
-
-    setTimeout(function() {
-      list.style.transition = "opacity 50ms var(--ease)";
-      list.style.opacity = "0";
-    }, 250);
 
     setTimeout(function() {
       list.style.transition = "none";
@@ -464,7 +459,7 @@ function bindSwipeNavigation() {
       if (preview) { preview.style.transition = "none"; preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
       finish();
-    }, 310);
+    }, 330);
   }
 
   list.addEventListener("touchmove", function(e) {
