@@ -466,50 +466,42 @@ h3 {
     background: rgba(255, 255, 255, 0.035);
     border: 1px solid var(--line);
     border-radius: var(--radius);
+    position: relative;
   }
 
   .toolbar.three {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+.tab-indicator {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc((100% - 22px) / 3);
+  height: calc(100% - 12px);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  border-radius: var(--radius);
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 280ms var(--ease), width 280ms var(--ease);
+  box-shadow: 0 2px 8px rgba(233, 185, 111, 0.25);
+}
+
 .tab {
   position: relative;
+  z-index: 1;
   min-height: 38px;
   padding: 0 14px;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.04);
+  background: transparent;
+  border: none;
   border-radius: var(--radius);
+  transition: color 200ms var(--ease);
 }
 
-.tab::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  z-index: -1;
-  background: rgba(233, 185, 111, 0.12);
-  border-radius: calc(var(--radius) - 2px);
-  opacity: 0;
-  transform: scaleX(0.72);
-  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
-}
-
-.tab.active::before {
-  opacity: 1;
-  transform: scaleX(1);
-}
-
-.anime-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 10px;
-  animation: list-in 360ms var(--ease);
-  will-change: opacity, transform;
-}
-
-.anime-list.is-switching {
-  opacity: 0;
-  transform: translateX(var(--swipe-shift, 10px));
-  transition: opacity 210ms var(--ease), transform 210ms var(--ease);
+.tab.active {
+  color: #17130d;
+  background: transparent;
 }
 
 .section-title,

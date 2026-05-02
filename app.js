@@ -345,6 +345,16 @@ function bindSwipeNavigation() {
 
   const modes = ["all", "today", "favorites"];
   const tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
+  const indicator = document.querySelector(".tab-indicator");
+  const directionHint = document.createElement("div");
+  directionHint.className = "swipe-hint";
+  directionHint.style.cssText = "position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--accent);pointer-events:none;opacity:0;transition:opacity 150ms;white-space:nowrap;z-index:2";
+  document.querySelector(".toolbar")?.appendChild(directionHint);
+
+  function setIndicatorPos(index) {
+    if (!indicator) return;
+    indicator.style.transform = `translateX(calc(${index * 100}% + ${index * 8}px))`;
+  }
 
   function isAtEdge(dir) {
     const idx = modes.indexOf(state.viewMode);
@@ -362,17 +372,29 @@ function bindSwipeNavigation() {
     const idx = modes.indexOf(state.viewMode);
     const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
     if (idx === targetIdx) return;
-    tabs.forEach(t => t.classList.remove("active"));
-    tabs[idx].style.opacity = String(1 - progress * 0.6);
-    tabs[idx].style.color = "";
-    tabs[targetIdx].style.opacity = String(0.4 + progress * 0.6);
-    tabs[targetIdx].style.color = "";
+
+    tabs.forEach(t => { t.classList.remove("active"); t.style.color = ""; });
+    tabs[idx].style.opacity = String(1 - progress * 0.5);
+    tabs[targetIdx].style.opacity = String(0.5 + progress * 0.5);
+
+    const label = modes[targetIdx] === "all" ? "Todos" : modes[targetIdx] === "today" ? "Hoy" : "Favoritos";
+    directionHint.textContent = dir < 0 ? `← ${label}` : `${label} →`;
+    directionHint.style.opacity = String(progress);
+
+    if (indicator) {
+      const basePos = idx;
+      const offset = (targetIdx - idx) * progress;
+      indicator.style.transform = `translateX(calc(${(basePos + offset) * 100}% + ${(basePos + offset) * 8}px))`;
+      indicator.style.transition = "none";
+    }
   }
 
   function springBack() {
     list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
     list.style.transform = "translateX(0px)";
     list.style.opacity = "1";
+    directionHint.style.opacity = "0";
+    if (indicator) { indicator.style.transition = "transform 280ms var(--ease)"; }
     resetTabs();
     swiping = false;
     swipeStartX = 0;
@@ -383,6 +405,8 @@ function bindSwipeNavigation() {
   function resetTabs() {
     tabs.forEach(t => { t.style.opacity = ""; t.style.color = ""; });
     setActiveTab();
+    const idx = modes.indexOf(state.viewMode);
+    setIndicatorPos(idx);
   }
 
   function commitSwipe() {
@@ -2341,7 +2365,7 @@ function scheduleMidnightRefresh() {
     setTimeout(scheduleMidnightRefresh, 3600000);
   }
 }
-function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); }
+function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); const modes=["all","today","favorites"]; const idx=modes.indexOf(state.viewMode); const ind=document.querySelector(".tab-indicator"); if(ind){ind.style.transition="transform 280ms var(--ease)";ind.style.transform=`translateX(calc(${idx*100}% + ${idx*8}px))`;} }
 function adjustDelayedDates(items) {
   const { year: cy, week: cw } = getIsoWeek(new Date());
   return items.map(item => {
