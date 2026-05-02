@@ -396,9 +396,9 @@ function bindSwipeNavigation() {
 
     if (preview) {
       preview.style.transition = "none";
-      var previewP = Math.max(0, (p - 0.6) * 2.5);
-      preview.style.transform = "translateX(" + ((1 - previewP * 0.35) * dir * 100) + "%)";
-      preview.style.opacity = String(Math.min(previewP, 1) * 0.75);
+      var gap = 5;
+      preview.style.transform = "translateX(" + (px + dir * (list.offsetWidth + gap)) + "px)";
+      preview.style.opacity = p > 0.35 ? String(Math.min((p - 0.35) * 1.5, 0.75)) : "0";
     }
 
     tabs.forEach(function(t) { t.classList.remove("active"); });
