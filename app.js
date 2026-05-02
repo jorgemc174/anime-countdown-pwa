@@ -295,6 +295,20 @@ function bindEvents() {
   els.themeBtn.addEventListener("click", toggleTheme);
   els.refreshDataBtn.addEventListener("click", () => { setSettingsOpen(false); refreshData(); });
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
+  const searchInput = document.getElementById("searchInput");
+  const sortBtn = document.getElementById("sortBtn");
+  if (searchInput) searchInput.addEventListener("input", () => {
+    state.searchQuery = searchInput.value.trim();
+    render();
+  });
+  if (sortBtn) {
+    sortBtn.addEventListener("click", () => {
+      state.sortAsc = !state.sortAsc;
+      sortBtn.classList.toggle("asc", state.sortAsc);
+      render();
+    });
+    sortBtn.classList.toggle("asc", state.sortAsc);
+  }
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.nextRelease.addEventListener("mousedown", (e) => { if (e.button === 1) e.preventDefault(); });
   els.nextRelease.addEventListener("auxclick", (e) => { if (e.button !== 1 || !state.currentNext) return; e.preventDefault(); const url = getBestWatchUrl(state.currentNext); if (url) window.open(url, "_blank", "noopener"); });
@@ -2389,15 +2403,28 @@ function getNextHighlightItems() {
 }
 
 function renderListModern() {
-  const visible = getVisibleItems();
+  let visible = getVisibleItems();
   els.animeList.innerHTML = "";
+
+  if (state.searchQuery) {
+    const q = state.searchQuery.toLowerCase();
+    visible = visible.filter(item =>
+      (item.title || "").toLowerCase().includes(q) ||
+      (item.episode || "").toLowerCase().includes(q) ||
+      (getDisplayService(item) || "").toLowerCase().includes(q)
+    );
+  }
+
+  if (!state.sortAsc) visible = [...visible].reverse();
+
+  const title = state.viewMode === "today" ? "Estrenos de hoy" : state.viewMode === "favorites" ? "Favoritos" : "Proximos estrenos";
+  const listTitle = document.getElementById("listTitle");
+  if (listTitle) listTitle.textContent = `${title} · ${visible.length}`;
+
   if (!visible.length) {
     els.animeList.innerHTML = `<div class="empty-message">No hay episodios para mostrar.</div>`;
     return;
   }
-
-  const title = state.viewMode === "today" ? "Estrenos de hoy" : state.viewMode === "favorites" ? "Favoritos" : "Proximos estrenos";
-  els.animeList.insertAdjacentHTML("beforeend", `<div class="section-title">${title} · ${visible.length}</div>`);
   visible.forEach((item) => els.animeList.appendChild(createCardModern(item)));
 }
 
