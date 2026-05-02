@@ -337,11 +337,11 @@ function bindSwipeNavigation() {
   const list = els.animeList;
   if (!list) return;
 
-  const SWIPE_THRESHOLD = 80;
+  const THRESHOLD = 80;
   const MAX_SHIFT = 140;
   let swiping = false;
   let swipeStartX = 0;
-  let swipeDx = 0;
+  let swipePx = 0;
 
   const modes = ["all", "today", "favorites"];
   const tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
@@ -352,27 +352,21 @@ function bindSwipeNavigation() {
   }
 
   function applyShift(px) {
-    const dir = px > 0 ? -1 : 1;
-    const atEdge = isAtEdge(dir);
-    const effectivePx = atEdge ? px * 0.22 : px;
-
-    list.style.transform = `translateX(${effectivePx}px)`;
     list.style.transition = "none";
-    list.style.opacity = 1 - Math.abs(effectivePx) / 300;
+    list.style.transform = `translateX(${px}px)`;
+    list.style.opacity = 1 - Math.abs(px) / 300;
 
-    if (!atEdge) {
-      const progress = Math.min(Math.abs(px) / SWIPE_THRESHOLD, 1);
-      const idx = modes.indexOf(state.viewMode);
-      const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
-
-      if (idx !== targetIdx) {
-        tabs.forEach(t => t.classList.remove("active"));
-        tabs[idx].style.opacity = String(1 - progress * 0.6);
-        tabs[idx].style.color = "";
-        tabs[targetIdx].style.opacity = String(0.4 + progress * 0.6);
-        tabs[targetIdx].style.color = "";
-      }
-    }
+    const dir = px < 0 ? 1 : -1;
+    if (isAtEdge(dir)) return;
+    const progress = Math.min(Math.abs(px) / THRESHOLD, 1);
+    const idx = modes.indexOf(state.viewMode);
+    const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
+    if (idx === targetIdx) return;
+    tabs.forEach(t => t.classList.remove("active"));
+    tabs[idx].style.opacity = String(1 - progress * 0.6);
+    tabs[idx].style.color = "";
+    tabs[targetIdx].style.opacity = String(0.4 + progress * 0.6);
+    tabs[targetIdx].style.color = "";
   }
 
   function springBack() {
@@ -382,7 +376,7 @@ function bindSwipeNavigation() {
     resetTabs();
     swiping = false;
     swipeStartX = 0;
-    swipeDx = 0;
+    swipePx = 0;
     swipeStart = null;
   }
 
@@ -391,24 +385,24 @@ function bindSwipeNavigation() {
     setActiveTab();
   }
 
-  function commitSwipe(direction) {
-    const visualDir = -direction;
-    const outPx = visualDir * MAX_SHIFT;
-    list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
+  function commitSwipe() {
+    const dir = swipePx < 0 ? 1 : -1;
+    if (isAtEdge(dir)) { springBack(); return; }
+    const outPx = -dir * MAX_SHIFT;
+    list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
     list.style.transform = `translateX(${outPx}px)`;
     list.style.opacity = "0";
     swiping = false;
     swipeStartX = 0;
-    swipeDx = 0;
+    swipePx = 0;
     swipeStart = null;
 
     list.addEventListener("transitionend", function finish() {
       list.removeEventListener("transitionend", finish);
       list.style.transform = "";
       list.style.transition = "none";
-      goToAdjacentMode(direction);
+      goToAdjacentMode(dir);
       list.style.transform = `translateX(${-outPx}px)`;
-
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           resetTabs();
@@ -430,24 +424,17 @@ function bindSwipeNavigation() {
       }
       const dx = e.touches[0].clientX - swipeStartX;
       const dy = e.touches[0].clientY - swipeStart.y;
-      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-        swiping = true;
-      }
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) swiping = true;
     }
     if (!swiping) return;
-    swipeDx = e.touches[0].clientX - swipeStartX;
-    const clamped = Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipeDx * 0.8));
-    applyShift(clamped);
+    swipePx = e.touches[0].clientX - swipeStartX;
+    applyShift(Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipePx * 0.8)));
   }, { passive: true });
 
   list.addEventListener("touchend", () => {
     if (!swiping) { swipeStart = null; return; }
-    const dir = swipeDx > 0 ? -1 : 1;
-    if (Math.abs(swipeDx) >= SWIPE_THRESHOLD && !isAtEdge(dir)) {
-      commitSwipe(dir);
-    } else {
-      springBack();
-    }
+    if (Math.abs(swipePx) >= THRESHOLD) commitSwipe();
+    else springBack();
   });
 
   list.addEventListener("touchcancel", () => { if (swiping) springBack(); });
