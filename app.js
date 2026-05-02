@@ -356,9 +356,9 @@ function setupPullToRefresh() {
     }
   };
 
-  document.addEventListener("touchstart", onTouchStart, { passive: false });
-  document.addEventListener("touchmove", onTouchMove, { passive: false });
-  document.addEventListener("touchend", onTouchEnd);
+  document.addEventListener("touchstart", onTouchStart, { passive: true });
+  document.addEventListener("touchmove", onTouchMove, { passive: true });
+  document.addEventListener("touchend", onTouchEnd, { passive: true });
 }
 
 function bindSwipeNavigation() {
