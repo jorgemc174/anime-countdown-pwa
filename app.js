@@ -619,10 +619,15 @@ async function syncAnilist() {
     const jwResult = await verifyPlatformsWithJustWatch();
     await saveAllLists();
     await cancelStaleNativeNotifications();
-    await scheduleNativeNotifications();
+    // Only show scheduled count in Capacitor
+    let scheduled = 0;
+    if (isCapacitor()) {
+      scheduled = await scheduleNativeNotifications();
+    }
     render();
-    const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} modificados de ${jwResult.checked}` : "";
-    showStatus(`AniList sincronizado: ${library.length} animes en emisión.${jwMsg}`, "success");
+    const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} de ${jwResult.checked}` : "";
+    const notifMsg = isCapacitor() ? ` | Notificaciones: ${scheduled} programadas` : "";
+    showStatus(`AniList sincronizado: ${library.length} animes en emisión.${jwMsg}${notifMsg}`, "success");
   } catch (error) { showStatus(error.message, "error"); }
 }
 
@@ -1842,6 +1847,11 @@ async function toggleFavorite(key) {
   state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item);
   await saveAllLists();
 
+  if (isCapacitor() && state.notificationEnabled) {
+    cancelStaleNativeNotifications();
+    scheduleNativeNotifications();
+  }
+
   const btn = els.animeList.querySelector(`[data-action="favorite"][data-key="${CSS.escape(key)}"]`);
 
   if (!should && (state.viewMode === "favorites" || state.viewMode === "today")) {
@@ -2060,8 +2070,10 @@ async function scheduleNativeNotifications() {
       await LocalNotifications.schedule({ notifications: toSchedule });
       console.log("Notificaciones programadas:", toSchedule.length);
     }
+    return toSchedule.length;
   } catch (error) {
     console.warn("Error al programar notificaciones nativas:", error);
+    return 0;
   }
 }
 
@@ -2140,11 +2152,15 @@ function hashNotificationId(item) {
 function setupCapacitorNotificationTap() {
   if (!isCapacitor()) return;
   try {
-    if (!Capacitor.Plugins || !Capacitor.Plugins.App) return;
-    const App = Capacitor.Plugins.App;
-    App.addListener("appUrlOpen", (data) => {
-      if (data.url) openExternalUrl(data.url);
-    });
+    const LocalNotifications = getLocalNotifications();
+    if (LocalNotifications && LocalNotifications.addListener) {
+      LocalNotifications.addListener("localNotificationActionPerformed", (notification) => {
+        const extra = notification.notification?.extra;
+        if (extra && extra.url) {
+          openExternalUrl(extra.url);
+        }
+      });
+    }
   } catch (error) {
     console.warn("No se pudo configurar el tap de notificaciones.", error);
   }
