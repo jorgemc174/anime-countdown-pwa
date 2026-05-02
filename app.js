@@ -1040,21 +1040,42 @@ async function fetchJustWatchAvailability(item, countryCode = "ES", language = "
     query: gql
   });
 
-  const bodies = [
-    buildBody(gqlPopular, { first: 20, filter: { searchQuery: q, objectTypes: ["SHOW"] }, country: countryCode, language, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }),
-    buildBody(gqlSearch, { first: 20, query: q, country: countryCode, language, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }),
+  const locales = [
+    { country: countryCode, lang: language },
+    { country: countryCode, lang: "en" },
   ];
 
-  const tryFetch = async (url, body) => {
+  const bodies = [];
+  for (const loc of locales) {
+    bodies.push(buildBody(gqlPopular, { first: 20, filter: { searchQuery: q, objectTypes: ["SHOW"] }, country: loc.country, language: loc.lang, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }));
+    bodies.push(buildBody(gqlSearch, { first: 20, query: q, country: loc.country, language: loc.lang, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }));
+  }
+
+  const tryFetchJson = async (url, body) => {
     const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     if (!res.ok) return null;
     return await res.json();
   };
 
+  const findInNodes = (nodes) => {
+    if (!nodes || nodes.length === 0) return null;
+    const match = findJustWatchMatch(item, nodes);
+    if (match) return match;
+    const itemTitles = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean).map(t => t.toLowerCase().trim());
+    for (const node of nodes) {
+      const jwTitle = (node.content?.title || "").toLowerCase().trim();
+      if (jwTitle && itemTitles.some(t => t.includes(jwTitle) || jwTitle.includes(t))) return node;
+    }
+    return null;
+  };
+
   try {
+    let matchNode = null;
+    let offersCountry = countryCode;
+
     for (const body of bodies) {
-      let json = await tryFetch("/api/justwatch", body).catch(() => null);
-      if (!json) json = await tryFetch("https://apis.justwatch.com/graphql", body).catch(() => null);
+      let json = await tryFetchJson("/api/justwatch", body).catch(() => null);
+      if (!json) json = await tryFetchJson("https://apis.justwatch.com/graphql", body).catch(() => null);
       if (!json) continue;
 
       const rawNodes = json.data?.popularTitles || json.data?.searchTitles;
@@ -1062,15 +1083,36 @@ async function fetchJustWatchAvailability(item, countryCode = "ES", language = "
         ? rawNodes
         : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
 
-      if (nodes.length === 0) continue;
+      matchNode = findInNodes(nodes);
+      if (matchNode) break;
+    }
 
-      const match = findJustWatchMatch(item, nodes);
-      if (match) {
-        const availability = getJustWatchAllowedAvailability(match);
-        if (availability) return { verified: true, availability };
+    if (!matchNode && countryCode !== "US") {
+      const usBody = buildBody(gqlSearch, { first: 10, query: q, country: "US", language: "en", offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } });
+      let json = await tryFetchJson("/api/justwatch", usBody).catch(() => null);
+      if (!json) json = await tryFetchJson("https://apis.justwatch.com/graphql", usBody).catch(() => null);
+      if (json) {
+        const rawNodes = json.data?.popularTitles || json.data?.searchTitles;
+        const nodes = Array.isArray(rawNodes)
+          ? rawNodes
+          : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
+        const usNode = findInNodes(nodes);
+        if (usNode && usNode.id) {
+          const gqlOffers = `query GetOffers($id: ID!, $country: Country!, $offerFilter: OfferFilter!) { node(id: $id) { ... on Show { offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } }`;
+          const offBody = { operationName: "GetOffers", variables: { id: usNode.id, country: countryCode, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }, query: gqlOffers };
+          let offJson = await tryFetchJson("/api/justwatch", offBody).catch(() => null);
+          if (!offJson) offJson = await tryFetchJson("https://apis.justwatch.com/graphql", offBody).catch(() => null);
+          if (offJson?.data?.node) {
+            matchNode = { content: usNode.content, offers: offJson.data.node.offers || [] };
+          }
+        }
       }
     }
 
+    if (!matchNode) return { verified: false };
+
+    const availability = getJustWatchAllowedAvailability(matchNode);
+    if (availability) return { verified: true, availability };
     return { verified: false };
   } catch (error) {
     console.warn("No se pudo verificar JustWatch.", error);
