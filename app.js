@@ -437,44 +437,45 @@ function bindSwipeNavigation() {
     var dir = swipePx < 0 ? 1 : -1;
     if (edge(dir)) { back(); return; }
     var out = -dir * MAX_SHIFT;
-    list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+    swiping = false;
+    swipeStartX = 0;
+    swipePx = 0;
+    swipeStart = null;
+
+    list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
     list.style.transform = "translateX(" + out + "px)";
     list.style.opacity = "0";
     if (preview) {
-      preview.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+      preview.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
       preview.style.transform = "translateX(0)";
       preview.style.opacity = "1";
     }
 
-    list.addEventListener("transitionend", function done() {
-      list.removeEventListener("transitionend", done);
+    setTimeout(function() {
       list.style.transform = "";
       list.style.transition = "none";
-      if (preview && preview.children.length) {
-        while (preview.firstChild) list.appendChild(preview.firstChild);
-      }
-      var dir2 = swipePx < 0 ? 1 : -1;
+
       var modes2 = ["all", "today", "favorites"];
       var cur2 = Math.max(0, modes2.indexOf(state.viewMode));
-      var nxt2 = Math.min(modes2.length - 1, Math.max(0, cur2 + dir2));
+      var nxt2 = Math.min(modes2.length - 1, Math.max(0, cur2 + dir));
       if (nxt2 !== cur2) {
         state.viewMode = modes2[nxt2];
         browserApi.storage.local.set({ viewMode: state.viewMode });
         setActiveTab();
         renderNextModern();
         renderSettingsPlatformFilter();
-        setTimeout(function() { render(); }, 50);
+        setTimeout(function() { render(); }, 80);
       }
-      requestAnimationFrame(function() {
-        list.style.transition = "opacity 120ms var(--ease)";
-        list.style.opacity = "1";
-        if (preview) {
-          preview.style.transition = "opacity 120ms var(--ease)";
-          preview.style.opacity = "0";
-        }
-        finish();
-      });
-    }, { once: true });
+
+      if (preview && preview.children.length) {
+        list.innerHTML = "";
+        while (preview.firstChild) list.appendChild(preview.firstChild);
+      }
+      list.style.transition = "opacity 100ms var(--ease)";
+      list.style.opacity = "1";
+      if (preview) { preview.style.transition = "opacity 100ms var(--ease)"; preview.style.opacity = "0"; }
+      finish();
+    }, 220);
   }
 
   list.addEventListener("touchmove", function(e) {
