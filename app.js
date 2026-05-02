@@ -438,44 +438,21 @@ function bindSwipeNavigation() {
     if (edge(dir)) { back(); return; }
     var out = -dir * MAX_SHIFT;
     swiping = false;
-    swipeStartX = 0;
-    swipePx = 0;
     swipeStart = null;
 
     list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
     list.style.transform = "translateX(" + out + "px)";
     list.style.opacity = "0";
-    if (preview) {
-      preview.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
-      preview.style.transform = "translateX(0)";
-      preview.style.opacity = "1";
-    }
 
     setTimeout(function() {
-      list.style.transform = "";
       list.style.transition = "none";
-
-      var modes2 = ["all", "today", "favorites"];
-      var cur2 = Math.max(0, modes2.indexOf(state.viewMode));
-      var nxt2 = Math.min(modes2.length - 1, Math.max(0, cur2 + dir));
-      if (nxt2 !== cur2) {
-        state.viewMode = modes2[nxt2];
-        browserApi.storage.local.set({ viewMode: state.viewMode });
-        setActiveTab();
-        renderNextModern();
-        renderSettingsPlatformFilter();
-        setTimeout(function() { render(); }, 80);
-      }
-
-      if (preview && preview.children.length) {
-        list.innerHTML = "";
-        while (preview.firstChild) list.appendChild(preview.firstChild);
-      }
-      list.style.transition = "opacity 100ms var(--ease)";
+      list.style.transform = "";
+      goToAdjacentMode(dir);
+      list.offsetHeight;
+      list.style.transition = "opacity 80ms var(--ease)";
       list.style.opacity = "1";
-      if (preview) { preview.style.transition = "opacity 100ms var(--ease)"; preview.style.opacity = "0"; }
       finish();
-    }, 220);
+    }, 210);
   }
 
   list.addEventListener("touchmove", function(e) {
