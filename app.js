@@ -119,6 +119,7 @@ const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
 let swipeStart = null;
+let _refreshPromise = null;
 
 init();
 
@@ -158,7 +159,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","pullIndicator"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -301,6 +302,7 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
+  bindPullToRefresh();
   let titleTapTimer = null;
   document.querySelector(".header h1")?.addEventListener("click", () => {
     if (titleTapTimer) { clearTimeout(titleTapTimer); titleTapTimer = null; refreshData(); }
@@ -345,6 +347,114 @@ function goToAdjacentMode(direction) {
   const current = Math.max(0, modes.indexOf(state.viewMode));
   const next = Math.min(modes.length - 1, Math.max(0, current + direction));
   if (next !== current) setMode(modes[next], direction);
+}
+
+function bindPullToRefresh() {
+  const panel = document.querySelector(".main-panel");
+  const indicator = els.pullIndicator;
+  if (!panel || !indicator) return;
+
+  const THRESHOLD = 70;
+  let pullStartY = 0;
+  let pulling = false;
+  let pullOffset = 0;
+
+  function isAtTop() {
+    return window.scrollY <= 2;
+  }
+
+  function updateIndicator() {
+    const ratio = Math.min(pullOffset / THRESHOLD, 1);
+    const ready = pullOffset >= THRESHOLD;
+
+    indicator.classList.remove("pulling", "ready", "refreshing");
+    if (ratio > 0.05) {
+      if (ready) {
+        indicator.classList.add("ready");
+        indicator.querySelector(".pull-label").textContent = "Suelta para actualizar";
+      } else {
+        indicator.classList.add("pulling");
+        indicator.querySelector(".pull-label").textContent = "Desliza para actualizar";
+      }
+      indicator.style.transform = `translateX(-50%) translateY(${Math.min(pullOffset * 0.5, 60)}px)`;
+    }
+  }
+
+  function resetPull(animate) {
+    pulling = false;
+    pullOffset = 0;
+    if (animate) {
+      indicator.classList.add("hiding");
+      indicator.style.transform = "";
+      indicator.addEventListener("transitionend", function h() {
+        indicator.classList.remove("pulling", "ready", "hiding");
+        indicator.removeEventListener("transitionend", h);
+      }, { once: true });
+    } else {
+      indicator.classList.remove("pulling", "ready", "hiding");
+      indicator.style.transform = "";
+    }
+  }
+
+  panel.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    pullStartY = e.touches[0].clientY;
+    pulling = isAtTop();
+  }, { passive: true });
+
+  panel.addEventListener("touchmove", (e) => {
+    if (!pulling) return;
+    const dy = e.touches[0].clientY - pullStartY;
+    if (dy <= 0) { pulling = false; resetPull(true); return; }
+    pullOffset = dy;
+    updateIndicator();
+  }, { passive: true });
+
+  panel.addEventListener("touchend", () => {
+    if (!pulling || pullOffset < THRESHOLD) { resetPull(true); return; }
+    resetPull(false);
+    triggerPullRefresh();
+  });
+
+  let mouseDown = false;
+  panel.addEventListener("mousedown", (e) => {
+    if (e.button !== 0) return;
+    mouseDown = true;
+    pullStartY = e.clientY;
+    pulling = isAtTop();
+  });
+  panel.addEventListener("mousemove", (e) => {
+    if (!mouseDown || !pulling) return;
+    const dy = e.clientY - pullStartY;
+    if (dy <= 0) { pulling = false; resetPull(true); return; }
+    pullOffset = dy;
+    updateIndicator();
+  });
+  panel.addEventListener("mouseup", () => {
+    mouseDown = false;
+    if (!pulling || pullOffset < THRESHOLD) { resetPull(true); return; }
+    resetPull(false);
+    triggerPullRefresh();
+  });
+  panel.addEventListener("mouseleave", () => { mouseDown = false; resetPull(true); });
+
+  function triggerPullRefresh() {
+    if (_refreshPromise) { showStatus("Ya se está actualizando...", "warn"); return; }
+    indicator.classList.remove("hiding");
+    indicator.classList.add("refreshing");
+    indicator.style.transform = "";
+    indicator.querySelector(".pull-label").textContent = "Actualizando...";
+    _refreshPromise = refreshData().finally(() => {
+      indicator.classList.add("hiding");
+      indicator.classList.remove("refreshing");
+      indicator.style.transform = "";
+      indicator.addEventListener("transitionend", function h() {
+        indicator.classList.remove("pulling", "ready", "hiding");
+        indicator.removeEventListener("transitionend", h);
+      }, { once: true });
+      _refreshPromise = null;
+    });
+  }
 }
 
 function getModeDirection(mode) {
@@ -588,17 +698,7 @@ function updateNotificationButton() {
 
 async function refreshData() {
   try {
-    showStatus("Actualizando horario...", "success");
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true, force: true });
-    await saveAllLists();
-    if (isCapacitor()) {
-      cancelStaleNativeNotifications();
-      scheduleNativeNotifications();
-    }
-    render();
-    showStatus("Horario actualizado. Verificando plataformas...", "success");
-
-    await verifyPlatformsWithJustWatch();
     await saveAllLists();
     if (isCapacitor()) {
       cancelStaleNativeNotifications();
@@ -608,6 +708,15 @@ async function refreshData() {
     const favs = state.releases.filter(i => i.favorite).length;
     const notifMsg = isCapacitor() ? ` | ${favs} con notificaciones` : "";
     showStatus(`Listo.${notifMsg}`, "success");
+
+    verifyPlatformsWithJustWatch().then(async () => {
+      await saveAllLists();
+      if (isCapacitor()) {
+        cancelStaleNativeNotifications();
+        scheduleNativeNotifications();
+      }
+      render();
+    }).catch(() => {});
   } catch (error) {
     showStatus(error.message || "Error al refrescar", "error");
   }
