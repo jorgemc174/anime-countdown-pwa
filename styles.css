@@ -548,7 +548,7 @@ h3 {
   top: 6px;
   left: 6px;
   width: calc((100% - 28px) / 3);
-  height: calc(100% - 6px);
+  height: calc(100% - 12px);
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   border-radius: var(--radius);
   z-index: 0;
