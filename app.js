@@ -391,9 +391,6 @@ async function saveJwCountry() {
 
 function getDetectedPlatforms() {
   const platforms = new Set();
-  for (const platform of Object.keys(SERVICE_PRIORITY)) {
-    if (platform !== "No legal platform") platforms.add(platform);
-  }
   for (const item of [...state.releases, ...state.anilistLibrary]) {
     const svc = getDisplayService(item);
     if (svc && svc !== "No legal platform") platforms.add(svc);
@@ -517,6 +514,7 @@ async function syncAnilist() {
     showStatus("Sincronizando base y AniList...", "success");
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     const library = await refreshAnilistData(username);
+    showStatus("Verificando plataformas con JustWatch...", "success");
     await verifyPlatformsWithJustWatch();
     render();
     showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
@@ -968,7 +966,7 @@ async function verifyPlatformsWithJustWatch() {
   const candidates = getOneNextPerSeries(state.releases)
     .filter((item) => {
       const service = item.service || "No legal platform";
-      return service !== "Crunchyroll";
+      return service !== "Crunchyroll" && service !== "No legal platform";
     })
     .slice(0, JUSTWATCH_SEARCH_LIMIT);
   const cache = new Map();
@@ -1012,11 +1010,22 @@ async function fetchJustWatchAvailability(item, countryCode = "ES", language = "
     query: gql
   };
 
+  const tryFetch = async (url) => {
+    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (!res.ok) return null;
+    return await res.json();
+  };
+
   try {
-    const response = await fetch("https://apis.justwatch.com/graphql", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-    if (!response.ok) return { verified: false };
-    const json = await response.json();
-    const nodes = (json.data?.popularTitles?.edges || []).map((edge) => edge.node).filter(Boolean);
+    let json = await tryFetch("/api/justwatch").catch(() => null);
+    if (!json) json = await tryFetch("https://apis.justwatch.com/graphql").catch(() => null);
+    if (!json) return { verified: false };
+
+    const rawNodes = json.data?.popularTitles;
+    const nodes = Array.isArray(rawNodes)
+      ? rawNodes
+      : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
+
     const match = findJustWatchMatch(item, nodes);
     if (!match) return { verified: false };
     const availability = getJustWatchAllowedAvailability(match);
