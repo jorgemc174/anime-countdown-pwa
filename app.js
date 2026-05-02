@@ -119,7 +119,6 @@ const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
 let swipeStart = null;
-var preRendered = {};
 
 init();
 
