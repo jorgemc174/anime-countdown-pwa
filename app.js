@@ -392,7 +392,8 @@ function bindSwipeNavigation() {
   }
 
   function commitSwipe(direction) {
-    const outPx = direction * MAX_SHIFT;
+    const visualDir = -direction;
+    const outPx = visualDir * MAX_SHIFT;
     list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
     list.style.transform = `translateX(${outPx}px)`;
     list.style.opacity = "0";
