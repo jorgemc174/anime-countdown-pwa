@@ -389,15 +389,15 @@ function bindSwipeNavigation() {
     if (idx === tgt) return;
 
     var targetMode = modes[tgt];
-    if (targetMode !== lastMode) {
+    if (targetMode !== lastMode && p > 0.15) {
       lastMode = targetMode;
       renderPreview(targetMode);
     }
 
     if (preview) {
       preview.style.transition = "none";
-      preview.style.transform = "translateX(" + (px + dir * 110) + "%)";
-      preview.style.opacity = String(p * 0.85);
+      preview.style.transform = "translateX(" + (px + dir * 120) + "%)";
+      preview.style.opacity = p > 0.25 ? String((p - 0.25) * 1.13) : "0";
     }
 
     tabs.forEach(function(t) { t.classList.remove("active"); });
