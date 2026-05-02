@@ -504,25 +504,11 @@ h3 {
   background: transparent;
 }
 
-.list-viewport {
-  position: relative;
-  overflow: hidden;
-}
-
 .anime-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
   will-change: transform, opacity;
-}
-
-.anime-list.preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  pointer-events: none;
 }
 
 .section-title,

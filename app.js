@@ -158,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","animeListPreview","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -335,15 +335,13 @@ function switchTab(mode) {
 
 function bindSwipeNavigation() {
   const list = els.animeList;
-  const preview = els.animeListPreview;
-  if (!list || !preview) return;
+  if (!list) return;
 
   const THRESHOLD = 80;
   const MAX_SHIFT = 140;
   let swiping = false;
   let swipeStartX = 0;
   let swipePx = 0;
-  let previewMode = null;
 
   const modes = ["all", "today", "favorites"];
   const tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
@@ -354,45 +352,20 @@ function bindSwipeNavigation() {
     return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
   }
 
-  function renderPreviewFor(mode) {
-    const prevMode = state.viewMode;
-    state.viewMode = mode;
-    const visible = getVisibleItems();
-    state.viewMode = prevMode;
-    preview.innerHTML = "";
-    const label = mode === "today" ? "Estrenos de hoy" : mode === "favorites" ? "Favoritos" : "Próximos estrenos";
-    preview.innerHTML = `<div class="empty-message" style="font-size:15px;opacity:0.7">${label} · ${visible.length} episodios</div>`;
-  }
-
   function applyShift(px) {
-    const dir = px < 0 ? 1 : -1;
-    const atEdge = isAtEdge(dir);
-
     list.style.transition = "none";
     list.style.transform = `translateX(${px}px)`;
-    list.style.opacity = atEdge ? 1 : (1 - Math.abs(px) / 300);
+    list.style.opacity = 1 - Math.abs(px) / 300;
 
-    if (atEdge) {
-      preview.style.opacity = "0";
-      preview.style.transform = "";
-      return;
-    }
+    const dir = px < 0 ? 1 : -1;
+    if (isAtEdge(dir)) return;
 
     const progress = Math.min(Math.abs(px) / THRESHOLD, 1);
     const idx = modes.indexOf(state.viewMode);
     const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
-    const targetMode = modes[targetIdx];
+    if (idx === targetIdx) return;
 
-    if (targetMode !== previewMode) {
-      previewMode = targetMode;
-      renderPreviewFor(targetMode);
-    }
-
-    preview.style.transition = "none";
-    preview.style.transform = `translateX(${px + (dir * 100)}%)`;
-    preview.style.opacity = String(progress * 0.9);
-
-    tabs.forEach(t => { t.classList.remove("active"); t.style.color = ""; });
+    tabs.forEach(t => { t.classList.remove("active"); });
     tabs[idx].style.opacity = String(1 - progress * 0.5);
     tabs[targetIdx].style.opacity = String(0.5 + progress * 0.5);
 
@@ -408,9 +381,6 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
     list.style.transform = "translateX(0px)";
     list.style.opacity = "1";
-    preview.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
-    preview.style.transform = "";
-    preview.style.opacity = "0";
     if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
     resetTabs();
   }
@@ -420,8 +390,6 @@ function bindSwipeNavigation() {
     swipeStartX = 0;
     swipePx = 0;
     swipeStart = null;
-    previewMode = null;
-    preview.innerHTML = "";
     tabs.forEach(t => { t.style.opacity = ""; t.style.color = ""; });
     setActiveTab();
   }
@@ -433,20 +401,21 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
     list.style.transform = `translateX(${outPx}px)`;
     list.style.opacity = "0";
-    preview.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
-    preview.style.transform = "translateX(0)";
-    preview.style.opacity = "1";
 
     list.addEventListener("transitionend", function finish() {
       list.removeEventListener("transitionend", finish);
       list.style.transform = "";
       list.style.transition = "none";
-      list.style.opacity = "1";
-      preview.style.opacity = "0";
-      preview.style.transform = "";
-      preview.style.transition = "none";
       goToAdjacentMode(dir);
-      resetTabs();
+      list.style.transform = `translateX(${-outPx}px)`;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          resetTabs();
+          list.style.transition = "transform 320ms var(--ease), opacity 320ms var(--ease)";
+          list.style.transform = "translateX(0px)";
+          list.style.opacity = "1";
+        });
+      });
     }, { once: true });
   }
 
