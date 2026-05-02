@@ -1017,52 +1017,52 @@ async function fetchJustWatchAvailabilityWithFallback(item, countryCode, languag
     strip(item.title),
     noArticle(item.anilistTitle),
     noArticle(item.title),
+    noArticle(strip(item.anilistTitle)),
+    noArticle(strip(item.title)),
   ].filter(Boolean))];
 
   for (const query of queries) {
     const result = await fetchJustWatchAvailability(item, countryCode, language, query);
     if (result.verified) return result;
   }
+
   return { verified: false };
 }
 
 async function fetchJustWatchAvailability(item, countryCode = "ES", language = "es", searchQuery = "") {
-  const gql = `query GetSearchTitles($searchTitlesFilter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $filter: OfferFilter!) { popularTitles(country: $country, filter: $searchTitlesFilter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) { edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear } offers(country: $country, platform: WEB, filter: $filter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } } }`;
-  const body = {
-    operationName: "GetSearchTitles",
-    variables: {
-      first: 20,
-      searchTitlesFilter: { searchQuery: searchQuery || item.anilistTitle || item.title, objectTypes: ["SHOW"] },
-      country: countryCode,
-      language,
-      filter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] }
-    },
-    query: gql
-  };
+  const q = searchQuery || item.anilistTitle || item.title;
+  const gqlPopular = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) { popularTitles(country: $country, filter: $filter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) { edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear } offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } } }`;
+  const gqlSearch = `query GetSearch($query: String!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) { searchTitles(query: $query, country: $country, first: $first, filter: { objectTypes: ["SHOW"] }) { edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear } offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } } }`;
 
-  const tryFetch = async (url) => {
+  const buildBody = (gql, vars) => ({
+    operationName: "GetSearch",
+    variables: vars,
+    query: gql
+  });
+
+  const bodies = [
+    buildBody(gqlPopular, { first: 20, filter: { searchQuery: q, objectTypes: ["SHOW"] }, country: countryCode, language, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }),
+    buildBody(gqlSearch, { first: 20, query: q, country: countryCode, language, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }),
+  ];
+
+  const tryFetch = async (url, body) => {
     const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     if (!res.ok) return null;
     return await res.json();
   };
 
-  const tryRest = async (url) => {
-    const q = searchQuery || item.anilistTitle || item.title;
-    const restBody = JSON.stringify({ query: q, content_types: ["show"], page_size: 5, page: 1 });
-    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: restBody });
-    if (!res.ok) return null;
-    return await res.json();
-  };
-
   try {
-    let json = await tryFetch("/api/justwatch").catch(() => null);
-    if (!json) json = await tryFetch("https://apis.justwatch.com/graphql").catch(() => null);
+    for (const body of bodies) {
+      let json = await tryFetch("/api/justwatch", body).catch(() => null);
+      if (!json) json = await tryFetch("https://apis.justwatch.com/graphql", body).catch(() => null);
+      if (!json) continue;
 
-    if (json) {
-      const rawNodes = json.data?.popularTitles;
+      const rawNodes = json.data?.popularTitles || json.data?.searchTitles;
       const nodes = Array.isArray(rawNodes)
         ? rawNodes
         : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
+
+      if (nodes.length === 0) continue;
 
       const match = findJustWatchMatch(item, nodes);
       if (match) {
