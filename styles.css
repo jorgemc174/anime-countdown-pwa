@@ -606,6 +606,7 @@ h3 {
 
 .swipe-stage {
   position: relative;
+  overflow: hidden;
 }
 
 .swipe-preview {
