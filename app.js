@@ -325,12 +325,18 @@ async function setMode(mode, direction) {
 function bindSwipeNavigation() {
   const panel = document.querySelector(".main-panel");
   if (!panel) return;
-  panel.addEventListener("touchstart", (event) => {
-    if (event.touches.length !== 1) return;
-    const touch = event.touches[0];
-    swipeStart = { x: touch.clientX, y: touch.clientY, time: Date.now() };
+  let swipeTracking = false;
+  panel.addEventListener("touchmove", (event) => {
+    if (event.touches.length !== 1) { swipeTracking = false; return; }
+    if (!swipeTracking) {
+      const touch = event.touches[0];
+      swipeStart = { x: touch.clientX, y: touch.clientY, time: Date.now() };
+      swipeTracking = true;
+      return;
+    }
   }, { passive: true });
   panel.addEventListener("touchend", (event) => {
+    swipeTracking = false;
     if (!swipeStart || event.changedTouches.length !== 1) return;
     const touch = event.changedTouches[0];
     const dx = touch.clientX - swipeStart.x;
@@ -340,6 +346,7 @@ function bindSwipeNavigation() {
     if (dt > 700 || Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
     goToAdjacentMode(dx < 0 ? 1 : -1);
   }, { passive: true });
+  panel.addEventListener("touchcancel", () => { swipeTracking = false; swipeStart = null; });
 }
 
 function goToAdjacentMode(direction) {
@@ -359,6 +366,7 @@ function bindPullToRefresh() {
   let pullStartY = 0;
   let pulling = false;
   let pullOffset = 0;
+  let trackingTouch = false;
 
   function isAtTop() {
     return window.scrollY <= 2;
@@ -382,6 +390,7 @@ function bindPullToRefresh() {
 
   function resetPull(animate) {
     pulling = false;
+    trackingTouch = false;
     pullOffset = 0;
     indicator.querySelector(".pull-icon").style.transform = "";
     if (animate) {
@@ -397,18 +406,19 @@ function bindPullToRefresh() {
     }
   }
 
-  panel.addEventListener("touchstart", (e) => {
-    if (e.touches.length !== 1) return;
-    pulling = false;
-    pullOffset = 0;
-    pullStartY = e.touches[0].clientY;
-  }, { passive: true });
-
   panel.addEventListener("touchmove", (e) => {
-    if (e.touches.length !== 1) return;
+    if (e.touches.length !== 1) { resetPull(false); return; }
+    if (!trackingTouch) {
+      if (!isAtTop()) return;
+      pullStartY = e.touches[0].clientY;
+      trackingTouch = true;
+      pulling = false;
+      pullOffset = 0;
+      return;
+    }
     const dy = e.touches[0].clientY - pullStartY;
     if (dy <= MIN_DRAG && !pulling) return;
-    if (!pulling && isAtTop() && dy > MIN_DRAG) pulling = true;
+    if (!pulling && dy > MIN_DRAG) pulling = true;
     if (!pulling) return;
     if (dy <= 0) { resetPull(true); return; }
     pullOffset = dy;
@@ -421,13 +431,15 @@ function bindPullToRefresh() {
     triggerPullRefresh();
   });
 
+  panel.addEventListener("touchcancel", () => { resetPull(false); });
+
   let mouseDown = false;
   panel.addEventListener("mousedown", (e) => {
     if (e.button !== 0) return;
     mouseDown = true;
+    pullStartY = e.clientY;
     pulling = false;
     pullOffset = 0;
-    pullStartY = e.clientY;
   });
   panel.addEventListener("mousemove", (e) => {
     if (!mouseDown) return;
