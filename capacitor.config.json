@@ -9,7 +9,12 @@
   "plugins": {
     "LocalNotifications": {
       "smallIcon": "ic_stat_icon",
-      "iconColor": "#111827"
+      "iconColor": "#111827",
+      "channelID": "anime-releases",
+      "channelName": "Estrenos de Anime",
+      "channelDescription": "Notificaciones de episodios al momento del estreno",
+      "importance": 4,
+      "sound": "default"
     }
   }
 }

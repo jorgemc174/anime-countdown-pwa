@@ -435,16 +435,19 @@ function filterByPlatform(items) {
 }
 
 async function testNotification() {
+  if (!isCapacitor()) return showStatus("Solo funciona en la app Android.", "warn");
+  if (!state.notificationEnabled) return showStatus("Activa primero las notificaciones.", "warn");
+
   const testKey = "test-notif-" + Date.now();
   const testId = "test-notif-" + Date.now();
-  const releaseAt = new Date(Date.now() + 30000);
+  const releaseAt = Date.now() + 30000;
   const testItem = {
     id: testId,
     animeKey: testKey,
     title: "Anime de Prueba",
     episode: "Ep 1",
     episodeNumber: "1",
-    releaseDate: releaseAt.toISOString(),
+    releaseDate: new Date(releaseAt).toISOString(),
     service: "Netflix",
     serviceUrl: "https://netflix.com",
     allServices: ["Netflix"],
@@ -457,10 +460,42 @@ async function testNotification() {
   };
   state.releases.push(testItem);
   await saveAllLists();
-  if (isCapacitor()) {
-    cancelStaleNativeNotifications();
-    scheduleNativeNotifications();
+
+  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  if (!LocalNotifications) return showStatus("Plugin de notificaciones no disponible.", "error");
+
+  try {
+    const permResult = await LocalNotifications.checkPermissions();
+    if (permResult.display !== "granted") {
+      const reqResult = await LocalNotifications.requestPermissions();
+      if (reqResult.display !== "granted") {
+        return showStatus("Permiso de notificaciones denegado.", "error");
+      }
+    }
+
+    const notifId = hashNotificationId(testItem);
+    await LocalNotifications.schedule({
+      notifications: [{
+        id: notifId,
+        title: "Anime de Prueba Ep 1",
+        body: "Ya disponible en Netflix.",
+        schedule: { at: new Date(releaseAt) },
+        extra: { url: "https://netflix.com" },
+        smallIcon: "ic_stat_icon",
+        iconColor: "#111827",
+        actionTypeId: "",
+        attachments: null,
+        group: "anime-countdown"
+      }]
+    });
+
+    showStatus("Notificación programada en 30s. Cierra la app para probar.", "success");
+  } catch (error) {
+    console.error("Error al programar notificación:", error);
+    showStatus("Error: " + (error.message || "desconocido"), "error");
   }
+  render();
+}
   render();
   showStatus(`Notificación de prueba en 30s para "${testItem.title}".`, "success");
 }
@@ -1965,34 +2000,49 @@ function isCapacitor() {
 
 async function scheduleNativeNotifications() {
   if (!isCapacitor() || !state.notificationEnabled) return;
+  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  if (!LocalNotifications) return;
+
   try {
-    const LocalNotifications = Capacitor.Plugins.LocalNotifications;
-    const pending = await LocalNotifications.getPending();
-    const pendingIds = new Set(pending.notifications.map((n) => n.id));
+    const allPending = await LocalNotifications.getPending();
+    const pendingIds = new Set(allPending.notifications.map((n) => n.id));
 
     const now = Date.now();
+    const favorites = state.releases.filter((item) => item.favorite);
     const toSchedule = [];
 
-    for (const item of state.releases) {
+    for (const item of favorites) {
       const releaseAt = new Date(item.releaseDate).getTime();
       if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
+      if (releaseAt > now + 7 * 24 * 3600 * 1000) continue;
       const notifId = hashNotificationId(item);
       if (pendingIds.has(notifId)) continue;
 
       const displayService = getDisplayService(item);
+      const coverUrl = normalizeUrl(item.coverUrl);
       toSchedule.push({
         id: notifId,
         title: `${item.title} ${item.episode}`,
         body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
         schedule: { at: new Date(releaseAt) },
-        extra: { url: getBestWatchUrl(item, displayService) || location.href },
+        extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
         smallIcon: "ic_stat_icon",
         iconColor: "#111827",
         actionTypeId: "",
         attachments: null,
-        group: "anime-countdown"
+        group: "anime-countdown",
+        groupSummary: false
       });
     }
+
+    if (toSchedule.length) {
+      await LocalNotifications.schedule({ notifications: toSchedule });
+      console.log("Notificaciones programadas:", toSchedule.length);
+    }
+  } catch (error) {
+    console.warn("Error al programar notificaciones nativas:", error);
+  }
+}
 
     if (toSchedule.length) {
       await LocalNotifications.schedule({ notifications: toSchedule });
@@ -2004,12 +2054,14 @@ async function scheduleNativeNotifications() {
 
 async function cancelStaleNativeNotifications() {
   if (!isCapacitor()) return;
+  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  if (!LocalNotifications) return;
   try {
-    const LocalNotifications = Capacitor.Plugins.LocalNotifications;
     const pending = await LocalNotifications.getPending();
     const validIds = new Set();
     const now = Date.now();
-    for (const item of state.releases) {
+    const favorites = state.releases.filter((item) => item.favorite);
+    for (const item of favorites) {
       const releaseAt = new Date(item.releaseDate).getTime();
       if (Number.isFinite(releaseAt) && releaseAt > now) {
         validIds.add(hashNotificationId(item));
@@ -2020,7 +2072,7 @@ async function cancelStaleNativeNotifications() {
       await LocalNotifications.cancel({ notifications: toCancel });
     }
   } catch (error) {
-    console.warn("Error al limpiar notificaciones nativas.", error);
+    console.warn("Error al limpiar notificaciones nativas:", error);
   }
 }
 
