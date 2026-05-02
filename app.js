@@ -396,10 +396,8 @@ function bindSwipeNavigation() {
 
     if (preview) {
       preview.style.transition = "none";
-      var previewP = Math.max(0, (p - 0.5) * 2);
-      var w = list.offsetWidth;
-      var previewX = dir * w * (1.3 - previewP * 0.8);
-      preview.style.transform = "translateX(" + previewX + "px)";
+      var previewP = Math.max(0, (p - 0.6) * 2.5);
+      preview.style.transform = "translateX(" + ((1 - previewP * 0.35) * dir * 100) + "%)";
       preview.style.opacity = String(Math.min(previewP, 1) * 0.75);
     }
 
