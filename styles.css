@@ -474,7 +474,7 @@ h3 {
   display: grid;
   gap: 8px;
   margin-bottom: 10px;
-  padding: 6px;
+  padding: 6px 6px 0 6px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -616,38 +616,6 @@ h3 {
   width: 175px;
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.07);
-}
-
-.search-input::placeholder {
-  color: var(--muted);
-  opacity: 0.5;
-}
-
-.sort-btn {
-  width: 26px;
-  height: 26px;
-  padding: 0;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 13px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 200ms var(--ease), background 200ms var(--ease), border-color 200ms var(--ease);
-}
-
-.sort-btn:hover {
-  color: var(--accent);
-}
-
-.sort-btn.asc {
-  color: #17130d;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  border-color: transparent;
 }
 
 .section-title,
