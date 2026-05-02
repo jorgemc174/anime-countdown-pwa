@@ -200,12 +200,6 @@ button {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
-  padding: 16px 24px;
-  margin: -16px -24px 18px -24px;
 }
 
 .eyebrow {
@@ -997,6 +991,10 @@ select {
     gap: 10px;
     padding: 12px 12px;
     margin: -12px -12px 18px -12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
   }
 
   .status-box {
