@@ -342,7 +342,6 @@ function bindSwipeNavigation() {
   if (!list) return;
 
   var THRESHOLD = 80;
-  var MAX_SHIFT = 140;
   var swiping = false;
   var swipeStartX = 0;
   var swipePx = 0;
@@ -443,11 +442,11 @@ function bindSwipeNavigation() {
     var w = list.offsetWidth;
     var outPx = -dir * (w + 30);
 
-    list.style.transition = "transform 320ms var(--ease)";
+    list.style.transition = "transform 360ms var(--ease)";
     list.style.transform = "translateX(" + outPx + "px)";
 
     if (preview) {
-      preview.style.transition = "transform 320ms var(--ease)";
+      preview.style.transition = "transform 360ms var(--ease)";
       preview.style.transform = "translateX(0px)";
       preview.style.opacity = "1";
     }
@@ -459,7 +458,7 @@ function bindSwipeNavigation() {
       if (preview) { preview.style.transition = "none"; preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
       finish();
-    }, 330);
+    }, 370);
   }
 
   list.addEventListener("touchmove", function(e) {
@@ -482,7 +481,8 @@ function bindSwipeNavigation() {
       raw = swipePx;
     }
     swipePx = raw;
-    shift(Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipePx * 0.8)));
+    var maxShift = list.offsetWidth || 300;
+    shift(Math.max(-maxShift, Math.min(maxShift, swipePx)));
   }, { passive: true });
 
   list.addEventListener("touchend", function() {
