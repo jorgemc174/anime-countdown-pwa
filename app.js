@@ -396,7 +396,7 @@ function bindSwipeNavigation() {
 
     if (preview) {
       preview.style.transition = "none";
-      var gap = 20;
+      var gap = 10;
       preview.style.transform = "translateX(" + (px + dir * (list.offsetWidth + gap)) + "px)";
       preview.style.opacity = p > 0.35 ? String(Math.min((p - 0.35) * 1.5, 0.75)) : "0";
     }
@@ -440,23 +440,23 @@ function bindSwipeNavigation() {
     swiping = false;
     swipeStart = null;
 
-    list.style.transition = "transform 200ms var(--ease)";
+    list.style.transition = "transform 240ms var(--ease)";
     list.style.transform = "translateX(" + out + "px)";
 
     setTimeout(function() {
-      list.style.transition = "opacity 60ms var(--ease)";
+      list.style.transition = "opacity 80ms var(--ease)";
       list.style.opacity = "0";
-    }, 140);
+    }, 160);
 
     setTimeout(function() {
       list.style.transition = "none";
       list.style.transform = "";
       goToAdjacentMode(dir);
       list.offsetHeight;
-      list.style.transition = "opacity 80ms var(--ease)";
+      list.style.transition = "opacity 100ms var(--ease)";
       list.style.opacity = "1";
       finish();
-    }, 210);
+    }, 250);
   }
 
   list.addEventListener("touchmove", function(e) {
