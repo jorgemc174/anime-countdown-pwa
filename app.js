@@ -159,7 +159,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","pullIndicator"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","pullIndicator","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -294,6 +294,7 @@ function bindEvents() {
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
   els.themeBtn.addEventListener("click", toggleTheme);
+  els.refreshDataBtn.addEventListener("click", () => { setSettingsOpen(false); refreshData(); });
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
   els.nextRelease.addEventListener("mousedown", (e) => { if (e.button === 1) e.preventDefault(); });
@@ -738,7 +739,7 @@ async function refreshData() {
       cancelStaleNativeNotifications();
       scheduleNativeNotifications();
     }
-    render();
+    await deferRender();
     const favs = state.releases.filter(i => i.favorite).length;
     const notifMsg = isCapacitor() ? ` | ${favs} con notificaciones` : "";
     showStatus(`Listo.${notifMsg}`, "success");
@@ -749,11 +750,20 @@ async function refreshData() {
         cancelStaleNativeNotifications();
         scheduleNativeNotifications();
       }
-      render();
+      await deferRender();
     }).catch(() => {});
   } catch (error) {
     showStatus(error.message || "Error al refrescar", "error");
   }
+}
+
+function deferRender() {
+  return new Promise(resolve => {
+    requestAnimationFrame(() => {
+      render();
+      resolve();
+    });
+  });
 }
 
 async function syncAnilist() {
