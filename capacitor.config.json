@@ -1,0 +1,15 @@
+{
+  "appId": "com.animecountdown.app",
+  "appName": "AnimeCountdown",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": ["apis.justwatch.com", "graphql.anilist.co", "animeschedule.net", "img.animeschedule.net"]
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon",
+      "iconColor": "#111827"
+    }
+  }
+}

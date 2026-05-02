@@ -138,6 +138,7 @@ async function init() {
     startAnilistAutoRefresh();
     startPublicAnilistAutoRefresh();
     await refreshSharedSchedule({ silent: true });
+    setupCapacitorNotificationTap();
   } catch (error) {
     showFatal(error);
   }
@@ -433,26 +434,50 @@ function filterByPlatform(items) {
 }
 
 async function toggleNotifications() {
-  if (!("Notification" in window)) return showStatus("Este navegador no soporta notificaciones.", "error");
+  const hasNativeNotif = isCapacitor();
+  const hasWebNotif = "Notification" in window;
 
-  if (Notification.permission === "denied") {
-    state.notificationEnabled = false;
-    await browserApi.storage.local.set({ notificationEnabled: false });
-    updateNotificationButton();
-    return showStatus("Las notificaciones estan bloqueadas en el navegador.", "error");
+  if (!hasNativeNotif && !hasWebNotif) {
+    return showStatus("Este dispositivo no soporta notificaciones.", "error");
   }
 
   if (!state.notificationEnabled) {
-    const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
-    if (permission !== "granted") {
+    let granted = hasNativeNotif;
+    if (hasWebNotif && Notification.permission !== "granted") {
+      if (Notification.permission === "denied") {
+        state.notificationEnabled = false;
+        await browserApi.storage.local.set({ notificationEnabled: false });
+        updateNotificationButton();
+        return showStatus("Las notificaciones estan bloqueadas en el navegador.", "error");
+      }
+      const permission = await Notification.requestPermission();
+      if (permission !== "granted") {
+        state.notificationEnabled = false;
+        await browserApi.storage.local.set({ notificationEnabled: false });
+        updateNotificationButton();
+        return showStatus("No se activaron las notificaciones.", "warn");
+      }
+    }
+    if (hasNativeNotif) {
+      try {
+        const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+        const permResult = await LocalNotifications.requestPermissions();
+        granted = permResult.display === "granted";
+      } catch (_) {}
+    }
+    if (!granted) {
       state.notificationEnabled = false;
       await browserApi.storage.local.set({ notificationEnabled: false });
       updateNotificationButton();
-      return showStatus("No se activaron las notificaciones.", "warn");
+      return showStatus("Permiso de notificaciones denegado. Actívalo en Ajustes > Notificaciones.", "error");
     }
     state.notificationEnabled = true;
     await browserApi.storage.local.set({ notificationEnabled: true });
     updateNotificationButton();
+    if (hasNativeNotif) {
+      cancelStaleNativeNotifications();
+      scheduleNativeNotifications();
+    }
     showStatus("Notificaciones activadas.", "success");
     checkReleaseNotifications();
     return;
@@ -460,6 +485,12 @@ async function toggleNotifications() {
 
   state.notificationEnabled = false;
   await browserApi.storage.local.set({ notificationEnabled: false });
+  if (hasNativeNotif) {
+    try {
+      const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+      await LocalNotifications.cancelAll();
+    } catch (_) {}
+  }
   updateNotificationButton();
   showStatus("Notificaciones desactivadas.", "success");
 }
@@ -488,14 +519,16 @@ function updateScoreButton() {
 
 function updateNotificationButton() {
   if (!els.notificationBtn) return;
-  if (!("Notification" in window)) {
+  const hasNativeNotif = isCapacitor();
+  const hasWebNotif = "Notification" in window;
+  if (!hasNativeNotif && !hasWebNotif) {
     els.notificationBtn.disabled = true;
     els.notificationBtn.setAttribute("aria-checked", "false");
     const label = document.getElementById("notificationLabel");
     if (label) label.textContent = "Notificaciones (no disponible)";
     return;
   }
-  const active = state.notificationEnabled && Notification.permission === "granted";
+  const active = state.notificationEnabled && (hasNativeNotif || Notification.permission === "granted");
   els.notificationBtn.setAttribute("aria-checked", active ? "true" : "false");
   const label = document.getElementById("notificationLabel");
   if (label) label.textContent = active ? "Notificaciones activadas" : "Activar notificación";
@@ -517,6 +550,8 @@ async function syncAnilist() {
     showStatus("Verificando plataformas con JustWatch...", "success");
     const jwResult = await verifyPlatformsWithJustWatch();
     await saveAllLists();
+    await cancelStaleNativeNotifications();
+    await scheduleNativeNotifications();
     render();
     const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} modificados de ${jwResult.checked}` : "";
     showStatus(`AniList sincronizado: ${library.length} animes en emisión.${jwMsg}`, "success");
@@ -682,6 +717,8 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     renderPreview(imported);
     render();
     checkReleaseNotifications();
+    cancelStaleNativeNotifications();
+    scheduleNativeNotifications();
 
     if (!silent) {
       showStatus(`Actualizados ${imported.length} episodios desde la base compartida.`, "success");
@@ -1774,6 +1811,8 @@ async function resetAll() {
 
 function startNotificationScheduler() {
   checkReleaseNotifications();
+  cancelStaleNativeNotifications();
+  scheduleNativeNotifications();
   setInterval(() => {
     if (document.visibilityState === "visible") checkReleaseNotifications();
   }, VISIBLE_NOTIFICATION_CHECK_MS);
@@ -1812,7 +1851,8 @@ function getDelayToNextQuarterHour(date = new Date()) {
 }
 
 async function checkReleaseNotifications() {
-  if (!state.notificationEnabled || !("Notification" in window) || Notification.permission !== "granted") return;
+  if (!state.notificationEnabled) return;
+  if (!isCapacitor() && (!("Notification" in window) || Notification.permission !== "granted")) return;
   const now = Date.now();
   const favorites = getFavoriteItems();
   const candidates = getDueNotificationItems(favorites.length ? favorites : state.releases, now);
@@ -1885,6 +1925,94 @@ async function showReleaseNotification(item) {
   }
 
   new Notification(title, options);
+}
+
+function isCapacitor() {
+  return typeof Capacitor !== "undefined" && Capacitor.isNativePlatform();
+}
+
+async function scheduleNativeNotifications() {
+  if (!isCapacitor() || !state.notificationEnabled) return;
+  try {
+    const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+    const pending = await LocalNotifications.getPending();
+    const pendingIds = new Set(pending.notifications.map((n) => n.id));
+
+    const now = Date.now();
+    const candidates = getDueNotificationItems(state.releases, now);
+    const toSchedule = [];
+
+    for (const item of candidates) {
+      const releaseAt = new Date(item.releaseDate).getTime();
+      if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
+      const notifId = hashNotificationId(item);
+      if (pendingIds.has(notifId)) continue;
+
+      const displayService = getDisplayService(item);
+      toSchedule.push({
+        id: notifId,
+        title: `${item.title} ${item.episode}`,
+        body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
+        schedule: { at: new Date(releaseAt) },
+        extra: { url: getBestWatchUrl(item, displayService) || location.href },
+        smallIcon: "ic_stat_icon",
+        iconColor: "#111827",
+        actionTypeId: "",
+        attachments: null,
+        group: "anime-countdown"
+      });
+    }
+
+    if (toSchedule.length) {
+      await LocalNotifications.schedule({ notifications: toSchedule });
+    }
+  } catch (error) {
+    console.warn("Error al programar notificaciones nativas.", error);
+  }
+}
+
+async function cancelStaleNativeNotifications() {
+  if (!isCapacitor()) return;
+  try {
+    const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+    const pending = await LocalNotifications.getPending();
+    const validIds = new Set();
+    const now = Date.now();
+    for (const item of state.releases) {
+      const releaseAt = new Date(item.releaseDate).getTime();
+      if (Number.isFinite(releaseAt) && releaseAt > now) {
+        validIds.add(hashNotificationId(item));
+      }
+    }
+    const toCancel = pending.notifications.filter((n) => !validIds.has(n.id));
+    if (toCancel.length) {
+      await LocalNotifications.cancel({ notifications: toCancel });
+    }
+  } catch (error) {
+    console.warn("Error al limpiar notificaciones nativas.", error);
+  }
+}
+
+function hashNotificationId(item) {
+  const key = `${item.id || getEpisodeKey(item)}`;
+  let hash = 0;
+  for (let i = 0; i < key.length; i++) {
+    hash = ((hash << 5) - hash) + key.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash) % 2147483647;
+}
+
+function setupCapacitorNotificationTap() {
+  if (!isCapacitor()) return;
+  try {
+    const App = Capacitor.Plugins.App;
+    App.addListener("appUrlOpen", (data) => {
+      if (data.url) openExternalUrl(data.url);
+    });
+  } catch (error) {
+    console.warn("No se pudo configurar el tap de notificaciones.", error);
+  }
 }
 
 function toAbsoluteUrl(url) {
