@@ -2034,6 +2034,13 @@ async function scheduleNativeNotifications() {
 
       const displayService = getDisplayService(item);
       const coverUrl = normalizeUrl(item.coverUrl);
+      let attachments = null;
+      if (coverUrl) {
+        const localPath = await downloadCoverImage(coverUrl, notifId);
+        if (localPath) {
+          attachments = [{ id: "cover", url: localPath }];
+        }
+      }
       toSchedule.push({
         id: notifId,
         title: `${item.title} ${item.episode}`,
@@ -2043,7 +2050,7 @@ async function scheduleNativeNotifications() {
         smallIcon: "ic_stat_icon",
         iconColor: "#111827",
         actionTypeId: "",
-        attachments: null,
+        attachments,
         group: "anime-countdown",
         groupSummary: false
       });
@@ -2079,6 +2086,46 @@ async function cancelStaleNativeNotifications() {
     }
   } catch (error) {
     console.warn("Error al limpiar notificaciones nativas:", error);
+  }
+}
+
+async function downloadCoverImage(url, notifId) {
+  try {
+    if (!isCapacitor()) return null;
+    if (!Capacitor.Plugins || !Capacitor.Plugins.Filesystem) return null;
+    const Filesystem = Capacitor.Plugins.Filesystem;
+
+    const path = `cover-${notifId}.jpg`;
+
+    const { exists } = await Filesystem.stat({ path, directory: "CACHE" }).catch(() => ({ exists: false }));
+    if (exists) {
+      const { uri } = await Filesystem.getUri({ path, directory: "CACHE" });
+      return uri;
+    }
+
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const blob = await response.blob();
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+
+    const cleanData = String(base64).replace(/^data:image\/\w+;base64,/, "");
+
+    const result = await Filesystem.writeFile({
+      path,
+      data: cleanData,
+      directory: "CACHE",
+      recursive: true
+    });
+
+    return result.uri;
+  } catch (error) {
+    console.warn("Error al descargar portada:", error);
+    return null;
   }
 }
 
