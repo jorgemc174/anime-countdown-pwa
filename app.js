@@ -334,8 +334,8 @@ function switchTab(mode) {
 }
 
 function bindSwipeNavigation() {
-  const panel = document.querySelector(".main-panel");
-  if (!panel) return;
+  const list = els.animeList;
+  if (!list) return;
 
   const SWIPE_THRESHOLD = 80;
   const MAX_SHIFT = 140;
@@ -343,59 +343,83 @@ function bindSwipeNavigation() {
   let swipeStartX = 0;
   let swipeDx = 0;
 
-  const tabs = [
-    { el: els.showAllBtn, mode: "all" },
-    { el: els.showTodayBtn, mode: "today" },
-    { el: els.showFavsBtn, mode: "favorites" }
-  ];
+  const modes = ["all", "today", "favorites"];
+  const tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
+
+  function isAtEdge(dir) {
+    const idx = modes.indexOf(state.viewMode);
+    return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
+  }
 
   function applyShift(px) {
-    panel.style.transform = `translateX(${px}px)`;
-    panel.style.transition = "none";
-    els.animeList.style.opacity = 1 - Math.abs(px) / 200;
+    const dir = px > 0 ? -1 : 1;
+    const atEdge = isAtEdge(dir);
+    const effectivePx = atEdge ? px * 0.22 : px;
+
+    list.style.transform = `translateX(${effectivePx}px)`;
+    list.style.transition = "none";
+    list.style.opacity = 1 - Math.abs(effectivePx) / 300;
+
+    if (!atEdge) {
+      const progress = Math.min(Math.abs(px) / SWIPE_THRESHOLD, 1);
+      const idx = modes.indexOf(state.viewMode);
+      const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
+
+      if (idx !== targetIdx) {
+        tabs.forEach(t => t.classList.remove("active"));
+        tabs[idx].style.opacity = String(1 - progress * 0.6);
+        tabs[idx].style.color = "";
+        tabs[targetIdx].style.opacity = String(0.4 + progress * 0.6);
+        tabs[targetIdx].style.color = "";
+      }
+    }
   }
 
   function springBack() {
-    panel.style.transition = "transform 250ms var(--ease)";
-    panel.style.transform = "translateX(0px)";
-    els.animeList.style.opacity = "1";
-    els.animeList.style.transition = "opacity 250ms var(--ease)";
+    list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
+    list.style.transform = "translateX(0px)";
+    list.style.opacity = "1";
+    resetTabs();
     swiping = false;
     swipeStartX = 0;
     swipeDx = 0;
     swipeStart = null;
+  }
+
+  function resetTabs() {
+    tabs.forEach(t => { t.style.opacity = ""; t.style.color = ""; });
+    setActiveTab();
   }
 
   function commitSwipe(direction) {
     const outPx = direction * MAX_SHIFT;
-    panel.style.transition = "transform 200ms var(--ease)";
-    panel.style.transform = `translateX(${outPx}px)`;
-    els.animeList.style.transition = "opacity 200ms var(--ease)";
-    els.animeList.style.opacity = "0";
+    list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
+    list.style.transform = `translateX(${outPx}px)`;
+    list.style.opacity = "0";
     swiping = false;
     swipeStartX = 0;
     swipeDx = 0;
     swipeStart = null;
 
-    panel.addEventListener("transitionend", function finish() {
-      panel.removeEventListener("transitionend", finish);
+    list.addEventListener("transitionend", function finish() {
+      list.removeEventListener("transitionend", finish);
+      list.style.transform = "";
+      list.style.transition = "none";
       goToAdjacentMode(direction);
-      panel.style.transition = "none";
-      panel.style.transform = `translateX(${-outPx}px)`;
-      els.animeList.style.transition = "none";
+      list.style.transform = `translateX(${-outPx}px)`;
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          panel.style.transition = "transform 300ms var(--ease)";
-          panel.style.transform = "translateX(0px)";
-          els.animeList.style.transition = "opacity 300ms var(--ease)";
-          els.animeList.style.opacity = "1";
+          resetTabs();
+          list.style.transition = "transform 320ms var(--ease), opacity 320ms var(--ease)";
+          list.style.transform = "translateX(0px)";
+          list.style.opacity = "1";
         });
       });
     }, { once: true });
   }
 
-  panel.addEventListener("touchmove", (e) => {
+  list.addEventListener("touchmove", (e) => {
     if (e.touches.length !== 1) return;
     if (!swiping) {
       if (!swipeStart) {
@@ -415,16 +439,17 @@ function bindSwipeNavigation() {
     applyShift(clamped);
   }, { passive: true });
 
-  panel.addEventListener("touchend", () => {
+  list.addEventListener("touchend", () => {
     if (!swiping) { swipeStart = null; return; }
-    if (Math.abs(swipeDx) >= SWIPE_THRESHOLD) {
-      commitSwipe(swipeDx > 0 ? -1 : 1);
+    const dir = swipeDx > 0 ? -1 : 1;
+    if (Math.abs(swipeDx) >= SWIPE_THRESHOLD && !isAtEdge(dir)) {
+      commitSwipe(dir);
     } else {
       springBack();
     }
   });
 
-  panel.addEventListener("touchcancel", () => { if (swiping) springBack(); });
+  list.addEventListener("touchcancel", () => { if (swiping) springBack(); });
 }
 
 function goToAdjacentMode(direction) {
