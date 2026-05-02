@@ -473,7 +473,7 @@ h3 {
 .toolbar {
   display: grid;
   gap: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
   padding: 6px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--line);
