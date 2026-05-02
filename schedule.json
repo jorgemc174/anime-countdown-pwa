@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-02T19:30:19.043Z",
+  "updatedAt": "2026-05-02T23:08:44.799Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -138,28 +138,6 @@
       "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-3-2026-04-28t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-04-28T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
-      "anilistId": 194393,
-      "anilistTitle": "Aishiteru Game wo Owarasetai",
-      "anilistUrl": "https://anilist.co/anime/194393"
-    },
-    {
       "id": "schedule-marriagetoxin-4-2026-04-28t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -181,6 +159,28 @@
       "anilistId": 199547,
       "anilistTitle": "MARRIAGETOXIN",
       "anilistUrl": "https://anilist.co/anime/199547"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-3-2026-04-28t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-04-28T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-4-2026-04-28t16-31-00-02-00",
@@ -663,10 +663,7 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
-      "anilistId": 186497,
-      "anilistTitle": "Koori no Jouheki",
-      "anilistUrl": "https://anilist.co/anime/186497"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
       "id": "schedule-kirio-fanclub-5-2026-04-30t18-00-00-02-00",
@@ -975,6 +972,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
     },
     {
+      "id": "schedule-boku-no-hero-academia-more-1-2026-05-02t11-30-00-02-00",
+      "animeKey": "boku-no-hero-academia-more",
+      "title": "Boku no Hero Academia: More",
+      "route": "boku-no-hero-academia-more",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-02T09:30:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/boku-no-hero-academia-more-81307619e4f9bc6c40858cd836210063.jpg"
+    },
+    {
       "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-5-2026-05-02t11-30-00-02-00",
       "animeKey": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4",
       "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 4",
@@ -993,22 +1006,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
-    },
-    {
-      "id": "schedule-boku-no-hero-academia-more-1-2026-05-02t11-30-00-02-00",
-      "animeKey": "boku-no-hero-academia-more",
-      "title": "Boku no Hero Academia: More",
-      "route": "boku-no-hero-academia-more",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-02T09:30:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/boku-no-hero-academia-more-81307619e4f9bc6c40858cd836210063.jpg"
     },
     {
       "id": "schedule-mairimashita-iruma-kun-4-5-2026-05-02t12-25-00-02-00",
@@ -1703,28 +1700,6 @@
       "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-4-2026-05-05t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-05T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
-      "anilistId": 194393,
-      "anilistTitle": "Aishiteru Game wo Owarasetai",
-      "anilistUrl": "https://anilist.co/anime/194393"
-    },
-    {
       "id": "schedule-marriagetoxin-5-2026-05-05t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -1746,6 +1721,28 @@
       "anilistId": 199547,
       "anilistTitle": "MARRIAGETOXIN",
       "anilistUrl": "https://anilist.co/anime/199547"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-4-2026-05-05t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-05T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-5-2026-05-05t16-31-00-02-00",
@@ -2268,10 +2265,7 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
-      "anilistId": 186497,
-      "anilistTitle": "Koori no Jouheki",
-      "anilistUrl": "https://anilist.co/anime/186497"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
       "id": "schedule-kirio-fanclub-6-2026-05-07t18-00-00-02-00",
@@ -3292,28 +3286,6 @@
       "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-5-2026-05-12t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-12T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
-      "anilistId": 194393,
-      "anilistTitle": "Aishiteru Game wo Owarasetai",
-      "anilistUrl": "https://anilist.co/anime/194393"
-    },
-    {
       "id": "schedule-marriagetoxin-6-2026-05-12t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -3335,6 +3307,28 @@
       "anilistId": 199547,
       "anilistTitle": "MARRIAGETOXIN",
       "anilistUrl": "https://anilist.co/anime/199547"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-5-2026-05-12t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-12T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-6-2026-05-12t16-31-00-02-00",
@@ -3835,10 +3829,7 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
-      "anilistId": 186497,
-      "anilistTitle": "Koori no Jouheki",
-      "anilistUrl": "https://anilist.co/anime/186497"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
       "id": "schedule-kirio-fanclub-7-2026-05-14t18-00-00-02-00",
@@ -4859,28 +4850,6 @@
       "anilistUrl": "https://anilist.co/anime/195268"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-6-2026-05-19t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-19T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
-      "anilistId": 194393,
-      "anilistTitle": "Aishiteru Game wo Owarasetai",
-      "anilistUrl": "https://anilist.co/anime/194393"
-    },
-    {
       "id": "schedule-marriagetoxin-7-2026-05-19t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -4902,6 +4871,28 @@
       "anilistId": 199547,
       "anilistTitle": "MARRIAGETOXIN",
       "anilistUrl": "https://anilist.co/anime/199547"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-6-2026-05-19t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-19T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194393-0H9yYABu6y0i.jpg",
+      "anilistId": 194393,
+      "anilistTitle": "Aishiteru Game wo Owarasetai",
+      "anilistUrl": "https://anilist.co/anime/194393"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-7-2026-05-19t16-31-00-02-00",
@@ -5402,10 +5393,7 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186497-uwPrNPphXvjP.jpg",
-      "anilistId": 186497,
-      "anilistTitle": "Koori no Jouheki",
-      "anilistUrl": "https://anilist.co/anime/186497"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
       "id": "schedule-kirio-fanclub-8-2026-05-21t18-00-00-02-00",
