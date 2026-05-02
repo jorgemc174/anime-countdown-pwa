@@ -389,7 +389,7 @@ function bindSwipeNavigation() {
     if (idx === tgt) return;
 
     var targetMode = modes[tgt];
-    if (targetMode !== lastMode && p > 0.15) {
+    if (targetMode !== lastMode && p > 0.3) {
       lastMode = targetMode;
       renderPreview(targetMode);
     }
@@ -416,7 +416,7 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
     list.style.transform = "translateX(0px)";
     list.style.opacity = "1";
-    if (preview) { preview.style.transition = "opacity 200ms var(--ease)"; preview.style.opacity = "0"; }
+    if (preview) { preview.style.transition = "opacity 180ms var(--ease), transform 180ms var(--ease)"; preview.style.opacity = "0"; preview.style.transform = ""; }
     if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
     finish();
   }
@@ -449,18 +449,10 @@ function bindSwipeNavigation() {
       list.removeEventListener("transitionend", done);
       list.style.transform = "";
       list.style.transition = "none";
-      list.style.opacity = "1";
-      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
-      list.style.transform = "translateX(" + (-out) + "px)";
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          finish();
-          list.style.transition = "transform 320ms var(--ease), opacity 320ms var(--ease)";
-          list.style.transform = "translateX(0px)";
-          list.style.opacity = "1";
-        });
-      });
+      list.style.opacity = "1";
+      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; preview.style.transition = "none"; }
+      finish();
     }, { once: true });
   }
 
