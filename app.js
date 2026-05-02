@@ -317,6 +317,13 @@ function setSettingsOpen(open) {
 }
 
 async function setMode(mode, direction) {
+  if (direction && Math.abs(direction) > 0) {
+    els.animeList.style.setProperty("--swipe-shift", direction > 0 ? "-80px" : "80px");
+    els.animeList.classList.add("is-switching");
+    setTimeout(() => {
+      els.animeList.classList.remove("is-switching");
+    }, 250);
+  }
   state.viewMode = mode;
   await browserApi.storage.local.set({ viewMode: mode });
   render();
@@ -383,7 +390,9 @@ function bindPullToRefresh() {
       } else {
         indicator.classList.add("pulling");
       }
-      indicator.style.transform = `translateX(-50%) translateY(${-80 + ratio * 80}px)`;
+      indicator.style.transform = `translateX(-50%) translateY(${-100 + ratio * 100}px)`;
+      const ring = indicator.querySelector(".pull-ring-fill");
+      if (ring) ring.style.strokeDashoffset = 119.38 * (1 - ratio);
       indicator.querySelector(".pull-icon").style.transform = `rotate(${ratio * 180}deg)`;
     }
   }
@@ -393,6 +402,8 @@ function bindPullToRefresh() {
     trackingTouch = false;
     pullOffset = 0;
     indicator.querySelector(".pull-icon").style.transform = "";
+    const ring = indicator.querySelector(".pull-ring-fill");
+    if (ring) ring.style.strokeDashoffset = "";
     if (animate) {
       indicator.classList.add("hiding");
       indicator.style.transform = "";
@@ -465,6 +476,8 @@ function bindPullToRefresh() {
     indicator.classList.add("refreshing");
     indicator.style.transform = "";
     indicator.querySelector(".pull-icon").style.transform = "";
+    const ring = indicator.querySelector(".pull-ring-fill");
+    if (ring) ring.style.strokeDashoffset = "";
     _refreshPromise = refreshData().finally(() => {
       indicator.classList.add("hiding");
       indicator.classList.remove("refreshing");
