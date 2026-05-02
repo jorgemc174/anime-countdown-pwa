@@ -119,7 +119,6 @@ const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
 let swipeStart = null;
-let _refreshPromise = null;
 
 init();
 
@@ -159,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","pullIndicator","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -276,9 +275,9 @@ function bindEvents() {
       setSettingsOpen(false);
     }
   });
-  els.showAllBtn.addEventListener("click", () => setMode("all", getModeDirection("all")));
-  els.showTodayBtn.addEventListener("click", () => setMode("today", getModeDirection("today")));
-  els.showFavsBtn.addEventListener("click", () => setMode("favorites", getModeDirection("favorites")));
+  els.showAllBtn.addEventListener("click", () => switchTab("all"));
+  els.showTodayBtn.addEventListener("click", () => switchTab("today"));
+  els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
   els.countryInput?.addEventListener("change", saveJwCountry);
@@ -303,7 +302,6 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
-  bindPullToRefresh();
   let titleTapTimer = null;
   document.querySelector(".header h1")?.addEventListener("click", () => {
     if (titleTapTimer) { clearTimeout(titleTapTimer); titleTapTimer = null; refreshData(); }
@@ -318,43 +316,115 @@ function setSettingsOpen(open) {
 }
 
 async function setMode(mode, direction) {
-  if (direction && Math.abs(direction) > 0) {
-    els.animeList.style.setProperty("--swipe-shift", direction > 0 ? "-80px" : "80px");
-    els.animeList.classList.add("is-switching");
-    setTimeout(() => {
-      els.animeList.classList.remove("is-switching");
-    }, 250);
-  }
   state.viewMode = mode;
   await browserApi.storage.local.set({ viewMode: mode });
   render();
 }
 
+function switchTab(mode) {
+  if (state.viewMode === mode) return;
+  els.animeList.style.transition = "opacity 150ms var(--ease)";
+  els.animeList.style.opacity = "0";
+  els.animeList.addEventListener("transitionend", function fadeIn() {
+    els.animeList.removeEventListener("transitionend", fadeIn);
+    setMode(mode);
+    els.animeList.style.opacity = "1";
+    setTimeout(() => { els.animeList.style.transition = ""; }, 160);
+  }, { once: true });
+}
+
 function bindSwipeNavigation() {
   const panel = document.querySelector(".main-panel");
   if (!panel) return;
-  let swipeTracking = false;
-  panel.addEventListener("touchmove", (event) => {
-    if (event.touches.length !== 1) { swipeTracking = false; return; }
-    if (!swipeTracking) {
-      const touch = event.touches[0];
-      swipeStart = { x: touch.clientX, y: touch.clientY, time: Date.now() };
-      swipeTracking = true;
-      return;
-    }
-  }, { passive: true });
-  panel.addEventListener("touchend", (event) => {
-    swipeTracking = false;
-    if (!swipeStart || event.changedTouches.length !== 1) return;
-    const touch = event.changedTouches[0];
-    const dx = touch.clientX - swipeStart.x;
-    const dy = touch.clientY - swipeStart.y;
-    const dt = Date.now() - swipeStart.time;
+
+  const SWIPE_THRESHOLD = 80;
+  const MAX_SHIFT = 140;
+  let swiping = false;
+  let swipeStartX = 0;
+  let swipeDx = 0;
+
+  const tabs = [
+    { el: els.showAllBtn, mode: "all" },
+    { el: els.showTodayBtn, mode: "today" },
+    { el: els.showFavsBtn, mode: "favorites" }
+  ];
+
+  function applyShift(px) {
+    panel.style.transform = `translateX(${px}px)`;
+    panel.style.transition = "none";
+    els.animeList.style.opacity = 1 - Math.abs(px) / 200;
+  }
+
+  function springBack() {
+    panel.style.transition = "transform 250ms var(--ease)";
+    panel.style.transform = "translateX(0px)";
+    els.animeList.style.opacity = "1";
+    els.animeList.style.transition = "opacity 250ms var(--ease)";
+    swiping = false;
+    swipeStartX = 0;
+    swipeDx = 0;
     swipeStart = null;
-    if (dt > 700 || Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
-    goToAdjacentMode(dx < 0 ? 1 : -1);
+  }
+
+  function commitSwipe(direction) {
+    const outPx = direction * MAX_SHIFT;
+    panel.style.transition = "transform 200ms var(--ease)";
+    panel.style.transform = `translateX(${outPx}px)`;
+    els.animeList.style.transition = "opacity 200ms var(--ease)";
+    els.animeList.style.opacity = "0";
+    swiping = false;
+    swipeStartX = 0;
+    swipeDx = 0;
+    swipeStart = null;
+
+    panel.addEventListener("transitionend", function finish() {
+      panel.removeEventListener("transitionend", finish);
+      goToAdjacentMode(direction);
+      panel.style.transition = "none";
+      panel.style.transform = `translateX(${-outPx}px)`;
+      els.animeList.style.transition = "none";
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          panel.style.transition = "transform 300ms var(--ease)";
+          panel.style.transform = "translateX(0px)";
+          els.animeList.style.transition = "opacity 300ms var(--ease)";
+          els.animeList.style.opacity = "1";
+        });
+      });
+    }, { once: true });
+  }
+
+  panel.addEventListener("touchmove", (e) => {
+    if (e.touches.length !== 1) return;
+    if (!swiping) {
+      if (!swipeStart) {
+        swipeStartX = e.touches[0].clientX;
+        swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
+        return;
+      }
+      const dx = e.touches[0].clientX - swipeStartX;
+      const dy = e.touches[0].clientY - swipeStart.y;
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        swiping = true;
+      }
+    }
+    if (!swiping) return;
+    swipeDx = e.touches[0].clientX - swipeStartX;
+    const clamped = Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipeDx * 0.8));
+    applyShift(clamped);
   }, { passive: true });
-  panel.addEventListener("touchcancel", () => { swipeTracking = false; swipeStart = null; });
+
+  panel.addEventListener("touchend", () => {
+    if (!swiping) { swipeStart = null; return; }
+    if (Math.abs(swipeDx) >= SWIPE_THRESHOLD) {
+      commitSwipe(swipeDx > 0 ? -1 : 1);
+    } else {
+      springBack();
+    }
+  });
+
+  panel.addEventListener("touchcancel", () => { if (swiping) springBack(); });
 }
 
 function goToAdjacentMode(direction) {
@@ -362,134 +432,6 @@ function goToAdjacentMode(direction) {
   const current = Math.max(0, modes.indexOf(state.viewMode));
   const next = Math.min(modes.length - 1, Math.max(0, current + direction));
   if (next !== current) setMode(modes[next], direction);
-}
-
-function bindPullToRefresh() {
-  const panel = document.querySelector(".main-panel");
-  const indicator = els.pullIndicator;
-  if (!panel || !indicator) return;
-
-  const THRESHOLD = 70;
-  const MIN_DRAG = 10;
-  let pullStartY = 0;
-  let pulling = false;
-  let pullOffset = 0;
-  let trackingTouch = false;
-
-  function isAtTop() {
-    return window.scrollY <= 2;
-  }
-
-  function updateIndicator() {
-    const ratio = Math.min(pullOffset / THRESHOLD, 1);
-    const ready = pullOffset >= THRESHOLD;
-
-    indicator.classList.remove("pulling", "ready", "refreshing");
-    if (ratio > 0.02) {
-      if (ready) {
-        indicator.classList.add("ready");
-      } else {
-        indicator.classList.add("pulling");
-      }
-      indicator.style.transform = `translateX(-50%) translateY(${-100 + ratio * 100}px)`;
-      const ring = indicator.querySelector(".pull-ring-fill");
-      if (ring) ring.style.strokeDashoffset = 119.38 * (1 - ratio);
-      indicator.querySelector(".pull-icon").style.transform = `rotate(${ratio * 180}deg)`;
-    }
-  }
-
-  function resetPull(animate) {
-    pulling = false;
-    trackingTouch = false;
-    pullOffset = 0;
-    indicator.querySelector(".pull-icon").style.transform = "";
-    const ring = indicator.querySelector(".pull-ring-fill");
-    if (ring) ring.style.strokeDashoffset = "";
-    if (animate) {
-      indicator.classList.add("hiding");
-      indicator.style.transform = "";
-      indicator.addEventListener("transitionend", function h() {
-        indicator.classList.remove("pulling", "ready", "hiding");
-        indicator.removeEventListener("transitionend", h);
-      }, { once: true });
-    } else {
-      indicator.classList.remove("pulling", "ready", "hiding");
-      indicator.style.transform = "";
-    }
-  }
-
-  panel.addEventListener("touchmove", (e) => {
-    if (e.touches.length !== 1) { resetPull(false); return; }
-    if (!trackingTouch) {
-      if (!isAtTop()) return;
-      pullStartY = e.touches[0].clientY;
-      trackingTouch = true;
-      pulling = false;
-      pullOffset = 0;
-      return;
-    }
-    const dy = e.touches[0].clientY - pullStartY;
-    if (dy <= MIN_DRAG && !pulling) return;
-    if (!pulling && dy > MIN_DRAG) pulling = true;
-    if (!pulling) return;
-    if (dy <= 0) { resetPull(true); return; }
-    pullOffset = dy;
-    updateIndicator();
-  }, { passive: true });
-
-  panel.addEventListener("touchend", () => {
-    if (!pulling || pullOffset < THRESHOLD) { resetPull(false); return; }
-    resetPull(false);
-    triggerPullRefresh();
-  });
-
-  panel.addEventListener("touchcancel", () => { resetPull(false); });
-
-  let mouseDown = false;
-  panel.addEventListener("mousedown", (e) => {
-    if (e.button !== 0) return;
-    mouseDown = true;
-    pullStartY = e.clientY;
-    pulling = false;
-    pullOffset = 0;
-  });
-  panel.addEventListener("mousemove", (e) => {
-    if (!mouseDown) return;
-    const dy = e.clientY - pullStartY;
-    if (dy <= MIN_DRAG && !pulling) return;
-    if (!pulling && isAtTop() && dy > MIN_DRAG) pulling = true;
-    if (!pulling) return;
-    if (dy <= 0) { resetPull(true); return; }
-    pullOffset = dy;
-    updateIndicator();
-  });
-  panel.addEventListener("mouseup", () => {
-    mouseDown = false;
-    if (!pulling || pullOffset < THRESHOLD) { resetPull(false); return; }
-    resetPull(false);
-    triggerPullRefresh();
-  });
-  panel.addEventListener("mouseleave", () => { mouseDown = false; resetPull(false); });
-
-  function triggerPullRefresh() {
-    if (_refreshPromise) { showStatus("Ya se está actualizando...", "warn"); return; }
-    indicator.classList.remove("hiding");
-    indicator.classList.add("refreshing");
-    indicator.style.transform = "";
-    indicator.querySelector(".pull-icon").style.transform = "";
-    const ring = indicator.querySelector(".pull-ring-fill");
-    if (ring) ring.style.strokeDashoffset = "";
-    _refreshPromise = refreshData().finally(() => {
-      indicator.classList.add("hiding");
-      indicator.classList.remove("refreshing");
-      indicator.style.transform = "";
-      indicator.addEventListener("transitionend", function h() {
-        indicator.classList.remove("pulling", "ready", "hiding");
-        indicator.removeEventListener("transitionend", h);
-      }, { once: true });
-      _refreshPromise = null;
-    });
-  }
 }
 
 function getModeDirection(mode) {
