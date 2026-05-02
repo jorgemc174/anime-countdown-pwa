@@ -496,9 +496,6 @@ async function testNotification() {
   }
   render();
 }
-  render();
-  showStatus(`Notificación de prueba en 30s para "${testItem.title}".`, "success");
-}
 
 async function toggleNotifications() {
   const hasNativeNotif = isCapacitor();
