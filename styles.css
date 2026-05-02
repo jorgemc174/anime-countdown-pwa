@@ -477,13 +477,13 @@ h3 {
   position: absolute;
   top: 6px;
   left: 6px;
-  width: calc((100% - 22px) / 3);
+  width: calc((100% - 28px) / 3);
   height: calc(100% - 12px);
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   border-radius: var(--radius);
   z-index: 0;
   pointer-events: none;
-  transition: transform 280ms var(--ease), width 280ms var(--ease);
+  transition: transform 280ms var(--ease);
   box-shadow: 0 2px 8px rgba(233, 185, 111, 0.25);
 }
 
@@ -502,6 +502,27 @@ h3 {
 .tab.active {
   color: #17130d;
   background: transparent;
+}
+
+.list-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+  will-change: transform, opacity;
+}
+
+.anime-list.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .section-title,

@@ -158,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","animeListPreview","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -335,26 +335,151 @@ function switchTab(mode) {
 
 function bindSwipeNavigation() {
   const list = els.animeList;
-  if (!list) return;
+  const preview = els.animeListPreview;
+  if (!list || !preview) return;
 
   const THRESHOLD = 80;
   const MAX_SHIFT = 140;
   let swiping = false;
   let swipeStartX = 0;
   let swipePx = 0;
+  let previewMode = null;
 
   const modes = ["all", "today", "favorites"];
   const tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
   const indicator = document.querySelector(".tab-indicator");
-  const directionHint = document.createElement("div");
-  directionHint.className = "swipe-hint";
-  directionHint.style.cssText = "position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--accent);pointer-events:none;opacity:0;transition:opacity 150ms;white-space:nowrap;z-index:2";
-  document.querySelector(".toolbar")?.appendChild(directionHint);
 
-  function setIndicatorPos(index) {
-    if (!indicator) return;
-    indicator.style.transform = `translateX(calc(${index * 100}% + ${index * 8}px))`;
+  function isAtEdge(dir) {
+    const idx = modes.indexOf(state.viewMode);
+    return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
   }
+
+  function renderPreviewFor(mode) {
+    const prevMode = state.viewMode;
+    state.viewMode = mode;
+    const visible = getVisibleItems();
+    state.viewMode = prevMode;
+    preview.innerHTML = "";
+    if (!visible.length) {
+      preview.innerHTML = `<div class="empty-message">Sin episodios</div>`;
+      return;
+    }
+    const title = mode === "today" ? "Estrenos de hoy" : mode === "favorites" ? "Favoritos" : "Proximos estrenos";
+    preview.insertAdjacentHTML("beforeend", `<div class="section-title">${title} · ${visible.length}</div>`);
+    visible.forEach(item => preview.appendChild(createCardModern(item)));
+  }
+
+  function applyShift(px) {
+    const dir = px < 0 ? 1 : -1;
+    const atEdge = isAtEdge(dir);
+
+    list.style.transition = "none";
+    list.style.transform = `translateX(${px}px)`;
+    list.style.opacity = atEdge ? 1 : (1 - Math.abs(px) / 300);
+
+    if (atEdge) {
+      preview.style.opacity = "0";
+      preview.style.transform = "";
+      return;
+    }
+
+    const progress = Math.min(Math.abs(px) / THRESHOLD, 1);
+    const idx = modes.indexOf(state.viewMode);
+    const targetIdx = Math.max(0, Math.min(modes.length - 1, idx + dir));
+    const targetMode = modes[targetIdx];
+
+    if (targetMode !== previewMode) {
+      previewMode = targetMode;
+      renderPreviewFor(targetMode);
+    }
+
+    preview.style.transition = "none";
+    preview.style.transform = `translateX(${px + (dir * 100)}%)`;
+    preview.style.opacity = String(progress * 0.9);
+
+    tabs.forEach(t => { t.classList.remove("active"); t.style.color = ""; });
+    tabs[idx].style.opacity = String(1 - progress * 0.5);
+    tabs[targetIdx].style.opacity = String(0.5 + progress * 0.5);
+
+    if (indicator) {
+      const basePos = idx;
+      const offset = (targetIdx - idx) * progress;
+      indicator.style.transform = `translateX(calc(${(basePos + offset) * 100}% + ${(basePos + offset) * 8}px))`;
+      indicator.style.transition = "none";
+    }
+  }
+
+  function springBack() {
+    list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
+    list.style.transform = "translateX(0px)";
+    list.style.opacity = "1";
+    preview.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
+    preview.style.transform = "";
+    preview.style.opacity = "0";
+    if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
+    resetTabs();
+  }
+
+  function resetTabs() {
+    swiping = false;
+    swipeStartX = 0;
+    swipePx = 0;
+    swipeStart = null;
+    previewMode = null;
+    preview.innerHTML = "";
+    tabs.forEach(t => { t.style.opacity = ""; t.style.color = ""; });
+    setActiveTab();
+  }
+
+  function commitSwipe() {
+    const dir = swipePx < 0 ? 1 : -1;
+    if (isAtEdge(dir)) { springBack(); return; }
+    const outPx = -dir * MAX_SHIFT;
+    list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+    list.style.transform = `translateX(${outPx}px)`;
+    list.style.opacity = "0";
+    preview.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+    preview.style.transform = "translateX(0)";
+    preview.style.opacity = "1";
+
+    list.addEventListener("transitionend", function finish() {
+      list.removeEventListener("transitionend", finish);
+      list.style.transform = "";
+      list.style.transition = "none";
+      list.style.opacity = "1";
+      preview.style.opacity = "0";
+      preview.style.transform = "";
+      preview.style.transition = "none";
+      goToAdjacentMode(dir);
+      resetTabs();
+    }, { once: true });
+  }
+
+  list.addEventListener("touchmove", (e) => {
+    if (e.touches.length !== 1) return;
+    if (!swiping) {
+      if (!swipeStart) {
+        swipeStartX = e.touches[0].clientX;
+        swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
+        return;
+      }
+      const dx = e.touches[0].clientX - swipeStartX;
+      const dy = e.touches[0].clientY - swipeStart.y;
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) swiping = true;
+    }
+    if (!swiping) return;
+    swipePx = e.touches[0].clientX - swipeStartX;
+    applyShift(Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipePx * 0.8)));
+  }, { passive: true });
+
+  list.addEventListener("touchend", () => {
+    if (!swiping) { swipeStart = null; return; }
+    if (Math.abs(swipePx) >= THRESHOLD) commitSwipe();
+    else springBack();
+  });
+
+  list.addEventListener("touchcancel", () => { if (swiping) springBack(); });
+}
 
   function isAtEdge(dir) {
     const idx = modes.indexOf(state.viewMode);
