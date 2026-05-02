@@ -396,7 +396,7 @@ function bindSwipeNavigation() {
 
     if (preview) {
       preview.style.transition = "none";
-      preview.style.transform = "translateX(" + (px + dir * 120) + "%)";
+      preview.style.transform = "translateX(" + ((1 - p * 0.45) * dir * 100) + "%)";
       preview.style.opacity = p > 0.25 ? String((p - 0.25) * 1.13) : "0";
     }
 
