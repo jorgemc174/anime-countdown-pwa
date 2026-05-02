@@ -819,7 +819,10 @@ async function fetchSharedSchedule() {
     throw new Error(`El horario compartido respondio ${response.status}: ${body.slice(0, 120)}`);
   }
 
-  const json = await response.json();
+  let json;
+  try { json = await response.json(); } catch (_) {
+    throw new Error("La respuesta del horario compartido no es JSON válido.");
+  }
   const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
   return rows.filter((row) => {
     const releaseDate = getSharedSubReleaseDate(row);
@@ -1415,7 +1418,10 @@ async function fetchAnilistLibrary(username) {
     throw new Error("No se pudo conectar con AniList. Comprueba tu conexión a Internet.");
   }
   if (!response.ok) throw new Error(getAnilistResponseError(response.status));
-  const json = await response.json();
+  let json;
+  try { json = await response.json(); } catch (_) {
+    throw new Error("AniList devolvió una respuesta no válida.");
+  }
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return (json.data?.MediaListCollection?.lists || []).flatMap((list) => list.entries || []).filter((entry) => {
     const media = entry.media;
@@ -1487,7 +1493,8 @@ async function fetchPublicAnilistSearchMatch(item) {
   try {
     const response = await postAnilistGraphql(query, { search });
     if (!response.ok) return null;
-    const json = await response.json();
+    let json;
+    try { json = await response.json(); } catch (_) { return null; }
     const media = json.data?.Media;
     if (!media) return null;
     const mapped = mapPublicAnilistMedia(media);
@@ -1527,7 +1534,10 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
     throw new Error("No se pudo conectar con AniList. Comprueba tu conexión a Internet.");
   }
   if (!response.ok) throw new Error(getAnilistResponseError(response.status));
-  const json = await response.json();
+  let json;
+  try { json = await response.json(); } catch (_) {
+    throw new Error("AniList devolvió una respuesta no válida.");
+  }
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return {
     hasNextPage: Boolean(json.data?.Page?.pageInfo?.hasNextPage),
