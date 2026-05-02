@@ -36,23 +36,17 @@
           <div class="next-title">Cargando...</div>
         </section>
 
-        <div class="toolbar-row">
-          <section class="toolbar three" aria-label="Filtros">
-            <button id="showAllBtn" class="tab" type="button">Todos</button>
-            <button id="showTodayBtn" class="tab active" type="button">Hoy</button>
-            <button id="showFavsBtn" class="tab" type="button">Favoritos</button>
-            <div class="tab-indicator"></div>
-          </section>
-          <div class="toolbar-actions">
-            <input id="searchInput" class="search-input" type="text" placeholder="Buscar..." autocomplete="off" />
-            <button id="sortBtn" class="sort-btn" type="button" aria-label="Invertir orden">
-              <span class="sort-icon">↓↑</span>
-            </button>
-          </div>
-        </div>
+        <section class="toolbar three" aria-label="Filtros">
+          <button id="showAllBtn" class="tab" type="button">Todos</button>
+          <button id="showTodayBtn" class="tab active" type="button">Hoy</button>
+          <button id="showFavsBtn" class="tab" type="button">Favoritos</button>
+          <div class="tab-indicator"></div>
+        </section>
 
         <div class="list-header" id="listHeader">
           <span class="section-title" id="listTitle">Cargando...</span>
+          <input id="searchInput" class="search-input" type="text" placeholder="Buscar..." autocomplete="off" />
+          <button id="sortBtn" class="sort-btn" type="button" aria-label="Invertir orden">↓↑</button>
         </div>
         <section id="animeList" class="anime-list"></section>
       </section>
