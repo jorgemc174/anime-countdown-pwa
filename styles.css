@@ -200,6 +200,13 @@ button {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  margin: -16px -24px 2px -24px;
 }
 
 .eyebrow {
@@ -990,12 +997,7 @@ select {
     flex-direction: row;
     gap: 10px;
     padding: 12px 12px;
-    margin: -12px -12px 18px -12px;
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    margin: -12px -12px 2px -12px;
   }
 
   .status-box {
