@@ -515,10 +515,11 @@ async function syncAnilist() {
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true, force: true });
     const library = await refreshAnilistData(username);
     showStatus("Verificando plataformas con JustWatch...", "success");
-    await verifyPlatformsWithJustWatch();
+    const jwResult = await verifyPlatformsWithJustWatch();
     await saveAllLists();
     render();
-    showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
+    const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} modificados de ${jwResult.checked}` : "";
+    showStatus(`AniList sincronizado: ${library.length} animes en emisión.${jwMsg}`, "success");
   } catch (error) { showStatus(error.message, "error"); }
 }
 
@@ -964,20 +965,45 @@ function stripAnilistOnlyTiming(item) {
 
 async function verifyPlatformsWithJustWatch() {
   const countryEntry = JUSTWATCH_COUNTRIES.find((c) => c.code === state.jwCountry) || JUSTWATCH_COUNTRIES[0];
-  const candidates = getOneNextPerSeries(state.releases)
+  const allSeries = getOneNextPerSeries(state.releases)
     .filter((item) => {
       const service = item.service || "No legal platform";
       return service !== "Crunchyroll" && service !== "No legal platform";
     })
     .slice(0, JUSTWATCH_SEARCH_LIMIT);
-  const cache = new Map();
 
-  for (const item of candidates) {
-    const key = getSeriesKey(item);
-    if (!cache.has(key)) cache.set(key, await fetchJustWatchAvailabilityWithFallback(item, countryEntry.code, countryEntry.lang));
-    const result = cache.get(key);
-    applyJustWatchAvailabilityToSeries(key, result);
+  if (!allSeries.length) return { checked: 0, changed: 0, errors: 0 };
+
+  let changed = 0, errors = 0;
+  const cache = new Map();
+  const limit = 5;
+  const batches = [];
+
+  for (let i = 0; i < allSeries.length; i += limit) {
+    batches.push(allSeries.slice(i, i + limit));
   }
+
+  for (const batch of batches) {
+    const results = await Promise.allSettled(batch.map(async (item) => {
+      const key = getSeriesKey(item);
+      if (!cache.has(key)) {
+        cache.set(key, await fetchJustWatchAvailabilityWithFallback(item, countryEntry.code, countryEntry.lang));
+      }
+      return { key, result: cache.get(key) };
+    }));
+
+    for (const r of results) {
+      if (r.status === "rejected") { errors++; continue; }
+      const prev = getAllItems().filter((i) => getSeriesKey(i) === r.value.key && i.service !== "Crunchyroll");
+      const wasNoPlatform = prev.every((i) => (i.service || "") === "No legal platform");
+      applyJustWatchAvailabilityToSeries(r.value.key, r.value.result);
+      const now = getAllItems().filter((i) => getSeriesKey(i) === r.value.key && i.service !== "Crunchyroll");
+      const nowNoPlatform = now.every((i) => (i.service || "") === "No legal platform");
+      if (wasNoPlatform !== nowNoPlatform) changed++;
+    }
+  }
+
+  return { checked: allSeries.length, changed, errors };
 }
 
 async function fetchJustWatchAvailabilityWithFallback(item, countryCode, language) {
@@ -1017,20 +1043,32 @@ async function fetchJustWatchAvailability(item, countryCode = "ES", language = "
     return await res.json();
   };
 
+  const tryRest = async (url) => {
+    const q = searchQuery || item.anilistTitle || item.title;
+    const restBody = JSON.stringify({ query: q, content_types: ["show"], page_size: 5, page: 1 });
+    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: restBody });
+    if (!res.ok) return null;
+    return await res.json();
+  };
+
   try {
     let json = await tryFetch("/api/justwatch").catch(() => null);
     if (!json) json = await tryFetch("https://apis.justwatch.com/graphql").catch(() => null);
-    if (!json) return { verified: false };
 
-    const rawNodes = json.data?.popularTitles;
-    const nodes = Array.isArray(rawNodes)
-      ? rawNodes
-      : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
+    if (json) {
+      const rawNodes = json.data?.popularTitles;
+      const nodes = Array.isArray(rawNodes)
+        ? rawNodes
+        : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
 
-    const match = findJustWatchMatch(item, nodes);
-    if (!match) return { verified: false };
-    const availability = getJustWatchAllowedAvailability(match);
-    return availability ? { verified: true, availability } : { verified: false };
+      const match = findJustWatchMatch(item, nodes);
+      if (match) {
+        const availability = getJustWatchAllowedAvailability(match);
+        if (availability) return { verified: true, availability };
+      }
+    }
+
+    return { verified: false };
   } catch (error) {
     console.warn("No se pudo verificar JustWatch.", error);
     return { verified: false };
@@ -1052,7 +1090,7 @@ function findJustWatchMatch(item, nodes) {
     }
     if (score > bestScore) { bestScore = score; best = node; }
   }
-  return bestScore >= 0.9 ? best : null;
+  return bestScore >= 0.85 ? best : null;
 }
 
 function getJustWatchAllowedAvailability(node) {
@@ -2031,7 +2069,8 @@ function createCardModern(item) {
   card.className = "anime-card";
   card.dataset.id = item.id;
   card.dataset.action = "open";
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(service || "Sin plataforma")}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
 
