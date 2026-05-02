@@ -437,29 +437,34 @@ function bindSwipeNavigation() {
   function commit() {
     var dir = swipePx < 0 ? 1 : -1;
     if (edge(dir)) { back(); return; }
-    var out = -dir * MAX_SHIFT;
     swiping = false;
     swipeStart = null;
 
-    list.style.transition = "transform 240ms var(--ease)";
-    list.style.transform = "translateX(" + out + "px)";
+    var w = list.offsetWidth;
+    var outPx = -dir * (w + 20);
+
+    list.style.transition = "transform 300ms cubic-bezier(0.32, 0, 0.67, 0)";
+    list.style.transform = "translateX(" + outPx + "px)";
+
+    if (preview) {
+      preview.style.transition = "transform 300ms var(--ease)";
+      preview.style.transform = "translateX(0px)";
+      preview.style.opacity = "1";
+    }
 
     setTimeout(function() {
-      list.style.transition = "opacity 80ms var(--ease)";
+      list.style.transition = "opacity 50ms var(--ease)";
       list.style.opacity = "0";
-    }, 160);
+    }, 250);
 
     setTimeout(function() {
       list.style.transition = "none";
       list.style.transform = "";
+      list.style.opacity = "1";
+      if (preview) { preview.style.transition = "none"; preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
-      requestAnimationFrame(function() {
-        list.offsetHeight;
-        list.style.transition = "opacity 100ms var(--ease)";
-        list.style.opacity = "1";
-        finish();
-      });
-    }, 250);
+      finish();
+    }, 310);
   }
 
   list.addEventListener("touchmove", function(e) {
