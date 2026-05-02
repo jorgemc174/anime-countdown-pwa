@@ -1008,12 +1008,15 @@ async function verifyPlatformsWithJustWatch() {
 
 async function fetchJustWatchAvailabilityWithFallback(item, countryCode, language) {
   const strip = (t) => t ? t.replace(/\s*(season|s|part|cour)\s*\d+$/i, "").replace(/\s*\([^)]*\)\s*$/i, "").trim() : "";
+  const noArticle = (t) => t ? t.replace(/^(the|a|an|el|la|los|las|le|les|un|una)\s+/i, "").trim() : "";
   const queries = [...new Set([
     item.anilistTitle,
     item.title,
     ...(item.titles || []).slice(0, 3),
     strip(item.anilistTitle),
     strip(item.title),
+    noArticle(item.anilistTitle),
+    noArticle(item.title),
   ].filter(Boolean))];
 
   for (const query of queries) {
