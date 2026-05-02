@@ -387,7 +387,7 @@ h3 {
   grid-template-columns: 98px minmax(0, 1fr);
   gap: 16px;
   min-height: 150px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   padding: 14px;
   color: var(--text);
   background: var(--surface);
@@ -536,7 +536,6 @@ h3 {
 }
 
 .sort-btn.asc {
-  color: var(--accent);
   transform: scaleY(-1);
 }
 
