@@ -4,27 +4,6 @@
     "source":  "AnimeSchedule+AniList",
     "releases":  [
                      {
-                         "anilistUrl":  "https://anilist.co/anime/999999",
-                         "coverUrl":  "",
-                         "animeKey":  "test-anime",
-                         "route":  "test-anime",
-                         "service":  "Netflix",
-                         "episode":  "Ep 1",
-                         "allServices":  [
-                                             "Netflix"
-                                         ],
-                         "serviceUrl":  "https://netflix.com",
-                         "delayed":  false,
-                         "episodeNumber":  "1",
-                         "id":  "schedule-test-anime-1-20260502-132205",
-                         "releaseDate":  "2026-05-02T13:22:05.185Z",
-                         "anilistId":  999999,
-                         "hasAllowedPlatform":  true,
-                         "airType":  "SUB",
-                         "anilistTitle":  "Test Anime Notificación",
-                         "title":  "Test Anime Notificación"
-                     },
-                     {
                          "id":  "schedule-isekai-nonbiri-nouka-2-4-2026-04-27t16-00-00-02-00",
                          "animeKey":  "isekai-nonbiri-nouka-2",
                          "title":  "Isekai Nonbiri Nouka 2",

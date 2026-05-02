@@ -84,7 +84,7 @@ const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
 const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
-const ANILIST_MANUAL_COOLDOWN_MS = 10 * 60 * 1000;
+const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
 const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
@@ -158,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","testNotifBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -292,6 +292,7 @@ function bindEvents() {
   els.importBtn?.addEventListener("click", importSchedule);
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
+  els.testNotifBtn?.addEventListener("click", testNotification);
   els.themeBtn.addEventListener("click", toggleTheme);
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
@@ -431,6 +432,37 @@ function filterByPlatform(items) {
     const service = getDisplayService(item);
     return !state.hiddenPlatforms.includes(service);
   });
+}
+
+async function testNotification() {
+  const testKey = "test-notif-" + Date.now();
+  const testId = "test-notif-" + Date.now();
+  const releaseAt = new Date(Date.now() + 30000);
+  const testItem = {
+    id: testId,
+    animeKey: testKey,
+    title: "Anime de Prueba",
+    episode: "Ep 1",
+    episodeNumber: "1",
+    releaseDate: releaseAt.toISOString(),
+    service: "Netflix",
+    serviceUrl: "https://netflix.com",
+    allServices: ["Netflix"],
+    hasAllowedPlatform: true,
+    favorite: true,
+    source: "test",
+    coverUrl: "",
+    anilistId: 0,
+    anilistTitle: "Anime de Prueba"
+  };
+  state.releases.push(testItem);
+  await saveAllLists();
+  if (isCapacitor()) {
+    cancelStaleNativeNotifications();
+    scheduleNativeNotifications();
+  }
+  render();
+  showStatus(`Notificación de prueba en 30s para "${testItem.title}".`, "success");
 }
 
 async function toggleNotifications() {
