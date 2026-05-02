@@ -466,11 +466,6 @@ function goToAdjacentMode(direction) {
   if (next !== current) setMode(modes[next], direction);
 }
 
-function getModeDirection(mode) {
-  const modes = ["all", "today", "favorites"];
-  return Math.sign(modes.indexOf(mode) - modes.indexOf(state.viewMode));
-}
-
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
@@ -2216,7 +2211,6 @@ async function scheduleNativeNotifications() {
 
     if (toSchedule.length) {
       await LocalNotifications.schedule({ notifications: toSchedule });
-      console.log("Notificaciones programadas:", toSchedule.length);
     }
     return toSchedule.length;
   } catch (error) {
