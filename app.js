@@ -517,6 +517,7 @@ async function syncAnilist() {
     showStatus("Sincronizando base y AniList...", "success");
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     const library = await refreshAnilistData(username);
+    await verifyPlatformsWithJustWatch();
     render();
     showStatus(`AniList sincronizado: ${library.length} animes en emisión.`, "success");
   } catch (error) { showStatus(error.message, "error"); }
@@ -1052,11 +1053,17 @@ function getJustWatchAllowedAvailability(node) {
   const mapped = offers
     .map((offer) => {
       const service = justWatchOfferToService(offer);
-      return service ? { service } : null;
+      return service ? { service, url: offer.standardWebURL || "" } : null;
     })
     .filter(Boolean);
   const best = chooseBestStream(mapped);
-  return best ? { service: best.service, allServices: [...new Set(mapped.map((m) => m.service))], hasAllowedPlatform: true } : null;
+  if (!best) return null;
+  const allServices = [...new Set(mapped.map((m) => m.service))];
+  const urls = {};
+  for (const m of mapped) {
+    if (!urls[m.service]) urls[m.service] = m.url;
+  }
+  return { service: best.service, allServices, urls, hasAllowedPlatform: true };
 }
 
 function justWatchOfferToService(offer) {
@@ -1073,7 +1080,7 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
     if (getSeriesKey(item) !== seriesKey) return item;
     const currentService = item.service || "No legal platform";
     if (currentService === "Crunchyroll") return item;
-    if (!availability) {
+    if (!availability || !availability.allServices.includes(currentService)) {
       return {
         ...item,
         service: "No legal platform",
@@ -1084,11 +1091,12 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
         jwCountry: state.jwCountry
       };
     }
-    const keepUrl = item.serviceUrl && item.service === availability.service;
+    const jwUrl = availability.urls?.[currentService] || "";
+    const newUrl = currentService === "Prime Video" && jwUrl ? jwUrl : item.serviceUrl;
     return {
       ...item,
-      service: availability.service,
-      serviceUrl: keepUrl ? item.serviceUrl : "",
+      service: currentService,
+      serviceUrl: newUrl,
       allServices: availability.allServices,
       hasAllowedPlatform: true,
       jwVerified: true,
