@@ -400,47 +400,6 @@ body {
   transition: transform 250ms var(--ease);
 }
 
-.pull-indicator.ready .pull-icon {
-  transform: rotate(180deg);
-}
-
-.pull-indicator.refreshing .pull-icon {
-  animation: spin 800ms linear infinite;
-}
-
-.pull-indicator.hiding {
-  transition: transform 250ms var(--ease);
-}
-
-.pull-indicator.pulling {
-  transform: translateX(-50%) translateY(0);
-}
-
-.pull-indicator.ready {
-  transform: translateX(-50%) translateY(0);
-  color: #17130d;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  border-color: transparent;
-}
-
-.pull-indicator.refreshing {
-  transform: translateX(-50%) translateY(0);
-  color: #17130d;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  border-color: transparent;
-}
-
-.pull-icon {
-  display: inline-block;
-  font-size: 18px;
-  line-height: 1;
-  transition: transform 200ms var(--ease);
-}
-
-.pull-indicator.ready .pull-icon {
-  transform: rotate(180deg);
-}
-
 .pull-indicator.refreshing .pull-icon {
   animation: spin 800ms linear infinite;
 }

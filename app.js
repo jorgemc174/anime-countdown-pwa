@@ -368,19 +368,21 @@ function bindPullToRefresh() {
     const ready = pullOffset >= THRESHOLD;
 
     indicator.classList.remove("pulling", "ready", "refreshing");
-    if (ratio > 0.05) {
+    if (ratio > 0.02) {
       if (ready) {
         indicator.classList.add("ready");
       } else {
         indicator.classList.add("pulling");
       }
       indicator.style.transform = `translateX(-50%) translateY(${-80 + ratio * 80}px)`;
+      indicator.querySelector(".pull-icon").style.transform = `rotate(${ratio * 180}deg)`;
     }
   }
 
   function resetPull(animate) {
     pulling = false;
     pullOffset = 0;
+    indicator.querySelector(".pull-icon").style.transform = "";
     if (animate) {
       indicator.classList.add("hiding");
       indicator.style.transform = "";
@@ -441,6 +443,7 @@ function bindPullToRefresh() {
     indicator.classList.remove("hiding");
     indicator.classList.add("refreshing");
     indicator.style.transform = "";
+    indicator.querySelector(".pull-icon").style.transform = "";
     _refreshPromise = refreshData().finally(() => {
       indicator.classList.add("hiding");
       indicator.classList.remove("refreshing");
