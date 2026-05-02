@@ -473,7 +473,7 @@ h3 {
 .toolbar {
   display: grid;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   padding: 6px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--line);
@@ -489,7 +489,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   min-height: 24px;
 }
 
