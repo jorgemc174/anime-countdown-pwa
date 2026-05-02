@@ -450,7 +450,21 @@ function bindSwipeNavigation() {
       list.removeEventListener("transitionend", done);
       list.style.transform = "";
       list.style.transition = "none";
-      goToAdjacentMode(dir);
+      if (preview && preview.children.length) {
+        while (preview.firstChild) list.appendChild(preview.firstChild);
+      }
+      var dir2 = swipePx < 0 ? 1 : -1;
+      var modes2 = ["all", "today", "favorites"];
+      var cur2 = Math.max(0, modes2.indexOf(state.viewMode));
+      var nxt2 = Math.min(modes2.length - 1, Math.max(0, cur2 + dir2));
+      if (nxt2 !== cur2) {
+        state.viewMode = modes2[nxt2];
+        browserApi.storage.local.set({ viewMode: state.viewMode });
+        setActiveTab();
+        renderNextModern();
+        renderSettingsPlatformFilter();
+        setTimeout(function() { render(); }, 50);
+      }
       requestAnimationFrame(function() {
         list.style.transition = "opacity 120ms var(--ease)";
         list.style.opacity = "1";
