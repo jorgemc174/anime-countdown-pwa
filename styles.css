@@ -1141,6 +1141,60 @@ html.light .platform-chip.active {
   color: #17130d;
 }
 
+.pull-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: height 0.25s var(--ease), opacity 0.2s var(--ease), transform 0.25s var(--ease);
+  color: var(--accent);
+  gap: 4px;
+  margin-bottom: -8px;
+}
+
+.pull-indicator.pulling {
+  opacity: 0.7;
+}
+
+.pull-indicator.ready {
+  height: 64px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-indicator.refreshing {
+  height: 64px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-icon {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+
+.pull-indicator.refreshing .pull-icon {
+  animation: rotate360 0.8s linear infinite;
+}
+
+.pull-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes rotate360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

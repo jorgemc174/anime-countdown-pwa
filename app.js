@@ -291,7 +291,6 @@ function bindEvents() {
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn?.addEventListener("click", importSchedule);
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
-  els.refreshBtn?.addEventListener("click", refreshData);
   els.resetBtn.addEventListener("click", resetAll);
   els.themeBtn.addEventListener("click", toggleTheme);
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
@@ -302,40 +301,66 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
+  setupPullToRefresh();
 }
 
-function setSettingsOpen(open) {
-  els.settingsPanel.classList.toggle("hidden", !open);
-  document.body.classList.toggle("settings-open", open);
-  els.settingsBtn.setAttribute("aria-expanded", String(open));
+function setupPullToRefresh() {
+  const indicator = document.getElementById("pullIndicator");
+  if (!indicator) return;
+  let startY = 0, pulling = false, distance = 0;
+  const threshold = 70;
+  let refreshing = false;
+
+  const reset = () => {
+    indicator.className = "pull-indicator";
+    pulling = false;
+    distance = 0;
+  };
+
+  const onTouchStart = (e) => {
+    if (refreshing || els.settingsPanel && !els.settingsPanel.classList.contains("hidden")) return;
+    if (document.scrollingElement && document.scrollingElement.scrollTop > 5) return;
+    if (window.scrollY > 5) return;
+    startY = e.touches[0].clientY;
+    pulling = true;
+  };
+
+  const onTouchMove = (e) => {
+    if (!pulling) return;
+    distance = Math.max(0, (e.touches[0].clientY - startY) * 0.5);
+    if (distance < 15) { indicator.className = "pull-indicator"; return; }
+    indicator.className = distance >= threshold ? "pull-indicator ready" : "pull-indicator pulling";
+    indicator.style.height = Math.min(distance, 80) + "px";
+    indicator.style.opacity = Math.min(1, distance / 50);
+    indicator.style.transform = `translateY(${Math.min(distance - 20, 0)}px)`;
+  };
+
+  const onTouchEnd = async () => {
+    if (!pulling) return;
+    pulling = false;
+    if (distance >= threshold && !refreshing) {
+      refreshing = true;
+      indicator.className = "pull-indicator refreshing";
+      indicator.style.height = "64px";
+      indicator.style.transform = "translateY(0)";
+      indicator.querySelector(".pull-text").textContent = "Refrescando...";
+      try {
+        await refreshData();
+      } catch (_) {}
+      setTimeout(() => {
+        refreshing = false;
+        reset();
+      }, 400);
+    } else {
+      reset();
+    }
+  };
+
+  document.addEventListener("touchstart", onTouchStart, { passive: false });
+  document.addEventListener("touchmove", onTouchMove, { passive: false });
+  document.addEventListener("touchend", onTouchEnd);
 }
 
-async function setMode(mode, direction = 0) {
-  if (mode === state.viewMode) return;
-  await animateModeChange(direction, async () => {
-    state.viewMode = mode;
-    await browserApi.storage.local.set({ viewMode: mode });
-    render();
-  });
-}
-
-async function animateModeChange(direction, update) {
-  const list = els.animeList;
-  const exitShift = direction >= 0 ? "-42px" : "42px";
-  const enterShift = direction >= 0 ? "42px" : "-42px";
-  if (!list || window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
-    await update();
-    return;
-  }
-  list.style.setProperty("--swipe-shift", exitShift);
-  list.classList.add("is-switching");
-  await wait(190);
-  await update();
-  list.style.setProperty("--swipe-shift", enterShift);
-  requestAnimationFrame(() => list.classList.remove("is-switching"));
-}
-
-function wait(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
 function bindSwipeNavigation() {
   const panel = document.querySelector(".main-panel");
   if (!panel) return;
