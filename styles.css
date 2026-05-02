@@ -604,6 +604,19 @@ h3 {
   touch-action: pan-y;
 }
 
+.swipe-stage {
+  position: relative;
+}
+
+.swipe-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .section-title,
 .empty-message {
   grid-column: 1 / -1;

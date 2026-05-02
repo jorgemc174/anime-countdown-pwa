@@ -337,6 +337,7 @@ async function setMode(mode, direction) {
 
 function bindSwipeNavigation() {
   var list = els.animeList;
+  var preview = document.getElementById("swipePreview");
   if (!list) return;
 
   var THRESHOLD = 80;
@@ -344,6 +345,7 @@ function bindSwipeNavigation() {
   var swiping = false;
   var swipeStartX = 0;
   var swipePx = 0;
+  var lastMode = null;
 
   var modes = ["all", "today", "favorites"];
   var tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
@@ -354,18 +356,49 @@ function bindSwipeNavigation() {
     return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
   }
 
+  function renderPreview(mode) {
+    if (!preview) return;
+    var prev = state.viewMode;
+    state.viewMode = mode;
+    var items = getVisibleItems();
+    state.viewMode = prev;
+    preview.innerHTML = "";
+    var take = Math.min(items.length, 4);
+    for (var i = 0; i < take; i++) {
+      preview.appendChild(createCardModern(items[i]));
+    }
+  }
+
   function shift(px) {
+    var dir = px < 0 ? 1 : -1;
+    if (edge(dir)) {
+      list.style.transition = "none";
+      list.style.transform = "translateX(" + (px * 0.22) + "px)";
+      list.style.opacity = "1";
+      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; }
+      return;
+    }
+
     list.style.transition = "none";
     list.style.transform = "translateX(" + px + "px)";
     list.style.opacity = 1 - Math.abs(px) / 300;
-
-    var dir = px < 0 ? 1 : -1;
-    if (edge(dir)) return;
 
     var p = Math.min(Math.abs(px) / THRESHOLD, 1);
     var idx = modes.indexOf(state.viewMode);
     var tgt = Math.max(0, Math.min(modes.length - 1, idx + dir));
     if (idx === tgt) return;
+
+    var targetMode = modes[tgt];
+    if (targetMode !== lastMode) {
+      lastMode = targetMode;
+      renderPreview(targetMode);
+    }
+
+    if (preview) {
+      preview.style.transition = "none";
+      preview.style.transform = "translateX(" + (px + dir * 110) + "%)";
+      preview.style.opacity = String(p * 0.85);
+    }
 
     tabs.forEach(function(t) { t.classList.remove("active"); });
     tabs[idx].style.opacity = String(1 - p * 0.5);
@@ -383,6 +416,7 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
     list.style.transform = "translateX(0px)";
     list.style.opacity = "1";
+    if (preview) { preview.style.transition = "opacity 200ms var(--ease)"; preview.style.opacity = "0"; }
     if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
     finish();
   }
@@ -392,6 +426,8 @@ function bindSwipeNavigation() {
     swipeStartX = 0;
     swipePx = 0;
     swipeStart = null;
+    lastMode = null;
+    if (preview) { preview.innerHTML = ""; preview.style.transform = ""; preview.style.opacity = "0"; }
     tabs.forEach(function(t) { t.style.opacity = ""; t.style.color = ""; });
     setActiveTab();
   }
@@ -403,11 +439,18 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
     list.style.transform = "translateX(" + out + "px)";
     list.style.opacity = "0";
+    if (preview) {
+      preview.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+      preview.style.transform = "translateX(0)";
+      preview.style.opacity = "1";
+    }
 
     list.addEventListener("transitionend", function done() {
       list.removeEventListener("transitionend", done);
       list.style.transform = "";
       list.style.transition = "none";
+      list.style.opacity = "1";
+      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
       list.style.transform = "translateX(" + (-out) + "px)";
       requestAnimationFrame(function() {
