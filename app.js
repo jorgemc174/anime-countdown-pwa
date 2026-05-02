@@ -474,6 +474,7 @@ async function testNotification() {
     }
 
     const notifId = hashNotificationId(testItem);
+    const coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
     await LocalNotifications.schedule({
       notifications: [{
         id: notifId,
@@ -484,7 +485,7 @@ async function testNotification() {
         smallIcon: "ic_stat_icon",
         iconColor: "#111827",
         actionTypeId: "",
-        attachments: null,
+        attachments: coverPath ? [{ id: "cover", url: coverPath }] : null,
         group: "anime-countdown"
       }]
     });
