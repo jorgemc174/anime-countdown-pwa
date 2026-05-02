@@ -360,13 +360,8 @@ function bindSwipeNavigation() {
     const visible = getVisibleItems();
     state.viewMode = prevMode;
     preview.innerHTML = "";
-    if (!visible.length) {
-      preview.innerHTML = `<div class="empty-message">Sin episodios</div>`;
-      return;
-    }
-    const title = mode === "today" ? "Estrenos de hoy" : mode === "favorites" ? "Favoritos" : "Proximos estrenos";
-    preview.insertAdjacentHTML("beforeend", `<div class="section-title">${title} · ${visible.length}</div>`);
-    visible.forEach(item => preview.appendChild(createCardModern(item)));
+    const label = mode === "today" ? "Estrenos de hoy" : mode === "favorites" ? "Favoritos" : "Próximos estrenos";
+    preview.innerHTML = `<div class="empty-message" style="font-size:15px;opacity:0.7">${label} · ${visible.length} episodios</div>`;
   }
 
   function applyShift(px) {
