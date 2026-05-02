@@ -137,7 +137,7 @@ async function init() {
     startNotificationScheduler();
     startAnilistAutoRefresh();
     startPublicAnilistAutoRefresh();
-    await refreshSharedSchedule({ silent: true });
+    await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     setupCapacitorNotificationTap();
   } catch (error) {
     showFatal(error);
@@ -153,7 +153,7 @@ function cleanupLegacyCaches() {
 }
 
 function registerServiceWorker() {
-  if (!("serviceWorker" in navigator)) return;
+  if (!("serviceWorker" in navigator) || isCapacitor()) return;
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
 
@@ -461,7 +461,7 @@ async function testNotification() {
   state.releases.push(testItem);
   await saveAllLists();
 
-  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  const LocalNotifications = getLocalNotifications();
   if (!LocalNotifications) return showStatus("Plugin de notificaciones no disponible.", "error");
 
   try {
@@ -527,9 +527,11 @@ async function toggleNotifications() {
     }
     if (hasNativeNotif) {
       try {
-        const LocalNotifications = Capacitor.Plugins.LocalNotifications;
-        const permResult = await LocalNotifications.requestPermissions();
-        granted = permResult.display === "granted";
+        const LocalNotifications = getLocalNotifications();
+        if (LocalNotifications) {
+          const permResult = await LocalNotifications.requestPermissions();
+          granted = permResult.display === "granted";
+        }
       } catch (_) {}
     }
     if (!granted) {
@@ -554,8 +556,8 @@ async function toggleNotifications() {
   await browserApi.storage.local.set({ notificationEnabled: false });
   if (hasNativeNotif) {
     try {
-      const LocalNotifications = Capacitor.Plugins.LocalNotifications;
-      await LocalNotifications.cancelAll();
+      const LocalNotifications = getLocalNotifications();
+      if (LocalNotifications) await LocalNotifications.cancelAll();
     } catch (_) {}
   }
   updateNotificationButton();
@@ -1878,8 +1880,12 @@ async function resetAll() {
 
 function startNotificationScheduler() {
   checkReleaseNotifications();
-  cancelStaleNativeNotifications();
-  scheduleNativeNotifications();
+  if (isCapacitor()) {
+    setTimeout(async () => {
+      await cancelStaleNativeNotifications();
+      await scheduleNativeNotifications();
+    }, 3000);
+  }
   setInterval(() => {
     if (document.visibilityState === "visible") checkReleaseNotifications();
   }, VISIBLE_NOTIFICATION_CHECK_MS);
@@ -1994,13 +2000,24 @@ async function showReleaseNotification(item) {
   new Notification(title, options);
 }
 
+function getLocalNotifications() {
+  try {
+    if (typeof Capacitor === "undefined") return null;
+    if (!Capacitor.isNativePlatform()) return null;
+    if (!Capacitor.Plugins || !Capacitor.Plugins.LocalNotifications) return null;
+    return Capacitor.Plugins.LocalNotifications;
+  } catch (_) { return null; }
+}
+
 function isCapacitor() {
-  return typeof Capacitor !== "undefined" && Capacitor.isNativePlatform();
+  try {
+    return typeof Capacitor !== "undefined" && Capacitor.isNativePlatform();
+  } catch (_) { return false; }
 }
 
 async function scheduleNativeNotifications() {
   if (!isCapacitor() || !state.notificationEnabled) return;
-  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  const LocalNotifications = getLocalNotifications();
   if (!LocalNotifications) return;
 
   try {
@@ -2054,7 +2071,7 @@ async function scheduleNativeNotifications() {
 
 async function cancelStaleNativeNotifications() {
   if (!isCapacitor()) return;
-  const LocalNotifications = Capacitor.Plugins.LocalNotifications;
+  const LocalNotifications = getLocalNotifications();
   if (!LocalNotifications) return;
   try {
     const pending = await LocalNotifications.getPending();
@@ -2089,6 +2106,7 @@ function hashNotificationId(item) {
 function setupCapacitorNotificationTap() {
   if (!isCapacitor()) return;
   try {
+    if (!Capacitor.Plugins || !Capacitor.Plugins.App) return;
     const App = Capacitor.Plugins.App;
     App.addListener("appUrlOpen", (data) => {
       if (data.url) openExternalUrl(data.url);
