@@ -440,9 +440,13 @@ function bindSwipeNavigation() {
     swiping = false;
     swipeStart = null;
 
-    list.style.transition = "transform 200ms var(--ease), opacity 200ms var(--ease)";
+    list.style.transition = "transform 200ms var(--ease)";
     list.style.transform = "translateX(" + out + "px)";
-    list.style.opacity = "0";
+
+    setTimeout(function() {
+      list.style.transition = "opacity 60ms var(--ease)";
+      list.style.opacity = "0";
+    }, 140);
 
     setTimeout(function() {
       list.style.transition = "none";
