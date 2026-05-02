@@ -451,7 +451,7 @@ async function testNotification() {
     hasAllowedPlatform: true,
     favorite: true,
     source: "test",
-    coverUrl: "",
+    coverUrl: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197824-k9Uyef8g49hB.png",
     anilistId: 0,
     anilistTitle: "Anime de Prueba"
   };
@@ -1971,10 +1971,9 @@ async function scheduleNativeNotifications() {
     const pendingIds = new Set(pending.notifications.map((n) => n.id));
 
     const now = Date.now();
-    const candidates = getDueNotificationItems(state.releases, now);
     const toSchedule = [];
 
-    for (const item of candidates) {
+    for (const item of state.releases) {
       const releaseAt = new Date(item.releaseDate).getTime();
       if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
       const notifId = hashNotificationId(item);
