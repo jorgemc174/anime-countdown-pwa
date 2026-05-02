@@ -452,10 +452,12 @@ function bindSwipeNavigation() {
       list.style.transition = "none";
       list.style.transform = "";
       goToAdjacentMode(dir);
-      list.offsetHeight;
-      list.style.transition = "opacity 100ms var(--ease)";
-      list.style.opacity = "1";
-      finish();
+      requestAnimationFrame(function() {
+        list.offsetHeight;
+        list.style.transition = "opacity 100ms var(--ease)";
+        list.style.opacity = "1";
+        finish();
+      });
     }, 250);
   }
 
@@ -2554,8 +2556,6 @@ function getNextHighlightItems() {
 
 function renderListModern() {
   let visible = getVisibleItems();
-  els.animeList.innerHTML = "";
-
   if (state.searchQuery) {
     const q = state.searchQuery.toLowerCase();
     visible = visible.filter(item =>
@@ -2564,18 +2564,25 @@ function renderListModern() {
       (getDisplayService(item) || "").toLowerCase().includes(q)
     );
   }
-
   if (!state.sortAsc) visible = [...visible].reverse();
 
   const title = state.viewMode === "today" ? "Estrenos de hoy" : state.viewMode === "favorites" ? "Favoritos" : "Proximos estrenos";
   const listTitle = document.getElementById("listTitle");
   if (listTitle) listTitle.textContent = `${title} · ${visible.length}`;
 
+  var frag = document.createDocumentFragment();
   if (!visible.length) {
-    els.animeList.innerHTML = `<div class="empty-message">No hay episodios para mostrar.</div>`;
-    return;
+    var empty = document.createElement("div");
+    empty.className = "empty-message";
+    empty.textContent = "No hay episodios para mostrar.";
+    frag.appendChild(empty);
+  } else {
+    for (var i = 0; i < visible.length; i++) {
+      frag.appendChild(createCardModern(visible[i]));
+    }
   }
-  visible.forEach((item) => els.animeList.appendChild(createCardModern(item)));
+  els.animeList.innerHTML = "";
+  els.animeList.appendChild(frag);
 }
 
 function createCardModern(item) {
