@@ -335,6 +335,118 @@ async function setMode(mode, direction) {
   render();
 }
 
+function bindSwipeNavigation() {
+  var list = els.animeList;
+  if (!list) return;
+
+  var THRESHOLD = 80;
+  var MAX_SHIFT = 140;
+  var swiping = false;
+  var swipeStartX = 0;
+  var swipePx = 0;
+
+  var modes = ["all", "today", "favorites"];
+  var tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
+  var indicator = document.querySelector(".tab-indicator");
+
+  function edge(dir) {
+    var idx = modes.indexOf(state.viewMode);
+    return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
+  }
+
+  function shift(px) {
+    list.style.transition = "none";
+    list.style.transform = "translateX(" + px + "px)";
+    list.style.opacity = 1 - Math.abs(px) / 300;
+
+    var dir = px < 0 ? 1 : -1;
+    if (edge(dir)) return;
+
+    var p = Math.min(Math.abs(px) / THRESHOLD, 1);
+    var idx = modes.indexOf(state.viewMode);
+    var tgt = Math.max(0, Math.min(modes.length - 1, idx + dir));
+    if (idx === tgt) return;
+
+    tabs.forEach(function(t) { t.classList.remove("active"); });
+    tabs[idx].style.opacity = String(1 - p * 0.5);
+    tabs[tgt].style.opacity = String(0.5 + p * 0.5);
+
+    if (indicator) {
+      var base = idx;
+      var off = (tgt - idx) * p;
+      indicator.style.transform = "translateX(calc(" + ((base + off) * 100) + "% + " + ((base + off) * 8) + "px))";
+      indicator.style.transition = "none";
+    }
+  }
+
+  function back() {
+    list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
+    list.style.transform = "translateX(0px)";
+    list.style.opacity = "1";
+    if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
+    finish();
+  }
+
+  function finish() {
+    swiping = false;
+    swipeStartX = 0;
+    swipePx = 0;
+    swipeStart = null;
+    tabs.forEach(function(t) { t.style.opacity = ""; t.style.color = ""; });
+    setActiveTab();
+  }
+
+  function commit() {
+    var dir = swipePx < 0 ? 1 : -1;
+    if (edge(dir)) { back(); return; }
+    var out = -dir * MAX_SHIFT;
+    list.style.transition = "transform 220ms var(--ease), opacity 220ms var(--ease)";
+    list.style.transform = "translateX(" + out + "px)";
+    list.style.opacity = "0";
+
+    list.addEventListener("transitionend", function done() {
+      list.removeEventListener("transitionend", done);
+      list.style.transform = "";
+      list.style.transition = "none";
+      goToAdjacentMode(dir);
+      list.style.transform = "translateX(" + (-out) + "px)";
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          finish();
+          list.style.transition = "transform 320ms var(--ease), opacity 320ms var(--ease)";
+          list.style.transform = "translateX(0px)";
+          list.style.opacity = "1";
+        });
+      });
+    }, { once: true });
+  }
+
+  list.addEventListener("touchmove", function(e) {
+    if (e.touches.length !== 1) return;
+    if (!swiping) {
+      if (!swipeStart) {
+        swipeStartX = e.touches[0].clientX;
+        swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
+        return;
+      }
+      var dx = e.touches[0].clientX - swipeStartX;
+      var dy = e.touches[0].clientY - swipeStart.y;
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) swiping = true;
+    }
+    if (!swiping) return;
+    swipePx = e.touches[0].clientX - swipeStartX;
+    shift(Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipePx * 0.8)));
+  }, { passive: true });
+
+  list.addEventListener("touchend", function() {
+    if (!swiping) { swipeStart = null; return; }
+    if (Math.abs(swipePx) >= THRESHOLD) commit();
+    else back();
+  });
+
+  list.addEventListener("touchcancel", function() { if (swiping) back(); });
+}
+
 function switchTab(mode) {
   if (state.viewMode === mode) return;
   els.animeList.style.transition = "opacity 150ms var(--ease)";
