@@ -517,6 +517,7 @@ h3 {
   margin: 0;
   flex: 1;
   min-width: 0;
+  line-height: 26px;
 }
 
 .search-input {
