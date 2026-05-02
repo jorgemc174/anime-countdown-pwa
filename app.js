@@ -2058,14 +2058,6 @@ async function scheduleNativeNotifications() {
   }
 }
 
-    if (toSchedule.length) {
-      await LocalNotifications.schedule({ notifications: toSchedule });
-    }
-  } catch (error) {
-    console.warn("Error al programar notificaciones nativas.", error);
-  }
-}
-
 async function cancelStaleNativeNotifications() {
   if (!isCapacitor()) return;
   const LocalNotifications = getLocalNotifications();
