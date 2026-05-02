@@ -434,7 +434,13 @@ function bindSwipeNavigation() {
       if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) swiping = true;
     }
     if (!swiping) return;
-    swipePx = e.touches[0].clientX - swipeStartX;
+    var raw = e.touches[0].clientX - swipeStartX;
+    if (swipePx !== 0 && (raw > 0) !== (swipePx > 0)) {
+      swipeStartX = e.touches[0].clientX - swipePx;
+      swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
+      raw = swipePx;
+    }
+    swipePx = raw;
     shift(Math.max(-MAX_SHIFT, Math.min(MAX_SHIFT, swipePx * 0.8)));
   }, { passive: true });
 
