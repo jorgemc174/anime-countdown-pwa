@@ -451,8 +451,12 @@ function bindSwipeNavigation() {
       list.style.transform = "";
       list.style.transition = "none";
       goToAdjacentMode(dir);
+      list.style.transition = "opacity 150ms var(--ease)";
       list.style.opacity = "1";
-      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; preview.style.transition = "none"; }
+      if (preview) {
+        preview.style.transition = "opacity 150ms var(--ease)";
+        preview.style.opacity = "0";
+      }
       finish();
     }, { once: true });
   }
