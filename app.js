@@ -355,6 +355,7 @@ function bindPullToRefresh() {
   if (!panel || !indicator) return;
 
   const THRESHOLD = 70;
+  const MIN_DRAG = 10;
   let pullStartY = 0;
   let pulling = false;
   let pullOffset = 0;
@@ -398,20 +399,24 @@ function bindPullToRefresh() {
 
   panel.addEventListener("touchstart", (e) => {
     if (e.touches.length !== 1) return;
+    pulling = false;
+    pullOffset = 0;
     pullStartY = e.touches[0].clientY;
-    pulling = isAtTop();
   }, { passive: true });
 
   panel.addEventListener("touchmove", (e) => {
-    if (!pulling) return;
+    if (e.touches.length !== 1) return;
     const dy = e.touches[0].clientY - pullStartY;
-    if (dy <= 0) { pulling = false; resetPull(true); return; }
+    if (dy <= MIN_DRAG && !pulling) return;
+    if (!pulling && isAtTop() && dy > MIN_DRAG) pulling = true;
+    if (!pulling) return;
+    if (dy <= 0) { resetPull(true); return; }
     pullOffset = dy;
     updateIndicator();
   }, { passive: true });
 
   panel.addEventListener("touchend", () => {
-    if (!pulling || pullOffset < THRESHOLD) { resetPull(true); return; }
+    if (!pulling || pullOffset < THRESHOLD) { resetPull(false); return; }
     resetPull(false);
     triggerPullRefresh();
   });
@@ -420,23 +425,27 @@ function bindPullToRefresh() {
   panel.addEventListener("mousedown", (e) => {
     if (e.button !== 0) return;
     mouseDown = true;
+    pulling = false;
+    pullOffset = 0;
     pullStartY = e.clientY;
-    pulling = isAtTop();
   });
   panel.addEventListener("mousemove", (e) => {
-    if (!mouseDown || !pulling) return;
+    if (!mouseDown) return;
     const dy = e.clientY - pullStartY;
-    if (dy <= 0) { pulling = false; resetPull(true); return; }
+    if (dy <= MIN_DRAG && !pulling) return;
+    if (!pulling && isAtTop() && dy > MIN_DRAG) pulling = true;
+    if (!pulling) return;
+    if (dy <= 0) { resetPull(true); return; }
     pullOffset = dy;
     updateIndicator();
   });
   panel.addEventListener("mouseup", () => {
     mouseDown = false;
-    if (!pulling || pullOffset < THRESHOLD) { resetPull(true); return; }
+    if (!pulling || pullOffset < THRESHOLD) { resetPull(false); return; }
     resetPull(false);
     triggerPullRefresh();
   });
-  panel.addEventListener("mouseleave", () => { mouseDown = false; resetPull(true); });
+  panel.addEventListener("mouseleave", () => { mouseDown = false; resetPull(false); });
 
   function triggerPullRefresh() {
     if (_refreshPromise) { showStatus("Ya se está actualizando...", "warn"); return; }
