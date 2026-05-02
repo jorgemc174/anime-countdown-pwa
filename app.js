@@ -301,64 +301,6 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
-  setupPullToRefresh();
-}
-
-function setupPullToRefresh() {
-  const indicator = document.getElementById("pullIndicator");
-  if (!indicator) return;
-  let startY = 0, pulling = false, distance = 0;
-  const threshold = 70;
-  let refreshing = false;
-
-  const reset = () => {
-    indicator.className = "pull-indicator";
-    pulling = false;
-    distance = 0;
-  };
-
-  const onTouchStart = (e) => {
-    if (refreshing || els.settingsPanel && !els.settingsPanel.classList.contains("hidden")) return;
-    if (document.scrollingElement && document.scrollingElement.scrollTop > 5) return;
-    if (window.scrollY > 5) return;
-    startY = e.touches[0].clientY;
-    pulling = true;
-  };
-
-  const onTouchMove = (e) => {
-    if (!pulling) return;
-    distance = Math.max(0, (e.touches[0].clientY - startY) * 0.5);
-    if (distance < 15) { indicator.className = "pull-indicator"; return; }
-    indicator.className = distance >= threshold ? "pull-indicator ready" : "pull-indicator pulling";
-    indicator.style.height = Math.min(distance, 80) + "px";
-    indicator.style.opacity = Math.min(1, distance / 50);
-    indicator.style.transform = `translateY(${Math.min(distance - 20, 0)}px)`;
-  };
-
-  const onTouchEnd = async () => {
-    if (!pulling) return;
-    pulling = false;
-    if (distance >= threshold && !refreshing) {
-      refreshing = true;
-      indicator.className = "pull-indicator refreshing";
-      indicator.style.height = "64px";
-      indicator.style.transform = "translateY(0)";
-      indicator.querySelector(".pull-text").textContent = "Refrescando...";
-      try {
-        await refreshData();
-      } catch (_) {}
-      setTimeout(() => {
-        refreshing = false;
-        reset();
-      }, 400);
-    } else {
-      reset();
-    }
-  };
-
-  document.addEventListener("touchstart", onTouchStart, { passive: true });
-  document.addEventListener("touchmove", onTouchMove, { passive: true });
-  document.addEventListener("touchend", onTouchEnd, { passive: true });
 }
 
 function bindSwipeNavigation() {
