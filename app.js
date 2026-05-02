@@ -483,6 +483,7 @@ async function testNotification() {
         schedule: { at: new Date(releaseAt) },
         extra: { url: "https://netflix.com" },
         smallIcon: "ic_stat_icon",
+        largeIcon: coverPath || undefined,
         iconColor: "#111827",
         actionTypeId: "",
         attachments: coverPath ? [{ id: "cover", url: coverPath }] : null,
@@ -2035,12 +2036,9 @@ async function scheduleNativeNotifications() {
 
       const displayService = getDisplayService(item);
       const coverUrl = normalizeUrl(item.coverUrl);
-      let attachments = null;
+      let localPath = null;
       if (coverUrl) {
-        const localPath = await downloadCoverImage(coverUrl, notifId);
-        if (localPath) {
-          attachments = [{ id: "cover", url: localPath }];
-        }
+        localPath = await downloadCoverImage(coverUrl, notifId);
       }
       toSchedule.push({
         id: notifId,
@@ -2049,9 +2047,10 @@ async function scheduleNativeNotifications() {
         schedule: { at: new Date(releaseAt) },
         extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
         smallIcon: "ic_stat_icon",
+        largeIcon: localPath || undefined,
         iconColor: "#111827",
         actionTypeId: "",
-        attachments,
+        attachments: localPath ? [{ id: "cover", url: localPath }] : null,
         group: "anime-countdown",
         groupSummary: false
       });
@@ -2106,19 +2105,17 @@ async function downloadCoverImage(url, notifId) {
 
     const response = await fetch(url);
     if (!response.ok) return null;
-    const blob = await response.blob();
-    const base64 = await new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-
-    const cleanData = String(base64).replace(/^data:image\/\w+;base64,/, "");
+    const buffer = await response.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const base64 = btoa(binary);
 
     const result = await Filesystem.writeFile({
       path,
-      data: cleanData,
+      data: base64,
       directory: "CACHE",
       recursive: true
     });
