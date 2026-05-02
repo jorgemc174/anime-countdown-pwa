@@ -630,17 +630,25 @@ function updateNotificationButton() {
 async function refreshData() {
   try {
     showStatus("Actualizando horario...", "success");
-    await refreshSharedSchedule({ silent: false, skipPublicAnilist: true, force: true });
+    await refreshSharedSchedule({ silent: true, skipPublicAnilist: true, force: true });
+    await saveAllLists();
+    if (isCapacitor()) {
+      cancelStaleNativeNotifications();
+      scheduleNativeNotifications();
+    }
+    render();
+    showStatus("Horario actualizado. Verificando plataformas...", "success");
+
     await verifyPlatformsWithJustWatch();
     await saveAllLists();
     if (isCapacitor()) {
-      await cancelStaleNativeNotifications();
-      await scheduleNativeNotifications();
+      cancelStaleNativeNotifications();
+      scheduleNativeNotifications();
     }
     render();
     const favs = state.releases.filter(i => i.favorite).length;
-    const notifMsg = isCapacitor() ? ` | Notificaciones: ${favs} favs` : "";
-    showStatus(`Horario actualizado.${notifMsg}`, "success");
+    const notifMsg = isCapacitor() ? ` | ${favs} con notificaciones` : "";
+    showStatus(`Listo.${notifMsg}`, "success");
   } catch (error) {
     showStatus(error.message || "Error al refrescar", "error");
   }
