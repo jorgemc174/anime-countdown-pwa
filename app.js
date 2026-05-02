@@ -308,6 +308,18 @@ function bindEvents() {
   });
 }
 
+function setSettingsOpen(open) {
+  els.settingsPanel.classList.toggle("hidden", !open);
+  document.body.classList.toggle("settings-open", open);
+  els.settingsBtn.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+async function setMode(mode, direction) {
+  state.viewMode = mode;
+  await browserApi.storage.local.set({ viewMode: mode });
+  render();
+}
+
 function bindSwipeNavigation() {
   const panel = document.querySelector(".main-panel");
   if (!panel) return;
