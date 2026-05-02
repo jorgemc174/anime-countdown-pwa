@@ -158,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","testNotifBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -291,8 +291,8 @@ function bindEvents() {
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn?.addEventListener("click", importSchedule);
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
+  els.refreshBtn?.addEventListener("click", refreshData);
   els.resetBtn.addEventListener("click", resetAll);
-  els.testNotifBtn?.addEventListener("click", testNotification);
   els.themeBtn.addEventListener("click", toggleTheme);
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   els.nextRelease.addEventListener("click", async () => { if (state.currentNext) await openOrAsk(state.currentNext); });
@@ -600,6 +600,25 @@ function updateNotificationButton() {
   els.notificationBtn.setAttribute("aria-checked", active ? "true" : "false");
   const label = document.getElementById("notificationLabel");
   if (label) label.textContent = active ? "Notificaciones activadas" : "Activar notificación";
+}
+
+async function refreshData() {
+  try {
+    showStatus("Actualizando horario...", "success");
+    await refreshSharedSchedule({ silent: false, skipPublicAnilist: true, force: true });
+    await verifyPlatformsWithJustWatch();
+    await saveAllLists();
+    if (isCapacitor()) {
+      await cancelStaleNativeNotifications();
+      await scheduleNativeNotifications();
+    }
+    render();
+    const favs = state.releases.filter(i => i.favorite).length;
+    const notifMsg = isCapacitor() ? ` | Notificaciones: ${favs} favs` : "";
+    showStatus(`Horario actualizado.${notifMsg}`, "success");
+  } catch (error) {
+    showStatus(error.message || "Error al refrescar", "error");
+  }
 }
 
 async function syncAnilist() {
