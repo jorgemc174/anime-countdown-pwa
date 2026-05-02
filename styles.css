@@ -357,22 +357,55 @@ body {
 
 .pull-indicator {
   position: fixed;
-  top: 0;
+  top: 12px;
   left: 50%;
-  transform: translateX(-50%) translateY(-100%);
+  transform: translateX(-50%) translateY(-80px);
   z-index: 90;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 0 0 12px 12px;
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
   pointer-events: none;
+}
+
+.pull-indicator.pulling {
+  color: var(--accent);
+  transform: translateX(-50%) translateY(-80px);
+}
+
+.pull-indicator.ready {
+  transform: translateX(-50%) translateY(0);
+  color: #17130d;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+
+.pull-indicator.refreshing {
+  transform: translateX(-50%) translateY(0);
+  color: #17130d;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+
+.pull-indicator.hiding {
+  transition: transform 250ms var(--ease);
+}
+
+.pull-icon {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 250ms var(--ease);
+}
+
+.pull-indicator.ready .pull-icon {
+  transform: rotate(180deg);
+}
+
+.pull-indicator.refreshing .pull-icon {
+  animation: spin 800ms linear infinite;
 }
 
 .pull-indicator.hiding {

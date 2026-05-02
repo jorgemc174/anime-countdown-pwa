@@ -371,12 +371,10 @@ function bindPullToRefresh() {
     if (ratio > 0.05) {
       if (ready) {
         indicator.classList.add("ready");
-        indicator.querySelector(".pull-label").textContent = "Suelta para actualizar";
       } else {
         indicator.classList.add("pulling");
-        indicator.querySelector(".pull-label").textContent = "Desliza para actualizar";
       }
-      indicator.style.transform = `translateX(-50%) translateY(${Math.min(pullOffset * 0.5, 60)}px)`;
+      indicator.style.transform = `translateX(-50%) translateY(${-80 + ratio * 80}px)`;
     }
   }
 
@@ -443,7 +441,6 @@ function bindPullToRefresh() {
     indicator.classList.remove("hiding");
     indicator.classList.add("refreshing");
     indicator.style.transform = "";
-    indicator.querySelector(".pull-label").textContent = "Actualizando...";
     _refreshPromise = refreshData().finally(() => {
       indicator.classList.add("hiding");
       indicator.classList.remove("refreshing");
