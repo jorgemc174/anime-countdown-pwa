@@ -451,13 +451,15 @@ function bindSwipeNavigation() {
       list.style.transform = "";
       list.style.transition = "none";
       goToAdjacentMode(dir);
-      list.style.transition = "opacity 150ms var(--ease)";
-      list.style.opacity = "1";
-      if (preview) {
-        preview.style.transition = "opacity 150ms var(--ease)";
-        preview.style.opacity = "0";
-      }
-      finish();
+      requestAnimationFrame(function() {
+        list.style.transition = "opacity 120ms var(--ease)";
+        list.style.opacity = "1";
+        if (preview) {
+          preview.style.transition = "opacity 120ms var(--ease)";
+          preview.style.opacity = "0";
+        }
+        finish();
+      });
     }, { once: true });
   }
 
