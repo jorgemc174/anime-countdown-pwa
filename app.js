@@ -1708,6 +1708,7 @@ async function enrichReleasesFromPublicAnilist() {
     if (media) applyPublicAnilistDataToSeries(getSeriesKey(item), media);
   }
   await enrichMissingScoresBySearch();
+  await enrichMissingScoresByIds();
 }
 
 async function enrichMissingScoresBySearch() {
@@ -1739,6 +1740,62 @@ async function fetchPublicAnilistSearchMatch(item) {
   } catch (error) {
     console.warn("No se pudo buscar nota en AniList.", error);
     return null;
+  }
+}
+
+async function enrichMissingScoresByIds() {
+  const seriesMap = new Map();
+  for (const item of state.releases) {
+    if (!Number.isFinite(item.anilistId) || item.anilistId <= 0) continue;
+    if (item.anilistScore != null) continue;
+    const key = getSeriesKey(item);
+    if (!seriesMap.has(key)) seriesMap.set(key, item.anilistId);
+  }
+
+  const uniqueIds = [...new Set(seriesMap.values())];
+  if (!uniqueIds.length) return;
+
+  const idToKeys = new Map();
+  for (const [seriesKey, anilistId] of seriesMap) {
+    if (!idToKeys.has(anilistId)) idToKeys.set(anilistId, []);
+    idToKeys.get(anilistId).push(seriesKey);
+  }
+
+  const chunkSize = 50;
+  let enriched = 0;
+
+  for (let i = 0; i < uniqueIds.length; i += chunkSize) {
+    const chunk = uniqueIds.slice(i, i + chunkSize);
+    try {
+      const query = "query ($ids: [Int]) { Page(page: 1, perPage: 50) { media(id_in: $ids, type: ANIME) { id averageScore meanScore } } }";
+      const response = await postAnilistGraphql(query, { ids: chunk });
+      if (!response.ok) continue;
+      const json = await response.json().catch(() => null);
+      const mediaList = json?.data?.Page?.media || [];
+
+      for (const media of mediaList) {
+        const score = normalizeAnilistScore(media.averageScore, media.meanScore);
+        if (score == null) continue;
+        const keys = idToKeys.get(media.id);
+        if (!keys) continue;
+        for (const seriesKey of keys) {
+          state.releases = state.releases.map((item) => {
+            if (getSeriesKey(item) === seriesKey && item.anilistScore == null) {
+              return { ...item, anilistScore: score };
+            }
+            return item;
+          });
+        }
+        enriched += keys.length;
+      }
+    } catch (error) {
+      console.warn("Error en consulta batch de scores AniList:", error);
+    }
+  }
+
+  if (enriched > 0) {
+    await saveAllLists();
+    render();
   }
 }
 
