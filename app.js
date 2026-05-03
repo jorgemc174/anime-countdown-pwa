@@ -91,7 +91,6 @@ const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
-const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
 const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
@@ -163,7 +162,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","testNotifBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -292,7 +291,6 @@ function bindEvents() {
     if (chip) togglePlatformFilter(chip.dataset.platform);
   });
   els.notificationBtn?.addEventListener("click", toggleNotifications);
-  els.testNotifBtn?.addEventListener("click", testNotification);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn?.addEventListener("click", importSchedule);
@@ -1798,14 +1796,18 @@ async function enrichReleasesFromPublicAnilist() {
 
 async function enrichMissingScoresBySearch() {
   const candidates = getOneNextPerSeries(state.releases)
-    .slice(0, PUBLIC_ANILIST_SEARCH_LIMIT);
+    .filter((item) => !item.anilistScore);
   const cache = new Map();
+  const batchSize = 5;
 
-  for (const item of candidates) {
-    const key = getSeriesKey(item);
-    if (!cache.has(key)) cache.set(key, await fetchPublicAnilistSearchMatch(item));
-    const media = cache.get(key);
-    if (media) applyPublicAnilistDataToSeries(key, media);
+  for (let i = 0; i < candidates.length; i += batchSize) {
+    const batch = candidates.slice(i, i + batchSize);
+    await Promise.all(batch.map(async (item) => {
+      const key = getSeriesKey(item);
+      if (!cache.has(key)) cache.set(key, await fetchPublicAnilistSearchMatch(item));
+      const media = cache.get(key);
+      if (media) applyPublicAnilistDataToSeries(key, media);
+    }));
   }
 }
 
