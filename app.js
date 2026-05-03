@@ -2408,19 +2408,13 @@ async function downloadCoverImage(url, notifId) {
     if (!Capacitor.Plugins || !Capacitor.Plugins.Filesystem) return null;
     const Filesystem = Capacitor.Plugins.Filesystem;
 
-    const path = "cover-" + notifId + ".jpg";
+    var path = "cover-" + notifId + ".jpg";
 
-    const statResult = await Filesystem.stat({ path, directory: "DATA" }).catch(() => ({ exists: false }));
-    if (statResult.exists) {
-      const uriResult = await Filesystem.getUri({ path, directory: "DATA" });
-      return uriResult.uri;
-    }
-
-    const response = await fetch(url);
+    var response = await fetch(url);
     if (!response.ok) return null;
-    const blob = await response.blob();
-    const base64 = await new Promise((resolve, reject) => {
-      const reader = new FileReader();
+    var blob = await response.blob();
+    var base64 = await new Promise(function (resolve, reject) {
+      var reader = new FileReader();
       reader.onloadend = function () {
         var dataUrl = reader.result;
         var idx = dataUrl.indexOf(",");
@@ -2430,7 +2424,7 @@ async function downloadCoverImage(url, notifId) {
       reader.readAsDataURL(blob);
     });
 
-    const result = await Filesystem.writeFile({
+    var result = await Filesystem.writeFile({
       path: path,
       data: base64,
       directory: "DATA",
