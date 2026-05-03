@@ -35,7 +35,11 @@ const browserApi = {
         const raw = localStorage.getItem("animeCountdownStorage");
         const store = parseStoredState(raw);
         Object.assign(store, values);
-        localStorage.setItem("animeCountdownStorage", JSON.stringify(store));
+        try {
+          localStorage.setItem("animeCountdownStorage", JSON.stringify(store));
+        } catch (e) {
+          console.warn("No se pudo guardar datos locales (almacenamiento lleno?).", e);
+        }
       }
     }
   },
@@ -238,7 +242,9 @@ function populateTimezoneOptions() {
 
 async function loadState() {
   const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","theme"]);
-  state.releases = (data.releases || []).map(sanitizePlatformFields);
+  const _now = Date.now();
+  state.releases = (data.releases || []).map(sanitizePlatformFields)
+    .filter(item => item.source !== "test-data" || Date.parse(item.releaseDate) > _now);
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
   state.customLinks = data.customLinks || {};
@@ -359,6 +365,12 @@ function bindSwipeNavigation() {
     return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
   }
 
+  function lerpHex(hex1, hex2, t) {
+    var r1 = parseInt(hex1.slice(1, 3), 16), g1 = parseInt(hex1.slice(3, 5), 16), b1 = parseInt(hex1.slice(5, 7), 16);
+    var r2 = parseInt(hex2.slice(1, 3), 16), g2 = parseInt(hex2.slice(3, 5), 16), b2 = parseInt(hex2.slice(5, 7), 16);
+    return "rgb(" + Math.round(r1 + (r2 - r1) * t) + "," + Math.round(g1 + (g2 - g1) * t) + "," + Math.round(b1 + (b2 - b1) * t) + ")";
+  }
+
   function renderPreview(mode) {
     if (!preview) return;
     var prev = state.viewMode;
@@ -407,6 +419,12 @@ function bindSwipeNavigation() {
     tabs.forEach(function(t) { t.classList.remove("active"); });
     tabs[idx].style.opacity = String(1 - p * 0.5);
     tabs[tgt].style.opacity = String(0.5 + p * 0.5);
+
+    var isLight = document.documentElement.classList.contains("light");
+    var mutedClr = isLight ? "#a09890" : "#9aa3b2";
+    var activeClr = "#17130d";
+    tabs[idx].style.color = lerpHex(activeClr, mutedClr, p);
+    tabs[tgt].style.color = lerpHex(mutedClr, activeClr, p);
 
     if (indicator) {
       var base = idx;
@@ -464,14 +482,17 @@ function bindSwipeNavigation() {
     }, 370);
   }
 
-  list.addEventListener("touchmove", function(e) {
+  document.addEventListener("touchstart", function(e) {
     if (e.touches.length !== 1) return;
+    if (els.settingsPanel && !els.settingsPanel.classList.contains("hidden") && els.settingsPanel.contains(e.target)) return;
+    swipeStartX = e.touches[0].clientX;
+    swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function(e) {
+    if (e.touches.length !== 1) return;
+    if (!swipeStart) return;
     if (!swiping) {
-      if (!swipeStart) {
-        swipeStartX = e.touches[0].clientX;
-        swipeStart = { x: swipeStartX, y: e.touches[0].clientY, time: Date.now() };
-        return;
-      }
       var dx = e.touches[0].clientX - swipeStartX;
       var dy = e.touches[0].clientY - swipeStart.y;
       if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.5) swiping = true;
@@ -488,13 +509,16 @@ function bindSwipeNavigation() {
     shift(Math.max(-maxShift, Math.min(maxShift, swipePx)));
   }, { passive: true });
 
-  list.addEventListener("touchend", function() {
+  document.addEventListener("touchend", function() {
+    if (!swipeStart) return;
     if (!swiping) { swipeStart = null; return; }
     if (Math.abs(swipePx) >= THRESHOLD) commit();
     else back();
   });
 
-  list.addEventListener("touchcancel", function() { if (swiping) back(); });
+  document.addEventListener("touchcancel", function() {
+    if (swiping) back(); else { swipeStart = null; }
+  });
 }
 
 function switchTab(mode) {
@@ -1081,7 +1105,12 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
 
     const rows = await fetchSharedSchedule();
     const imported = rows.map(mapSharedRelease).map(enrichScheduleItem).map((item) => preserveExistingAnimeData(item));
-    const localOnly = state.releases.filter((item) => item.source !== "animeschedule-api" && !String(item.source || "").startsWith("shared-json"));
+    const importedKeys = new Set(imported.map(getSeriesKey));
+    const localOnly = state.releases.filter((item) => {
+      if (item.source === "animeschedule-api" || String(item.source || "").startsWith("shared-json")) return false;
+      if (item.source === "test-data" && importedKeys.has(getSeriesKey(item))) return false;
+      return true;
+    });
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     reconcileAnilistFavoritesWithSchedule();
@@ -1613,7 +1642,7 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
         serviceUrl: "",
         allServices: [],
         hasAllowedPlatform: false,
-        jwVerified: false,
+        jwVerified: Boolean(availability),
         jwCountry: state.jwCountry
       };
     }
@@ -2146,7 +2175,13 @@ async function saveSanitizedState() {
     releases: state.releases,
     anilistLibrary: state.anilistLibrary,
     customPlatforms: state.customPlatforms,
-    customLinks: state.customLinks
+    customLinks: state.customLinks,
+    hiddenPlatforms: state.hiddenPlatforms,
+    notificationEnabled: state.notificationEnabled,
+    showAnilistScore: state.showAnilistScore,
+    theme: state.theme,
+    jwCountry: state.jwCountry,
+    timezone: state.timezone
   });
 }
 
