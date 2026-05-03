@@ -1712,8 +1712,7 @@ async function enrichReleasesFromPublicAnilist() {
 }
 
 async function enrichMissingScoresBySearch() {
-  const candidates = getOneNextPerSeries(state.releases)
-    .slice(0, PUBLIC_ANILIST_SEARCH_LIMIT);
+  const candidates = getOneNextPerSeries(state.releases);
   const cache = new Map();
 
   for (const item of candidates) {
@@ -2409,28 +2408,32 @@ async function downloadCoverImage(url, notifId) {
     if (!Capacitor.Plugins || !Capacitor.Plugins.Filesystem) return null;
     const Filesystem = Capacitor.Plugins.Filesystem;
 
-    const path = `cover-${notifId}.jpg`;
+    const path = "cover-" + notifId + ".jpg";
 
-    const { exists } = await Filesystem.stat({ path, directory: "CACHE" }).catch(() => ({ exists: false }));
-    if (exists) {
-      const { uri } = await Filesystem.getUri({ path, directory: "CACHE" });
-      return uri;
+    const statResult = await Filesystem.stat({ path, directory: "DATA" }).catch(() => ({ exists: false }));
+    if (statResult.exists) {
+      const uriResult = await Filesystem.getUri({ path, directory: "DATA" });
+      return uriResult.uri;
     }
 
     const response = await fetch(url);
     if (!response.ok) return null;
-    const buffer = await response.arrayBuffer();
-    const bytes = new Uint8Array(buffer);
-    let binary = "";
-    for (let i = 0; i < bytes.length; i++) {
-      binary += String.fromCharCode(bytes[i]);
-    }
-    const base64 = btoa(binary);
+    const blob = await response.blob();
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        var dataUrl = reader.result;
+        var idx = dataUrl.indexOf(",");
+        resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
+      };
+      reader.onerror = function () { reject(reader.error); };
+      reader.readAsDataURL(blob);
+    });
 
     const result = await Filesystem.writeFile({
-      path,
+      path: path,
       data: base64,
-      directory: "CACHE",
+      directory: "DATA",
       recursive: true
     });
 
