@@ -128,6 +128,7 @@ async function init() {
     bindElements();
     populateTimezoneOptions();
     await loadState();
+    state.releases = state.releases.filter((r) => r.source !== "test-data");
     bindEvents();
     registerServiceWorker();
     updateNotificationButton();
