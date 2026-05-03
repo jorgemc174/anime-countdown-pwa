@@ -48,6 +48,10 @@ const browserApi = {
 };
 
 function openExternalUrl(url) {
+  if (isCapacitor() && url) {
+    window.open(url, "_system");
+    return;
+  }
   if (isMobileLike()) {
     window.location.href = url;
     return;
@@ -87,7 +91,7 @@ const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
-const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
+const PUBLIC_ANILIST_SEARCH_LIMIT = 100;
 const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
@@ -580,6 +584,8 @@ async function testNotification() {
         id: notifId,
         title: "Anime de Prueba Ep 1",
         body: "Ya disponible en Netflix.",
+        largeBody: "Ya disponible en Netflix.",
+        summaryText: "Ya disponible en Netflix.",
         schedule: { at: new Date(releaseAt) },
         extra: { url: "https://netflix.com" },
         smallIcon: "ic_stat_icon",
@@ -1712,7 +1718,8 @@ async function enrichReleasesFromPublicAnilist() {
 }
 
 async function enrichMissingScoresBySearch() {
-  const candidates = getOneNextPerSeries(state.releases);
+  const candidates = getOneNextPerSeries(state.releases)
+    .slice(0, PUBLIC_ANILIST_SEARCH_LIMIT);
   const cache = new Map();
 
   for (const item of candidates) {
@@ -2352,10 +2359,13 @@ async function scheduleNativeNotifications() {
       if (coverUrl) {
         localPath = await downloadCoverImage(coverUrl, notifId);
       }
+      const bodyText = displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`;
       toSchedule.push({
         id: notifId,
         title: `${item.title} ${item.episode}`,
-        body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
+        body: bodyText,
+        largeBody: bodyText,
+        summaryText: bodyText,
         schedule: { at: new Date(releaseAt) },
         extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
         smallIcon: "ic_stat_icon",
@@ -2425,6 +2435,34 @@ async function downloadCoverImage(url, notifId) {
     });
 
     var result = await Filesystem.writeFile({
+      path: path,
+      data: base64,
+      directory: "DATA",
+      recursive: true
+    });
+
+    return result.uri;
+  } catch (error) {
+    console.warn("Error al descargar portada:", error);
+    return null;
+  }
+}
+
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const blob = await response.blob();
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        var dataUrl = reader.result;
+        var idx = dataUrl.indexOf(",");
+        resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
+      };
+      reader.onerror = function () { reject(reader.error); };
+      reader.readAsDataURL(blob);
+    });
+
+    const result = await Filesystem.writeFile({
       path: path,
       data: base64,
       directory: "DATA",
