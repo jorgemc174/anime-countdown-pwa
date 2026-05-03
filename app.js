@@ -2366,6 +2366,7 @@ async function scheduleNativeNotifications() {
       let localPath = null;
       if (coverUrl) {
         localPath = await downloadCoverImage(coverUrl, notifId);
+        await new Promise(function (r) { setTimeout(r, 200); });
       }
       toSchedule.push({
         id: notifId,
@@ -2425,28 +2426,43 @@ async function downloadCoverImage(url, notifId) {
 
     var path = "cover-" + notifId + ".jpg";
 
-    var response = await fetch(url);
-    if (!response.ok) return null;
-    var blob = await response.blob();
-    var base64 = await new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onloadend = function () {
-        var dataUrl = reader.result;
-        var idx = dataUrl.indexOf(",");
-        resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
-      };
-      reader.onerror = function () { reject(reader.error); };
-      reader.readAsDataURL(blob);
-    });
+    for (var attempt = 0; attempt < 3; attempt++) {
+      try {
+        var response = await fetch(url);
+        if (!response.ok) {
+          if (response.status === 429 && attempt < 2) {
+            await new Promise(function (r) { setTimeout(r, 1000 * (attempt + 1)); });
+            continue;
+          }
+          return null;
+        }
+        var blob = await response.blob();
+        var base64 = await new Promise(function (resolve, reject) {
+          var reader = new FileReader();
+          reader.onloadend = function () {
+            var dataUrl = reader.result;
+            var idx = dataUrl.indexOf(",");
+            resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
+          };
+          reader.onerror = function () { reject(reader.error); };
+          reader.readAsDataURL(blob);
+        });
 
-    var result = await Filesystem.writeFile({
-      path: path,
-      data: base64,
-      directory: "DATA",
-      recursive: true
-    });
+        var result = await Filesystem.writeFile({
+          path: path,
+          data: base64,
+          directory: "DATA",
+          recursive: true
+        });
 
-    return result.uri;
+        return result.uri;
+      } catch (e) {
+        if (attempt < 2) {
+          await new Promise(function (r) { setTimeout(r, 1000 * (attempt + 1)); });
+        }
+      }
+    }
+    return null;
   } catch (error) {
     console.warn("Error al descargar portada:", error);
     return null;
