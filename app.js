@@ -113,14 +113,6 @@ const JUSTWATCH_COUNTRIES = [
   { code: "PT", name: "Portugal", lang: "pt" },
 ];
 
-const AUTO_POPULATE_INTERVAL_MS = 10 * 60 * 1000;
-const AUTO_POPULATE_BATCH_SIZE = 10;
-const AUTO_POPULATE_MAX = 200;
-const AUTO_POPULATE_DAYS_AHEAD = 14;
-let autoPopulateTimer = null;
-let autoPopulateEnabled = false;
-let autoPopulateCount = 0;
-
 const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", searchQuery: "", sortAsc: true };
 const els = {};
@@ -147,7 +139,6 @@ async function init() {
     startPublicAnilistAutoRefresh();
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     setupCapacitorNotificationTap();
-    startAutoPopulateTestData();
   } catch (error) {
     showFatal(error);
   }
@@ -167,7 +158,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","testAnimeBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -296,6 +287,7 @@ function bindEvents() {
     if (chip) togglePlatformFilter(chip.dataset.platform);
   });
   els.notificationBtn?.addEventListener("click", toggleNotifications);
+  els.testAnimeBtn?.addEventListener("click", addTestAnime30s);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
   els.importBtn?.addEventListener("click", importSchedule);
@@ -606,6 +598,107 @@ async function testNotification() {
   render();
 }
 
+async function addTestAnime30s() {
+  const templates = state.releases
+    .filter((item) => item.coverUrl && item.title && item.source !== "test-data")
+    .slice(0, 50);
+  if (!templates.length) return showStatus("No hay datos suficientes. Refresca los horarios primero.", "warn");
+
+  const template = templates[Math.floor(Math.random() * templates.length)];
+  const seriesKey = getSeriesKey(template);
+  const existingEps = state.releases
+    .filter((r) => getSeriesKey(r) === seriesKey)
+    .map((r) => parseInt(r.episodeNumber))
+    .filter((n) => Number.isFinite(n));
+  const maxEp = existingEps.length ? Math.max(...existingEps) : 0;
+  const nextEp = maxEp + 1;
+  const releaseAt = Date.now() + 30 * 1000;
+  const releaseDate = new Date(releaseAt).toISOString();
+
+  const testItem = sanitizePlatformFields({
+    ...template,
+    id: stableId("test", template.title, nextEp, releaseDate),
+    episode: "Ep " + nextEp,
+    episodeNumber: String(nextEp),
+    releaseDate,
+    originalReleaseDate: "",
+    delayed: false,
+    source: "test-data",
+    favorite: true,
+    customUrl: "",
+    customPlatformName: ""
+  });
+
+  state.releases.push(testItem);
+  state.releases = sortByDate(state.releases);
+  await saveAllLists();
+  render();
+
+  if (isCapacitor()) {
+    const LocalNotifications = getLocalNotifications();
+    if (!LocalNotifications) return showStatus("Anime añadido. Plugin de notificaciones no disponible.", "success");
+
+    try {
+      const permResult = await LocalNotifications.checkPermissions();
+      if (permResult.display !== "granted") {
+        const reqResult = await LocalNotifications.requestPermissions();
+        if (reqResult.display !== "granted") {
+          return showStatus("Anime añadido pero sin permiso de notificaciones.", "warn");
+        }
+      }
+
+      const notifId = hashNotificationId(testItem);
+      const coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
+      const bodyText = testItem.service && testItem.service !== "No legal platform"
+        ? "Ya disponible en " + testItem.service + "."
+        : "Ya disponible.";
+
+      await LocalNotifications.schedule({
+        notifications: [{
+          id: notifId,
+          title: `${testItem.title} ${testItem.episode}`,
+          body: bodyText,
+          largeBody: bodyText,
+          summaryText: bodyText,
+          schedule: { at: new Date(releaseAt) },
+          extra: { url: getBestWatchUrl(testItem) || location.href, title: testItem.title },
+          smallIcon: "ic_stat_icon",
+          largeIcon: coverPath || undefined,
+          iconColor: "#111827",
+          actionTypeId: "",
+          attachments: coverPath ? [{ id: "cover", url: coverPath }] : null,
+          group: "anime-countdown"
+        }]
+      });
+
+      showStatus(`${testItem.title} ${testItem.episode} se estrena en 30s. Cierra la app para ver la notificación.`, "success");
+    } catch (error) {
+      console.error("Error al programar notificación:", error);
+      showStatus("Anime añadido pero falló la notificación: " + (error.message || "desconocido"), "error");
+    }
+  } else {
+    showStatus(`${testItem.title} ${testItem.episode} añadido. Se estrena en 30s.`, "success");
+    if ("Notification" in window && Notification.permission === "granted" && "serviceWorker" in navigator) {
+      const registration = await navigator.serviceWorker.ready;
+      const coverUrl = normalizeUrl(testItem.coverUrl);
+      const url = getBestWatchUrl(testItem) || location.href;
+      registration.showNotification(`${testItem.title} ${testItem.episode}`, {
+        body: testItem.service ? `Ya disponible en ${testItem.service}.` : "Ya disponible.",
+        icon: coverUrl || "./icons/icon-192.png",
+        image: coverUrl || undefined,
+        badge: "./icons/notification-badge.svg",
+        tag: `anime-${testItem.id}`,
+        renotify: true,
+        requireInteraction: true,
+        timestamp: releaseAt,
+        data: { url }
+      });
+    }
+  }
+
+  checkReleaseNotifications();
+}
+
 async function toggleNotifications() {
   const hasNativeNotif = isCapacitor();
   const hasWebNotif = "Notification" in window;
@@ -787,91 +880,6 @@ function startPublicAnilistAutoRefresh() {
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") maybeRefreshPublicAnilist({ silent: true });
   });
-}
-
-function startAutoPopulateTestData() {
-  if (autoPopulateEnabled && autoPopulateTimer) return;
-  autoPopulateEnabled = true;
-  autoPopulateCount = state.releases.filter((r) => r.source === "test-data").length;
-  autoPopulateTimer = setInterval(() => addTestBatch(AUTO_POPULATE_BATCH_SIZE), AUTO_POPULATE_INTERVAL_MS);
-  addTestBatch(AUTO_POPULATE_BATCH_SIZE);
-  console.log("[test] Auto-poblado iniciado: " + AUTO_POPULATE_BATCH_SIZE + " animes cada " + (AUTO_POPULATE_INTERVAL_MS / 60000) + " min.");
-}
-
-function stopAutoPopulateTestData() {
-  if (autoPopulateTimer) { clearInterval(autoPopulateTimer); autoPopulateTimer = null; }
-  autoPopulateEnabled = false;
-  console.log("[test] Auto-poblado detenido. Total añadidos: " + autoPopulateCount);
-}
-
-function addTestBatch(count) {
-  if (autoPopulateCount >= AUTO_POPULATE_MAX) {
-    stopAutoPopulateTestData();
-    showStatus("Limite de " + AUTO_POPULATE_MAX + " animes de prueba alcanzado.", "warn");
-    return;
-  }
-
-  const templates = new Map();
-  for (const item of state.releases) {
-    if (item.source === "test-data") continue;
-    if (!item.coverUrl || !item.title) continue;
-    const k = getSeriesKey(item);
-    if (!templates.has(k)) templates.set(k, item);
-  }
-
-  const pool = [...templates.values()];
-  if (!pool.length) {
-    showStatus("Sin datos reales para generar animes de prueba.", "warn");
-    return;
-  }
-
-  const shuffled = pool.sort(() => Math.random() - 0.5);
-  const now = Date.now();
-  let added = 0;
-
-  for (let i = 0; i < count && autoPopulateCount < AUTO_POPULATE_MAX && i < shuffled.length; i++) {
-    const template = shuffled[i];
-    const seriesKey = getSeriesKey(template);
-    const existingEps = state.releases
-      .filter((r) => getSeriesKey(r) === seriesKey)
-      .map((r) => parseInt(r.episodeNumber))
-      .filter((n) => Number.isFinite(n));
-    const maxEp = existingEps.length ? Math.max(...existingEps) : 0;
-    const nextEp = maxEp + 1;
-    const offsetMs = Math.random() * AUTO_POPULATE_DAYS_AHEAD * 24 * 3600 * 1000 + 30 * 60 * 1000;
-    const releaseDate = new Date(now + offsetMs).toISOString();
-
-    const newItem = sanitizePlatformFields({
-      ...template,
-      id: stableId("test", template.title, nextEp, releaseDate),
-      episode: "Ep " + nextEp,
-      episodeNumber: String(nextEp),
-      releaseDate: releaseDate,
-      originalReleaseDate: "",
-      delayed: false,
-      source: "test-data",
-      favorite: true,
-      customUrl: "",
-      customPlatformName: ""
-    });
-
-    state.releases.push(newItem);
-    added++;
-    autoPopulateCount++;
-  }
-
-  state.releases = dedupeByEpisode(state.releases);
-  state.releases = sortByDate(state.releases);
-  saveAllLists();
-  render();
-
-  if (isCapacitor() && state.notificationEnabled) {
-    scheduleNativeNotifications();
-  }
-
-  if (added > 0) {
-    showStatus(added + " animes de prueba añadidos. Total: " + autoPopulateCount + "/" + AUTO_POPULATE_MAX, "success");
-  }
 }
 
 async function maybeRefreshPublicAnilist({ silent = true, force = false } = {}) {
