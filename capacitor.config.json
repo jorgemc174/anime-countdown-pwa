@@ -6,6 +6,12 @@
     "androidScheme": "https",
     "allowNavigation": ["apis.justwatch.com", "graphql.anilist.co", "animeschedule.net", "img.animeschedule.net"]
   },
+  "android": {
+    "useLegacyBridge": false
+  },
+  "CapacitorHttp": {
+    "enabled": true
+  },
   "plugins": {
     "LocalNotifications": {
       "smallIcon": "ic_stat_icon",

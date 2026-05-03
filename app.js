@@ -1169,7 +1169,7 @@ function mapSharedRelease(row) {
 function preserveExistingAnimeData(item) {
   const existing = findExistingRelease(item);
   if (!existing) return item;
-  return {
+  const base = {
     ...item,
     favorite: Boolean(item.favorite || existing.favorite),
     delayed: Boolean(item.delayed),
@@ -1182,6 +1182,21 @@ function preserveExistingAnimeData(item) {
     customUrl: item.customUrl || existing.customUrl || "",
     customPlatformName: item.customPlatformName || existing.customPlatformName || ""
   };
+  // Preserve JW-verified platform data across schedule refreshes so the user doesn't
+  // lose platform info every 30 min. Only applies when same country and not Crunchyroll
+  // (which is never sent through JW verification).
+  if (existing.jwVerified && existing.jwCountry === state.jwCountry && item.service !== "Crunchyroll") {
+    return {
+      ...base,
+      service: existing.service,
+      serviceUrl: existing.serviceUrl,
+      allServices: existing.allServices || [],
+      hasAllowedPlatform: existing.hasAllowedPlatform,
+      jwVerified: true,
+      jwCountry: existing.jwCountry
+    };
+  }
+  return base;
 }
 
 function findExistingRelease(item) {
