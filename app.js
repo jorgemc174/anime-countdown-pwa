@@ -113,6 +113,14 @@ const JUSTWATCH_COUNTRIES = [
   { code: "PT", name: "Portugal", lang: "pt" },
 ];
 
+const AUTO_POPULATE_INTERVAL_MS = 10 * 60 * 1000;
+const AUTO_POPULATE_BATCH_SIZE = 10;
+const AUTO_POPULATE_MAX = 200;
+const AUTO_POPULATE_DAYS_AHEAD = 14;
+let autoPopulateTimer = null;
+let autoPopulateEnabled = false;
+let autoPopulateCount = 0;
+
 const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", searchQuery: "", sortAsc: true };
 const els = {};
@@ -139,6 +147,7 @@ async function init() {
     startPublicAnilistAutoRefresh();
     await refreshSharedSchedule({ silent: true, skipPublicAnilist: true });
     setupCapacitorNotificationTap();
+    startAutoPopulateTestData();
   } catch (error) {
     showFatal(error);
   }
@@ -778,6 +787,91 @@ function startPublicAnilistAutoRefresh() {
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") maybeRefreshPublicAnilist({ silent: true });
   });
+}
+
+function startAutoPopulateTestData() {
+  if (autoPopulateEnabled && autoPopulateTimer) return;
+  autoPopulateEnabled = true;
+  autoPopulateCount = state.releases.filter((r) => r.source === "test-data").length;
+  autoPopulateTimer = setInterval(() => addTestBatch(AUTO_POPULATE_BATCH_SIZE), AUTO_POPULATE_INTERVAL_MS);
+  addTestBatch(AUTO_POPULATE_BATCH_SIZE);
+  console.log("[test] Auto-poblado iniciado: " + AUTO_POPULATE_BATCH_SIZE + " animes cada " + (AUTO_POPULATE_INTERVAL_MS / 60000) + " min.");
+}
+
+function stopAutoPopulateTestData() {
+  if (autoPopulateTimer) { clearInterval(autoPopulateTimer); autoPopulateTimer = null; }
+  autoPopulateEnabled = false;
+  console.log("[test] Auto-poblado detenido. Total añadidos: " + autoPopulateCount);
+}
+
+function addTestBatch(count) {
+  if (autoPopulateCount >= AUTO_POPULATE_MAX) {
+    stopAutoPopulateTestData();
+    showStatus("Limite de " + AUTO_POPULATE_MAX + " animes de prueba alcanzado.", "warn");
+    return;
+  }
+
+  const templates = new Map();
+  for (const item of state.releases) {
+    if (item.source === "test-data") continue;
+    if (!item.coverUrl || !item.title) continue;
+    const k = getSeriesKey(item);
+    if (!templates.has(k)) templates.set(k, item);
+  }
+
+  const pool = [...templates.values()];
+  if (!pool.length) {
+    showStatus("Sin datos reales para generar animes de prueba.", "warn");
+    return;
+  }
+
+  const shuffled = pool.sort(() => Math.random() - 0.5);
+  const now = Date.now();
+  let added = 0;
+
+  for (let i = 0; i < count && autoPopulateCount < AUTO_POPULATE_MAX && i < shuffled.length; i++) {
+    const template = shuffled[i];
+    const seriesKey = getSeriesKey(template);
+    const existingEps = state.releases
+      .filter((r) => getSeriesKey(r) === seriesKey)
+      .map((r) => parseInt(r.episodeNumber))
+      .filter((n) => Number.isFinite(n));
+    const maxEp = existingEps.length ? Math.max(...existingEps) : 0;
+    const nextEp = maxEp + 1;
+    const offsetMs = Math.random() * AUTO_POPULATE_DAYS_AHEAD * 24 * 3600 * 1000 + 30 * 60 * 1000;
+    const releaseDate = new Date(now + offsetMs).toISOString();
+
+    const newItem = sanitizePlatformFields({
+      ...template,
+      id: stableId("test", template.title, nextEp, releaseDate),
+      episode: "Ep " + nextEp,
+      episodeNumber: String(nextEp),
+      releaseDate: releaseDate,
+      originalReleaseDate: "",
+      delayed: false,
+      source: "test-data",
+      favorite: true,
+      customUrl: "",
+      customPlatformName: ""
+    });
+
+    state.releases.push(newItem);
+    added++;
+    autoPopulateCount++;
+  }
+
+  state.releases = dedupeByEpisode(state.releases);
+  state.releases = sortByDate(state.releases);
+  saveAllLists();
+  render();
+
+  if (isCapacitor() && state.notificationEnabled) {
+    scheduleNativeNotifications();
+  }
+
+  if (added > 0) {
+    showStatus(added + " animes de prueba añadidos. Total: " + autoPopulateCount + "/" + AUTO_POPULATE_MAX, "success");
+  }
 }
 
 async function maybeRefreshPublicAnilist({ silent = true, force = false } = {}) {
