@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -46,21 +46,24 @@
         <div class="list-header" id="listHeader">
           <span class="section-title" id="listTitle">Cargando...</span>
           <input id="searchInput" class="search-input" type="text" placeholder="Buscar..." autocomplete="off" />
-          <button id="sortBtn" class="sort-btn" type="button" aria-label="Invertir orden">↓↑</button>
-          <button id="testAnimeBtn" class="primary-btn" type="button" style="font-size:0.7rem;padding:3px 8px;white-space:nowrap;">+ Prueba 30s</button>
+          <button id="sortBtn" class="sort-btn" type="button" aria-label="Invertir orden">&darr;&uarr;</button>
+          <button id="testAnimeBtn" class="primary-btn" type="button" style="font-size:0.7rem;padding:3px 8px;white-space:nowrap;margin-left:4px;">+ Prueba 30s</button>
         </div>
-        <section id="animeList" class="anime-list"></section>
+        <div class="swipe-stage">
+          <section id="animeList" class="anime-list"></section>
+          <section id="swipePreview" class="anime-list swipe-preview"></section>
+        </div>
       </section>
 
       <section id="settingsPanel" class="settings hidden" aria-label="Ajustes">
         <div class="settings-head">
           <h2>Ajustes</h2>
-          <button id="closeSettingsBtn" class="icon-btn" type="button" aria-label="Cerrar ajustes">×</button>
+          <button id="closeSettingsBtn" class="icon-btn" type="button" aria-label="Cerrar ajustes">&times;</button>
         </div>
 
         <h2>AniList</h2>
         <label>Usuario de AniList
-          <input id="anilistInput" autocomplete="off" placeholder="Tu usuario público" />
+          <input id="anilistInput" autocomplete="off" placeholder="Tu usuario publico" />
         </label>
         <div class="button-row">
           <button id="syncAnilistBtn" class="primary-btn" type="button">Sincronizar</button>
@@ -70,7 +73,7 @@
         <label>Zona horaria
           <select id="timezoneInput"></select>
         </label>
-        <label>País (verificar plataformas)
+        <label>Pais (verificar plataformas)
           <select id="countryInput"></select>
         </label>
 
@@ -91,7 +94,7 @@
 
         <hr />
         <div class="toggle-row">
-          <span id="notificationLabel">Activar notificación</span>
+          <span id="notificationLabel">Activar notificacion</span>
           <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false" aria-labelledby="notificationLabel"></button>
         </div>
         <button id="refreshDataBtn" class="primary-btn" type="button">Refrescar horarios</button>

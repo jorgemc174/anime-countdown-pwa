@@ -91,7 +91,7 @@ const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
-const PUBLIC_ANILIST_SEARCH_LIMIT = 100;
+const PUBLIC_ANILIST_SEARCH_LIMIT = 35;
 const JUSTWATCH_SEARCH_LIMIT = 120;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
@@ -123,6 +123,7 @@ const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
 let swipeStart = null;
+var preRendered = {};
 
 init();
 
@@ -132,7 +133,6 @@ async function init() {
     bindElements();
     populateTimezoneOptions();
     await loadState();
-    state.releases = state.releases.filter((r) => r.source !== "test-data");
     bindEvents();
     registerServiceWorker();
     updateNotificationButton();
@@ -343,12 +343,14 @@ async function setMode(mode, direction) {
 
 function bindSwipeNavigation() {
   var list = els.animeList;
+  var preview = document.getElementById("swipePreview");
   if (!list) return;
 
   var THRESHOLD = 80;
   var swiping = false;
   var swipeStartX = 0;
   var swipePx = 0;
+  var lastMode = null;
 
   var modes = ["all", "today", "favorites"];
   var tabs = [els.showAllBtn, els.showTodayBtn, els.showFavsBtn];
@@ -359,12 +361,26 @@ function bindSwipeNavigation() {
     return (dir < 0 && idx <= 0) || (dir > 0 && idx >= modes.length - 1);
   }
 
+  function renderPreview(mode) {
+    if (!preview) return;
+    var prev = state.viewMode;
+    state.viewMode = mode;
+    var items = getVisibleItems();
+    state.viewMode = prev;
+    preview.innerHTML = "";
+    var take = Math.min(items.length, 4);
+    for (var i = 0; i < take; i++) {
+      preview.appendChild(createCardModern(items[i]));
+    }
+  }
+
   function shift(px) {
     var dir = px < 0 ? 1 : -1;
     if (edge(dir)) {
       list.style.transition = "none";
       list.style.transform = "translateX(" + (px * 0.22) + "px)";
       list.style.opacity = "1";
+      if (preview) { preview.style.opacity = "0"; preview.style.transform = ""; }
       return;
     }
 
@@ -376,6 +392,19 @@ function bindSwipeNavigation() {
     var idx = modes.indexOf(state.viewMode);
     var tgt = Math.max(0, Math.min(modes.length - 1, idx + dir));
     if (idx === tgt) return;
+
+    var targetMode = modes[tgt];
+    if (targetMode !== lastMode && p > 0.3) {
+      lastMode = targetMode;
+      renderPreview(targetMode);
+    }
+
+    if (preview) {
+      preview.style.transition = "none";
+      var gap = 10;
+      preview.style.transform = "translateX(" + (px + dir * (list.offsetWidth + gap)) + "px)";
+      preview.style.opacity = p > 0.35 ? String(Math.min((p - 0.35) * 1.5, 0.75)) : "0";
+    }
 
     tabs.forEach(function(t) { t.classList.remove("active"); });
     tabs[idx].style.opacity = String(1 - p * 0.5);
@@ -393,6 +422,7 @@ function bindSwipeNavigation() {
     list.style.transition = "transform 280ms var(--ease), opacity 280ms var(--ease)";
     list.style.transform = "translateX(0px)";
     list.style.opacity = "1";
+    if (preview) { preview.style.transition = "opacity 180ms var(--ease), transform 180ms var(--ease)"; preview.style.opacity = "0"; preview.style.transform = ""; }
     if (indicator) indicator.style.transition = "transform 280ms var(--ease)";
     finish();
   }
@@ -402,6 +432,8 @@ function bindSwipeNavigation() {
     swipeStartX = 0;
     swipePx = 0;
     swipeStart = null;
+    lastMode = null;
+    if (preview) { preview.innerHTML = ""; preview.style.transform = ""; preview.style.opacity = "0"; }
     tabs.forEach(function(t) { t.style.opacity = ""; t.style.color = ""; });
     setActiveTab();
   }
@@ -412,19 +444,26 @@ function bindSwipeNavigation() {
     swiping = false;
     swipeStart = null;
 
-    var w = list.offsetWidth || 300;
+    var w = list.offsetWidth;
     var outPx = -dir * (w + 30);
 
-    list.style.transition = "transform 350ms var(--ease)";
+    list.style.transition = "transform 360ms var(--ease)";
     list.style.transform = "translateX(" + outPx + "px)";
+
+    if (preview) {
+      preview.style.transition = "transform 360ms var(--ease)";
+      preview.style.transform = "translateX(0px)";
+      preview.style.opacity = "1";
+    }
 
     setTimeout(function() {
       list.style.transition = "none";
       list.style.transform = "";
       list.style.opacity = "1";
+      if (preview) { preview.style.transition = "none"; preview.style.opacity = "0"; preview.style.transform = ""; }
       goToAdjacentMode(dir);
       finish();
-    }, 360);
+    }, 370);
   }
 
   list.addEventListener("touchmove", function(e) {
@@ -462,7 +501,23 @@ function bindSwipeNavigation() {
 
 function switchTab(mode) {
   if (state.viewMode === mode) return;
-  setMode(mode);
+  var cached = preRendered[mode];
+  if (cached) {
+    state.viewMode = mode;
+    browserApi.storage.local.set({ viewMode: mode });
+    var title = mode==="today"?"Estrenos de hoy":mode==="favorites"?"Favoritos":"Proximos estrenos";
+    var listTitle = document.getElementById("listTitle");
+    if (listTitle) listTitle.textContent = title;
+    setActiveTab();
+    renderNextModern();
+    renderSettingsPlatformFilter();
+    els.animeList.innerHTML = "";
+    els.animeList.appendChild(cached.cloneNode(true));
+    setTimeout(renderRemaining, 40);
+    setTimeout(function() { render(); }, 100);
+  } else {
+    setMode(mode);
+  }
 }
 
 function goToAdjacentMode(direction) {
@@ -584,8 +639,6 @@ async function testNotification() {
         id: notifId,
         title: "Anime de Prueba Ep 1",
         body: "Ya disponible en Netflix.",
-        largeBody: "Ya disponible en Netflix.",
-        summaryText: "Ya disponible en Netflix.",
         schedule: { at: new Date(releaseAt) },
         extra: { url: "https://netflix.com" },
         smallIcon: "ic_stat_icon",
@@ -606,32 +659,44 @@ async function testNotification() {
 }
 
 async function addTestAnime30s() {
-  const templates = state.releases
-    .filter((item) => item.coverUrl && item.title && item.source !== "test-data")
+  var templates = state.releases
+    .filter(function (item) { return item.coverUrl && item.title && item.source !== "test-data"; })
     .slice(0, 50);
-  if (!templates.length) return showStatus("No hay datos suficientes. Refresca los horarios primero.", "warn");
+  if (!templates.length) {
+    return showStatus("No hay datos reales. Refresca los horarios primero.", "warn");
+  }
 
-  const template = templates[Math.floor(Math.random() * templates.length)];
-  const seriesKey = getSeriesKey(template);
-  const existingEps = state.releases
-    .filter((r) => getSeriesKey(r) === seriesKey)
-    .map((r) => parseInt(r.episodeNumber))
-    .filter((n) => Number.isFinite(n));
-  const maxEp = existingEps.length ? Math.max(...existingEps) : 0;
-  const nextEp = maxEp + 1;
-  const releaseAt = Date.now() + 30 * 1000;
-  const releaseDate = new Date(releaseAt).toISOString();
+  var template = templates[Math.floor(Math.random() * templates.length)];
+  var seriesKey = getSeriesKey(template);
+  var existingEps = state.releases
+    .filter(function (r) { return getSeriesKey(r) === seriesKey; })
+    .map(function (r) { return parseInt(r.episodeNumber); })
+    .filter(function (n) { return Number.isFinite(n); });
+  var maxEp = existingEps.length ? Math.max.apply(null, existingEps) : 0;
+  var nextEp = maxEp + 1;
+  var releaseAt = Date.now() + 30 * 1000;
+  var releaseDate = new Date(releaseAt).toISOString();
 
-  const testItem = sanitizePlatformFields({
-    ...template,
+  var testItem = sanitizePlatformFields({
     id: stableId("test", template.title, nextEp, releaseDate),
+    animeKey: template.animeKey || getAnimeKey(template),
+    title: template.title,
+    route: template.route || "",
     episode: "Ep " + nextEp,
     episodeNumber: String(nextEp),
-    releaseDate,
-    originalReleaseDate: "",
+    airType: "SUB",
     delayed: false,
+    releaseDate: releaseDate,
+    originalReleaseDate: "",
+    service: template.service || "Crunchyroll",
+    serviceUrl: template.serviceUrl || "",
+    allServices: template.allServices || [],
+    hasAllowedPlatform: template.hasAllowedPlatform || false,
     source: "test-data",
     favorite: true,
+    coverUrl: template.coverUrl || "",
+    anilistId: template.anilistId || 0,
+    anilistTitle: template.anilistTitle || template.title || "",
     customUrl: "",
     customPlatformName: ""
   });
@@ -642,28 +707,28 @@ async function addTestAnime30s() {
   render();
 
   if (isCapacitor()) {
-    const LocalNotifications = getLocalNotifications();
-    if (!LocalNotifications) return showStatus("Anime añadido. Plugin de notificaciones no disponible.", "success");
+    var LocalNotifications = getLocalNotifications();
+    if (!LocalNotifications) return showStatus("Anime añadido pero sin plugin de notificaciones.", "warn");
 
     try {
-      const permResult = await LocalNotifications.checkPermissions();
+      var permResult = await LocalNotifications.checkPermissions();
       if (permResult.display !== "granted") {
-        const reqResult = await LocalNotifications.requestPermissions();
+        var reqResult = await LocalNotifications.requestPermissions();
         if (reqResult.display !== "granted") {
           return showStatus("Anime añadido pero sin permiso de notificaciones.", "warn");
         }
       }
 
-      const notifId = hashNotificationId(testItem);
-      const coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
-      const bodyText = testItem.service && testItem.service !== "No legal platform"
+      var notifId = hashNotificationId(testItem);
+      var coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
+      var bodyText = testItem.service && testItem.service !== "No legal platform"
         ? "Ya disponible en " + testItem.service + "."
         : "Ya disponible.";
 
       await LocalNotifications.schedule({
         notifications: [{
           id: notifId,
-          title: `${testItem.title} ${testItem.episode}`,
+          title: testItem.title + " " + testItem.episode,
           body: bodyText,
           largeBody: bodyText,
           summaryText: bodyText,
@@ -678,27 +743,27 @@ async function addTestAnime30s() {
         }]
       });
 
-      showStatus(`${testItem.title} ${testItem.episode} se estrena en 30s. Cierra la app para ver la notificación.`, "success");
+      showStatus(testItem.title + " " + testItem.episode + " se estrena en 30s. Cierra la app.", "success");
     } catch (error) {
-      console.error("Error al programar notificación:", error);
-      showStatus("Anime añadido pero falló la notificación: " + (error.message || "desconocido"), "error");
+      console.error("Error al programar notificacion:", error);
+      showStatus("Error: " + (error.message || "desconocido"), "error");
     }
   } else {
-    showStatus(`${testItem.title} ${testItem.episode} añadido. Se estrena en 30s.`, "success");
+    showStatus(testItem.title + " " + testItem.episode + " añadido. Se estrena en 30s.", "success");
     if ("Notification" in window && Notification.permission === "granted" && "serviceWorker" in navigator) {
-      const registration = await navigator.serviceWorker.ready;
-      const coverUrl = normalizeUrl(testItem.coverUrl);
-      const url = getBestWatchUrl(testItem) || location.href;
-      registration.showNotification(`${testItem.title} ${testItem.episode}`, {
-        body: testItem.service ? `Ya disponible en ${testItem.service}.` : "Ya disponible.",
-        icon: coverUrl || "./icons/icon-192.png",
-        image: coverUrl || undefined,
+      var reg = await navigator.serviceWorker.ready;
+      var cov = normalizeUrl(testItem.coverUrl);
+      var u = getBestWatchUrl(testItem) || location.href;
+      reg.showNotification(testItem.title + " " + testItem.episode, {
+        body: testItem.service ? "Ya disponible en " + testItem.service + "." : "Ya disponible.",
+        icon: cov || "./icons/icon-192.png",
+        image: cov || undefined,
         badge: "./icons/notification-badge.svg",
-        tag: `anime-${testItem.id}`,
+        tag: "anime-" + testItem.id,
         renotify: true,
         requireInteraction: true,
         timestamp: releaseAt,
-        data: { url }
+        data: { url: u }
       });
     }
   }
@@ -1714,7 +1779,6 @@ async function enrichReleasesFromPublicAnilist() {
     if (media) applyPublicAnilistDataToSeries(getSeriesKey(item), media);
   }
   await enrichMissingScoresBySearch();
-  await enrichMissingScoresByIds();
 }
 
 async function enrichMissingScoresBySearch() {
@@ -1746,62 +1810,6 @@ async function fetchPublicAnilistSearchMatch(item) {
   } catch (error) {
     console.warn("No se pudo buscar nota en AniList.", error);
     return null;
-  }
-}
-
-async function enrichMissingScoresByIds() {
-  const seriesMap = new Map();
-  for (const item of state.releases) {
-    if (!Number.isFinite(item.anilistId) || item.anilistId <= 0) continue;
-    if (item.anilistScore != null) continue;
-    const key = getSeriesKey(item);
-    if (!seriesMap.has(key)) seriesMap.set(key, item.anilistId);
-  }
-
-  const uniqueIds = [...new Set(seriesMap.values())];
-  if (!uniqueIds.length) return;
-
-  const idToKeys = new Map();
-  for (const [seriesKey, anilistId] of seriesMap) {
-    if (!idToKeys.has(anilistId)) idToKeys.set(anilistId, []);
-    idToKeys.get(anilistId).push(seriesKey);
-  }
-
-  const chunkSize = 50;
-  let enriched = 0;
-
-  for (let i = 0; i < uniqueIds.length; i += chunkSize) {
-    const chunk = uniqueIds.slice(i, i + chunkSize);
-    try {
-      const query = "query ($ids: [Int]) { Page(page: 1, perPage: 50) { media(id_in: $ids, type: ANIME) { id averageScore meanScore } } }";
-      const response = await postAnilistGraphql(query, { ids: chunk });
-      if (!response.ok) continue;
-      const json = await response.json().catch(() => null);
-      const mediaList = json?.data?.Page?.media || [];
-
-      for (const media of mediaList) {
-        const score = normalizeAnilistScore(media.averageScore, media.meanScore);
-        if (score == null) continue;
-        const keys = idToKeys.get(media.id);
-        if (!keys) continue;
-        for (const seriesKey of keys) {
-          state.releases = state.releases.map((item) => {
-            if (getSeriesKey(item) === seriesKey && item.anilistScore == null) {
-              return { ...item, anilistScore: score };
-            }
-            return item;
-          });
-        }
-        enriched += keys.length;
-      }
-    } catch (error) {
-      console.warn("Error en consulta batch de scores AniList:", error);
-    }
-  }
-
-  if (enriched > 0) {
-    await saveAllLists();
-    render();
   }
 }
 
@@ -2359,13 +2367,10 @@ async function scheduleNativeNotifications() {
       if (coverUrl) {
         localPath = await downloadCoverImage(coverUrl, notifId);
       }
-      const bodyText = displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`;
       toSchedule.push({
         id: notifId,
         title: `${item.title} ${item.episode}`,
-        body: bodyText,
-        largeBody: bodyText,
-        summaryText: bodyText,
+        body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
         schedule: { at: new Date(releaseAt) },
         extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
         smallIcon: "ic_stat_icon",
@@ -2435,34 +2440,6 @@ async function downloadCoverImage(url, notifId) {
     });
 
     var result = await Filesystem.writeFile({
-      path: path,
-      data: base64,
-      directory: "DATA",
-      recursive: true
-    });
-
-    return result.uri;
-  } catch (error) {
-    console.warn("Error al descargar portada:", error);
-    return null;
-  }
-}
-
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    const blob = await response.blob();
-    const base64 = await new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = function () {
-        var dataUrl = reader.result;
-        var idx = dataUrl.indexOf(",");
-        resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
-      };
-      reader.onerror = function () { reject(reader.error); };
-      reader.readAsDataURL(blob);
-    });
-
-    const result = await Filesystem.writeFile({
       path: path,
       data: base64,
       directory: "DATA",
@@ -2721,9 +2698,26 @@ function renderListModern() {
     empty.textContent = "No hay episodios para mostrar.";
     frag.appendChild(empty);
   } else {
-    for (var i = 0; i < visible.length; i++) frag.appendChild(createCardModern(visible[i]));
+    var limit = Math.min(visible.length, 5);
+    for (var i = 0; i < limit; i++) frag.appendChild(createCardModern(visible[i]));
   }
+  preRendered[state.viewMode] = frag;
+
   els.animeList.innerHTML = "";
+  els.animeList.appendChild(preRendered[state.viewMode].cloneNode(true));
+  if (visible.length > 5) setTimeout(renderRemaining, 50);
+}
+
+function renderRemaining() {
+  var visible = getVisibleItems();
+  if (state.searchQuery) {
+    var q = state.searchQuery.toLowerCase();
+    visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
+  }
+  if (!state.sortAsc) visible = [].concat(visible).reverse();
+  if (visible.length <= 5) return;
+  var frag = document.createDocumentFragment();
+  for (var i = 5; i < visible.length; i++) frag.appendChild(createCardModern(visible[i]));
   els.animeList.appendChild(frag);
 }
 
