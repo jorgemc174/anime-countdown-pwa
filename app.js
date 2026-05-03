@@ -163,7 +163,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","testAnimeBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","testAnimeBtn","testNotifBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -292,6 +292,7 @@ function bindEvents() {
     if (chip) togglePlatformFilter(chip.dataset.platform);
   });
   els.notificationBtn?.addEventListener("click", toggleNotifications);
+  els.testNotifBtn?.addEventListener("click", testNotification);
   els.testAnimeBtn?.addEventListener("click", addTestAnime30s);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
   els.syncAnilistBtn.addEventListener("click", syncAnilist);
@@ -2438,38 +2439,50 @@ async function downloadCoverImage(url, notifId) {
     if (!isCapacitor()) return null;
     if (!Capacitor.Plugins || !Capacitor.Plugins.Filesystem) return null;
     const Filesystem = Capacitor.Plugins.Filesystem;
-
-    var path = "cover-" + notifId + ".jpg";
+    const path = "cover-" + notifId + ".jpg";
 
     for (var attempt = 0; attempt < 3; attempt++) {
       try {
-        var response = await fetch(url);
-        if (!response.ok) {
-          if (response.status === 429 && attempt < 2) {
-            await new Promise(function (r) { setTimeout(r, 1000 * (attempt + 1)); });
-            continue;
+        var base64 = null;
+
+        // When CapacitorHttp interception is active, fetch().blob() receives the
+        // response through the native bridge as a string, corrupting binary data.
+        // Use CapacitorHttp.request() with responseType:'blob' instead — it returns
+        // the image as a proper base64 string ready to write to disk.
+        var CapHttp = Capacitor.Plugins.CapacitorHttp;
+        if (CapHttp) {
+          var nativeResp = await CapHttp.request({ url: url, method: "GET", responseType: "blob" });
+          if (!nativeResp || nativeResp.status < 200 || nativeResp.status >= 300) {
+            if (nativeResp && nativeResp.status === 429 && attempt < 2) {
+              await new Promise(function (r) { setTimeout(r, 1000 * (attempt + 1)); });
+              continue;
+            }
+            return null;
           }
-          return null;
+          base64 = nativeResp.data;
+        } else {
+          var response = await fetch(url);
+          if (!response.ok) {
+            if (response.status === 429 && attempt < 2) {
+              await new Promise(function (r) { setTimeout(r, 1000 * (attempt + 1)); });
+              continue;
+            }
+            return null;
+          }
+          var blob = await response.blob();
+          base64 = await new Promise(function (resolve, reject) {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+              var dataUrl = reader.result;
+              var idx = dataUrl.indexOf(",");
+              resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
+            };
+            reader.onerror = function () { reject(reader.error); };
+            reader.readAsDataURL(blob);
+          });
         }
-        var blob = await response.blob();
-        var base64 = await new Promise(function (resolve, reject) {
-          var reader = new FileReader();
-          reader.onloadend = function () {
-            var dataUrl = reader.result;
-            var idx = dataUrl.indexOf(",");
-            resolve(idx >= 0 ? dataUrl.substring(idx + 1) : dataUrl);
-          };
-          reader.onerror = function () { reject(reader.error); };
-          reader.readAsDataURL(blob);
-        });
 
-        var result = await Filesystem.writeFile({
-          path: path,
-          data: base64,
-          directory: "DATA",
-          recursive: true
-        });
-
+        var result = await Filesystem.writeFile({ path: path, data: base64, directory: "DATA", recursive: true });
         return result.uri;
       } catch (e) {
         if (attempt < 2) {
