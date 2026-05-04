@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-04T11:19:42.489Z",
+  "updatedAt": "2026-05-04T14:34:19.722Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -580,25 +580,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-31-2026-05-07t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 31",
-      "episodeNumber": "31",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-07T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-2-2026-05-07t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -618,6 +599,25 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
+    },
+    {
+      "id": "schedule-ganso-bandori-chan-31-2026-05-07t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 31",
+      "episodeNumber": "31",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-07T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
@@ -876,25 +876,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-5-2026-05-08t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-08T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-6-2026-05-08t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -914,6 +895,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-5-2026-05-08t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-08T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-7-2026-05-08t18-01-00-02-00",
@@ -1113,6 +1113,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1131,22 +1147,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-6-2026-05-09t18-01-00-02-00",
@@ -2144,25 +2144,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-32-2026-05-14t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 32",
-      "episodeNumber": "32",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-14T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-3-2026-05-14t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -2182,6 +2163,25 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
+    },
+    {
+      "id": "schedule-ganso-bandori-chan-32-2026-05-14t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 32",
+      "episodeNumber": "32",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-14T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
@@ -2456,25 +2456,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-15T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-7-2026-05-15t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -2494,6 +2475,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-15T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-8-2026-05-15t18-01-00-02-00",
@@ -2693,6 +2693,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2711,22 +2727,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-7-2026-05-16t18-01-00-02-00",
@@ -3708,25 +3708,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 33",
-      "episodeNumber": "33",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-4-2026-05-21t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -3746,6 +3727,25 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
+    },
+    {
+      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 33",
+      "episodeNumber": "33",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
@@ -4004,25 +4004,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-22T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -4042,6 +4023,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-22T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-9-2026-05-22t18-01-00-02-00",
@@ -4241,6 +4241,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -4259,22 +4275,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -5256,25 +5256,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 34",
-      "episodeNumber": "34",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-28T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-5-2026-05-28t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -5294,6 +5275,25 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
+    },
+    {
+      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 34",
+      "episodeNumber": "34",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-28T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-kujima-utaeba-ie-hororo-8-2026-05-28t16-00-00-02-00",
@@ -5552,25 +5552,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-29T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-9-2026-05-29t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -5590,6 +5571,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-29T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-10-2026-05-29t18-01-00-02-00",
@@ -5789,6 +5789,22 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-30T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-9-2026-05-30t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5807,22 +5823,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-30T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-9-2026-05-30t18-01-00-02-00",
