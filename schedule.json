@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-04T04:13:26.080Z",
+  "updatedAt": "2026-05-04T08:43:25.498Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -580,25 +580,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-31-2026-05-07t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 31",
-      "episodeNumber": "31",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-07T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-2-2026-05-07t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -620,26 +601,23 @@
       "anilistUrl": "https://anilist.co/anime/196840"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
+      "id": "schedule-ganso-bandori-chan-31-2026-05-07t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 31",
+      "episodeNumber": "31",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-07T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
+      "releaseDate": "2026-05-07T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-6-2026-05-07t16-00-00-02-00",
@@ -664,6 +642,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-5-2026-05-07t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-07T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-6-2026-05-07t17-30-00-02-00",
@@ -1113,22 +1113,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-09T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-6-2026-05-09t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1147,6 +1131,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-6-2026-05-09t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-09T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-6-2026-05-09t18-01-00-02-00",
@@ -1307,22 +1307,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "schedule-meikyuu-no-shiori-1-2026-05-10t06-00-00-02-00",
-      "animeKey": "meikyuu-no-shiori",
-      "title": "Meikyuu no Shiori",
-      "route": "meikyuu-no-shiori",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-10T04:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meikyuu-no-shiori-5bcce6727a.jpg"
-    },
-    {
       "id": "schedule-niwatori-fighter-9-2026-05-10t06-00-00-02-00",
       "animeKey": "niwatori-fighter",
       "title": "Niwatori Fighter",
@@ -1343,6 +1327,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
+    },
+    {
+      "id": "schedule-meikyuu-no-shiori-1-2026-05-10t06-00-00-02-00",
+      "animeKey": "meikyuu-no-shiori",
+      "title": "Meikyuu no Shiori",
+      "route": "meikyuu-no-shiori",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-10T04:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meikyuu-no-shiori-5bcce6727a.jpg"
     },
     {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-5-2026-05-10t10-30-00-02-00",
@@ -2144,25 +2144,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-32-2026-05-14t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 32",
-      "episodeNumber": "32",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-14T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-3-2026-05-14t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -2184,26 +2165,23 @@
       "anilistUrl": "https://anilist.co/anime/196840"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
+      "id": "schedule-ganso-bandori-chan-32-2026-05-14t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 32",
+      "episodeNumber": "32",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-14T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
+      "releaseDate": "2026-05-14T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
@@ -2228,6 +2206,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-14T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-7-2026-05-14t17-30-00-02-00",
@@ -2693,22 +2693,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-16T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-7-2026-05-16t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2727,6 +2711,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-7-2026-05-16t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-16T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-7-2026-05-16t18-01-00-02-00",
@@ -3708,25 +3708,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 33",
-      "episodeNumber": "33",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-4-2026-05-21t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -3748,26 +3729,23 @@
       "anilistUrl": "https://anilist.co/anime/196840"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
+      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 33",
+      "episodeNumber": "33",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-21T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
+      "releaseDate": "2026-05-21T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
@@ -3792,6 +3770,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-8-2026-05-21t17-30-00-02-00",
@@ -4241,22 +4241,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -4275,6 +4259,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -5256,25 +5256,6 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
-      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 34",
-      "episodeNumber": "34",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-28T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
-    },
-    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-5-2026-05-28t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -5296,26 +5277,23 @@
       "anilistUrl": "https://anilist.co/anime/196840"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-8-2026-05-28t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
+      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 34",
+      "episodeNumber": "34",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-05-28T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
+      "releaseDate": "2026-05-28T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-9-2026-05-28t16-00-00-02-00",
@@ -5340,6 +5318,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-8-2026-05-28t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-28T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-9-2026-05-28t17-30-00-02-00",
@@ -5789,22 +5789,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-30T16:00:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-9-2026-05-30t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5823,6 +5807,22 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-30T16:00:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-9-2026-05-30t18-01-00-02-00",
