@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-12T11:28:44.271Z",
+  "updatedAt": "2026-05-12T15:12:01.537Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -1339,6 +1339,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-17T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
+    },
+    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-6-2026-05-17t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -1358,26 +1378,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-6-2026-05-17t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-17T08:30:00.000Z",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-7-2026-05-17t11-00-00-02-00",
@@ -2881,6 +2881,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-24T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
+    },
+    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-7-2026-05-24t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2900,26 +2920,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-7-2026-05-24t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-24T08:30:00.000Z",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-8-2026-05-24t11-00-00-02-00",
@@ -4423,6 +4423,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-8-2026-05-31t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-31T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
+    },
+    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-8-2026-05-31t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -4442,26 +4462,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-8-2026-05-31t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-31T08:30:00.000Z",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-9-2026-05-31t11-00-00-02-00",
@@ -5941,6 +5941,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/niwatori-fighter-52bbb0418e26420a1ca19ee9e1e74729.jpg"
     },
     {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-9-2026-06-07t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-07T08:30:00.000Z",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
+    },
+    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-9-2026-06-07t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -5960,26 +5980,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-9-2026-06-07t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-07T08:30:00.000Z",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-10-2026-06-07t11-00-00-02-00",
