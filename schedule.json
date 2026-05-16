@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-16T04:05:46.926Z",
+  "updatedAt": "2026-05-16T08:20:57.083Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -614,28 +614,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-14T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-7-2026-05-14t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -658,6 +636,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-6-2026-05-14t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-14T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-7-2026-05-14t17-30-00-02-00",
@@ -886,25 +886,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-15T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-7-2026-05-15t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -924,6 +905,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-6-2026-05-15t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-15T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-8-2026-05-15t18-01-00-02-00",
@@ -2174,28 +2174,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -2218,6 +2196,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-7-2026-05-21t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-8-2026-05-21t17-30-00-02-00",
@@ -2430,25 +2430,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-22T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -2468,6 +2449,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-22T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-9-2026-05-22t18-01-00-02-00",
@@ -3718,28 +3718,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-8-2026-05-28t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-28T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-9-2026-05-28t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -3762,6 +3740,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-8-2026-05-28t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-28T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-9-2026-05-28t17-30-00-02-00",
@@ -3974,25 +3974,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-29T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-9-2026-05-29t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -4012,6 +3993,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-29T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-10-2026-05-29t18-01-00-02-00",
@@ -5238,28 +5238,6 @@
       "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-9-2026-06-04t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-04T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
-      "anilistId": 177508,
-      "anilistTitle": "Kujima Utaeba Ie Hororo",
-      "anilistUrl": "https://anilist.co/anime/177508"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-10-2026-06-04t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -5282,6 +5260,28 @@
       "anilistId": 199221,
       "anilistTitle": "Dr. STONE: SCIENCE FUTURE Part 3",
       "anilistUrl": "https://anilist.co/anime/199221"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-9-2026-06-04t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-04T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177508-Ajz9UrU5SsQ0.jpg",
+      "anilistId": 177508,
+      "anilistTitle": "Kujima Utaeba Ie Hororo",
+      "anilistUrl": "https://anilist.co/anime/177508"
     },
     {
       "id": "schedule-koori-no-jouheki-10-2026-06-04t17-30-00-02-00",
@@ -5494,25 +5494,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-9-2026-06-05t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-05T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-10-2026-06-05t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -5532,6 +5513,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-9-2026-06-05t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-05T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-11-2026-06-05t18-01-00-02-00",
