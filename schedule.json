@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T09:51:30.298Z",
+  "updatedAt": "2026-05-22T15:26:27.097Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -565,6 +565,25 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
+      "id": "schedule-pan-long-6-2026-05-21t04-01-00-02-00",
+      "animeKey": "pan-long",
+      "title": "Pan Long",
+      "route": "pan-long",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T02:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b153466-9YOq1CIvfVg1.png",
+      "anilistId": 153466,
+      "anilistTitle": "Pan Long",
+      "anilistUrl": "https://anilist.co/anime/153466"
+    },
+    {
       "id": "schedule-koala-enikki-33-2026-05-21t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -606,6 +625,25 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
+      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 33",
+      "episodeNumber": "33",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-21T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
+    },
+    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-4-2026-05-21t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -625,25 +663,6 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
-    },
-    {
-      "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 33",
-      "episodeNumber": "33",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-21T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-8-2026-05-21t16-00-00-02-00",
@@ -896,25 +915,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-22T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-8-2026-05-22t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -934,6 +934,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-7-2026-05-22t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-22T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-9-2026-05-22t18-01-00-02-00",
@@ -1149,6 +1168,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1167,24 +1204,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -1247,6 +1266,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
     },
     {
+      "id": "schedule-needy-girl-overdose-8-2026-05-23t19-00-00-02-00",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
       "id": "schedule-yuusha-no-kuzu-19-2026-05-23t19-00-00-02-00",
       "animeKey": "yuusha-no-kuzu",
       "title": "Yuusha no Kuzu",
@@ -1265,25 +1303,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
-    },
-    {
-      "id": "schedule-needy-girl-overdose-8-2026-05-23t19-00-00-02-00",
-      "animeKey": "needy-girl-overdose",
-      "title": "NEEDY GIRL OVERDOSE",
-      "route": "needy-girl-overdose",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-7-2026-05-23t19-01-00-02-00",
@@ -2135,6 +2154,25 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
+      "id": "schedule-pan-long-7-2026-05-28t04-01-00-02-00",
+      "animeKey": "pan-long",
+      "title": "Pan Long",
+      "route": "pan-long",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-28T02:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b153466-9YOq1CIvfVg1.png",
+      "anilistId": 153466,
+      "anilistTitle": "Pan Long",
+      "anilistUrl": "https://anilist.co/anime/153466"
+    },
+    {
       "id": "schedule-koala-enikki-34-2026-05-28t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -2176,6 +2214,25 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
+      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 34",
+      "episodeNumber": "34",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-28T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
+    },
+    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-5-2026-05-28t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -2195,25 +2252,6 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
-    },
-    {
-      "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 34",
-      "episodeNumber": "34",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-28T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-9-2026-05-28t16-00-00-02-00",
@@ -2466,25 +2504,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-29T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-9-2026-05-29t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -2504,6 +2523,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-8-2026-05-29t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-29T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-10-2026-05-29t18-01-00-02-00",
@@ -2719,6 +2757,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-30T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-9-2026-05-30t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2737,24 +2793,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-30T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-9-2026-05-30t18-01-00-02-00",
@@ -2817,6 +2855,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
     },
     {
+      "id": "schedule-needy-girl-overdose-9-2026-05-30t19-00-00-02-00",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-30T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
       "id": "schedule-yuusha-no-kuzu-20-2026-05-30t19-00-00-02-00",
       "animeKey": "yuusha-no-kuzu",
       "title": "Yuusha no Kuzu",
@@ -2835,25 +2892,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
-    },
-    {
-      "id": "schedule-needy-girl-overdose-9-2026-05-30t19-00-00-02-00",
-      "animeKey": "needy-girl-overdose",
-      "title": "NEEDY GIRL OVERDOSE",
-      "route": "needy-girl-overdose",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-30T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-8-2026-05-30t19-01-00-02-00",
@@ -3697,6 +3735,25 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
+      "id": "schedule-pan-long-8-2026-06-04t04-01-00-02-00",
+      "animeKey": "pan-long",
+      "title": "Pan Long",
+      "route": "pan-long",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-04T02:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b153466-9YOq1CIvfVg1.png",
+      "anilistId": 153466,
+      "anilistTitle": "Pan Long",
+      "anilistUrl": "https://anilist.co/anime/153466"
+    },
+    {
       "id": "schedule-koala-enikki-35-2026-06-04t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -3738,6 +3795,25 @@
       "anilistUrl": "https://anilist.co/anime/182483"
     },
     {
+      "id": "schedule-ganso-bandori-chan-35-2026-06-04t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 35",
+      "episodeNumber": "35",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-04T13:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
+      "anilistId": 187166,
+      "anilistTitle": "Ganso! Bandori-chan",
+      "anilistUrl": "https://anilist.co/anime/187166"
+    },
+    {
       "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-6-2026-06-04t15-01-00-02-00",
       "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
       "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
@@ -3757,25 +3833,6 @@
       "anilistId": 196840,
       "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
       "anilistUrl": "https://anilist.co/anime/196840"
-    },
-    {
-      "id": "schedule-ganso-bandori-chan-35-2026-06-04t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 35",
-      "episodeNumber": "35",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-04T13:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187166-ASfp7wErGrxQ.png",
-      "anilistId": 187166,
-      "anilistTitle": "Ganso! Bandori-chan",
-      "anilistUrl": "https://anilist.co/anime/187166"
     },
     {
       "id": "schedule-dr-stone-science-future-part-3-10-2026-06-04t16-00-00-02-00",
@@ -4028,25 +4085,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-9-2026-06-05t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-05T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-10-2026-06-05t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -4066,6 +4104,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-9-2026-06-05t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-05T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-11-2026-06-05t18-01-00-02-00",
@@ -4281,6 +4338,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-10-2026-06-06t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-06T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-10-2026-06-06t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -4299,24 +4374,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-10-2026-06-06t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-06T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-10-2026-06-06t18-01-00-02-00",
@@ -4379,6 +4436,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
     },
     {
+      "id": "schedule-needy-girl-overdose-10-2026-06-06t19-00-00-02-00",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-06T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
       "id": "schedule-yuusha-no-kuzu-21-2026-06-06t19-00-00-02-00",
       "animeKey": "yuusha-no-kuzu",
       "title": "Yuusha no Kuzu",
@@ -4397,25 +4473,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
-    },
-    {
-      "id": "schedule-needy-girl-overdose-10-2026-06-06t19-00-00-02-00",
-      "animeKey": "needy-girl-overdose",
-      "title": "NEEDY GIRL OVERDOSE",
-      "route": "needy-girl-overdose",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-06T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-9-2026-06-06t19-01-00-02-00",
@@ -5227,6 +5284,25 @@
       "anilistUrl": "https://anilist.co/anime/180228"
     },
     {
+      "id": "schedule-pan-long-9-2026-06-11t04-01-00-02-00",
+      "animeKey": "pan-long",
+      "title": "Pan Long",
+      "route": "pan-long",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-11T02:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b153466-9YOq1CIvfVg1.png",
+      "anilistId": 153466,
+      "anilistTitle": "Pan Long",
+      "anilistUrl": "https://anilist.co/anime/153466"
+    },
+    {
       "id": "schedule-koala-enikki-36-2026-06-11t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -5266,27 +5342,6 @@
       "anilistId": 182483,
       "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
       "anilistUrl": "https://anilist.co/anime/182483"
-    },
-    {
-      "id": "schedule-iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns-7-2026-06-11t15-01-00-02-00",
-      "animeKey": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
-      "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
-      "route": "iya-na-kao-sare-nagara-opantsu-misete-moraitai-returns",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-11T13:01:00.000Z",
-      "service": "Bilibili",
-      "serviceUrl": "https://www.bilibili.tv/en/media/2361752",
-      "allServices": [
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196840-9l084Fis4fYF.png",
-      "anilistId": 196840,
-      "anilistTitle": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
-      "anilistUrl": "https://anilist.co/anime/196840"
     },
     {
       "id": "schedule-ganso-bandori-chan-36-2026-06-11t15-01-00-02-00",
@@ -5558,25 +5613,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-10-2026-06-12t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-12T15:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-11-2026-06-12t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -5596,6 +5632,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-10-2026-06-12t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-12T15:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-12-2026-06-12t18-01-00-02-00",
@@ -5811,6 +5866,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-11-2026-06-13t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-13T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-11-2026-06-13t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5829,24 +5902,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-11-2026-06-13t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-13T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-11-2026-06-13t18-01-00-02-00",
@@ -5909,6 +5964,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-niwatsuki-kusunoki-tei-2962df1d1306b78e4ca3947c8521dd31.jpg"
     },
     {
+      "id": "schedule-needy-girl-overdose-11-2026-06-13t19-00-00-02-00",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-13T17:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
+    },
+    {
       "id": "schedule-yuusha-no-kuzu-22-2026-06-13t19-00-00-02-00",
       "animeKey": "yuusha-no-kuzu",
       "title": "Yuusha no Kuzu",
@@ -5927,25 +6001,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
-    },
-    {
-      "id": "schedule-needy-girl-overdose-11-2026-06-13t19-00-00-02-00",
-      "animeKey": "needy-girl-overdose",
-      "title": "NEEDY GIRL OVERDOSE",
-      "route": "needy-girl-overdose",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-13T17:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
     },
     {
       "id": "schedule-ichijouma-mankitsugurashi-10-2026-06-13t19-01-00-02-00",
