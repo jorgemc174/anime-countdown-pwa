@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-24T14:04:18.519Z",
+  "updatedAt": "2026-05-24T16:16:16.882Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -398,10 +398,27 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199029-8eMkhHlD62Ik.png",
-      "anilistId": 199029,
-      "anilistTitle": "Kanojo, Okarishimasu 5th Season",
-      "anilistUrl": "https://anilist.co/anime/199029"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-7-2026-05-20t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-20T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-8-2026-05-20t16-00-00-02-00",
@@ -425,29 +442,6 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-7-2026-05-20t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-20T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
-      "anilistId": 189046,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-      "anilistUrl": "https://anilist.co/anime/189046"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-10-2026-05-20t16-01-00-02-00",
@@ -619,10 +613,7 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
-      "anilistId": 182483,
-      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
-      "anilistUrl": "https://anilist.co/anime/182483"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
     },
     {
       "id": "schedule-ganso-bandori-chan-33-2026-05-21t15-01-00-02-00",
@@ -1165,6 +1156,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-23T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-8-2026-05-23t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1183,24 +1192,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-8-2026-05-23t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-23T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-8-2026-05-23t18-01-00-02-00",
@@ -1984,10 +1975,27 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199029-8eMkhHlD62Ik.png",
-      "anilistId": 199029,
-      "anilistTitle": "Kanojo, Okarishimasu 5th Season",
-      "anilistUrl": "https://anilist.co/anime/199029"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-8-2026-05-27t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 8",
+      "episodeNumber": "8",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-27T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-9-2026-05-27t16-00-00-02-00",
@@ -2011,29 +2019,6 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-8-2026-05-27t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 8",
-      "episodeNumber": "8",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-27T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
-      "anilistId": 189046,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-      "anilistUrl": "https://anilist.co/anime/189046"
     },
     {
       "id": "schedule-dorohedoro-2nd-season-11-2026-05-27t16-01-00-02-00",
@@ -2205,10 +2190,7 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
-      "anilistId": 182483,
-      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
-      "anilistUrl": "https://anilist.co/anime/182483"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
     },
     {
       "id": "schedule-ganso-bandori-chan-34-2026-05-28t15-01-00-02-00",
@@ -2751,6 +2733,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-05-30T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-9-2026-05-30t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2769,24 +2769,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-9-2026-05-30t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-05-30T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-9-2026-05-30t18-01-00-02-00",
@@ -3586,10 +3568,27 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199029-8eMkhHlD62Ik.png",
-      "anilistId": 199029,
-      "anilistTitle": "Kanojo, Okarishimasu 5th Season",
-      "anilistUrl": "https://anilist.co/anime/199029"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-9-2026-06-03t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-03T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-10-2026-06-03t16-00-00-02-00",
@@ -3613,29 +3612,6 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-9-2026-06-03t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-03T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
-      "anilistId": 189046,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-      "anilistUrl": "https://anilist.co/anime/189046"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-9-2026-06-03t17-45-00-02-00",
@@ -3783,10 +3759,7 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
-      "anilistId": 182483,
-      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
-      "anilistUrl": "https://anilist.co/anime/182483"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
     },
     {
       "id": "schedule-ganso-bandori-chan-35-2026-06-04t15-01-00-02-00",
@@ -4329,6 +4302,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-10-2026-06-06t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-06T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-10-2026-06-06t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -4347,24 +4338,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-10-2026-06-06t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-06T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-10-2026-06-06t18-01-00-02-00",
@@ -5132,10 +5105,27 @@
         "Prime Video"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199029-8eMkhHlD62Ik.png",
-      "anilistId": 199029,
-      "anilistTitle": "Kanojo, Okarishimasu 5th Season",
-      "anilistUrl": "https://anilist.co/anime/199029"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-10-2026-06-10t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-10T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-11-2026-06-10t16-00-00-02-00",
@@ -5159,29 +5149,6 @@
       "anilistId": 198939,
       "anilistTitle": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
       "anilistUrl": "https://anilist.co/anime/198939"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-10-2026-06-10t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-10T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
-      "anilistId": 189046,
-      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-      "anilistUrl": "https://anilist.co/anime/189046"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-10-2026-06-10t17-45-00-02-00",
@@ -5329,10 +5296,7 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg",
-      "anilistId": 182483,
-      "anilistTitle": "Hime Kishi wa Barbaroi no Yome",
-      "anilistUrl": "https://anilist.co/anime/182483"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/himekishi-wa-barbaroi-no-yome-128fde6a80928c73b6c7512bccd32fd2.jpg"
     },
     {
       "id": "schedule-ganso-bandori-chan-36-2026-06-11t15-01-00-02-00",
@@ -5857,6 +5821,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-11-2026-06-13t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-13T16:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-11-2026-06-13t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5875,24 +5857,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-11-2026-06-13t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-13T16:00:00.000Z",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-11-2026-06-13t18-01-00-02-00",
