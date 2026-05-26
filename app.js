@@ -117,7 +117,7 @@ const JUSTWATCH_COUNTRIES = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -237,14 +237,17 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","theme"]);
   state.releases = (data.releases || []).map(sanitizePlatformFields);
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
   state.customLinks = data.customLinks || {};
   state.customPlatforms = data.customPlatforms || {};
+  state.userOverrides = data.userOverrides || {};
   sanitizeCustomPlatformStorage();
+  migrateLegacyUserOverrides();
   applyCustomToReleases();
+  applyUserOverridesToLists();
   state.viewMode = data.viewMode || "today";
   state.timezone = data.timezone || "Europe/Madrid";
   state.jwCountry = data.jwCountry || "ES";
@@ -998,11 +1001,15 @@ async function refreshAnilistData(username) {
   applyAnilistToReleases();
   reconcileAnilistFavoritesWithSchedule();
   applyCustomToReleases();
+  applyUserOverridesToLists();
   await browserApi.storage.local.set({
     anilistUsername: username,
     anilistLibrary: state.anilistLibrary,
     anilistMap: state.anilistMap,
     releases: state.releases,
+    userOverrides: state.userOverrides,
+    customPlatforms: state.customPlatforms,
+    customLinks: state.customLinks,
     lastAnilistSync: state.lastAnilistSync,
     lastAnilistSyncUsername: state.lastAnilistSyncUsername
   });
@@ -1013,10 +1020,14 @@ async function refreshPublicAnilistData() {
   try { await enrichReleasesFromPublicAnilist(); } catch (e) { console.warn("AniList público no disponible:", e.message); }
   applyAnilistToReleases();
   applyCustomToReleases();
+  applyUserOverridesToLists();
   state.lastPublicAnilistSync = new Date().toISOString();
   await browserApi.storage.local.set({
     releases: state.releases,
     anilistMap: state.anilistMap,
+    userOverrides: state.userOverrides,
+    customPlatforms: state.customPlatforms,
+    customLinks: state.customLinks,
     lastPublicAnilistSync: state.lastPublicAnilistSync
   });
 }
@@ -1047,7 +1058,8 @@ async function importSchedule() {
     state.releases = mergeDuplicateItems(mergeById(state.releases, imported));
     applyAnilistToReleases();
     applyCustomToReleases();
-    await browserApi.storage.local.set({ releases: state.releases, animeScheduleToken: token, timezone });
+    applyUserOverridesToLists();
+    await browserApi.storage.local.set({ releases: state.releases, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, animeScheduleToken: token, timezone });
     renderPreview(imported);
     render();
     checkReleaseNotifications();
@@ -1090,8 +1102,9 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
       if (!Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) await refreshPublicAnilistData();
     }
     applyCustomToReleases();
+    applyUserOverridesToLists();
     state.lastSharedSync = new Date().toISOString();
-    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
+    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
     renderPreview(imported);
     render();
     checkReleaseNotifications();
@@ -1166,10 +1179,11 @@ function mapSharedRelease(row) {
 
 function preserveExistingAnimeData(item) {
   const existing = findExistingRelease(item);
-  if (!existing) return item;
+  const override = getUserOverride(item);
+  if (!existing) return applyUserOverride(item, override);
   const base = {
     ...item,
-    favorite: Boolean(item.favorite || existing.favorite),
+    favorite: Boolean(item.favorite || existing.favorite || override?.favorite),
     delayed: Boolean(item.delayed),
     originalReleaseDate: item.originalReleaseDate || existing.originalReleaseDate || "",
     anilistId: item.anilistId || existing.anilistId,
@@ -1177,8 +1191,8 @@ function preserveExistingAnimeData(item) {
     anilistUrl: item.anilistUrl || existing.anilistUrl,
     anilistScore: item.anilistScore ?? existing.anilistScore,
     coverUrl: item.coverUrl || existing.coverUrl,
-    customUrl: item.customUrl || existing.customUrl || "",
-    customPlatformName: item.customPlatformName || existing.customPlatformName || ""
+    customUrl: override?.customUrl || item.customUrl || existing.customUrl || "",
+    customPlatformName: override?.customPlatformName || item.customPlatformName || existing.customPlatformName || ""
   };
   // Preserve JW-verified platform data across schedule refreshes so the user doesn't
   // lose platform info every 30 min. Only applies when same country and not Crunchyroll
@@ -1194,17 +1208,22 @@ function preserveExistingAnimeData(item) {
       jwCountry: existing.jwCountry
     };
   }
-  return base;
+  return applyUserOverride(base, override);
 }
 
 function findExistingRelease(item) {
   const idMatch = state.releases.find((release) => release.id === item.id);
   if (idMatch) return idMatch;
+  if (item.anilistId) {
+    const anilistMatch = state.releases.find((release) => String(release.anilistId || "") === String(item.anilistId));
+    if (anilistMatch) return anilistMatch;
+  }
   const episodeKey = getEpisodeKey(item);
   const episodeMatch = state.releases.find((release) => getEpisodeKey(release) === episodeKey);
   if (episodeMatch) return episodeMatch;
   const seriesKey = getSeriesKey(item);
-  return state.releases.find((release) => getSeriesKey(release) === seriesKey);
+  return state.releases.find((release) => getSeriesKey(release) === seriesKey) ||
+    state.releases.find((release) => getSeriesMatchScore(release, item) >= 0.78);
 }
 
 function withCacheBuster(url) {
@@ -1631,6 +1650,7 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
   };
   state.releases = state.releases.map(applyTo);
   state.anilistLibrary = state.anilistLibrary.map(applyTo);
+  applyUserOverridesToLists();
 }
 function isDelayed(item) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
@@ -2019,6 +2039,7 @@ function clearStaleAnilistFavorites() {
   state.releases = state.releases.map((item) => {
     const linkedToAnilist = Boolean(item.anilistId || item.anilistTitle);
     if (!linkedToAnilist) return item;
+    if (getUserOverride(item)?.favorite === true) return item;
     const stillWatching = watchingIds.has(String(item.anilistId)) || watchingKeys.has(getSeriesKey(item));
     return stillWatching ? item : { ...item, favorite: false };
   });
@@ -2128,7 +2149,7 @@ function parseEpisodeNumber(value) {
   return match ? Number(match[0]) : NaN;
 }
 function applyCustomToReleases() { state.releases = state.releases.map(applyCustom); state.anilistLibrary = state.anilistLibrary.map(applyCustom); }
-function applyCustom(item) { const key=getAnimeKey(item); const customUrl=normalizeUrl(state.customLinks[key] || item.customUrl || ""); const customPlatformName=state.customPlatforms[key] || item.customPlatformName || ""; return { ...item, customUrl, customPlatformName }; }
+function applyCustom(item) { const override = getUserOverride(item); const key=getAnimeKey(item); const customUrl=normalizeUrl(override?.customUrl || state.customLinks[key] || item.customUrl || ""); const customPlatformName=override?.customPlatformName || state.customPlatforms[key] || item.customPlatformName || ""; return { ...item, customUrl, customPlatformName }; }
 function sanitizeCustomPlatformStorage() {
   for (const key of Object.keys(state.customPlatforms)) {
     const service = normalizeAllowedService(state.customPlatforms[key]);
@@ -2141,12 +2162,105 @@ function sanitizeCustomPlatformStorage() {
   }
 }
 
+function migrateLegacyUserOverrides() {
+  for (const item of [...state.releases, ...state.anilistLibrary]) {
+    if (item.favorite || item.customUrl || item.customPlatformName) {
+      upsertUserOverride(item, {
+        favorite: item.favorite ? true : undefined,
+        customUrl: item.customUrl || undefined,
+        customPlatformName: item.customPlatformName || undefined
+      });
+    }
+  }
+
+  for (const [key, url] of Object.entries(state.customLinks)) {
+    if (!url && !state.customPlatforms[key]) continue;
+    const existingKey = findOverrideKeyByAlias(key) || key;
+    state.userOverrides[existingKey] = {
+      ...(state.userOverrides[existingKey] || {}),
+      keys: [...new Set([...(state.userOverrides[existingKey]?.keys || []), key])],
+      customUrl: normalizeUrl(url || state.userOverrides[existingKey]?.customUrl || ""),
+      customPlatformName: state.customPlatforms[key] || state.userOverrides[existingKey]?.customPlatformName || "",
+      updatedAt: new Date().toISOString()
+    };
+  }
+}
+
+function applyUserOverridesToLists() {
+  state.releases = state.releases.map((item) => applyUserOverride(item, getUserOverride(item)));
+  state.anilistLibrary = state.anilistLibrary.map((item) => applyUserOverride(item, getUserOverride(item)));
+}
+
+function applyUserOverride(item, override) {
+  if (!override) return item;
+  const customUrl = normalizeUrl(override.customUrl || item.customUrl || "");
+  const customPlatformName = override.customPlatformName || item.customPlatformName || "";
+  return {
+    ...item,
+    favorite: Object.prototype.hasOwnProperty.call(override, "favorite") ? Boolean(override.favorite) : item.favorite,
+    customUrl,
+    customPlatformName
+  };
+}
+
+function upsertUserOverride(item, values = {}) {
+  const keys = getOverrideKeys(item);
+  const existingKey = keys.map(findOverrideKeyByAlias).find(Boolean) || keys[0] || getAnimeKey(item);
+  const current = state.userOverrides[existingKey] || {};
+  const next = {
+    ...current,
+    title: item.title || current.title || "",
+    anilistId: item.anilistId || current.anilistId || "",
+    keys: [...new Set([...(current.keys || []), ...keys])],
+    updatedAt: new Date().toISOString()
+  };
+
+  if (Object.prototype.hasOwnProperty.call(values, "favorite") && values.favorite !== undefined) next.favorite = Boolean(values.favorite);
+  if (Object.prototype.hasOwnProperty.call(values, "customUrl") && values.customUrl !== undefined) next.customUrl = normalizeUrl(values.customUrl || "");
+  if (Object.prototype.hasOwnProperty.call(values, "customPlatformName") && values.customPlatformName !== undefined) next.customPlatformName = values.customPlatformName || "";
+  state.userOverrides[existingKey] = next;
+  return next;
+}
+
+function clearUserPlatformOverride(key) {
+  const overrideKey = findOverrideKeyByAlias(key);
+  if (!overrideKey) return;
+  delete state.userOverrides[overrideKey].customUrl;
+  delete state.userOverrides[overrideKey].customPlatformName;
+}
+
+function getUserOverride(item) {
+  const key = getOverrideKeys(item).map(findOverrideKeyByAlias).find(Boolean);
+  return key ? state.userOverrides[key] : null;
+}
+
+function findOverrideKeyByAlias(alias) {
+  if (!alias) return "";
+  if (state.userOverrides[alias]) return alias;
+  return Object.keys(state.userOverrides).find((key) => {
+    const override = state.userOverrides[key] || {};
+    return Array.isArray(override.keys) && override.keys.includes(alias);
+  }) || "";
+}
+
+function getOverrideKeys(item) {
+  return [...new Set([
+    item.anilistId ? `anilist-${item.anilistId}` : "",
+    getSeriesKey(item),
+    getAnimeKey(item),
+    item.anilistTitle ? stableId(item.anilistTitle) : "",
+    item.title ? stableId(item.title) : "",
+    ...(item.titles || []).map(stableId)
+  ].filter(Boolean))];
+}
+
 async function saveSanitizedState() {
   await browserApi.storage.local.set({
     releases: state.releases,
     anilistLibrary: state.anilistLibrary,
     customPlatforms: state.customPlatforms,
-    customLinks: state.customLinks
+    customLinks: state.customLinks,
+    userOverrides: state.userOverrides
   });
 }
 
@@ -2177,6 +2291,8 @@ function handleListAuxClick(event) {
 
 async function toggleFavorite(key) {
   const should = !getAllItems().some(item => getAnimeKey(item) === key && item.favorite);
+  const sample = findItemByKey(key) || { animeKey: key, title: key };
+  upsertUserOverride(sample, { favorite: should });
   state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item);
   state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, favorite: should } : item);
   await saveAllLists();
@@ -2208,15 +2324,18 @@ async function toggleFavorite(key) {
   }
   renderNextModern();
 }
-async function associatePlatform(key) { const sample = findItemByKey(key); const name = prompt("Nombre de la plataforma que quieres mostrar:", state.customPlatforms[key] || sample?.customPlatformName || "Crunchyroll"); if (name === null) return; const cleanName = normalizeAllowedService(name.trim()); if(!cleanName) return showStatus("Escribe un nombre de plataforma.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link inválido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); applyCustomToReleases(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
-async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
+async function associatePlatform(key) { const sample = findItemByKey(key) || { animeKey: key, title: key }; const current = getUserOverride(sample); const name = prompt("Nombre de la plataforma que quieres mostrar:", current?.customPlatformName || state.customPlatforms[key] || sample?.customPlatformName || "Crunchyroll"); if (name === null) return; const cleanName = normalizeAllowedService(name.trim()); if(!cleanName) return showStatus("Escribe un nombre de plataforma.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, current?.customUrl || state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link inválido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; upsertUserOverride(sample, { customPlatformName: cleanName, customUrl: cleanUrl }); await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks, userOverrides: state.userOverrides }); applyCustomToReleases(); applyUserOverridesToLists(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
+async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; clearUserPlatformOverride(key); await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks, userOverrides: state.userOverrides }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
 
 async function openOrAsk(item) { const displayService = getDisplayService(item); const url = getBestWatchUrl(item, displayService); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
 async function resetAll() {
   if (!confirm("¿Seguro que quieres borrar todos tus favoritos?")) return;
   state.releases = state.releases.map(item => ({ ...item, favorite: false }));
   state.anilistLibrary = state.anilistLibrary.map(item => ({ ...item, favorite: false }));
-  await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary });
+  for (const override of Object.values(state.userOverrides)) {
+    if (override) override.favorite = false;
+  }
+  await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides });
   render();
   showStatus("Favoritos borrados.", "success");
 }
@@ -2693,7 +2812,7 @@ function defaultServiceUrl(service) {
 function escapeHtml(v) { return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 
 async function saveReleases() { await browserApi.storage.local.set({ releases: state.releases }); }
-async function saveAllLists() { await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary }); }
+async function saveAllLists() { await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks }); }
 function showStatus(message,type="") { els.statusBox.textContent=message; els.statusBox.className=`status-box ${type}`; setTimeout(()=>{ els.statusBox.className="status-box hidden"; },6000); }
 function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensión</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
 function renderNextModern() {
