@@ -394,8 +394,9 @@ function normalizeSchedule(items, timeZone) {
     const airType = String(item.airType || item.air_type || "sub").toLowerCase();
     if (airType !== "sub") continue;
 
-    const releaseDate = item.episodeDate || item.episode_date || item.airDate || item.air_date;
-    if (!releaseDate || Number.isNaN(Date.parse(releaseDate))) continue;
+    const releaseDate = getAnimeScheduleSubReleaseDate(item);
+    const normalizedReleaseDate = normalizeScheduleDate(releaseDate, timeZone);
+    if (!normalizedReleaseDate) continue;
 
     const title = item.title || item.romaji || item.english || item.native || "Sin titulo";
     const episodeNumber = String(item.episodeNumber ?? item.episode_number ?? item.episode ?? "?");
@@ -413,7 +414,8 @@ function normalizeSchedule(items, timeZone) {
       episodeNumber,
       airType: "SUB",
       delayed: isDelayed(item, timeZone),
-      releaseDate: new Date(releaseDate).toISOString(),
+      releaseDate: normalizedReleaseDate,
+      originalReleaseDate: normalizeScheduleDate(getAnimeScheduleOriginalReleaseDate(item), timeZone) || "",
       service: best?.service || "No legal platform",
       serviceUrl: hasAllowedPlatform ? normalizeUrl(best.url || "") : "",
       allServices: allowed.map((stream) => stream.service),
@@ -423,6 +425,69 @@ function normalizeSchedule(items, timeZone) {
   }
 
   return dedupeByEpisode(out).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+}
+
+function getAnimeScheduleSubReleaseDate(item) {
+  return firstDateValue(
+    item.subReleaseDate,
+    item.sub_release_date,
+    item.subEpisodeDate,
+    item.sub_episode_date,
+    item.subAirDate,
+    item.sub_air_date,
+    item.subAiringDate,
+    item.sub_airing_date,
+    item.subTimetable,
+    item.sub_timetable,
+    item.subDelayedTimetable,
+    item.sub_delayed_timetable,
+    item.subDelayedUntil,
+    item.sub_delayed_until,
+    item.releaseDate,
+    item.release_date,
+    item.episodeDate,
+    item.episode_date,
+    item.airDate,
+    item.air_date,
+    item.scheduledDate,
+    item.scheduled_date
+  );
+}
+
+function getAnimeScheduleOriginalReleaseDate(item) {
+  return firstDateValue(
+    item.originalReleaseDate,
+    item.original_release_date,
+    item.originalEpisodeDate,
+    item.original_episode_date,
+    item.expectedDate,
+    item.expected_date,
+    item.scheduledDate,
+    item.scheduled_date
+  );
+}
+
+function firstDateValue(...values) {
+  return values.find((value) => {
+    const raw = String(value || "").trim();
+    if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return false;
+    if (/^\d{4}-\d{2}-\d{2}(?:[T\s]\d{2}:\d{2})?/.test(raw)) return true;
+    return Number.isFinite(Date.parse(raw));
+  }) || "";
+}
+
+function normalizeScheduleDate(value, timeZone = "UTC") {
+  const raw = String(value || "").trim();
+  if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return "";
+  const isoish = raw.replace(" ", "T");
+  const hasZone = /(?:Z|[+-]\d{2}:?\d{2})$/i.test(isoish);
+  if (!hasZone && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(isoish)) {
+    try { return zonedLocalIsoToUtcIso(isoish, timeZone || "UTC"); } catch (_) {}
+  }
+  const parsed = Date.parse(raw);
+  if (Number.isFinite(parsed)) return new Date(parsed).toISOString();
+  const parsedIsoish = Date.parse(isoish);
+  return Number.isFinite(parsedIsoish) ? new Date(parsedIsoish).toISOString() : "";
 }
 
 function getStreams(item) {
@@ -468,8 +533,8 @@ function chooseBestStream(streams) {
 
 function isDelayed(item, timeZone) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
-  const releaseAt = Date.parse(item.episodeDate || item.episode_date || item.airDate || item.air_date || "");
-  const originalAt = parseRealDate(item.originalReleaseDate || item.original_release_date || item.scheduledDate || item.scheduled_date || item.expectedDate || item.expected_date);
+  const releaseAt = Date.parse(normalizeScheduleDate(getAnimeScheduleSubReleaseDate(item), timeZone));
+  const originalAt = parseRealDate(normalizeScheduleDate(getAnimeScheduleOriginalReleaseDate(item), timeZone));
   const changedDay = isLaterCalendarDay(releaseAt, originalAt, timeZone) ||
     isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil, timeZone) ||
     isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil, timeZone);

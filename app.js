@@ -1333,8 +1333,9 @@ function normalizeSchedule(items) {
   for (const item of items) {
     const airType = String(item.airType || item.air_type || "sub").toLowerCase();
     if (airType !== "sub") continue;
-    const releaseDate = item.episodeDate || item.episode_date || item.airDate || item.air_date;
-    if (!releaseDate) continue;
+    const releaseDate = getAnimeScheduleSubReleaseDate(item);
+    const normalizedReleaseDate = normalizeScheduleDate(releaseDate);
+    if (!normalizedReleaseDate) continue;
     const title = item.title || item.romaji || item.english || item.native || "Sin título";
     const episodeNumber = item.episodeNumber ?? item.episode_number ?? item.episode ?? "?";
     const streams = getStreams(item).map(normalizeStream).filter(Boolean);
@@ -1350,8 +1351,8 @@ function normalizeSchedule(items) {
       episodeNumber,
       airType: "SUB",
       delayed: isDelayed(item),
-      releaseDate: new Date(releaseDate).toISOString(),
-      originalReleaseDate: item.originalReleaseDate || item.original_release_date || item.scheduledDate || item.scheduled_date || item.expectedDate || item.expected_date || "",
+      releaseDate: normalizedReleaseDate,
+      originalReleaseDate: normalizeScheduleDate(getAnimeScheduleOriginalReleaseDate(item)) || "",
       service: best?.service || "No legal platform",
       serviceUrl: hasAllowedPlatform ? normalizeUrl(best.url || "") : "",
       allServices: allowed.map((stream) => stream.service),
@@ -1364,6 +1365,69 @@ function normalizeSchedule(items) {
     }));
   }
   return dedupeByEpisode(out);
+}
+
+function getAnimeScheduleSubReleaseDate(item) {
+  return firstDateValue(
+    item.subReleaseDate,
+    item.sub_release_date,
+    item.subEpisodeDate,
+    item.sub_episode_date,
+    item.subAirDate,
+    item.sub_air_date,
+    item.subAiringDate,
+    item.sub_airing_date,
+    item.subTimetable,
+    item.sub_timetable,
+    item.subDelayedTimetable,
+    item.sub_delayed_timetable,
+    item.subDelayedUntil,
+    item.sub_delayed_until,
+    item.releaseDate,
+    item.release_date,
+    item.episodeDate,
+    item.episode_date,
+    item.airDate,
+    item.air_date,
+    item.scheduledDate,
+    item.scheduled_date
+  );
+}
+
+function getAnimeScheduleOriginalReleaseDate(item) {
+  return firstDateValue(
+    item.originalReleaseDate,
+    item.original_release_date,
+    item.originalEpisodeDate,
+    item.original_episode_date,
+    item.expectedDate,
+    item.expected_date,
+    item.scheduledDate,
+    item.scheduled_date
+  );
+}
+
+function firstDateValue(...values) {
+  return values.find((value) => {
+    const raw = String(value || "").trim();
+    if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return false;
+    if (/^\d{4}-\d{2}-\d{2}(?:[T\s]\d{2}:\d{2})?/.test(raw)) return true;
+    return Number.isFinite(Date.parse(raw));
+  }) || "";
+}
+
+function normalizeScheduleDate(value) {
+  const raw = String(value || "").trim();
+  if (!raw || raw.startsWith("0001-") || raw.startsWith("0002-")) return "";
+  const isoish = raw.replace(" ", "T");
+  const hasZone = /(?:Z|[+-]\d{2}:?\d{2})$/i.test(isoish);
+  if (!hasZone && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(isoish)) {
+    try { return zonedLocalIsoToUtcIso(isoish, getSelectedTimezone()); } catch (_) {}
+  }
+  const parsed = Date.parse(raw);
+  if (Number.isFinite(parsed)) return new Date(parsed).toISOString();
+  const parsedIsoish = Date.parse(isoish);
+  return Number.isFinite(parsedIsoish) ? new Date(parsedIsoish).toISOString() : "";
 }
 
 function getStreams(item) { if (Array.isArray(item.streams)) return item.streams; if (Array.isArray(item.websites?.streams)) return item.websites.streams; if (Array.isArray(item.website?.streams)) return item.website.streams; return []; }
@@ -1654,8 +1718,8 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
 }
 function isDelayed(item) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
-  const releaseAt = Date.parse(item.episodeDate || item.episode_date || item.airDate || item.air_date || item.releaseDate || item.release_date || "");
-  const originalAt = parseRealDate(item.originalReleaseDate || item.original_release_date || item.scheduledDate || item.scheduled_date || item.expectedDate || item.expected_date);
+  const releaseAt = Date.parse(normalizeScheduleDate(getAnimeScheduleSubReleaseDate(item)));
+  const originalAt = parseRealDate(normalizeScheduleDate(getAnimeScheduleOriginalReleaseDate(item)));
   const changedDay = isLaterCalendarDay(releaseAt, originalAt) ||
     isActiveDelayRange(releaseAt, item.delayedFrom, item.delayedUntil) ||
     isActiveDelayRange(releaseAt, item.subDelayedFrom, item.subDelayedUntil) ||
@@ -1957,10 +2021,8 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
   for (const titleKey of buildTitleKeys(media.titles || [media.title])) state.anilistMap[titleKey] = media;
   state.releases = state.releases.map((item) => {
     if (getSeriesKey(item) !== seriesKey) return item;
-    const timing = getPublicAnilistTimingCorrection(item, media);
     return {
       ...item,
-      ...timing,
       anilistId: media.anilistId || item.anilistId,
       anilistTitle: media.title || item.anilistTitle,
       anilistUrl: media.siteUrl || item.anilistUrl,
@@ -1980,29 +2042,8 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
 
 function getSharedSubReleaseDate(row) {
   const original = row.originalReleaseDate || row.original_release_date || "";
-  if (row.correctedByAniList && original && !row.anilistDayCorrection) return original;
+  if (row.correctedByAniList && original) return original;
   return row.release_date || row.releaseDate || "";
-}
-
-function getPublicAnilistTimingCorrection(item, media) {
-  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-  const mediaEpisode = parseEpisodeNumber(media.episodeNumber ?? media.episode);
-  const mediaTime = Date.parse(media.releaseDate || "");
-  if (!Number.isFinite(mediaEpisode) || !Number.isFinite(mediaTime)) return {};
-  const itemTime = Date.parse(item.releaseDate || "");
-  if (!Number.isFinite(itemTime)) return {};
-  const sameEpisode = Number.isFinite(itemEpisode) && itemEpisode === mediaEpisode;
-  const suspiciousPremiere = Number.isFinite(itemEpisode) && itemEpisode === 1 && mediaEpisode > 1 && getSeriesMatchScore(item, media) >= 0.9;
-  if (!sameEpisode && !suspiciousPremiere) return {};
-  const changedCalendarDay = !isSameCalendarDay(mediaTime, itemTime);
-  const correctedDate = changedCalendarDay ? replaceCalendarDayKeepTime(itemTime, mediaTime) : item.releaseDate;
-  return {
-    ...(suspiciousPremiere ? { episode: media.episode || `Ep ${mediaEpisode}`, episodeNumber: media.episodeNumber ?? mediaEpisode } : {}),
-    releaseDate: correctedDate,
-    delayed: changedCalendarDay || Boolean(item.delayed),
-    originalReleaseDate: changedCalendarDay ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
-    anilistDayCorrection: changedCalendarDay || Boolean(item.anilistDayCorrection)
-  };
 }
 
 function getAnilistStreams(media) {
