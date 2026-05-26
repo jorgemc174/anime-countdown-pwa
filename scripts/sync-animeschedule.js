@@ -97,13 +97,9 @@ async function applyAnilistCorrections(releases, timeZone) {
         corrected++;
         continue;
       }
-      const releaseTime = Date.parse(release.releaseDate);
-      const nextTime = Date.parse(next?.airingAt ? new Date(next.airingAt * 1000).toISOString() : "");
       const canCorrectEpisode = Number.isFinite(releaseEpisode) && Number.isFinite(nextEpisode) &&
         releaseEpisode === 1 && nextEpisode > 1 && strongTitleMatch;
-      const canCorrectDelayDay = Number.isFinite(releaseEpisode) && releaseEpisode === nextEpisode &&
-        Number.isFinite(releaseTime) && Number.isFinite(nextTime) && isLaterCalendarDay(nextTime, releaseTime, timeZone);
-      if (!media || (!canCorrectEpisode && !canCorrectDelayDay && !media.id)) {
+      if (!media || (!canCorrectEpisode && !media.id)) {
         out.push(release);
         continue;
       }
@@ -112,17 +108,11 @@ async function applyAnilistCorrections(releases, timeZone) {
       out.push({
         ...release,
         ...(canCorrectEpisode ? { episode: `Ep ${nextEpisode}`, episodeNumber: String(nextEpisode) } : {}),
-        ...(canCorrectDelayDay ? {
-          releaseDate: replaceCalendarDayKeepTime(releaseTime, nextTime, timeZone),
-          delayed: true,
-          originalReleaseDate: release.originalReleaseDate || release.releaseDate,
-          anilistDayCorrection: true
-        } : {}),
         anilistId: media.id,
         anilistTitle: media.title?.romaji || media.title?.english || release.title,
         anilistUrl: media.siteUrl || "",
         coverUrl: media.coverImage?.large || media.coverImage?.medium || release.coverUrl,
-        correctedByAniList: (canCorrectEpisode || canCorrectDelayDay) || undefined
+        correctedByAniList: canCorrectEpisode || undefined
       });
     }
   }
@@ -241,16 +231,19 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
   const query = `query ($page: Int, $season: MediaSeason, $year: Int) {
     Page(page: $page, perPage: 50) {
       pageInfo { hasNextPage }
-      media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC) {
+      media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC, isAdult: false) {
         id
         title { romaji english native }
         synonyms
         format
+        genres
+        isAdult
         coverImage { large medium }
         siteUrl
         averageScore
         meanScore
         nextAiringEpisode { episode airingAt }
+        tags { name isAdult rank }
         externalLinks { site url type }
         streamingEpisodes { site url title thumbnail }
       }
@@ -293,6 +286,9 @@ function mapPublicAnilistMedia(media) {
     coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
     siteUrl: media.siteUrl || "",
     anilistFormat: media.format || "",
+    isAdult: Boolean(media.isAdult),
+    genres: media.genres || [],
+    tags: media.tags || [],
     anilistScore: normalizeAnilistScore(media.averageScore, media.meanScore),
     episode: media.nextAiringEpisode?.episode ? `Ep ${media.nextAiringEpisode.episode}` : "",
     episodeNumber: media.nextAiringEpisode?.episode || null,
@@ -637,10 +633,24 @@ function scoreItem(item) {
 
 function isSchedulableItem(item) {
   const ep = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  if (item.isAdult || hasAdultAnilistTag(item)) return false;
+  const format = String(item.anilistFormat || item.format || "").toUpperCase();
+  if (format && !["TV", "TV_SHORT", "ONA"].includes(format)) return false;
   const haystack = `${item.title || ""} ${item.route || ""} ${item.animeKey || ""} ${item.anilistFormat || ""}`.toLowerCase();
   if (Number.isFinite(ep) && ep === 1 && (haystack.includes("movie") || haystack.includes("gekijouban") || haystack.includes("film"))) return false;
-  if (Number.isFinite(ep) && ep === 1 && String(item.anilistFormat || "").toUpperCase() === "MOVIE") return false;
   return true;
+}
+
+function hasAdultAnilistTag(item) {
+  const blocked = ["hentai", "ecchi", "nudity", "sexual", "erotica", "incest"];
+  const genres = Array.isArray(item.genres) ? item.genres : [];
+  const tags = Array.isArray(item.tags) ? item.tags : [];
+  if (genres.some((genre) => blocked.includes(String(genre || "").toLowerCase()))) return true;
+  return tags.some((tag) => {
+    const name = String(tag?.name || tag || "").toLowerCase();
+    const rank = Number(tag?.rank || 0);
+    return tag?.isAdult === true || (rank >= 40 && blocked.some((word) => name.includes(word)));
+  });
 }
 
 function normalizeAnilistScore(...scores) {

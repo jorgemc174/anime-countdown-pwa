@@ -1869,7 +1869,7 @@ async function fetchPublicAnilistCatalog() {
 }
 
 async function fetchAnilistSeasonPage({ season, year }, page) {
-  const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC) { id title { romaji english native } synonyms format coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
+  const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC, isAdult: false) { id title { romaji english native } synonyms format genres isAdult coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } tags { name isAdult rank } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
   const variables = { page, season: String(season || "").toUpperCase(), year };
   let response;
   try {
@@ -1938,6 +1938,9 @@ function mapPublicAnilistMedia(media) {
     coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
     siteUrl: media.siteUrl || "",
     anilistFormat: media.format || "",
+    isAdult: Boolean(media.isAdult),
+    genres: media.genres || [],
+    tags: media.tags || [],
     anilistScore: normalizeAnilistScore(media.averageScore, media.meanScore),
     episode: media.nextAiringEpisode?.episode ? `Ep ${media.nextAiringEpisode.episode}` : "",
     episodeNumber: media.nextAiringEpisode?.episode || null,
@@ -2103,15 +2106,10 @@ function applyAnilistToReleases() { state.releases = mergeDuplicateItems(state.r
 function getAnilistOverride(item, match) {
   const nextTime = Date.parse(getAnilistAiringDate(match));
   const itemTime = Date.parse(item.releaseDate || "");
-  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-  const matchEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
   const canOverrideTiming = item.source === "anilist-library";
-  const canCorrectScheduleTiming = canApplyAnilistDayCorrection(item, match, itemEpisode, matchEpisode, itemTime, nextTime);
   const matchHasPlatform = Boolean(match.hasAllowedPlatform && match.service && match.service !== "AniList");
-  const delayedByDate = (canOverrideTiming || canCorrectScheduleTiming) && !isSameCalendarDay(nextTime, itemTime);
-  const correctedReleaseDate = canCorrectScheduleTiming
-    ? replaceCalendarDayKeepTime(itemTime, nextTime)
-    : (canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate);
+  const delayedByDate = canOverrideTiming && !isSameCalendarDay(nextTime, itemTime);
+  const correctedReleaseDate = canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate;
   const override = {
     title: match.title || item.title,
     episode: canOverrideTiming ? (match.episode || item.episode) : item.episode,
@@ -2119,7 +2117,6 @@ function getAnilistOverride(item, match) {
     releaseDate: correctedReleaseDate,
     delayed: delayedByDate || Boolean(item.delayed),
     originalReleaseDate: delayedByDate ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
-    anilistDayCorrection: canCorrectScheduleTiming || Boolean(item.anilistDayCorrection),
     source: item.source === "shared-json" ? "shared-json+anilist" : item.source
   };
   if (matchHasPlatform) {
@@ -2136,13 +2133,6 @@ function getAnilistOverride(item, match) {
 }
 function getAnilistAiringDate(match) {
   return match?.releaseDate || match?.anilistAiringDate || "";
-}
-function canApplyAnilistDayCorrection(item, match, itemEpisode, matchEpisode, itemTime, nextTime) {
-  if (!match || item.source === "anilist-library") return false;
-  if (!String(item.source || "").startsWith("shared-json") && item.source !== "animeschedule-api") return false;
-  if (!Number.isFinite(itemEpisode) || !Number.isFinite(matchEpisode) || itemEpisode !== matchEpisode) return false;
-  if (!Number.isFinite(itemTime) || !Number.isFinite(nextTime) || isSameCalendarDay(itemTime, nextTime)) return false;
-  return getSeriesMatchScore(item, match) >= 0.78;
 }
 function parseEpisodeNumber(value) {
   const match = String(value ?? "").match(/\d+(?:\.\d+)?/);
@@ -2704,7 +2694,7 @@ function adjustDelayedDates(items) {
     return { ...item, releaseDate: shifted.toISOString() };
   });
 }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return sortByDate(adjustDelayedDates(getFavoriteItems()).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems())); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
@@ -2717,6 +2707,7 @@ function getDisplayService(item) {
 function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
 function getCatalogItems() { return mergeDuplicateItems(state.releases); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function getTodayItems(items) { return sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); }
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
@@ -2743,11 +2734,24 @@ function sortByDate(items) { return [...items].sort((a,b)=>new Date(a.releaseDat
 function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
 function isSchedulableItem(item) {
   if (item.excludeFromSchedule) return false;
+  if (item.isAdult || hasAdultAnilistTag(item)) return false;
   const ep = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const format = String(item.anilistFormat || item.format || "").toUpperCase();
+  if (format && !["TV", "TV_SHORT", "ONA"].includes(format)) return false;
   const haystack = `${item.title || ""} ${item.route || ""} ${item.animeKey || ""} ${item.anilistFormat || ""}`.toLowerCase();
   if (Number.isFinite(ep) && ep === 1 && (haystack.includes("movie") || haystack.includes("gekijouban") || haystack.includes("film"))) return false;
-  if (Number.isFinite(ep) && ep === 1 && String(item.anilistFormat || "").toUpperCase() === "MOVIE") return false;
   return true;
+}
+function hasAdultAnilistTag(item) {
+  const blocked = ["hentai", "ecchi", "nudity", "sexual", "erotica", "incest"];
+  const genres = Array.isArray(item.genres) ? item.genres : [];
+  const tags = Array.isArray(item.tags) ? item.tags : [];
+  if (genres.some((genre) => blocked.includes(String(genre || "").toLowerCase()))) return true;
+  return tags.some((tag) => {
+    const name = String(tag?.name || tag || "").toLowerCase();
+    const rank = Number(tag?.rank || 0);
+    return tag?.isAdult === true || (rank >= 40 && blocked.some((word) => name.includes(word)));
+  });
 }
 function getAllItems() { return [...state.releases, ...state.anilistLibrary]; }
 function findItemById(id) { return getAllItems().find(item=>item.id===id); }
