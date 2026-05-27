@@ -82,6 +82,7 @@ const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/"
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
+const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
@@ -1128,6 +1129,7 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
 
 async function fetchSharedSchedule() {
   const now = new Date();
+  const recentSince = now.getTime() - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000;
   const until = new Date(now.getTime() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000);
   const url = withCacheBuster(SHARED_SCHEDULE_URL);
   const response = await fetch(url, { cache: "no-store", headers: { accept: "application/json" } });
@@ -1146,7 +1148,7 @@ async function fetchSharedSchedule() {
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt) || releaseAt > until.getTime()) return false;
-    return releaseAt >= now.getTime() || isToday(releaseDate);
+    return releaseAt >= recentSince;
   });
 }
 
@@ -2735,7 +2737,7 @@ function adjustDelayedDates(items) {
     return { ...item, releaseDate: shifted.toISOString() };
   });
 }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems())); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneRelevantPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems())); return getOneRelevantPerSeries(adjustDelayedDates(getCatalogItems())); }
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
@@ -2748,6 +2750,7 @@ function getDisplayService(item) {
 function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
 function getCatalogItems() { return mergeDuplicateItems(state.releases); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function getOneRelevantPerSeries(items) { const now = Date.now(); const recentSince = now - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000; const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { const time = Date.parse(item.releaseDate || ""); if(!Number.isFinite(time) || time < recentSince) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const future=eps.filter(item => Date.parse(item.releaseDate || "") > now).sort((a,b)=>Date.parse(a.releaseDate)-Date.parse(b.releaseDate)); if(future.length) result.push(future[0]); else result.push(eps.sort((a,b)=>Date.parse(b.releaseDate)-Date.parse(a.releaseDate))[0]); } return sortRelevantByDate(result); }
 function getTodayItems(items) { return sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); }
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
@@ -2772,6 +2775,7 @@ function mergeDuplicateItems(items) { const map=new Map(); for(const item of ite
 function mergeItem(win, lose={}) { return { ...win, favorite:Boolean(win.favorite||lose.favorite), coverUrl:win.coverUrl||lose.coverUrl||"", serviceUrl:win.serviceUrl||lose.serviceUrl||"", allServices:win.allServices?.length ? win.allServices : (lose.allServices || []), hasAllowedPlatform:Boolean(win.hasAllowedPlatform||lose.hasAllowedPlatform), customUrl:win.customUrl||lose.customUrl||"", customPlatformName:win.customPlatformName||lose.customPlatformName||"", anilistId:win.anilistId||lose.anilistId, anilistTitle:win.anilistTitle||lose.anilistTitle, anilistUrl:win.anilistUrl||lose.anilistUrl, anilistScore:win.anilistScore ?? lose.anilistScore }; }
 function scoreItem(item) { let s=0; if(item.customUrl)s+=100; if(item.serviceUrl)s+=85; if(item.service==="Crunchyroll")s+=80; if(item.service==="Netflix")s+=60; if(item.service==="Prime Video")s+=50; if(item.source==="animeschedule-api")s+=40; if(item.coverUrl)s+=10; if(item.favorite)s+=5; if(item.source==="anilist-library")s-=20; return s; }
 function sortByDate(items) { return [...items].sort((a,b)=>new Date(a.releaseDate||"9999-12-31")-new Date(b.releaseDate||"9999-12-31")); }
+function sortRelevantByDate(items) { const now = Date.now(); return [...items].sort((a,b)=>{ const at=Date.parse(a.releaseDate||""), bt=Date.parse(b.releaseDate||""); const af=Number.isFinite(at)&&at>now, bf=Number.isFinite(bt)&&bt>now; if(af!==bf) return af ? -1 : 1; if(af) return at-bt; return bt-at; }); }
 function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
 function isSchedulableItem(item) {
   if (item.excludeFromSchedule) return false;
