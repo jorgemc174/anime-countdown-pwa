@@ -50,6 +50,12 @@ async function main() {
   }
   let source = shouldEnrichWithAnilist ? "AnimeSchedule+AniList" : "AnimeSchedule";
 
+  if (releases.length && process.env.INCLUDE_ANILIST_MISSING !== "false") {
+    const before = releases.length;
+    releases = await appendMissingAnilistReleases(releases);
+    if (releases.length > before) source = "AnimeSchedule+AniList";
+  }
+
   if (!releases.length && process.env.ALLOW_ANILIST_FALLBACK === "true") {
     console.warn("AnimeSchedule no devolvio episodios validos; generando schedule.json desde AniList por ALLOW_ANILIST_FALLBACK=true.");
     releases = await fetchPublicAnilistSchedule();
@@ -232,7 +238,7 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
   const query = `query ($page: Int, $season: MediaSeason, $year: Int) {
     Page(page: $page, perPage: 50) {
       pageInfo { hasNextPage }
-      media(type: ANIME, season: $season, seasonYear: $year, status: RELEASING, sort: POPULARITY_DESC, isAdult: false) {
+        media(type: ANIME, season: $season, seasonYear: $year, status_in: [RELEASING, NOT_YET_RELEASED], sort: POPULARITY_DESC, isAdult: false) {
         id
         title { romaji english native }
         synonyms
@@ -306,7 +312,7 @@ function mapPublicAnilistRelease(media) {
   const episodeNumber = media.episodeNumber || parseEpisodeNumber(media.episode) || "?";
   const title = media.title || "Sin titulo";
   return {
-    id: stableId("public-anilist", media.anilistId || title, episodeNumber, releaseDate),
+    id: stableId("anilist-missing", media.anilistId || title, episodeNumber, releaseDate),
     animeKey: stableId(title),
     anilistId: media.anilistId,
     anilistTitle: title,
@@ -326,7 +332,7 @@ function mapPublicAnilistRelease(media) {
     serviceUrl: normalizeUrl(media.serviceUrl || media.siteUrl || ""),
     allServices: media.allServices || [],
     hasAllowedPlatform: Boolean(media.hasAllowedPlatform),
-    source: "public-anilist",
+    source: "anilist-missing",
     favorite: false,
     coverUrl: normalizeUrl(media.coverUrl || "")
   };
@@ -426,6 +432,18 @@ function normalizeSchedule(items, timeZone) {
   }
 
   return dedupeByEpisode(out).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+}
+
+async function appendMissingAnilistReleases(baseReleases) {
+  const anilistReleases = await fetchPublicAnilistSchedule();
+  const until = Date.now() + Number(process.env.PUBLIC_ANILIST_DAYS || process.env.SYNC_INFER_DAYS || "60") * 24 * 60 * 60 * 1000;
+  const missing = anilistReleases
+    .filter((item) => Date.parse(item.releaseDate || "") <= until)
+    .filter((item) => !hasScheduledSeriesMatch(item, baseReleases))
+    .map((item) => ({ ...item, source: "anilist-missing", id: stableId("anilist-missing", item.anilistId || item.title, item.episodeNumber, item.releaseDate) }));
+
+  if (missing.length) console.log(`AniList anadio ${missing.length} animes que no estaban en AnimeSchedule.`);
+  return dedupeByEpisode(baseReleases.concat(missing)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 }
 
 function appendInferredNextScheduleRows(rows, timeZone) {
@@ -735,6 +753,22 @@ function dedupeByEpisode(items) {
     if (!current || scoreItem(item) > scoreItem(current)) map.set(key, item);
   }
   return [...map.values()];
+}
+
+function hasScheduledSeriesMatch(item, scheduledItems) {
+  return scheduledItems.some((release) => {
+    if (stableId(release.animeKey || release.route || release.title) === stableId(item.animeKey || item.route || item.title)) return true;
+    return getSeriesMatchScore(release, item) >= 0.78;
+  });
+}
+
+function getSeriesMatchScore(a, b) {
+  if (a.anilistId && b.anilistId && String(a.anilistId) === String(b.anilistId)) return 1;
+  const aTitles = [a.title, a.anilistTitle, a.route, a.animeKey, ...(a.titles || [])].filter(Boolean);
+  const bTitles = [b.title, b.anilistTitle, b.route, b.animeKey, ...(b.titles || [])].filter(Boolean);
+  let best = 0;
+  for (const left of aTitles) for (const right of bTitles) best = Math.max(best, titleSimilarityScore(left, right));
+  return best;
 }
 
 function getEpisodeKey(item) {
