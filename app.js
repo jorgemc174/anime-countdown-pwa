@@ -1144,13 +1144,14 @@ async function fetchSharedSchedule() {
     throw new Error("La respuesta del horario compartido no es JSON válido.");
   }
   const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
-  return rows.filter((row) => {
+  const filtered = rows.filter((row) => {
     if (!isAnimeScheduleBackedRow(row, json)) return false;
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt) || releaseAt > until.getTime()) return false;
     return releaseAt >= recentSince;
   });
+  return appendInferredNextScheduleRows(filtered, now, until);
 }
 
 function isAnimeScheduleBackedRow(row, payload) {
@@ -1181,11 +1182,65 @@ function mapSharedRelease(row) {
     allServices: row.all_services || row.allServices || [],
     hasAllowedPlatform: row.has_allowed_platform ?? row.hasAllowedPlatform ?? Boolean(row.service_url || row.serviceUrl),
     source: "shared-json",
+    inferredFromAnimeSchedule: Boolean(row.inferredFromAnimeSchedule || row.inferred_from_animeschedule),
     favorite: false,
     coverUrl: normalizeUrl(row.cover_url || row.coverUrl || ""),
     customUrl: "",
     customPlatformName: ""
   });
+}
+
+function appendInferredNextScheduleRows(rows, now = new Date(), until = new Date(Date.now() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000)) {
+  const nowMs = now.getTime();
+  const untilMs = until.getTime();
+  const groups = new Map();
+
+  for (const row of rows) {
+    const releaseDate = getSharedSubReleaseDate(row);
+    const releaseAt = Date.parse(releaseDate);
+    if (!Number.isFinite(releaseAt)) continue;
+    const key = getSharedSeriesKey(row);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push({ row, releaseAt });
+  }
+
+  const inferred = [];
+  for (const group of groups.values()) {
+    if (group.some((entry) => entry.releaseAt > nowMs)) continue;
+    const latest = group.sort((a, b) => b.releaseAt - a.releaseAt)[0];
+    if (!latest) continue;
+    const episode = parseEpisodeNumber(latest.row.episodeNumber ?? latest.row.episode_number ?? latest.row.episode);
+    if (!Number.isFinite(episode)) continue;
+
+    let nextAt = latest.releaseAt;
+    let nextEpisode = episode;
+    do {
+      nextAt += 7 * 24 * 60 * 60 * 1000;
+      nextEpisode += 1;
+    } while (nextAt <= nowMs);
+    if (nextAt > untilMs) continue;
+
+    const nextDate = new Date(nextAt).toISOString();
+    inferred.push({
+      ...latest.row,
+      id: stableId("schedule-inferred", latest.row.animeKey || latest.row.anime_key || latest.row.title, nextEpisode, nextDate),
+      episode: `Ep ${nextEpisode}`,
+      episodeNumber: String(nextEpisode),
+      episode_number: String(nextEpisode),
+      releaseDate: nextDate,
+      release_date: nextDate,
+      originalReleaseDate: "",
+      original_release_date: "",
+      delayed: false,
+      inferredFromAnimeSchedule: true
+    });
+  }
+
+  return rows.concat(inferred);
+}
+
+function getSharedSeriesKey(row) {
+  return stableId(row.animeKey || row.anime_key || row.route || row.title || row.anilistTitle || row.anilist_title);
 }
 
 function preserveExistingAnimeData(item) {

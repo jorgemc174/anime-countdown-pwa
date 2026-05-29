@@ -40,7 +40,7 @@ async function main() {
     rawItems.push(...extractArray(data));
   }
 
-  const normalized = normalizeSchedule(rawItems, timezone);
+  const normalized = appendInferredNextScheduleRows(normalizeSchedule(rawItems, timezone), timezone);
   const shouldEnrichWithAnilist = process.env.ANILIST_VERIFY === "true";
   let releases = [];
   if (normalized.length) {
@@ -426,6 +426,60 @@ function normalizeSchedule(items, timeZone) {
   }
 
   return dedupeByEpisode(out).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+}
+
+function appendInferredNextScheduleRows(rows, timeZone) {
+  const now = Date.now();
+  const until = now + Number(process.env.SYNC_INFER_DAYS || "45") * 24 * 60 * 60 * 1000;
+  const groups = new Map();
+
+  for (const row of rows) {
+    const releaseAt = Date.parse(row.releaseDate || "");
+    if (!Number.isFinite(releaseAt)) continue;
+    const key = stableId(row.animeKey || row.route || row.title);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push({ row, releaseAt });
+  }
+
+  const inferred = [];
+  for (const group of groups.values()) {
+    if (group.some((entry) => entry.releaseAt > now)) continue;
+    const latest = group.sort((a, b) => b.releaseAt - a.releaseAt)[0];
+    if (!latest || !isRecentRelease(latest.releaseAt, timeZone)) continue;
+    const episode = parseEpisodeNumber(latest.row.episodeNumber ?? latest.row.episode);
+    if (!Number.isFinite(episode)) continue;
+
+    let nextAt = latest.releaseAt;
+    let nextEpisode = episode;
+    do {
+      nextAt += 7 * 24 * 60 * 60 * 1000;
+      nextEpisode += 1;
+    } while (nextAt <= now);
+    if (nextAt > until) continue;
+
+    const releaseDate = new Date(nextAt).toISOString();
+    inferred.push({
+      ...latest.row,
+      id: stableId("schedule-inferred", latest.row.animeKey || latest.row.title, nextEpisode, releaseDate),
+      episode: `Ep ${nextEpisode}`,
+      episodeNumber: String(nextEpisode),
+      releaseDate,
+      originalReleaseDate: "",
+      delayed: false,
+      inferredFromAnimeSchedule: true
+    });
+  }
+
+  if (inferred.length) console.log(`Episodios siguientes inferidos desde horario SUB de AnimeSchedule: ${inferred.length}.`);
+  return dedupeByEpisode(rows.concat(inferred)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+}
+
+function isRecentRelease(releaseAt, timeZone) {
+  const recentDays = Number(process.env.RECENT_RELEASE_DAYS || "7");
+  if (releaseAt < Date.now() - recentDays * 24 * 60 * 60 * 1000) return false;
+  const releaseDay = getCalendarDayKey(releaseAt, timeZone);
+  const today = getCalendarDayKey(Date.now(), timeZone);
+  return Boolean(releaseDay && today && releaseDay <= today);
 }
 
 function getAnimeScheduleSubReleaseDate(item) {
