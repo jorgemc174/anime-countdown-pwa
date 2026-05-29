@@ -12,15 +12,14 @@ La PWA lee `schedule.json`, un archivo compartido que GitHub Actions puede actua
 
 El token no se publica en la app. Solo se guarda el resultado ya normalizado en `schedule.json`.
 
-El generador tambien consulta AniList de forma publica para corregir retrasos cuando encuentra el mismo anime y el mismo numero de episodio. Si AniList tiene una fecha distinta, `schedule.json` guarda esa fecha corregida para todos los usuarios.
+El generador usa AnimeSchedule como fuente de horarios SUB. AniList solo debe usarse para metadatos de la app, no para sustituir horas de emisión. Si falta `ANIMESCHEDULE_TOKEN` o AnimeSchedule no devuelve episodios validos, la actualización falla para evitar publicar horarios de AniList como si fueran oficiales de AnimeSchedule.
 
 Versión web instalable en móvil de la extensión.
 
 ## Qué mantiene
 
-- AnimeSchedule para confirmar plataforma y hora cercana.
-- AniList para detectar próximos capítulos.
-- Episodios inferidos cuando AniList confirma siguiente capítulo.
+- AnimeSchedule para horarios SUB y plataforma.
+- AniList para metadatos, notas y favoritos.
 - Favoritos.
 - Links/plataformas personalizados por serie.
 - Cuenta atrás con segundos.

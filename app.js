@@ -1145,11 +1145,20 @@ async function fetchSharedSchedule() {
   }
   const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
   return rows.filter((row) => {
+    if (!isAnimeScheduleBackedRow(row, json)) return false;
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt) || releaseAt > until.getTime()) return false;
     return releaseAt >= recentSince;
   });
+}
+
+function isAnimeScheduleBackedRow(row, payload) {
+  const payloadSource = String(payload?.source || "").toLowerCase();
+  const rowSource = String(row?.source || "").toLowerCase();
+  if (payloadSource && !payloadSource.includes("animeschedule")) return false;
+  if (rowSource && (rowSource.includes("public-anilist") || rowSource === "anilist")) return false;
+  return true;
 }
 
 function mapSharedRelease(row) {
@@ -2737,7 +2746,7 @@ function adjustDelayedDates(items) {
     return { ...item, releaseDate: shifted.toISOString() };
   });
 }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneRelevantPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems())); return getOneRelevantPerSeries(adjustDelayedDates(getCatalogItems())); }
+function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getCatalogItems())); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
@@ -2750,7 +2759,6 @@ function getDisplayService(item) {
 function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
 function getCatalogItems() { return mergeDuplicateItems(state.releases); }
 function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
-function getOneRelevantPerSeries(items) { const now = Date.now(); const recentSince = now - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000; const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { const time = Date.parse(item.releaseDate || ""); if(!Number.isFinite(time) || time < recentSince) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const future=eps.filter(item => Date.parse(item.releaseDate || "") > now).sort((a,b)=>Date.parse(a.releaseDate)-Date.parse(b.releaseDate)); if(future.length) result.push(future[0]); else { const today=eps.filter(item => isToday(item.releaseDate)).sort((a,b)=>Date.parse(b.releaseDate)-Date.parse(a.releaseDate)); if(today.length) result.push(today[0]); } } return sortRelevantByDate(result); }
 function getTodayItems(items) { return sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); }
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
@@ -2889,7 +2897,7 @@ function renderNextModern() {
 
 function getNextHighlightItems() {
   if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
-  if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
+  if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getCatalogItems()));
   return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
 }
 

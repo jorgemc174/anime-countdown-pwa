@@ -17,46 +17,47 @@ async function main() {
   const rawItems = [];
 
   if (!token) {
-    console.warn("ANIMESCHEDULE_TOKEN no configurado; se usara AniList como fuente principal.");
-  } else {
-    for (const week of getNextWeeks(weeks)) {
-      const response = await fetchAnimeScheduleWeekWithRetry(week, timezone, token);
-      if (!response) {
-        console.warn(`No se pudo leer ${week.year} semana ${week.week}; se continua con el resto.`);
-        continue;
-      }
-      if (response.status === 404) {
-        console.warn(`Sin datos para ${week.year} semana ${week.week}`);
-        continue;
-      }
-      if (!response.ok) {
-        const body = await response.text();
-        console.warn(`AnimeSchedule ${response.status} en ${week.year} semana ${week.week}: ${body.slice(0, 200)}`);
-        continue;
-      }
+    throw new Error("ANIMESCHEDULE_TOKEN no configurado; no se genera una agenda con horas de AniList.");
+  }
 
-      const data = await response.json();
-      rawItems.push(...extractArray(data));
+  for (const week of getNextWeeks(weeks)) {
+    const response = await fetchAnimeScheduleWeekWithRetry(week, timezone, token);
+    if (!response) {
+      console.warn(`No se pudo leer ${week.year} semana ${week.week}; se continua con el resto.`);
+      continue;
     }
+    if (response.status === 404) {
+      console.warn(`Sin datos para ${week.year} semana ${week.week}`);
+      continue;
+    }
+    if (!response.ok) {
+      const body = await response.text();
+      console.warn(`AnimeSchedule ${response.status} en ${week.year} semana ${week.week}: ${body.slice(0, 200)}`);
+      continue;
+    }
+
+    const data = await response.json();
+    rawItems.push(...extractArray(data));
   }
 
   const normalized = normalizeSchedule(rawItems, timezone);
+  const shouldEnrichWithAnilist = process.env.ANILIST_VERIFY === "true";
   let releases = [];
   if (normalized.length) {
-    releases = process.env.ANILIST_VERIFY === "false"
-      ? normalized
-      : await applyAnilistCorrections(normalized, timezone);
+    releases = shouldEnrichWithAnilist
+      ? await applyAnilistCorrections(normalized, timezone)
+      : normalized;
   }
-  let source = process.env.ANILIST_VERIFY === "false" ? "AnimeSchedule" : "AnimeSchedule+AniList";
+  let source = shouldEnrichWithAnilist ? "AnimeSchedule+AniList" : "AnimeSchedule";
 
-  if (!releases.length) {
-    console.warn("AnimeSchedule no devolvio episodios validos; generando schedule.json desde AniList.");
+  if (!releases.length && process.env.ALLOW_ANILIST_FALLBACK === "true") {
+    console.warn("AnimeSchedule no devolvio episodios validos; generando schedule.json desde AniList por ALLOW_ANILIST_FALLBACK=true.");
     releases = await fetchPublicAnilistSchedule();
     source = "AniList";
   }
 
   if (!releases.length) {
-    throw new Error("No se pudo generar schedule.json: AnimeSchedule y AniList devolvieron 0 episodios.");
+    throw new Error("No se pudo generar schedule.json: AnimeSchedule devolvio 0 episodios SUB validos.");
   }
 
   const payload = {
