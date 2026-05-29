@@ -143,7 +143,7 @@ async function init() {
     startNotificationScheduler();
     startAnilistAutoRefresh();
     startPublicAnilistAutoRefresh();
-    await refreshSharedSchedule({ silent: true });
+    await refreshSharedSchedule({ silent: true, force: true });
     setupCapacitorNotificationTap();
   } catch (error) {
     showFatal(error);
