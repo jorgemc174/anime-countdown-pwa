@@ -9,6 +9,7 @@ const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/"
 const OUT_FILE = path.resolve(__dirname, "..", "schedule.json");
 const SERVICE_PRIORITY = { Crunchyroll: 1, Netflix: 2, "Prime Video": 3, "No legal platform": 99 };
 const ANILIST_REQUEST_DELAY_MS = Number(process.env.ANILIST_REQUEST_DELAY_MS || "250");
+const ANILIST_AIRING_MAX_PAGES = Number(process.env.ANILIST_AIRING_MAX_PAGES || process.env.ANILIST_CATALOG_MAX_PAGES || "20");
 
 async function main() {
   const token = process.env.ANIMESCHEDULE_TOKEN;
@@ -207,23 +208,21 @@ async function searchAnilist(search) {
 }
 
 async function fetchPublicAnilistSchedule() {
-  const seasons = [getCurrentSeason(), getNextSeason(getCurrentSeason())];
   const releases = [];
   const seen = new Set();
+  const now = Math.floor(Date.now() / 1000);
 
-  for (const seasonInfo of seasons) {
-    for (let page = 1; page <= 3; page++) {
-      const chunk = await fetchAnilistSeasonPage(seasonInfo, page);
-      for (const media of chunk.items) {
-        if (!media?.anilistId || seen.has(media.anilistId)) continue;
-        seen.add(media.anilistId);
-        if (!Number.isFinite(Date.parse(media.releaseDate || ""))) continue;
-        if (!isSchedulableItem(media)) continue;
-        releases.push(mapPublicAnilistRelease(media));
-      }
-      if (!chunk.hasNextPage) break;
-      await wait(ANILIST_REQUEST_DELAY_MS);
+  for (let page = 1; page <= ANILIST_AIRING_MAX_PAGES; page++) {
+    const chunk = await fetchAnilistAiringPage(page, now);
+    for (const media of chunk.items) {
+      if (!media?.anilistId || seen.has(media.anilistId)) continue;
+      seen.add(media.anilistId);
+      if (!Number.isFinite(Date.parse(media.releaseDate || ""))) continue;
+      if (!isSchedulableItem(media)) continue;
+      releases.push(mapPublicAnilistRelease(media));
     }
+    if (!chunk.hasNextPage) break;
+    await wait(ANILIST_REQUEST_DELAY_MS);
   }
 
   return dedupeByEpisode(releases)
@@ -234,11 +233,14 @@ async function fetchPublicAnilistSchedule() {
     .sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 }
 
-async function fetchAnilistSeasonPage({ season, year }, page) {
-  const query = `query ($page: Int, $season: MediaSeason, $year: Int) {
+async function fetchAnilistAiringPage(page, now) {
+  const query = `query ($page: Int, $now: Int) {
     Page(page: $page, perPage: 50) {
       pageInfo { hasNextPage }
-        media(type: ANIME, season: $season, seasonYear: $year, status_in: [RELEASING, NOT_YET_RELEASED], sort: POPULARITY_DESC, isAdult: false) {
+      airingSchedules(airingAt_greater: $now, sort: TIME) {
+        episode
+        airingAt
+        media {
         id
         title { romaji english native }
         synonyms
@@ -253,6 +255,7 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
         tags { name isAdult rank }
         externalLinks { site url type }
         streamingEpisodes { site url title thumbnail }
+        }
       }
     }
   }`;
@@ -264,7 +267,7 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
     },
     body: JSON.stringify({
       query,
-      variables: { page, season: String(season || "").toUpperCase(), year }
+      variables: { page, now }
     })
   });
 
@@ -277,8 +280,19 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
   if (json.errors?.length) throw new Error(`AniList: ${json.errors[0].message}`);
   return {
     hasNextPage: Boolean(json.data?.Page?.pageInfo?.hasNextPage),
-    items: (json.data?.Page?.media || []).map(mapPublicAnilistMedia)
+    items: (json.data?.Page?.airingSchedules || []).map(mapPublicAnilistAiringSchedule).filter(Boolean)
   };
+}
+
+function mapPublicAnilistAiringSchedule(schedule) {
+  if (!schedule?.media) return null;
+  return mapPublicAnilistMedia({
+    ...schedule.media,
+    nextAiringEpisode: {
+      episode: schedule.episode,
+      airingAt: schedule.airingAt
+    }
+  });
 }
 
 function mapPublicAnilistMedia(media) {
@@ -436,9 +450,7 @@ function normalizeSchedule(items, timeZone) {
 
 async function appendMissingAnilistReleases(baseReleases) {
   const anilistReleases = await fetchPublicAnilistSchedule();
-  const until = Date.now() + Number(process.env.PUBLIC_ANILIST_DAYS || process.env.SYNC_INFER_DAYS || "60") * 24 * 60 * 60 * 1000;
   const missing = anilistReleases
-    .filter((item) => Date.parse(item.releaseDate || "") <= until)
     .filter((item) => !hasScheduledSeriesMatch(item, baseReleases))
     .map((item) => ({ ...item, source: "anilist-missing", id: stableId("anilist-missing", item.anilistId || item.title, item.episodeNumber, item.releaseDate) }));
 
@@ -786,24 +798,21 @@ function scoreItem(item) {
 }
 
 function isSchedulableItem(item) {
-  const ep = parseEpisodeNumber(item.episodeNumber ?? item.episode);
   if (item.isAdult || hasAdultAnilistTag(item)) return false;
-  const format = String(item.anilistFormat || item.format || "").toUpperCase();
-  if (format && !["TV", "TV_SHORT", "ONA"].includes(format)) return false;
-  const haystack = `${item.title || ""} ${item.route || ""} ${item.animeKey || ""} ${item.anilistFormat || ""}`.toLowerCase();
-  if (Number.isFinite(ep) && ep === 1 && (haystack.includes("movie") || haystack.includes("gekijouban") || haystack.includes("film"))) return false;
   return true;
 }
 
 function hasAdultAnilistTag(item) {
-  const blocked = ["hentai", "ecchi", "nudity", "sexual", "erotica", "incest"];
+  const blockedGenres = ["hentai", "erotica"];
+  const blockedTags = ["hentai", "nudity", "sexual", "erotica", "incest"];
   const genres = Array.isArray(item.genres) ? item.genres : [];
   const tags = Array.isArray(item.tags) ? item.tags : [];
-  if (genres.some((genre) => blocked.includes(String(genre || "").toLowerCase()))) return true;
+  if (genres.some((genre) => blockedGenres.includes(String(genre || "").toLowerCase()))) return true;
   return tags.some((tag) => {
     const name = String(tag?.name || tag || "").toLowerCase();
     const rank = Number(tag?.rank || 0);
-    return tag?.isAdult === true || (rank >= 40 && blocked.some((word) => name.includes(word)));
+    const tokens = name.split(/[^a-z0-9]+/).filter(Boolean);
+    return tag?.isAdult === true || (rank >= 40 && blockedTags.some((word) => tokens.includes(word)));
   });
 }
 

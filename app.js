@@ -161,15 +161,16 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v88";
+const APP_CACHE_NAME = "anime-countdown-pwa-v93";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
-const ANILIST_CATALOG_MAX_PAGES = Number(APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 6);
+const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
+const NATIVE_NOTIFICATION_SYNC_MS = 6 * 60 * 60 * 1000;
 const ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
@@ -201,7 +202,7 @@ const JUSTWATCH_COUNTRIES = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -214,6 +215,8 @@ const listMemo = new Map();
 let virtualListItems = [];
 let virtualListRendered = 0;
 let virtualListObserver = null;
+let nativeNotificationSyncTimer = null;
+let nativeNotificationSyncRunning = false;
 
 init();
 
@@ -248,7 +251,8 @@ function cleanupLegacyCaches() {
 }
 
 function startBackgroundRefreshes() {
-  scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true }), state.releases.length ? 1200 : 100);
+  const initialScheduleDelay = isCapacitor() ? 15000 : (state.releases.length ? 1200 : 100);
+  scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true }), initialScheduleDelay);
   startAnilistAutoRefresh();
   startPublicAnilistAutoRefresh();
 }
@@ -367,7 +371,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastNativeNotificationSync","theme"]);
   state.releases = (data.releases || []).map(sanitizePlatformFields).filter((item) => !isAniListTimedRelease(item));
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
@@ -391,6 +395,7 @@ async function loadState() {
   state.lastAnilistSync = data.lastAnilistSync || "";
   state.lastAnilistSyncUsername = data.lastAnilistSyncUsername || "";
   state.lastPublicAnilistSync = data.lastPublicAnilistSync || "";
+  state.lastNativeNotificationSync = data.lastNativeNotificationSync || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
@@ -936,8 +941,7 @@ async function toggleNotifications() {
     await browserApi.storage.local.set({ notificationEnabled: true });
     updateNotificationButton();
     if (hasNativeNotif) {
-      cancelStaleNativeNotifications();
-      scheduleNativeNotifications();
+      queueNativeNotificationSync({ force: true, delay: 1200 });
     }
     showStatus("Notificaciones activadas.", "success");
     checkReleaseNotifications();
@@ -1000,8 +1004,7 @@ async function refreshData() {
     await refreshSharedSchedule({ silent: true, force: true });
     await saveAllLists();
     if (isCapacitor()) {
-      cancelStaleNativeNotifications();
-      scheduleNativeNotifications();
+      queueNativeNotificationSync({ force: true });
     }
     await deferRender();
     const favs = state.releases.filter(i => i.favorite).length;
@@ -1011,8 +1014,7 @@ async function refreshData() {
     verifyPlatformsWithJustWatch().then(async () => {
       await saveAllLists();
       if (isCapacitor()) {
-        cancelStaleNativeNotifications();
-        scheduleNativeNotifications();
+        queueNativeNotificationSync({ force: true });
       }
       await deferRender();
     }).catch(() => {});
@@ -1046,11 +1048,10 @@ async function syncAnilist() {
     showStatus("Verificando plataformas con JustWatch...", "success");
     const jwResult = await verifyPlatformsWithJustWatch();
     await saveAllLists();
-    await cancelStaleNativeNotifications();
     // Only show scheduled count in Capacitor
     let scheduled = 0;
     if (isCapacitor()) {
-      scheduled = await scheduleNativeNotifications();
+      scheduled = await syncNativeNotificationsIfNeeded({ force: true });
     }
     render();
     const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} de ${jwResult.checked}` : "";
@@ -1060,18 +1061,18 @@ async function syncAnilist() {
 }
 
 function startAnilistAutoRefresh() {
-  scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), 2500);
+  scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), isCapacitor() ? 24000 : 2500);
   setInterval(() => maybeRefreshAnilist({ silent: true }), ANILIST_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), 1600);
+    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), isCapacitor() ? 22000 : 1600);
   });
 }
 
 function startPublicAnilistAutoRefresh() {
-  scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), 4500);
+  scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), isCapacitor() ? 32000 : 4500);
   setInterval(() => maybeRefreshPublicAnilist({ silent: true }), PUBLIC_ANILIST_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), 3000);
+    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), isCapacitor() ? 30000 : 3000);
   });
 }
 
@@ -1225,7 +1226,7 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     reconcileAnilistFavoritesWithSchedule();
     if (!skipPublicAnilist) {
       const lastAl = Date.parse(state.lastPublicAnilistSync || "");
-      if (!state.releases.length || !Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) {
+      if (force || !state.releases.length || !Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) {
         await yieldToMainThread();
         await refreshPublicAnilistData();
       }
@@ -1237,8 +1238,7 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     renderPreview(imported);
     scheduleRender();
     checkReleaseNotifications();
-    cancelStaleNativeNotifications();
-    scheduleNativeNotifications();
+    queueNativeNotificationSync();
 
     if (!silent) {
       showStatus(`Actualizados ${imported.length} episodios desde la base compartida.`, "success");
@@ -2177,26 +2177,25 @@ async function fetchPublicAnilistSearchMatch(item) {
 }
 
 async function fetchPublicAnilistCatalog() {
-  const seasons = [getCurrentSeason(), getNextSeason(getCurrentSeason())];
   const catalog = [];
   const seen = new Set();
-  for (const seasonInfo of seasons) {
-    for (let page = 1; page <= ANILIST_CATALOG_MAX_PAGES; page++) {
-      const chunk = await fetchAnilistSeasonPage(seasonInfo, page);
-      for (const media of chunk.items) {
-        if (!media?.anilistId || seen.has(media.anilistId)) continue;
-        seen.add(media.anilistId);
-        catalog.push(media);
-      }
-      if (!chunk.hasNextPage) break;
+  const now = Math.floor(Date.now() / 1000);
+  for (let page = 1; page <= ANILIST_AIRING_MAX_PAGES; page++) {
+    const chunk = await fetchAnilistAiringPage(page, now);
+    for (const media of chunk.items) {
+      if (!media?.anilistId || seen.has(media.anilistId)) continue;
+      seen.add(media.anilistId);
+      catalog.push(media);
     }
+    if (!chunk.hasNextPage) break;
+    await yieldToMainThread();
   }
   return catalog;
 }
 
-async function fetchAnilistSeasonPage({ season, year }, page) {
-  const query = `query ($page: Int, $season: MediaSeason, $year: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } media(type: ANIME, season: $season, seasonYear: $year, status_in: [RELEASING, NOT_YET_RELEASED], sort: POPULARITY_DESC, isAdult: false) { id title { romaji english native } synonyms format genres isAdult coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } tags { name isAdult rank } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } }`;
-  const variables = { page, season: String(season || "").toUpperCase(), year };
+async function fetchAnilistAiringPage(page, now) {
+  const query = `query ($page: Int, $now: Int) { Page(page: $page, perPage: 50) { pageInfo { hasNextPage } airingSchedules(airingAt_greater: $now, sort: TIME) { episode airingAt media { id title { romaji english native } synonyms format genres isAdult coverImage { large medium } siteUrl episodes status averageScore meanScore nextAiringEpisode { episode airingAt } tags { name isAdult rank } externalLinks { site url type } streamingEpisodes { site url title thumbnail } } } } }`;
+  const variables = { page, now };
   let response;
   try {
     response = await postAnilistGraphql(query, variables);
@@ -2211,8 +2210,19 @@ async function fetchAnilistSeasonPage({ season, year }, page) {
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return {
     hasNextPage: Boolean(json.data?.Page?.pageInfo?.hasNextPage),
-    items: (json.data?.Page?.media || []).map(mapPublicAnilistMedia)
+    items: (json.data?.Page?.airingSchedules || []).map(mapPublicAnilistAiringSchedule).filter(Boolean)
   };
+}
+
+function mapPublicAnilistAiringSchedule(schedule) {
+  if (!schedule?.media) return null;
+  return mapPublicAnilistMedia({
+    ...schedule.media,
+    nextAiringEpisode: {
+      episode: schedule.episode,
+      airingAt: schedule.airingAt
+    }
+  });
 }
 
 async function postAnilistGraphql(query, variables = {}) {
@@ -2580,8 +2590,7 @@ async function toggleFavorite(key) {
   await saveAllLists();
 
   if (isCapacitor() && state.notificationEnabled) {
-    cancelStaleNativeNotifications();
-    scheduleNativeNotifications();
+    queueNativeNotificationSync({ force: true, delay: 1200 });
   }
 
   const btn = els.animeList.querySelector(`[data-action="favorite"][data-key="${CSS.escape(key)}"]`);
@@ -2625,10 +2634,7 @@ async function resetAll() {
 function startNotificationScheduler() {
   checkReleaseNotifications();
   if (isCapacitor()) {
-    setTimeout(async () => {
-      await cancelStaleNativeNotifications();
-      await scheduleNativeNotifications();
-    }, 3000);
+    queueNativeNotificationSync({ delay: 12000 });
   }
   setInterval(() => {
     if (document.visibilityState === "visible") checkReleaseNotifications();
@@ -2641,6 +2647,34 @@ function startNotificationScheduler() {
     }
   });
   window.addEventListener("focus", () => checkReleaseNotifications());
+}
+
+function queueNativeNotificationSync({ force = false, delay = 4000 } = {}) {
+  if (!isCapacitor() || !state.notificationEnabled) return;
+  if (nativeNotificationSyncTimer) clearTimeout(nativeNotificationSyncTimer);
+  nativeNotificationSyncTimer = setTimeout(() => {
+    nativeNotificationSyncTimer = null;
+    syncNativeNotificationsIfNeeded({ force });
+  }, delay);
+}
+
+async function syncNativeNotificationsIfNeeded({ force = false } = {}) {
+  if (!isCapacitor() || !state.notificationEnabled || nativeNotificationSyncRunning) return 0;
+  const last = Date.parse(state.lastNativeNotificationSync || "");
+  if (!force && Number.isFinite(last) && Date.now() - last < NATIVE_NOTIFICATION_SYNC_MS) return 0;
+
+  nativeNotificationSyncRunning = true;
+  try {
+    await yieldToMainThread();
+    await cancelStaleNativeNotifications();
+    await yieldToMainThread();
+    const scheduled = await scheduleNativeNotifications();
+    state.lastNativeNotificationSync = new Date().toISOString();
+    await browserApi.storage.local.set({ lastNativeNotificationSync: state.lastNativeNotificationSync });
+    return scheduled || 0;
+  } finally {
+    nativeNotificationSyncRunning = false;
+  }
 }
 
 function scheduleQuarterHourNotificationCheck() {
@@ -2780,12 +2814,6 @@ async function scheduleNativeNotifications() {
       if (pendingIds.has(notifId)) continue;
 
       const displayService = getDisplayService(item);
-      const coverUrl = normalizeUrl(item.coverUrl);
-      let localPath = null;
-      if (coverUrl) {
-        localPath = await downloadCoverImage(coverUrl, notifId);
-        await new Promise(function (r) { setTimeout(r, 200); });
-      }
       toSchedule.push({
         id: notifId,
         title: `${item.title} ${item.episode}`,
@@ -2793,10 +2821,8 @@ async function scheduleNativeNotifications() {
         schedule: { at: new Date(releaseAt) },
         extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
         smallIcon: "ic_stat_icon",
-        largeIcon: localPath || undefined,
         iconColor: "#111827",
         actionTypeId: "",
-        attachments: localPath ? [{ id: "cover", url: localPath }] : null,
         group: "anime-countdown",
         groupSummary: false
       });
@@ -3064,22 +3090,19 @@ function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episod
 function isSchedulableItem(item) {
   if (item.excludeFromSchedule) return false;
   if (item.isAdult || hasAdultAnilistTag(item)) return false;
-  const ep = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-  const format = String(item.anilistFormat || item.format || "").toUpperCase();
-  if (format && !["TV", "TV_SHORT", "ONA"].includes(format)) return false;
-  const haystack = `${item.title || ""} ${item.route || ""} ${item.animeKey || ""} ${item.anilistFormat || ""}`.toLowerCase();
-  if (Number.isFinite(ep) && ep === 1 && (haystack.includes("movie") || haystack.includes("gekijouban") || haystack.includes("film"))) return false;
   return true;
 }
 function hasAdultAnilistTag(item) {
-  const blocked = ["hentai", "ecchi", "nudity", "sexual", "erotica", "incest"];
+  const blockedGenres = ["hentai", "erotica"];
+  const blockedTags = ["hentai", "nudity", "sexual", "erotica", "incest"];
   const genres = Array.isArray(item.genres) ? item.genres : [];
   const tags = Array.isArray(item.tags) ? item.tags : [];
-  if (genres.some((genre) => blocked.includes(String(genre || "").toLowerCase()))) return true;
+  if (genres.some((genre) => blockedGenres.includes(String(genre || "").toLowerCase()))) return true;
   return tags.some((tag) => {
     const name = String(tag?.name || tag || "").toLowerCase();
     const rank = Number(tag?.rank || 0);
-    return tag?.isAdult === true || (rank >= 40 && blocked.some((word) => name.includes(word)));
+    const tokens = name.split(/[^a-z0-9]+/).filter(Boolean);
+    return tag?.isAdult === true || (rank >= 40 && blockedTags.some((word) => tokens.includes(word)));
   });
 }
 function getAllItems() { return [...state.releases, ...state.anilistLibrary]; }
