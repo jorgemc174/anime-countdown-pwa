@@ -161,7 +161,7 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v93";
+const APP_CACHE_NAME = "anime-countdown-pwa-v94";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -1001,15 +1001,21 @@ function updateNotificationButton() {
 
 async function refreshData() {
   try {
-    await refreshSharedSchedule({ silent: true, force: true });
+    showStatus("Actualizando próximos estrenos...", "success");
+    const beforeCount = getOneNextPerSeries(state.releases).length;
+    await refreshSharedSchedule({ silent: true, force: true, skipPublicAnilist: true });
+    await maybeRefreshPublicAnilist({ silent: true, force: true });
     await saveAllLists();
     if (isCapacitor()) {
       queueNativeNotificationSync({ force: true });
     }
     await deferRender();
+    const afterCount = getOneNextPerSeries(state.releases).length;
+    const diff = afterCount - beforeCount;
     const favs = state.releases.filter(i => i.favorite).length;
     const notifMsg = isCapacitor() ? ` | ${favs} con notificaciones` : "";
-    showStatus(`Listo.${notifMsg}`, "success");
+    const diffMsg = diff === 0 ? "" : ` | ${diff > 0 ? "+" : ""}${diff}`;
+    showStatus(`Actualizado: ${afterCount} próximos${diffMsg}.${notifMsg}`, "success");
 
     verifyPlatformsWithJustWatch().then(async () => {
       await saveAllLists();
