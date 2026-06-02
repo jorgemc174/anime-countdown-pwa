@@ -81,6 +81,7 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
+const APP_CACHE_NAME = "anime-countdown-pwa-v84";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const PUBLIC_ANILIST_DAYS = Number(APP_CONFIG.PUBLIC_ANILIST_DAYS || Math.max(PUBLIC_SCHEDULE_DAYS, 60));
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -125,25 +126,25 @@ const autoSaveTimers = {};
 let quarterNotificationTimer = null;
 let swipeStart = null;
 var preRendered = {};
+let renderGeneration = 0;
+let renderRemainingTimer = null;
 
 init();
 
 async function init() {
   try {
-    cleanupLegacyCaches();
     bindElements();
     populateTimezoneOptions();
     await loadState();
     bindEvents();
     registerServiceWorker();
+    cleanupLegacyCaches();
     updateNotificationButton();
     render();
     setInterval(updateLiveCountdowns, 1000);
     scheduleMidnightRefresh();
     startNotificationScheduler();
-    startAnilistAutoRefresh();
-    startPublicAnilistAutoRefresh();
-    await refreshSharedSchedule({ silent: true, force: true });
+    startBackgroundRefreshes();
     setupCapacitorNotificationTap();
   } catch (error) {
     showFatal(error);
@@ -153,9 +154,33 @@ async function init() {
 function cleanupLegacyCaches() {
   if ("caches" in window) {
     caches.keys()
-      .then((keys) => keys.filter((key) => key.startsWith("anime-countdown-pwa-")).forEach((key) => caches.delete(key)))
+      .then((keys) => keys
+        .filter((key) => key.startsWith("anime-countdown-pwa-") && key !== APP_CACHE_NAME)
+        .forEach((key) => caches.delete(key)))
       .catch(() => {});
   }
+}
+
+function startBackgroundRefreshes() {
+  scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true }), state.releases.length ? 1200 : 100);
+  startAnilistAutoRefresh();
+  startPublicAnilistAutoRefresh();
+}
+
+function scheduleBackgroundTask(fn, timeout = 1000) {
+  const run = () => Promise.resolve().then(fn).catch((error) => console.warn("Tarea en segundo plano fallida.", error));
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(run, { timeout });
+    return;
+  }
+  setTimeout(run, timeout);
+}
+
+function yieldToMainThread() {
+  return new Promise((resolve) => {
+    if ("requestAnimationFrame" in window) requestAnimationFrame(() => setTimeout(resolve, 0));
+    else setTimeout(resolve, 0);
+  });
 }
 
 function registerServiceWorker() {
@@ -269,7 +294,7 @@ async function loadState() {
   els.anilistInput.value = data.anilistUsername || "";
   applyTheme(state.theme);
   updateScoreButton();
-  await saveSanitizedState();
+  scheduleBackgroundTask(saveSanitizedState, 1800);
 }
 
 function bindEvents() {
@@ -340,7 +365,7 @@ function setSettingsOpen(open) {
 
 async function setMode(mode, direction) {
   state.viewMode = mode;
-  await browserApi.storage.local.set({ viewMode: mode });
+  browserApi.storage.local.set({ viewMode: mode });
   render();
 }
 
@@ -504,6 +529,11 @@ function bindSwipeNavigation() {
 
 function switchTab(mode) {
   if (state.viewMode === mode) return;
+  const generation = ++renderGeneration;
+  if (renderRemainingTimer) {
+    clearTimeout(renderRemainingTimer);
+    renderRemainingTimer = null;
+  }
   var cached = preRendered[mode];
   if (cached) {
     state.viewMode = mode;
@@ -516,8 +546,8 @@ function switchTab(mode) {
     renderSettingsPlatformFilter();
     els.animeList.innerHTML = "";
     els.animeList.appendChild(cached.cloneNode(true));
-    setTimeout(renderRemaining, 40);
-    setTimeout(function() { render(); }, 100);
+    renderRemainingTimer = setTimeout(function() { renderRemaining(generation); }, 40);
+    setTimeout(function() { if (generation === renderGeneration) render(); }, 100);
   } else {
     setMode(mode);
   }
@@ -942,18 +972,18 @@ async function syncAnilist() {
 }
 
 function startAnilistAutoRefresh() {
-  maybeRefreshAnilist({ silent: true });
+  scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), 2500);
   setInterval(() => maybeRefreshAnilist({ silent: true }), ANILIST_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") maybeRefreshAnilist({ silent: true });
+    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshAnilist({ silent: true }), 1600);
   });
 }
 
 function startPublicAnilistAutoRefresh() {
-  maybeRefreshPublicAnilist({ silent: true });
+  scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), 4500);
   setInterval(() => maybeRefreshPublicAnilist({ silent: true }), PUBLIC_ANILIST_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") maybeRefreshPublicAnilist({ silent: true });
+    if (document.visibilityState === "visible") scheduleBackgroundTask(() => maybeRefreshPublicAnilist({ silent: true }), 3000);
   });
 }
 
@@ -1093,7 +1123,9 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     }
 
     const rows = await fetchSharedSchedule();
+    await yieldToMainThread();
     const imported = rows.map(mapSharedRelease).map(enrichScheduleItem).map((item) => preserveExistingAnimeData(item));
+    await yieldToMainThread();
     const localOnly = state.releases.filter((item) =>
       item.source !== "animeschedule-api" &&
       !String(item.source || "").startsWith("shared-json") &&
@@ -1105,14 +1137,17 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     reconcileAnilistFavoritesWithSchedule();
     if (!skipPublicAnilist) {
       const lastAl = Date.parse(state.lastPublicAnilistSync || "");
-      if (!state.releases.length || !Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) await refreshPublicAnilistData();
+      if (!state.releases.length || !Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) {
+        await yieldToMainThread();
+        await refreshPublicAnilistData();
+      }
     }
     applyCustomToReleases();
     applyUserOverridesToLists();
     state.lastSharedSync = new Date().toISOString();
     await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
     renderPreview(imported);
-    render();
+    scheduleRender();
     checkReleaseNotifications();
     cancelStaleNativeNotifications();
     scheduleNativeNotifications();
@@ -1136,8 +1171,7 @@ async function fetchSharedSchedule() {
   const now = new Date();
   const recentSince = now.getTime() - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000;
   const until = new Date(now.getTime() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000);
-  const url = withCacheBuster(SHARED_SCHEDULE_URL);
-  const response = await fetch(url, { cache: "no-store", headers: { accept: "application/json" } });
+  const response = await fetch(SHARED_SCHEDULE_URL, { headers: { accept: "application/json" } });
 
   if (!response.ok) {
     const body = await response.text().catch(() => "");
@@ -2812,7 +2846,24 @@ function toAbsoluteUrl(url) {
   }
 }
 
-function render() { setActiveTab(); renderNextModern(); renderListModern(); renderSettingsPlatformFilter(); }
+function scheduleRender(delay = 80) {
+  const generation = ++renderGeneration;
+  setTimeout(() => {
+    if (generation === renderGeneration) render();
+  }, delay);
+}
+
+function render() {
+  renderGeneration++;
+  if (renderRemainingTimer) {
+    clearTimeout(renderRemainingTimer);
+    renderRemainingTimer = null;
+  }
+  setActiveTab();
+  renderNextModern();
+  renderListModern();
+  renderSettingsPlatformFilter();
+}
 function updateLiveCountdowns() {
   if (state.currentNext) {
     const c = getCountdown(state.currentNext.releaseDate);
@@ -3020,6 +3071,7 @@ function getNextHighlightItems() {
 }
 
 function renderListModern() {
+  const generation = renderGeneration;
   var visible = getVisibleItems();
   if (state.searchQuery) {
     var q = state.searchQuery.toLowerCase();
@@ -3044,10 +3096,13 @@ function renderListModern() {
 
   els.animeList.innerHTML = "";
   els.animeList.appendChild(preRendered[state.viewMode].cloneNode(true));
-  if (visible.length > 5) setTimeout(renderRemaining, 50);
+  if (visible.length > 5) {
+    renderRemainingTimer = setTimeout(() => renderRemaining(generation), 50);
+  }
 }
 
-function renderRemaining() {
+async function renderRemaining(generation = renderGeneration) {
+  if (generation !== renderGeneration) return;
   var visible = getVisibleItems();
   if (state.searchQuery) {
     var q = state.searchQuery.toLowerCase();
@@ -3056,8 +3111,16 @@ function renderRemaining() {
   if (!state.sortAsc) visible = [].concat(visible).reverse();
   if (visible.length <= 5) return;
   var frag = document.createDocumentFragment();
-  for (var i = 5; i < visible.length; i++) frag.appendChild(createCardModern(visible[i]));
-  els.animeList.appendChild(frag);
+  for (var i = 5; i < visible.length; i++) {
+    if (generation !== renderGeneration) return;
+    frag.appendChild(createCardModern(visible[i]));
+    if (frag.childNodes.length >= 12) {
+      els.animeList.appendChild(frag);
+      frag = document.createDocumentFragment();
+      await yieldToMainThread();
+    }
+  }
+  if (generation === renderGeneration && frag.childNodes.length) els.animeList.appendChild(frag);
 }
 
 function createCardModern(item) {

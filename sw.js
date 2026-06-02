@@ -1,10 +1,10 @@
-const CACHE_NAME = "anime-countdown-pwa-v83";
+const CACHE_NAME = "anime-countdown-pwa-v84";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=83",
-  "./config.js?v=83",
-  "./app.js?v=83",
+  "./styles.css?v=84",
+  "./config.js?v=84",
+  "./app.js?v=84",
   "./schedule.json",
   "./manifest.json",
   "./favicon.ico",
@@ -54,13 +54,44 @@ self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET") return;
 
-  event.respondWith(
-    fetch(request).then((response) => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-      return response;
-    }).catch(() => {
-      return caches.match(request).then((cached) => cached || caches.match("./index.html"));
-    })
-  );
+  const url = new URL(request.url);
+  if (url.origin !== location.origin) return;
+
+  if (url.pathname.endsWith("/schedule.json")) {
+    event.respondWith(staleWhileRevalidate(request));
+    return;
+  }
+
+  event.respondWith(cacheFirst(request));
 });
+
+async function cacheFirst(request) {
+  const cached = await caches.match(request);
+  if (cached) return cached;
+
+  try {
+    const response = await fetch(request);
+    await putInCache(request, response.clone());
+    return response;
+  } catch (_) {
+    return caches.match("./index.html");
+  }
+}
+
+async function staleWhileRevalidate(request) {
+  const cached = await caches.match(request);
+  const update = fetch(request)
+    .then(async (response) => {
+      await putInCache(request, response.clone());
+      return response;
+    })
+    .catch(() => null);
+
+  return cached || await update || await caches.match("./index.html");
+}
+
+async function putInCache(request, response) {
+  if (!response || !response.ok) return;
+  const cache = await caches.open(CACHE_NAME);
+  await cache.put(request, response);
+}
