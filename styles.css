@@ -645,6 +645,12 @@ h3 {
   transform: translateY(0) scale(0.995);
 }
 
+.virtual-list-sentinel {
+  grid-column: 1 / -1;
+  min-height: 1px;
+  pointer-events: none;
+}
+
 .cover {
   width: 70px;
   height: 104px;

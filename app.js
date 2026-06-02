@@ -1,14 +1,21 @@
 ﻿"use strict";
 
+const LARGE_STORAGE_KEYS = new Set(["releases", "anilistLibrary", "anilistMap", "customLinks", "customPlatforms", "userOverrides"]);
+const IDB_NAME = "animeCountdownDb";
+const IDB_STORE = "state";
+const IDB_VERSION = 1;
+let idbPromise = null;
+
 // Browser/PWA compatibility layer.
 // The original extension uses chrome.storage.local and chrome.tabs.
-// In the PWA these are mapped to localStorage and window.open.
+// In the PWA these are mapped to IndexedDB/localStorage and window.open.
 const browserApi = {
   storage: {
     local: {
       async get(keys) {
         const raw = localStorage.getItem("animeCountdownStorage");
         const store = parseStoredState(raw);
+        Object.assign(store, await getLargeStorageValues(keys));
 
         if (Array.isArray(keys)) {
           const result = {};
@@ -34,7 +41,19 @@ const browserApi = {
       async set(values) {
         const raw = localStorage.getItem("animeCountdownStorage");
         const store = parseStoredState(raw);
-        Object.assign(store, values);
+        const smallValues = {};
+        const largeValues = {};
+        for (const [key, value] of Object.entries(values || {})) {
+          if (LARGE_STORAGE_KEYS.has(key)) largeValues[key] = value;
+          else smallValues[key] = value;
+        }
+        if (Object.keys(largeValues).length) invalidateDataCaches();
+        const wroteLargeValues = await setLargeStorageValues(largeValues);
+        Object.assign(store, smallValues);
+        for (const key of Object.keys(largeValues)) {
+          if (wroteLargeValues) delete store[key];
+          else store[key] = largeValues[key];
+        }
         localStorage.setItem("animeCountdownStorage", JSON.stringify(store));
       }
     }
@@ -46,6 +65,67 @@ const browserApi = {
     }
   }
 };
+
+function openStateDb() {
+  if (!("indexedDB" in window)) return Promise.resolve(null);
+  if (idbPromise) return idbPromise;
+  idbPromise = new Promise((resolve) => {
+    const request = indexedDB.open(IDB_NAME, IDB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => {
+      console.warn("IndexedDB no disponible; se usará localStorage.");
+      resolve(null);
+    };
+  });
+  return idbPromise;
+}
+
+function getRequestedLargeKeys(keys) {
+  if (Array.isArray(keys)) return keys.filter((key) => LARGE_STORAGE_KEYS.has(key));
+  if (typeof keys === "string") return LARGE_STORAGE_KEYS.has(keys) ? [keys] : [];
+  if (keys && typeof keys === "object") return Object.keys(keys).filter((key) => LARGE_STORAGE_KEYS.has(key));
+  return [...LARGE_STORAGE_KEYS];
+}
+
+async function getLargeStorageValues(keys) {
+  const requested = getRequestedLargeKeys(keys);
+  if (!requested.length) return {};
+  const db = await openStateDb();
+  if (!db) return {};
+
+  return new Promise((resolve) => {
+    const result = {};
+    const tx = db.transaction(IDB_STORE, "readonly");
+    const store = tx.objectStore(IDB_STORE);
+    for (const key of requested) {
+      const request = store.get(key);
+      request.onsuccess = () => {
+        if (request.result !== undefined) result[key] = request.result;
+      };
+    }
+    tx.oncomplete = () => resolve(result);
+    tx.onerror = () => resolve(result);
+  });
+}
+
+async function setLargeStorageValues(values) {
+  const entries = Object.entries(values || {});
+  if (!entries.length) return true;
+  const db = await openStateDb();
+  if (!db) return false;
+
+  return new Promise((resolve) => {
+    const tx = db.transaction(IDB_STORE, "readwrite");
+    const store = tx.objectStore(IDB_STORE);
+    for (const [key, value] of entries) store.put(value, key);
+    tx.oncomplete = () => resolve(true);
+    tx.onerror = () => resolve(false);
+  });
+}
 
 function openExternalUrl(url) {
   if (isCapacitor() && url) {
@@ -81,20 +161,21 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v84";
+const APP_CACHE_NAME = "anime-countdown-pwa-v88";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
-const PUBLIC_ANILIST_DAYS = Number(APP_CONFIG.PUBLIC_ANILIST_DAYS || Math.max(PUBLIC_SCHEDULE_DAYS, 60));
+const ANILIST_CATALOG_MAX_PAGES = Number(APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 6);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
 const DEFAULT_IMPORT_WEEKS = 4;
 const NOTIFICATION_LEAD_MS = 0;
 const NOTIFICATION_GRACE_MS = 30 * 60 * 1000;
 const VISIBLE_NOTIFICATION_CHECK_MS = 15 * 1000;
 const QUARTER_HOUR_MS = 15 * 60 * 1000;
-const ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
+const ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
-const PUBLIC_ANILIST_REFRESH_MS = 12 * 60 * 60 * 1000;
-const SHARED_SCHEDULE_REFRESH_MS = 30 * 60 * 1000;
+const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
+const SHARED_SCHEDULE_REFRESH_MS = 6 * 60 * 60 * 1000;
 const JUSTWATCH_SEARCH_LIMIT = 120;
+const VIRTUAL_LIST_BATCH_SIZE = 24;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
   "Prime Video": 4, "Netflix": 5, "Disney+": 6,
@@ -128,6 +209,11 @@ let swipeStart = null;
 var preRendered = {};
 let renderGeneration = 0;
 let renderRemainingTimer = null;
+let dataVersion = 0;
+const listMemo = new Map();
+let virtualListItems = [];
+let virtualListRendered = 0;
+let virtualListObserver = null;
 
 init();
 
@@ -181,6 +267,23 @@ function yieldToMainThread() {
     if ("requestAnimationFrame" in window) requestAnimationFrame(() => setTimeout(resolve, 0));
     else setTimeout(resolve, 0);
   });
+}
+
+function invalidateDataCaches() {
+  dataVersion++;
+  listMemo.clear();
+  preRendered = {};
+}
+
+function memoList(key, factory) {
+  const fullKey = `${dataVersion}|${key}`;
+  if (listMemo.has(fullKey)) return listMemo.get(fullKey);
+  const value = factory();
+  if (Array.isArray(value)) {
+    try { Object.defineProperty(value, "__memoKey", { value: fullKey, enumerable: false }); } catch (_) {}
+  }
+  listMemo.set(fullKey, value);
+  return value;
 }
 
 function registerServiceWorker() {
@@ -294,6 +397,7 @@ async function loadState() {
   els.anilistInput.value = data.anilistUsername || "";
   applyTheme(state.theme);
   updateScoreButton();
+  invalidateDataCaches();
   scheduleBackgroundTask(saveSanitizedState, 1800);
 }
 
@@ -529,28 +633,11 @@ function bindSwipeNavigation() {
 
 function switchTab(mode) {
   if (state.viewMode === mode) return;
-  const generation = ++renderGeneration;
   if (renderRemainingTimer) {
     clearTimeout(renderRemainingTimer);
     renderRemainingTimer = null;
   }
-  var cached = preRendered[mode];
-  if (cached) {
-    state.viewMode = mode;
-    browserApi.storage.local.set({ viewMode: mode });
-    var title = mode==="today"?"Estrenos de hoy":mode==="favorites"?"Favoritos":"Proximos estrenos";
-    var listTitle = document.getElementById("listTitle");
-    if (listTitle) listTitle.textContent = title;
-    setActiveTab();
-    renderNextModern();
-    renderSettingsPlatformFilter();
-    els.animeList.innerHTML = "";
-    els.animeList.appendChild(cached.cloneNode(true));
-    renderRemainingTimer = setTimeout(function() { renderRemaining(generation); }, 40);
-    setTimeout(function() { if (generation === renderGeneration) render(); }, 100);
-  } else {
-    setMode(mode);
-  }
+  setMode(mode);
 }
 
 function goToAdjacentMode(direction) {
@@ -562,7 +649,7 @@ function goToAdjacentMode(direction) {
 
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
-async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
+async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; invalidateDataCaches(); await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
 function populateCountryOptions() {
@@ -614,6 +701,7 @@ async function togglePlatformFilter(platform) {
     state.hiddenPlatforms.push(platform);
   }
   renderSettingsPlatformFilter();
+  invalidateDataCaches();
   await browserApi.storage.local.set({ hiddenPlatforms: state.hiddenPlatforms });
   render();
 }
@@ -1187,7 +1275,7 @@ async function fetchSharedSchedule() {
     if (!isAnimeScheduleBackedRow(row, json)) return false;
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
-    if (!Number.isFinite(releaseAt) || releaseAt > until.getTime()) return false;
+    if (!Number.isFinite(releaseAt)) return false;
     return releaseAt >= recentSince;
   });
   return appendInferredNextScheduleRows(filtered, now, until);
@@ -2007,13 +2095,12 @@ async function enrichReleasesFromPublicAnilist() {
 
 function addMissingReleasesFromPublicAnilist(catalog) {
   const now = Date.now();
-  const until = now + PUBLIC_ANILIST_DAYS * 24 * 60 * 60 * 1000;
   const scheduleBase = state.releases.filter((item) => !isAnilistMissingRelease(item) && !isAniListTimedRelease(item));
   const missing = [];
 
   for (const media of catalog) {
     const releaseAt = Date.parse(media.releaseDate || "");
-    if (!Number.isFinite(releaseAt) || releaseAt <= now || releaseAt > until) continue;
+    if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
     if (!isSchedulableItem(media)) continue;
     if (hasScheduledSeriesMatch(media, scheduleBase)) continue;
     missing.push(mapPublicAnilistMissingRelease(media));
@@ -2094,7 +2181,7 @@ async function fetchPublicAnilistCatalog() {
   const catalog = [];
   const seen = new Set();
   for (const seasonInfo of seasons) {
-    for (let page = 1; page <= 3; page++) {
+    for (let page = 1; page <= ANILIST_CATALOG_MAX_PAGES; page++) {
       const chunk = await fetchAnilistSeasonPage(seasonInfo, page);
       for (const media of chunk.items) {
         if (!media?.anilistId || seen.has(media.anilistId)) continue;
@@ -2449,6 +2536,7 @@ function getOverrideKeys(item) {
 }
 
 async function saveSanitizedState() {
+  invalidateDataCaches();
   await browserApi.storage.local.set({
     releases: state.releases,
     anilistLibrary: state.anilistLibrary,
@@ -2859,6 +2947,7 @@ function render() {
     clearTimeout(renderRemainingTimer);
     renderRemainingTimer = null;
   }
+  cleanupVirtualListObserver();
   setActiveTab();
   renderNextModern();
   renderListModern();
@@ -2870,6 +2959,7 @@ function updateLiveCountdowns() {
     const nextCountdown = els.nextRelease.querySelector(".next-countdown");
     if (nextCountdown) nextCountdown.textContent = c.text;
     if (c.expired) {
+      invalidateDataCaches();
       if (state.viewMode === "all" || state.viewMode === "favorites") {
         render();
         return;
@@ -2915,7 +3005,15 @@ function adjustDelayedDates(items) {
     return { ...item, releaseDate: shifted.toISOString() };
   });
 }
-function getVisibleItems() { if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems())); if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems())); return getOneNextPerSeries(adjustDelayedDates(getCatalogItems())); }
+function getVisibleItems() {
+  const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
+  const hiddenKey = state.hiddenPlatforms.join("|");
+  return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}`, () => {
+    if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
+    if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
+    return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
+  });
+}
 function getDisplayService(item) {
   const service = item.customPlatformName || item.service || "No legal platform";
   if (service === "No legal platform") return service;
@@ -2925,10 +3023,19 @@ function getDisplayService(item) {
     .sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50))[0];
   return fallback || "No legal platform";
 }
-function getFavoriteItems() { return mergeDuplicateItems(state.releases.filter(item => item.favorite)); }
-function getCatalogItems() { return mergeDuplicateItems(state.releases); }
-function getOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
-function getTodayItems(items) { return sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))); }
+function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
+function getCatalogItems() { return memoList("catalog", () => mergeDuplicateItems(state.releases)); }
+function getOneNextPerSeries(items) {
+  const memoKey = items?.__memoKey;
+  if (memoKey) return memoList(`oneNext|${memoKey}`, () => buildOneNextPerSeries(items));
+  return buildOneNextPerSeries(items);
+}
+function buildOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function getTodayItems(items) {
+  const memoKey = items?.__memoKey;
+  if (memoKey) return memoList(`today|${memoKey}|${getDateKeyInZone(new Date(), getSelectedTimezone())}`, () => sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))));
+  return sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate)));
+}
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
@@ -3037,8 +3144,8 @@ function defaultServiceUrl(service) {
 }
 function escapeHtml(v) { return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 
-async function saveReleases() { await browserApi.storage.local.set({ releases: state.releases }); }
-async function saveAllLists() { await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks }); }
+async function saveReleases() { invalidateDataCaches(); await browserApi.storage.local.set({ releases: state.releases }); }
+async function saveAllLists() { invalidateDataCaches(); await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks }); }
 function showStatus(message,type="") { els.statusBox.textContent=message; els.statusBox.className=`status-box ${type}`; setTimeout(()=>{ els.statusBox.className="status-box hidden"; },6000); }
 function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensión</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
 function renderNextModern() {
@@ -3065,62 +3172,92 @@ function renderNextModern() {
 }
 
 function getNextHighlightItems() {
-  if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
-  if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
-  return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
+  const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
+  return memoList(`highlight|${state.viewMode}|${dayKey}`, () => {
+    if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
+    if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
+    return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
+  });
 }
 
 function renderListModern() {
   const generation = renderGeneration;
-  var visible = getVisibleItems();
-  if (state.searchQuery) {
-    var q = state.searchQuery.toLowerCase();
-    visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
-  }
-  if (!state.sortAsc) visible = [].concat(visible).reverse();
+  var visible = getFilteredVisibleItems();
   var title = state.viewMode==="today"?"Estrenos de hoy":state.viewMode==="favorites"?"Favoritos":"Proximos estrenos";
   var listTitle = document.getElementById("listTitle");
   if (listTitle) listTitle.textContent = title + " · " + visible.length;
 
-  var frag = document.createDocumentFragment();
+  cleanupVirtualListObserver();
+  virtualListItems = visible;
+  virtualListRendered = 0;
+  els.animeList.innerHTML = "";
+
   if (!visible.length) {
     var empty = document.createElement("div");
     empty.className = "empty-message";
     empty.textContent = "No hay episodios para mostrar.";
-    frag.appendChild(empty);
-  } else {
-    var limit = Math.min(visible.length, 5);
-    for (var i = 0; i < limit; i++) frag.appendChild(createCardModern(visible[i]));
+    els.animeList.appendChild(empty);
+    return;
   }
-  preRendered[state.viewMode] = frag;
 
-  els.animeList.innerHTML = "";
-  els.animeList.appendChild(preRendered[state.viewMode].cloneNode(true));
-  if (visible.length > 5) {
-    renderRemainingTimer = setTimeout(() => renderRemaining(generation), 50);
-  }
+  renderVirtualListBatch(generation);
 }
 
-async function renderRemaining(generation = renderGeneration) {
-  if (generation !== renderGeneration) return;
+function getFilteredVisibleItems() {
   var visible = getVisibleItems();
   if (state.searchQuery) {
     var q = state.searchQuery.toLowerCase();
     visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
   }
   if (!state.sortAsc) visible = [].concat(visible).reverse();
-  if (visible.length <= 5) return;
-  var frag = document.createDocumentFragment();
-  for (var i = 5; i < visible.length; i++) {
-    if (generation !== renderGeneration) return;
-    frag.appendChild(createCardModern(visible[i]));
-    if (frag.childNodes.length >= 12) {
-      els.animeList.appendChild(frag);
-      frag = document.createDocumentFragment();
-      await yieldToMainThread();
-    }
+  return visible;
+}
+
+function cleanupVirtualListObserver() {
+  if (virtualListObserver) {
+    virtualListObserver.disconnect();
+    virtualListObserver = null;
   }
-  if (generation === renderGeneration && frag.childNodes.length) els.animeList.appendChild(frag);
+}
+
+function renderVirtualListBatch(generation = renderGeneration) {
+  if (generation !== renderGeneration) return;
+  cleanupVirtualListObserver();
+  const oldSentinel = els.animeList.querySelector(".virtual-list-sentinel");
+  if (oldSentinel) oldSentinel.remove();
+
+  const start = virtualListRendered;
+  const end = Math.min(start + VIRTUAL_LIST_BATCH_SIZE, virtualListItems.length);
+  var frag = document.createDocumentFragment();
+  for (var i = start; i < end; i++) {
+    if (generation !== renderGeneration) return;
+    frag.appendChild(createCardModern(virtualListItems[i]));
+  }
+  els.animeList.appendChild(frag);
+  virtualListRendered = end;
+
+  if (virtualListRendered < virtualListItems.length) {
+    appendVirtualListSentinel(generation);
+  }
+}
+
+function appendVirtualListSentinel(generation) {
+  const sentinel = document.createElement("div");
+  sentinel.className = "virtual-list-sentinel";
+  sentinel.setAttribute("aria-hidden", "true");
+  els.animeList.appendChild(sentinel);
+
+  if ("IntersectionObserver" in window) {
+    virtualListObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        renderVirtualListBatch(generation);
+      }
+    }, { rootMargin: "650px 0px" });
+    virtualListObserver.observe(sentinel);
+    return;
+  }
+
+  renderRemainingTimer = setTimeout(() => renderVirtualListBatch(generation), 120);
 }
 
 function createCardModern(item) {
