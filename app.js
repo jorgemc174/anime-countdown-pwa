@@ -161,7 +161,7 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v94";
+const APP_CACHE_NAME = "anime-countdown-pwa-v95";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -186,6 +186,16 @@ const SERVICE_PRIORITY = {
   "Muse Asia": 16, "Ani-One": 17, "Tubi": 18,
   "No legal platform": 99
 };
+const CONTENT_FILTERS = [
+  { key: "adult", label: "Adulto / hentai", defaultHidden: true },
+  { key: "kodomo", label: "Kodomo", defaultHidden: true },
+  { key: "ova", label: "OVA", defaultHidden: true },
+  { key: "ona", label: "ONA", defaultHidden: true },
+  { key: "movie", label: "Películas", defaultHidden: true },
+  { key: "special", label: "Especiales", defaultHidden: true },
+  { key: "music", label: "Music", defaultHidden: true }
+];
+const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
 const JUSTWATCH_COUNTRIES = [
   { code: "ES", name: "España", lang: "es" },
   { code: "MX", name: "México", lang: "es" },
@@ -202,7 +212,7 @@ const JUSTWATCH_COUNTRIES = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -296,7 +306,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -371,7 +381,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastNativeNotificationSync","theme"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastNativeNotificationSync","theme"]);
   state.releases = (data.releases || []).map(sanitizePlatformFields).filter((item) => !isAniListTimedRelease(item));
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
@@ -386,6 +396,7 @@ async function loadState() {
   state.timezone = data.timezone || "Europe/Madrid";
   state.jwCountry = data.jwCountry || "ES";
   state.hiddenPlatforms = Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : [];
+  state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
   populateCountryOptions();
   if (els.countryInput) els.countryInput.value = state.jwCountry;
   state.notificationEnabled = Boolean(data.notificationEnabled);
@@ -428,6 +439,11 @@ function bindEvents() {
     e.stopPropagation();
     const chip = e.target.closest(".platform-chip");
     if (chip) togglePlatformFilter(chip.dataset.platform);
+  });
+  els.contentFilterContainer?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const chip = e.target.closest(".platform-chip");
+    if (chip) toggleContentFilter(chip.dataset.filter);
   });
   els.notificationBtn?.addEventListener("click", toggleNotifications);
   els.anilistInput.addEventListener("input", () => debounceAutoSave("anilist", saveAnilistUsername));
@@ -696,6 +712,26 @@ function renderSettingsPlatformFilter() {
     const label = p === "No legal platform" ? "Sin plataforma" : p;
     return `<button class="platform-chip${hidden ? "" : " active"}" data-platform="${escapeHtml(p)}" type="button">${escapeHtml(label)}</button>`;
   }).join("");
+}
+
+function renderContentFilter() {
+  const container = els.contentFilterContainer || document.getElementById("contentFilterContainer");
+  if (!container) return;
+  container.innerHTML = CONTENT_FILTERS.map((filter) => {
+    const visible = !state.hiddenContent.includes(filter.key);
+    return `<button class="platform-chip${visible ? " active" : ""}" data-filter="${escapeHtml(filter.key)}" type="button">${escapeHtml(filter.label)}</button>`;
+  }).join("");
+}
+
+async function toggleContentFilter(filterKey) {
+  if (!CONTENT_FILTERS.some((filter) => filter.key === filterKey)) return;
+  const idx = state.hiddenContent.indexOf(filterKey);
+  if (idx >= 0) state.hiddenContent.splice(idx, 1);
+  else state.hiddenContent.push(filterKey);
+  renderContentFilter();
+  invalidateDataCaches();
+  await browserApi.storage.local.set({ hiddenContent: state.hiddenContent });
+  render();
 }
 
 async function togglePlatformFilter(platform) {
@@ -2984,6 +3020,7 @@ function render() {
   renderNextModern();
   renderListModern();
   renderSettingsPlatformFilter();
+  renderContentFilter();
 }
 function updateLiveCountdowns() {
   if (state.currentNext) {
@@ -3040,7 +3077,8 @@ function adjustDelayedDates(items) {
 function getVisibleItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
   const hiddenKey = state.hiddenPlatforms.join("|");
-  return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}`, () => {
+  const contentKey = state.hiddenContent.join("|");
+  return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
     if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
     if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
     return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
@@ -3095,8 +3133,28 @@ function sortRelevantByDate(items) { const now = Date.now(); return [...items].s
 function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
 function isSchedulableItem(item) {
   if (item.excludeFromSchedule) return false;
-  if (item.isAdult || hasAdultAnilistTag(item)) return false;
+  if (state.hiddenContent.includes("adult") && (item.isAdult || hasAdultAnilistTag(item))) return false;
+  const format = String(item.anilistFormat || item.format || "").toUpperCase();
+  if (state.hiddenContent.includes("ova") && format === "OVA") return false;
+  if (state.hiddenContent.includes("ona") && format === "ONA") return false;
+  if (state.hiddenContent.includes("movie") && format === "MOVIE") return false;
+  if (state.hiddenContent.includes("special") && format === "SPECIAL") return false;
+  if (state.hiddenContent.includes("music") && format === "MUSIC") return false;
+  if (state.hiddenContent.includes("kodomo") && hasKodomoSignal(item)) return false;
   return true;
+}
+
+function hasKodomoSignal(item) {
+  const fields = [
+    item.title,
+    item.anilistTitle,
+    item.animeKey,
+    item.route,
+    item.anilistFormat,
+    ...(item.genres || []),
+    ...(item.tags || []).map((tag) => tag?.name || tag)
+  ];
+  return fields.some((value) => /\bkodomo\b|kids?|children|childrens|preschool|family/i.test(String(value || "")));
 }
 function hasAdultAnilistTag(item) {
   const blockedGenres = ["hentai", "erotica"];
@@ -3202,7 +3260,8 @@ function renderNextModern() {
 
 function getNextHighlightItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
-  return memoList(`highlight|${state.viewMode}|${dayKey}`, () => {
+  const contentKey = state.hiddenContent.join("|");
+  return memoList(`highlight|${state.viewMode}|${dayKey}|${contentKey}`, () => {
     if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
     if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
     return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
