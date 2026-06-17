@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T16:07:33.371Z",
+  "updatedAt": "2026-06-17T20:31:33.963Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,6 +126,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
+      "id": "schedule-aishiteru-game-wo-owarasetai-10-2026-06-16t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-16T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+    },
+    {
       "id": "schedule-marriagetoxin-11-2026-06-16t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -145,26 +165,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
-    },
-    {
-      "id": "schedule-aishiteru-game-wo-owarasetai-10-2026-06-16t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-16T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-11-2026-06-16t16-31-00-02-00",
@@ -1301,7 +1301,7 @@
       "anilistTitle": "Doraemon (2005)",
       "anilistUrl": "https://anilist.co/anime/8687",
       "anilistFormat": "TV",
-      "anilistScore": 76,
+      "anilistScore": 77,
       "titles": [
         "Doraemon (2005)",
         "ドラえもん (2005)"
@@ -1483,25 +1483,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-20T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-12-2026-06-20t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1521,6 +1502,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-20T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-12-2026-06-20t18-01-00-02-00",
@@ -1961,27 +1961,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-11-2026-06-21t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-21T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-11-2026-06-21t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2002,6 +1981,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-11-2026-06-21t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-21T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-12-2026-06-21t11-00-00-02-00",
@@ -2432,6 +2432,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
+      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-23T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+    },
+    {
       "id": "schedule-marriagetoxin-12-2026-06-23t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -2451,26 +2471,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
-    },
-    {
-      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-23T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-12-2026-06-23t16-31-00-02-00",
@@ -2961,6 +2961,49 @@
       "inferredFromAnimeSchedule": true
     },
     {
+      "id": "schedule-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-12-2026-06-24t18-15-00-02-00",
+      "animeKey": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
+      "title": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+      "route": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": true,
+      "releaseDate": "2026-06-24T16:15:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-2nd-season-3f9ccd499c7ce154a09cd234fb435666.jpg"
+    },
+    {
+      "id": "schedule-inferred-ganbare-nakamura-kun-14-2026-06-24t17-00-00-000z",
+      "animeKey": "ganbare-nakamura-kun",
+      "title": "Ganbare! Nakamura-kun!!",
+      "route": "ganbare-nakamura-kun",
+      "episode": "Ep 14",
+      "episodeNumber": "14",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-24T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00337506/go-for-it-nakamura-kun",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganbare-nakamura-kun-be98d5c86e.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "schedule-koala-enikki-38-2026-06-25t13-01-00-02-00",
       "animeKey": "koala-enikki",
       "title": "Koala Enikki",
@@ -3157,20 +3200,20 @@
     },
     {
       "id": "anilist-missing-208044-1-2026-06-25t15-00-00-000z",
-      "animeKey": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
+      "animeKey": "from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage",
       "anilistId": 208044,
-      "anilistTitle": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
+      "anilistTitle": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
       "anilistUrl": "https://anilist.co/anime/208044",
       "anilistFormat": "ONA",
       "anilistScore": null,
       "titles": [
         "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
-        "落第賢者の学院無双～二度目の転生、Sランクチート魔術師冒険録～",
         "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
+        "落第賢者の学院無双～二度目の転生、Sランクチート魔術師冒険録～",
         "The Unsuccessful Yet Academically Unparalleled Sage: A Cheating S-Rank Sorcerer's Post-Rebirth Adventurer Log",
         "The Failed Sage's Academy Domination"
       ],
-      "title": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
+      "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -3178,10 +3221,12 @@
       "delayed": false,
       "releaseDate": "2026-06-25T15:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/208044",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208044-jweYvjbGKnCo.png"
@@ -3615,26 +3660,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shunkashuutou-daikousha-haru-no-mai-43521e55d90e5ee85773692bf25e98b0.jpg"
     },
     {
-      "id": "schedule-needy-girl-overdose-13-2026-06-27t19-00-00-02-00",
-      "animeKey": "needy-girl-overdose",
-      "title": "NEEDY GIRL OVERDOSE",
-      "route": "needy-girl-overdose",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
-    },
-    {
       "id": "schedule-yuusha-no-kuzu-24-2026-06-27t19-00-00-02-00",
       "animeKey": "yuusha-no-kuzu",
       "title": "Yuusha no Kuzu",
@@ -3654,6 +3679,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
+    },
+    {
+      "id": "schedule-needy-girl-overdose-13-2026-06-27t19-00-00-02-00",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-27T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg"
     },
     {
       "id": "schedule-meitantei-precure-22-2026-06-28t03-30-00-02-00",
@@ -4130,19 +4175,20 @@
     },
     {
       "id": "anilist-missing-209669-1-2026-07-01t15-30-00-000z",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "animeKey": "hana-kimi-season-2",
       "anilistId": 209669,
-      "anilistTitle": "Hanazakari no Kimitachi e 2nd Season",
+      "anilistTitle": "Hana-Kimi Season 2",
       "anilistUrl": "https://anilist.co/anime/209669",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Hanazakari no Kimitachi e 2nd Season",
+        "Hana-Kimi Season 2",
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
       ],
-      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "title": "Hana-Kimi Season 2",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -4150,10 +4196,12 @@
       "delayed": false,
       "releaseDate": "2026-07-01T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/209669",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209669-7GlPe2ra5f1i.jpg"
@@ -4177,18 +4225,18 @@
     },
     {
       "id": "anilist-missing-203880-1-2026-07-02t12-30-00-000z",
-      "animeKey": "reiwa-no-dara-san",
+      "animeKey": "dara-san-of-reiwa",
       "anilistId": 203880,
-      "anilistTitle": "Reiwa no Dara-san",
+      "anilistTitle": "Dara-san of Reiwa",
       "anilistUrl": "https://anilist.co/anime/203880",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Reiwa no Dara-san",
-        "令和のダラさん",
-        "Dara-san of Reiwa"
+        "Dara-san of Reiwa",
+        "令和のダラさん"
       ],
-      "title": "Reiwa no Dara-san",
+      "title": "Dara-san of Reiwa",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -4196,10 +4244,12 @@
       "delayed": false,
       "releaseDate": "2026-07-02T12:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/203880",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx203880-lnruKftb27Nr.png"
@@ -4898,10 +4948,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T15:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/196017",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg"
@@ -4986,6 +5038,7 @@
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
+        "Mahou Shoujo Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
         "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
         "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
         "NANOHA EXGV"
@@ -4998,10 +5051,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T16:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/185875",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185875-yg3rQV7Wf4kY.jpg"
@@ -5498,19 +5553,20 @@
     },
     {
       "id": "anilist-missing-169080-1-2026-07-05t16-00-00-000z",
-      "animeKey": "azur-lane-bisoku-zenshin-ni",
+      "animeKey": "anime-azurlane-slow-ahead-season-2",
       "anilistId": 169080,
-      "anilistTitle": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "anilistTitle": "Anime AzurLane: Slow Ahead! Season 2",
       "anilistUrl": "https://anilist.co/anime/169080",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Azur Lane: Bisoku Zenshin! Ni!!",
+        "Anime AzurLane: Slow Ahead! Season 2",
         "アズールレーン びそくぜんしんっ！にっ！！",
         "AzurLane: Slow Ahead! Season 2",
         "Azur Lane: Bisoku Zenshin! 2nd Season"
       ],
-      "title": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "title": "Anime AzurLane: Slow Ahead! Season 2",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5518,10 +5574,12 @@
       "delayed": false,
       "releaseDate": "2026-07-05T16:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/169080",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169080-el4sMLlqMxeI.png"
@@ -5744,20 +5802,20 @@
     },
     {
       "id": "anilist-missing-187260-1-2026-07-07t12-30-00-000z",
-      "animeKey": "kimi-ga-shinu-made-koi-wo-shitai",
+      "animeKey": "i-want-to-love-you-till-your-dying-day",
       "anilistId": 187260,
-      "anilistTitle": "Kimi ga Shinu made Koi wo Shitai",
+      "anilistTitle": "I Want to Love You Till Your Dying Day",
       "anilistUrl": "https://anilist.co/anime/187260",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Kimi ga Shinu made Koi wo Shitai",
-        "きみが死ぬまで恋をしたい",
         "I Want to Love You Till Your Dying Day",
+        "きみが死ぬまで恋をしたい",
         "きみ死ぬ",
         "KimiShinu"
       ],
-      "title": "Kimi ga Shinu made Koi wo Shitai",
+      "title": "I Want to Love You Till Your Dying Day",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5765,10 +5823,12 @@
       "delayed": false,
       "releaseDate": "2026-07-07T12:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/187260",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187260-WW5RBa5NINRP.jpg"
