@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T22:53:54.123Z",
+  "updatedAt": "2026-06-18T05:07:25.366Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -622,6 +622,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-11-2026-06-18t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-18T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-12-2026-06-18t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -642,26 +662,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-11-2026-06-18t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-18T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "schedule-koori-no-jouheki-12-2026-06-18t17-30-00-02-00",
@@ -1483,6 +1483,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-20T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-12-2026-06-20t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1502,25 +1521,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-20T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-12-2026-06-20t18-01-00-02-00",
@@ -1961,27 +1961,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-11-2026-06-21t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-21T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-11-2026-06-21t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -2002,6 +1981,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-11-2026-06-21t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-21T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-12-2026-06-21t11-00-00-02-00",
@@ -3058,26 +3058,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-25T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-13-2026-06-25t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -3098,6 +3078,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "anilist-missing-206682-1-2026-06-25t15-00-00-000z",
@@ -3229,7 +3229,7 @@
       "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208044-jweYvjbGKnCo.png"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208044-Pm2UhvApQFUh.jpg"
     },
     {
       "id": "schedule-koori-no-jouheki-13-2026-06-25t17-30-00-02-00",
@@ -4051,26 +4051,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
     },
     {
-      "id": "schedule-tadaima-ojamasaremasu-13-2026-06-30t19-35-00-02-00",
-      "animeKey": "tadaima-ojamasaremasu",
-      "title": "Tadaima, Ojamasaremasu!",
-      "route": "tadaima-ojamasaremasu",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T17:35:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tadaima-ojamasaremasu-3337aacece2e72516c4db0dc3c81b81a.jpg"
-    },
-    {
       "id": "schedule-quanzhi-fashi-vii-9-2026-07-01t06-00-00-02-00",
       "animeKey": "quanzhi-fashi-vii",
       "title": "Quanzhi Fashi VII",
@@ -4415,18 +4395,18 @@
     },
     {
       "id": "anilist-missing-204466-1-2026-07-02t16-28-00-000z",
-      "animeKey": "otome-kaijuu-caramelise",
+      "animeKey": "kaiju-girl-caramelise",
       "anilistId": 204466,
-      "anilistTitle": "Otome Kaijuu Caramelise",
+      "anilistTitle": "KAIJU GIRL CARAMELISE",
       "anilistUrl": "https://anilist.co/anime/204466",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Otome Kaijuu Caramelise",
-        "乙女怪獣キャラメリゼ",
-        "KAIJU GIRL CARAMELISE"
+        "KAIJU GIRL CARAMELISE",
+        "乙女怪獣キャラメリゼ"
       ],
-      "title": "Otome Kaijuu Caramelise",
+      "title": "KAIJU GIRL CARAMELISE",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -4434,10 +4414,12 @@
       "delayed": false,
       "releaseDate": "2026-07-02T16:28:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/204466",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204466-vXMvIs4VOoQd.png"
@@ -4565,17 +4547,18 @@
     },
     {
       "id": "anilist-missing-203490-1-2026-07-03t15-00-00-000z",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "animeKey": "sorry-about-my-little-brothers",
       "anilistId": 203490,
-      "anilistTitle": "Uchi no Otouto-domo ga Sumimasen",
+      "anilistTitle": "Sorry About My Little Brothers",
       "anilistUrl": "https://anilist.co/anime/203490",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Uchi no Otouto-domo ga Sumimasen",
+        "Sorry About My Little Brothers",
         "うちの弟どもがすみません"
       ],
-      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "title": "Sorry About My Little Brothers",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -4583,10 +4566,12 @@
       "delayed": false,
       "releaseDate": "2026-07-03T15:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/203490",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx203490-D6GOKA0OWblB.jpg"
@@ -4788,18 +4773,18 @@
     },
     {
       "id": "anilist-missing-186863-1-2026-07-04t12-00-00-000z",
-      "animeKey": "neko-to-ryuu",
+      "animeKey": "the-cat-and-the-dragon",
       "anilistId": 186863,
-      "anilistTitle": "Neko to Ryuu",
+      "anilistTitle": "The Cat and the Dragon",
       "anilistUrl": "https://anilist.co/anime/186863",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Neko to Ryuu",
-        "猫と竜",
-        "The Cat and the Dragon"
+        "The Cat and the Dragon",
+        "猫と竜"
       ],
-      "title": "Neko to Ryuu",
+      "title": "The Cat and the Dragon",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -4807,10 +4792,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T12:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/186863",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186863-AO4efoB8HuzA.png"
@@ -4835,38 +4822,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
-    },
-    {
-      "id": "anilist-missing-187538-1-2026-07-04t13-00-00-000z",
-      "animeKey": "black-torch",
-      "anilistId": 187538,
-      "anilistTitle": "BLACK TORCH",
-      "anilistUrl": "https://anilist.co/anime/187538",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "BLACK TORCH",
-        "BLACK TORCH",
-        "BLACK TORCH",
-        "ブラックトーチ"
-      ],
-      "title": "BLACK TORCH",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T13:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187538-aZb5NOsCAV8l.jpg"
     },
     {
       "id": "anilist-missing-206249-1-2026-07-04t13-30-00-000z",
@@ -4898,21 +4853,10 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206249-1AUSry416wGz.png"
     },
     {
-      "id": "anilist-missing-190569-1-2026-07-04t14-00-00-000z",
-      "animeKey": "tenmaku-no-jaadugar",
-      "anilistId": 190569,
-      "anilistTitle": "Tenmaku no Jaadugar",
-      "anilistUrl": "https://anilist.co/anime/190569",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Tenmaku no Jaadugar",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar: A Witch in Mongolia"
-      ],
-      "title": "Tenmaku no Jaadugar",
-      "route": "",
+      "id": "schedule-black-torch-1-2026-07-04t16-00-00-02-00",
+      "animeKey": "black-torch",
+      "title": "BLACK TORCH",
+      "route": "black-torch",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
@@ -4920,9 +4864,39 @@
       "releaseDate": "2026-07-04T14:00:00.000Z",
       "originalReleaseDate": "",
       "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/190569",
+      "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/black-torch-21f5052369ca6001ab61b9165b7f6979.jpg"
+    },
+    {
+      "id": "anilist-missing-190569-1-2026-07-04t14-00-00-000z",
+      "animeKey": "jaadugar-a-witch-in-mongolia",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol"
+      ],
+      "title": "Jaadugar: A Witch in Mongolia",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-xkFjq9u9IeSr.jpg"
@@ -4957,6 +4931,38 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg"
+    },
+    {
+      "id": "anilist-missing-194219-1-2026-07-04t15-30-00-000z",
+      "animeKey": "the-ogre-s-bride",
+      "anilistId": 194219,
+      "anilistTitle": "The Ogre's Bride",
+      "anilistUrl": "https://anilist.co/anime/194219",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Oni no Hanayome",
+        "The Ogre's Bride",
+        "鬼の花嫁 ",
+        "OniHana"
+      ],
+      "title": "The Ogre's Bride",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194219-qf7L0SfVi6nc.jpg"
     },
     {
       "id": "schedule-mao-14-2026-07-04t17-45-00-02-00",
@@ -5063,20 +5069,20 @@
     },
     {
       "id": "anilist-missing-208225-1-2026-07-04t16-30-00-000z",
-      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-naze-ka-dekiai-shitekimasu",
+      "animeKey": "the-duke-s-son-claims-he-won-t-love-me-yet-showers-me-with-adoration",
       "anilistId": 208225,
-      "anilistTitle": "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
       "anilistUrl": "https://anilist.co/anime/208225",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
-        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
         "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
         "きみ愛",
         "KimiAi"
       ],
-      "title": "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+      "title": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5084,10 +5090,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T16:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/208225",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-Zmvu2PBrF2CJ.jpg"
@@ -5348,18 +5356,18 @@
     },
     {
       "id": "anilist-missing-198409-1-2026-07-05t13-00-00-000z",
-      "animeKey": "sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha",
+      "animeKey": "the-world-s-strongest-rearguard",
       "anilistId": 198409,
-      "anilistTitle": "Sekai Saikyou no Kouei: Meikyuukoku no Shinjin Tansakusha",
+      "anilistTitle": "The World's Strongest Rearguard",
       "anilistUrl": "https://anilist.co/anime/198409",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Sekai Saikyou no Kouei: Meikyuukoku no Shinjin Tansakusha",
-        "世界最強の後衛 ～迷宮国の新人探索者～",
-        "The World's Strongest Rearguard: Labyrinth Country's Novice Seeker"
+        "The World's Strongest Rearguard",
+        "世界最強の後衛 ～迷宮国の新人探索者～"
       ],
-      "title": "Sekai Saikyou no Kouei: Meikyuukoku no Shinjin Tansakusha",
+      "title": "The World's Strongest Rearguard",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5367,10 +5375,12 @@
       "delayed": false,
       "releaseDate": "2026-07-05T13:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/198409",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198409-EiWJXfYnvfu4.png"
@@ -5586,21 +5596,21 @@
     },
     {
       "id": "anilist-missing-169582-1-2026-07-06t11-57-00-000z",
-      "animeKey": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi-munou-wo-enjiru-ss-rank-ouji-wa-koui-keishou-sen-wo-kage-kara-shihai-suru",
+      "animeKey": "the-insipid-prince-s-furtive-grab-for-the-throne",
       "anilistId": 169582,
-      "anilistTitle": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi: Munou wo Enjiru SS Rank Ouji wa Koui Keishou-sen wo Kage kara Shihai suru",
+      "anilistTitle": "The Insipid Prince's Furtive Grab for the Throne",
       "anilistUrl": "https://anilist.co/anime/169582",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Saikyou Degarashi Ouji no Anyaku Teii Arasoi: Munou wo Enjiru SS Rank Ouji wa Koui Keishou-sen wo Kage kara Shihai suru",
+        "The Insipid Prince's Furtive Grab for the Throne",
         "最強出涸らし皇子の暗躍帝位争い 無能を演じるSSランク皇子は皇位継承戦を影から支配する",
         "The Strongest Dull Prince Secret Battle for the Throne. ~I Don’t Care About the Throne but Since I Don’t Want to Die, I Think I Will Make My Little Brother the Emperor~",
-        "The Insipid Prince's Furtive Grab for The Throne",
         "出涸らし皇子",
         "Degarashi Ouji"
       ],
-      "title": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi: Munou wo Enjiru SS Rank Ouji wa Koui Keishou-sen wo Kage kara Shihai suru",
+      "title": "The Insipid Prince's Furtive Grab for the Throne",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5608,28 +5618,32 @@
       "delayed": false,
       "releaseDate": "2026-07-06T11:57:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/169582",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169582-quL8VMg45fcu.png"
     },
     {
       "id": "anilist-missing-202269-1-2026-07-06t12-00-00-000z",
-      "animeKey": "toumei-na-yoru-ni-kakeru-kimi-to-me-ni-mienai-koi-wo-shita",
+      "animeKey": "love-unseen-beneath-the-clear-night-sky",
       "anilistId": 202269,
-      "anilistTitle": "Toumei na Yoru ni Kakeru Kimi to, Me ni Mienai Koi wo Shita.",
+      "anilistTitle": "Love Unseen Beneath the Clear Night Sky",
       "anilistUrl": "https://anilist.co/anime/202269",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Toumei na Yoru ni Kakeru Kimi to, Me ni Mienai Koi wo Shita.",
+        "Love Unseen Beneath the Clear Night Sky",
         "透明な夜に駆ける君と、目に見えない恋をした。",
-        "Love Unseen Beneath the Clear Night Sky"
+        "かけ恋",
+        "Kakekoi"
       ],
-      "title": "Toumei na Yoru ni Kakeru Kimi to, Me ni Mienai Koi wo Shita.",
+      "title": "Love Unseen Beneath the Clear Night Sky",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5637,10 +5651,12 @@
       "delayed": false,
       "releaseDate": "2026-07-06T12:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/202269",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202269-7KNj8s2fSsJJ.jpg"
@@ -5753,19 +5769,20 @@
     },
     {
       "id": "anilist-missing-169583-1-2026-07-06t14-30-00-000z",
-      "animeKey": "tenkousaki-no-seiso-karen-na-bishoujo-ga-mukashi-danshi-to-omotte-issho-ni-asonda-osananajimi-datta-ken",
+      "animeKey": "oh-boy-was-i-wrong-about-her",
       "anilistId": 169583,
-      "anilistTitle": "Tenkousaki no Seiso Karen na Bishoujo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+      "anilistTitle": "Oh Boy, Was I Wrong About Her",
       "anilistUrl": "https://anilist.co/anime/169583",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Tenkousaki no Seiso Karen na Bishoujo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+        "Oh Boy, Was I Wrong About Her",
         "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
         "Tenkosaki: The Neat and Pretty Girl at My New School Is a Childhood Friend of Mine Who I Thought Was a Boy",
         "Tenbin"
       ],
-      "title": "Tenkousaki no Seiso Karen na Bishoujo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+      "title": "Oh Boy, Was I Wrong About Her",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5773,10 +5790,12 @@
       "delayed": false,
       "releaseDate": "2026-07-06T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/169583",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169583-BZysrWv5Q1yO.png"
@@ -5900,17 +5919,18 @@
     },
     {
       "id": "anilist-missing-209800-1-2026-07-07t14-30-00-000z",
-      "animeKey": "yoroi-shinden-samurai-troopers-part-2",
+      "animeKey": "yoroi-shinden-samurai-troopers-cour-2",
       "anilistId": 209800,
-      "anilistTitle": "Yoroi Shinden Samurai Troopers Part 2",
+      "anilistTitle": "Yoroi-Shinden Samurai Troopers Cour 2",
       "anilistUrl": "https://anilist.co/anime/209800",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Yoroi Shinden Samurai Troopers Part 2",
+        "Yoroi-Shinden Samurai Troopers Cour 2",
         "鎧真伝サムライトルーパー 第2クール"
       ],
-      "title": "Yoroi Shinden Samurai Troopers Part 2",
+      "title": "Yoroi-Shinden Samurai Troopers Cour 2",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5918,10 +5938,12 @@
       "delayed": false,
       "releaseDate": "2026-07-07T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/209800",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00367517/yoroi-shinden-samurai-troopers",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209800-v3TIdNz1AV0X.jpg"
@@ -5986,26 +6008,6 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207809-cpS7CAyjN7iP.jpg"
-    },
-    {
-      "id": "schedule-tadaima-ojamasaremasu-14-2026-07-07t19-35-00-02-00",
-      "animeKey": "tadaima-ojamasaremasu",
-      "title": "Tadaima, Ojamasaremasu!",
-      "route": "tadaima-ojamasaremasu",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T17:35:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371775",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tadaima-ojamasaremasu-3337aacece2e72516c4db0dc3c81b81a.jpg"
     },
     {
       "id": "anilist-missing-211232-1-2026-07-08t01-00-00-000z",
@@ -6176,22 +6178,23 @@
     },
     {
       "id": "anilist-missing-159309-1-2026-07-08t14-30-00-000z",
-      "animeKey": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2",
+      "animeKey": "trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs-season-2",
       "anilistId": 159309,
-      "anilistTitle": "Otomege Sekai wa Mob ni Kibishii Sekai desu 2",
+      "anilistTitle": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
       "anilistUrl": "https://anilist.co/anime/159309",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Otomege Sekai wa Mob ni Kibishii Sekai desu 2",
+        "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
         "乙女ゲー世界はモブに厳しい世界です2",
-        "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs Season 2",
         "mobseka 2",
         "ชีวิตตัวประกอบอย่างตูช่างอยู่ยาก เมื่ออยู่ในโลกเกมจีบหนุ่ม ภาค 2",
         "Otome Game Sekai wa Mob ni Kibishii Sekai desu 2",
-        "Otomege 2"
+        "Otomege 2",
+        "モブせか 2"
       ],
-      "title": "Otomege Sekai wa Mob ni Kibishii Sekai desu 2",
+      "title": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs Season 2",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -6199,10 +6202,12 @@
       "delayed": false,
       "releaseDate": "2026-07-08T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/159309",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx159309-lgzVE2LnHelv.jpg"
@@ -6253,6 +6258,35 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/katainaka-no-ossan-kensei-ni-naru-2nd-season-6b8863d2c46925d2d05773d6915c9df3.jpg"
+    },
+    {
+      "id": "anilist-missing-207254-1-2026-07-08t15-44-00-000z",
+      "animeKey": "thunder-3",
+      "anilistId": 207254,
+      "anilistTitle": "Thunder 3",
+      "anilistUrl": "https://anilist.co/anime/207254",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Thunder 3",
+        "Thunder 3",
+        "サンダー３"
+      ],
+      "title": "Thunder 3",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T15:44:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/207254",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207254-StcuNpmZTDCL.jpg"
     },
     {
       "id": "anilist-missing-184356-1-2026-07-08t16-15-00-000z",
@@ -6325,18 +6359,19 @@
       "id": "anilist-missing-108992-1-2026-07-09t14-30-00-000z",
       "animeKey": "mebius-dust",
       "anilistId": 108992,
-      "anilistTitle": "Mebius Dust",
+      "anilistTitle": "MEBIUS DUST",
       "anilistUrl": "https://anilist.co/anime/108992",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Mebius Dust",
+        "MEBIUS DUST",
         "メビウス・ダスト",
         "Project Anima",
         "Mobius Dust",
         "Möbius Dust"
       ],
-      "title": "Mebius Dust",
+      "title": "MEBIUS DUST",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -6344,10 +6379,12 @@
       "delayed": false,
       "releaseDate": "2026-07-09T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/108992",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108992-12A18HaisXXA.png"
@@ -6533,22 +6570,22 @@
     },
     {
       "id": "anilist-missing-182616-1-2026-07-10t14-30-00-000z",
-      "animeKey": "nige-jouzu-no-wakagimi-2nd-season",
+      "animeKey": "the-elusive-samurai-season-2",
       "anilistId": 182616,
-      "anilistTitle": "Nige Jouzu no Wakagimi 2nd Season",
+      "anilistTitle": "The Elusive Samurai Season 2",
       "anilistUrl": "https://anilist.co/anime/182616",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Nige Jouzu no Wakagimi 2nd Season",
-        "逃げ上手の若君 第二期",
         "The Elusive Samurai Season 2",
-        "Nigewaka",
+        "逃げ上手の若君 第二期",
+        "Nigewaka 2",
         "นายน้อยจอมโกยก้าวสู่เส้นทางแห่งวีรบุรุษ",
         "Héroe fugitivo",
         "Беглый самурай"
       ],
-      "title": "Nige Jouzu no Wakagimi 2nd Season",
+      "title": "The Elusive Samurai Season 2",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -6556,10 +6593,12 @@
       "delayed": false,
       "releaseDate": "2026-07-10T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/182616",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0M19X/the-elusive-samurai",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182616-ZOCgArw9cgqI.jpg"
@@ -6708,6 +6747,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
+    },
+    {
+      "id": "schedule-black-torch-2-2026-07-11t16-00-00-02-00",
+      "animeKey": "black-torch",
+      "title": "BLACK TORCH",
+      "route": "black-torch",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-11T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/black-torch-21f5052369ca6001ab61b9165b7f6979.jpg"
     },
     {
       "id": "schedule-mao-15-2026-07-11t17-45-00-02-00",
@@ -7168,37 +7224,6 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212652-ZDAdpsFuFiGB.png"
-    },
-    {
-      "id": "anilist-missing-133007-1-2026-08-27t15-00-00-000z",
-      "animeKey": "puella-magi-madoka-magica-the-movie-walpurgisnacht-rising",
-      "anilistId": 133007,
-      "anilistTitle": "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-",
-      "anilistUrl": "https://anilist.co/anime/133007",
-      "anilistFormat": "MOVIE",
-      "anilistScore": null,
-      "titles": [
-        "Mahou Shoujo Madoka☆Magica: Walpurgis no Kaiten",
-        "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-",
-        "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
-        "Magical Girl Madoka Magica Movie 4",
-        "Puella Magi Madoka Magica Movie 4"
-      ],
-      "title": "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-27T15:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/133007",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx133007-5gOUXDvzxy9S.jpg"
     }
   ]
 }
