@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T05:20:57.590Z",
+  "updatedAt": "2026-06-21T10:07:04.231Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,26 +126,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-10-2026-06-16t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-16T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-11-2026-06-16t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -165,6 +145,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-10-2026-06-16t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-16T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-11-2026-06-16t16-31-00-02-00",
@@ -361,27 +361,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
     },
     {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-11-2026-06-17t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-17T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-11-2026-06-17t16-00-00-02-00",
       "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
       "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
@@ -401,6 +380,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-11-2026-06-17t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-17T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-otaku-ni-yasashii-gal-wa-inai-11-2026-06-17t17-45-00-02-00",
@@ -1106,6 +1106,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
+      "animeKey": "akane-banashi",
+      "title": "Akane-banashi",
+      "route": "akane-banashi",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-20T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82701514",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-12-2026-06-20t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -1125,25 +1144,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-akane-banashi-12-2026-06-20t18-00-00-02-00",
-      "animeKey": "akane-banashi",
-      "title": "Akane-banashi",
-      "route": "akane-banashi",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-20T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82701514",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/akane-banashi-16844a9fca0ee900ae11d71afb4247b5.jpg"
     },
     {
       "id": "schedule-kanan-sama-wa-akumade-choroi-12-2026-06-20t18-01-00-02-00",
@@ -1313,41 +1313,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "anilist-missing-182300-11-2026-06-21t07-30-00-000z",
-      "animeKey": "wistoria-wand-and-sword-season-2",
-      "anilistId": 182300,
-      "anilistTitle": "Wistoria: Wand and Sword Season 2",
-      "anilistUrl": "https://anilist.co/anime/182300",
-      "anilistFormat": "TV",
-      "anilistScore": 82,
-      "titles": [
-        "Tsue to Tsurugi no Wistoria Season 2",
-        "Wistoria: Wand and Sword Season 2",
-        "杖と剣のウィストリア Season2",
-        "ตำนานดาบและคทาแห่งวิสตอเรีย ซีซั่น 2",
-        "Tongkat Sihir dan Pedang Wistoria Season 2"
-      ],
-      "title": "Wistoria: Wand and Sword Season 2",
-      "route": "",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-21T07:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
-      "allServices": [
-        "Crunchyroll",
-        "Bilibili",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
-    },
-    {
       "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-11-2026-06-21t10-30-00-02-00",
       "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
       "title": "Yozakura-san Chi no Daisakusen 2nd Season",
@@ -1426,35 +1391,6 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
-    },
-    {
-      "id": "anilist-missing-2406-2837-2026-06-21t09-30-00-000z",
-      "animeKey": "sazae-san",
-      "anilistId": 2406,
-      "anilistTitle": "Sazae-san",
-      "anilistUrl": "https://anilist.co/anime/2406",
-      "anilistFormat": "TV",
-      "anilistScore": 55,
-      "titles": [
-        "Sazae-san",
-        "サザエさん",
-        "Mrs. Sazae"
-      ],
-      "title": "Sazae-san",
-      "route": "",
-      "episode": "Ep 2837",
-      "episodeNumber": "2837",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-21T09:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/2406",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "schedule-nippon-sangoku-12-2026-06-21t14-01-00-02-00",
@@ -2138,7 +2074,7 @@
       "anilistTitle": "Cheongchun Blossom: Uriui Bom",
       "anilistUrl": "https://anilist.co/anime/163793",
       "anilistFormat": "TV",
-      "anilistScore": 70,
+      "anilistScore": 73,
       "titles": [
         "Cheongchun Blossom: Uriui Bom",
         "청춘블라썸 : 우리의 봄",
@@ -3227,7 +3163,7 @@
       "anilistTitle": "Lord of Mysteries Specials",
       "anilistUrl": "https://anilist.co/anime/199448",
       "anilistFormat": "ONA",
-      "anilistScore": 69,
+      "anilistScore": 76,
       "titles": [
         "Guimi Zhi Zhu Specials",
         "Lord of Mysteries Specials",
@@ -3358,7 +3294,7 @@
       "anilistTitle": "Beyond Time's Gaze 2",
       "anilistUrl": "https://anilist.co/anime/213356",
       "anilistFormat": "ONA",
-      "anilistScore": null,
+      "anilistScore": 79,
       "titles": [
         "Guangyin Zhi Wai 2",
         "Beyond Time's Gaze 2",
@@ -3840,7 +3776,7 @@
       "anilistTitle": "Onegai AiPri",
       "anilistUrl": "https://anilist.co/anime/206523",
       "anilistFormat": "TV",
-      "anilistScore": 53,
+      "anilistScore": 54,
       "titles": [
         "Onegai AiPri",
         "おねがいアイプリ"
@@ -3938,6 +3874,41 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
+      "id": "anilist-missing-182300-12-2026-06-28t07-30-00-000z",
+      "animeKey": "wistoria-wand-and-sword-season-2",
+      "anilistId": 182300,
+      "anilistTitle": "Wistoria: Wand and Sword Season 2",
+      "anilistUrl": "https://anilist.co/anime/182300",
+      "anilistFormat": "TV",
+      "anilistScore": 82,
+      "titles": [
+        "Tsue to Tsurugi no Wistoria Season 2",
+        "Wistoria: Wand and Sword Season 2",
+        "杖と剣のウィストリア Season2",
+        "ตำนานดาบและคทาแห่งวิสตอเรีย ซีซั่น 2",
+        "Tongkat Sihir dan Pedang Wistoria Season 2"
+      ],
+      "title": "Wistoria: Wand and Sword Season 2",
+      "route": "",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-28T07:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
+      "allServices": [
+        "Crunchyroll",
+        "Bilibili",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
+    },
+    {
       "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
       "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
       "title": "Yozakura-san Chi no Daisakusen 2nd Season",
@@ -4016,6 +3987,35 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
+    },
+    {
+      "id": "anilist-missing-2406-2838-2026-06-28t09-30-00-000z",
+      "animeKey": "sazae-san",
+      "anilistId": 2406,
+      "anilistTitle": "Sazae-san",
+      "anilistUrl": "https://anilist.co/anime/2406",
+      "anilistFormat": "TV",
+      "anilistScore": 55,
+      "titles": [
+        "Sazae-san",
+        "サザエさん",
+        "Mrs. Sazae"
+      ],
+      "title": "Sazae-san",
+      "route": "",
+      "episode": "Ep 2838",
+      "episodeNumber": "2838",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-28T09:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/2406",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "schedule-kuroneko-to-majo-no-kyoushitsu-12-2026-06-28t17-00-00-02-00",
@@ -7174,6 +7174,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
+    },
+    {
       "id": "schedule-one-piece-1170-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -7196,23 +7213,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -7319,6 +7319,39 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202717-kHDn7BRiP9CR.jpg"
+    },
+    {
+      "id": "anilist-missing-185874-1-2026-07-25t14-00-00-000z",
+      "animeKey": "bleach-thousand-year-blood-war-the-calamity",
+      "anilistId": 185874,
+      "anilistTitle": "BLEACH: Thousand-Year Blood War - The Calamity",
+      "anilistUrl": "https://anilist.co/anime/185874",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "BLEACH: Sennen Kessen-hen - Kashin-tan",
+        "BLEACH: Thousand-Year Blood War - The Calamity",
+        "BLEACH 千年血戦篇-禍進譚-",
+        "BLEACH: Thousand-Year Blood War Part 4",
+        "BLEACH 千年血戦篇 第4クール",
+        "BLEACH: Thousand-Year Blood War The Final Part",
+        "BLEACH TYBW"
+      ],
+      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/185874",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185874-aU3e6tBT6wwA.jpg"
     },
     {
       "id": "anilist-missing-208829-1-2026-07-30t15-00-00-000z",
