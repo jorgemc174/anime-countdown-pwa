@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T04:32:22.943Z",
+  "updatedAt": "2026-06-23T10:05:27.701Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -726,26 +726,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-25T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-13-2026-06-25t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -766,6 +746,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "anilist-missing-206682-1-2026-06-25t15-00-00-000z",
@@ -1065,26 +1065,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-26T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-13-2026-06-26t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -1105,6 +1085,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-26T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-14-2026-06-26t18-01-00-02-00",
@@ -1283,7 +1283,7 @@
       "anilistTitle": "Lord of Mysteries Specials",
       "anilistUrl": "https://anilist.co/anime/199448",
       "anilistFormat": "ONA",
-      "anilistScore": 78,
+      "anilistScore": 79,
       "titles": [
         "Guimi Zhi Zhu Specials",
         "Lord of Mysteries Specials",
@@ -1414,7 +1414,7 @@
       "anilistTitle": "Beyond Time's Gaze 2",
       "anilistUrl": "https://anilist.co/anime/213356",
       "anilistFormat": "ONA",
-      "anilistScore": 82,
+      "anilistScore": 84,
       "titles": [
         "Guangyin Zhi Wai 2",
         "Beyond Time's Gaze 2",
@@ -2815,18 +2815,18 @@
     },
     {
       "id": "anilist-missing-207141-1-2026-07-02t15-30-00-000z",
-      "animeKey": "yani-neko",
+      "animeKey": "chainsmoker-cat",
       "anilistId": 207141,
-      "anilistTitle": "Yani Neko",
+      "anilistTitle": "Chainsmoker Cat",
       "anilistUrl": "https://anilist.co/anime/207141",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Yani Neko",
-        "ヤニねこ",
-        "Chainsmoker Cat"
+        "Chainsmoker Cat",
+        "ヤニねこ"
       ],
-      "title": "Yani Neko",
+      "title": "Chainsmoker Cat",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -2834,10 +2834,12 @@
       "delayed": false,
       "releaseDate": "2026-07-02T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/207141",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207141-h5q5KJPd6vaX.jpg"
