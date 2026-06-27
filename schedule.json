@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T16:34:02.556Z",
+  "updatedAt": "2026-06-27T19:47:27.714Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -344,27 +344,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
     },
     {
-      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-12-2026-06-24t16-00-00-02-00",
-      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
-      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-24T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-06-24t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -384,6 +363,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-12-2026-06-24t16-00-00-02-00",
+      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-24T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-1-2026-06-24t16-30-00-02-00",
@@ -666,26 +666,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-26T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
       "id": "schedule-snowball-earth-13-2026-06-26t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -706,6 +686,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-26T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-14-2026-06-26t18-01-00-02-00",
@@ -887,6 +887,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg"
+    },
+    {
+      "id": "schedule-neko-to-ryuu-1-2026-06-27t15-30-00-02-00",
+      "animeKey": "neko-to-ryuu",
+      "title": "Neko to Ryuu",
+      "route": "neko-to-ryuu",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-27T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
     },
     {
       "id": "schedule-kill-ao-12-2026-06-27t16-30-00-02-00",
@@ -1351,6 +1370,27 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
     },
     {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-28T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
+    },
+    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-12-2026-06-28t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -1371,27 +1411,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
-    },
-    {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-13-2026-06-28t11-00-00-02-00",
@@ -3131,37 +3150,6 @@
       "inferredFromAnimeSchedule": true
     },
     {
-      "id": "anilist-missing-209983-1-2026-07-03t16-00-00-000z",
-      "animeKey": "hell-mode-yarikomi-zuki-no-gamer-wa-haisettei-no-isekai-de-musou-suru-2nd-season",
-      "anilistId": 209983,
-      "anilistTitle": "Hell Mode: Yarikomi-zuki no Gamer wa Haisettei no Isekai de Musou Suru 2nd Season",
-      "anilistUrl": "https://anilist.co/anime/209983",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Hell Mode: Yarikomi-zuki no Gamer wa Haisettei no Isekai de Musou Suru 2nd Season",
-        "ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～ 2nd Season",
-        "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2"
-      ],
-      "title": "Hell Mode: Yarikomi-zuki no Gamer wa Haisettei no Isekai de Musou Suru 2nd Season",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "HIDIVE",
-      "serviceUrl": "https://www.hidive.com",
-      "allServices": [
-        "HIDIVE"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209983-goWdl95cx0cG.jpg"
-    },
-    {
       "id": "schedule-inferred-hokuto-no-ken-fist-of-the-north-star-15-2026-07-03t16-01-00-000z",
       "animeKey": "hokuto-no-ken-fist-of-the-north-star",
       "title": "Hokuto no Ken: Fist of the North Star",
@@ -3181,6 +3169,23 @@
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hokuto-no-ken-fist-of-the-north-star-390d328d1746f59bba17162c1d179d81.jpg",
       "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-1-2026-07-03t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-03T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-inferred-kamiina-botan-yoeru-sugata-wa-yuri-no-hana-13-2026-07-03t16-30-00-000z",
@@ -3496,37 +3501,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg"
     },
     {
-      "id": "anilist-missing-186863-2-2026-07-04t12-00-00-000z",
-      "animeKey": "the-cat-and-the-dragon",
-      "anilistId": 186863,
-      "anilistTitle": "The Cat and the Dragon",
-      "anilistUrl": "https://anilist.co/anime/186863",
-      "anilistFormat": "ONA",
-      "anilistScore": null,
-      "titles": [
-        "Neko to Ryuu",
-        "The Cat and the Dragon",
-        "猫と竜"
-      ],
-      "title": "The Cat and the Dragon",
-      "route": "",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T12:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117/the-cat-and-the-dragon",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186863-AO4efoB8HuzA.png"
-    },
-    {
       "id": "schedule-detective-conan-1206-2026-07-04t14-30-00-02-00",
       "animeKey": "detective-conan",
       "title": "Detective Conan",
@@ -3567,6 +3541,25 @@
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg",
       "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-neko-to-ryuu-2-2026-07-04t15-30-00-02-00",
+      "animeKey": "neko-to-ryuu",
+      "title": "Neko to Ryuu",
+      "route": "neko-to-ryuu",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
     },
     {
       "id": "anilist-missing-206249-1-2026-07-04t13-30-00-000z",
@@ -3923,6 +3916,49 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-Zmvu2PBrF2CJ.jpg"
+    },
+    {
+      "id": "schedule-inferred-needy-girl-overdose-14-2026-07-04t17-00-00-000z",
+      "animeKey": "needy-girl-overdose",
+      "title": "NEEDY GIRL OVERDOSE",
+      "route": "needy-girl-overdose",
+      "episode": "Ep 14",
+      "episodeNumber": "14",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371863",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/needy-girl-overdose-baed367137.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-inferred-yuusha-no-kuzu-25-2026-07-04t17-00-00-000z",
+      "animeKey": "yuusha-no-kuzu",
+      "title": "Yuusha no Kuzu",
+      "route": "yuusha-no-kuzu",
+      "episode": "Ep 25",
+      "episodeNumber": "25",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365730",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg",
+      "inferredFromAnimeSchedule": true
     },
     {
       "id": "anilist-missing-201514-1-2026-07-04t17-38-00-000z",
@@ -5456,6 +5492,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-2-2026-07-10t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
+    },
+    {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-15-2026-07-11t03-00-00-02-00",
       "animeKey": "rilakkuma-goyururi-yume-no-tabi",
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -5537,6 +5590,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
+    },
+    {
+      "id": "schedule-neko-to-ryuu-3-2026-07-11t15-30-00-02-00",
+      "animeKey": "neko-to-ryuu",
+      "title": "Neko to Ryuu",
+      "route": "neko-to-ryuu",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-11T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
     },
     {
       "id": "schedule-black-torch-2-2026-07-11t16-00-00-02-00",
@@ -6115,6 +6187,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-3-2026-07-17t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
+    },
+    {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-16-2026-07-18t03-00-00-02-00",
       "animeKey": "rilakkuma-goyururi-yume-no-tabi",
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -6196,6 +6285,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
+    },
+    {
+      "id": "schedule-neko-to-ryuu-4-2026-07-18t15-30-00-02-00",
+      "animeKey": "neko-to-ryuu",
+      "title": "Neko to Ryuu",
+      "route": "neko-to-ryuu",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
     },
     {
       "id": "schedule-black-torch-3-2026-07-18t16-00-00-02-00",
