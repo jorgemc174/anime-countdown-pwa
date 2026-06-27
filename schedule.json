@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T09:07:01.974Z",
+  "updatedAt": "2026-06-27T11:05:23.834Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -827,35 +827,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
     },
     {
-      "id": "anilist-missing-213356-2-2026-06-27t10-00-00-000z",
-      "animeKey": "beyond-time-s-gaze-2",
-      "anilistId": 213356,
-      "anilistTitle": "Beyond Time's Gaze 2",
-      "anilistUrl": "https://anilist.co/anime/213356",
-      "anilistFormat": "ONA",
-      "anilistScore": 84,
-      "titles": [
-        "Guangyin Zhi Wai 2",
-        "Beyond Time's Gaze 2",
-        "光阴之外2"
-      ],
-      "title": "Beyond Time's Gaze 2",
-      "route": "",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T10:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/213356",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213356-nYFTX2yeMBd5.jpg"
-    },
-    {
       "id": "schedule-mairimashita-iruma-kun-4-13-2026-06-27t12-25-00-02-00",
       "animeKey": "mairimashita-iruma-kun-4",
       "title": "Mairimashita! Iruma-kun 4",
@@ -1340,7 +1311,7 @@
       "anilistTitle": "Lord of Mysteries Specials",
       "anilistUrl": "https://anilist.co/anime/199448",
       "anilistFormat": "ONA",
-      "anilistScore": 80,
+      "anilistScore": 81,
       "titles": [
         "Guimi Zhi Zhu Specials",
         "Lord of Mysteries Specials",
@@ -1444,27 +1415,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
     },
     {
-      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
-      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
-      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/4mqVhWP",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Disney+"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
       "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-12-2026-06-28t10-30-00-02-00",
       "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "title": "Tsue to Tsurugi no Wistoria 2nd Season",
@@ -1485,6 +1435,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
+    },
+    {
+      "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-28T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-13-2026-06-28t11-00-00-02-00",
@@ -1739,7 +1710,7 @@
       "anilistTitle": "Chiikawa",
       "anilistUrl": "https://anilist.co/anime/140842",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 83,
+      "anilistScore": 84,
       "titles": [
         "Chiikawa",
         "Chiikawa",
@@ -1773,7 +1744,7 @@
       "anilistTitle": "Cheng Huang Lu",
       "anilistUrl": "https://anilist.co/anime/137664",
       "anilistFormat": "ONA",
-      "anilistScore": 54,
+      "anilistScore": 57,
       "titles": [
         "Cheng Huang Lu",
         "城隍录"
@@ -1962,26 +1933,6 @@
       "inferredFromAnimeSchedule": true
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-13-2026-06-30t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -2001,6 +1952,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-30T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-13-2026-06-30t16-31-00-02-00",
@@ -3506,6 +3477,35 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
+    },
+    {
+      "id": "anilist-missing-213356-3-2026-07-04t10-00-00-000z",
+      "animeKey": "beyond-time-s-gaze-2",
+      "anilistId": 213356,
+      "anilistTitle": "Beyond Time's Gaze 2",
+      "anilistUrl": "https://anilist.co/anime/213356",
+      "anilistFormat": "ONA",
+      "anilistScore": 84,
+      "titles": [
+        "Guangyin Zhi Wai 2",
+        "Beyond Time's Gaze 2",
+        "光阴之外2"
+      ],
+      "title": "Beyond Time's Gaze 2",
+      "route": "",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T10:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/213356",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213356-nYFTX2yeMBd5.jpg"
     },
     {
       "id": "schedule-mairimashita-iruma-kun-4-14-2026-07-04t12-25-00-02-00",
@@ -5705,23 +5705,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5744,6 +5727,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -6298,23 +6298,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -6337,6 +6320,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
