@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T11:05:23.834Z",
+  "updatedAt": "2026-06-27T14:09:05.314Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,26 +126,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-23T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-12-2026-06-23t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -165,6 +145,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-23T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-12-2026-06-23t16-31-00-02-00",
@@ -344,27 +344,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
     },
     {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-06-24t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-24T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
       "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-12-2026-06-24t16-00-00-02-00",
       "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
       "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
@@ -384,6 +363,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-06-24t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-24T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-1-2026-06-24t16-30-00-02-00",
@@ -846,37 +846,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
-    },
-    {
-      "id": "anilist-missing-186863-1-2026-06-27t12-00-00-000z",
-      "animeKey": "the-cat-and-the-dragon",
-      "anilistId": 186863,
-      "anilistTitle": "The Cat and the Dragon",
-      "anilistUrl": "https://anilist.co/anime/186863",
-      "anilistFormat": "ONA",
-      "anilistScore": null,
-      "titles": [
-        "Neko to Ryuu",
-        "The Cat and the Dragon",
-        "猫と竜"
-      ],
-      "title": "The Cat and the Dragon",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T12:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186863-AO4efoB8HuzA.png"
     },
     {
       "id": "schedule-detective-conan-1205-2026-06-27t14-30-00-02-00",
@@ -3560,6 +3529,37 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg"
     },
     {
+      "id": "anilist-missing-186863-2-2026-07-04t12-00-00-000z",
+      "animeKey": "the-cat-and-the-dragon",
+      "anilistId": 186863,
+      "anilistTitle": "The Cat and the Dragon",
+      "anilistUrl": "https://anilist.co/anime/186863",
+      "anilistFormat": "ONA",
+      "anilistScore": null,
+      "titles": [
+        "Neko to Ryuu",
+        "The Cat and the Dragon",
+        "猫と竜"
+      ],
+      "title": "The Cat and the Dragon",
+      "route": "",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T12:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186863-AO4efoB8HuzA.png"
+    },
+    {
       "id": "schedule-detective-conan-1206-2026-07-04t14-30-00-02-00",
       "animeKey": "detective-conan",
       "title": "Detective Conan",
@@ -3579,6 +3579,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
+    },
+    {
+      "id": "schedule-inferred-yowa-yowa-sensei-13-2026-07-04t13-00-00-000z",
+      "animeKey": "yowa-yowa-sensei",
+      "title": "Yowa Yowa Sensei",
+      "route": "yowayowa-sensei",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T13:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4fnA9zv",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yowayowa-sensei-e518c3fa99906e48a38fbc2b033533f5.jpg",
+      "inferredFromAnimeSchedule": true
     },
     {
       "id": "anilist-missing-206249-1-2026-07-04t13-30-00-000z",
@@ -5705,6 +5726,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
+    },
+    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5727,23 +5765,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
