@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T22:38:22.961Z",
+  "updatedAt": "2026-06-27T04:28:24.148Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,6 +126,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
+      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-23T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+    },
+    {
       "id": "schedule-marriagetoxin-12-2026-06-23t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -145,26 +165,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
-    },
-    {
-      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-23T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-12-2026-06-23t16-31-00-02-00",
@@ -666,6 +666,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
+      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-26T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
       "id": "schedule-snowball-earth-13-2026-06-26t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -686,26 +706,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-26T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-14-2026-06-26t18-01-00-02-00",
@@ -766,35 +766,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/pierrot-mahou-shoujo-series-shinsaku-anime-00ef59c8ed10d9f39431032a3b143f8b.jpg"
     },
     {
-      "id": "anilist-missing-198411-13-2026-06-27t00-30-00-000z",
-      "animeKey": "nezumi-kun-no-chokki-tv",
-      "anilistId": 198411,
-      "anilistTitle": "Nezumi-kun no Chokki (TV)",
-      "anilistUrl": "https://anilist.co/anime/198411",
-      "anilistFormat": "TV_SHORT",
-      "anilistScore": 36,
-      "titles": [
-        "Nezumi-kun no Chokki (TV)",
-        "ねずみくんのチョッキ (TV)",
-        "Little Mouse's Red Vest"
-      ],
-      "title": "Nezumi-kun no Chokki (TV)",
-      "route": "",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T00:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/198411",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198411-FuPLk3KBEoFH.png"
-    },
-    {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-13-2026-06-27t03-00-00-02-00",
       "animeKey": "rilakkuma-goyururi-yume-no-tabi",
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -813,71 +784,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
-    },
-    {
-      "id": "anilist-missing-137683-159-2026-06-27t02-00-00-000z",
-      "animeKey": "soul-land-2-the-peerless-tang-clan",
-      "anilistId": 137683,
-      "anilistTitle": "Soul Land 2: The Peerless Tang Clan",
-      "anilistUrl": "https://anilist.co/anime/137683",
-      "anilistFormat": "ONA",
-      "anilistScore": 76,
-      "titles": [
-        "Douluo Dalu 2: Jueshi Tangmen",
-        "Soul Land 2: The Peerless Tang Clan",
-        "斗罗大陆2绝世唐门",
-        "Soul Land 2: The Unrivaled Tang Sect",
-        "斗罗大陆Ⅱ绝世唐门",
-        "Soul Land 2: Peerless Tang Sect"
-      ],
-      "title": "Soul Land 2: The Peerless Tang Clan",
-      "route": "",
-      "episode": "Ep 159",
-      "episodeNumber": "159",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/137683",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137683-IMuvIECdZNBh.png"
-    },
-    {
-      "id": "anilist-missing-199448-2-2026-06-27t02-00-00-000z",
-      "animeKey": "lord-of-mysteries-specials",
-      "anilistId": 199448,
-      "anilistTitle": "Lord of Mysteries Specials",
-      "anilistUrl": "https://anilist.co/anime/199448",
-      "anilistFormat": "ONA",
-      "anilistScore": 80,
-      "titles": [
-        "Guimi Zhi Zhu Specials",
-        "Lord of Mysteries Specials",
-        "诡秘之主 特别篇",
-        "City of Silver",
-        "The Marked Hunt"
-      ],
-      "title": "Lord of Mysteries Specials",
-      "route": "",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GEXH3W2EZ/lord-of-mysteries",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199448-BuqzEdkuPSEm.png"
     },
     {
       "id": "schedule-guimi-zhi-zhu-tebie-pian-liewu-2-2026-06-27t04-01-00-02-00",
@@ -1483,6 +1389,39 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
+    },
+    {
+      "id": "anilist-missing-199448-3-2026-06-28t02-00-00-000z",
+      "animeKey": "lord-of-mysteries-specials",
+      "anilistId": 199448,
+      "anilistTitle": "Lord of Mysteries Specials",
+      "anilistUrl": "https://anilist.co/anime/199448",
+      "anilistFormat": "ONA",
+      "anilistScore": 80,
+      "titles": [
+        "Guimi Zhi Zhu Specials",
+        "Lord of Mysteries Specials",
+        "诡秘之主 特别篇",
+        "City of Silver",
+        "The Marked Hunt"
+      ],
+      "title": "Lord of Mysteries Specials",
+      "route": "",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-28T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GEXH3W2EZ/lord-of-mysteries",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199448-BuqzEdkuPSEm.png"
     },
     {
       "id": "schedule-guimi-zhi-zhu-tebie-pian-liewu-3-2026-06-28t04-01-00-02-00",
@@ -3478,6 +3417,24 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212308-HUdh20Djd7cm.jpg"
     },
     {
+      "id": "schedule-inferred-mahou-no-shimai-lulutto-lilly-13-2026-07-04t00-00-00-000z",
+      "animeKey": "mahou-no-shimai-lulutto-lilly",
+      "title": "Mahou no Shimai Lulutto Lilly",
+      "route": "pierrot-mahou-shoujo-series-shinsaku-anime",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T00:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/pierrot-mahou-shoujo-series-shinsaku-anime-00ef59c8ed10d9f39431032a3b143f8b.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-14-2026-07-04t03-00-00-02-00",
       "animeKey": "rilakkuma-goyururi-yume-no-tabi",
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -3496,6 +3453,38 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
+    },
+    {
+      "id": "anilist-missing-137683-160-2026-07-04t02-00-00-000z",
+      "animeKey": "soul-land-2-the-peerless-tang-clan",
+      "anilistId": 137683,
+      "anilistTitle": "Soul Land 2: The Peerless Tang Clan",
+      "anilistUrl": "https://anilist.co/anime/137683",
+      "anilistFormat": "ONA",
+      "anilistScore": 76,
+      "titles": [
+        "Douluo Dalu 2: Jueshi Tangmen",
+        "Soul Land 2: The Peerless Tang Clan",
+        "斗罗大陆2绝世唐门",
+        "Soul Land 2: The Unrivaled Tang Sect",
+        "斗罗大陆Ⅱ绝世唐门",
+        "Soul Land 2: Peerless Tang Sect"
+      ],
+      "title": "Soul Land 2: The Peerless Tang Clan",
+      "route": "",
+      "episode": "Ep 160",
+      "episodeNumber": "160",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/137683",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137683-IMuvIECdZNBh.png"
     },
     {
       "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-13-2026-07-04t11-30-00-02-00",
@@ -6309,23 +6298,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -6348,6 +6320,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
