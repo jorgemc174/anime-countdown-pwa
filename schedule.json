@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T22:18:35.866Z",
+  "updatedAt": "2026-06-28T04:54:48.188Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -344,27 +344,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kanojo-okarishimasu-5-00d9eadd1f7b21989b3a13d7fabd8565.jpg"
     },
     {
-      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-12-2026-06-24t16-00-00-02-00",
-      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
-      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-24T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-06-24t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -384,6 +363,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-12-2026-06-24t16-00-00-02-00",
+      "animeKey": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "title": "Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season",
+      "route": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-24T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GVDHX8504/reborn-as-a-vending-machine-i-now-wander-the-dungeon",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season-02c383d59350960ecaa4c84108c24349.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-1-2026-06-24t16-30-00-02-00",
@@ -502,6 +502,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-13-2026-06-25t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -522,26 +542,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-25T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-1-2026-06-25t17-01-00-02-00",
@@ -1035,62 +1035,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yuusha-no-kuzu-3a3821f147.jpg"
     },
     {
-      "id": "anilist-missing-185646-65-2026-06-27t23-00-00-000z",
-      "animeKey": "koupen-chan",
-      "anilistId": 185646,
-      "anilistTitle": "Koupen-chan",
-      "anilistUrl": "https://anilist.co/anime/185646",
-      "anilistFormat": "TV_SHORT",
-      "anilistScore": 68,
-      "titles": [
-        "Koupen-chan",
-        "コウペンちゃん"
-      ],
-      "title": "Koupen-chan",
-      "route": "",
-      "episode": "Ep 65",
-      "episodeNumber": "65",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-27T23:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/185646",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185646-2eGmsnaSHiLC.jpg"
-    },
-    {
-      "id": "anilist-missing-206523-13-2026-06-28t00-30-00-000z",
-      "animeKey": "onegai-aipri",
-      "anilistId": 206523,
-      "anilistTitle": "Onegai AiPri",
-      "anilistUrl": "https://anilist.co/anime/206523",
-      "anilistFormat": "TV",
-      "anilistScore": 54,
-      "titles": [
-        "Onegai AiPri",
-        "おねがいアイプリ"
-      ],
-      "title": "Onegai AiPri",
-      "route": "",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T00:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/206523",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206523-2IaJCk4R7i63.jpg"
-    },
-    {
       "id": "schedule-meitantei-precure-22-2026-06-28t03-30-00-02-00",
       "animeKey": "meitantei-precure",
       "title": "Meitantei Precure!",
@@ -1110,100 +1054,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meitantei-precure-7e5a1e4418385d3a27b5d2606be7e238.jpg"
-    },
-    {
-      "id": "anilist-missing-196613-48-2026-06-28t02-00-00-000z",
-      "animeKey": "dou-po-cangqiong-nian-fan-4",
-      "anilistId": 196613,
-      "anilistTitle": "Dou Po Cangqiong: Nian Fan 4",
-      "anilistUrl": "https://anilist.co/anime/196613",
-      "anilistFormat": "ONA",
-      "anilistScore": 74,
-      "titles": [
-        "Dou Po Cangqiong: Nian Fan 4",
-        "斗破苍穹 年番4",
-        "Battle Through the Heavens 8",
-        "斗破苍穹百世轮回",
-        "斗破苍穹成帝之路",
-        "斗破苍穹 第8季",
-        "Dou Po Cangqiong 8"
-      ],
-      "title": "Dou Po Cangqiong: Nian Fan 4",
-      "route": "",
-      "episode": "Ep 48",
-      "episodeNumber": "48",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/196613",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196613-20kz65bVsHl7.jpg"
-    },
-    {
-      "id": "anilist-missing-155723-393-2026-06-28t02-00-00-000z",
-      "animeKey": "wushen-zhuzai-da-wei-pian",
-      "anilistId": 155723,
-      "anilistTitle": "Wushen Zhuzai: Da Wei Pian",
-      "anilistUrl": "https://anilist.co/anime/155723",
-      "anilistFormat": "ONA",
-      "anilistScore": 66,
-      "titles": [
-        "Wushen Zhuzai: Da Wei Pian",
-        "武神主宰 大威篇"
-      ],
-      "title": "Wushen Zhuzai: Da Wei Pian",
-      "route": "",
-      "episode": "Ep 393",
-      "episodeNumber": "393",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/155723",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
-    },
-    {
-      "id": "anilist-missing-199448-3-2026-06-28t02-00-00-000z",
-      "animeKey": "lord-of-mysteries-specials",
-      "anilistId": 199448,
-      "anilistTitle": "Lord of Mysteries Specials",
-      "anilistUrl": "https://anilist.co/anime/199448",
-      "anilistFormat": "ONA",
-      "anilistScore": 81,
-      "titles": [
-        "Guimi Zhi Zhu Specials",
-        "Lord of Mysteries Specials",
-        "诡秘之主 特别篇",
-        "City of Silver",
-        "The Marked Hunt"
-      ],
-      "title": "Lord of Mysteries Specials",
-      "route": "",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GEXH3W2EZ/lord-of-mysteries",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199448-BuqzEdkuPSEm.png"
     },
     {
       "id": "schedule-guimi-zhi-zhu-tebie-pian-liewu-3-2026-06-28t04-01-00-02-00",
@@ -1604,6 +1454,34 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140842-T0geOCa3zS0A.jpg"
+    },
+    {
+      "id": "anilist-missing-155723-394-2026-06-30t02-00-00-000z",
+      "animeKey": "wushen-zhuzai-da-wei-pian",
+      "anilistId": 155723,
+      "anilistTitle": "Wushen Zhuzai: Da Wei Pian",
+      "anilistUrl": "https://anilist.co/anime/155723",
+      "anilistFormat": "ONA",
+      "anilistScore": 66,
+      "titles": [
+        "Wushen Zhuzai: Da Wei Pian",
+        "武神主宰 大威篇"
+      ],
+      "title": "Wushen Zhuzai: Da Wei Pian",
+      "route": "",
+      "episode": "Ep 394",
+      "episodeNumber": "394",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-30T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/155723",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
     },
     {
       "id": "anilist-missing-137664-4-2026-06-30t02-00-00-000z",
@@ -2465,6 +2343,27 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-02T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "schedule-inferred-dr-stone-science-future-part-3-14-2026-07-02t14-00-00-000z",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -2485,27 +2384,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
-      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
       "inferredFromAnimeSchedule": true
     },
     {
@@ -3961,6 +3839,34 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202386-wjFf8ubM1XZR.png"
     },
     {
+      "id": "anilist-missing-185646-66-2026-07-04t23-00-00-000z",
+      "animeKey": "koupen-chan",
+      "anilistId": 185646,
+      "anilistTitle": "Koupen-chan",
+      "anilistUrl": "https://anilist.co/anime/185646",
+      "anilistFormat": "TV_SHORT",
+      "anilistScore": 68,
+      "titles": [
+        "Koupen-chan",
+        "コウペンちゃん"
+      ],
+      "title": "Koupen-chan",
+      "route": "",
+      "episode": "Ep 66",
+      "episodeNumber": "66",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-04T23:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/185646",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185646-2eGmsnaSHiLC.jpg"
+    },
+    {
       "id": "anilist-missing-213097-1-2026-07-04t23-30-00-000z",
       "animeKey": "tomica-tom-season-2",
       "anilistId": 213097,
@@ -3991,6 +3897,34 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213097-gyDmsm7qyRYV.png"
     },
     {
+      "id": "anilist-missing-206523-14-2026-07-05t00-30-00-000z",
+      "animeKey": "onegai-aipri",
+      "anilistId": 206523,
+      "anilistTitle": "Onegai AiPri",
+      "anilistUrl": "https://anilist.co/anime/206523",
+      "anilistFormat": "TV",
+      "anilistScore": 54,
+      "titles": [
+        "Onegai AiPri",
+        "おねがいアイプリ"
+      ],
+      "title": "Onegai AiPri",
+      "route": "",
+      "episode": "Ep 14",
+      "episodeNumber": "14",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T00:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/206523",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206523-2IaJCk4R7i63.jpg"
+    },
+    {
       "id": "schedule-meitantei-precure-23-2026-07-05t03-30-00-02-00",
       "animeKey": "meitantei-precure",
       "title": "Meitantei Precure!",
@@ -4010,6 +3944,60 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meitantei-precure-7e5a1e4418385d3a27b5d2606be7e238.jpg"
+    },
+    {
+      "id": "anilist-missing-196613-49-2026-07-05t02-00-00-000z",
+      "animeKey": "dou-po-cangqiong-nian-fan-4",
+      "anilistId": 196613,
+      "anilistTitle": "Dou Po Cangqiong: Nian Fan 4",
+      "anilistUrl": "https://anilist.co/anime/196613",
+      "anilistFormat": "ONA",
+      "anilistScore": 74,
+      "titles": [
+        "Dou Po Cangqiong: Nian Fan 4",
+        "斗破苍穹 年番4",
+        "Battle Through the Heavens 8",
+        "斗破苍穹百世轮回",
+        "斗破苍穹成帝之路",
+        "斗破苍穹 第8季",
+        "Dou Po Cangqiong 8"
+      ],
+      "title": "Dou Po Cangqiong: Nian Fan 4",
+      "route": "",
+      "episode": "Ep 49",
+      "episodeNumber": "49",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/196613",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196613-20kz65bVsHl7.jpg"
+    },
+    {
+      "id": "schedule-inferred-guimi-zhi-zhu-tebie-pian-liewu-4-2026-07-05t02-01-00-000z",
+      "animeKey": "guimi-zhi-zhu-tebie-pian-liewu",
+      "title": "Guimi Zhi Zhu Tebie Pian: Liewu",
+      "route": "guimi-zhi-zhu-tebie-pian-liewu",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T02:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GEXH3W2EZ/lord-of-mysteries",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/guimi-zhi-zhu-tebie-pian-liewu-601d7bf8ff7644162c6857e70b91d82e.jpg",
+      "inferredFromAnimeSchedule": true
     },
     {
       "id": "schedule-digimon-beatbreak-37-2026-07-05t05-00-00-02-00",
@@ -4774,7 +4762,7 @@
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
-        "Tefuda ga Oume no Victoria",
+        "Tefuda ga Oome no Victoria",
         "Victoria of Many Faces",
         "手札が多めのビクトリア"
       ],
@@ -5782,6 +5770,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
+    },
+    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5804,23 +5809,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -6411,23 +6399,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -6450,6 +6421,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
