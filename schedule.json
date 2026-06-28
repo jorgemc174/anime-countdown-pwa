@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T04:54:48.188Z",
+  "updatedAt": "2026-06-28T09:34:52.756Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,6 +126,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
+      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-23T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
+    },
+    {
       "id": "schedule-marriagetoxin-12-2026-06-23t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -145,26 +165,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
-    },
-    {
-      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-23T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-12-2026-06-23t16-31-00-02-00",
@@ -502,26 +502,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
-      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-25T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
-    },
-    {
       "id": "schedule-dr-stone-science-future-part-3-13-2026-06-25t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -542,6 +522,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
+    },
+    {
+      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-1-2026-06-25t17-01-00-02-00",
@@ -666,6 +666,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
+      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-26T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
       "id": "schedule-snowball-earth-13-2026-06-26t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -686,26 +706,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-26T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-14-2026-06-26t18-01-00-02-00",
@@ -1098,39 +1098,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "anilist-missing-182300-12-2026-06-28t07-30-00-000z",
-      "animeKey": "wistoria-wand-and-sword-season-2",
-      "anilistId": 182300,
-      "anilistTitle": "Wistoria: Wand and Sword Season 2",
-      "anilistUrl": "https://anilist.co/anime/182300",
-      "anilistFormat": "TV",
-      "anilistScore": 82,
-      "titles": [
-        "Tsue to Tsurugi no Wistoria Season 2",
-        "Wistoria: Wand and Sword Season 2",
-        "杖と剣のウィストリア Season2",
-        "ตำนานดาบและคทาแห่งวิสตอเรีย ซีซั่น 2",
-        "Tongkat Sihir dan Pedang Wistoria Season 2"
-      ],
-      "title": "Wistoria: Wand and Sword Season 2",
-      "route": "",
+      "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-12-2026-06-28t10-30-00-02-00",
+      "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
+      "title": "Tsue to Tsurugi no Wistoria 2nd Season",
+      "route": "tsue-to-tsurugi-no-wistoria-2nd-season",
       "episode": "Ep 12",
       "episodeNumber": "12",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-06-28T07:30:00.000Z",
+      "releaseDate": "2026-06-28T08:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
-        "Bilibili",
+        "Prime Video",
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182300-IYkq5KrkQq1V.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
     },
     {
       "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-12-2026-06-28t10-30-00-02-00",
@@ -1152,28 +1139,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg"
-    },
-    {
-      "id": "schedule-tsue-to-tsurugi-no-wistoria-2nd-season-12-2026-06-28t10-30-00-02-00",
-      "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
-      "title": "Tsue to Tsurugi no Wistoria 2nd Season",
-      "route": "tsue-to-tsurugi-no-wistoria-2nd-season",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg"
     },
     {
       "id": "schedule-diamond-no-ace-act-ii-second-season-13-2026-06-28t11-00-00-02-00",
@@ -1211,35 +1176,6 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
-    },
-    {
-      "id": "anilist-missing-2406-2838-2026-06-28t09-30-00-000z",
-      "animeKey": "sazae-san",
-      "anilistId": 2406,
-      "anilistTitle": "Sazae-san",
-      "anilistUrl": "https://anilist.co/anime/2406",
-      "anilistFormat": "TV",
-      "anilistScore": 55,
-      "titles": [
-        "Sazae-san",
-        "サザエさん",
-        "Mrs. Sazae"
-      ],
-      "title": "Sazae-san",
-      "route": "",
-      "episode": "Ep 2838",
-      "episodeNumber": "2838",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-28T09:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/2406",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "schedule-kuroneko-to-majo-no-kyoushitsu-12-2026-06-28t17-00-00-02-00",
@@ -1679,26 +1615,6 @@
       "inferredFromAnimeSchedule": true
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-13-2026-06-30t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -1718,6 +1634,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-30T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-13-2026-06-30t16-31-00-02-00",
@@ -2343,27 +2279,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
-      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "schedule-inferred-dr-stone-science-future-part-3-14-2026-07-02t14-00-00-000z",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -2384,6 +2299,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-02T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
       "inferredFromAnimeSchedule": true
     },
     {
@@ -3183,7 +3119,7 @@
       "anilistTitle": "Beyond Time's Gaze 2",
       "anilistUrl": "https://anilist.co/anime/213356",
       "anilistFormat": "ONA",
-      "anilistScore": 84,
+      "anilistScore": 85,
       "titles": [
         "Guangyin Zhi Wai 2",
         "Beyond Time's Gaze 2",
@@ -4053,6 +3989,51 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210031-TppgcHZh46LY.jpg"
     },
     {
+      "id": "schedule-inferred-tsue-to-tsurugi-no-wistoria-2nd-season-13-2026-07-05t08-30-00-000z",
+      "animeKey": "tsue-to-tsurugi-no-wistoria-2nd-season",
+      "title": "Tsue to Tsurugi no Wistoria 2nd Season",
+      "route": "tsue-to-tsurugi-no-wistoria-2nd-season",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsue-to-tsurugi-no-wistoria-2nd-season-c6955c4a711490575be6a3b4c85e0012.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-inferred-yozakura-san-chi-no-daisakusen-2nd-season-13-2026-07-05t08-30-00-000z",
+      "animeKey": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "title": "Yozakura-san Chi no Daisakusen 2nd Season",
+      "route": "yozakura-san-chi-no-daisakusen-2nd-season",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/4mqVhWP",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Disney+"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yozakura-san-chi-no-daisakusen-2nd-season-e9cd7c40d079b4ac9a9a503d80d0940b.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "anilist-missing-204060-1-2026-07-05t08-30-00-000z",
       "animeKey": "tetsunabe-no-jan",
       "anilistId": 204060,
@@ -4082,6 +4063,27 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204060-bKhovD8jAlW8.jpg"
     },
     {
+      "id": "schedule-inferred-diamond-no-ace-act-ii-second-season-14-2026-07-05t09-00-00-000z",
+      "animeKey": "diamond-no-ace-act-ii-second-season",
+      "title": "Diamond no Ace Act II: Second Season",
+      "route": "diamond-no-ace-act-ii-zoku-hen",
+      "episode": "Ep 14",
+      "episodeNumber": "14",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T09:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/diamond-no-ace-act-ii-zoku-hen-9f39cac4af.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "schedule-holo-no-graffiti-373-2026-07-05t11-01-00-02-00",
       "animeKey": "holo-no-graffiti",
       "title": "Holo no Graffiti",
@@ -4097,6 +4099,35 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
+    },
+    {
+      "id": "anilist-missing-2406-2839-2026-07-05t09-30-00-000z",
+      "animeKey": "sazae-san",
+      "anilistId": 2406,
+      "anilistTitle": "Sazae-san",
+      "anilistUrl": "https://anilist.co/anime/2406",
+      "anilistFormat": "TV",
+      "anilistScore": 55,
+      "titles": [
+        "Sazae-san",
+        "サザエさん",
+        "Mrs. Sazae"
+      ],
+      "title": "Sazae-san",
+      "route": "",
+      "episode": "Ep 2839",
+      "episodeNumber": "2839",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T09:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/2406",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "anilist-missing-198409-1-2026-07-05t13-00-00-000z",
@@ -5770,23 +5801,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5809,6 +5823,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
