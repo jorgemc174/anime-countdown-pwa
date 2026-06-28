@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T19:48:23.861Z",
+  "updatedAt": "2026-06-28T22:17:13.183Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -126,26 +126,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-5896627b17e843bbc47af8d35c6c526c.jpg"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-23T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-12-2026-06-23t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -165,6 +145,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-11-2026-06-23t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-23T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-12-2026-06-23t16-31-00-02-00",
@@ -502,6 +502,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-25T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
+    },
+    {
       "id": "schedule-dr-stone-science-future-part-3-13-2026-06-25t16-00-00-02-00",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -522,26 +542,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg"
-    },
-    {
-      "id": "schedule-kujima-utaeba-ie-hororo-12-2026-06-25t16-00-00-02-00",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-25T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg"
     },
     {
       "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-1-2026-06-25t17-01-00-02-00",
@@ -666,6 +666,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
+      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-26T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
       "id": "schedule-snowball-earth-13-2026-06-26t17-30-00-02-00",
       "animeKey": "snowball-earth",
       "title": "Snowball Earth",
@@ -686,26 +706,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snowball-earth-8671a9e5a8546657341177aaab987ab5.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-12-2026-06-26t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-26T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
       "id": "schedule-hokuto-no-ken-fist-of-the-north-star-14-2026-06-26t18-01-00-02-00",
@@ -2279,6 +2279,27 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
+      "animeKey": "kujima-utaeba-ie-hororo",
+      "title": "Kujima Utaeba Ie Hororo",
+      "route": "kujima-utaeba-ie-hororo",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-02T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
       "id": "schedule-inferred-dr-stone-science-future-part-3-14-2026-07-02t14-00-00-000z",
       "animeKey": "dr-stone-science-future-part-3",
       "title": "Dr. Stone: Science Future Part 3",
@@ -2299,27 +2320,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/dr-stone-science-future-part-3-67fba577814a5ada075f84f3e4f28043.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
-      "id": "schedule-inferred-kujima-utaeba-ie-hororo-13-2026-07-02t14-00-00-000z",
-      "animeKey": "kujima-utaeba-ie-hororo",
-      "title": "Kujima Utaeba Ie Hororo",
-      "route": "kujima-utaeba-ie-hororo",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371849",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kujima-utaeba-ie-hororo-30ec505ca964d18323801d0e6477f9cb.jpg",
       "inferredFromAnimeSchedule": true
     },
     {
@@ -3070,7 +3070,7 @@
       "anilistTitle": "Doraemon (2005)",
       "anilistUrl": "https://anilist.co/anime/8687",
       "anilistFormat": "TV",
-      "anilistScore": 76,
+      "anilistScore": 77,
       "titles": [
         "Doraemon (2005)",
         "ドラえもん (2005)"
@@ -6489,6 +6489,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
+    },
+    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -6511,23 +6528,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
