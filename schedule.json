@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T05:02:12.731Z",
+  "updatedAt": "2026-06-29T11:25:19.494Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -573,7 +573,7 @@
       "anilistTitle": "PetitCure: Precure Fairies Season 3",
       "anilistUrl": "https://anilist.co/anime/209541",
       "anilistFormat": "ONA",
-      "anilistScore": 59,
+      "anilistScore": 60,
       "titles": [
         "PetitCure: Precure Fairies Season 3",
         "ぷちきゅあ～Precure Fairies～ シーズン3",
@@ -1375,7 +1375,7 @@
       "anilistTitle": "Beyond Time's Gaze 2",
       "anilistUrl": "https://anilist.co/anime/213356",
       "anilistFormat": "ONA",
-      "anilistScore": 85,
+      "anilistScore": 86,
       "titles": [
         "Guangyin Zhi Wai 2",
         "Beyond Time's Gaze 2",
@@ -3951,23 +3951,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -3990,6 +3973,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
