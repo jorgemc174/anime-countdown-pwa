@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T22:33:08.315Z",
+  "updatedAt": "2026-06-30T04:36:26.899Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -41,191 +41,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
-    },
-    {
-      "id": "anilist-missing-140842-356-2026-06-29t22-40-00-000z",
-      "animeKey": "chiikawa",
-      "anilistId": 140842,
-      "anilistTitle": "Chiikawa",
-      "anilistUrl": "https://anilist.co/anime/140842",
-      "anilistFormat": "TV_SHORT",
-      "anilistScore": 83,
-      "titles": [
-        "Chiikawa",
-        "Chiikawa",
-        "ちいかわ",
-        "Nanka Chiisakute Kawaii Yatsu",
-        "なんか小さくてかわいいやつ",
-        "吉伊卡哇"
-      ],
-      "title": "Chiikawa",
-      "route": "",
-      "episode": "Ep 356",
-      "episodeNumber": "356",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-29T22:40:00.000Z",
-      "originalReleaseDate": "",
-      "service": "HIDIVE",
-      "serviceUrl": "https://www.hidive.com/tv/chiikawa",
-      "allServices": [
-        "HIDIVE"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140842-T0geOCa3zS0A.jpg"
-    },
-    {
-      "id": "anilist-missing-155723-394-2026-06-30t02-00-00-000z",
-      "animeKey": "wushen-zhuzai-da-wei-pian",
-      "anilistId": 155723,
-      "anilistTitle": "Wushen Zhuzai: Da Wei Pian",
-      "anilistUrl": "https://anilist.co/anime/155723",
-      "anilistFormat": "ONA",
-      "anilistScore": 66,
-      "titles": [
-        "Wushen Zhuzai: Da Wei Pian",
-        "武神主宰 大威篇"
-      ],
-      "title": "Wushen Zhuzai: Da Wei Pian",
-      "route": "",
-      "episode": "Ep 394",
-      "episodeNumber": "394",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/155723",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
-    },
-    {
-      "id": "anilist-missing-137664-4-2026-06-30t02-00-00-000z",
-      "animeKey": "cheng-huang-lu",
-      "anilistId": 137664,
-      "anilistTitle": "Cheng Huang Lu",
-      "anilistUrl": "https://anilist.co/anime/137664",
-      "anilistFormat": "ONA",
-      "anilistScore": 58,
-      "titles": [
-        "Cheng Huang Lu",
-        "城隍录"
-      ],
-      "title": "Cheng Huang Lu",
-      "route": "",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/137664",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137664-9MB4bb4ASiIN.png"
-    },
-    {
-      "id": "anilist-missing-213188-4-2026-06-30t02-00-00-000z",
-      "animeKey": "jueshi-zhan-hun-2",
-      "anilistId": 213188,
-      "anilistTitle": "Jueshi Zhan Hun 2",
-      "anilistUrl": "https://anilist.co/anime/213188",
-      "anilistFormat": "ONA",
-      "anilistScore": 80,
-      "titles": [
-        "Jueshi Zhan Hun 2",
-        "绝世战魂 第2季",
-        "Peerless Battle Spirit 2"
-      ],
-      "title": "Jueshi Zhan Hun 2",
-      "route": "",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/213188",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213188-zwmmMVqqUjh8.png"
-    },
-    {
-      "id": "anilist-missing-188753-15-2026-06-30t03-00-00-000z",
-      "animeKey": "gekkan-nanmono-anime",
-      "anilistId": 188753,
-      "anilistTitle": "Gekkan! Nanmono Anime",
-      "anilistUrl": "https://anilist.co/anime/188753",
-      "anilistFormat": "ONA",
-      "anilistScore": 61,
-      "titles": [
-        "Gekkan! Nanmono Anime",
-        "げっかん！なんものアニメ",
-        "なんでもいきもの　げっかん！なんものアニメ",
-        "Nandemo Ikimono: Gekkan! Nanmono Anime",
-        "Nanmono Anime",
-        "なんものアニメ",
-        "Monthly! Nanmono Anime"
-      ],
-      "title": "Gekkan! Nanmono Anime",
-      "route": "",
-      "episode": "Ep 15",
-      "episodeNumber": "15",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T03:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/188753",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188753-Rkuiizca4QFD.png"
-    },
-    {
-      "id": "anilist-missing-211270-10-2026-06-30t04-00-00-000z",
-      "animeKey": "fei-ren-zai-3-part-2",
-      "anilistId": 211270,
-      "anilistTitle": "Fei Ren Zai 3 Part 2",
-      "anilistUrl": "https://anilist.co/anime/211270",
-      "anilistFormat": "ONA",
-      "anilistScore": 52,
-      "titles": [
-        "Fei Ren Zai 3 Part 2",
-        "非人哉 第三季 第二部分",
-        "Non-human 3rd Season Part 2",
-        "Fei Ren Zai: Bailu Pian",
-        "非人哉 白露篇"
-      ],
-      "title": "Fei Ren Zai 3 Part 2",
-      "route": "",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T04:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Bilibili",
-      "serviceUrl": "https://www.bilibili.com/bangumi/media/md26608960",
-      "allServices": [
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx211270-JL9g9jogYvl2.png"
     },
     {
       "id": "anilist-missing-196219-1-2026-06-30t13-00-00-000z",
@@ -830,25 +645,15 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
-      "id": "anilist-missing-207141-1-2026-07-02t15-30-00-000z",
-      "animeKey": "chainsmoker-cat",
-      "anilistId": 207141,
-      "anilistTitle": "Chainsmoker Cat",
-      "anilistUrl": "https://anilist.co/anime/207141",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Yani Neko",
-        "Chainsmoker Cat",
-        "ヤニねこ"
-      ],
-      "title": "Chainsmoker Cat",
-      "route": "",
+      "id": "schedule-yani-neko-1-2026-07-02t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-02T15:30:00.000Z",
+      "releaseDate": "2026-07-02T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Netflix",
       "serviceUrl": "https://www.netflix.com/title/82760630",
@@ -856,9 +661,7 @@
         "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207141-h5q5KJPd6vaX.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
       "id": "anilist-missing-204466-1-2026-07-02t16-28-00-000z",
@@ -919,6 +722,40 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8336-BJzIHFC49RWb.jpg"
+    },
+    {
+      "id": "anilist-missing-140842-357-2026-07-02t22-40-00-000z",
+      "animeKey": "chiikawa",
+      "anilistId": 140842,
+      "anilistTitle": "Chiikawa",
+      "anilistUrl": "https://anilist.co/anime/140842",
+      "anilistFormat": "TV_SHORT",
+      "anilistScore": 83,
+      "titles": [
+        "Chiikawa",
+        "Chiikawa",
+        "ちいかわ",
+        "Nanka Chiisakute Kawaii Yatsu",
+        "なんか小さくてかわいいやつ",
+        "吉伊卡哇"
+      ],
+      "title": "Chiikawa",
+      "route": "",
+      "episode": "Ep 357",
+      "episodeNumber": "357",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-02T22:40:00.000Z",
+      "originalReleaseDate": "",
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/tv/chiikawa",
+      "allServices": [
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140842-T0geOCa3zS0A.jpg"
     },
     {
       "id": "anilist-missing-213484-1-2026-07-03t04-00-00-000z",
@@ -1421,35 +1258,21 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
     },
     {
-      "id": "anilist-missing-185542-1-2026-07-04t11-30-00-000z",
-      "animeKey": "skeleton-knight-in-another-world-season-2",
-      "anilistId": 185542,
-      "anilistTitle": "Skeleton Knight in Another World Season 2",
-      "anilistUrl": "https://anilist.co/anime/185542",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-        "Skeleton Knight in Another World Season 2",
-        "骸骨騎士様、只今異世界へお出掛け中Ⅱ"
-      ],
-      "title": "Skeleton Knight in Another World Season 2",
-      "route": "",
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-1-2026-07-04t13-31-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-04T11:30:00.000Z",
+      "releaseDate": "2026-07-04T11:31:00.000Z",
       "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/skeleton-knight-in-another-world",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg"
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg"
     },
     {
       "id": "schedule-detective-conan-1206-2026-07-04t14-30-00-02-00",
@@ -2091,6 +1914,34 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196613-20kz65bVsHl7.jpg"
     },
     {
+      "id": "anilist-missing-155723-395-2026-07-05t02-00-00-000z",
+      "animeKey": "wushen-zhuzai-da-wei-pian",
+      "anilistId": 155723,
+      "anilistTitle": "Wushen Zhuzai: Da Wei Pian",
+      "anilistUrl": "https://anilist.co/anime/155723",
+      "anilistFormat": "ONA",
+      "anilistScore": 66,
+      "titles": [
+        "Wushen Zhuzai: Da Wei Pian",
+        "武神主宰 大威篇"
+      ],
+      "title": "Wushen Zhuzai: Da Wei Pian",
+      "route": "",
+      "episode": "Ep 395",
+      "episodeNumber": "395",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-05T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/155723",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
+    },
+    {
       "id": "schedule-digimon-beatbreak-37-2026-07-05t05-00-00-02-00",
       "animeKey": "digimon-beatbreak",
       "title": "Digimon BeatBreak",
@@ -2113,35 +1964,21 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "anilist-missing-210031-1-2026-07-05t08-00-00-000z",
-      "animeKey": "you-and-i-are-polar-opposites-season-2",
-      "anilistId": 210031,
-      "anilistTitle": "You and I Are Polar Opposites Season 2",
-      "anilistUrl": "https://anilist.co/anime/210031",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Seihantai na Kimi to Boku 2nd Season",
-        "You and I Are Polar Opposites Season 2",
-        "正反対な君と僕 第2期"
-      ],
-      "title": "You and I Are Polar Opposites Season 2",
-      "route": "",
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-1-2026-07-05t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-05T08:00:00.000Z",
+      "releaseDate": "2026-07-05T08:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx210031-TppgcHZh46LY.jpg"
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
     },
     {
       "id": "anilist-missing-204060-1-2026-07-05t08-30-00-000z",
@@ -2646,35 +2483,21 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195833-QAX1YLWYn1VX.png"
     },
     {
-      "id": "anilist-missing-209504-1-2026-07-06t14-00-00-000z",
-      "animeKey": "the-forsaken-saintess-and-her-foodie-roadtrip-in-another-world",
-      "anilistId": 209504,
-      "anilistTitle": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-      "anilistUrl": "https://anilist.co/anime/209504",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
-        "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-        "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました"
-      ],
-      "title": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-      "route": "",
+      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-1-2026-07-06t16-30-00-02-00",
+      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
+      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-06T14:00:00.000Z",
+      "releaseDate": "2026-07-06T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "HIDIVE",
-      "serviceUrl": "https://hidive.com",
-      "allServices": [
-        "HIDIVE"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209504-RLYuYoXhyu8b.png"
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-674e0e0718c0e5d0bfcdea24fa252965.jpg"
     },
     {
       "id": "anilist-missing-169583-1-2026-07-06t14-30-00-000z",
@@ -2759,6 +2582,96 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
     },
     {
+      "id": "anilist-missing-137664-5-2026-07-07t02-00-00-000z",
+      "animeKey": "cheng-huang-lu",
+      "anilistId": 137664,
+      "anilistTitle": "Cheng Huang Lu",
+      "anilistUrl": "https://anilist.co/anime/137664",
+      "anilistFormat": "ONA",
+      "anilistScore": 58,
+      "titles": [
+        "Cheng Huang Lu",
+        "城隍录"
+      ],
+      "title": "Cheng Huang Lu",
+      "route": "",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-07T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/137664",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137664-9MB4bb4ASiIN.png"
+    },
+    {
+      "id": "anilist-missing-213188-5-2026-07-07t02-00-00-000z",
+      "animeKey": "jueshi-zhan-hun-2",
+      "anilistId": 213188,
+      "anilistTitle": "Jueshi Zhan Hun 2",
+      "anilistUrl": "https://anilist.co/anime/213188",
+      "anilistFormat": "ONA",
+      "anilistScore": 80,
+      "titles": [
+        "Jueshi Zhan Hun 2",
+        "绝世战魂 第2季",
+        "Peerless Battle Spirit 2"
+      ],
+      "title": "Jueshi Zhan Hun 2",
+      "route": "",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-07T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/213188",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213188-zwmmMVqqUjh8.png"
+    },
+    {
+      "id": "anilist-missing-211270-11-2026-07-07t04-00-00-000z",
+      "animeKey": "fei-ren-zai-3-part-2",
+      "anilistId": 211270,
+      "anilistTitle": "Fei Ren Zai 3 Part 2",
+      "anilistUrl": "https://anilist.co/anime/211270",
+      "anilistFormat": "ONA",
+      "anilistScore": 52,
+      "titles": [
+        "Fei Ren Zai 3 Part 2",
+        "非人哉 第三季 第二部分",
+        "Non-human 3rd Season Part 2",
+        "Fei Ren Zai: Bailu Pian",
+        "非人哉 白露篇"
+      ],
+      "title": "Fei Ren Zai 3 Part 2",
+      "route": "",
+      "episode": "Ep 11",
+      "episodeNumber": "11",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-07T04:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Bilibili",
+      "serviceUrl": "https://www.bilibili.com/bangumi/media/md26608960",
+      "allServices": [
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx211270-JL9g9jogYvl2.png"
+    },
+    {
       "id": "anilist-missing-128757-1-2026-07-07t11-30-00-000z",
       "animeKey": "young-ladies-don-t-play-fighting-games",
       "anilistId": 128757,
@@ -2824,39 +2737,21 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187260-WW5RBa5NINRP.jpg"
     },
     {
-      "id": "anilist-missing-177699-1-2026-07-07t14-00-00-000z",
-      "animeKey": "the-ghost-in-the-shell",
-      "anilistId": 177699,
-      "anilistTitle": "THE GHOST IN THE SHELL",
-      "anilistUrl": "https://anilist.co/anime/177699",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Koukaku Kidoutai: THE GHOST IN THE SHELL",
-        "THE GHOST IN THE SHELL",
-        "攻殻機動隊 THE GHOST IN THE SHELL",
-        "Koukaku Kidoutai (2026)",
-        "The Ghost in the Shell (2026)",
-        "攻殻機動隊 (2026)",
-        "GITS 2026"
-      ],
-      "title": "THE GHOST IN THE SHELL",
-      "route": "",
+      "id": "schedule-koukaku-kidoutai-tv-1-2026-07-07t16-30-00-02-00",
+      "animeKey": "koukaku-kidoutai-tv",
+      "title": "Koukaku Kidoutai (TV)",
+      "route": "koukaku-kidoutai-tv",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-07T14:00:00.000Z",
+      "releaseDate": "2026-07-07T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "Prime Video",
-      "serviceUrl": "https://www.amazon.com/dp/",
-      "allServices": [
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177699-hnzc1CS5ZSM2.png"
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
     },
     {
       "id": "anilist-missing-209800-1-2026-07-07t14-30-00-000z",
@@ -3011,6 +2906,37 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx211232-Bthde3cpWCtq.png"
     },
     {
+      "id": "anilist-missing-213703-1-2026-07-08t03-00-00-000z",
+      "animeKey": "jiaonang-jihua-qiji",
+      "anilistId": 213703,
+      "anilistTitle": "Jiaonang Jihua: Qiji",
+      "anilistUrl": "https://anilist.co/anime/213703",
+      "anilistFormat": "ONA",
+      "anilistScore": null,
+      "titles": [
+        "Jiaonang Jihua: Qiji",
+        "胶囊计划 奇迹",
+        "CAPSULES: Miracle"
+      ],
+      "title": "Jiaonang Jihua: Qiji",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T03:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Bilibili",
+      "serviceUrl": "https://www.bilibili.com/bangumi/media/md281753563",
+      "allServices": [
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213703-ghO1AqW0bdaN.jpg"
+    },
+    {
       "id": "schedule-quanzhi-fashi-vii-10-2026-07-08t06-00-00-02-00",
       "animeKey": "quanzhi-fashi-vii",
       "title": "Quanzhi Fashi VII",
@@ -3138,6 +3064,23 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198946-IGXmbqBEYRYD.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-08t16-00-00-02-00",
@@ -3459,35 +3402,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208754-333Nyh5abrqS.png"
     },
     {
-      "id": "anilist-missing-209961-1-2026-07-09t15-00-00-000z",
-      "animeKey": "shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach",
-      "anilistId": 209961,
-      "anilistTitle": "Shibou Yuugi de Meshi wo Kuu. 44:CLOUDY BEACH",
-      "anilistUrl": "https://anilist.co/anime/209961",
-      "anilistFormat": "MOVIE",
-      "anilistScore": null,
-      "titles": [
-        "Shibou Yuugi de Meshi wo Kuu. 44:CLOUDY BEACH",
-        "死亡遊戯で飯を食う。44:CLOUDY BEACH",
-        "SHIBOYUGI: Playing Death Games to Put Food on the Table - 44: CLOUDY BEACH"
-      ],
-      "title": "Shibou Yuugi de Meshi wo Kuu. 44:CLOUDY BEACH",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-09T15:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/209961",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209961-EKMAWTp299Kt.jpg"
-    },
-    {
       "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-3-2026-07-09t17-01-00-02-00",
       "animeKey": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
       "title": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
@@ -3506,6 +3420,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
+    },
+    {
+      "id": "schedule-yani-neko-2-2026-07-09t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-09T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
       "id": "anilist-missing-182616-1-2026-07-10t14-30-00-000z",
@@ -3867,6 +3800,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-2-2026-07-12t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
+    },
+    {
       "id": "schedule-holo-no-graffiti-374-2026-07-12t11-01-00-02-00",
       "animeKey": "holo-no-graffiti",
       "title": "Holo no Graffiti",
@@ -3954,23 +3904,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -3993,6 +3926,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -4031,6 +3981,40 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
     },
     {
+      "id": "schedule-shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach-1-2026-07-13t16-00-00-02-00",
+      "animeKey": "shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach",
+      "title": "Shibou Yuugi de Meshi wo Kuu. 44: Cloudy Beach",
+      "route": "shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-13T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach-0004c7bfbbe4389334c00d3a18db277d.jpg"
+    },
+    {
+      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-2-2026-07-13t16-30-00-02-00",
+      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
+      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-13T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-674e0e0718c0e5d0bfcdea24fa252965.jpg"
+    },
+    {
       "id": "schedule-liar-game-15-2026-07-13t18-00-00-02-00",
       "animeKey": "liar-game",
       "title": "LIAR GAME",
@@ -4049,6 +4033,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+    },
+    {
+      "id": "schedule-koukaku-kidoutai-tv-2-2026-07-14t16-30-00-02-00",
+      "animeKey": "koukaku-kidoutai-tv",
+      "title": "Koukaku Kidoutai (TV)",
+      "route": "koukaku-kidoutai-tv",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-14T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
     },
     {
       "id": "anilist-missing-212309-4-2026-07-15t01-00-00-000z",
@@ -4134,6 +4135,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -4255,6 +4273,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
+    },
+    {
+      "id": "schedule-yani-neko-3-2026-07-16t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-16T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-15-2026-07-17t17-00-00-02-00",
@@ -4548,6 +4585,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-3-2026-07-19t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
+    },
+    {
       "id": "schedule-holo-no-graffiti-375-2026-07-19t11-01-00-02-00",
       "animeKey": "holo-no-graffiti",
       "title": "Holo no Graffiti",
@@ -4602,6 +4656,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
+    },
+    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4624,23 +4695,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
@@ -4679,6 +4733,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
     },
     {
+      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-3-2026-07-20t16-30-00-02-00",
+      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
+      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-20T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-674e0e0718c0e5d0bfcdea24fa252965.jpg"
+    },
+    {
       "id": "schedule-liar-game-16-2026-07-20t18-00-00-02-00",
       "animeKey": "liar-game",
       "title": "LIAR GAME",
@@ -4697,6 +4768,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+    },
+    {
+      "id": "schedule-koukaku-kidoutai-tv-3-2026-07-21t16-30-00-02-00",
+      "animeKey": "koukaku-kidoutai-tv",
+      "title": "Koukaku Kidoutai (TV)",
+      "route": "koukaku-kidoutai-tv",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-21T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
     },
     {
       "id": "anilist-missing-199409-1-2026-07-21t15-00-00-000z",
@@ -4782,6 +4870,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-3-2026-07-22t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-22T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-5-2026-07-22t16-30-00-02-00",
@@ -4905,6 +5010,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
+    },
+    {
+      "id": "schedule-yani-neko-4-2026-07-23t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-23T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-16-2026-07-24t17-00-00-02-00",
@@ -5203,6 +5327,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-4-2026-07-26t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
+    },
+    {
       "id": "schedule-holo-no-graffiti-376-2026-07-26t11-01-00-02-00",
       "animeKey": "holo-no-graffiti",
       "title": "Holo no Graffiti",
@@ -5257,23 +5398,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-4-2026-07-26t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-26T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1171-2026-07-26t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5296,6 +5420,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-4-2026-07-26t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-3-2026-07-26t21-20-00-02-00",
@@ -5342,6 +5483,39 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208829-I72LfY7BgEZA.jpg"
+    },
+    {
+      "id": "anilist-missing-188753-16-2026-07-31t03-00-00-000z",
+      "animeKey": "gekkan-nanmono-anime",
+      "anilistId": 188753,
+      "anilistTitle": "Gekkan! Nanmono Anime",
+      "anilistUrl": "https://anilist.co/anime/188753",
+      "anilistFormat": "ONA",
+      "anilistScore": 61,
+      "titles": [
+        "Gekkan! Nanmono Anime",
+        "げっかん！なんものアニメ",
+        "なんでもいきもの　げっかん！なんものアニメ",
+        "Nandemo Ikimono: Gekkan! Nanmono Anime",
+        "Nanmono Anime",
+        "なんものアニメ",
+        "Monthly! Nanmono Anime"
+      ],
+      "title": "Gekkan! Nanmono Anime",
+      "route": "",
+      "episode": "Ep 16",
+      "episodeNumber": "16",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T03:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/188753",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188753-Rkuiizca4QFD.png"
     },
     {
       "id": "anilist-missing-141953-1-2026-08-02t04-00-00-000z",
