@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T04:36:26.899Z",
+  "updatedAt": "2026-06-30T10:02:51.645Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -1399,7 +1399,7 @@
       "anilistTitle": "Mu Shen Ji 4",
       "anilistUrl": "https://anilist.co/anime/211181",
       "anilistFormat": "ONA",
-      "anilistScore": 86,
+      "anilistScore": 87,
       "titles": [
         "Mu Shen Ji 4",
         "牧神记4",
@@ -2455,18 +2455,19 @@
     },
     {
       "id": "anilist-missing-195833-1-2026-07-06t14-00-00-000z",
-      "animeKey": "honoo-no-toukyuujyo-dodge-danko",
+      "animeKey": "flaming-dodgeball-girl-danko",
       "anilistId": 195833,
-      "anilistTitle": "Honoo no Toukyuujyo Dodge Danko",
+      "anilistTitle": "Flaming Dodgeball Girl Danko",
       "anilistUrl": "https://anilist.co/anime/195833",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Honoo no Toukyuujyo Dodge Danko",
+        "Flaming Dodgeball Girl Danko",
         "炎の闘球女 ドッジ弾子",
         "Hono no Tokyujo: Dodge Danko"
       ],
-      "title": "Honoo no Toukyuujyo Dodge Danko",
+      "title": "Flaming Dodgeball Girl Danko",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -3066,23 +3067,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198946-IGXmbqBEYRYD.jpg"
     },
     {
-      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-08t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -3102,6 +3086,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-3-2026-07-08t16-30-00-02-00",
@@ -3439,6 +3440,34 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
+    },
+    {
+      "id": "anilist-missing-213750-1-2026-07-10t00-00-00-000z",
+      "animeKey": "bananya-at-home-party",
+      "anilistId": 213750,
+      "anilistTitle": "Bananya At-Home Party",
+      "anilistUrl": "https://anilist.co/anime/213750",
+      "anilistFormat": "ONA",
+      "anilistScore": null,
+      "titles": [
+        "Bananya At-Home Party",
+        "ばなにゃ あっとほーむぱーてぃー"
+      ],
+      "title": "Bananya At-Home Party",
+      "route": "",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T00:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/213750",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213750-5hVyApOz4YXe.png"
     },
     {
       "id": "anilist-missing-182616-1-2026-07-10t14-30-00-000z",
@@ -4656,23 +4685,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
-    },
-    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4695,6 +4707,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-c2ce0c68004e342e448f816e77feefea.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
