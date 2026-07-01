@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T22:42:51.877Z",
+  "updatedAt": "2026-07-01T04:56:15.730Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -64,26 +64,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-667a3196664a4d77aedfb7c9f5f5d801.jpg"
     },
     {
-      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
       "id": "schedule-marriagetoxin-13-2026-06-30t16-30-00-02-00",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -103,6 +83,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
+    },
+    {
+      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-06-30T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
     },
     {
       "id": "schedule-replica-datte-koi-wo-suru-13-2026-06-30t16-31-00-02-00",
@@ -143,67 +143,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
-    },
-    {
-      "id": "anilist-missing-204656-26-2026-06-30t23-00-00-000z",
-      "animeKey": "mofusand",
-      "anilistId": 204656,
-      "anilistTitle": "mofusand",
-      "anilistUrl": "https://anilist.co/anime/204656",
-      "anilistFormat": "ONA",
-      "anilistScore": 59,
-      "titles": [
-        "mofusand",
-        "mofusand ",
-        "mofusand the animation"
-      ],
-      "title": "mofusand",
-      "route": "",
-      "episode": "Ep 26",
-      "episodeNumber": "26",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T23:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/204656",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b204656-KXjxVB4bBhl8.jpg"
-    },
-    {
-      "id": "anilist-missing-213297-4-2026-07-01t02-00-00-000z",
-      "animeKey": "eclipse-of-illusion-sp-the-miasma-war",
-      "anilistId": 213297,
-      "anilistTitle": "Eclipse of Illusion SP: The Miasma War",
-      "anilistUrl": "https://anilist.co/anime/213297",
-      "anilistFormat": "ONA",
-      "anilistScore": 73,
-      "titles": [
-        "Yun Shen Buzhi Meng Special: Zhu Ming Zhi Yi",
-        "Eclipse of Illusion SP: The Miasma War",
-        "云深不知梦 特别篇：逐冥之役",
-        "云深不知梦 特别篇",
-        "Yun Shen Buzhi Meng Specials",
-        "Eclipse of Illusion Special: The Battle of Qiumina"
-      ],
-      "title": "Eclipse of Illusion SP: The Miasma War",
-      "route": "",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/213297",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213297-hmYPfAXgQQDp.jpg"
     },
     {
       "id": "schedule-quanzhi-fashi-vii-9-2026-07-01t06-00-00-02-00",
@@ -363,7 +302,7 @@
       "releaseDate": "2026-07-01T15:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
       "allServices": [
         "Crunchyroll"
       ],
@@ -454,18 +393,18 @@
     },
     {
       "id": "anilist-missing-203880-1-2026-07-02t12-30-00-000z",
-      "animeKey": "dara-san-of-reiwa",
+      "animeKey": "dara-san-of-the-reiwa-era",
       "anilistId": 203880,
-      "anilistTitle": "Dara-san of Reiwa",
+      "anilistTitle": "Dara-san of the Reiwa Era",
       "anilistUrl": "https://anilist.co/anime/203880",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Reiwa no Dara-san",
-        "Dara-san of Reiwa",
+        "Dara-san of the Reiwa Era",
         "令和のダラさん"
       ],
-      "title": "Dara-san of Reiwa",
+      "title": "Dara-san of the Reiwa Era",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -474,7 +413,7 @@
       "releaseDate": "2026-07-02T12:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
       "allServices": [
         "Crunchyroll"
       ],
@@ -506,7 +445,7 @@
       "releaseDate": "2026-07-02T12:40:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://crunchyroll.com",
+      "serviceUrl": "https://www.crunchyroll.com/series/GMEHMEN75/bungo-stray-dogs-wan",
       "allServices": [
         "Crunchyroll"
       ],
@@ -536,16 +475,17 @@
       "id": "anilist-missing-198376-1-2026-07-02t14-00-00-000z",
       "animeKey": "bang-dream-yume-mita",
       "anilistId": 198376,
-      "anilistTitle": "BanG Dream! Yume∞Mita",
+      "anilistTitle": "BanG Dream! YUME∞MITA",
       "anilistUrl": "https://anilist.co/anime/198376",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "BanG Dream! Yume∞Mita",
+        "BanG Dream! YUME∞MITA",
         "バンドリ！ ゆめ∞みた",
         "BanG Dream! Yumemita"
       ],
-      "title": "BanG Dream! Yume∞Mita",
+      "title": "BanG Dream! YUME∞MITA",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -553,10 +493,12 @@
       "delayed": false,
       "releaseDate": "2026-07-02T14:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/198376",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198376-sc5qcFv0RSH9.jpg"
@@ -674,7 +616,7 @@
       "releaseDate": "2026-07-02T16:28:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
       "allServices": [
         "Crunchyroll"
       ],
@@ -767,11 +709,12 @@
       "delayed": false,
       "releaseDate": "2026-07-03T04:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "Bilibili",
-      "serviceUrl": "https://www.bilibili.com/bangumi/media/md281710135",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
       "allServices": [
         "Bilibili",
-        "Bilibili"
+        "Bilibili",
+        "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
       "source": "anilist-missing",
@@ -857,20 +800,20 @@
     },
     {
       "id": "anilist-missing-196218-1-2026-07-03t13-30-00-000z",
-      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "animeKey": "the-frontier-lord-begins-with-zero-subjects",
       "anilistId": 196218,
-      "anilistTitle": "Ryoumin 0-Nin Start no Henkyou Ryoushu-sama",
+      "anilistTitle": "The Frontier Lord Begins with Zero Subjects",
       "anilistUrl": "https://anilist.co/anime/196218",
       "anilistFormat": "ONA",
       "anilistScore": null,
       "titles": [
         "Ryoumin 0-Nin Start no Henkyou Ryoushu-sama",
-        "領民0人スタートの辺境領主様",
         "The Frontier Lord Begins with Zero Subjects",
+        "領民0人スタートの辺境領主様",
         "The Frontier Lord Begins with Zero Subjects: Tales of Blue Dias and the Beastkin Alna",
         "The Population of the Frontier Owner Stars with 0."
       ],
-      "title": "Ryoumin 0-Nin Start no Henkyou Ryoushu-sama",
+      "title": "The Frontier Lord Begins with Zero Subjects",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -878,28 +821,30 @@
       "delayed": false,
       "releaseDate": "2026-07-03T13:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/196218",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196218-UsdTTCrwpDIN.jpg"
     },
     {
       "id": "anilist-missing-188525-1-2026-07-03t14-30-00-000z",
-      "animeKey": "kore-kaite-shine",
+      "animeKey": "draw-this-then-die",
       "anilistId": 188525,
-      "anilistTitle": "Kore Kaite Shine",
+      "anilistTitle": "Draw This, Then Die!",
       "anilistUrl": "https://anilist.co/anime/188525",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Kore Kaite Shine",
-        "これ描いて死ね",
-        "Draw this, then die!"
+        "Draw This, Then Die!",
+        "これ描いて死ね"
       ],
-      "title": "Kore Kaite Shine",
+      "title": "Draw This, Then Die!",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -907,10 +852,12 @@
       "delayed": false,
       "releaseDate": "2026-07-03T14:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/188525",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188525-TBVfJaCZrcfg.jpg"
@@ -1042,7 +989,7 @@
       "anilistId": 212308,
       "anilistTitle": "Pan no Akachan (TV)",
       "anilistUrl": "https://anilist.co/anime/212308",
-      "anilistFormat": "TV",
+      "anilistFormat": "TV_SHORT",
       "anilistScore": null,
       "titles": [
         "Pan no Akachan (TV)",
@@ -1307,18 +1254,18 @@
     },
     {
       "id": "anilist-missing-206249-1-2026-07-04t13-30-00-000z",
-      "animeKey": "iwamoto-senpai-no-suisen",
+      "animeKey": "recommendations-from-iwamoto-senpai",
       "anilistId": 206249,
-      "anilistTitle": "Iwamoto-senpai no Suisen",
+      "anilistTitle": "Recommendations from Iwamoto-Senpai",
       "anilistUrl": "https://anilist.co/anime/206249",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Iwamoto-senpai no Suisen",
-        "岩元先輩ノ推薦",
-        "Recommendation from Mr. Iwamoto"
+        "Recommendations from Iwamoto-Senpai",
+        "岩元先輩ノ推薦"
       ],
-      "title": "Iwamoto-senpai no Suisen",
+      "title": "Recommendations from Iwamoto-Senpai",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -1326,10 +1273,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T13:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/206249",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206249-1AUSry416wGz.png"
@@ -1374,7 +1323,7 @@
       "releaseDate": "2026-07-04T14:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
       "allServices": [
         "Crunchyroll"
       ],
@@ -1640,7 +1589,7 @@
       "releaseDate": "2026-07-04T17:38:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378102/rich-girl-caretaker-im-secretly-the-caregiver-of-the-most-popular-girl-in-this-rich-kid-school",
       "allServices": [
         "Crunchyroll"
       ],
@@ -1653,15 +1602,16 @@
       "id": "anilist-missing-200230-1-2026-07-04t19-30-00-000z",
       "animeKey": "let-s-go-kaikigumi",
       "anilistId": 200230,
-      "anilistTitle": "Let's Go Kaikigumi",
+      "anilistTitle": "Let's go KAIKIGUMI",
       "anilistUrl": "https://anilist.co/anime/200230",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
         "レッツゴー怪奇組"
       ],
-      "title": "Let's Go Kaikigumi",
+      "title": "Let's go KAIKIGUMI",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -1669,10 +1619,12 @@
       "delayed": false,
       "releaseDate": "2026-07-04T19:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/200230",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png"
@@ -1973,18 +1925,18 @@
     },
     {
       "id": "anilist-missing-204060-1-2026-07-05t08-30-00-000z",
-      "animeKey": "tetsunabe-no-jan",
+      "animeKey": "iron-wok-jan",
       "anilistId": 204060,
-      "anilistTitle": "Tetsunabe no Jan!",
+      "anilistTitle": "Iron Wok Jan!",
       "anilistUrl": "https://anilist.co/anime/204060",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Tetsunabe no Jan!",
-        "鉄鍋のジャン！",
-        "Iron Wok Jan!"
+        "Iron Wok Jan!",
+        "鉄鍋のジャン！"
       ],
-      "title": "Tetsunabe no Jan!",
+      "title": "Iron Wok Jan!",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -1992,10 +1944,12 @@
       "delayed": false,
       "releaseDate": "2026-07-05T08:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/204060",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204060-bKhovD8jAlW8.jpg"
@@ -2079,19 +2033,19 @@
     },
     {
       "id": "anilist-missing-200637-1-2026-07-05t13-30-00-000z",
-      "animeKey": "kimi-no-koto-ga-dai-dai-dai-dai-daisuki-na-100-nin-no-kanojo-3rd-season",
+      "animeKey": "the-100-girlfriends-who-really-really-really-really-really-love-you-season-3",
       "anilistId": 200637,
-      "anilistTitle": "Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo 3rd Season",
+      "anilistTitle": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
       "anilistUrl": "https://anilist.co/anime/200637",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo 3rd Season",
-        "君のことが大大大大大好きな100人の彼女 第3期",
         "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+        "君のことが大大大大大好きな100人の彼女 第3期",
         "Hyakkano 3"
       ],
-      "title": "Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo 3rd Season",
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -2099,10 +2053,12 @@
       "delayed": false,
       "releaseDate": "2026-07-05T13:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/200637",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN933/the-100-girlfriends-who-really-really-really-really-really-love-you",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200637-eWk93doU70he.png"
@@ -2178,7 +2134,7 @@
       "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178789-Gam1EpzXlrUv.png"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178789-hNXjKFzUq7mk.jpg"
     },
     {
       "id": "anilist-missing-177637-1-2026-07-05t15-30-00-000z",
@@ -2204,7 +2160,7 @@
       "releaseDate": "2026-07-05T15:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
       "allServices": [
         "Crunchyroll"
       ],
@@ -2219,7 +2175,7 @@
       "anilistId": 205116,
       "anilistTitle": "Aware! Meisaku-kun (2026)",
       "anilistUrl": "https://anilist.co/anime/205116",
-      "anilistFormat": "TV",
+      "anilistFormat": "TV_SHORT",
       "anilistScore": null,
       "titles": [
         "Aware! Meisaku-kun (2026)",
@@ -2272,7 +2228,7 @@
       "anilistId": 169080,
       "anilistTitle": "Anime AzurLane: Slow Ahead! Season 2",
       "anilistUrl": "https://anilist.co/anime/169080",
-      "anilistFormat": "TV",
+      "anilistFormat": "TV_SHORT",
       "anilistScore": null,
       "titles": [
         "Azur Lane: Bisoku Zenshin! Ni!!",
@@ -2290,7 +2246,7 @@
       "releaseDate": "2026-07-05T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
       "allServices": [
         "Crunchyroll"
       ],
@@ -2420,18 +2376,18 @@
     },
     {
       "id": "anilist-missing-199408-1-2026-07-06t13-30-00-000z",
-      "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tataki-tsubushimasu",
+      "animeKey": "a-livid-lady-s-guide-to-getting-even-how-i-crushed-my-homeland-with-my-mighty-grimoires",
       "anilistId": 199408,
-      "anilistTitle": "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
+      "anilistTitle": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
       "anilistUrl": "https://anilist.co/anime/199408",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
-        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
-        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires"
+        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～"
       ],
-      "title": "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
+      "title": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -2439,10 +2395,12 @@
       "delayed": false,
       "releaseDate": "2026-07-06T13:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/199408",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199408-ocRWG4pRWl8f.png"
@@ -2530,18 +2488,18 @@
     },
     {
       "id": "anilist-missing-199111-1-2026-07-06t15-00-00-000z",
-      "animeKey": "grand-blue-season-3",
+      "animeKey": "grand-blue-dreaming-season-3",
       "anilistId": 199111,
-      "anilistTitle": "Grand Blue Season 3",
+      "anilistTitle": "Grand Blue Dreaming Season 3",
       "anilistUrl": "https://anilist.co/anime/199111",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Grand Blue Season 3",
-        "ぐらんぶる Season 3",
-        "Grand Blue Dreaming Season 3"
+        "Grand Blue Dreaming Season 3",
+        "ぐらんぶる Season 3"
       ],
-      "title": "Grand Blue Season 3",
+      "title": "Grand Blue Dreaming Season 3",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -2549,10 +2507,12 @@
       "delayed": false,
       "releaseDate": "2026-07-06T15:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/199111",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199111-gBSuBG61ElcW.jpg"
@@ -2690,7 +2650,7 @@
       "releaseDate": "2026-07-07T11:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00362362/young-ladies-dont-play-fighting-games",
       "allServices": [
         "Crunchyroll"
       ],
@@ -2770,27 +2730,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
     },
     {
-      "id": "schedule-inferred-aishiteru-game-wo-owarasetai-13-2026-07-07t14-30-00-000z",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "schedule-inferred-marriagetoxin-14-2026-07-07t14-30-00-000z",
       "animeKey": "marriagetoxin",
       "title": "MARRIAGETOXIN",
@@ -2810,6 +2749,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-inferred-aishiteru-game-wo-owarasetai-13-2026-07-07t14-30-00-000z",
+      "animeKey": "aishiteru-game-wo-owarasetai",
+      "title": "Aishiteru Game wo Owarasetai",
+      "route": "aishiteru-game-wo-owarasetai",
+      "episode": "Ep 13",
+      "episodeNumber": "13",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-07T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg",
       "inferredFromAnimeSchedule": true
     },
     {
@@ -2918,19 +2878,19 @@
     },
     {
       "id": "anilist-missing-207809-1-2026-07-07t16-35-00-000z",
-      "animeKey": "sora-wa-akai-kawa-no-hotori",
+      "animeKey": "red-river",
       "anilistId": 207809,
-      "anilistTitle": "Sora wa Akai Kawa no Hotori",
+      "anilistTitle": "Red River",
       "anilistUrl": "https://anilist.co/anime/207809",
       "anilistFormat": "TV",
       "anilistScore": null,
       "titles": [
         "Sora wa Akai Kawa no Hotori",
-        "天は赤い河のほとり",
         "Red River",
+        "天は赤い河のほとり",
         "Anatolia Story"
       ],
-      "title": "Sora wa Akai Kawa no Hotori",
+      "title": "Red River",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -2938,10 +2898,12 @@
       "delayed": false,
       "releaseDate": "2026-07-07T16:35:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/207809",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207809-cpS7CAyjN7iP.jpg"
@@ -2978,6 +2940,35 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx193883-Im5tNHwtfAmz.jpg"
     },
     {
+      "id": "anilist-missing-204656-27-2026-07-07t23-00-00-000z",
+      "animeKey": "mofusand",
+      "anilistId": 204656,
+      "anilistTitle": "mofusand",
+      "anilistUrl": "https://anilist.co/anime/204656",
+      "anilistFormat": "ONA",
+      "anilistScore": 59,
+      "titles": [
+        "mofusand",
+        "mofusand ",
+        "mofusand the animation"
+      ],
+      "title": "mofusand",
+      "route": "",
+      "episode": "Ep 27",
+      "episodeNumber": "27",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-07T23:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/204656",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b204656-KXjxVB4bBhl8.jpg"
+    },
+    {
       "id": "anilist-missing-211232-1-2026-07-08t01-00-00-000z",
       "animeKey": "majo-no-tani-no-yoru",
       "anilistId": 211232,
@@ -3005,6 +2996,38 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx211232-Bthde3cpWCtq.png"
+    },
+    {
+      "id": "anilist-missing-213297-5-2026-07-08t02-00-00-000z",
+      "animeKey": "eclipse-of-illusion-sp-the-miasma-war",
+      "anilistId": 213297,
+      "anilistTitle": "Eclipse of Illusion SP: The Miasma War",
+      "anilistUrl": "https://anilist.co/anime/213297",
+      "anilistFormat": "ONA",
+      "anilistScore": 73,
+      "titles": [
+        "Yun Shen Buzhi Meng Special: Zhu Ming Zhi Yi",
+        "Eclipse of Illusion SP: The Miasma War",
+        "云深不知梦 特别篇：逐冥之役",
+        "云深不知梦 特别篇",
+        "Yun Shen Buzhi Meng Specials",
+        "Eclipse of Illusion Special: The Battle of Qiumina"
+      ],
+      "title": "Eclipse of Illusion SP: The Miasma War",
+      "route": "",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/213297",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213297-hmYPfAXgQQDp.jpg"
     },
     {
       "id": "anilist-missing-213703-1-2026-07-08t03-00-00-000z",
@@ -3124,7 +3147,7 @@
       "releaseDate": "2026-07-08T12:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/saga-of-tanya-the-evil",
+      "serviceUrl": "https://www.crunchyroll.com/series/GR9P57W96/saga-of-tanya-the-evil",
       "allServices": [
         "Crunchyroll"
       ],
@@ -3167,23 +3190,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198946-IGXmbqBEYRYD.jpg"
     },
     {
-      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-08t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -3203,6 +3209,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-3-2026-07-08t16-30-00-02-00",
@@ -3251,7 +3274,7 @@
       "releaseDate": "2026-07-08T14:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
+      "serviceUrl": "https://www.crunchyroll.com/series/G0XHWM0D3/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
       "allServices": [
         "Crunchyroll"
       ],
@@ -3848,7 +3871,7 @@
       "releaseDate": "2026-07-11T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378066/hanaori-san-still-wants-to-fight-in-the-next-life",
       "allServices": [
         "Crunchyroll"
       ],
@@ -4036,6 +4059,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
+    },
+    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4058,23 +4098,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -4269,6 +4292,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
     },
     {
+      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
+    },
+    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-15t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -4288,23 +4328,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
-      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -5578,6 +5601,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-4-2026-07-26t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
+    },
+    {
       "id": "schedule-one-piece-1171-2026-07-26t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5600,23 +5640,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-4-2026-07-26t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-26T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-3-2026-07-26t21-20-00-02-00",
@@ -5851,18 +5874,18 @@
     },
     {
       "id": "anilist-missing-191832-1-2026-08-14t03-00-00-000z",
-      "animeKey": "shiguang-dailiren-iii",
+      "animeKey": "link-click-season-3",
       "anilistId": 191832,
-      "anilistTitle": "Shiguang Dailiren III",
+      "anilistTitle": "Link Click Season 3",
       "anilistUrl": "https://anilist.co/anime/191832",
       "anilistFormat": "ONA",
       "anilistScore": null,
       "titles": [
         "Shiguang Dailiren III",
-        "时光代理人 第三季",
-        "Link Click Season 3"
+        "Link Click Season 3",
+        "时光代理人 第三季"
       ],
-      "title": "Shiguang Dailiren III",
+      "title": "Link Click Season 3",
       "route": "",
       "episode": "Ep 1",
       "episodeNumber": "1",
@@ -5870,10 +5893,12 @@
       "delayed": false,
       "releaseDate": "2026-08-14T03:00:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/191832",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx191832-Ff2UEKbzjV0m.jpg"
