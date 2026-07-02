@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T14:31:16.186Z",
+  "updatedAt": "2026-07-02T17:02:03.280Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -332,36 +332,21 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
-      "id": "anilist-missing-198376-3-2026-07-02t15-00-00-000z",
+      "id": "schedule-bang-dream-yume-mita-3-2026-07-02t16-01-00-02-00",
       "animeKey": "bang-dream-yume-mita",
-      "anilistId": 198376,
-      "anilistTitle": "BanG Dream! YUME∞MITA",
-      "anilistUrl": "https://anilist.co/anime/198376",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "BanG Dream! Yume∞Mita",
-        "BanG Dream! YUME∞MITA",
-        "バンドリ！ ゆめ∞みた",
-        "BanG Dream! Yumemita"
-      ],
-      "title": "BanG Dream! YUME∞MITA",
-      "route": "",
+      "title": "BanG Dream! Yume∞Mita",
+      "route": "bang-dream-yume-mita",
       "episode": "Ep 3",
       "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-02T15:00:00.000Z",
+      "releaseDate": "2026-07-02T14:01:00.000Z",
       "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198376-sc5qcFv0RSH9.jpg"
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
     },
     {
       "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-2-2026-07-02t17-01-00-02-00",
@@ -384,39 +369,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
     },
     {
-      "id": "anilist-missing-180136-1-2026-07-02t15-26-00-000z",
-      "animeKey": "the-exiled-heavy-knight-knows-how-to-game-the-system",
-      "anilistId": 180136,
-      "anilistTitle": "The Exiled Heavy Knight Knows How to Game the System",
-      "anilistUrl": "https://anilist.co/anime/180136",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Tsuihou Sareta Tensei Juukishi wa Game Chishiki de Musou Suru",
-        "The Exiled Heavy Knight Knows How to Game the System",
-        "追放された転生重騎士はゲーム知識で無双する",
-        "The Exiled Reincarnated Heavy Knight Is Unrivaled in Game Knowledge",
-        "Juukishi"
-      ],
-      "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T15:26:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180136-gtMTCRlOD4OE.jpg"
-    },
-    {
       "id": "schedule-koori-no-jouheki-14-2026-07-02t17-30-00-02-00",
       "animeKey": "koori-no-jouheki",
       "title": "Koori no Jouheki",
@@ -436,6 +388,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
     },
     {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-1-2026-07-02t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-02T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
+    },
+    {
       "id": "schedule-yani-neko-1-2026-07-02t18-00-00-02-00",
       "animeKey": "yani-neko",
       "title": "Yani Neko",
@@ -453,37 +424,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
-    },
-    {
-      "id": "anilist-missing-204466-1-2026-07-02t16-28-00-000z",
-      "animeKey": "kaiju-girl-caramelise",
-      "anilistId": 204466,
-      "anilistTitle": "KAIJU GIRL CARAMELISE",
-      "anilistUrl": "https://anilist.co/anime/204466",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Otome Kaijuu Caramelise",
-        "KAIJU GIRL CARAMELISE",
-        "乙女怪獣キャラメリゼ"
-      ],
-      "title": "KAIJU GIRL CARAMELISE",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T16:28:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204466-vXMvIs4VOoQd.png"
     },
     {
       "id": "anilist-missing-8336-663-2026-07-02t22-10-00-000z",
@@ -3258,6 +3198,25 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207254-StcuNpmZTDCL.jpg"
     },
     {
+      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-3-2026-07-08t18-00-00-02-00",
+      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "route": "hanazakari-no-kimitachi-e-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
+    },
+    {
       "id": "schedule-lv999-no-murabito-3-2026-07-08t18-00-00-02-00",
       "animeKey": "lv999-no-murabito",
       "title": "Lv999 no Murabito",
@@ -3276,25 +3235,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
-    },
-    {
-      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-3-2026-07-08t18-00-00-02-00",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
-      "title": "Hanazakari no Kimitachi e 2nd Season",
-      "route": "hanazakari-no-kimitachi-e-2nd-season",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
     },
     {
       "id": "anilist-missing-184356-1-2026-07-08t16-15-00-000z",
@@ -3357,40 +3297,6 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209541-p9YKR3vE0Fx6.jpg"
-    },
-    {
-      "id": "anilist-missing-203710-37-2026-07-09t11-00-00-000z",
-      "animeKey": "reborn-as-a-cat",
-      "anilistId": 203710,
-      "anilistTitle": "Reborn as a Cat",
-      "anilistUrl": "https://anilist.co/anime/203710",
-      "anilistFormat": "ONA",
-      "anilistScore": 61,
-      "titles": [
-        "Wei Miao Rensheng",
-        "Reborn as a Cat",
-        "为喵人生",
-        "Just for a Meowment",
-        "Myohan Insaeng",
-        "묘한 인생"
-      ],
-      "title": "Reborn as a Cat",
-      "route": "",
-      "episode": "Ep 37",
-      "episodeNumber": "37",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-09T11:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Bilibili",
-      "serviceUrl": "https://www.bilibili.com/bangumi/media/md23775579",
-      "allServices": [
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203710-HbV1yqxtBCaE.jpg"
     },
     {
       "id": "schedule-koala-enikki-40-2026-07-09t13-01-00-02-00",
@@ -3464,6 +3370,23 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+    },
+    {
+      "id": "schedule-bang-dream-yume-mita-4-2026-07-09t16-01-00-02-00",
+      "animeKey": "bang-dream-yume-mita",
+      "title": "BanG Dream! Yume∞Mita",
+      "route": "bang-dream-yume-mita",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-09T14:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
     },
     {
       "id": "anilist-missing-108992-1-2026-07-09t14-30-00-000z",
@@ -3583,6 +3506,45 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
     },
     {
+      "id": "schedule-inferred-koori-no-jouheki-15-2026-07-09t15-30-00-000z",
+      "animeKey": "koori-no-jouheki",
+      "title": "Koori no Jouheki",
+      "route": "koori-no-jouheki",
+      "episode": "Ep 15",
+      "episodeNumber": "15",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-09T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82031882",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg",
+      "inferredFromAnimeSchedule": true
+    },
+    {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-2-2026-07-09t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-09T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
+    },
+    {
       "id": "schedule-yani-neko-2-2026-07-09t18-00-00-02-00",
       "animeKey": "yani-neko",
       "title": "Yani Neko",
@@ -3600,6 +3562,37 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
+    },
+    {
+      "id": "anilist-missing-204466-2-2026-07-09t16-28-00-000z",
+      "animeKey": "kaiju-girl-caramelise",
+      "anilistId": 204466,
+      "anilistTitle": "KAIJU GIRL CARAMELISE",
+      "anilistUrl": "https://anilist.co/anime/204466",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Otome Kaijuu Caramelise",
+        "KAIJU GIRL CARAMELISE",
+        "乙女怪獣キャラメリゼ"
+      ],
+      "title": "KAIJU GIRL CARAMELISE",
+      "route": "",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-09T16:28:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204466-vXMvIs4VOoQd.png"
     },
     {
       "id": "anilist-missing-213750-1-2026-07-10t00-00-00-000z",
@@ -4100,23 +4093,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4139,6 +4115,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -4335,6 +4328,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
     },
     {
+      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
+    },
+    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-15t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -4354,23 +4364,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
-      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -4410,25 +4403,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/katainaka-no-ossan-kensei-ni-naru-2nd-season-6b8863d2c46925d2d05773d6915c9df3.jpg"
     },
     {
-      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-4-2026-07-15t18-00-00-02-00",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
-      "title": "Hanazakari no Kimitachi e 2nd Season",
-      "route": "hanazakari-no-kimitachi-e-2nd-season",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
-    },
-    {
       "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
       "animeKey": "lv999-no-murabito",
       "title": "Lv999 no Murabito",
@@ -4447,6 +4421,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
+    },
+    {
+      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-4-2026-07-15t18-00-00-02-00",
+      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "route": "hanazakari-no-kimitachi-e-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
     },
     {
       "id": "schedule-koala-enikki-41-2026-07-16t13-01-00-02-00",
@@ -4522,6 +4515,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-bang-dream-yume-mita-5-2026-07-16t16-01-00-02-00",
+      "animeKey": "bang-dream-yume-mita",
+      "title": "BanG Dream! Yume∞Mita",
+      "route": "bang-dream-yume-mita",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-16T14:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
+    },
+    {
       "id": "anilist-missing-206819-1-2026-07-16t15-00-00-000z",
       "animeKey": "kimi-to-hanabi-to-yakusoku-to",
       "anilistId": 206819,
@@ -4570,6 +4580,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
+    },
+    {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-3-2026-07-16t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-16T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
     },
     {
       "id": "schedule-yani-neko-3-2026-07-16t18-00-00-02-00",
@@ -4960,6 +4989,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
+    },
+    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4982,23 +5028,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-3-2026-07-19t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
@@ -5178,6 +5207,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
     },
     {
+      "id": "schedule-perfect-addiction-3-2026-07-22t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-22T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
+    },
+    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-22t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -5197,23 +5243,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
-      "id": "schedule-perfect-addiction-3-2026-07-22t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-5-2026-07-22t16-30-00-02-00",
@@ -5253,6 +5282,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/katainaka-no-ossan-kensei-ni-naru-2nd-season-6b8863d2c46925d2d05773d6915c9df3.jpg"
     },
     {
+      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-5-2026-07-22t18-00-00-02-00",
+      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "route": "hanazakari-no-kimitachi-e-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-22T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
+    },
+    {
       "id": "schedule-lv999-no-murabito-5-2026-07-22t18-00-00-02-00",
       "animeKey": "lv999-no-murabito",
       "title": "Lv999 no Murabito",
@@ -5271,25 +5319,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
-    },
-    {
-      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-5-2026-07-22t18-00-00-02-00",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
-      "title": "Hanazakari no Kimitachi e 2nd Season",
-      "route": "hanazakari-no-kimitachi-e-2nd-season",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
     },
     {
       "id": "schedule-koala-enikki-42-2026-07-23t13-01-00-02-00",
@@ -5365,6 +5394,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
     },
     {
+      "id": "schedule-bang-dream-yume-mita-6-2026-07-23t16-01-00-02-00",
+      "animeKey": "bang-dream-yume-mita",
+      "title": "BanG Dream! Yume∞Mita",
+      "route": "bang-dream-yume-mita",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-23T14:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
+    },
+    {
       "id": "anilist-missing-202717-1-2026-07-23t15-00-00-000z",
       "animeKey": "chiikawa-ningyo-no-shima-no-himitsu",
       "anilistId": 202717,
@@ -5434,6 +5480,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
+    },
+    {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-4-2026-07-23t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-23T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
     },
     {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-16-2026-07-24t17-00-00-02-00",
