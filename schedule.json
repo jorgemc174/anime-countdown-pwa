@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T09:37:24.492Z",
+  "updatedAt": "2026-07-03T14:33:32.026Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -145,23 +145,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
     },
     {
-      "id": "schedule-quanzhi-fashi-vii-9-2026-07-01t06-00-00-02-00",
-      "animeKey": "quanzhi-fashi-vii",
-      "title": "Quanzhi Fashi VII",
-      "route": "quanzhi-fashi-vii",
-      "episode": "Ep 9",
-      "episodeNumber": "9",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T04:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/quanzhi-fashi-vii-c4f59f50b5aa4db0c58ce831bbd0b101.jpg"
-    },
-    {
       "id": "schedule-ugoku-neko-mukashibanashi-38-2026-07-01t13-01-00-02-00",
       "animeKey": "ugoku-neko-mukashibanashi",
       "title": "Ugoku! Neko Mukashibanashi",
@@ -233,6 +216,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -289,6 +273,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -345,6 +330,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -403,7 +389,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
@@ -441,18 +429,20 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
     },
     {
-      "id": "schedule-bai-ri-cheng-wang-4-2026-07-03t06-01-00-02-00",
+      "id": "schedule-bai-ri-cheng-wang-2-2026-07-03t06-01-00-02-00",
       "animeKey": "bai-ri-cheng-wang",
       "title": "Bai Ri Cheng Wang",
       "route": "bai-ri-cheng-wang",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-07-03T04:01:00.000Z",
@@ -460,6 +450,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Bilibili"
       ],
@@ -467,81 +458,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
     },
     {
-      "id": "anilist-missing-158871-142-2026-07-03t09-55-00-000z",
-      "animeKey": "pokemon-horizons-the-series",
-      "anilistId": 158871,
-      "anilistTitle": "Pokémon Horizons: The Series",
-      "anilistUrl": "https://anilist.co/anime/158871",
-      "anilistFormat": "TV",
-      "anilistScore": 73,
-      "titles": [
-        "Pocket Monsters (2023)",
-        "Pokémon Horizons: The Series",
-        "ポケットモンスター (2023)",
-        "Pocket Monsters: Liko to Roy no Tabidachi (ポケットモンスター リコとロイの旅立ち)",
-        "Pocket Monsters: Terapagos no Kagayaki (ポケットモンスター テラパゴスのかがやき)",
-        "Pocket Monsters: Terastal Debut (ポケットモンスター テラスタルデビュー)",
-        "Pocket Monsters: Rayquaza Rising (ポケットモンスター レックウザ ライジング)",
-        "Pocket Monsters: Mega Voltage (ポケットモンスター メガボルテージ)",
-        "Pokémon (2023)",
-        "Pokémon Horizontes: A Série",
-        "Pokémon Horyzonty: Seria",
-        "Orizzonti Pokémon: La serie",
-        "Pokémon Horisonter: Serien",
-        "Pokémon: Taivaanranta - Sarja",
-        "Pokémon Yeni Ufuklar: Dizi",
-        "โปเกมอน เดอะซีรีส์ สุดขอบฟ้า"
-      ],
-      "title": "Pokémon Horizons: The Series",
-      "route": "",
-      "episode": "Ep 142",
-      "episodeNumber": "142",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T09:55:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/81696980",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158871-GBM9AMDfDRSu.jpg"
-    },
-    {
-      "id": "anilist-missing-196218-1-2026-07-03t13-30-00-000z",
-      "animeKey": "the-frontier-lord-begins-with-zero-subjects",
-      "anilistId": 196218,
-      "anilistTitle": "The Frontier Lord Begins with Zero Subjects",
-      "anilistUrl": "https://anilist.co/anime/196218",
-      "anilistFormat": "ONA",
-      "anilistScore": null,
-      "titles": [
-        "Ryoumin 0-Nin Start no Henkyou Ryoushu-sama",
-        "The Frontier Lord Begins with Zero Subjects",
-        "領民0人スタートの辺境領主様",
-        "The Frontier Lord Begins with Zero Subjects: Tales of Blue Dias and the Beastkin Alna",
-        "The Population of the Frontier Owner Stars with 0."
-      ],
-      "title": "The Frontier Lord Begins with Zero Subjects",
-      "route": "",
+      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-1-2026-07-03t15-31-00-02-00",
+      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
+      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
       "episode": "Ep 1",
       "episodeNumber": "1",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-03T13:30:00.000Z",
+      "releaseDate": "2026-07-03T13:31:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196218-UsdTTCrwpDIN.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
     },
     {
       "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-1-2026-07-03t16-00-00-02-00",
@@ -561,37 +495,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
-    },
-    {
-      "id": "anilist-missing-188525-1-2026-07-03t14-30-00-000z",
-      "animeKey": "draw-this-then-die",
-      "anilistId": 188525,
-      "anilistTitle": "Draw This, Then Die!",
-      "anilistUrl": "https://anilist.co/anime/188525",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Kore Kaite Shine",
-        "Draw This, Then Die!",
-        "これ描いて死ね"
-      ],
-      "title": "Draw This, Then Die!",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188525-TBVfJaCZrcfg.jpg"
     },
     {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-13-2026-07-03t17-00-00-02-00",
@@ -636,6 +539,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-1-2026-07-03t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-03T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
+    },
+    {
       "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-1-2026-07-03t18-30-00-02-00",
       "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -653,23 +573,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
-    },
-    {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-1-2026-07-03t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-1-2026-07-03t18-31-00-02-00",
@@ -2272,7 +2175,7 @@
       "anilistTitle": "Chiikawa",
       "anilistUrl": "https://anilist.co/anime/140842",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 83,
+      "anilistScore": 84,
       "titles": [
         "Chiikawa",
         "Chiikawa",
@@ -2825,30 +2728,13 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213703-ghO1AqW0bdaN.jpg"
     },
     {
-      "id": "schedule-quanzhi-fashi-vii-10-2026-07-08t06-00-00-02-00",
-      "animeKey": "quanzhi-fashi-vii",
-      "title": "Quanzhi Fashi VII",
-      "route": "quanzhi-fashi-vii",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T04:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/quanzhi-fashi-vii-c4f59f50b5aa4db0c58ce831bbd0b101.jpg"
-    },
-    {
       "id": "anilist-missing-163793-9-2026-07-08t08-15-00-000z",
       "animeKey": "cheongchun-blossom-uriui-bom",
       "anilistId": 163793,
       "anilistTitle": "Cheongchun Blossom: Uriui Bom",
       "anilistUrl": "https://anilist.co/anime/163793",
       "anilistFormat": "TV",
-      "anilistScore": 69,
+      "anilistScore": 70,
       "titles": [
         "Cheongchun Blossom: Uriui Bom",
         "청춘블라썸 : 우리의 봄",
@@ -2954,23 +2840,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198946-IGXmbqBEYRYD.jpg"
     },
     {
-      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-08t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -2990,6 +2859,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-3-2026-07-08t16-30-00-02-00",
@@ -3154,6 +3040,26 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207254-StcuNpmZTDCL.jpg"
     },
     {
+      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-3-2026-07-08t18-00-00-02-00",
+      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "route": "hanazakari-no-kimitachi-e-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
+    },
+    {
       "id": "schedule-lv999-no-murabito-3-2026-07-08t18-00-00-02-00",
       "animeKey": "lv999-no-murabito",
       "title": "Lv999 no Murabito",
@@ -3172,25 +3078,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
-    },
-    {
-      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-3-2026-07-08t18-00-00-02-00",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
-      "title": "Hanazakari no Kimitachi e 2nd Season",
-      "route": "hanazakari-no-kimitachi-e-2nd-season",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
     },
     {
       "id": "anilist-missing-184356-1-2026-07-08t16-15-00-000z",
@@ -3285,6 +3172,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3341,6 +3229,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -3497,7 +3386,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
@@ -3535,7 +3426,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
@@ -3598,12 +3491,12 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213750-5hVyApOz4YXe.png"
     },
     {
-      "id": "schedule-bai-ri-cheng-wang-5-2026-07-10t06-01-00-02-00",
+      "id": "schedule-bai-ri-cheng-wang-3-2026-07-10t06-01-00-02-00",
       "animeKey": "bai-ri-cheng-wang",
       "title": "Bai Ri Cheng Wang",
       "route": "bai-ri-cheng-wang",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-07-10T04:01:00.000Z",
@@ -3611,11 +3504,76 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
+    },
+    {
+      "id": "anilist-missing-158871-143-2026-07-10t09-55-00-000z",
+      "animeKey": "pokemon-horizons-the-series",
+      "anilistId": 158871,
+      "anilistTitle": "Pokémon Horizons: The Series",
+      "anilistUrl": "https://anilist.co/anime/158871",
+      "anilistFormat": "TV",
+      "anilistScore": 73,
+      "titles": [
+        "Pocket Monsters (2023)",
+        "Pokémon Horizons: The Series",
+        "ポケットモンスター (2023)",
+        "Pocket Monsters: Liko to Roy no Tabidachi (ポケットモンスター リコとロイの旅立ち)",
+        "Pocket Monsters: Terapagos no Kagayaki (ポケットモンスター テラパゴスのかがやき)",
+        "Pocket Monsters: Terastal Debut (ポケットモンスター テラスタルデビュー)",
+        "Pocket Monsters: Rayquaza Rising (ポケットモンスター レックウザ ライジング)",
+        "Pocket Monsters: Mega Voltage (ポケットモンスター メガボルテージ)",
+        "Pokémon (2023)",
+        "Pokémon Horizontes: A Série",
+        "Pokémon Horyzonty: Seria",
+        "Orizzonti Pokémon: La serie",
+        "Pokémon Horisonter: Serien",
+        "Pokémon: Taivaanranta - Sarja",
+        "Pokémon Yeni Ufuklar: Dizi",
+        "โปเกมอน เดอะซีรีส์ สุดขอบฟ้า"
+      ],
+      "title": "Pokémon Horizons: The Series",
+      "route": "",
+      "episode": "Ep 143",
+      "episodeNumber": "143",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T09:55:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/81696980",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158871-GBM9AMDfDRSu.jpg"
+    },
+    {
+      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-2-2026-07-10t15-31-00-02-00",
+      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
+      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T13:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
     },
     {
       "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2-2026-07-10t16-00-00-02-00",
@@ -3635,6 +3593,37 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
+    },
+    {
+      "id": "anilist-missing-188525-2-2026-07-10t14-30-00-000z",
+      "animeKey": "draw-this-then-die",
+      "anilistId": 188525,
+      "anilistTitle": "Draw This, Then Die!",
+      "anilistUrl": "https://anilist.co/anime/188525",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Kore Kaite Shine",
+        "Draw This, Then Die!",
+        "これ描いて死ね"
+      ],
+      "title": "Draw This, Then Die!",
+      "route": "",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188525-TBVfJaCZrcfg.jpg"
     },
     {
       "id": "anilist-missing-182616-1-2026-07-10t14-30-00-000z",
@@ -3714,23 +3703,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-2-2026-07-10t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-10T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
-    },
-    {
       "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-2-2026-07-10t18-30-00-02-00",
       "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -3748,6 +3720,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+    },
+    {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-2-2026-07-10t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-2-2026-07-10t18-31-00-02-00",
@@ -3910,23 +3899,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-2-2026-07-11t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-11T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-14-2026-07-11t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -3946,6 +3918,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-2-2026-07-11t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-11T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
       "id": "anilist-missing-199066-1-2026-07-11t17-00-00-000z",
@@ -4160,23 +4149,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
-      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
-      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
-      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-12T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
-    },
-    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4199,6 +4171,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-2-2026-07-12t18-00-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
@@ -4361,23 +4350,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212309-gDqt6qz1RPEL.png"
     },
     {
-      "id": "schedule-quanzhi-fashi-vii-11-2026-07-15t06-00-00-02-00",
-      "animeKey": "quanzhi-fashi-vii",
-      "title": "Quanzhi Fashi VII",
-      "route": "quanzhi-fashi-vii",
-      "episode": "Ep 11",
-      "episodeNumber": "11",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T04:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/quanzhi-fashi-vii-c4f59f50b5aa4db0c58ce831bbd0b101.jpg"
-    },
-    {
       "id": "schedule-ugoku-neko-mukashibanashi-40-2026-07-15t13-01-00-02-00",
       "animeKey": "ugoku-neko-mukashibanashi",
       "title": "Ugoku! Neko Mukashibanashi",
@@ -4393,23 +4365,6 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
-    },
-    {
-      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-15t16-00-00-02-00",
@@ -4431,6 +4386,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -4503,6 +4475,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4539,6 +4512,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4595,6 +4569,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -4651,6 +4626,27 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
     },
     {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-3-2026-07-16t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-16T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
+    },
+    {
       "id": "schedule-yani-neko-3-2026-07-16t18-00-00-02-00",
       "animeKey": "yani-neko",
       "title": "Yani Neko",
@@ -4670,25 +4666,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
-      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-3-2026-07-16t18-00-00-02-00",
-      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
-      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
-      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-16T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
-    },
-    {
       "id": "schedule-otome-kaiju-caramelise-3-2026-07-16t19-28-00-02-00",
       "animeKey": "otome-kaiju-caramelise",
       "title": "Otome Kaiju Caramelise",
@@ -4702,18 +4679,20 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
     },
     {
-      "id": "schedule-bai-ri-cheng-wang-6-2026-07-17t06-01-00-02-00",
+      "id": "schedule-bai-ri-cheng-wang-4-2026-07-17t06-01-00-02-00",
       "animeKey": "bai-ri-cheng-wang",
       "title": "Bai Ri Cheng Wang",
       "route": "bai-ri-cheng-wang",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-07-17T04:01:00.000Z",
@@ -4721,11 +4700,32 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
+    },
+    {
+      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-3-2026-07-17t15-31-00-02-00",
+      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
+      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T13:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
     },
     {
       "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-3-2026-07-17t16-00-00-02-00",
@@ -4789,23 +4789,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-3-2026-07-17t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-17T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
-    },
-    {
       "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-3-2026-07-17t18-30-00-02-00",
       "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -4823,6 +4806,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+    },
+    {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-3-2026-07-17t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
@@ -5353,23 +5353,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b199409-X1BoggxZulkT.jpg"
     },
     {
-      "id": "schedule-quanzhi-fashi-vii-12-2026-07-22t06-00-00-02-00",
-      "animeKey": "quanzhi-fashi-vii",
-      "title": "Quanzhi Fashi VII",
-      "route": "quanzhi-fashi-vii",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T04:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/quanzhi-fashi-vii-c4f59f50b5aa4db0c58ce831bbd0b101.jpg"
-    },
-    {
       "id": "schedule-ugoku-neko-mukashibanashi-41-2026-07-22t13-01-00-02-00",
       "animeKey": "ugoku-neko-mukashibanashi",
       "title": "Ugoku! Neko Mukashibanashi",
@@ -5385,6 +5368,23 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-3-2026-07-22t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-22T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-22t16-00-00-02-00",
@@ -5406,23 +5406,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
-      "id": "schedule-perfect-addiction-3-2026-07-22t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-5-2026-07-22t16-30-00-02-00",
@@ -5475,6 +5458,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5531,6 +5515,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5587,6 +5572,7 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
@@ -5677,7 +5663,9 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
@@ -5696,18 +5684,20 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
       "allServices": [
-        "Crunchyroll"
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
     },
     {
-      "id": "schedule-bai-ri-cheng-wang-7-2026-07-24t06-01-00-02-00",
+      "id": "schedule-bai-ri-cheng-wang-5-2026-07-24t06-01-00-02-00",
       "animeKey": "bai-ri-cheng-wang",
       "title": "Bai Ri Cheng Wang",
       "route": "bai-ri-cheng-wang",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-07-24T04:01:00.000Z",
@@ -5715,11 +5705,32 @@
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll",
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
+    },
+    {
+      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-4-2026-07-24t15-31-00-02-00",
+      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
+      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-24T13:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
     },
     {
       "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-4-2026-07-24t16-00-00-02-00",
@@ -5783,23 +5794,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-4-2026-07-24t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-24T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
-    },
-    {
       "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-4-2026-07-24t18-30-00-02-00",
       "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -5817,6 +5811,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+    },
+    {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-4-2026-07-24t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-24T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-4-2026-07-24t18-31-00-02-00",
@@ -6012,6 +6023,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
+    },
+    {
       "id": "schedule-yomi-no-tsugai-16-2026-07-25t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -6031,23 +6059,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-25T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
       "id": "schedule-meitantei-precure-26-2026-07-26t03-30-00-02-00",
