@@ -1,1339 +1,8 @@
 {
-  "updatedAt": "2026-07-05T14:11:57.426Z",
+  "updatedAt": "2026-07-06T04:44:11.507Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
-    {
-      "id": "schedule-world-is-dancing-1-2026-06-29t15-30-00-02-00",
-      "animeKey": "world-is-dancing",
-      "title": "World Is Dancing",
-      "route": "world-is-dancing",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-29T13:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/449S9qa",
-      "allServices": [
-        "Apple TV+",
-        "HIDIVE"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
-    },
-    {
-      "id": "schedule-liar-game-13-2026-06-29t18-00-00-02-00",
-      "animeKey": "liar-game",
-      "title": "LIAR GAME",
-      "route": "liar-game",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-29T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
-    },
-    {
-      "id": "schedule-mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-1-2026-06-30t15-30-00-02-00",
-      "animeKey": "mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu",
-      "title": "Mujikaku Seijo wa Kyou mo Muishiki ni Chikara wo Tare Nagasu",
-      "route": "mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T13:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378125/",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-667a3196664a4d77aedfb7c9f5f5d801.jpg"
-    },
-    {
-      "id": "schedule-marriagetoxin-13-2026-06-30t16-30-00-02-00",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg"
-    },
-    {
-      "id": "schedule-aishiteru-game-wo-owarasetai-12-2026-06-30t16-30-00-02-00",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg"
-    },
-    {
-      "id": "schedule-replica-datte-koi-wo-suru-13-2026-06-30t16-31-00-02-00",
-      "animeKey": "replica-datte-koi-wo-suru",
-      "title": "Replica datte, Koi wo Suru.",
-      "route": "replica-datte-koi-wo-suru",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T14:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg"
-    },
-    {
-      "id": "schedule-hidarikiki-no-eren-13-2026-06-30t18-00-00-02-00",
-      "animeKey": "hidarikiki-no-eren",
-      "title": "Hidarikiki no Eren",
-      "route": "hidarikiki-no-eren",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-06-30T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg"
-    },
-    {
-      "id": "schedule-ugoku-neko-mukashibanashi-38-2026-07-01t13-01-00-02-00",
-      "animeKey": "ugoku-neko-mukashibanashi",
-      "title": "Ugoku! Neko Mukashibanashi",
-      "route": "ugoku-neko-mukashibanashi",
-      "episode": "Ep 38",
-      "episodeNumber": "38",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T11:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-01t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
-      "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-2-2026-07-01t16-30-00-02-00",
-      "animeKey": "heroine-seijo-iie-all-works-maid-desu-hokori",
-      "title": "Heroine? Seijo? Iie, All Works Maid desu (Hokori)!",
-      "route": "heroine-seijo-iie-all-works-maid-desu-hokori",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378069/heroine-saint-no-im-an-all-works-maid-and-proud-of-it",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/heroine-seijo-iie-all-works-maid-desu-hokori-cfbdf1949bf57038f4d72e30c9c336fa.jpg"
-    },
-    {
-      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-2-2026-07-01t18-00-00-02-00",
-      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
-      "title": "Hanazakari no Kimitachi e 2nd Season",
-      "route": "hanazakari-no-kimitachi-e-2nd-season",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
-    },
-    {
-      "id": "schedule-lv999-no-murabito-2-2026-07-01t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-01T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
-    },
-    {
-      "id": "schedule-koala-enikki-39-2026-07-02t13-01-00-02-00",
-      "animeKey": "koala-enikki",
-      "title": "Koala Enikki",
-      "route": "koala-enikki",
-      "episode": "Ep 39",
-      "episodeNumber": "39",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T11:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
-    },
-    {
-      "id": "schedule-reiwa-no-dara-san-1-2026-07-02t14-31-00-02-00",
-      "animeKey": "reiwa-no-dara-san",
-      "title": "Reiwa no Dara-san",
-      "route": "reiwa-no-dara-san",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T12:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reiwa-no-dara-san-ae77fc059c370ee0d7c8bf637695b84d.jpg"
-    },
-    {
-      "id": "schedule-bungou-stray-dogs-wan-2-1-2026-07-02t14-41-00-02-00",
-      "animeKey": "bungou-stray-dogs-wan-2",
-      "title": "Bungou Stray Dogs Wan! 2",
-      "route": "bungou-stray-dogs-wan-2",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T12:41:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GMEHMEN75/bungo-stray-dogs-wan",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bungou-stray-dogs-wan-2-d7bdf09d2fd9d56c667521a4f522f5b1.jpg"
-    },
-    {
-      "id": "schedule-ganso-bandori-chan-39-2026-07-02t15-01-00-02-00",
-      "animeKey": "ganso-bandori-chan",
-      "title": "Ganso! Bandori-chan",
-      "route": "ganso-bandori-chan",
-      "episode": "Ep 39",
-      "episodeNumber": "39",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T13:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
-    },
-    {
-      "id": "schedule-bang-dream-yume-mita-3-2026-07-02t16-01-00-02-00",
-      "animeKey": "bang-dream-yume-mita",
-      "title": "BanG Dream! Yume∞Mita",
-      "route": "bang-dream-yume-mita",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T14:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
-    },
-    {
-      "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-2-2026-07-02t17-01-00-02-00",
-      "animeKey": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
-      "title": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
-      "route": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T15:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378115/from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
-    },
-    {
-      "id": "schedule-koori-no-jouheki-14-2026-07-02t17-30-00-02-00",
-      "animeKey": "koori-no-jouheki",
-      "title": "Koori no Jouheki",
-      "route": "koori-no-jouheki",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82031882",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg"
-    },
-    {
-      "id": "schedule-yani-neko-1-2026-07-02t18-00-00-02-00",
-      "animeKey": "yani-neko",
-      "title": "Yani Neko",
-      "route": "yani-neko",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82760630",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
-    },
-    {
-      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-1-2026-07-02t18-00-00-02-00",
-      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
-      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
-      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
-    },
-    {
-      "id": "schedule-otome-kaiju-caramelise-1-2026-07-02t19-30-00-02-00",
-      "animeKey": "otome-kaiju-caramelise",
-      "title": "Otome Kaiju Caramelise",
-      "route": "otome-kaijuu-caramelise",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-02T17:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
-    },
-    {
-      "id": "schedule-bai-ri-cheng-wang-2-2026-07-03t06-01-00-02-00",
-      "animeKey": "bai-ri-cheng-wang",
-      "title": "Bai Ri Cheng Wang",
-      "route": "bai-ri-cheng-wang",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T04:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
-    },
-    {
-      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-1-2026-07-03t15-31-00-02-00",
-      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
-      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
-      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T13:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
-    },
-    {
-      "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-1-2026-07-03t16-00-00-02-00",
-      "animeKey": "koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita",
-      "title": "Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen ga Tattara Densetsu ni Natteita.",
-      "route": "koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371671",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
-    },
-    {
-      "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-13-2026-07-03t17-00-00-02-00",
-      "animeKey": "tensei-shitara-slime-datta-ken-4th-season",
-      "title": "Tensei shitara Slime Datta Ken 4th Season",
-      "route": "tensei-shitara-slime-datta-ken-4th-season",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T15:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
-    },
-    {
-      "id": "schedule-kami-no-shizuku-13-2026-07-03t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
-    },
-    {
-      "id": "schedule-kore-kaite-shine-1-2026-07-03t17-30-00-02-00",
-      "animeKey": "kore-kaite-shine",
-      "title": "Kore Kaite Shine",
-      "route": "kore-kaite-shine",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371656",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kore-kaite-shine-76b77e68f8cb45f60efec7c53ef6f06c.jpg"
-    },
-    {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-1-2026-07-03t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
-    },
-    {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-1-2026-07-03t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/3SMAP8c",
-      "allServices": [
-        "Apple TV+",
-        "HIDIVE"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
-    },
-    {
-      "id": "schedule-ushiro-no-shoumen-kamui-san-1-2026-07-03t18-31-00-02-00",
-      "animeKey": "ushiro-no-shoumen-kamui-san",
-      "title": "Ushiro no Shoumen Kamui-san",
-      "route": "ushiro-no-shoumen-kamui-san",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
-    },
-    {
-      "id": "schedule-snack-hazama-1-2026-07-03t18-31-00-02-00",
-      "animeKey": "snack-hazama",
-      "title": "Snack HAZAMA",
-      "route": "snack-hazama",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-03T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snack-hazama-e9da0f2b1ef0f2d8f9eb456d5c7a146e.jpg"
-    },
-    {
-      "id": "schedule-rilakkuma-goyururi-yume-no-tabi-14-2026-07-04t03-00-00-02-00",
-      "animeKey": "rilakkuma-goyururi-yume-no-tabi",
-      "title": "Rilakkuma: Goyururi Yume no Tabi",
-      "route": "rilakkuma",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T01:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
-    },
-    {
-      "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-13-2026-07-04t11-30-00-02-00",
-      "animeKey": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4",
-      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 4",
-      "route": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T09:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
-    },
-    {
-      "id": "schedule-mairimashita-iruma-kun-4-14-2026-07-04t12-25-00-02-00",
-      "animeKey": "mairimashita-iruma-kun-4",
-      "title": "Mairimashita! Iruma-kun 4",
-      "route": "mairimashita-iruma-kun-4",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T10:25:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
-    },
-    {
-      "id": "schedule-mushoku-tensei-iii-isekai-ittara-honki-dasu-2-2026-07-04t13-01-00-02-00",
-      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
-      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
-      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T11:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg"
-    },
-    {
-      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-1-2026-07-04t13-31-00-02-00",
-      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T11:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg"
-    },
-    {
-      "id": "schedule-detective-conan-1206-2026-07-04t14-30-00-02-00",
-      "animeKey": "detective-conan",
-      "title": "Detective Conan",
-      "route": "detective-conan",
-      "episode": "Ep 1206",
-      "episodeNumber": "1206",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T12:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/case-closed",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
-    },
-    {
-      "id": "schedule-black-torch-1-2026-07-04t15-01-00-02-00",
-      "animeKey": "black-torch",
-      "title": "BLACK TORCH",
-      "route": "black-torch",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T13:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00377907/black-torch",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/black-torch-ce6a1e71bed8eb358fb6d19a8e2e23f3.jpg"
-    },
-    {
-      "id": "schedule-neko-to-ryuu-2-2026-07-04t15-30-00-02-00",
-      "animeKey": "neko-to-ryuu",
-      "title": "Neko to Ryuu",
-      "route": "neko-to-ryuu",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T13:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
-    },
-    {
-      "id": "schedule-iwamoto-senpai-no-suisen-1-2026-07-04t16-00-00-02-00",
-      "animeKey": "iwamoto-senpai-no-suisen",
-      "title": "Iwamoto-senpai no Suisen",
-      "route": "iwamoto-senpai-no-suisen",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378096/recommendations-from-iwamoto-senpai",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/iwamoto-senpai-no-suisen-bc29f191d3fd7f9f0494f407d78c37d6.jpg"
-    },
-    {
-      "id": "schedule-mao-14-2026-07-04t17-45-00-02-00",
-      "animeKey": "mao",
-      "title": "MAO",
-      "route": "mao",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T15:45:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/47IDwwj",
-      "allServices": [
-        "Apple TV+",
-        "Hulu",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
-    },
-    {
-      "id": "schedule-yomi-no-tsugai-13-2026-07-04t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": true,
-      "releaseDate": "2026-07-04T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-1-2026-07-04t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
-    },
-    {
-      "id": "schedule-oni-no-hanayome-1-2026-07-04t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
-    },
-    {
-      "id": "schedule-tenmaku-no-jaadugar-2-2026-07-04t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tenmaku-no-jaadugar-13bd71449bec6ecc2863bbc8c2566183.jpg"
-    },
-    {
-      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-1-2026-07-04t19-00-00-02-00",
-      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
-      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-b4dd3acbac13a444db3f73ef3880004d.jpg"
-    },
-    {
-      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-1-2026-07-04t19-00-00-02-00",
-      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
-      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
-    },
-    {
-      "id": "schedule-kabushiki-gaisha-magi-lumiere-2nd-season-1-2026-07-04t19-25-00-02-00",
-      "animeKey": "kabushiki-gaisha-magi-lumiere-2nd-season",
-      "title": "Kabushiki Gaisha Magi Lumiere 2nd Season",
-      "route": "kabushikigaisha-magi-lumi-re-2nd-season",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T17:25:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Prime Video",
-      "serviceUrl": "https://www.amazon.com/dp/B0H3LSX33Y",
-      "allServices": [
-        "Apple TV+",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kabushikigaisha-magi-lumi-re-2nd-season-d6cdf6f069f26c60a49878535820d305.jpg"
-    },
-    {
-      "id": "schedule-saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita-1-2026-07-04t20-10-00-02-00",
-      "animeKey": "saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita",
-      "title": "Saijo no Osewa: Takane no Hanadarake na Meimonkou de, Gakuin Ichi no Ojousama (Seikatsu Nouryoku Kaimu) wo Kagenagara Osewa suru Koto ni Narimashita",
-      "route": "saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-04T18:10:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378102/rich-girl-caretaker-im-secretly-the-caregiver-of-the-most-popular-girl-in-this-rich-kid-school",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita-067c6664e313c812011247afd321d530.jpg"
-    },
-    {
-      "id": "schedule-meitantei-precure-23-2026-07-05t03-30-00-02-00",
-      "animeKey": "meitantei-precure",
-      "title": "Meitantei Precure!",
-      "route": "meitantei-precure",
-      "episode": "Ep 23",
-      "episodeNumber": "23",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T01:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meitantei-precure-7e5a1e4418385d3a27b5d2606be7e238.jpg"
-    },
-    {
-      "id": "schedule-digimon-beatbreak-37-2026-07-05t05-00-00-02-00",
-      "animeKey": "digimon-beatbreak",
-      "title": "Digimon BeatBreak",
-      "route": "digimon-beatbreak",
-      "episode": "Ep 37",
-      "episodeNumber": "37",
-      "airType": "SUB",
-      "delayed": true,
-      "releaseDate": "2026-07-05T03:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video",
-        "Hulu"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
-    },
-    {
-      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-1-2026-07-05t10-30-00-02-00",
-      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
-      "title": "Seihantai na Kimi to Boku 2nd Season",
-      "route": "seihantai-na-kimi-to-boku-2nd-season",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
-    },
-    {
-      "id": "schedule-let-s-go-kaikigumi-1-2026-07-05t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lets-go-kaikigumi-e1df127d0565e6bc236cb4cb03e3a136.jpg"
-    },
-    {
-      "id": "schedule-tetsunabe-no-jan-1-2026-07-05t11-00-00-02-00",
-      "animeKey": "tetsunabe-no-jan",
-      "title": "Tetsunabe no Jan!",
-      "route": "tetsunabe-no-jan",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T09:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378075",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tetsunabe-no-jan-24744b84bf40cc28b8856d249e4f58df.jpg"
-    },
-    {
-      "id": "schedule-holo-no-graffiti-373-2026-07-05t11-01-00-02-00",
-      "animeKey": "holo-no-graffiti",
-      "title": "Holo no Graffiti",
-      "route": "holo-no-graffiti",
-      "episode": "Ep 373",
-      "episodeNumber": "373",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T09:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
-    },
-    {
-      "id": "schedule-sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-1-2026-07-05t15-01-00-02-00",
-      "animeKey": "sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha",
-      "title": "Sekai Saikyou no Kouei: Meikyuukoku no Shinjin Tansakusha",
-      "route": "sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T13:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378122/the-worlds-strongest-rearguard",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-aa44af64896783b69e7354862d98c793.jpg"
-    },
-    {
-      "id": "schedule-nijuuseiki-denki-mokuroku-eureka-evrika-1-2026-07-05t16-01-00-02-00",
-      "animeKey": "nijuuseiki-denki-mokuroku-eureka-evrika",
-      "title": "Nijuuseiki Denki Mokuroku: Eureka Evrika",
-      "route": "nijuuseiki-denki-mokuroku",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T14:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/81698957",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/nijuuseiki-denki-mokuroku-96c2d20ee1470ff1c7ebb210a06c8434.jpg"
-    },
-    {
-      "id": "schedule-kuroneko-to-majo-no-kyoushitsu-13-2026-07-05t17-00-00-02-00",
-      "animeKey": "kuroneko-to-majo-no-kyoushitsu",
-      "title": "Kuroneko to Majo no Kyoushitsu",
-      "route": "kuroneko-to-majo-no-kyoushitsu",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T15:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
-    },
-    {
-      "id": "anilist-missing-177637-1-2026-07-05t15-30-00-000z",
-      "animeKey": "goodbye-lara",
-      "anilistId": 177637,
-      "anilistTitle": "Goodbye, Lara",
-      "anilistUrl": "https://anilist.co/anime/177637",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Sayonara Lara",
-        "Goodbye, Lara",
-        "さよなら ララ",
-        "さよララ",
-        "SayoLara"
-      ],
-      "title": "Goodbye, Lara",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177637-8onaQWqKW1C3.jpg"
-    },
-    {
-      "id": "anilist-missing-205116-1-2026-07-05t15-45-00-000z",
-      "animeKey": "aware-meisaku-kun-2026",
-      "anilistId": 205116,
-      "anilistTitle": "Aware! Meisaku-kun (2026)",
-      "anilistUrl": "https://anilist.co/anime/205116",
-      "anilistFormat": "TV_SHORT",
-      "anilistScore": null,
-      "titles": [
-        "Aware! Meisaku-kun (2026)",
-        "あはれ！名作くん (2026)",
-        " Ahare! Meisaku-kun (2026)"
-      ],
-      "title": "Aware! Meisaku-kun (2026)",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T15:45:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "https://anilist.co/anime/205116",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx205116-160t0jWDkIdK.png"
-    },
-    {
-      "id": "schedule-one-piece-1169-2026-07-05t18-00-00-02-00",
-      "animeKey": "one-piece",
-      "title": "One Piece",
-      "route": "one-piece",
-      "episode": "Ep 1169",
-      "episodeNumber": "1169",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/one-piece",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Prime Video",
-        "Hulu",
-        "Netflix",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
-    },
-    {
-      "id": "anilist-missing-169080-1-2026-07-05t16-00-00-000z",
-      "animeKey": "anime-azurlane-slow-ahead-season-2",
-      "anilistId": 169080,
-      "anilistTitle": "Anime AzurLane: Slow Ahead! Season 2",
-      "anilistUrl": "https://anilist.co/anime/169080",
-      "anilistFormat": "TV_SHORT",
-      "anilistScore": null,
-      "titles": [
-        "Azur Lane: Bisoku Zenshin! Ni!!",
-        "Anime AzurLane: Slow Ahead! Season 2",
-        "アズールレーン びそくぜんしんっ！にっ！！",
-        "AzurLane: Slow Ahead! Season 2",
-        "Azur Lane: Bisoku Zenshin! 2nd Season"
-      ],
-      "title": "Anime AzurLane: Slow Ahead! Season 2",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-05T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169080-el4sMLlqMxeI.png"
-    },
-    {
-      "id": "anilist-missing-137653-148-2026-07-06t02-00-00-000z",
-      "animeKey": "renegade-immortal",
-      "anilistId": 137653,
-      "anilistTitle": "Renegade Immortal",
-      "anilistUrl": "https://anilist.co/anime/137653",
-      "anilistFormat": "ONA",
-      "anilistScore": 82,
-      "titles": [
-        "Xian Ni",
-        "Renegade Immortal",
-        "仙逆",
-        "Pemberontak Abadi"
-      ],
-      "title": "Renegade Immortal",
-      "route": "",
-      "episode": "Ep 148",
-      "episodeNumber": "148",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-06T02:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137653-1wHbCVvABGOr.png"
-    },
     {
       "id": "anilist-missing-169582-1-2026-07-06t11-57-00-000z",
       "animeKey": "the-insipid-prince-s-furtive-grab-for-the-throne",
@@ -1842,49 +511,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
     },
     {
-      "id": "schedule-inferred-marriagetoxin-14-2026-07-07t14-30-00-000z",
-      "animeKey": "marriagetoxin",
-      "title": "MARRIAGETOXIN",
-      "route": "marriagetoxin",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371857/marriagetoxin",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/marriagetoxin-3c84199d8e.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
-      "id": "schedule-inferred-aishiteru-game-wo-owarasetai-13-2026-07-07t14-30-00-000z",
-      "animeKey": "aishiteru-game-wo-owarasetai",
-      "title": "Aishiteru Game wo Owarasetai",
-      "route": "aishiteru-game-wo-owarasetai",
-      "episode": "Ep 13",
-      "episodeNumber": "13",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371779",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/aishiteru-game-wo-owarasetai-2b3bbb6d958515abaada7d96db77865f.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "anilist-missing-209800-1-2026-07-07t14-30-00-000z",
       "animeKey": "yoroi-shinden-samurai-troopers-cour-2",
       "anilistId": 209800,
@@ -1916,27 +542,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209800-v3TIdNz1AV0X.jpg"
     },
     {
-      "id": "schedule-inferred-replica-datte-koi-wo-suru-14-2026-07-07t14-31-00-000z",
-      "animeKey": "replica-datte-koi-wo-suru",
-      "title": "Replica datte, Koi wo Suru.",
-      "route": "replica-datte-koi-wo-suru",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T14:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00374288/even-a-replica-can-fall-in-love",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/replica-datte-koi-wo-suru-6356643a26a0673e474f308abc364ea2.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "anilist-missing-198709-1-2026-07-07t15-00-00-000z",
       "animeKey": "victoria-of-many-faces",
       "anilistId": 198709,
@@ -1966,27 +571,6 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198709-3PFLvU6eqPvf.jpg"
-    },
-    {
-      "id": "schedule-inferred-hidarikiki-no-eren-14-2026-07-07t16-00-00-000z",
-      "animeKey": "hidarikiki-no-eren",
-      "title": "Hidarikiki no Eren",
-      "route": "hidarikiki-no-eren",
-      "episode": "Ep 14",
-      "episodeNumber": "14",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-07T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371659",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hidarikiki-no-eren-96a12764657e83fd7bc1c3f4896dcc0e.jpg",
-      "inferredFromAnimeSchedule": true
     },
     {
       "id": "anilist-missing-207809-1-2026-07-07t16-35-00-000z",
@@ -2285,23 +869,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198946-IGXmbqBEYRYD.jpg"
     },
     {
-      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-08T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-08t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -2321,6 +888,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-1-2026-07-08t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 1",
+      "episodeNumber": "1",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-08T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-3-2026-07-08t16-30-00-02-00",
@@ -2798,26 +1382,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
     },
     {
-      "id": "schedule-inferred-koori-no-jouheki-15-2026-07-09t15-30-00-000z",
-      "animeKey": "koori-no-jouheki",
-      "title": "Koori no Jouheki",
-      "route": "koori-no-jouheki",
-      "episode": "Ep 15",
-      "episodeNumber": "15",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-09T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82031882",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koori-no-jouheki-3edc9fc353.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "schedule-yani-neko-2-2026-07-09t18-00-00-02-00",
       "animeKey": "yani-neko",
       "title": "Yani Neko",
@@ -3101,23 +1665,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
-      "id": "schedule-snack-hazama-2-2026-07-10t18-31-00-02-00",
-      "animeKey": "snack-hazama",
-      "title": "Snack HAZAMA",
-      "route": "snack-hazama",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-10T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snack-hazama-e9da0f2b1ef0f2d8f9eb456d5c7a146e.jpg"
-    },
-    {
       "id": "schedule-ushiro-no-shoumen-kamui-san-2-2026-07-10t18-31-00-02-00",
       "animeKey": "ushiro-no-shoumen-kamui-san",
       "title": "Ushiro no Shoumen Kamui-san",
@@ -3133,6 +1680,23 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
+    },
+    {
+      "id": "schedule-snack-hazama-2-2026-07-10t18-31-00-02-00",
+      "animeKey": "snack-hazama",
+      "title": "Snack HAZAMA",
+      "route": "snack-hazama",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-10T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snack-hazama-e9da0f2b1ef0f2d8f9eb456d5c7a146e.jpg"
     },
     {
       "id": "anilist-missing-142274-224-2026-07-10t22-30-00-000z",
@@ -3377,51 +1941,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
     },
     {
-      "id": "schedule-inferred-mushoku-tensei-iii-isekai-ittara-honki-dasu-3-2026-07-11t11-01-00-000z",
-      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
-      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
-      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-11T11:01:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
-      "id": "schedule-inferred-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-2-2026-07-11t11-31-00-000z",
-      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-11T11:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "schedule-detective-conan-1206-2026-07-11t14-30-00-02-00",
       "animeKey": "detective-conan",
       "title": "Detective Conan",
@@ -3557,26 +2076,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
-      "id": "schedule-oni-no-hanayome-2-2026-07-11t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-11T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
-    },
-    {
       "id": "schedule-yomi-no-tsugai-14-2026-07-11t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -3592,6 +2091,7 @@
       "allServices": [
         "Apple TV+",
         "Crunchyroll",
+        "Netflix",
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
@@ -3618,6 +2118,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tenmaku-no-jaadugar-13bd71449bec6ecc2863bbc8c2566183.jpg"
     },
     {
+      "id": "schedule-oni-no-hanayome-2-2026-07-11t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-11T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
+    },
+    {
       "id": "schedule-grow-up-show-himawari-no-circus-dan-2-2026-07-11t18-00-00-02-00",
       "animeKey": "grow-up-show-himawari-no-circus-dan",
       "title": "Grow Up Show: Himawari no Circus-dan",
@@ -3638,26 +2158,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
-      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-2-2026-07-11t19-00-00-02-00",
-      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
-      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-11T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
-    },
-    {
       "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-2-2026-07-11t19-00-00-02-00",
       "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
       "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
@@ -3676,6 +2176,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-b4dd3acbac13a444db3f73ef3880004d.jpg"
+    },
+    {
+      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-2-2026-07-11t19-00-00-02-00",
+      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
+      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-11T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
     },
     {
       "id": "anilist-missing-199066-1-2026-07-11t17-00-00-000z",
@@ -4119,42 +2639,31 @@
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378122/the-worlds-strongest-rearguard",
       "allServices": [
         "Apple TV+",
-        "Crunchyroll"
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-aa44af64896783b69e7354862d98c793.jpg"
     },
     {
-      "id": "anilist-missing-200637-2-2026-07-12t13-30-00-000z",
-      "animeKey": "the-100-girlfriends-who-really-really-really-really-really-love-you-season-3",
-      "anilistId": 200637,
-      "anilistTitle": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "anilistUrl": "https://anilist.co/anime/200637",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo 3rd Season",
-        "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-        "君のことが大大大大大好きな100人の彼女 第3期",
-        "Hyakkano 3"
-      ],
-      "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
-      "route": "",
+      "id": "schedule-kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-2-2026-07-12t16-00-00-02-00",
+      "animeKey": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
+      "route": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
       "episode": "Ep 2",
       "episodeNumber": "2",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-12T13:30:00.000Z",
+      "releaseDate": "2026-07-12T14:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN933/the-100-girlfriends-who-really-really-really-really-really-love-you",
       "allServices": [
+        "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200637-QLR5uv9SbQ69.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-8bcd5c9908c3671f5470560620347505.jpg"
     },
     {
       "id": "schedule-nijuuseiki-denki-mokuroku-eureka-evrika-2-2026-07-12t16-01-00-02-00",
@@ -4229,6 +2738,77 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-mushoku-tensei-iii-isekai-ittara-honki-dasu-3-2026-07-12t17-01-00-02-00",
+      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T15:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg"
+    },
+    {
+      "id": "schedule-sayonara-lara-2-2026-07-12t17-31-00-02-00",
+      "animeKey": "sayonara-lara",
+      "title": "Sayonara Lara",
+      "route": "sayonara-lara",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T15:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sayonara-lara-74478edd700f7123ba5f358f13517028.jpg"
+    },
+    {
+      "id": "anilist-missing-205116-2-2026-07-12t15-45-00-000z",
+      "animeKey": "aware-meisaku-kun-2026",
+      "anilistId": 205116,
+      "anilistTitle": "Aware! Meisaku-kun (2026)",
+      "anilistUrl": "https://anilist.co/anime/205116",
+      "anilistFormat": "TV_SHORT",
+      "anilistScore": null,
+      "titles": [
+        "Aware! Meisaku-kun (2026)",
+        "あはれ！名作くん (2026)",
+        " Ahare! Meisaku-kun (2026)"
+      ],
+      "title": "Aware! Meisaku-kun (2026)",
+      "route": "",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T15:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "https://anilist.co/anime/205116",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx205116-160t0jWDkIdK.png"
+    },
+    {
       "id": "schedule-one-piece-1169-2026-07-12t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -4270,6 +2850,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
+      "id": "schedule-azur-lane-bisoku-zenshin-ni-2-2026-07-12t18-45-00-02-00",
+      "animeKey": "azur-lane-bisoku-zenshin-ni",
+      "title": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "route": "azur-lane-bisoku-zenshin-2",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-12T16:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/azur-lane-bisoku-zenshin-2-98a0819cbd400d06a40b9c55cb4a6ad1.jpg"
+    },
+    {
       "id": "schedule-yami-shibai-17-1-2026-07-12t21-20-00-02-00",
       "animeKey": "yami-shibai-17",
       "title": "Yami Shibai 17",
@@ -4285,6 +2885,38 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yami-shibai-17-7821d32d788df554427c040def604b01.jpg"
+    },
+    {
+      "id": "anilist-missing-137653-149-2026-07-13t02-00-00-000z",
+      "animeKey": "renegade-immortal",
+      "anilistId": 137653,
+      "anilistTitle": "Renegade Immortal",
+      "anilistUrl": "https://anilist.co/anime/137653",
+      "anilistFormat": "ONA",
+      "anilistScore": 82,
+      "titles": [
+        "Xian Ni",
+        "Renegade Immortal",
+        "仙逆",
+        "Pemberontak Abadi"
+      ],
+      "title": "Renegade Immortal",
+      "route": "",
+      "episode": "Ep 149",
+      "episodeNumber": "149",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-13T02:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137653-1wHbCVvABGOr.png"
     },
     {
       "id": "schedule-world-is-dancing-3-2026-07-13t15-30-00-02-00",
@@ -4359,6 +2991,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+    },
+    {
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-2-2026-07-14t13-30-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-14T11:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg"
     },
     {
       "id": "schedule-mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-3-2026-07-14t15-30-00-02-00",
@@ -4447,23 +3100,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
     },
     {
-      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
-      "animeKey": "perfect-addiction",
-      "title": "Perfect Addiction",
-      "route": "perfect-addiction",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
-    },
-    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-15t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -4483,6 +3119,23 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-2-2026-07-15t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -4522,26 +3175,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/katainaka-no-ossan-kensei-ni-naru-2nd-season-6b8863d2c46925d2d05773d6915c9df3.jpg"
     },
     {
-      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
-    },
-    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-4-2026-07-15t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -4560,6 +3193,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
+    },
+    {
+      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
     },
     {
       "id": "schedule-koala-enikki-41-2026-07-16t13-01-00-02-00",
@@ -4964,27 +3617,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
     },
     {
-      "id": "schedule-kore-kaite-shine-3-2026-07-17t17-30-00-02-00",
-      "animeKey": "kore-kaite-shine",
-      "title": "Kore Kaite Shine",
-      "route": "kore-kaite-shine",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-17T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371656",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kore-kaite-shine-76b77e68f8cb45f60efec7c53ef6f06c.jpg"
-    },
-    {
       "id": "schedule-kami-no-shizuku-15-2026-07-17t17-30-00-02-00",
       "animeKey": "kami-no-shizuku",
       "title": "Kami no Shizuku",
@@ -5005,24 +3637,25 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
     },
     {
-      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-3-2026-07-17t18-30-00-02-00",
-      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
-      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
-      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "id": "schedule-kore-kaite-shine-3-2026-07-17t17-30-00-02-00",
+      "animeKey": "kore-kaite-shine",
+      "title": "Kore Kaite Shine",
+      "route": "kore-kaite-shine",
       "episode": "Ep 3",
       "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-17T16:30:00.000Z",
+      "releaseDate": "2026-07-17T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "Apple TV+",
-      "serviceUrl": "https://apple.co/3SMAP8c",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371656",
       "allServices": [
         "Apple TV+",
-        "HIDIVE"
+        "Crunchyroll",
+        "Netflix"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kore-kaite-shine-76b77e68f8cb45f60efec7c53ef6f06c.jpg"
     },
     {
       "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-3-2026-07-17t18-30-00-02-00",
@@ -5045,21 +3678,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
-      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
-      "animeKey": "ushiro-no-shoumen-kamui-san",
-      "title": "Ushiro no Shoumen Kamui-san",
-      "route": "ushiro-no-shoumen-kamui-san",
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-3-2026-07-17t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
       "episode": "Ep 3",
       "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-17T16:31:00.000Z",
+      "releaseDate": "2026-07-17T16:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3SMAP8c",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
     },
     {
       "id": "schedule-snack-hazama-3-2026-07-17t18-31-00-02-00",
@@ -5077,6 +3713,23 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snack-hazama-e9da0f2b1ef0f2d8f9eb456d5c7a146e.jpg"
+    },
+    {
+      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
+      "animeKey": "ushiro-no-shoumen-kamui-san",
+      "title": "Ushiro no Shoumen Kamui-san",
+      "route": "ushiro-no-shoumen-kamui-san",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
     },
     {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-16-2026-07-18t03-00-00-02-00",
@@ -5306,30 +3959,11 @@
       "allServices": [
         "Apple TV+",
         "Crunchyroll",
+        "Netflix",
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
       "id": "schedule-oni-no-hanayome-3-2026-07-18t18-00-00-02-00",
@@ -5352,24 +3986,24 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
     },
     {
-      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-3-2026-07-18t19-00-00-02-00",
-      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
-      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
       "episode": "Ep 3",
       "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-18T17:00:00.000Z",
+      "releaseDate": "2026-07-18T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
       "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-3-2026-07-18t19-00-00-02-00",
@@ -5390,6 +4024,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-b4dd3acbac13a444db3f73ef3880004d.jpg"
+    },
+    {
+      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-3-2026-07-18t19-00-00-02-00",
+      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
+      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
     },
     {
       "id": "schedule-kabushiki-gaisha-magi-lumiere-2nd-season-3-2026-07-18t19-25-00-02-00",
@@ -5476,26 +4130,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-3-2026-07-19t10-30-00-02-00",
-      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
-      "title": "Seihantai na Kimi to Boku 2nd Season",
-      "route": "seihantai-na-kimi-to-boku-2nd-season",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
-    },
-    {
       "id": "schedule-let-s-go-kaikigumi-3-2026-07-19t10-30-00-02-00",
       "animeKey": "let-s-go-kaikigumi",
       "title": "Let's Go Kaikigumi",
@@ -5514,6 +4148,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lets-go-kaikigumi-e1df127d0565e6bc236cb4cb03e3a136.jpg"
+    },
+    {
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-3-2026-07-19t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
     },
     {
       "id": "schedule-tetsunabe-no-jan-3-2026-07-19t11-00-00-02-00",
@@ -5567,10 +4221,31 @@
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378122/the-worlds-strongest-rearguard",
       "allServices": [
         "Apple TV+",
-        "Crunchyroll"
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-aa44af64896783b69e7354862d98c793.jpg"
+    },
+    {
+      "id": "schedule-kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-3-2026-07-19t16-00-00-02-00",
+      "animeKey": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
+      "route": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN933/the-100-girlfriends-who-really-really-really-really-really-love-you",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-8bcd5c9908c3671f5470560620347505.jpg"
     },
     {
       "id": "schedule-nijuuseiki-denki-mokuroku-eureka-evrika-3-2026-07-19t16-01-00-02-00",
@@ -5612,6 +4287,48 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
     },
     {
+      "id": "schedule-mushoku-tensei-iii-isekai-ittara-honki-dasu-4-2026-07-19t17-01-00-02-00",
+      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T15:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg"
+    },
+    {
+      "id": "schedule-sayonara-lara-3-2026-07-19t17-31-00-02-00",
+      "animeKey": "sayonara-lara",
+      "title": "Sayonara Lara",
+      "route": "sayonara-lara",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T15:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sayonara-lara-74478edd700f7123ba5f358f13517028.jpg"
+    },
+    {
       "id": "schedule-one-piece-1170-2026-07-19t18-00-00-02-00",
       "animeKey": "one-piece",
       "title": "One Piece",
@@ -5651,6 +4368,26 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
+    },
+    {
+      "id": "schedule-azur-lane-bisoku-zenshin-ni-3-2026-07-19t18-45-00-02-00",
+      "animeKey": "azur-lane-bisoku-zenshin-ni",
+      "title": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "route": "azur-lane-bisoku-zenshin-2",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T16:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/azur-lane-bisoku-zenshin-2-98a0819cbd400d06a40b9c55cb4a6ad1.jpg"
     },
     {
       "id": "schedule-yami-shibai-17-2-2026-07-19t21-20-00-02-00",
@@ -5725,6 +4462,27 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+    },
+    {
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-3-2026-07-21t13-30-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-21T11:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg"
     },
     {
       "id": "schedule-mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-4-2026-07-21t15-30-00-02-00",
@@ -6074,25 +4832,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
     },
     {
-      "id": "schedule-yani-neko-4-2026-07-23t18-00-00-02-00",
-      "animeKey": "yani-neko",
-      "title": "Yani Neko",
-      "route": "yani-neko",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-23T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/82760630",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
-    },
-    {
       "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-4-2026-07-23t18-00-00-02-00",
       "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
       "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
@@ -6112,6 +4851,25 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
+    },
+    {
+      "id": "schedule-yani-neko-4-2026-07-23t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-23T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
     },
     {
       "id": "schedule-otome-kaiju-caramelise-4-2026-07-23t19-30-00-02-00",
@@ -6515,6 +5273,48 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
     },
     {
+      "id": "schedule-yomi-no-tsugai-16-2026-07-25t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 16",
+      "episodeNumber": "16",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-oni-no-hanayome-4-2026-07-25t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
+    },
+    {
       "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
       "animeKey": "grow-up-show-himawari-no-circus-dan",
       "title": "Grow Up Show: Himawari no Circus-dan",
@@ -6553,47 +5353,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tenmaku-no-jaadugar-13bd71449bec6ecc2863bbc8c2566183.jpg"
-    },
-    {
-      "id": "schedule-oni-no-hanayome-4-2026-07-25t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-25T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
-    },
-    {
-      "id": "schedule-yomi-no-tsugai-16-2026-07-25t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 16",
-      "episodeNumber": "16",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-25T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
     },
     {
       "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-4-2026-07-25t19-00-00-02-00",
@@ -6720,26 +5479,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
     },
     {
-      "id": "schedule-let-s-go-kaikigumi-4-2026-07-26t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-26T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lets-go-kaikigumi-e1df127d0565e6bc236cb4cb03e3a136.jpg"
-    },
-    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-4-2026-07-26t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -6758,6 +5497,26 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
+    },
+    {
+      "id": "schedule-let-s-go-kaikigumi-4-2026-07-26t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lets-go-kaikigumi-e1df127d0565e6bc236cb4cb03e3a136.jpg"
     },
     {
       "id": "schedule-tetsunabe-no-jan-4-2026-07-26t11-00-00-02-00",
@@ -6811,10 +5570,31 @@
       "serviceUrl": "https://www.crunchyroll.com/series/GT00378122/the-worlds-strongest-rearguard",
       "allServices": [
         "Apple TV+",
-        "Crunchyroll"
+        "Crunchyroll",
+        "Bilibili"
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-aa44af64896783b69e7354862d98c793.jpg"
+    },
+    {
+      "id": "schedule-kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-4-2026-07-26t16-00-00-02-00",
+      "animeKey": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
+      "route": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN933/the-100-girlfriends-who-really-really-really-really-really-love-you",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-8bcd5c9908c3671f5470560620347505.jpg"
     },
     {
       "id": "schedule-nijuuseiki-denki-mokuroku-eureka-evrika-4-2026-07-26t16-01-00-02-00",
@@ -6854,6 +5634,48 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
+    },
+    {
+      "id": "schedule-mushoku-tensei-iii-isekai-ittara-honki-dasu-5-2026-07-26t17-01-00-02-00",
+      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T15:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg"
+    },
+    {
+      "id": "schedule-sayonara-lara-4-2026-07-26t17-31-00-02-00",
+      "animeKey": "sayonara-lara",
+      "title": "Sayonara Lara",
+      "route": "sayonara-lara",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T15:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sayonara-lara-74478edd700f7123ba5f358f13517028.jpg"
     },
     {
       "id": "schedule-one-piece-1171-2026-07-26t18-00-00-02-00",
@@ -6897,6 +5719,26 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
     },
     {
+      "id": "schedule-azur-lane-bisoku-zenshin-ni-4-2026-07-26t18-45-00-02-00",
+      "animeKey": "azur-lane-bisoku-zenshin-ni",
+      "title": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "route": "azur-lane-bisoku-zenshin-2",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T16:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/azur-lane-bisoku-zenshin-2-98a0819cbd400d06a40b9c55cb4a6ad1.jpg"
+    },
+    {
       "id": "schedule-yami-shibai-17-3-2026-07-26t21-20-00-02-00",
       "animeKey": "yami-shibai-17",
       "title": "Yami Shibai 17",
@@ -6912,6 +5754,349 @@
       "allServices": [],
       "hasAllowedPlatform": false,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yami-shibai-17-7821d32d788df554427c040def604b01.jpg"
+    },
+    {
+      "id": "schedule-world-is-dancing-5-2026-07-27t15-30-00-02-00",
+      "animeKey": "world-is-dancing",
+      "title": "World Is Dancing",
+      "route": "world-is-dancing",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-27T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/449S9qa",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
+    },
+    {
+      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-4-2026-07-27t16-30-00-02-00",
+      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
+      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-27T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-674e0e0718c0e5d0bfcdea24fa252965.jpg"
+    },
+    {
+      "id": "schedule-liar-game-17-2026-07-27t18-00-00-02-00",
+      "animeKey": "liar-game",
+      "title": "LIAR GAME",
+      "route": "liar-game",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-27T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371851/liar-game",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/liar-game-3f4f5cc7766e387b191f5b7fcf2dfa54.jpg"
+    },
+    {
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-4-2026-07-28t13-30-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-28T11:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-29e9126f6ab90224917b76c10ca23191.jpg"
+    },
+    {
+      "id": "schedule-mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-5-2026-07-28t15-30-00-02-00",
+      "animeKey": "mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu",
+      "title": "Mujikaku Seijo wa Kyou mo Muishiki ni Chikara wo Tare Nagasu",
+      "route": "mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-28T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378125/",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu-667a3196664a4d77aedfb7c9f5f5d801.jpg"
+    },
+    {
+      "id": "schedule-koukaku-kidoutai-tv-4-2026-07-28t16-30-00-02-00",
+      "animeKey": "koukaku-kidoutai-tv",
+      "title": "Koukaku Kidoutai (TV)",
+      "route": "koukaku-kidoutai-tv",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-28T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Prime Video",
+      "serviceUrl": "https://www.amazon.com/THE-GHOST-IN-SHELL/dp/B0H43Y5131",
+      "allServices": [
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koukaku-kidoutai-tv-c30e25325b4695d293957ab04fd00e03.jpg"
+    },
+    {
+      "id": "schedule-ugoku-neko-mukashibanashi-42-2026-07-29t13-01-00-02-00",
+      "animeKey": "ugoku-neko-mukashibanashi",
+      "title": "Ugoku! Neko Mukashibanashi",
+      "route": "ugoku-neko-mukashibanashi",
+      "episode": "Ep 42",
+      "episodeNumber": "42",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T11:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ugoku-neko-mukashibanashi-3e23f32363.jpg"
+    },
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-29t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+    },
+    {
+      "id": "schedule-perfect-addiction-4-2026-07-29t16-00-00-02-00",
+      "animeKey": "perfect-addiction",
+      "title": "Perfect Addiction",
+      "route": "perfect-addiction",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/perfect-addiction-d52acb1ebfa282484e7758440e4ae074.jpg"
+    },
+    {
+      "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-6-2026-07-29t16-30-00-02-00",
+      "animeKey": "heroine-seijo-iie-all-works-maid-desu-hokori",
+      "title": "Heroine? Seijo? Iie, All Works Maid desu (Hokori)!",
+      "route": "heroine-seijo-iie-all-works-maid-desu-hokori",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378069/heroine-saint-no-im-an-all-works-maid-and-proud-of-it",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/heroine-seijo-iie-all-works-maid-desu-hokori-cfbdf1949bf57038f4d72e30c9c336fa.jpg"
+    },
+    {
+      "id": "schedule-katainaka-no-ossan-kensei-ni-naru-2nd-season-4-2026-07-29t17-15-00-02-00",
+      "animeKey": "katainaka-no-ossan-kensei-ni-naru-2nd-season",
+      "title": "Katainaka no Ossan, Kensei ni Naru 2nd Season",
+      "route": "katainaka-no-ossan-kensei-ni-naru-2nd-season",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T15:15:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/katainaka-no-ossan-kensei-ni-naru-2nd-season-6b8863d2c46925d2d05773d6915c9df3.jpg"
+    },
+    {
+      "id": "schedule-lv999-no-murabito-6-2026-07-29t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lv999-no-murabito-488ee582908da2d4307199070544e164.jpg"
+    },
+    {
+      "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-6-2026-07-29t18-00-00-02-00",
+      "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
+      "title": "Hanazakari no Kimitachi e 2nd Season",
+      "route": "hanazakari-no-kimitachi-e-2nd-season",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-29T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365568/hana-kimi",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hanazakari-no-kimitachi-e-2nd-season-9377744187cec39623833ea5747bbf93.jpg"
+    },
+    {
+      "id": "schedule-koala-enikki-43-2026-07-30t13-01-00-02-00",
+      "animeKey": "koala-enikki",
+      "title": "Koala Enikki",
+      "route": "koala-enikki",
+      "episode": "Ep 43",
+      "episodeNumber": "43",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T11:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koala-enikki-cdd7e50f2d.jpg"
+    },
+    {
+      "id": "schedule-reiwa-no-dara-san-5-2026-07-30t14-31-00-02-00",
+      "animeKey": "reiwa-no-dara-san",
+      "title": "Reiwa no Dara-san",
+      "route": "reiwa-no-dara-san",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T12:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00377933/dara-san-of-the-reiwa-era",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/reiwa-no-dara-san-ae77fc059c370ee0d7c8bf637695b84d.jpg"
+    },
+    {
+      "id": "schedule-bungou-stray-dogs-wan-2-5-2026-07-30t14-41-00-02-00",
+      "animeKey": "bungou-stray-dogs-wan-2",
+      "title": "Bungou Stray Dogs Wan! 2",
+      "route": "bungou-stray-dogs-wan-2",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T12:41:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GMEHMEN75/bungo-stray-dogs-wan",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bungou-stray-dogs-wan-2-d7bdf09d2fd9d56c667521a4f522f5b1.jpg"
+    },
+    {
+      "id": "schedule-ganso-bandori-chan-43-2026-07-30t15-01-00-02-00",
+      "animeKey": "ganso-bandori-chan",
+      "title": "Ganso! Bandori-chan",
+      "route": "ganso-bandori-chan",
+      "episode": "Ep 43",
+      "episodeNumber": "43",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T13:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ganso-bandori-chan-6251cd7db2.jpg"
+    },
+    {
+      "id": "schedule-bang-dream-yume-mita-7-2026-07-30t16-01-00-02-00",
+      "animeKey": "bang-dream-yume-mita",
+      "title": "BanG Dream! Yume∞Mita",
+      "route": "bang-dream-yume-mita",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T14:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00379424",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bang-dream-yume-mita-0bd65529c56c2a4f7724be33c85d317d.jpg"
     },
     {
       "id": "anilist-missing-208829-1-2026-07-30t15-00-00-000z",
@@ -6941,6 +6126,87 @@
       "source": "anilist-missing",
       "favorite": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208829-I72LfY7BgEZA.jpg"
+    },
+    {
+      "id": "schedule-rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-6-2026-07-30t17-01-00-02-00",
+      "animeKey": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
+      "title": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
+      "route": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T15:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378115/from-overshadowed-to-overpowered-second-reincarnation-of-a-talentless-sage",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku-cb85952edbbf14d3b8fdcb34f12fd281.jpg"
+    },
+    {
+      "id": "schedule-tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-5-2026-07-30t18-00-00-02-00",
+      "animeKey": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "route": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-dd11ec1143ac41fd56a9a6ff34e8a5e3.jpg"
+    },
+    {
+      "id": "schedule-yani-neko-5-2026-07-30t18-00-00-02-00",
+      "animeKey": "yani-neko",
+      "title": "Yani Neko",
+      "route": "yani-neko",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82760630",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yani-neko-cde0608aa51a18d0190e932c985c86ca.jpg"
+    },
+    {
+      "id": "schedule-otome-kaiju-caramelise-5-2026-07-30t19-30-00-02-00",
+      "animeKey": "otome-kaiju-caramelise",
+      "title": "Otome Kaiju Caramelise",
+      "route": "otome-kaijuu-caramelise",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-30T17:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378081/kaiju-girl-caramelise",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/otome-kaijuu-caramelise-320f2fe90aa24c372cb113ce588232b1.jpg"
     },
     {
       "id": "anilist-missing-188753-16-2026-07-31t03-00-00-000z",
@@ -6976,6 +6242,592 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx188753-Rkuiizca4QFD.png"
     },
     {
+      "id": "schedule-bai-ri-cheng-wang-6-2026-07-31t06-01-00-02-00",
+      "animeKey": "bai-ri-cheng-wang",
+      "title": "Bai Ri Cheng Wang",
+      "route": "bai-ri-cheng-wang",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T04:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00379214",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bai-ri-cheng-wang-c9fc4e7a4a7ceeb44fb6d6fe580a97f5.jpg"
+    },
+    {
+      "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-5-2026-07-31t15-31-00-02-00",
+      "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
+      "route": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T13:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378124/the-frontier-lord-begins-with-zero-subjects",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ryoumin-0-nin-start-no-henkyou-ryoushu-sama-da2439840db3fe84fa0ed0a0e3064655.jpg"
+    },
+    {
+      "id": "schedule-koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-5-2026-07-31t16-00-00-02-00",
+      "animeKey": "koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita",
+      "title": "Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen ga Tattara Densetsu ni Natteita.",
+      "route": "koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371671",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
+    },
+    {
+      "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-17-2026-07-31t17-00-00-02-00",
+      "animeKey": "tensei-shitara-slime-datta-ken-4th-season",
+      "title": "Tensei shitara Slime Datta Ken 4th Season",
+      "route": "tensei-shitara-slime-datta-ken-4th-season",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T15:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tensei-shitara-slime-datta-ken-4th-season-1bce192c2db136585e91652599a16fb3.jpg"
+    },
+    {
+      "id": "schedule-kore-kaite-shine-5-2026-07-31t17-30-00-02-00",
+      "animeKey": "kore-kaite-shine",
+      "title": "Kore Kaite Shine",
+      "route": "kore-kaite-shine",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371656",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kore-kaite-shine-76b77e68f8cb45f60efec7c53ef6f06c.jpg"
+    },
+    {
+      "id": "schedule-kami-no-shizuku-17-2026-07-31t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kami-no-shizuku-ebb7a63252c186f98c27d2e6a096c737.jpg"
+    },
+    {
+      "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-5-2026-07-31t18-30-00-02-00",
+      "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
+      "route": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/3SMAP8c",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-9397331a045eb81394432d619173cf1f.jpg"
+    },
+    {
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-5-2026-07-31t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+    },
+    {
+      "id": "schedule-snack-hazama-5-2026-07-31t18-31-00-02-00",
+      "animeKey": "snack-hazama",
+      "title": "Snack HAZAMA",
+      "route": "snack-hazama",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/snack-hazama-e9da0f2b1ef0f2d8f9eb456d5c7a146e.jpg"
+    },
+    {
+      "id": "schedule-ushiro-no-shoumen-kamui-san-5-2026-07-31t18-31-00-02-00",
+      "animeKey": "ushiro-no-shoumen-kamui-san",
+      "title": "Ushiro no Shoumen Kamui-san",
+      "route": "ushiro-no-shoumen-kamui-san",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
+    },
+    {
+      "id": "schedule-rilakkuma-goyururi-yume-no-tabi-18-2026-08-01t03-00-00-02-00",
+      "animeKey": "rilakkuma-goyururi-yume-no-tabi",
+      "title": "Rilakkuma: Goyururi Yume no Tabi",
+      "route": "rilakkuma",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T01:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/rilakkuma-ee9ff986777cda5e5bcff4320522e67f.jpg"
+    },
+    {
+      "id": "schedule-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4-16-2026-08-01t11-30-00-02-00",
+      "animeKey": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4",
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 4",
+      "route": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo",
+      "episode": "Ep 16",
+      "episodeNumber": "16",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T09:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo-2f1219ba9382337509a363ea096a04f1.jpg"
+    },
+    {
+      "id": "schedule-mairimashita-iruma-kun-4-18-2026-08-01t12-25-00-02-00",
+      "animeKey": "mairimashita-iruma-kun-4",
+      "title": "Mairimashita! Iruma-kun 4",
+      "route": "mairimashita-iruma-kun-4",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T10:25:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mairimashita-iruma-kun-4-5f43f93e4a.jpg"
+    },
+    {
+      "id": "schedule-detective-conan-1209-2026-08-01t14-30-00-02-00",
+      "animeKey": "detective-conan",
+      "title": "Detective Conan",
+      "route": "detective-conan",
+      "episode": "Ep 1209",
+      "episodeNumber": "1209",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T12:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/case-closed",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/detective-conan-8d9a48d3dd.jpg"
+    },
+    {
+      "id": "schedule-black-torch-5-2026-08-01t15-01-00-02-00",
+      "animeKey": "black-torch",
+      "title": "BLACK TORCH",
+      "route": "black-torch",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T13:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00377907/black-torch",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/black-torch-ce6a1e71bed8eb358fb6d19a8e2e23f3.jpg"
+    },
+    {
+      "id": "schedule-neko-to-ryuu-6-2026-08-01t15-30-00-02-00",
+      "animeKey": "neko-to-ryuu",
+      "title": "Neko to Ryuu",
+      "route": "neko-to-ryuu",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T13:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378117",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/neko-to-ryuu-c63710d9490e484994175826ae724954.jpg"
+    },
+    {
+      "id": "schedule-iwamoto-senpai-no-suisen-5-2026-08-01t16-00-00-02-00",
+      "animeKey": "iwamoto-senpai-no-suisen",
+      "title": "Iwamoto-senpai no Suisen",
+      "route": "iwamoto-senpai-no-suisen",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378096/recommendations-from-iwamoto-senpai",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/iwamoto-senpai-no-suisen-bc29f191d3fd7f9f0494f407d78c37d6.jpg"
+    },
+    {
+      "id": "schedule-bleach-sennen-kessen-hen-kashin-tan-2-2026-08-01t16-30-00-02-00",
+      "animeKey": "bleach-sennen-kessen-hen-kashin-tan",
+      "title": "BLEACH: Sennen Kessen-hen - Kashin-tan",
+      "route": "bleach-sennen-kessen-hen-kashin-tan",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/bleach-sennen-kessen-hen-kashin-tan-f6f55ab4137d9ca1e73b7f8d74341751.jpg"
+    },
+    {
+      "id": "schedule-mao-18-2026-08-01t17-45-00-02-00",
+      "animeKey": "mao",
+      "title": "MAO",
+      "route": "mao",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T15:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Apple TV+",
+      "serviceUrl": "https://apple.co/47IDwwj",
+      "allServices": [
+        "Apple TV+",
+        "Hulu",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mao-d5bd0fd2648a9c87fecd9cd58d29434f.jpg"
+    },
+    {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-5-2026-08-01t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
+    },
+    {
+      "id": "schedule-tenmaku-no-jaadugar-6-2026-08-01t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tenmaku-no-jaadugar-13bd71449bec6ecc2863bbc8c2566183.jpg"
+    },
+    {
+      "id": "schedule-yomi-no-tsugai-17-2026-08-01t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yomi-no-tsugai-69bea3ff592bb2090548eec577b81497.jpg"
+    },
+    {
+      "id": "schedule-oni-no-hanayome-5-2026-08-01t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/oni-no-hanayome-66a115c5553e32d390af121ef1e853db.jpg"
+    },
+    {
+      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-5-2026-08-01t19-00-00-02-00",
+      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
+      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-b4dd3acbac13a444db3f73ef3880004d.jpg"
+    },
+    {
+      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-5-2026-08-01t19-00-00-02-00",
+      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
+      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-a454fb93ac7e192679b6be5441e53148.jpg"
+    },
+    {
+      "id": "schedule-kabushiki-gaisha-magi-lumiere-2nd-season-5-2026-08-01t19-25-00-02-00",
+      "animeKey": "kabushiki-gaisha-magi-lumiere-2nd-season",
+      "title": "Kabushiki Gaisha Magi Lumiere 2nd Season",
+      "route": "kabushikigaisha-magi-lumi-re-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T17:25:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Prime Video",
+      "serviceUrl": "https://www.amazon.com/dp/B0H3LSX33Y",
+      "allServices": [
+        "Apple TV+",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kabushikigaisha-magi-lumi-re-2nd-season-d6cdf6f069f26c60a49878535820d305.jpg"
+    },
+    {
+      "id": "schedule-saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita-5-2026-08-01t20-10-00-02-00",
+      "animeKey": "saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita",
+      "title": "Saijo no Osewa: Takane no Hanadarake na Meimonkou de, Gakuin Ichi no Ojousama (Seikatsu Nouryoku Kaimu) wo Kagenagara Osewa suru Koto ni Narimashita",
+      "route": "saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T18:10:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378102/rich-girl-caretaker-im-secretly-the-caregiver-of-the-most-popular-girl-in-this-rich-kid-school",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/saijo-no-osewa-takane-no-hanadarake-na-meimonkou-de-gakuin-ichi-no-ojousama-seikatsu-nouryoku-kaimu-wo-kagenagara-osewa-suru-koto-ni-narimashita-067c6664e313c812011247afd321d530.jpg"
+    },
+    {
+      "id": "schedule-meitantei-precure-27-2026-08-02t03-30-00-02-00",
+      "animeKey": "meitantei-precure",
+      "title": "Meitantei Precure!",
+      "route": "meitantei-precure",
+      "episode": "Ep 27",
+      "episodeNumber": "27",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T01:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00369409",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/meitantei-precure-7e5a1e4418385d3a27b5d2606be7e238.jpg"
+    },
+    {
+      "id": "schedule-digimon-beatbreak-41-2026-08-02t05-00-00-02-00",
+      "animeKey": "digimon-beatbreak",
+      "title": "Digimon BeatBreak",
+      "route": "digimon-beatbreak",
+      "episode": "Ep 41",
+      "episodeNumber": "41",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T03:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00364378/digimon-beatbreak",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Hulu"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/digimon-beatbreak-85d653c72879f4fb07e380e5b8fe56c4.jpg"
+    },
+    {
       "id": "anilist-missing-141953-1-2026-08-02t04-00-00-000z",
       "animeKey": "jiyi-guanli-ju",
       "anilistId": 141953,
@@ -7007,6 +6859,163 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141953-S3RozQSOxzrw.png"
     },
     {
+      "id": "schedule-let-s-go-kaikigumi-5-2026-08-02t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/lets-go-kaikigumi-e1df127d0565e6bc236cb4cb03e3a136.jpg"
+    },
+    {
+      "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-5-2026-08-02t10-30-00-02-00",
+      "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
+      "title": "Seihantai na Kimi to Boku 2nd Season",
+      "route": "seihantai-na-kimi-to-boku-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/seihantai-na-kimi-to-boku-2nd-season-e132cb438e9a0b4139a277787bfc63fe.jpg"
+    },
+    {
+      "id": "schedule-tetsunabe-no-jan-5-2026-08-02t11-00-00-02-00",
+      "animeKey": "tetsunabe-no-jan",
+      "title": "Tetsunabe no Jan!",
+      "route": "tetsunabe-no-jan",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T09:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378075",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/tetsunabe-no-jan-24744b84bf40cc28b8856d249e4f58df.jpg"
+    },
+    {
+      "id": "schedule-holo-no-graffiti-377-2026-08-02t11-01-00-02-00",
+      "animeKey": "holo-no-graffiti",
+      "title": "Holo no Graffiti",
+      "route": "holo-no-graffiti",
+      "episode": "Ep 377",
+      "episodeNumber": "377",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T09:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/holo-no-graffiti-95cd497081.jpg"
+    },
+    {
+      "id": "schedule-sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-5-2026-08-02t15-01-00-02-00",
+      "animeKey": "sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha",
+      "title": "Sekai Saikyou no Kouei: Meikyuukoku no Shinjin Tansakusha",
+      "route": "sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T13:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378122/the-worlds-strongest-rearguard",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-aa44af64896783b69e7354862d98c793.jpg"
+    },
+    {
+      "id": "schedule-kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-5-2026-08-02t16-00-00-02-00",
+      "animeKey": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
+      "route": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T14:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GNVHKN933/the-100-girlfriends-who-really-really-really-really-really-love-you",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season-8bcd5c9908c3671f5470560620347505.jpg"
+    },
+    {
+      "id": "schedule-nijuuseiki-denki-mokuroku-eureka-evrika-5-2026-08-02t16-01-00-02-00",
+      "animeKey": "nijuuseiki-denki-mokuroku-eureka-evrika",
+      "title": "Nijuuseiki Denki Mokuroku: Eureka Evrika",
+      "route": "nijuuseiki-denki-mokuroku",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T14:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/81698957",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/nijuuseiki-denki-mokuroku-96c2d20ee1470ff1c7ebb210a06c8434.jpg"
+    },
+    {
+      "id": "schedule-kuroneko-to-majo-no-kyoushitsu-17-2026-08-02t17-00-00-02-00",
+      "animeKey": "kuroneko-to-majo-no-kyoushitsu",
+      "title": "Kuroneko to Majo no Kyoushitsu",
+      "route": "kuroneko-to-majo-no-kyoushitsu",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T15:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00374357",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/kuroneko-to-majo-no-kyoushitsu-cc478b45e4.jpg"
+    },
+    {
       "id": "anilist-missing-211711-1-2026-08-02t15-00-00-000z",
       "animeKey": "boku-no-hero-academia-i-am-a-hero-too",
       "anilistId": 211711,
@@ -7036,6 +7045,126 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx211711-Oy6R5cmGHLCL.jpg"
     },
     {
+      "id": "schedule-mushoku-tensei-iii-isekai-ittara-honki-dasu-6-2026-08-02t17-01-00-02-00",
+      "animeKey": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+      "route": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T15:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/mushoku-tensei-iii-isekai-ittara-honki-dasu-f7856130558d1b4db896472f25abaeec.jpg"
+    },
+    {
+      "id": "schedule-sayonara-lara-5-2026-08-02t17-31-00-02-00",
+      "animeKey": "sayonara-lara",
+      "title": "Sayonara Lara",
+      "route": "sayonara-lara",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T15:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378059/goodbye-lara",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/sayonara-lara-74478edd700f7123ba5f358f13517028.jpg"
+    },
+    {
+      "id": "schedule-one-piece-1172-2026-08-02t18-00-00-02-00",
+      "animeKey": "one-piece",
+      "title": "One Piece",
+      "route": "one-piece",
+      "episode": "Ep 1172",
+      "episodeNumber": "1172",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/one-piece",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Prime Video",
+        "Hulu",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/one-piece-f2f2a983a8.jpg"
+    },
+    {
+      "id": "schedule-onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-5-2026-08-02t18-01-00-02-00",
+      "animeKey": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "title": "Onaji Semi no Someya-san ga Sexy Joyuu datta Hanashi.",
+      "route": "onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T16:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/onaji-semi-no-someya-san-ga-sexy-joyuu-datta-hanashi-8928ac9c9e7d38cff9370ca22bf243a3.jpg"
+    },
+    {
+      "id": "schedule-azur-lane-bisoku-zenshin-ni-5-2026-08-02t18-45-00-02-00",
+      "animeKey": "azur-lane-bisoku-zenshin-ni",
+      "title": "Azur Lane: Bisoku Zenshin! Ni!!",
+      "route": "azur-lane-bisoku-zenshin-2",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T16:45:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0MXPQ/anime-azurlane-slow-ahead",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/azur-lane-bisoku-zenshin-2-98a0819cbd400d06a40b9c55cb4a6ad1.jpg"
+    },
+    {
+      "id": "schedule-yami-shibai-17-4-2026-08-02t21-20-00-02-00",
+      "animeKey": "yami-shibai-17",
+      "title": "Yami Shibai 17",
+      "route": "yami-shibai-17",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T19:20:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yami-shibai-17-7821d32d788df554427c040def604b01.jpg"
+    },
+    {
       "id": "anilist-missing-213847-1-2026-08-04t15-00-00-000z",
       "animeKey": "star-wars-visions-presents-the-ninth-jedi",
       "anilistId": 213847,
@@ -7046,7 +7175,8 @@
       "titles": [
         "Star Wars: Visions - Kyuuninme no Jedi",
         "Star Wars: Visions Presents - The Ninth Jedi",
-        "Star Wars：ビジョンズ 九人目のジェダイ"
+        "Star Wars：ビジョンズ 九人目のジェダイ",
+        "Gwiezdne wojny: Wizje przedstawiają ‐ Dziewiąty Jedi"
       ],
       "title": "Star Wars: Visions Presents - The Ninth Jedi",
       "route": "",
