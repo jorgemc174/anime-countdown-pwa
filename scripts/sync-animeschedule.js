@@ -3,11 +3,19 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
-const API_BASE = "https://animeschedule.net/api/v3";
+const API_BASE = process.env.ANIMESCHEDULE_API_BASE || "https://animeschedule.net/api/v3";
 const ANILIST_API = "https://graphql.anilist.co";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const OUT_FILE = path.resolve(__dirname, "..", "schedule.json");
-const SERVICE_PRIORITY = { Crunchyroll: 1, Netflix: 2, "Prime Video": 3, "No legal platform": 99 };
+const SERVICE_PRIORITY = {
+  Crunchyroll: 1, Funimation: 2, HIDIVE: 3,
+  "Prime Video": 4, Netflix: 5, "Disney+": 6,
+  Hulu: 7, Max: 8, "Apple TV+": 9,
+  "Paramount+": 10, Peacock: 11, VRV: 12,
+  Wakanim: 13, Bilibili: 14, Aniplus: 15,
+  "Muse Asia": 16, "Ani-One": 17, Tubi: 18,
+  "No legal platform": 99
+};
 const ANILIST_REQUEST_DELAY_MS = Number(process.env.ANILIST_REQUEST_DELAY_MS || "250");
 const ANILIST_AIRING_MAX_PAGES = Number(process.env.ANILIST_AIRING_MAX_PAGES || process.env.ANILIST_CATALOG_MAX_PAGES || "20");
 
@@ -16,6 +24,8 @@ async function main() {
   const timezone = process.env.SYNC_TIMEZONE || "Europe/Madrid";
   const weeks = Number(process.env.SYNC_WEEKS || "8");
   const rawItems = [];
+  let successfulWeeks = 0;
+  let authenticationFailed = false;
 
   if (!token) {
     throw new Error("ANIMESCHEDULE_TOKEN no configurado; no se genera una agenda con horas de AniList.");
@@ -34,14 +44,32 @@ async function main() {
     if (!response.ok) {
       const body = await response.text();
       console.warn(`AnimeSchedule ${response.status} en ${week.year} semana ${week.week}: ${body.slice(0, 200)}`);
+      if (response.status === 401 || response.status === 403) authenticationFailed = true;
       continue;
     }
 
-    const data = await response.json();
-    rawItems.push(...extractArray(data));
+    try {
+      const data = await response.json();
+      successfulWeeks++;
+      rawItems.push(...extractArray(data));
+    } catch (error) {
+      console.warn(`AnimeSchedule devolvio JSON invalido en ${week.year} semana ${week.week}: ${error.message || error}`);
+    }
   }
 
-  const normalized = appendInferredNextScheduleRows(normalizeSchedule(rawItems, timezone), timezone);
+  if (authenticationFailed) {
+    throw new Error("ANIMESCHEDULE_TOKEN fue rechazado (401/403). Actualiza el secreto de GitHub Actions.");
+  }
+
+  const minimumWeeks = Math.max(1, Math.ceil(getNextWeeks(weeks).length / 2));
+  if (successfulWeeks < minimumWeeks && await hasUsableExistingSchedule()) {
+    console.warn(`Solo respondieron ${successfulWeeks} semanas de ${weeks}; se conserva la agenda anterior y se reintentara despues.`);
+    return;
+  }
+
+  // AnimeSchedule and AniList are the only sources allowed to create releases.
+  // Never invent a weekly follow-up: the latest episode may have been the finale.
+  const normalized = normalizeSchedule(rawItems, timezone);
   const shouldEnrichWithAnilist = process.env.ANILIST_VERIFY === "true";
   let releases = [];
   if (normalized.length) {
@@ -52,9 +80,18 @@ async function main() {
   let source = shouldEnrichWithAnilist ? "AnimeSchedule+AniList" : "AnimeSchedule";
 
   if (releases.length && process.env.INCLUDE_ANILIST_MISSING !== "false") {
-    const before = releases.length;
-    releases = await appendMissingAnilistReleases(releases);
-    if (releases.length > before) source = "AnimeSchedule+AniList";
+    try {
+      const result = await enrichAndAppendAnilistReleases(releases);
+      releases = result.releases;
+      if (result.matched || result.added) source = "AnimeSchedule+AniList";
+    } catch (error) {
+      // AniList is useful enrichment, but a temporary outage must not discard a
+      // perfectly valid AnimeSchedule response or produce a failed cron email.
+      console.warn(`AniList no disponible; se conserva AnimeSchedule: ${error.message || error}`);
+      const preserved = await preserveExistingEnrichment(releases);
+      releases = preserved.releases;
+      if (preserved.usedAniList) source = "AnimeSchedule+AniList";
+    }
   }
 
   if (!releases.length && process.env.ALLOW_ANILIST_FALLBACK === "true") {
@@ -64,7 +101,11 @@ async function main() {
   }
 
   if (!releases.length) {
-    throw new Error("No se pudo generar schedule.json: AnimeSchedule devolvio 0 episodios SUB validos.");
+    if (await hasUsableExistingSchedule()) {
+      console.warn("Las fuentes no devolvieron episodios validos; se conserva el ultimo schedule.json para reintentar en la proxima ejecucion.");
+      return;
+    }
+    throw new Error("No se pudo generar schedule.json y no existe una agenda anterior valida.");
   }
 
   const payload = {
@@ -74,8 +115,74 @@ async function main() {
     releases
   };
 
+  if (await scheduleDataIsUnchanged(payload)) {
+    console.log("schedule.json no tiene cambios de episodios o plataformas; no se crea un despliegue nuevo.");
+    return;
+  }
+
   await fs.writeFile(OUT_FILE, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
   console.log(`schedule.json actualizado: ${releases.length} episodios (${rawItems.length} items leidos, fuente ${source}).`);
+}
+
+async function readExistingSchedule() {
+  try {
+    return JSON.parse(await fs.readFile(OUT_FILE, "utf8"));
+  } catch (_) {
+    return null;
+  }
+}
+
+async function hasUsableExistingSchedule() {
+  const current = await readExistingSchedule();
+  return Array.isArray(current?.releases) && current.releases.length > 0;
+}
+
+async function scheduleDataIsUnchanged(next) {
+  const current = await readExistingSchedule();
+  if (!Array.isArray(current?.releases)) return false;
+  return current.timezone === next.timezone &&
+    current.source === next.source &&
+    JSON.stringify(current.releases) === JSON.stringify(next.releases);
+}
+
+async function preserveExistingEnrichment(baseReleases) {
+  const current = await readExistingSchedule();
+  if (!Array.isArray(current?.releases)) return { releases: baseReleases, usedAniList: false };
+
+  let usedAniList = false;
+  const enriched = baseReleases.map((item) => {
+    const existing = current.releases.find((candidate) => getEpisodeKey(candidate) === getEpisodeKey(item));
+    if (!existing) return item;
+    if (existing.anilistId || existing.anilistTitle || existing.anilistScore != null) usedAniList = true;
+    const keepExistingPlatform = !item.hasAllowedPlatform && existing.hasAllowedPlatform;
+    return {
+      ...item,
+      anilistId: existing.anilistId || item.anilistId,
+      anilistTitle: existing.anilistTitle || item.anilistTitle,
+      anilistUrl: existing.anilistUrl || item.anilistUrl,
+      anilistFormat: existing.anilistFormat || item.anilistFormat,
+      anilistScore: existing.anilistScore ?? item.anilistScore,
+      titles: existing.titles?.length ? existing.titles : (item.titles || []),
+      coverUrl: item.coverUrl || existing.coverUrl,
+      ...(keepExistingPlatform ? {
+        service: existing.service,
+        serviceUrl: existing.serviceUrl,
+        allServices: existing.allServices || [existing.service],
+        hasAllowedPlatform: true
+      } : {})
+    };
+  });
+
+  const carried = current.releases.filter((item) =>
+    item.source === "anilist-missing" &&
+    Number.isFinite(Date.parse(item.releaseDate || "")) &&
+    Date.parse(item.releaseDate) > Date.now()
+  );
+  if (carried.length) usedAniList = true;
+  return {
+    releases: dedupeByEpisode(enriched.concat(carried)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)),
+    usedAniList
+  };
 }
 
 async function applyAnilistCorrections(releases, timeZone) {
@@ -343,7 +450,7 @@ function mapPublicAnilistRelease(media) {
     releaseDate,
     originalReleaseDate: "",
     service: media.service || "No legal platform",
-    serviceUrl: normalizeUrl(media.serviceUrl || media.siteUrl || ""),
+    serviceUrl: media.hasAllowedPlatform ? normalizeUrl(media.serviceUrl || "") : "",
     allServices: media.allServices || [],
     hasAllowedPlatform: Boolean(media.hasAllowedPlatform),
     source: "anilist-missing",
@@ -448,68 +555,59 @@ function normalizeSchedule(items, timeZone) {
   return dedupeByEpisode(out).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 }
 
-async function appendMissingAnilistReleases(baseReleases) {
+async function enrichAndAppendAnilistReleases(baseReleases) {
   const anilistReleases = await fetchPublicAnilistSchedule();
+  if (!anilistReleases.length) throw new Error("AniList devolvio una agenda vacia");
+  let matched = 0;
+  const enriched = baseReleases.map((item) => {
+    const media = findMatchingRelease(item, anilistReleases);
+    if (!media) return item;
+    matched++;
+    const hasNewPlatform = !item.hasAllowedPlatform && media.hasAllowedPlatform;
+    return {
+      ...item,
+      anilistId: media.anilistId || item.anilistId,
+      anilistTitle: media.anilistTitle || media.title || item.anilistTitle,
+      anilistUrl: media.anilistUrl || item.anilistUrl,
+      anilistFormat: media.anilistFormat || item.anilistFormat,
+      anilistScore: media.anilistScore ?? item.anilistScore,
+      titles: media.titles?.length ? media.titles : (item.titles || []),
+      coverUrl: media.coverUrl || item.coverUrl,
+      ...(hasNewPlatform ? {
+        service: media.service,
+        serviceUrl: media.serviceUrl,
+        allServices: media.allServices || [media.service],
+        hasAllowedPlatform: true
+      } : {})
+    };
+  });
   const missing = anilistReleases
-    .filter((item) => !hasScheduledSeriesMatch(item, baseReleases))
+    .filter((item) => !hasScheduledSeriesMatch(item, enriched))
     .map((item) => ({ ...item, source: "anilist-missing", id: stableId("anilist-missing", item.anilistId || item.title, item.episodeNumber, item.releaseDate) }));
 
   if (missing.length) console.log(`AniList anadio ${missing.length} animes que no estaban en AnimeSchedule.`);
-  return dedupeByEpisode(baseReleases.concat(missing)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+  return {
+    releases: dedupeByEpisode(enriched.concat(missing)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)),
+    matched,
+    added: missing.length
+  };
 }
 
-function appendInferredNextScheduleRows(rows, timeZone) {
-  const now = Date.now();
-  const until = now + Number(process.env.SYNC_INFER_DAYS || "45") * 24 * 60 * 60 * 1000;
-  const groups = new Map();
-
-  for (const row of rows) {
-    const releaseAt = Date.parse(row.releaseDate || "");
-    if (!Number.isFinite(releaseAt)) continue;
-    const key = stableId(row.animeKey || row.route || row.title);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push({ row, releaseAt });
+function findMatchingRelease(item, candidates) {
+  if (item.anilistId) {
+    const byId = candidates.find((candidate) => String(candidate.anilistId) === String(item.anilistId));
+    if (byId) return byId;
   }
-
-  const inferred = [];
-  for (const group of groups.values()) {
-    if (group.some((entry) => entry.releaseAt > now)) continue;
-    const latest = group.sort((a, b) => b.releaseAt - a.releaseAt)[0];
-    if (!latest || !isRecentRelease(latest.releaseAt, timeZone)) continue;
-    const episode = parseEpisodeNumber(latest.row.episodeNumber ?? latest.row.episode);
-    if (!Number.isFinite(episode)) continue;
-
-    let nextAt = latest.releaseAt;
-    let nextEpisode = episode;
-    do {
-      nextAt += 7 * 24 * 60 * 60 * 1000;
-      nextEpisode += 1;
-    } while (nextAt <= now);
-    if (nextAt > until) continue;
-
-    const releaseDate = new Date(nextAt).toISOString();
-    inferred.push({
-      ...latest.row,
-      id: stableId("schedule-inferred", latest.row.animeKey || latest.row.title, nextEpisode, releaseDate),
-      episode: `Ep ${nextEpisode}`,
-      episodeNumber: String(nextEpisode),
-      releaseDate,
-      originalReleaseDate: "",
-      delayed: false,
-      inferredFromAnimeSchedule: true
-    });
+  let best = null;
+  let bestScore = 0;
+  for (const candidate of candidates) {
+    const score = getSeriesMatchScore(item, candidate);
+    if (score > bestScore) {
+      best = candidate;
+      bestScore = score;
+    }
   }
-
-  if (inferred.length) console.log(`Episodios siguientes inferidos desde horario SUB de AnimeSchedule: ${inferred.length}.`);
-  return dedupeByEpisode(rows.concat(inferred)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
-}
-
-function isRecentRelease(releaseAt, timeZone) {
-  const recentDays = Number(process.env.RECENT_RELEASE_DAYS || "7");
-  if (releaseAt < Date.now() - recentDays * 24 * 60 * 60 * 1000) return false;
-  const releaseDay = getCalendarDayKey(releaseAt, timeZone);
-  const today = getCalendarDayKey(Date.now(), timeZone);
-  return Boolean(releaseDay && today && releaseDay <= today);
+  return bestScore >= 0.78 ? best : null;
 }
 
 function getAnimeScheduleSubReleaseDate(item) {

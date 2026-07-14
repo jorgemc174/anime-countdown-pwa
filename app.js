@@ -161,7 +161,7 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v95";
+const APP_CACHE_NAME = "anime-countdown-pwa-v96";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -175,7 +175,8 @@ const ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 6 * 60 * 60 * 1000;
-const JUSTWATCH_SEARCH_LIMIT = 120;
+const PLATFORM_REFRESH_MS = 12 * 60 * 60 * 1000;
+const JUSTWATCH_SEARCH_LIMIT = 30;
 const VIRTUAL_LIST_BATCH_SIZE = 24;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
@@ -212,7 +213,7 @@ const JUSTWATCH_COUNTRIES = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -264,7 +265,10 @@ function startBackgroundRefreshes() {
   const initialScheduleDelay = isCapacitor() ? 15000 : (state.releases.length ? 1200 : 100);
   scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true }), initialScheduleDelay);
   startAnilistAutoRefresh();
-  startPublicAnilistAutoRefresh();
+  // The shared schedule is already enriched by AniList on the server. Avoid
+  // downloading the full public catalog on every phone after startup.
+  if (!isSharedScheduleConfigured()) startPublicAnilistAutoRefresh();
+  scheduleBackgroundTask(() => maybeRefreshPlatforms(), isCapacitor() ? 45000 : 12000);
 }
 
 function scheduleBackgroundTask(fn, timeout = 1000) {
@@ -381,8 +385,10 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastNativeNotificationSync","theme"]);
-  state.releases = (data.releases || []).map(sanitizePlatformFields).filter((item) => !isAniListTimedRelease(item));
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme"]);
+  state.releases = (data.releases || [])
+    .map(sanitizePlatformFields)
+    .filter((item) => !isAniListTimedRelease(item) && !item.inferredFromAnimeSchedule && !item.inferred_from_animeschedule);
   state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
   state.anilistMap = data.anilistMap || {};
   state.customLinks = data.customLinks || {};
@@ -406,6 +412,7 @@ async function loadState() {
   state.lastAnilistSync = data.lastAnilistSync || "";
   state.lastAnilistSyncUsername = data.lastAnilistSyncUsername || "";
   state.lastPublicAnilistSync = data.lastPublicAnilistSync || "";
+  state.lastPlatformSync = data.lastPlatformSync || "";
   state.lastNativeNotificationSync = data.lastNativeNotificationSync || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
@@ -683,12 +690,30 @@ function populateCountryOptions() {
 async function saveJwCountry() {
   const code = els.countryInput?.value || "ES";
   state.jwCountry = code;
-  await browserApi.storage.local.set({ jwCountry: code });
+  state.lastPlatformSync = "";
+  const restorePreviousPlatform = (item) => {
+    if (!item.jwVerified || item.jwCountry === code) return item;
+    const service = item.jwPreviousService || "No legal platform";
+    return {
+      ...item,
+      service,
+      serviceUrl: item.jwPreviousServiceUrl || "",
+      allServices: item.jwPreviousAllServices || (service === "No legal platform" ? [] : [service]),
+      hasAllowedPlatform: service !== "No legal platform",
+      jwVerified: false,
+      jwCountry: "",
+      jwVerifiedAt: ""
+    };
+  };
+  state.releases = state.releases.map(restorePreviousPlatform);
+  state.anilistLibrary = state.anilistLibrary.map(restorePreviousPlatform);
+  await browserApi.storage.local.set({ jwCountry: code, lastPlatformSync: "" });
   const name = JUSTWATCH_COUNTRIES.find((c) => c.code === code)?.name || code;
   applyCustomToReleases();
   await saveAllLists();
   render();
   showStatus(`País actualizado a ${name}.`, "success");
+  scheduleBackgroundTask(() => maybeRefreshPlatforms({ force: true }), 250);
 }
 
 function getDetectedPlatforms() {
@@ -1040,7 +1065,7 @@ async function refreshData() {
     showStatus("Actualizando próximos estrenos...", "success");
     const beforeCount = getOneNextPerSeries(state.releases).length;
     await refreshSharedSchedule({ silent: true, force: true, skipPublicAnilist: true });
-    await maybeRefreshPublicAnilist({ silent: true, force: true });
+    if (!isSharedScheduleConfigured()) await maybeRefreshPublicAnilist({ silent: true, force: true });
     await saveAllLists();
     if (isCapacitor()) {
       queueNativeNotificationSync({ force: true });
@@ -1053,7 +1078,11 @@ async function refreshData() {
     const diffMsg = diff === 0 ? "" : ` | ${diff > 0 ? "+" : ""}${diff}`;
     showStatus(`Actualizado: ${afterCount} próximos${diffMsg}.${notifMsg}`, "success");
 
-    verifyPlatformsWithJustWatch().then(async () => {
+    verifyPlatformsWithJustWatch().then(async (result) => {
+      if (result.checked && result.errors < result.checked) {
+        state.lastPlatformSync = new Date().toISOString();
+        await browserApi.storage.local.set({ lastPlatformSync: state.lastPlatformSync });
+      }
       await saveAllLists();
       if (isCapacitor()) {
         queueNativeNotificationSync({ force: true });
@@ -1089,6 +1118,10 @@ async function syncAnilist() {
     const library = await refreshAnilistData(username);
     showStatus("Verificando plataformas con JustWatch...", "success");
     const jwResult = await verifyPlatformsWithJustWatch();
+    if (jwResult.checked && jwResult.errors < jwResult.checked) {
+      state.lastPlatformSync = new Date().toISOString();
+      await browserApi.storage.local.set({ lastPlatformSync: state.lastPlatformSync });
+    }
     await saveAllLists();
     // Only show scheduled count in Capacitor
     let scheduled = 0;
@@ -1256,10 +1289,16 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     const rows = await fetchSharedSchedule();
     await yieldToMainThread();
     const imported = rows.map(mapSharedRelease).map(enrichScheduleItem).map((item) => preserveExistingAnimeData(item));
+    const previousUnassigned = new Set(getOneNextPerSeries(state.releases)
+      .filter((item) => !item.hasAllowedPlatform)
+      .map(getSeriesKey));
+    const hasNewUnassignedSeries = getOneNextPerSeries(imported)
+      .some((item) => !item.hasAllowedPlatform && !previousUnassigned.has(getSeriesKey(item)));
     await yieldToMainThread();
     const localOnly = state.releases.filter((item) =>
       item.source !== "animeschedule-api" &&
       !String(item.source || "").startsWith("shared-json") &&
+      !isAnilistMissingRelease(item) &&
       !isAniListTimedRelease(item) &&
       !isAnilistMissingCoveredBySchedule(item, imported)
     );
@@ -1276,11 +1315,13 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     applyCustomToReleases();
     applyUserOverridesToLists();
     state.lastSharedSync = new Date().toISOString();
-    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync });
+    if (hasNewUnassignedSeries) state.lastPlatformSync = "";
+    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync, lastPlatformSync: state.lastPlatformSync });
     renderPreview(imported);
     scheduleRender();
     checkReleaseNotifications();
     queueNativeNotificationSync();
+    if (hasNewUnassignedSeries) scheduleBackgroundTask(() => maybeRefreshPlatforms({ force: true }), 800);
 
     if (!silent) {
       showStatus(`Actualizados ${imported.length} episodios desde la base compartida.`, "success");
@@ -1301,7 +1342,10 @@ async function fetchSharedSchedule() {
   const now = new Date();
   const recentSince = now.getTime() - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000;
   const until = new Date(now.getTime() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000);
-  const response = await fetch(SHARED_SCHEDULE_URL, { headers: { accept: "application/json" } });
+  const response = await fetch(SHARED_SCHEDULE_URL, {
+    headers: { accept: "application/json" },
+    cache: "no-cache"
+  });
 
   if (!response.ok) {
     const body = await response.text().catch(() => "");
@@ -1315,12 +1359,13 @@ async function fetchSharedSchedule() {
   const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
   const filtered = rows.filter((row) => {
     if (!isAnimeScheduleBackedRow(row, json)) return false;
+    if (row.inferredFromAnimeSchedule || row.inferred_from_animeschedule) return false;
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt)) return false;
-    return releaseAt >= recentSince;
+    return releaseAt >= recentSince && releaseAt <= until.getTime();
   });
-  return appendInferredNextScheduleRows(filtered, now, until);
+  return filtered;
 }
 
 function isAnimeScheduleBackedRow(row, payload) {
@@ -1365,59 +1410,6 @@ function mapSharedRelease(row) {
   });
 }
 
-function appendInferredNextScheduleRows(rows, now = new Date(), until = new Date(Date.now() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000)) {
-  const nowMs = now.getTime();
-  const untilMs = until.getTime();
-  const groups = new Map();
-
-  for (const row of rows) {
-    const releaseDate = getSharedSubReleaseDate(row);
-    const releaseAt = Date.parse(releaseDate);
-    if (!Number.isFinite(releaseAt)) continue;
-    const key = getSharedSeriesKey(row);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push({ row, releaseAt });
-  }
-
-  const inferred = [];
-  for (const group of groups.values()) {
-    if (group.some((entry) => entry.releaseAt > nowMs)) continue;
-    const latest = group.sort((a, b) => b.releaseAt - a.releaseAt)[0];
-    if (!latest) continue;
-    const episode = parseEpisodeNumber(latest.row.episodeNumber ?? latest.row.episode_number ?? latest.row.episode);
-    if (!Number.isFinite(episode)) continue;
-
-    let nextAt = latest.releaseAt;
-    let nextEpisode = episode;
-    do {
-      nextAt += 7 * 24 * 60 * 60 * 1000;
-      nextEpisode += 1;
-    } while (nextAt <= nowMs);
-    if (nextAt > untilMs) continue;
-
-    const nextDate = new Date(nextAt).toISOString();
-    inferred.push({
-      ...latest.row,
-      id: stableId("schedule-inferred", latest.row.animeKey || latest.row.anime_key || latest.row.title, nextEpisode, nextDate),
-      episode: `Ep ${nextEpisode}`,
-      episodeNumber: String(nextEpisode),
-      episode_number: String(nextEpisode),
-      releaseDate: nextDate,
-      release_date: nextDate,
-      originalReleaseDate: "",
-      original_release_date: "",
-      delayed: false,
-      inferredFromAnimeSchedule: true
-    });
-  }
-
-  return rows.concat(inferred);
-}
-
-function getSharedSeriesKey(row) {
-  return stableId(row.animeKey || row.anime_key || row.route || row.title || row.anilistTitle || row.anilist_title);
-}
-
 function preserveExistingAnimeData(item) {
   const existing = findExistingRelease(item);
   const override = getUserOverride(item);
@@ -1438,7 +1430,9 @@ function preserveExistingAnimeData(item) {
   // Preserve JW-verified platform data across schedule refreshes so the user doesn't
   // lose platform info every 30 min. Only applies when same country and not Crunchyroll
   // (which is never sent through JW verification).
-  if (existing.jwVerified && existing.jwCountry === state.jwCountry && item.service !== "Crunchyroll") {
+  const jwVerifiedAt = Date.parse(existing.jwVerifiedAt || "");
+  const jwStillFresh = Number.isFinite(jwVerifiedAt) && Date.now() - jwVerifiedAt < PLATFORM_REFRESH_MS;
+  if (!item.hasAllowedPlatform && existing.jwVerified && jwStillFresh && existing.jwCountry === state.jwCountry && item.service !== "Crunchyroll") {
     return {
       ...base,
       service: existing.service,
@@ -1446,7 +1440,11 @@ function preserveExistingAnimeData(item) {
       allServices: existing.allServices || [],
       hasAllowedPlatform: existing.hasAllowedPlatform,
       jwVerified: true,
-      jwCountry: existing.jwCountry
+      jwCountry: existing.jwCountry,
+      jwVerifiedAt: existing.jwVerifiedAt,
+      jwPreviousService: existing.jwPreviousService,
+      jwPreviousServiceUrl: existing.jwPreviousServiceUrl,
+      jwPreviousAllServices: existing.jwPreviousAllServices
     };
   }
   return applyUserOverride(base, override);
@@ -1741,7 +1739,7 @@ async function verifyPlatformsWithJustWatch() {
   const allSeries = getOneNextPerSeries(state.releases)
     .filter((item) => {
       const service = item.service || "No legal platform";
-      return service !== "Crunchyroll" && service !== "No legal platform";
+      return service !== "Crunchyroll" && (service === "No legal platform" || item.jwVerified);
     })
     .slice(0, JUSTWATCH_SEARCH_LIMIT);
 
@@ -1749,7 +1747,7 @@ async function verifyPlatformsWithJustWatch() {
 
   let changed = 0, errors = 0;
   const cache = new Map();
-  const limit = 5;
+  const limit = 3;
   const batches = [];
 
   for (let i = 0; i < allSeries.length; i += limit) {
@@ -1777,6 +1775,24 @@ async function verifyPlatformsWithJustWatch() {
   }
 
   return { checked: allSeries.length, changed, errors };
+}
+
+async function maybeRefreshPlatforms({ force = false } = {}) {
+  const last = Date.parse(state.lastPlatformSync || "");
+  if (!force && Number.isFinite(last) && Date.now() - last < PLATFORM_REFRESH_MS) return false;
+  const result = await verifyPlatformsWithJustWatch();
+  if (!result.checked || result.errors >= result.checked) return false;
+  state.lastPlatformSync = new Date().toISOString();
+  await browserApi.storage.local.set({
+    releases: state.releases,
+    anilistLibrary: state.anilistLibrary,
+    lastPlatformSync: state.lastPlatformSync
+  });
+  if (result.changed) {
+    invalidateDataCaches();
+    scheduleRender();
+  }
+  return true;
 }
 
 async function fetchJustWatchAvailabilityWithFallback(item, countryCode, language) {
@@ -1946,27 +1962,23 @@ function applyJustWatchAvailabilityToSeries(seriesKey, result) {
     if (getSeriesKey(item) !== seriesKey) return item;
     const currentService = item.service || "No legal platform";
     if (currentService === "Crunchyroll") return item;
-    if (!availability || !availability.allServices.includes(currentService)) {
-      return {
-        ...item,
-        service: "No legal platform",
-        serviceUrl: "",
-        allServices: [],
-        hasAllowedPlatform: false,
-        jwVerified: false,
-        jwCountry: state.jwCountry
-      };
-    }
-    const jwUrl = availability.urls?.[currentService] || "";
-    const newUrl = currentService === "Prime Video" && jwUrl ? jwUrl : item.serviceUrl;
+    // A failed/no-offer lookup is inconclusive. Never erase a platform from
+    // AnimeSchedule or AniList; a positive match can assign the newly announced one.
+    if (!availability) return item;
+    const newService = availability.service;
+    const newUrl = availability.urls?.[newService] || item.serviceUrl || "";
     return {
       ...item,
-      service: currentService,
+      service: newService,
       serviceUrl: newUrl,
       allServices: availability.allServices,
       hasAllowedPlatform: true,
       jwVerified: true,
-      jwCountry: state.jwCountry
+      jwCountry: state.jwCountry,
+      jwVerifiedAt: new Date().toISOString(),
+      jwPreviousService: item.jwVerified ? item.jwPreviousService : currentService,
+      jwPreviousServiceUrl: item.jwVerified ? item.jwPreviousServiceUrl : (item.serviceUrl || ""),
+      jwPreviousAllServices: item.jwVerified ? item.jwPreviousAllServices : (item.allServices || [])
     };
   };
   state.releases = state.releases.map(applyTo);
@@ -2335,8 +2347,15 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
   for (const titleKey of buildTitleKeys(media.titles || [media.title])) state.anilistMap[titleKey] = media;
   state.releases = state.releases.map((item) => {
     if (getSeriesKey(item) !== seriesKey) return item;
+    const platform = !item.hasAllowedPlatform && media.hasAllowedPlatform ? {
+      service: media.service,
+      serviceUrl: media.serviceUrl,
+      allServices: media.allServices,
+      hasAllowedPlatform: true
+    } : {};
     return {
       ...item,
+      ...platform,
       anilistId: media.anilistId || item.anilistId,
       anilistTitle: media.title || item.anilistTitle,
       anilistUrl: media.siteUrl || item.anilistUrl,
@@ -2467,7 +2486,12 @@ function getAnilistOverride(item, match) {
     originalReleaseDate: delayedByDate ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
     source: item.source === "shared-json" ? "shared-json+anilist" : item.source
   };
-  if (item.hasAllowedPlatform === false) {
+  if (item.hasAllowedPlatform === false && match.hasAllowedPlatform) {
+    override.service = match.service;
+    override.serviceUrl = match.serviceUrl;
+    override.allServices = match.allServices || [match.service];
+    override.hasAllowedPlatform = true;
+  } else if (item.hasAllowedPlatform === false) {
     override.service = "No legal platform";
     override.serviceUrl = "";
     override.hasAllowedPlatform = false;
@@ -3109,7 +3133,7 @@ function getTodayItems(items) {
 function getOneTodayPerSeries(items) { const groups = new Map(); for(const item of mergeDuplicateItems(items)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime())) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
-function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
+function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; const priority=cls.includes("next-cover")?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"'; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" ${priority} decoding="async" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
 function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
 function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }

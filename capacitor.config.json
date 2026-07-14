@@ -9,10 +9,10 @@
   "android": {
     "useLegacyBridge": false
   },
-  "CapacitorHttp": {
-    "enabled": true
-  },
   "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    },
     "LocalNotifications": {
       "smallIcon": "ic_stat_icon",
       "iconColor": "#111827",

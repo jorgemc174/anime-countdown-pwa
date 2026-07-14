@@ -1,26 +1,12 @@
-const CACHE_NAME = "anime-countdown-pwa-v95";
+const CACHE_NAME = "anime-countdown-pwa-v96";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=95",
-  "./config.js?v=95",
-  "./app.js?v=95",
-  "./schedule.json",
+  "./styles.css?v=96",
+  "./config.js?v=96",
+  "./app.js?v=96",
   "./manifest.json",
-  "./favicon.ico",
-  "./icons/favicon.ico",
-  "./icons/favicon-16.png",
-  "./icons/favicon-32.png",
-  "./icons/apple-touch-icon.png",
-  "./icons/icon-192.png",
-  "./icons/notification-badge.svg",
-  "./icons/icon-256.png",
-  "./icons/icon-384.png",
-  "./icons/icon-512.png",
-  "./icons/icon-mobile-192.png",
-  "./icons/icon-mobile-512.png",
-  "./icons/icon-maskable-192.png",
-  "./icons/icon-maskable-512.png"
+  "./favicon.ico"
 ];
 
 self.addEventListener("install", (event) => {
@@ -58,7 +44,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== location.origin) return;
 
   if (url.pathname.endsWith("/schedule.json")) {
-    event.respondWith(staleWhileRevalidate(request));
+    event.respondWith(networkFirst(request));
     return;
   }
 
@@ -74,20 +60,19 @@ async function cacheFirst(request) {
     await putInCache(request, response.clone());
     return response;
   } catch (_) {
-    return caches.match("./index.html");
+    if (request.mode === "navigate") return caches.match("./index.html");
+    return Response.error();
   }
 }
 
-async function staleWhileRevalidate(request) {
-  const cached = await caches.match(request);
-  const update = fetch(request)
-    .then(async (response) => {
-      await putInCache(request, response.clone());
-      return response;
-    })
-    .catch(() => null);
-
-  return cached || await update || await caches.match("./index.html");
+async function networkFirst(request) {
+  try {
+    const response = await fetch(request);
+    await putInCache(request, response.clone());
+    return response;
+  } catch (_) {
+    return await caches.match(request) || Response.error();
+  }
 }
 
 async function putInCache(request, response) {

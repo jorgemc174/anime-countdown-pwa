@@ -2903,28 +2903,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
     },
     {
-      "id": "schedule-inferred-shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach-2-2026-07-20t14-00-00-000z",
-      "animeKey": "shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach",
-      "title": "Shibou Yuugi de Meshi wo Kuu. 44: Cloudy Beach",
-      "route": "shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-20T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00365787",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/shibou-yuugi-de-meshi-wo-kuu-44-cloudy-beach-0004c7bfbbe4389334c00d3a18db277d.jpg",
-      "inferredFromAnimeSchedule": true
-    },
-    {
       "id": "anilist-missing-195833-3-2026-07-20t14-00-00-000z",
       "animeKey": "flaming-dodgeball-girl-danko",
       "anilistId": 195833,

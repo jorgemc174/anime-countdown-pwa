@@ -13,6 +13,9 @@ Get-ChildItem -Path $src -Filter "*.css" | Copy-Item -Destination $www
 Get-ChildItem -Path $src -Filter "*.json" | Copy-Item -Destination $www
 Get-ChildItem -Path $src -Filter "*.ico" | Copy-Item -Destination $www
 Get-ChildItem -Path $src -Filter "favicon.ico" | Copy-Item -Destination $www
+if (Test-Path (Join-Path $src "_headers")) {
+    Copy-Item -Path (Join-Path $src "_headers") -Destination $www
+}
 
 Copy-Item -Path (Join-Path $src "icons") -Destination $www -Recurse
 Copy-Item -Path (Join-Path $src "api") -Destination $www -Recurse

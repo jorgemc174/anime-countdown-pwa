@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AnimeCountdown</string>
+    <string name="title_activity_main">AnimeCountdown</string>
+    <string name="package_name">com.animecountdown.app</string>
+    <string name="custom_url_scheme">com.animecountdown.app</string>
+</resources>
