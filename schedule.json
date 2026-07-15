@@ -630,15 +630,19 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youjo-senki-ii-ffc33a55b698b8dee3cd7798a37a8004.jpg"
     },
     {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-15t16-00-00-02-00",
+      "id": "schedule-anilist-confirmed-189046-12-2026-08-12t13-00-00-000z",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "anilistId": 189046,
+      "anilistTitle": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "anilistUrl": "https://anilist.co/anime/189046",
+      "anilistFormat": "TV",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
       "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "episode": "Ep 12",
       "episodeNumber": "12",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-15T14:00:00.000Z",
+      "releaseDate": "2026-08-12T13:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
       "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
@@ -648,7 +652,8 @@
         "Bilibili"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg",
+      "confirmedByAniList": true
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-4-2026-07-15t16-30-00-02-00",
@@ -3379,27 +3384,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youjo-senki-ii-ffc33a55b698b8dee3cd7798a37a8004.jpg"
     },
     {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-22t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
-    },
-    {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-5-2026-07-22t16-30-00-02-00",
       "animeKey": "heroine-seijo-iie-all-works-maid-desu-hokori",
       "title": "Heroine? Seijo? Iie, All Works Maid desu (Hokori)!",
@@ -5152,27 +5136,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youjo-senki-ii-ffc33a55b698b8dee3cd7798a37a8004.jpg"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-07-29t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-29T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-6-2026-07-29t16-30-00-02-00",
@@ -7124,27 +7087,6 @@
       ],
       "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/youjo-senki-ii-ffc33a55b698b8dee3cd7798a37a8004.jpg"
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-05t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-05T14:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/re-zero-kara-hajimeru-isekai-seikatsu-4-d5233583bd0dc12a3089d74e815f43bf.jpg"
     },
     {
       "id": "schedule-heroine-seijo-iie-all-works-maid-desu-hokori-7-2026-08-05t16-30-00-02-00",

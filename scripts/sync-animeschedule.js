@@ -18,11 +18,12 @@ const SERVICE_PRIORITY = {
 };
 const ANILIST_REQUEST_DELAY_MS = Number(process.env.ANILIST_REQUEST_DELAY_MS || "250");
 const ANILIST_AIRING_MAX_PAGES = Number(process.env.ANILIST_AIRING_MAX_PAGES || process.env.ANILIST_CATALOG_MAX_PAGES || "20");
+const ANILIST_SEASON_MAX_PAGES = Number(process.env.ANILIST_SEASON_MAX_PAGES || "5");
 
 async function main() {
   const token = process.env.ANIMESCHEDULE_TOKEN;
   const timezone = process.env.SYNC_TIMEZONE || "Europe/Madrid";
-  const weeks = Number(process.env.SYNC_WEEKS || "8");
+  const weeks = Number(process.env.SYNC_WEEKS || "14");
   const rawItems = [];
   let successfulWeeks = 0;
   let authenticationFailed = false;
@@ -81,7 +82,7 @@ async function main() {
 
   if (releases.length && process.env.INCLUDE_ANILIST_MISSING !== "false") {
     try {
-      const result = await enrichAndAppendAnilistReleases(releases);
+      const result = await enrichAndAppendAnilistReleases(releases, timezone);
       releases = result.releases;
       if (result.matched || result.added) source = "AnimeSchedule+AniList";
     } catch (error) {
@@ -319,17 +320,34 @@ async function fetchPublicAnilistSchedule() {
   const seen = new Set();
   const now = Math.floor(Date.now() / 1000);
 
+  const appendMedia = (media) => {
+    if (!media?.anilistId || seen.has(media.anilistId)) return;
+    if (!Number.isFinite(Date.parse(media.releaseDate || ""))) return;
+    if (!isSchedulableItem(media)) return;
+    if (!isSeasonalSeriesItem(media)) return;
+    seen.add(media.anilistId);
+    releases.push(mapPublicAnilistRelease(media));
+  };
+
   for (let page = 1; page <= ANILIST_AIRING_MAX_PAGES; page++) {
     const chunk = await fetchAnilistAiringPage(page, now);
-    for (const media of chunk.items) {
-      if (!media?.anilistId || seen.has(media.anilistId)) continue;
-      seen.add(media.anilistId);
-      if (!Number.isFinite(Date.parse(media.releaseDate || ""))) continue;
-      if (!isSchedulableItem(media)) continue;
-      releases.push(mapPublicAnilistRelease(media));
-    }
+    for (const media of chunk.items) appendMedia(media);
     if (!chunk.hasNextPage) break;
     await wait(ANILIST_REQUEST_DELAY_MS);
+  }
+
+  // The chronological airing feed can be exhausted by weekly episodes from
+  // shows already on air before it reaches the next season. Query both season
+  // catalogs explicitly so confirmed premieres and sequels are not omitted.
+  const currentSeason = getCurrentSeason();
+  const seasons = [currentSeason, getNextSeason(currentSeason)];
+  for (const season of seasons) {
+    for (let page = 1; page <= ANILIST_SEASON_MAX_PAGES; page++) {
+      const chunk = await fetchAnilistSeasonPage(page, season);
+      for (const media of chunk.items) appendMedia(media);
+      if (!chunk.hasNextPage) break;
+      await wait(ANILIST_REQUEST_DELAY_MS);
+    }
   }
 
   return dedupeByEpisode(releases)
@@ -555,11 +573,12 @@ function normalizeSchedule(items, timeZone) {
   return dedupeByEpisode(out).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 }
 
-async function enrichAndAppendAnilistReleases(baseReleases) {
+async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/Madrid") {
   const anilistReleases = await fetchPublicAnilistSchedule();
   if (!anilistReleases.length) throw new Error("AniList devolvio una agenda vacia");
+  const verifiedBaseReleases = reconcileAnimeScheduleWithAnilist(baseReleases, anilistReleases, timeZone);
   let matched = 0;
-  const enriched = baseReleases.map((item) => {
+  const enriched = verifiedBaseReleases.map((item) => {
     const media = findMatchingRelease(item, anilistReleases);
     if (!media) return item;
     matched++;
@@ -591,6 +610,160 @@ async function enrichAndAppendAnilistReleases(baseReleases) {
     matched,
     added: missing.length
   };
+}
+
+async function fetchAnilistSeasonPage(page, { season, year }) {
+  const query = `query ($page: Int, $season: MediaSeason, $year: Int) {
+    Page(page: $page, perPage: 50) {
+      pageInfo { hasNextPage }
+      media(
+        season: $season,
+        seasonYear: $year,
+        type: ANIME,
+        status_in: [NOT_YET_RELEASED, RELEASING],
+        sort: [START_DATE, POPULARITY_DESC]
+      ) {
+        id
+        title { romaji english native }
+        synonyms
+        format
+        genres
+        isAdult
+        coverImage { large medium }
+        siteUrl
+        averageScore
+        meanScore
+        nextAiringEpisode { episode airingAt }
+        tags { name isAdult rank }
+        externalLinks { site url type }
+        streamingEpisodes { site url title thumbnail }
+      }
+    }
+  }`;
+  const response = await fetch(ANILIST_API, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json"
+    },
+    body: JSON.stringify({
+      query,
+      variables: { page, season: String(season || "").toUpperCase(), year }
+    })
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`AniList ${response.status}: ${body.slice(0, 120)}`);
+  }
+
+  const json = await response.json();
+  if (json.errors?.length) throw new Error(`AniList: ${json.errors[0].message}`);
+  return {
+    hasNextPage: Boolean(json.data?.Page?.pageInfo?.hasNextPage),
+    items: (json.data?.Page?.media || []).map(mapPublicAnilistMedia).filter(Boolean)
+  };
+}
+
+function reconcileAnimeScheduleWithAnilist(baseReleases, anilistReleases, timeZone = "Europe/Madrid") {
+  const groups = new Map();
+  for (const item of baseReleases) {
+    const key = stableId(item.animeKey || item.route || item.title);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  }
+
+  const verified = [];
+  let removed = 0;
+  let corrected = 0;
+  for (const group of groups.values()) {
+    const media = findMatchingRelease(group[0], anilistReleases);
+    if (!media) {
+      if (hasRepeatedEpisodeOnDifferentDates(group)) {
+        removed += group.length;
+        console.warn(`Se descarta "${group[0].title}": AnimeSchedule repite el mismo episodio en varias fechas y AniList no confirma uno siguiente.`);
+      } else {
+        verified.push(...group);
+      }
+      continue;
+    }
+
+    const confirmedAt = Date.parse(media.releaseDate || "");
+    const confirmedEpisode = parseEpisodeNumber(media.episodeNumber ?? media.episode);
+    if (!Number.isFinite(confirmedAt) || !Number.isFinite(confirmedEpisode)) {
+      verified.push(...group);
+      continue;
+    }
+
+    const confirmedDay = getCalendarDayKey(confirmedAt, timeZone);
+    const consistent = group.filter((item) => {
+      const releaseAt = Date.parse(item.releaseDate || "");
+      const episode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+      if (!Number.isFinite(releaseAt)) return false;
+      const releaseDay = getCalendarDayKey(releaseAt, timeZone);
+      if (releaseDay < confirmedDay) return false;
+      if (Number.isFinite(episode) && episode < confirmedEpisode) return false;
+      // AniList decides the calendar day. AnimeSchedule remains authoritative
+      // for the hour, so a different time on the same day is not a conflict.
+      if (Number.isFinite(episode) && episode === confirmedEpisode && releaseDay !== confirmedDay) return false;
+      return true;
+    });
+    removed += group.length - consistent.length;
+
+    const hasConfirmedRow = consistent.some((item) => {
+      const releaseAt = Date.parse(item.releaseDate || "");
+      const episode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+      return episode === confirmedEpisode && getCalendarDayKey(releaseAt, timeZone) === confirmedDay;
+    });
+
+    if (!hasConfirmedRow) {
+      const sameEpisodeTemplates = group.filter((item) =>
+        parseEpisodeNumber(item.episodeNumber ?? item.episode) === confirmedEpisode
+      );
+      const template = [...(sameEpisodeTemplates.length ? sameEpisodeTemplates : group)]
+        .sort((a, b) => scoreItem(b) - scoreItem(a))[0];
+      const templateAt = Date.parse(template?.releaseDate || "");
+      const correctedReleaseDate = Number.isFinite(templateAt)
+        ? replaceCalendarDayKeepTime(templateAt, confirmedAt, timeZone)
+        : new Date(confirmedAt).toISOString();
+      const hasTemplatePlatform = Boolean(template?.hasAllowedPlatform);
+      const service = hasTemplatePlatform ? template.service : media.service;
+      const serviceUrl = hasTemplatePlatform ? template.serviceUrl : media.serviceUrl;
+      consistent.push({
+        ...template,
+        id: stableId("schedule-anilist-confirmed", media.anilistId || media.title, confirmedEpisode, correctedReleaseDate),
+        episode: `Ep ${confirmedEpisode}`,
+        episodeNumber: String(confirmedEpisode),
+        releaseDate: correctedReleaseDate,
+        originalReleaseDate: "",
+        delayed: false,
+        service: service || "No legal platform",
+        serviceUrl: normalizeUrl(serviceUrl || ""),
+        allServices: hasTemplatePlatform ? (template.allServices || [template.service]) : (media.allServices || []),
+        hasAllowedPlatform: Boolean(service && service !== "No legal platform"),
+        confirmedByAniList: true
+      });
+      corrected++;
+    }
+    verified.push(...consistent);
+  }
+
+  if (removed || corrected) {
+    console.log(`Verificacion AniList: ${removed} horarios contradictorios eliminados, ${corrected} proximos episodios corregidos.`);
+  }
+  return dedupeByEpisode(verified).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+}
+
+function hasRepeatedEpisodeOnDifferentDates(group) {
+  const datesByEpisode = new Map();
+  for (const item of group) {
+    const episode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+    const releaseAt = Date.parse(item.releaseDate || "");
+    if (!Number.isFinite(episode) || !Number.isFinite(releaseAt)) continue;
+    if (!datesByEpisode.has(episode)) datesByEpisode.set(episode, new Set());
+    datesByEpisode.get(episode).add(new Date(releaseAt).toISOString());
+  }
+  return [...datesByEpisode.values()].some((dates) => dates.size > 1);
 }
 
 function findMatchingRelease(item, candidates) {
@@ -873,7 +1046,9 @@ function hasScheduledSeriesMatch(item, scheduledItems) {
 }
 
 function getSeriesMatchScore(a, b) {
-  if (a.anilistId && b.anilistId && String(a.anilistId) === String(b.anilistId)) return 1;
+  if (a.anilistId && b.anilistId) {
+    return String(a.anilistId) === String(b.anilistId) ? 1 : 0;
+  }
   const aTitles = [a.title, a.anilistTitle, a.route, a.animeKey, ...(a.titles || [])].filter(Boolean);
   const bTitles = [b.title, b.anilistTitle, b.route, b.animeKey, ...(b.titles || [])].filter(Boolean);
   let best = 0;
@@ -898,6 +1073,14 @@ function scoreItem(item) {
 function isSchedulableItem(item) {
   if (item.isAdult || hasAdultAnilistTag(item)) return false;
   return true;
+}
+
+function isSeasonalSeriesItem(item) {
+  const format = String(item.anilistFormat || item.format || "").toUpperCase();
+  const releaseAt = Date.parse(item.releaseDate || "");
+  return ["TV", "TV_SHORT", "ONA"].includes(format)
+    && Number.isFinite(releaseAt)
+    && releaseAt > Date.now();
 }
 
 function hasAdultAnilistTag(item) {
@@ -990,8 +1173,9 @@ function normalizeTitle(value) {
     .replace(/\([^)]*\)/g, "")
     .replace(/\[[^\]]*\]/g, "")
     .replace(/&/g, "and")
-    .replace(/\bseason\s*\d+\b/g, "")
-    .replace(/\bs\d+\b/g, "")
+    .replace(/\b(\d+)(?:st|nd|rd|th)\s+season\b/g, "season $1")
+    .replace(/\bseason\s*(\d+)\b/g, "$1")
+    .replace(/\bs(\d+)\b/g, "$1")
     .replace(/\bpart\s*\d+\b/g, "")
     .replace(/\bcour\s*\d+\b/g, "")
     .replace(/\bthe\b/g, "")
@@ -1024,8 +1208,19 @@ function normalizeUrl(url) {
   return "";
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  fetchPublicAnilistSchedule,
+  reconcileAnimeScheduleWithAnilist,
+  getSeriesMatchScore,
+  normalizeTitle,
+  isSeasonalSeriesItem,
+  replaceCalendarDayKeepTime
+};
 

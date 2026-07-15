@@ -161,8 +161,8 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v96";
-const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 45);
+const APP_CACHE_NAME = "anime-countdown-pwa-v98";
+const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
 const DEFAULT_IMPORT_WEEKS = 4;
@@ -1396,6 +1396,7 @@ function mapSharedRelease(row) {
     allServices: row.all_services || row.allServices || [],
     hasAllowedPlatform: row.has_allowed_platform ?? row.hasAllowedPlatform ?? Boolean(row.service_url || row.serviceUrl),
     source: row.source === "anilist-missing" ? "anilist-missing" : "shared-json",
+    sharedSchedule: true,
     inferredFromAnimeSchedule: Boolean(row.inferredFromAnimeSchedule || row.inferred_from_animeschedule),
     favorite: false,
     coverUrl: normalizeUrl(row.cover_url || row.coverUrl || ""),
@@ -2149,13 +2150,16 @@ async function enrichReleasesFromPublicAnilist() {
 
 function addMissingReleasesFromPublicAnilist(catalog) {
   const now = Date.now();
-  const scheduleBase = state.releases.filter((item) => !isAnilistMissingRelease(item) && !isAniListTimedRelease(item));
+  const scheduleBase = state.releases.filter((item) =>
+    (!isAnilistMissingRelease(item) || item.sharedSchedule) && !isAniListTimedRelease(item)
+  );
   const missing = [];
 
   for (const media of catalog) {
     const releaseAt = Date.parse(media.releaseDate || "");
     if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
     if (!isSchedulableItem(media)) continue;
+    if (!isSeasonalSeriesItem(media)) continue;
     if (hasScheduledSeriesMatch(media, scheduleBase)) continue;
     missing.push(mapPublicAnilistMissingRelease(media));
   }
@@ -2446,7 +2450,9 @@ function findAnilistScheduleOwner(release) {
 function findAnilistMatch(item) {
   if (item.anilistId) {
     const byId = Object.values(state.anilistMap).find((data) => String(data.anilistId) === String(item.anilistId));
-    if (byId) return byId;
+    // An AniList ID is authoritative. Falling back to a similar title here can
+    // merge the main series with a spin-off, short or special.
+    return byId || null;
   }
   const keys = buildTitleKeys([item.title, item.route, item.animeKey, item.anilistTitle].filter(Boolean));
   for (const key of keys) if (state.anilistMap[key]) return state.anilistMap[key];
@@ -2474,9 +2480,22 @@ function applyAnilistToReleases() { state.releases = mergeDuplicateItems(state.r
 function getAnilistOverride(item, match) {
   const nextTime = Date.parse(getAnilistAiringDate(match));
   const itemTime = Date.parse(item.releaseDate || "");
-  const canOverrideTiming = item.source === "anilist-library";
-  const delayedByDate = canOverrideTiming && !isSameCalendarDay(nextTime, itemTime);
-  const correctedReleaseDate = canOverrideTiming && Number.isFinite(nextTime) ? new Date(nextTime).toISOString() : item.releaseDate;
+  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
+  const nextEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
+  const sameConfirmedSeries = getSeriesMatchScore(item, match) >= 0.9;
+  const targetsConfirmedEpisode = !Number.isFinite(itemEpisode) || !Number.isFinite(nextEpisode) || itemEpisode <= nextEpisode;
+  const contradictsConfirmedNext = sameConfirmedSeries && targetsConfirmedEpisode &&
+    Number.isFinite(nextTime) && Number.isFinite(itemTime) &&
+    !isSameCalendarDay(nextTime, itemTime);
+  const canOverrideTiming = item.source === "anilist-library" || contradictsConfirmedNext;
+  const delayedByDate = contradictsConfirmedNext;
+  let correctedReleaseDate = item.releaseDate;
+  if (item.source === "anilist-library" && Number.isFinite(nextTime)) {
+    correctedReleaseDate = new Date(nextTime).toISOString();
+  } else if (contradictsConfirmedNext) {
+    // AniList corrects only the calendar day. Keep AnimeSchedule's local hour.
+    correctedReleaseDate = replaceCalendarDayKeepTime(itemTime, nextTime);
+  }
   const override = {
     title: match.title || item.title,
     episode: canOverrideTiming ? (match.episode || item.episode) : item.episode,
@@ -3168,6 +3187,14 @@ function isSchedulableItem(item) {
   return true;
 }
 
+function isSeasonalSeriesItem(item) {
+  const format = String(item.anilistFormat || item.format || "").toUpperCase();
+  const releaseAt = Date.parse(item.releaseDate || "");
+  return ["TV", "TV_SHORT", "ONA"].includes(format)
+    && Number.isFinite(releaseAt)
+    && releaseAt > Date.now();
+}
+
 function hasKodomoSignal(item) {
   const fields = [
     item.title,
@@ -3203,7 +3230,9 @@ function hasScheduledSeriesMatch(item, scheduledItems = state.releases) {
   });
 }
 function getSeriesMatchScore(a, b) {
-  if (a.anilistId && b.anilistId && String(a.anilistId) === String(b.anilistId)) return 1;
+  if (a.anilistId && b.anilistId) {
+    return String(a.anilistId) === String(b.anilistId) ? 1 : 0;
+  }
   const aTitles = [a.title, a.anilistTitle, a.route, a.animeKey, ...(a.titles || [])].filter(Boolean);
   const bTitles = [b.title, b.anilistTitle, b.route, b.animeKey, ...(b.titles || [])].filter(Boolean);
   let best = 0;
@@ -3213,7 +3242,7 @@ function getSeriesMatchScore(a, b) {
 function getAnimeKey(item) { return stableId(item.animeKey || item.route || item.title); }
 function getSeriesKey(item) { return stableId(item.anilistId || item.anilistTitle || item.animeKey || item.route || normalizeTitle(item.title)); }
 function stableId(...parts) { return parts.filter(Boolean).join("-").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\p{L}\p{N}]+/gu,"-").replace(/(^-|-$)/g,""); }
-function normalizeTitle(value) { return String(value||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\([^)]*\)/g,"").replace(/\[[^\]]*\]/g,"").replace(/&/g,"and").replace(/\bseason\s*\d+\b/g,"").replace(/\bs\d+\b/g,"").replace(/\bpart\s*\d+\b/g,"").replace(/\bcour\s*\d+\b/g,"").replace(/\bthe\b/g,"").replace(/\ba\b/g,"").replace(/\ban\b/g,"").replace(/[^\p{L}\p{N}]+/gu,""); }
+function normalizeTitle(value) { return String(value||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\([^)]*\)/g,"").replace(/\[[^\]]*\]/g,"").replace(/&/g,"and").replace(/\b(\d+)(?:st|nd|rd|th)\s+season\b/g,"season $1").replace(/\bseason\s*(\d+)\b/g,"$1").replace(/\bs(\d+)\b/g,"$1").replace(/\bpart\s*\d+\b/g,"").replace(/\bcour\s*\d+\b/g,"").replace(/\bthe\b/g,"").replace(/\ba\b/g,"").replace(/\ban\b/g,"").replace(/[^\p{L}\p{N}]+/gu,""); }
 function normalizeUrl(url) { const v=String(url||"").trim(); if(!v)return ""; if(v.startsWith("http://")||v.startsWith("https://"))return v; if(v.startsWith("//"))return `https:${v}`; if(v.includes("."))return `https://${v}`; return ""; }
 function getOpenLabel(service) { if(!service || service==="No legal platform" || service==="AniList")return "Asociar plataforma"; return `Ver en ${service}`; }
 function getBestWatchUrl(item, displayService) {

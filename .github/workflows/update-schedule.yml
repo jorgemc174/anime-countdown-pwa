@@ -28,7 +28,8 @@ jobs:
         env:
           ANIMESCHEDULE_TOKEN: ${{ secrets.ANIMESCHEDULE_TOKEN }}
           SYNC_TIMEZONE: Europe/Madrid
-          SYNC_WEEKS: "8"
+          SYNC_WEEKS: "14"
+          ANILIST_SEASON_MAX_PAGES: "5"
           ANILIST_VERIFY: "false"
 
       - name: Commit updated schedule
