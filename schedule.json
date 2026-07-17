@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T14:06:16.500Z",
+  "updatedAt": "2026-07-17T16:36:19.562Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -56,39 +56,6 @@
       ]
     },
     {
-      "id": "schedule-saikyou-degarashi-ouji-no-anyaku-teii-arasoi-2-2026-07-13t15-00-00-02-00",
-      "animeKey": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
-      "title": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi",
-      "route": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
-      "episode": "Ep 2",
-      "episodeNumber": "2",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-13T13:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378119/the-insipid-princes-furtive-grab-for-the-throne",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169582-quL8VMg45fcu.png",
-      "anilistId": 169582,
-      "anilistTitle": "The Insipid Prince's Furtive Grab for the Throne",
-      "anilistUrl": "https://anilist.co/anime/169582",
-      "anilistFormat": "TV",
-      "anilistScore": 63,
-      "titles": [
-        "Saikyou Degarashi Ouji no Anyaku Teii Arasoi: Munou wo Enjiru SS Rank Ouji wa Koui Keishou-sen wo Kage kara Shihai suru",
-        "The Insipid Prince's Furtive Grab for the Throne",
-        "最強出涸らし皇子の暗躍帝位争い 無能を演じるSSランク皇子は皇位継承戦を影から支配する",
-        "The Strongest Dull Prince Secret Battle for the Throne. ~I Don’t Care About the Throne but Since I Don’t Want to Die, I Think I Will Make My Little Brother the Emperor~",
-        "出涸らし皇子",
-        "Degarashi Ouji"
-      ]
-    },
-    {
       "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-2-2026-07-13t15-00-00-02-00",
       "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
       "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
@@ -119,6 +86,39 @@
         "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
         "Kesatria Tengkorak Berkelana di Dunia Lain S2",
         "บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก II"
+      ]
+    },
+    {
+      "id": "schedule-saikyou-degarashi-ouji-no-anyaku-teii-arasoi-2-2026-07-13t15-00-00-02-00",
+      "animeKey": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
+      "title": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi",
+      "route": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-13T13:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378119/the-insipid-princes-furtive-grab-for-the-throne",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169582-quL8VMg45fcu.png",
+      "anilistId": 169582,
+      "anilistTitle": "The Insipid Prince's Furtive Grab for the Throne",
+      "anilistUrl": "https://anilist.co/anime/169582",
+      "anilistFormat": "TV",
+      "anilistScore": 63,
+      "titles": [
+        "Saikyou Degarashi Ouji no Anyaku Teii Arasoi: Munou wo Enjiru SS Rank Ouji wa Koui Keishou-sen wo Kage kara Shihai suru",
+        "The Insipid Prince's Furtive Grab for the Throne",
+        "最強出涸らし皇子の暗躍帝位争い 無能を演じるSSランク皇子は皇位継承戦を影から支配する",
+        "The Strongest Dull Prince Secret Battle for the Throne. ~I Don’t Care About the Throne but Since I Don’t Want to Die, I Think I Will Make My Little Brother the Emperor~",
+        "出涸らし皇子",
+        "Degarashi Ouji"
       ]
     },
     {
@@ -866,6 +866,36 @@
       ]
     },
     {
+      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
+      "anilistId": 197715,
+      "anilistTitle": "The Villager of Level 999",
+      "anilistUrl": "https://anilist.co/anime/197715",
+      "anilistFormat": "ONA",
+      "anilistScore": 63,
+      "titles": [
+        "LV999 no Murabito",
+        "The Villager of Level 999",
+        "LV999の村人"
+      ]
+    },
+    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-4-2026-07-15t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -895,36 +925,6 @@
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
-      ]
-    },
-    {
-      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
-      "anilistId": 197715,
-      "anilistTitle": "The Villager of Level 999",
-      "anilistUrl": "https://anilist.co/anime/197715",
-      "anilistFormat": "ONA",
-      "anilistScore": 63,
-      "titles": [
-        "LV999 no Murabito",
-        "The Villager of Level 999",
-        "LV999の村人"
       ]
     },
     {
@@ -1393,41 +1393,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
     },
     {
-      "id": "anilist-missing-182616-1-2026-07-17t14-30-00-000z",
-      "animeKey": "the-elusive-samurai-season-2",
-      "anilistId": 182616,
-      "anilistTitle": "The Elusive Samurai Season 2",
-      "anilistUrl": "https://anilist.co/anime/182616",
-      "anilistFormat": "TV",
-      "anilistScore": null,
-      "titles": [
-        "Nige Jouzu no Wakagimi 2nd Season",
-        "The Elusive Samurai Season 2",
-        "逃げ上手の若君 第二期",
-        "Nigewaka 2",
-        "นายน้อยจอมโกยก้าวสู่เส้นทางแห่งวีรบุรุษ",
-        "Héroe fugitivo",
-        "Беглый самурай"
-      ],
-      "title": "The Elusive Samurai Season 2",
-      "route": "",
-      "episode": "Ep 1",
-      "episodeNumber": "1",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-17T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0M19X/the-elusive-samurai",
-      "allServices": [
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182616-ZOCgArw9cgqI.jpg"
-    },
-    {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-15-2026-07-17t17-00-00-02-00",
       "animeKey": "tensei-shitara-slime-datta-ken-4th-season",
       "title": "Tensei shitara Slime Datta Ken 4th Season",
@@ -1583,6 +1548,23 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
+      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
+      "animeKey": "ushiro-no-shoumen-kamui-san",
+      "title": "Ushiro no Shoumen Kamui-san",
+      "route": "ushiro-no-shoumen-kamui-san",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
+    },
+    {
       "id": "schedule-snack-hazama-3-2026-07-17t18-31-00-02-00",
       "animeKey": "snack-hazama",
       "title": "Snack HAZAMA",
@@ -1610,23 +1592,6 @@
         "うしろの正面カムイさんミニアニメ",
         "Ushiro no Shoumen Kamui-san Mini Anime"
       ]
-    },
-    {
-      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
-      "animeKey": "ushiro-no-shoumen-kamui-san",
-      "title": "Ushiro no Shoumen Kamui-san",
-      "route": "ushiro-no-shoumen-kamui-san",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-17T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
     },
     {
       "id": "anilist-missing-142274-225-2026-07-17t22-30-00-000z",
@@ -2141,99 +2106,6 @@
       ]
     },
     {
-      "id": "schedule-oni-no-hanayome-3-2026-07-18t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
-      "anilistId": 194219,
-      "anilistTitle": "The Ogre's Bride",
-      "anilistUrl": "https://anilist.co/anime/194219",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Oni no Hanayome",
-        "The Ogre's Bride",
-        "鬼の花嫁",
-        "OniHana"
-      ]
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
-      "anilistId": 196017,
-      "anilistTitle": "Grow Up Show",
-      "anilistUrl": "https://anilist.co/anime/196017",
-      "anilistFormat": "TV",
-      "anilistScore": 68,
-      "titles": [
-        "Grow Up Show: Himawari no Circus-dan",
-        "Grow Up Show",
-        "グロウアップショウ ～ひまわりのサーカス団～"
-      ]
-    },
-    {
-      "id": "schedule-tenmaku-no-jaadugar-4-2026-07-18t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
-      "anilistFormat": "TV",
-      "anilistScore": 81,
-      "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
-      ]
-    },
-    {
       "id": "schedule-yomi-no-tsugai-15-2026-07-18t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -2272,35 +2144,96 @@
       ]
     },
     {
-      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-3-2026-07-18t19-00-00-02-00",
-      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
-      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
       "episode": "Ep 3",
       "episodeNumber": "3",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-18T17:00:00.000Z",
+      "releaseDate": "2026-07-18T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
-      "anilistId": 208225,
-      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-      "anilistUrl": "https://anilist.co/anime/208225",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
+      "anilistId": 196017,
+      "anilistTitle": "Grow Up Show",
+      "anilistUrl": "https://anilist.co/anime/196017",
       "anilistFormat": "TV",
-      "anilistScore": 62,
+      "anilistScore": 68,
       "titles": [
-        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
-        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
-        "きみ愛",
-        "KimiAi"
+        "Grow Up Show: Himawari no Circus-dan",
+        "Grow Up Show",
+        "グロウアップショウ ～ひまわりのサーカス団～"
+      ]
+    },
+    {
+      "id": "schedule-oni-no-hanayome-3-2026-07-18t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
+      "anilistId": 194219,
+      "anilistTitle": "The Ogre's Bride",
+      "anilistUrl": "https://anilist.co/anime/194219",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Oni no Hanayome",
+        "The Ogre's Bride",
+        "鬼の花嫁",
+        "OniHana"
+      ]
+    },
+    {
+      "id": "schedule-tenmaku-no-jaadugar-4-2026-07-18t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": 81,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
       ]
     },
     {
@@ -2332,6 +2265,38 @@
         "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
         "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
         "NANOHA EXGV"
+      ]
+    },
+    {
+      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-3-2026-07-18t19-00-00-02-00",
+      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
+      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
+      "anilistId": 208225,
+      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+      "anilistUrl": "https://anilist.co/anime/208225",
+      "anilistFormat": "TV",
+      "anilistScore": 62,
+      "titles": [
+        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
+        "きみ愛",
+        "KimiAi"
       ]
     },
     {
@@ -2816,36 +2781,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155723-hM261Imc5yfd.png"
     },
     {
-      "id": "schedule-let-s-go-kaikigumi-3-2026-07-19t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
-      "anilistId": 200230,
-      "anilistTitle": "Let's go KAIKIGUMI",
-      "anilistUrl": "https://anilist.co/anime/200230",
-      "anilistFormat": "TV",
-      "anilistScore": 53,
-      "titles": [
-        "Let's Go Kaikigumi",
-        "Let's go KAIKIGUMI",
-        "レッツゴー怪奇組"
-      ]
-    },
-    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-3-2026-07-19t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -2874,6 +2809,36 @@
         "You and I Are Polar Opposites Season 2",
         "正反対な君と僕 第2期",
         "ลุ้นรักฉบับคู่ต่างขั้ว ซีซัน 2"
+      ]
+    },
+    {
+      "id": "schedule-let-s-go-kaikigumi-3-2026-07-19t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-19T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
+      "anilistId": 200230,
+      "anilistTitle": "Let's go KAIKIGUMI",
+      "anilistUrl": "https://anilist.co/anime/200230",
+      "anilistFormat": "TV",
+      "anilistScore": 53,
+      "titles": [
+        "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
+        "レッツゴー怪奇組"
       ]
     },
     {
@@ -5064,50 +5029,6 @@
       ]
     },
     {
-      "id": "anilist-missing-158871-144-2026-07-24t09-55-00-000z",
-      "animeKey": "pokemon-horizons-the-series",
-      "anilistId": 158871,
-      "anilistTitle": "Pokémon Horizons: The Series",
-      "anilistUrl": "https://anilist.co/anime/158871",
-      "anilistFormat": "TV",
-      "anilistScore": 73,
-      "titles": [
-        "Pocket Monsters (2023)",
-        "Pokémon Horizons: The Series",
-        "ポケットモンスター (2023)",
-        "Pocket Monsters: Liko to Roy no Tabidachi (ポケットモンスター リコとロイの旅立ち)",
-        "Pocket Monsters: Terapagos no Kagayaki (ポケットモンスター テラパゴスのかがやき)",
-        "Pocket Monsters: Terastal Debut (ポケットモンスター テラスタルデビュー)",
-        "Pocket Monsters: Rayquaza Rising (ポケットモンスター レックウザ ライジング)",
-        "Pocket Monsters: Mega Voltage (ポケットモンスター メガボルテージ)",
-        "Pokémon (2023)",
-        "Pokémon Horizontes: A Série",
-        "Pokémon Horyzonty: Seria",
-        "Orizzonti Pokémon: La serie",
-        "Pokémon Horisonter: Serien",
-        "Pokémon: Taivaanranta - Sarja",
-        "Pokémon Yeni Ufuklar: Dizi",
-        "โปเกมอน เดอะซีรีส์ สุดขอบฟ้า"
-      ],
-      "title": "Pokémon Horizons: The Series",
-      "route": "",
-      "episode": "Ep 144",
-      "episodeNumber": "144",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-24T09:55:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Netflix",
-      "serviceUrl": "https://www.netflix.com/title/81696980",
-      "allServices": [
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158871-GBM9AMDfDRSu.jpg"
-    },
-    {
       "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-4-2026-07-24t15-31-00-02-00",
       "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
       "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
@@ -5163,6 +5084,41 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/koko-wa-ore-ni-makasete-saki-ni-ike-to-itte-kara-10-nen-ga-tattara-densetsu-ni-natteita-2265b7b2e0.jpg"
     },
     {
+      "id": "anilist-missing-182616-2-2026-07-24t14-30-00-000z",
+      "animeKey": "the-elusive-samurai-season-2",
+      "anilistId": 182616,
+      "anilistTitle": "The Elusive Samurai Season 2",
+      "anilistUrl": "https://anilist.co/anime/182616",
+      "anilistFormat": "TV",
+      "anilistScore": null,
+      "titles": [
+        "Nige Jouzu no Wakagimi 2nd Season",
+        "The Elusive Samurai Season 2",
+        "逃げ上手の若君 第二期",
+        "Nigewaka 2",
+        "นายน้อยจอมโกยก้าวสู่เส้นทางแห่งวีรบุรุษ",
+        "Héroe fugitivo",
+        "Беглый самурай"
+      ],
+      "title": "The Elusive Samurai Season 2",
+      "route": "",
+      "episode": "Ep 2",
+      "episodeNumber": "2",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-24T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GQWH0M19X/the-elusive-samurai",
+      "allServices": [
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182616-ZOCgArw9cgqI.jpg"
+    },
+    {
       "id": "schedule-tensei-shitara-slime-datta-ken-4th-season-16-2026-07-24t17-00-00-02-00",
       "animeKey": "tensei-shitara-slime-datta-ken-4th-season",
       "title": "Tensei shitara Slime Datta Ken 4th Season",
@@ -5200,39 +5156,6 @@
       ]
     },
     {
-      "id": "schedule-kami-no-shizuku-16-2026-07-24t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 16",
-      "episodeNumber": "16",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-24T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
-      "anilistId": 202508,
-      "anilistTitle": "The Drops of God",
-      "anilistUrl": "https://anilist.co/anime/202508",
-      "anilistFormat": "TV",
-      "anilistScore": 54,
-      "titles": [
-        "Kami no Shizuku",
-        "The Drops of God",
-        "神の雫",
-        "Les Gouttes de Dieu",
-        "신의물방울",
-        "สืบมรดกข้ามชาติ หยาดเทวะ"
-      ]
-    },
-    {
       "id": "schedule-kore-kaite-shine-4-2026-07-24t17-30-00-02-00",
       "animeKey": "kore-kaite-shine",
       "title": "Kore Kaite Shine",
@@ -5266,24 +5189,37 @@
       ]
     },
     {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-4-2026-07-24t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
+      "id": "schedule-kami-no-shizuku-16-2026-07-24t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 16",
+      "episodeNumber": "16",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-24T16:30:00.000Z",
+      "releaseDate": "2026-07-24T15:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
+      "anilistId": 202508,
+      "anilistTitle": "The Drops of God",
+      "anilistUrl": "https://anilist.co/anime/202508",
+      "anilistFormat": "TV",
+      "anilistScore": 54,
+      "titles": [
+        "Kami no Shizuku",
+        "The Drops of God",
+        "神の雫",
+        "Les Gouttes de Dieu",
+        "신의물방울",
+        "สืบมรดกข้ามชาติ หยาดเทวะ"
+      ]
     },
     {
       "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-4-2026-07-24t18-30-00-02-00",
@@ -5316,6 +5252,26 @@
         "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
         "HELL MODE ~อยากเล่นโหด ขอโหมดนรก~ ซีซั่น 2"
       ]
+    },
+    {
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-4-2026-07-24t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-24T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-4-2026-07-24t18-31-00-02-00",
@@ -5665,6 +5621,38 @@
       ]
     },
     {
+      "id": "schedule-tenmaku-no-jaadugar-5-2026-07-25t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": 81,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
+      ]
+    },
+    {
       "id": "schedule-yomi-no-tsugai-16-2026-07-25t18-00-00-02-00",
       "animeKey": "yomi-no-tsugai",
       "title": "Yomi no Tsugai",
@@ -5703,35 +5691,33 @@
       ]
     },
     {
-      "id": "schedule-tenmaku-no-jaadugar-5-2026-07-25t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-07-25T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
+      "anilistId": 196017,
+      "anilistTitle": "Grow Up Show",
+      "anilistUrl": "https://anilist.co/anime/196017",
       "anilistFormat": "TV",
-      "anilistScore": 81,
+      "anilistScore": 68,
       "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
+        "Grow Up Show: Himawari no Circus-dan",
+        "Grow Up Show",
+        "グロウアップショウ ～ひまわりのサーカス団～"
       ]
     },
     {
@@ -5766,33 +5752,35 @@
       ]
     },
     {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
+      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-4-2026-07-25t19-00-00-02-00",
+      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
+      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
       "episode": "Ep 4",
       "episodeNumber": "4",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "releaseDate": "2026-07-25T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
-      "anilistId": 196017,
-      "anilistTitle": "Grow Up Show",
-      "anilistUrl": "https://anilist.co/anime/196017",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
+      "anilistId": 208225,
+      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+      "anilistUrl": "https://anilist.co/anime/208225",
       "anilistFormat": "TV",
-      "anilistScore": 68,
+      "anilistScore": 62,
       "titles": [
-        "Grow Up Show: Himawari no Circus-dan",
-        "Grow Up Show",
-        "グロウアップショウ ～ひまわりのサーカス団～"
+        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
+        "きみ愛",
+        "KimiAi"
       ]
     },
     {
@@ -5824,38 +5812,6 @@
         "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
         "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
         "NANOHA EXGV"
-      ]
-    },
-    {
-      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-4-2026-07-25t19-00-00-02-00",
-      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
-      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-25T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
-      "anilistId": 208225,
-      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-      "anilistUrl": "https://anilist.co/anime/208225",
-      "anilistFormat": "TV",
-      "anilistScore": 62,
-      "titles": [
-        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
-        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
-        "きみ愛",
-        "KimiAi"
       ]
     },
     {
@@ -6024,6 +5980,36 @@
       ]
     },
     {
+      "id": "schedule-let-s-go-kaikigumi-4-2026-07-26t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
+      "anilistId": 200230,
+      "anilistTitle": "Let's go KAIKIGUMI",
+      "anilistUrl": "https://anilist.co/anime/200230",
+      "anilistFormat": "TV",
+      "anilistScore": 53,
+      "titles": [
+        "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
+        "レッツゴー怪奇組"
+      ]
+    },
+    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-4-2026-07-26t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -6052,36 +6038,6 @@
         "You and I Are Polar Opposites Season 2",
         "正反対な君と僕 第2期",
         "ลุ้นรักฉบับคู่ต่างขั้ว ซีซัน 2"
-      ]
-    },
-    {
-      "id": "schedule-let-s-go-kaikigumi-4-2026-07-26t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-26T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
-      "anilistId": 200230,
-      "anilistTitle": "Let's go KAIKIGUMI",
-      "anilistUrl": "https://anilist.co/anime/200230",
-      "anilistFormat": "TV",
-      "anilistScore": 53,
-      "titles": [
-        "Let's Go Kaikigumi",
-        "Let's go KAIKIGUMI",
-        "レッツゴー怪奇組"
       ]
     },
     {
@@ -6516,39 +6472,6 @@
       ]
     },
     {
-      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-4-2026-07-27t15-00-00-02-00",
-      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-27T13:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg",
-      "anilistId": 185542,
-      "anilistTitle": "Skeleton Knight in Another World Season 2",
-      "anilistUrl": "https://anilist.co/anime/185542",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-        "Skeleton Knight in Another World Season 2",
-        "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-        "Kesatria Tengkorak Berkelana di Dunia Lain S2",
-        "บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก II"
-      ]
-    },
-    {
       "id": "schedule-saikyou-degarashi-ouji-no-anyaku-teii-arasoi-4-2026-07-27t15-00-00-02-00",
       "animeKey": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
       "title": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi",
@@ -6579,6 +6502,39 @@
         "The Strongest Dull Prince Secret Battle for the Throne. ~I Don’t Care About the Throne but Since I Don’t Want to Die, I Think I Will Make My Little Brother the Emperor~",
         "出涸らし皇子",
         "Degarashi Ouji"
+      ]
+    },
+    {
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-4-2026-07-27t15-00-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-27T13:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg",
+      "anilistId": 185542,
+      "anilistTitle": "Skeleton Knight in Another World Season 2",
+      "anilistUrl": "https://anilist.co/anime/185542",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+        "Skeleton Knight in Another World Season 2",
+        "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+        "Kesatria Tengkorak Berkelana di Dunia Lain S2",
+        "บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก II"
       ]
     },
     {
@@ -7822,6 +7778,50 @@
       ]
     },
     {
+      "id": "anilist-missing-158871-144-2026-07-31t09-55-00-000z",
+      "animeKey": "pokemon-horizons-the-series",
+      "anilistId": 158871,
+      "anilistTitle": "Pokémon Horizons: The Series",
+      "anilistUrl": "https://anilist.co/anime/158871",
+      "anilistFormat": "TV",
+      "anilistScore": 73,
+      "titles": [
+        "Pocket Monsters (2023)",
+        "Pokémon Horizons: The Series",
+        "ポケットモンスター (2023)",
+        "Pocket Monsters: Liko to Roy no Tabidachi (ポケットモンスター リコとロイの旅立ち)",
+        "Pocket Monsters: Terapagos no Kagayaki (ポケットモンスター テラパゴスのかがやき)",
+        "Pocket Monsters: Terastal Debut (ポケットモンスター テラスタルデビュー)",
+        "Pocket Monsters: Rayquaza Rising (ポケットモンスター レックウザ ライジング)",
+        "Pocket Monsters: Mega Voltage (ポケットモンスター メガボルテージ)",
+        "Pokémon (2023)",
+        "Pokémon Horizontes: A Série",
+        "Pokémon Horyzonty: Seria",
+        "Orizzonti Pokémon: La serie",
+        "Pokémon Horisonter: Serien",
+        "Pokémon: Taivaanranta - Sarja",
+        "Pokémon Yeni Ufuklar: Dizi",
+        "โปเกมอน เดอะซีรีส์ สุดขอบฟ้า"
+      ],
+      "title": "Pokémon Horizons: The Series",
+      "route": "",
+      "episode": "Ep 144",
+      "episodeNumber": "144",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T09:55:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/81696980",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158871-GBM9AMDfDRSu.jpg"
+    },
+    {
       "id": "schedule-ryoumin-0-nin-start-no-henkyou-ryoushu-sama-5-2026-07-31t15-31-00-02-00",
       "animeKey": "ryoumin-0-nin-start-no-henkyou-ryoushu-sama",
       "title": "Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
@@ -7942,6 +7942,39 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213908-ZBUHQxLVUzSW.jpg"
     },
     {
+      "id": "schedule-kami-no-shizuku-17-2026-07-31t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 17",
+      "episodeNumber": "17",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
+      "anilistId": 202508,
+      "anilistTitle": "The Drops of God",
+      "anilistUrl": "https://anilist.co/anime/202508",
+      "anilistFormat": "TV",
+      "anilistScore": 54,
+      "titles": [
+        "Kami no Shizuku",
+        "The Drops of God",
+        "神の雫",
+        "Les Gouttes de Dieu",
+        "신의물방울",
+        "สืบมรดกข้ามชาติ หยาดเทวะ"
+      ]
+    },
+    {
       "id": "schedule-kore-kaite-shine-5-2026-07-31t17-30-00-02-00",
       "animeKey": "kore-kaite-shine",
       "title": "Kore Kaite Shine",
@@ -7975,37 +8008,24 @@
       ]
     },
     {
-      "id": "schedule-kami-no-shizuku-17-2026-07-31t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 17",
-      "episodeNumber": "17",
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-5-2026-07-31t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-07-31T15:30:00.000Z",
+      "releaseDate": "2026-07-31T16:30:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
-      "anilistId": 202508,
-      "anilistTitle": "The Drops of God",
-      "anilistUrl": "https://anilist.co/anime/202508",
-      "anilistFormat": "TV",
-      "anilistScore": 54,
-      "titles": [
-        "Kami no Shizuku",
-        "The Drops of God",
-        "神の雫",
-        "Les Gouttes de Dieu",
-        "신의물방울",
-        "สืบมรดกข้ามชาติ หยาดเทวะ"
-      ]
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-5-2026-07-31t18-30-00-02-00",
@@ -8040,43 +8060,6 @@
       ]
     },
     {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-5-2026-07-31t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-31T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
-    },
-    {
-      "id": "schedule-ushiro-no-shoumen-kamui-san-5-2026-07-31t18-31-00-02-00",
-      "animeKey": "ushiro-no-shoumen-kamui-san",
-      "title": "Ushiro no Shoumen Kamui-san",
-      "route": "ushiro-no-shoumen-kamui-san",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-31T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
-    },
-    {
       "id": "schedule-snack-hazama-5-2026-07-31t18-31-00-02-00",
       "animeKey": "snack-hazama",
       "title": "Snack HAZAMA",
@@ -8104,6 +8087,23 @@
         "うしろの正面カムイさんミニアニメ",
         "Ushiro no Shoumen Kamui-san Mini Anime"
       ]
+    },
+    {
+      "id": "schedule-ushiro-no-shoumen-kamui-san-5-2026-07-31t18-31-00-02-00",
+      "animeKey": "ushiro-no-shoumen-kamui-san",
+      "title": "Ushiro no Shoumen Kamui-san",
+      "route": "ushiro-no-shoumen-kamui-san",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
     },
     {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-18-2026-08-01t03-00-00-02-00",
@@ -8407,6 +8407,69 @@
       ]
     },
     {
+      "id": "schedule-tenmaku-no-jaadugar-6-2026-08-01t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": 81,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
+      ]
+    },
+    {
+      "id": "schedule-oni-no-hanayome-5-2026-08-01t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-01T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
+      "anilistId": 194219,
+      "anilistTitle": "The Ogre's Bride",
+      "anilistUrl": "https://anilist.co/anime/194219",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Oni no Hanayome",
+        "The Ogre's Bride",
+        "鬼の花嫁",
+        "OniHana"
+      ]
+    },
+    {
       "id": "schedule-grow-up-show-himawari-no-circus-dan-5-2026-08-01t18-00-00-02-00",
       "animeKey": "grow-up-show-himawari-no-circus-dan",
       "title": "Grow Up Show: Himawari no Circus-dan",
@@ -8472,69 +8535,6 @@
         "ยมลแห่งยมโลก",
         "Daemons do Reino das Sombras",
         "Espíritus del Inframundo"
-      ]
-    },
-    {
-      "id": "schedule-tenmaku-no-jaadugar-6-2026-08-01t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-01T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
-      "anilistFormat": "TV",
-      "anilistScore": 81,
-      "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
-      ]
-    },
-    {
-      "id": "schedule-oni-no-hanayome-5-2026-08-01t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-01T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
-      "anilistId": 194219,
-      "anilistTitle": "The Ogre's Bride",
-      "anilistUrl": "https://anilist.co/anime/194219",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Oni no Hanayome",
-        "The Ogre's Bride",
-        "鬼の花嫁",
-        "OniHana"
       ]
     },
     {
@@ -8797,36 +8797,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141953-S3RozQSOxzrw.png"
     },
     {
-      "id": "schedule-let-s-go-kaikigumi-5-2026-08-02t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-02T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
-      "anilistId": 200230,
-      "anilistTitle": "Let's go KAIKIGUMI",
-      "anilistUrl": "https://anilist.co/anime/200230",
-      "anilistFormat": "TV",
-      "anilistScore": 53,
-      "titles": [
-        "Let's Go Kaikigumi",
-        "Let's go KAIKIGUMI",
-        "レッツゴー怪奇組"
-      ]
-    },
-    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-5-2026-08-02t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -8855,6 +8825,36 @@
         "You and I Are Polar Opposites Season 2",
         "正反対な君と僕 第2期",
         "ลุ้นรักฉบับคู่ต่างขั้ว ซีซัน 2"
+      ]
+    },
+    {
+      "id": "schedule-let-s-go-kaikigumi-5-2026-08-02t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
+      "anilistId": 200230,
+      "anilistTitle": "Let's go KAIKIGUMI",
+      "anilistUrl": "https://anilist.co/anime/200230",
+      "anilistFormat": "TV",
+      "anilistScore": 53,
+      "titles": [
+        "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
+        "レッツゴー怪奇組"
       ]
     },
     {
@@ -9404,37 +9404,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
     },
     {
-      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-5-2026-08-03t16-30-00-02-00",
-      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
-      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
-      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-03T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "HIDIVE",
-      "serviceUrl": "https://www.hidive.com/season/36241",
-      "allServices": [
-        "Apple TV+",
-        "HIDIVE",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209504-yRxHWxKuNGtg.jpg",
-      "anilistId": 209504,
-      "anilistTitle": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-      "anilistUrl": "https://anilist.co/anime/209504",
-      "anilistFormat": "TV",
-      "anilistScore": 62,
-      "titles": [
-        "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
-        "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
-        "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました"
-      ]
-    },
-    {
       "id": "schedule-buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu-5-2026-08-03t16-30-00-02-00",
       "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
       "title": "Buchigire Reijou wa Houfuku wo Chikaimashita. Madousho no Chikara de Sokoku wo Tatakitsubushimasu",
@@ -9463,6 +9432,37 @@
         "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
         "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
         "คู่มือชำระแค้นของท่านหญิง: วิธีถล่มบ้านเกิดด้วยคัมภีร์เวทมนตร์"
+      ]
+    },
+    {
+      "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-5-2026-08-03t16-30-00-02-00",
+      "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
+      "route": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-03T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "HIDIVE",
+      "serviceUrl": "https://www.hidive.com/season/36241",
+      "allServices": [
+        "Apple TV+",
+        "HIDIVE",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209504-yRxHWxKuNGtg.jpg",
+      "anilistId": 209504,
+      "anilistTitle": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
+      "anilistUrl": "https://anilist.co/anime/209504",
+      "anilistFormat": "TV",
+      "anilistScore": 62,
+      "titles": [
+        "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
+        "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
+        "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました"
       ]
     },
     {
@@ -10196,36 +10196,6 @@
       ]
     },
     {
-      "id": "schedule-lv999-no-murabito-7-2026-08-05t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-05T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
-      "anilistId": 197715,
-      "anilistTitle": "The Villager of Level 999",
-      "anilistUrl": "https://anilist.co/anime/197715",
-      "anilistFormat": "ONA",
-      "anilistScore": 63,
-      "titles": [
-        "LV999 no Murabito",
-        "The Villager of Level 999",
-        "LV999の村人"
-      ]
-    },
-    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-7-2026-08-05t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -10255,6 +10225,36 @@
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
+      ]
+    },
+    {
+      "id": "schedule-lv999-no-murabito-7-2026-08-05t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-05T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
+      "anilistId": 197715,
+      "anilistTitle": "The Villager of Level 999",
+      "anilistUrl": "https://anilist.co/anime/197715",
+      "anilistFormat": "ONA",
+      "anilistScore": 63,
+      "titles": [
+        "LV999 no Murabito",
+        "The Villager of Level 999",
+        "LV999の村人"
       ]
     },
     {
@@ -10843,6 +10843,26 @@
       ]
     },
     {
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-6-2026-08-07t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-07T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
+    },
+    {
       "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-6-2026-08-07t18-30-00-02-00",
       "animeKey": "hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season",
       "title": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru 2nd Season",
@@ -10873,26 +10893,6 @@
         "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
         "HELL MODE ~อยากเล่นโหด ขอโหมดนรก~ ซีซั่น 2"
       ]
-    },
-    {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-6-2026-08-07t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-07T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-6-2026-08-07t18-31-00-02-00",
@@ -11271,74 +11271,6 @@
       ]
     },
     {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-6-2026-08-08t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
-      "anilistId": 196017,
-      "anilistTitle": "Grow Up Show",
-      "anilistUrl": "https://anilist.co/anime/196017",
-      "anilistFormat": "TV",
-      "anilistScore": 68,
-      "titles": [
-        "Grow Up Show: Himawari no Circus-dan",
-        "Grow Up Show",
-        "グロウアップショウ ～ひまわりのサーカス団～"
-      ]
-    },
-    {
-      "id": "schedule-yomi-no-tsugai-18-2026-08-08t18-00-00-02-00",
-      "animeKey": "yomi-no-tsugai",
-      "title": "Yomi no Tsugai",
-      "route": "yomi-no-tsugai",
-      "episode": "Ep 18",
-      "episodeNumber": "18",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195600-moI0UFArtOme.jpg",
-      "anilistId": 195600,
-      "anilistTitle": "Daemons of the Shadow Realm",
-      "anilistUrl": "https://anilist.co/anime/195600",
-      "anilistFormat": "TV",
-      "anilistScore": 78,
-      "titles": [
-        "Yomi no Tsugai",
-        "Daemons of the Shadow Realm",
-        "黄泉のツガイ",
-        "ヨミツガ",
-        "YomiTsuga",
-        "Pasangan dari Alam Baka",
-        "ยมลแห่งยมโลก",
-        "Daemons do Reino das Sombras",
-        "Espíritus del Inframundo"
-      ]
-    },
-    {
       "id": "schedule-tenmaku-no-jaadugar-7-2026-08-08t18-00-00-02-00",
       "animeKey": "tenmaku-no-jaadugar",
       "title": "Tenmaku no Jaadugar",
@@ -11402,34 +11334,71 @@
       ]
     },
     {
-      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-6-2026-08-08t19-00-00-02-00",
-      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
-      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
-      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "id": "schedule-yomi-no-tsugai-18-2026-08-08t18-00-00-02-00",
+      "animeKey": "yomi-no-tsugai",
+      "title": "Yomi no Tsugai",
+      "route": "yomi-no-tsugai",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-08T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195600-moI0UFArtOme.jpg",
+      "anilistId": 195600,
+      "anilistTitle": "Daemons of the Shadow Realm",
+      "anilistUrl": "https://anilist.co/anime/195600",
+      "anilistFormat": "TV",
+      "anilistScore": 78,
+      "titles": [
+        "Yomi no Tsugai",
+        "Daemons of the Shadow Realm",
+        "黄泉のツガイ",
+        "ヨミツガ",
+        "YomiTsuga",
+        "Pasangan dari Alam Baka",
+        "ยมลแห่งยมโลก",
+        "Daemons do Reino das Sombras",
+        "Espíritus del Inframundo"
+      ]
+    },
+    {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-6-2026-08-08t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
       "episode": "Ep 6",
       "episodeNumber": "6",
       "airType": "SUB",
       "delayed": false,
-      "releaseDate": "2026-08-08T17:00:00.000Z",
+      "releaseDate": "2026-08-08T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185875-XMvDVlIUZODx.jpg",
-      "anilistId": 185875,
-      "anilistTitle": "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
-      "anilistUrl": "https://anilist.co/anime/185875",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196017-GynDNdbDzqzk.jpg",
+      "anilistId": 196017,
+      "anilistTitle": "Grow Up Show",
+      "anilistUrl": "https://anilist.co/anime/196017",
       "anilistFormat": "TV",
-      "anilistScore": 67,
+      "anilistScore": 68,
       "titles": [
-        "Mahou Shoujo Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
-        "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
-        "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
-        "NANOHA EXGV"
+        "Grow Up Show: Himawari no Circus-dan",
+        "Grow Up Show",
+        "グロウアップショウ ～ひまわりのサーカス団～"
       ]
     },
     {
@@ -11462,6 +11431,37 @@
         "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
         "きみ愛",
         "KimiAi"
+      ]
+    },
+    {
+      "id": "schedule-mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance-6-2026-08-08t19-00-00-02-00",
+      "animeKey": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "title": "Mahou Shoujo Lyrical Nanoha EXCEEDS: Gun Blaze Vengeance",
+      "route": "mahou-shoujo-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-08T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378090/magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185875-XMvDVlIUZODx.jpg",
+      "anilistId": 185875,
+      "anilistTitle": "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
+      "anilistUrl": "https://anilist.co/anime/185875",
+      "anilistFormat": "TV",
+      "anilistScore": 67,
+      "titles": [
+        "Mahou Shoujo Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
+        "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
+        "魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance",
+        "NANOHA EXGV"
       ]
     },
     {
@@ -11630,6 +11630,36 @@
       ]
     },
     {
+      "id": "schedule-let-s-go-kaikigumi-6-2026-08-09t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-09T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
+      "anilistId": 200230,
+      "anilistTitle": "Let's go KAIKIGUMI",
+      "anilistUrl": "https://anilist.co/anime/200230",
+      "anilistFormat": "TV",
+      "anilistScore": 53,
+      "titles": [
+        "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
+        "レッツゴー怪奇組"
+      ]
+    },
+    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-6-2026-08-09t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -11658,36 +11688,6 @@
         "You and I Are Polar Opposites Season 2",
         "正反対な君と僕 第2期",
         "ลุ้นรักฉบับคู่ต่างขั้ว ซีซัน 2"
-      ]
-    },
-    {
-      "id": "schedule-let-s-go-kaikigumi-6-2026-08-09t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-09T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
-      "anilistId": 200230,
-      "anilistTitle": "Let's go KAIKIGUMI",
-      "anilistUrl": "https://anilist.co/anime/200230",
-      "anilistFormat": "TV",
-      "anilistScore": 53,
-      "titles": [
-        "Let's Go Kaikigumi",
-        "Let's go KAIKIGUMI",
-        "レッツゴー怪奇組"
       ]
     },
     {
