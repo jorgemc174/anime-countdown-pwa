@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T08:36:39.692Z",
+  "updatedAt": "2026-07-19T10:46:16.804Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -660,7 +660,7 @@
       "anilistTitle": "Perfect Addiction",
       "anilistUrl": "https://anilist.co/anime/213666",
       "anilistFormat": "ONA",
-      "anilistScore": 47,
+      "anilistScore": 48,
       "titles": [
         "Perfect Addiction",
         "Perfect Addiction",
@@ -786,7 +786,7 @@
       "anilistTitle": "My Stepmother and Stepsisters Aren’t Wicked",
       "anilistUrl": "https://anilist.co/anime/196356",
       "anilistFormat": "TV",
-      "anilistScore": 63,
+      "anilistScore": 64,
       "titles": [
         "Ibitte Konai Gibo to Gishi",
         "My Stepmother and Stepsisters Aren’t Wicked",
@@ -866,6 +866,36 @@
       ]
     },
     {
+      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-15T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
+      "anilistId": 197715,
+      "anilistTitle": "The Villager of Level 999",
+      "anilistUrl": "https://anilist.co/anime/197715",
+      "anilistFormat": "ONA",
+      "anilistScore": 63,
+      "titles": [
+        "LV999 no Murabito",
+        "The Villager of Level 999",
+        "LV999の村人"
+      ]
+    },
+    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-4-2026-07-15t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -895,36 +925,6 @@
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
-      ]
-    },
-    {
-      "id": "schedule-lv999-no-murabito-4-2026-07-15t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-15T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
-      "anilistId": 197715,
-      "anilistTitle": "The Villager of Level 999",
-      "anilistUrl": "https://anilist.co/anime/197715",
-      "anilistFormat": "ONA",
-      "anilistScore": 63,
-      "titles": [
-        "LV999 no Murabito",
-        "The Villager of Level 999",
-        "LV999の村人"
       ]
     },
     {
@@ -1517,7 +1517,7 @@
       "anilistTitle": "The Elusive Samurai Season 2",
       "anilistUrl": "https://anilist.co/anime/182616",
       "anilistFormat": "TV",
-      "anilistScore": 72,
+      "anilistScore": 73,
       "titles": [
         "Nige Jouzu no Wakagimi 2nd Season",
         "The Elusive Samurai Season 2",
@@ -1583,6 +1583,23 @@
       ]
     },
     {
+      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
+      "animeKey": "ushiro-no-shoumen-kamui-san",
+      "title": "Ushiro no Shoumen Kamui-san",
+      "route": "ushiro-no-shoumen-kamui-san",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-17T16:31:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
+    },
+    {
       "id": "schedule-snack-hazama-3-2026-07-17t18-31-00-02-00",
       "animeKey": "snack-hazama",
       "title": "Snack HAZAMA",
@@ -1602,7 +1619,7 @@
       "anilistTitle": "Snack Hazama",
       "anilistUrl": "https://anilist.co/anime/213831",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 52,
+      "anilistScore": 51,
       "titles": [
         "Snack HAZAMA",
         "Snack Hazama",
@@ -1610,23 +1627,6 @@
         "うしろの正面カムイさんミニアニメ",
         "Ushiro no Shoumen Kamui-san Mini Anime"
       ]
-    },
-    {
-      "id": "schedule-ushiro-no-shoumen-kamui-san-3-2026-07-17t18-31-00-02-00",
-      "animeKey": "ushiro-no-shoumen-kamui-san",
-      "title": "Ushiro no Shoumen Kamui-san",
-      "route": "ushiro-no-shoumen-kamui-san",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-17T16:31:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/ushiro-no-shoumen-kamui-san-538c46a2c849f7b2533d771ba88f579f.jpg"
     },
     {
       "id": "schedule-rilakkuma-goyururi-yume-no-tabi-16-2026-07-18t03-00-00-02-00",
@@ -1798,7 +1798,7 @@
       "anilistTitle": "BLACK TORCH",
       "anilistUrl": "https://anilist.co/anime/187538",
       "anilistFormat": "TV",
-      "anilistScore": 73,
+      "anilistScore": 72,
       "titles": [
         "BLACK TORCH",
         "BLACK TORCH",
@@ -1829,7 +1829,7 @@
       "anilistTitle": "The Cat and the Dragon",
       "anilistUrl": "https://anilist.co/anime/186863",
       "anilistFormat": "ONA",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Neko to Ryuu",
         "The Cat and the Dragon",
@@ -1890,45 +1890,13 @@
       "anilistTitle": "MAO",
       "anilistUrl": "https://anilist.co/anime/196012",
       "anilistFormat": "TV",
-      "anilistScore": 65,
+      "anilistScore": 66,
       "titles": [
         "MAO",
         "MAO",
         "MAO",
         "マオ",
         "MAO หาญสู้พลิกชะตาอาถรรพณ์"
-      ]
-    },
-    {
-      "id": "schedule-tenmaku-no-jaadugar-4-2026-07-18t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
-      "anilistFormat": "TV",
-      "anilistScore": 81,
-      "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
       ]
     },
     {
@@ -1970,26 +1938,6 @@
       ]
     },
     {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
-    },
-    {
       "id": "schedule-oni-no-hanayome-3-2026-07-18t18-00-00-02-00",
       "animeKey": "oni-no-hanayome",
       "title": "Oni no Hanayome",
@@ -2018,6 +1966,90 @@
         "The Ogre's Bride",
         "鬼の花嫁",
         "OniHana"
+      ]
+    },
+    {
+      "id": "schedule-tenmaku-no-jaadugar-4-2026-07-18t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": 81,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
+      ]
+    },
+    {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-3-2026-07-18t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
+    },
+    {
+      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-3-2026-07-18t19-00-00-02-00",
+      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
+      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-18T17:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
+      "anilistId": 208225,
+      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+      "anilistUrl": "https://anilist.co/anime/208225",
+      "anilistFormat": "TV",
+      "anilistScore": 63,
+      "titles": [
+        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
+        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
+        "きみ愛",
+        "KimiAi"
       ]
     },
     {
@@ -2052,38 +2084,6 @@
       ]
     },
     {
-      "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-3-2026-07-18t19-00-00-02-00",
-      "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
-      "route": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-18T17:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378118/the-dukes-son-claims-he-wont-love-me-but-showers-me-with-adoration",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx208225-HJbCC0Z4xRp3.jpg",
-      "anilistId": 208225,
-      "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-      "anilistUrl": "https://anilist.co/anime/208225",
-      "anilistFormat": "TV",
-      "anilistScore": 62,
-      "titles": [
-        "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
-        "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
-        "「きみを愛する気はない」と言った次期公爵様がなぜか溺愛してきます",
-        "きみ愛",
-        "KimiAi"
-      ]
-    },
-    {
       "id": "schedule-kabushiki-gaisha-magi-lumiere-2nd-season-3-2026-07-18t19-25-00-02-00",
       "animeKey": "kabushiki-gaisha-magi-lumiere-2nd-season",
       "title": "Kabushiki Gaisha Magi Lumiere 2nd Season",
@@ -2106,7 +2106,7 @@
       "anilistTitle": "Magilumiere Magical Girls Inc. Season 2",
       "anilistUrl": "https://anilist.co/anime/185692",
       "anilistFormat": "TV",
-      "anilistScore": 66,
+      "anilistScore": 67,
       "titles": [
         "Kabushiki Gaisha Magi Lumiere 2nd Season",
         "Magilumiere Magical Girls Inc. Season 2",
@@ -2204,7 +2204,7 @@
       "anilistTitle": "Star Detective Precure!",
       "anilistUrl": "https://anilist.co/anime/202957",
       "anilistFormat": "TV",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Meitantei Precure!",
         "Star Detective Precure!",
@@ -2357,35 +2357,6 @@
         "Hololive",
         "הולולייב"
       ]
-    },
-    {
-      "id": "anilist-missing-2406-2841-2026-07-19t09-30-00-000z",
-      "animeKey": "sazae-san",
-      "anilistId": 2406,
-      "anilistTitle": "Sazae-san",
-      "anilistUrl": "https://anilist.co/anime/2406",
-      "anilistFormat": "TV",
-      "anilistScore": 55,
-      "titles": [
-        "Sazae-san",
-        "サザエさん",
-        "Mrs. Sazae"
-      ],
-      "title": "Sazae-san",
-      "route": "",
-      "episode": "Ep 2841",
-      "episodeNumber": "2841",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-19T09:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "source": "anilist-missing",
-      "favorite": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "schedule-sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-3-2026-07-19t15-01-00-02-00",
@@ -2848,39 +2819,6 @@
       ]
     },
     {
-      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-3-2026-07-20t15-00-00-02-00",
-      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-20T13:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg",
-      "anilistId": 185542,
-      "anilistTitle": "Skeleton Knight in Another World Season 2",
-      "anilistUrl": "https://anilist.co/anime/185542",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
-        "Skeleton Knight in Another World Season 2",
-        "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
-        "Kesatria Tengkorak Berkelana di Dunia Lain S2",
-        "บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก II"
-      ]
-    },
-    {
       "id": "schedule-saikyou-degarashi-ouji-no-anyaku-teii-arasoi-3-2026-07-20t15-00-00-02-00",
       "animeKey": "saikyou-degarashi-ouji-no-anyaku-teii-arasoi",
       "title": "Saikyou Degarashi Ouji no Anyaku Teii Arasoi",
@@ -2911,6 +2849,39 @@
         "The Strongest Dull Prince Secret Battle for the Throne. ~I Don’t Care About the Throne but Since I Don’t Want to Die, I Think I Will Make My Little Brother the Emperor~",
         "出涸らし皇子",
         "Degarashi Ouji"
+      ]
+    },
+    {
+      "id": "schedule-gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii-3-2026-07-20t15-00-00-02-00",
+      "animeKey": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "title": "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+      "route": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-ii",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-20T13:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/G8DHV7WJP/skeleton-knight-in-another-world",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185542-6a9LCWlLHa0T.jpg",
+      "anilistId": 185542,
+      "anilistTitle": "Skeleton Knight in Another World Season 2",
+      "anilistUrl": "https://anilist.co/anime/185542",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu II",
+        "Skeleton Knight in Another World Season 2",
+        "骸骨騎士様、只今異世界へお出掛け中Ⅱ",
+        "Kesatria Tengkorak Berkelana di Dunia Lain S2",
+        "บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก II"
       ]
     },
     {
@@ -2965,37 +2936,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx195833-h7x6i3NQWROA.jpg"
     },
     {
-      "id": "schedule-buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu-3-2026-07-20t16-30-00-02-00",
-      "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
-      "title": "Buchigire Reijou wa Houfuku wo Chikaimashita. Madousho no Chikara de Sokoku wo Tatakitsubushimasu",
-      "route": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
-      "episode": "Ep 3",
-      "episodeNumber": "3",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-20T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00379182/a-livid-ladys-guide-to-getting-even-how-i-crushed-my-homeland-with-my-mighty-grimoires",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199408-ocRWG4pRWl8f.png",
-      "anilistId": 199408,
-      "anilistTitle": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-      "anilistUrl": "https://anilist.co/anime/199408",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
-        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
-        "คู่มือชำระแค้นของท่านหญิง: วิธีถล่มบ้านเกิดด้วยคัมภีร์เวทมนตร์"
-      ]
-    },
-    {
       "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-3-2026-07-20t16-30-00-02-00",
       "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
       "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
@@ -3024,6 +2964,37 @@
         "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
         "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
         "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました"
+      ]
+    },
+    {
+      "id": "schedule-buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu-3-2026-07-20t16-30-00-02-00",
+      "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
+      "title": "Buchigire Reijou wa Houfuku wo Chikaimashita. Madousho no Chikara de Sokoku wo Tatakitsubushimasu",
+      "route": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
+      "episode": "Ep 3",
+      "episodeNumber": "3",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-20T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00379182/a-livid-ladys-guide-to-getting-even-how-i-crushed-my-homeland-with-my-mighty-grimoires",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199408-ocRWG4pRWl8f.png",
+      "anilistId": 199408,
+      "anilistTitle": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+      "anilistUrl": "https://anilist.co/anime/199408",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
+        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
+        "คู่มือชำระแค้นของท่านหญิง: วิธีถล่มบ้านเกิดด้วยคัมภีร์เวทมนตร์"
       ]
     },
     {
@@ -3628,7 +3599,7 @@
       "anilistTitle": "Cheongchun Blossom: Uriui Bom",
       "anilistUrl": "https://anilist.co/anime/163793",
       "anilistFormat": "TV",
-      "anilistScore": 69,
+      "anilistScore": 68,
       "titles": [
         "Cheongchun Blossom: Uriui Bom",
         "청춘블라썸 : 우리의 봄",
@@ -3733,7 +3704,7 @@
       "anilistTitle": "Perfect Addiction",
       "anilistUrl": "https://anilist.co/anime/213666",
       "anilistFormat": "ONA",
-      "anilistScore": 47,
+      "anilistScore": 48,
       "titles": [
         "Perfect Addiction",
         "Perfect Addiction",
@@ -3859,7 +3830,7 @@
       "anilistTitle": "My Stepmother and Stepsisters Aren’t Wicked",
       "anilistUrl": "https://anilist.co/anime/196356",
       "anilistFormat": "TV",
-      "anilistScore": 63,
+      "anilistScore": 64,
       "titles": [
         "Ibitte Konai Gibo to Gishi",
         "My Stepmother and Stepsisters Aren’t Wicked",
@@ -3967,36 +3938,6 @@
       ]
     },
     {
-      "id": "schedule-lv999-no-murabito-5-2026-07-22t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-22T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
-      "anilistId": 197715,
-      "anilistTitle": "The Villager of Level 999",
-      "anilistUrl": "https://anilist.co/anime/197715",
-      "anilistFormat": "ONA",
-      "anilistScore": 63,
-      "titles": [
-        "LV999 no Murabito",
-        "The Villager of Level 999",
-        "LV999の村人"
-      ]
-    },
-    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-5-2026-07-22t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -4026,6 +3967,36 @@
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
+      ]
+    },
+    {
+      "id": "schedule-lv999-no-murabito-5-2026-07-22t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-22T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
+      "anilistId": 197715,
+      "anilistTitle": "The Villager of Level 999",
+      "anilistUrl": "https://anilist.co/anime/197715",
+      "anilistFormat": "ONA",
+      "anilistScore": 63,
+      "titles": [
+        "LV999 no Murabito",
+        "The Villager of Level 999",
+        "LV999の村人"
       ]
     },
     {
@@ -4691,7 +4662,7 @@
       "anilistTitle": "The Elusive Samurai Season 2",
       "anilistUrl": "https://anilist.co/anime/182616",
       "anilistFormat": "TV",
-      "anilistScore": 72,
+      "anilistScore": 73,
       "titles": [
         "Nige Jouzu no Wakagimi 2nd Season",
         "The Elusive Samurai Season 2",
@@ -4703,26 +4674,6 @@
         "Tuan Muda yang Jago Kabur Musim 2",
         "擅长逃跑的殿下S2"
       ]
-    },
-    {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-4-2026-07-24t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-24T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-4-2026-07-24t18-30-00-02-00",
@@ -4755,6 +4706,26 @@
         "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
         "HELL MODE ~อยากเล่นโหด ขอโหมดนรก~ ซีซั่น 2"
       ]
+    },
+    {
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-4-2026-07-24t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-24T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-4-2026-07-24t18-31-00-02-00",
@@ -4793,7 +4764,7 @@
       "anilistTitle": "Snack Hazama",
       "anilistUrl": "https://anilist.co/anime/213831",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 52,
+      "anilistScore": 51,
       "titles": [
         "Snack HAZAMA",
         "Snack Hazama",
@@ -4840,7 +4811,7 @@
       "anilistTitle": "Pan no Akachan (TV)",
       "anilistUrl": "https://anilist.co/anime/212308",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 53,
+      "anilistScore": 52,
       "titles": [
         "Pan no Akachan (TV)",
         "パンの赤ちゃん",
@@ -5152,7 +5123,7 @@
       "anilistTitle": "BLACK TORCH",
       "anilistUrl": "https://anilist.co/anime/187538",
       "anilistFormat": "TV",
-      "anilistScore": 73,
+      "anilistScore": 72,
       "titles": [
         "BLACK TORCH",
         "BLACK TORCH",
@@ -5183,7 +5154,7 @@
       "anilistTitle": "The Cat and the Dragon",
       "anilistUrl": "https://anilist.co/anime/186863",
       "anilistFormat": "ONA",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Neko to Ryuu",
         "The Cat and the Dragon",
@@ -5307,7 +5278,7 @@
       "anilistTitle": "MAO",
       "anilistUrl": "https://anilist.co/anime/196012",
       "anilistFormat": "TV",
-      "anilistScore": 65,
+      "anilistScore": 66,
       "titles": [
         "MAO",
         "MAO",
@@ -5348,6 +5319,26 @@
       ]
     },
     {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-25T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
+    },
+    {
       "id": "schedule-tenmaku-no-jaadugar-5-2026-07-25t18-00-00-02-00",
       "animeKey": "tenmaku-no-jaadugar",
       "title": "Tenmaku no Jaadugar",
@@ -5378,26 +5369,6 @@
         "A Witch's Life in Mongol",
         "Jaadugar, la légende de Fatima"
       ]
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-4-2026-07-25t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-25T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
       "id": "schedule-yomi-no-tsugai-16-2026-07-25t18-00-00-02-00",
@@ -5460,7 +5431,7 @@
       "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
       "anilistUrl": "https://anilist.co/anime/208225",
       "anilistFormat": "TV",
-      "anilistScore": 62,
+      "anilistScore": 63,
       "titles": [
         "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
         "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
@@ -5523,7 +5494,7 @@
       "anilistTitle": "Magilumiere Magical Girls Inc. Season 2",
       "anilistUrl": "https://anilist.co/anime/185692",
       "anilistFormat": "TV",
-      "anilistScore": 66,
+      "anilistScore": 67,
       "titles": [
         "Kabushiki Gaisha Magi Lumiere 2nd Season",
         "Magilumiere Magical Girls Inc. Season 2",
@@ -5720,7 +5691,7 @@
       "anilistTitle": "Koupen-chan",
       "anilistUrl": "https://anilist.co/anime/185646",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 68,
+      "anilistScore": 69,
       "titles": [
         "Koupen-chan",
         "コウペンちゃん"
@@ -5765,7 +5736,7 @@
       "anilistTitle": "Star Detective Precure!",
       "anilistUrl": "https://anilist.co/anime/202957",
       "anilistFormat": "TV",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Meitantei Precure!",
         "Star Detective Precure!",
@@ -5946,6 +5917,35 @@
         "Hololive",
         "הולולייב"
       ]
+    },
+    {
+      "id": "anilist-missing-2406-2842-2026-07-26t09-30-00-000z",
+      "animeKey": "sazae-san",
+      "anilistId": 2406,
+      "anilistTitle": "Sazae-san",
+      "anilistUrl": "https://anilist.co/anime/2406",
+      "anilistFormat": "TV",
+      "anilistScore": 55,
+      "titles": [
+        "Sazae-san",
+        "サザエさん",
+        "Mrs. Sazae"
+      ],
+      "title": "Sazae-san",
+      "route": "",
+      "episode": "Ep 2842",
+      "episodeNumber": "2842",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-26T09:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "source": "anilist-missing",
+      "favorite": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2406-nP8NIct9Sci3.jpg"
     },
     {
       "id": "schedule-sekai-saikyou-no-kouei-meikyuukoku-no-shinjin-tansakusha-4-2026-07-26t15-01-00-02-00",
@@ -6403,37 +6403,6 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/world-is-dancing-e58378842f65d9dc957528a01dfb98d1.jpg"
     },
     {
-      "id": "schedule-buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu-4-2026-07-27t16-30-00-02-00",
-      "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
-      "title": "Buchigire Reijou wa Houfuku wo Chikaimashita. Madousho no Chikara de Sokoku wo Tatakitsubushimasu",
-      "route": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
-      "episode": "Ep 4",
-      "episodeNumber": "4",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-27T14:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00379182/a-livid-ladys-guide-to-getting-even-how-i-crushed-my-homeland-with-my-mighty-grimoires",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199408-ocRWG4pRWl8f.png",
-      "anilistId": 199408,
-      "anilistTitle": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-      "anilistUrl": "https://anilist.co/anime/199408",
-      "anilistFormat": "TV",
-      "anilistScore": 69,
-      "titles": [
-        "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
-        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
-        "คู่มือชำระแค้นของท่านหญิง: วิธีถล่มบ้านเกิดด้วยคัมภีร์เวทมนตร์"
-      ]
-    },
-    {
       "id": "schedule-suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita-4-2026-07-27t16-30-00-02-00",
       "animeKey": "suterare-seijo-no-isekai-gohan-tabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
       "title": "Suterare Seijo no Isekai Gohan Tabi: Kakure Skill de Camping Car wo Shoukan shimashita",
@@ -6462,6 +6431,37 @@
         "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
         "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
         "捨てられ聖女の異世界ごはん旅 隠れスキルでキャンピングカーを召喚しました"
+      ]
+    },
+    {
+      "id": "schedule-buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu-4-2026-07-27t16-30-00-02-00",
+      "animeKey": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
+      "title": "Buchigire Reijou wa Houfuku wo Chikaimashita. Madousho no Chikara de Sokoku wo Tatakitsubushimasu",
+      "route": "buchigire-reijou-wa-houfuku-wo-chikaimashita-madousho-no-chikara-de-sokoku-wo-tatakitsubushimasu",
+      "episode": "Ep 4",
+      "episodeNumber": "4",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-27T14:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00379182/a-livid-ladys-guide-to-getting-even-how-i-crushed-my-homeland-with-my-mighty-grimoires",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199408-ocRWG4pRWl8f.png",
+      "anilistId": 199408,
+      "anilistTitle": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+      "anilistUrl": "https://anilist.co/anime/199408",
+      "anilistFormat": "TV",
+      "anilistScore": 69,
+      "titles": [
+        "Buchigire Reijou wa Houfuku wo Chikaimashita.: Madousho no Chikara de Sokoku wo Tataki Tsubushimasu",
+        "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+        "ブチ切れ令嬢は報復を誓いました。　～魔導書の力で祖国を叩き潰します～",
+        "คู่มือชำระแค้นของท่านหญิง: วิธีถล่มบ้านเกิดด้วยคัมภีร์เวทมนตร์"
       ]
     },
     {
@@ -6900,7 +6900,7 @@
       "anilistTitle": "Perfect Addiction",
       "anilistUrl": "https://anilist.co/anime/213666",
       "anilistFormat": "ONA",
-      "anilistScore": 47,
+      "anilistScore": 48,
       "titles": [
         "Perfect Addiction",
         "Perfect Addiction",
@@ -7026,7 +7026,7 @@
       "anilistTitle": "My Stepmother and Stepsisters Aren’t Wicked",
       "anilistUrl": "https://anilist.co/anime/196356",
       "anilistFormat": "TV",
-      "anilistScore": 63,
+      "anilistScore": 64,
       "titles": [
         "Ibitte Konai Gibo to Gishi",
         "My Stepmother and Stepsisters Aren’t Wicked",
@@ -7874,7 +7874,7 @@
       "anilistTitle": "The Elusive Samurai Season 2",
       "anilistUrl": "https://anilist.co/anime/182616",
       "anilistFormat": "TV",
-      "anilistScore": 72,
+      "anilistScore": 73,
       "titles": [
         "Nige Jouzu no Wakagimi 2nd Season",
         "The Elusive Samurai Season 2",
@@ -7886,26 +7886,6 @@
         "Tuan Muda yang Jago Kabur Musim 2",
         "擅长逃跑的殿下S2"
       ]
-    },
-    {
-      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-5-2026-07-31t18-30-00-02-00",
-      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
-      "title": "Uchi no Otouto-domo ga Sumimasen",
-      "route": "uchi-no-otouto-domo-ga-sumimasen",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-07-31T16:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-hell-mode-yarikomizuki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru-2nd-season-5-2026-07-31t18-30-00-02-00",
@@ -7938,6 +7918,26 @@
         "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
         "HELL MODE ~อยากเล่นโหด ขอโหมดนรก~ ซีซั่น 2"
       ]
+    },
+    {
+      "id": "schedule-uchi-no-otouto-domo-ga-sumimasen-5-2026-07-31t18-30-00-02-00",
+      "animeKey": "uchi-no-otouto-domo-ga-sumimasen",
+      "title": "Uchi no Otouto-domo ga Sumimasen",
+      "route": "uchi-no-otouto-domo-ga-sumimasen",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-07-31T16:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371926",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/uchi-no-otouto-domo-ga-sumimasen-0bf27550ff518b9e931429434a44ae02.jpg"
     },
     {
       "id": "schedule-ushiro-no-shoumen-kamui-san-5-2026-07-31t18-31-00-02-00",
@@ -7976,7 +7976,7 @@
       "anilistTitle": "Snack Hazama",
       "anilistUrl": "https://anilist.co/anime/213831",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 52,
+      "anilistScore": 51,
       "titles": [
         "Snack HAZAMA",
         "Snack Hazama",
@@ -8155,7 +8155,7 @@
       "anilistTitle": "BLACK TORCH",
       "anilistUrl": "https://anilist.co/anime/187538",
       "anilistFormat": "TV",
-      "anilistScore": 73,
+      "anilistScore": 72,
       "titles": [
         "BLACK TORCH",
         "BLACK TORCH",
@@ -8186,7 +8186,7 @@
       "anilistTitle": "The Cat and the Dragon",
       "anilistUrl": "https://anilist.co/anime/186863",
       "anilistFormat": "ONA",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Neko to Ryuu",
         "The Cat and the Dragon",
@@ -8277,7 +8277,7 @@
       "anilistTitle": "MAO",
       "anilistUrl": "https://anilist.co/anime/196012",
       "anilistFormat": "TV",
-      "anilistScore": 65,
+      "anilistScore": 66,
       "titles": [
         "MAO",
         "MAO",
@@ -8307,35 +8307,34 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
     },
     {
-      "id": "schedule-tenmaku-no-jaadugar-6-2026-08-01t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
+      "id": "schedule-oni-no-hanayome-5-2026-08-01t18-00-00-02-00",
+      "animeKey": "oni-no-hanayome",
+      "title": "Oni no Hanayome",
+      "route": "oni-no-hanayome",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-08-01T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
+      "anilistId": 194219,
+      "anilistTitle": "The Ogre's Bride",
+      "anilistUrl": "https://anilist.co/anime/194219",
       "anilistFormat": "TV",
-      "anilistScore": 81,
+      "anilistScore": 69,
       "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
+        "Oni no Hanayome",
+        "The Ogre's Bride",
+        "鬼の花嫁",
+        "OniHana"
       ]
     },
     {
@@ -8377,34 +8376,35 @@
       ]
     },
     {
-      "id": "schedule-oni-no-hanayome-5-2026-08-01t18-00-00-02-00",
-      "animeKey": "oni-no-hanayome",
-      "title": "Oni no Hanayome",
-      "route": "oni-no-hanayome",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
+      "id": "schedule-tenmaku-no-jaadugar-6-2026-08-01t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
       "airType": "SUB",
       "delayed": false,
       "releaseDate": "2026-08-01T16:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378121",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
       "allServices": [
         "Apple TV+",
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b194219-56EhyK775lga.jpg",
-      "anilistId": 194219,
-      "anilistTitle": "The Ogre's Bride",
-      "anilistUrl": "https://anilist.co/anime/194219",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
       "anilistFormat": "TV",
-      "anilistScore": 69,
+      "anilistScore": 81,
       "titles": [
-        "Oni no Hanayome",
-        "The Ogre's Bride",
-        "鬼の花嫁",
-        "OniHana"
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
       ]
     },
     {
@@ -8461,7 +8461,7 @@
       "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
       "anilistUrl": "https://anilist.co/anime/208225",
       "anilistFormat": "TV",
-      "anilistScore": 62,
+      "anilistScore": 63,
       "titles": [
         "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
         "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
@@ -8493,7 +8493,7 @@
       "anilistTitle": "Magilumiere Magical Girls Inc. Season 2",
       "anilistUrl": "https://anilist.co/anime/185692",
       "anilistFormat": "TV",
-      "anilistScore": 66,
+      "anilistScore": 67,
       "titles": [
         "Kabushiki Gaisha Magi Lumiere 2nd Season",
         "Magilumiere Magical Girls Inc. Season 2",
@@ -8591,7 +8591,7 @@
       "anilistTitle": "Star Detective Precure!",
       "anilistUrl": "https://anilist.co/anime/202957",
       "anilistFormat": "TV",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Meitantei Precure!",
         "Star Detective Precure!",
@@ -8654,36 +8654,6 @@
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141953-S3RozQSOxzrw.png"
     },
     {
-      "id": "schedule-let-s-go-kaikigumi-5-2026-08-02t10-30-00-02-00",
-      "animeKey": "let-s-go-kaikigumi",
-      "title": "Let's Go Kaikigumi",
-      "route": "lets-go-kaikigumi",
-      "episode": "Ep 5",
-      "episodeNumber": "5",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-02T08:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
-      "anilistId": 200230,
-      "anilistTitle": "Let's go KAIKIGUMI",
-      "anilistUrl": "https://anilist.co/anime/200230",
-      "anilistFormat": "TV",
-      "anilistScore": 53,
-      "titles": [
-        "Let's Go Kaikigumi",
-        "Let's go KAIKIGUMI",
-        "レッツゴー怪奇組"
-      ]
-    },
-    {
       "id": "schedule-seihantai-na-kimi-to-boku-2nd-season-5-2026-08-02t10-30-00-02-00",
       "animeKey": "seihantai-na-kimi-to-boku-2nd-season",
       "title": "Seihantai na Kimi to Boku 2nd Season",
@@ -8712,6 +8682,36 @@
         "You and I Are Polar Opposites Season 2",
         "正反対な君と僕 第2期",
         "ลุ้นรักฉบับคู่ต่างขั้ว ซีซัน 2"
+      ]
+    },
+    {
+      "id": "schedule-let-s-go-kaikigumi-5-2026-08-02t10-30-00-02-00",
+      "animeKey": "let-s-go-kaikigumi",
+      "title": "Let's Go Kaikigumi",
+      "route": "lets-go-kaikigumi",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-02T08:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378084",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx200230-YuzdgbXSgi38.png",
+      "anilistId": 200230,
+      "anilistTitle": "Let's go KAIKIGUMI",
+      "anilistUrl": "https://anilist.co/anime/200230",
+      "anilistFormat": "TV",
+      "anilistScore": 53,
+      "titles": [
+        "Let's Go Kaikigumi",
+        "Let's go KAIKIGUMI",
+        "レッツゴー怪奇組"
       ]
     },
     {
@@ -9847,7 +9847,7 @@
       "anilistTitle": "Perfect Addiction",
       "anilistUrl": "https://anilist.co/anime/213666",
       "anilistFormat": "ONA",
-      "anilistScore": 47,
+      "anilistScore": 48,
       "titles": [
         "Perfect Addiction",
         "Perfect Addiction",
@@ -9973,7 +9973,7 @@
       "anilistTitle": "My Stepmother and Stepsisters Aren’t Wicked",
       "anilistUrl": "https://anilist.co/anime/196356",
       "anilistFormat": "TV",
-      "anilistScore": 63,
+      "anilistScore": 64,
       "titles": [
         "Ibitte Konai Gibo to Gishi",
         "My Stepmother and Stepsisters Aren’t Wicked",
@@ -10053,6 +10053,36 @@
       ]
     },
     {
+      "id": "schedule-lv999-no-murabito-7-2026-08-05t18-00-00-02-00",
+      "animeKey": "lv999-no-murabito",
+      "title": "Lv999 no Murabito",
+      "route": "lv999-no-murabito",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-05T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
+      "anilistId": 197715,
+      "anilistTitle": "The Villager of Level 999",
+      "anilistUrl": "https://anilist.co/anime/197715",
+      "anilistFormat": "ONA",
+      "anilistScore": 63,
+      "titles": [
+        "LV999 no Murabito",
+        "The Villager of Level 999",
+        "LV999の村人"
+      ]
+    },
+    {
       "id": "schedule-hanazakari-no-kimitachi-e-2nd-season-7-2026-08-05t18-00-00-02-00",
       "animeKey": "hanazakari-no-kimitachi-e-2nd-season",
       "title": "Hanazakari no Kimitachi e 2nd Season",
@@ -10082,36 +10112,6 @@
         "花ざかりの君たちへ 第2期",
         "Hana-Kimi",
         "Hana-Kimi: For You in Full Blossom"
-      ]
-    },
-    {
-      "id": "schedule-lv999-no-murabito-7-2026-08-05t18-00-00-02-00",
-      "animeKey": "lv999-no-murabito",
-      "title": "Lv999 no Murabito",
-      "route": "lv999-no-murabito",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-05T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371878/the-villager-of-level-999",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx197715-KLFLxU24U1uL.png",
-      "anilistId": 197715,
-      "anilistTitle": "The Villager of Level 999",
-      "anilistUrl": "https://anilist.co/anime/197715",
-      "anilistFormat": "ONA",
-      "anilistScore": 63,
-      "titles": [
-        "LV999 no Murabito",
-        "The Villager of Level 999",
-        "LV999の村人"
       ]
     },
     {
@@ -10634,39 +10634,6 @@
       ]
     },
     {
-      "id": "schedule-kami-no-shizuku-18-2026-08-07t17-30-00-02-00",
-      "animeKey": "kami-no-shizuku",
-      "title": "Kami no Shizuku",
-      "route": "kami-no-shizuku",
-      "episode": "Ep 18",
-      "episodeNumber": "18",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-07T15:30:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
-      "anilistId": 202508,
-      "anilistTitle": "The Drops of God",
-      "anilistUrl": "https://anilist.co/anime/202508",
-      "anilistFormat": "TV",
-      "anilistScore": 54,
-      "titles": [
-        "Kami no Shizuku",
-        "The Drops of God",
-        "神の雫",
-        "Les Gouttes de Dieu",
-        "신의물방울",
-        "สืบมรดกข้ามชาติ หยาดเทวะ"
-      ]
-    },
-    {
       "id": "schedule-kore-kaite-shine-6-2026-08-07t17-30-00-02-00",
       "animeKey": "kore-kaite-shine",
       "title": "Kore Kaite Shine",
@@ -10700,6 +10667,39 @@
       ]
     },
     {
+      "id": "schedule-kami-no-shizuku-18-2026-08-07t17-30-00-02-00",
+      "animeKey": "kami-no-shizuku",
+      "title": "Kami no Shizuku",
+      "route": "kami-no-shizuku",
+      "episode": "Ep 18",
+      "episodeNumber": "18",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-07T15:30:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00371872/the-drops-of-god",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx202508-dk6LEyevJYUY.jpg",
+      "anilistId": 202508,
+      "anilistTitle": "The Drops of God",
+      "anilistUrl": "https://anilist.co/anime/202508",
+      "anilistFormat": "TV",
+      "anilistScore": 54,
+      "titles": [
+        "Kami no Shizuku",
+        "The Drops of God",
+        "神の雫",
+        "Les Gouttes de Dieu",
+        "신의물방울",
+        "สืบมรดกข้ามชาติ หยาดเทวะ"
+      ]
+    },
+    {
       "id": "schedule-nige-jouzu-no-wakagimi-2nd-season-4-2026-08-07t18-00-00-02-00",
       "animeKey": "nige-jouzu-no-wakagimi-2nd-season",
       "title": "Nige Jouzu no Wakagimi 2nd Season",
@@ -10721,7 +10721,7 @@
       "anilistTitle": "The Elusive Samurai Season 2",
       "anilistUrl": "https://anilist.co/anime/182616",
       "anilistFormat": "TV",
-      "anilistScore": 72,
+      "anilistScore": 73,
       "titles": [
         "Nige Jouzu no Wakagimi 2nd Season",
         "The Elusive Samurai Season 2",
@@ -10806,7 +10806,7 @@
       "anilistTitle": "Snack Hazama",
       "anilistUrl": "https://anilist.co/anime/213831",
       "anilistFormat": "TV_SHORT",
-      "anilistScore": 52,
+      "anilistScore": 51,
       "titles": [
         "Snack HAZAMA",
         "Snack Hazama",
@@ -11031,7 +11031,7 @@
       "anilistTitle": "BLACK TORCH",
       "anilistUrl": "https://anilist.co/anime/187538",
       "anilistFormat": "TV",
-      "anilistScore": 73,
+      "anilistScore": 72,
       "titles": [
         "BLACK TORCH",
         "BLACK TORCH",
@@ -11062,7 +11062,7 @@
       "anilistTitle": "The Cat and the Dragon",
       "anilistUrl": "https://anilist.co/anime/186863",
       "anilistFormat": "ONA",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Neko to Ryuu",
         "The Cat and the Dragon",
@@ -11153,65 +11153,13 @@
       "anilistTitle": "MAO",
       "anilistUrl": "https://anilist.co/anime/196012",
       "anilistFormat": "TV",
-      "anilistScore": 65,
+      "anilistScore": 66,
       "titles": [
         "MAO",
         "MAO",
         "MAO",
         "マオ",
         "MAO หาญสู้พลิกชะตาอาถรรพณ์"
-      ]
-    },
-    {
-      "id": "schedule-grow-up-show-himawari-no-circus-dan-6-2026-08-08t18-00-00-02-00",
-      "animeKey": "grow-up-show-himawari-no-circus-dan",
-      "title": "Grow Up Show: Himawari no Circus-dan",
-      "route": "grow-up-show-himawari-no-circus-dan",
-      "episode": "Ep 6",
-      "episodeNumber": "6",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
-    },
-    {
-      "id": "schedule-tenmaku-no-jaadugar-7-2026-08-08t18-00-00-02-00",
-      "animeKey": "tenmaku-no-jaadugar",
-      "title": "Tenmaku no Jaadugar",
-      "route": "tenmaku-no-jaadugar",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": false,
-      "releaseDate": "2026-08-08T16:00:00.000Z",
-      "originalReleaseDate": "",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
-      "anilistId": 190569,
-      "anilistTitle": "Jaadugar: A Witch in Mongolia",
-      "anilistUrl": "https://anilist.co/anime/190569",
-      "anilistFormat": "TV",
-      "anilistScore": 81,
-      "titles": [
-        "Tenmaku no Jaadugar",
-        "Jaadugar: A Witch in Mongolia",
-        "天幕のジャードゥーガル",
-        "A Witch's Life in Mongol",
-        "Jaadugar, la légende de Fatima"
       ]
     },
     {
@@ -11253,6 +11201,26 @@
       ]
     },
     {
+      "id": "schedule-grow-up-show-himawari-no-circus-dan-6-2026-08-08t18-00-00-02-00",
+      "animeKey": "grow-up-show-himawari-no-circus-dan",
+      "title": "Grow Up Show: Himawari no Circus-dan",
+      "route": "grow-up-show-himawari-no-circus-dan",
+      "episode": "Ep 6",
+      "episodeNumber": "6",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-08T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378063/grow-up-show",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/grow-up-show-himawari-no-circus-dan-6eb53c92ff4f4ab4a9bdcee4a4c2c41e.jpg"
+    },
+    {
       "id": "schedule-oni-no-hanayome-6-2026-08-08t18-00-00-02-00",
       "animeKey": "oni-no-hanayome",
       "title": "Oni no Hanayome",
@@ -11284,6 +11252,38 @@
       ]
     },
     {
+      "id": "schedule-tenmaku-no-jaadugar-7-2026-08-08t18-00-00-02-00",
+      "animeKey": "tenmaku-no-jaadugar",
+      "title": "Tenmaku no Jaadugar",
+      "route": "tenmaku-no-jaadugar",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": false,
+      "releaseDate": "2026-08-08T16:00:00.000Z",
+      "originalReleaseDate": "",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00378078/jaadugar-a-witch-in-mongolia",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx190569-KnCQLI3Z8hPX.jpg",
+      "anilistId": 190569,
+      "anilistTitle": "Jaadugar: A Witch in Mongolia",
+      "anilistUrl": "https://anilist.co/anime/190569",
+      "anilistFormat": "TV",
+      "anilistScore": 81,
+      "titles": [
+        "Tenmaku no Jaadugar",
+        "Jaadugar: A Witch in Mongolia",
+        "天幕のジャードゥーガル",
+        "A Witch's Life in Mongol",
+        "Jaadugar, la légende de Fatima"
+      ]
+    },
+    {
       "id": "schedule-kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu-6-2026-08-08t19-00-00-02-00",
       "animeKey": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-nazeka-dekiai-shitekimasu",
       "title": "\"Kimi wo Aisuru Ki wa Nai\" to Itta Jiki Koushaku-sama ga Nazeka Dekiai shitekimasu",
@@ -11306,7 +11306,7 @@
       "anilistTitle": "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
       "anilistUrl": "https://anilist.co/anime/208225",
       "anilistFormat": "TV",
-      "anilistScore": 62,
+      "anilistScore": 63,
       "titles": [
         "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
         "The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration",
@@ -11369,7 +11369,7 @@
       "anilistTitle": "Magilumiere Magical Girls Inc. Season 2",
       "anilistUrl": "https://anilist.co/anime/185692",
       "anilistFormat": "TV",
-      "anilistScore": 66,
+      "anilistScore": 67,
       "titles": [
         "Kabushiki Gaisha Magi Lumiere 2nd Season",
         "Magilumiere Magical Girls Inc. Season 2",
@@ -11467,7 +11467,7 @@
       "anilistTitle": "Star Detective Precure!",
       "anilistUrl": "https://anilist.co/anime/202957",
       "anilistFormat": "TV",
-      "anilistScore": 74,
+      "anilistScore": 75,
       "titles": [
         "Meitantei Precure!",
         "Star Detective Precure!",
