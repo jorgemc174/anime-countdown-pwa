@@ -161,7 +161,7 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
 const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v98";
+const APP_CACHE_NAME = "anime-countdown-pwa-v99";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -174,7 +174,7 @@ const NATIVE_NOTIFICATION_SYNC_MS = 6 * 60 * 60 * 1000;
 const ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
-const SHARED_SCHEDULE_REFRESH_MS = 6 * 60 * 60 * 1000;
+const SHARED_SCHEDULE_REFRESH_MS = 15 * 60 * 1000;
 const PLATFORM_REFRESH_MS = 12 * 60 * 60 * 1000;
 const JUSTWATCH_SEARCH_LIMIT = 30;
 const VIRTUAL_LIST_BATCH_SIZE = 24;
@@ -262,8 +262,21 @@ function cleanupLegacyCaches() {
 }
 
 function startBackgroundRefreshes() {
-  const initialScheduleDelay = isCapacitor() ? 15000 : (state.releases.length ? 1200 : 100);
-  scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true }), initialScheduleDelay);
+  // Always validate persisted releases on startup. A recently stored schedule
+  // can still be obsolete after a server-side correction or deployment.
+  refreshSharedSchedule({ silent: true, force: true, skipPublicAnilist: true }).catch((error) =>
+    console.warn("No se pudo validar el horario al iniciar.", error)
+  );
+  setInterval(() => {
+    if (document.visibilityState === "visible") {
+      refreshSharedSchedule({ silent: true, skipPublicAnilist: true }).catch(() => {});
+    }
+  }, SHARED_SCHEDULE_REFRESH_MS);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true, skipPublicAnilist: true }), 100);
+    }
+  });
   startAnilistAutoRefresh();
   // The shared schedule is already enriched by AniList on the server. Avoid
   // downloading the full public catalog on every phone after startup.

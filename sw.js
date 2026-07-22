@@ -1,10 +1,10 @@
-const CACHE_NAME = "anime-countdown-pwa-v98";
+const CACHE_NAME = "anime-countdown-pwa-v99";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=97",
-  "./config.js?v=98",
-  "./app.js?v=98",
+  "./config.js?v=99",
+  "./app.js?v=99",
   "./manifest.json",
   "./favicon.ico"
 ];
@@ -44,6 +44,11 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== location.origin) return;
 
   if (url.pathname.endsWith("/schedule.json")) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (request.mode === "navigate") {
     event.respondWith(networkFirst(request));
     return;
   }
