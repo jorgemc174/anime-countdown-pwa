@@ -86,12 +86,14 @@ async function main() {
       releases = result.releases;
       if (result.matched || result.added) source = "AnimeSchedule+AniList";
     } catch (error) {
-      // AniList is useful enrichment, but a temporary outage must not discard a
-      // perfectly valid AnimeSchedule response or produce a failed cron email.
-      console.warn(`AniList no disponible; se conserva AnimeSchedule: ${error.message || error}`);
-      const preserved = await preserveExistingEnrichment(releases);
-      releases = preserved.releases;
-      if (preserved.usedAniList) source = "AnimeSchedule+AniList";
+      // AniList is authoritative for the calendar day. Without it we cannot
+      // safely accept newly generated dates from AnimeSchedule, so retain the
+      // last verified file and retry on the next cron without failing the job.
+      if (await hasUsableExistingSchedule()) {
+        console.warn(`AniList no disponible; se conserva la ultima agenda verificada: ${error.message || error}`);
+        return;
+      }
+      console.warn(`AniList no disponible y no existe una agenda anterior: ${error.message || error}`);
     }
   }
 
@@ -144,46 +146,6 @@ async function scheduleDataIsUnchanged(next) {
   return current.timezone === next.timezone &&
     current.source === next.source &&
     JSON.stringify(current.releases) === JSON.stringify(next.releases);
-}
-
-async function preserveExistingEnrichment(baseReleases) {
-  const current = await readExistingSchedule();
-  if (!Array.isArray(current?.releases)) return { releases: baseReleases, usedAniList: false };
-
-  let usedAniList = false;
-  const enriched = baseReleases.map((item) => {
-    const existing = current.releases.find((candidate) => getEpisodeKey(candidate) === getEpisodeKey(item));
-    if (!existing) return item;
-    if (existing.anilistId || existing.anilistTitle || existing.anilistScore != null) usedAniList = true;
-    const keepExistingPlatform = !item.hasAllowedPlatform && existing.hasAllowedPlatform;
-    return {
-      ...item,
-      anilistId: existing.anilistId || item.anilistId,
-      anilistTitle: existing.anilistTitle || item.anilistTitle,
-      anilistUrl: existing.anilistUrl || item.anilistUrl,
-      anilistFormat: existing.anilistFormat || item.anilistFormat,
-      anilistScore: existing.anilistScore ?? item.anilistScore,
-      titles: existing.titles?.length ? existing.titles : (item.titles || []),
-      coverUrl: item.coverUrl || existing.coverUrl,
-      ...(keepExistingPlatform ? {
-        service: existing.service,
-        serviceUrl: existing.serviceUrl,
-        allServices: existing.allServices || [existing.service],
-        hasAllowedPlatform: true
-      } : {})
-    };
-  });
-
-  const carried = current.releases.filter((item) =>
-    item.source === "anilist-missing" &&
-    Number.isFinite(Date.parse(item.releaseDate || "")) &&
-    Date.parse(item.releaseDate) > Date.now()
-  );
-  if (carried.length) usedAniList = true;
-  return {
-    releases: dedupeByEpisode(enriched.concat(carried)).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)),
-    usedAniList
-  };
 }
 
 async function applyAnilistCorrections(releases, timeZone) {
