@@ -250,7 +250,11 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       const page = await context.newPage();
       page.on("pageerror", error => errors.push(`offline PWA: ${error.message}`));
       try {
-        await page.clock.install({ time: new Date("2026-07-22T12:00:00Z") });
+        // Follow the checked-in timetable rather than assuming the original July seed.
+        const timetable = require("../schedule.json");
+        const dates = timetable.releases.map(row => Date.parse(row.releaseDate || "")).filter(Number.isFinite);
+        assert.ok(dates.length > 0, "offline fixture needs at least one dated release");
+        await page.clock.install({ time: new Date(Math.min(...dates) - 3600000) });
         await page.goto(base);
         await ready(page);
         await page.evaluate(() => navigator.serviceWorker.ready);
