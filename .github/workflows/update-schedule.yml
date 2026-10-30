@@ -38,6 +38,14 @@ jobs:
         if: ${{ !cancelled() && steps.generate.outcome != 'skipped' }}
         run: npm run sync:platforms
 
+      - name: Retain platform diagnostics
+        if: ${{ !cancelled() && steps.platforms.outcome != 'skipped' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: platform-audit
+          path: ${{ runner.temp }}/anime-platform-audit.json
+          retention-days: 14
+
       - name: Commit updated schedule
         if: ${{ !cancelled() && steps.platforms.outcome != 'skipped' }}
         run: |
@@ -66,6 +74,12 @@ jobs:
           if (platforms) {
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n## Plataformas compartidas (JustWatch)\n\nConsultas: ${platforms.checked}; errores: ${platforms.errors}; pendientes: ${platforms.queued}\n\nCobertura por país: ${JSON.stringify(platforms.coverage)}\n`);
             if (platforms.errors || platforms.queued) console.warn('::warning::Plataformas parcialmente actualizadas; se conserva la caché y se continuará en el próximo cron.');
+            const issues = platforms.issues || [];
+            if (issues.length) {
+              fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\nIncidencias para revisar: ${issues.length}. Ver el artefacto platform-audit.\n`);
+              console.warn(`::warning::${issues.length} coincidencias, cambios de disponibilidad o consultas requieren seguimiento automático.`);
+            }
+            if (platforms.totalFailure) { console.error('::error::Ninguna consulta de plataformas pudo completarse; se conserva la información anterior.'); process.exitCode = 1; }
           } else { console.error('::error::Falta el catálogo compartido de plataformas.'); process.exitCode = 1; }
           if (health.stale) { console.error('::error::El horario publicado no tiene emisiones SUB futuras.'); process.exitCode = 1; }
           NODE

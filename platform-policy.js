@@ -101,7 +101,7 @@
       jwVerifiedAt: record?.checkedAt || "",
       serviceUrls: Object.fromEntries(offers.map(offer => [offer.service, offer.url])),
       platformStatus: record?.status || "pending",
-      platformStale: Boolean(record?.lastError) || Boolean(record?.checkedAt && now - Date.parse(record.checkedAt) > 24 * 3600000)
+      platformStale: Boolean(record?.lastError || record?.pendingNegative) || Boolean(record?.checkedAt && now - Date.parse(record.checkedAt) > 24 * 3600000)
     };
   }
   return { COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, basePlatforms, applyCountryPlatforms };

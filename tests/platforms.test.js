@@ -169,3 +169,73 @@ test("The Ramparts of Ice matches the Jouheki/Jyouheki romanization variant", ()
   const node = { id: "ramparts", objectType: "SHOW", content: { title: "Koori no Jyouheki", originalTitle: "Koori no Jyouheki" } };
   assert.equal(policy.findMatch(item, [node]).id, "ramparts");
 });
+test("known JustWatch IDs survive renamed or translated catalog titles", async () => {
+  let calls = 0;
+  const result = await lookupAvailability(row, es, { previous: { status: "verified", justwatchId: "ts-known" }, fetchImpl: async (url, options) => {
+    calls++;
+    const body = JSON.parse(options.body);
+    assert.equal(body.operationName, "GetKnownTitle");
+    assert.equal(body.variables.country, "ES");
+    assert.equal(body.variables.id, "ts-known");
+    return Response.json({ data: { node: { id: "ts-known", objectType: "SHOW", content: { title: "New localized title" }, offers: [
+      { package: { technicalName: "crunchyroll" }, standardWebURL: "https://www.crunchyroll.com/series/same", monetizationType: "FLATRATE" }
+    ] } } });
+  } });
+  assert.equal(result.status, "verified");
+  assert.equal(result.offers[0].service, "Crunchyroll");
+  assert.equal(calls, 1);
+});
+test("a single empty catalog response cannot remove a known regional platform", async () => {
+  const first = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => positive });
+  const negative = async () => ({ status: "no-offers", offers: [] });
+  const second = await enrichPlatforms(payload, first.cache, { now: now + 13 * 3600000, countries: [es], lookup: negative });
+  assert.equal(second.payload.releases[0].service, "Netflix");
+  assert.ok(second.cache.series.sample.countries.ES.pendingNegative);
+  assert.ok(second.summary.issues.some(issue => issue.reason === "availability-change-needs-confirmation"));
+  const early = await enrichPlatforms(payload, second.cache, { now: now + 14 * 3600000, countries: [es], lookup: negative });
+  assert.equal(early.summary.checked, 0);
+  const confirmed = await enrichPlatforms(payload, second.cache, { now: now + 16 * 3600000, countries: [es], lookup: negative });
+  assert.equal(confirmed.payload.releases[0].service, "No legal platform");
+  assert.ok(confirmed.summary.issues.some(issue => issue.reason === "confirmed-availability-removed"));
+});
+test("new source names invalidate cached misses immediately", async () => {
+  const first = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => ({ status: "not-found", offers: [] }) });
+  const renamed = { ...payload, releases: payload.releases.map(item => ({ ...item, anilistTitle: "New English alias" })) };
+  const second = await enrichPlatforms(renamed, first.cache, { now: now + 3600000, countries: [es], lookup: async () => positive });
+  assert.equal(second.summary.checked, 1);
+  assert.equal(second.payload.releases[0].service, "Netflix");
+});
+test("learned aliases accumulate across countries instead of replacing one another", async () => {
+  const result = await enrichPlatforms(payload, undefined, { now, countries: [es, mx], lookup: async (item, country) => ({ ...positive, aliases: [country.code === "ES" ? "Spanish alias" : "Mexican alias"] }) });
+  assert.ok(result.cache.series.sample.aliases.includes("Spanish alias"));
+  assert.ok(result.cache.series.sample.aliases.includes("Mexican alias"));
+});
+test("Retry-After is retained across automatic runs and prevents repeated throttled requests", async () => {
+  let calls = 0;
+  const lookup = (item, country, options) => lookupAvailability(item, country, { ...options, fetchImpl: async () => {
+    calls++;
+    return new Response("limited", { status: 429, headers: { "retry-after": "7200" } });
+  } });
+  const first = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup });
+  assert.equal(first.cache.cooldowns.JustWatch, new Date(now + 7200000).toISOString());
+  assert.equal(first.summary.totalFailure, true);
+  await enrichPlatforms(payload, first.cache, { now: now + 3600000, countries: [es], lookup });
+  assert.equal(calls, 1);
+});
+test("platform lookup failures appear in the audit without exposing unverified services", async () => {
+  const result = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => { throw Error("offline"); } });
+  assert.equal(result.summary.totalFailure, true);
+  assert.equal(result.summary.issues[0].reason, "lookup-error");
+  assert.equal(result.summary.issues[0].country, "ES");
+  assert.equal(result.payload.releases[0].hasAllowedPlatform, false);
+});
+test("a known catalog ID is reusable across countries but its offers are queried again locally", async () => {
+  const result = await lookupAvailability(row, mx, { knownId: "ts-canonical", fetchImpl: async (url, options) => {
+    const body = JSON.parse(options.body);
+    assert.equal(body.variables.id, "ts-canonical");
+    assert.equal(body.variables.country, "MX");
+    return Response.json({ data: { node: { id: "ts-canonical", objectType: "SHOW", content: { title: "Título local" }, offers: [] } } });
+  } });
+  assert.equal(result.status, "no-offers");
+  assert.deepEqual(result.offers, []);
+});

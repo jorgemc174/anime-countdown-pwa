@@ -77,6 +77,30 @@ Para reproducir el enriquecimiento del catálogo ya generado:
 npm run sync:platforms
 ```
 
+## Protección frente a plataformas omitidas
+
+- Una serie ya identificada se actualiza por su ID de JustWatch, aunque cambie el
+  título. Ese ID puede localizar el catálogo en otro país, pero las ofertas se
+  vuelven a consultar siempre para el país seleccionado.
+- Los nombres aprendidos se acumulan. Un nuevo alias invalida inmediatamente los
+  resultados negativos anteriores; los no encontrados se reintentan cada tres
+  horas, sin esperar las doce horas de caché de las ofertas conocidas.
+- Una única respuesta vacía no borra ofertas conocidas. Se conserva la última
+  disponibilidad mientras se confirma la desaparición en una segunda consulta
+  satisfactoria al menos tres horas después. Los errores de red no cuentan como
+  confirmaciones negativas.
+- Los fallos usan esperas progresivas y respetan `Retry-After`. Las pausas por
+  proveedor se guardan entre ejecuciones para no repetir peticiones bloqueadas.
+- Cada actualización guarda el artefacto `platform-audit` durante catorce días:
+  nombres sin resolver, consultas fallidas, cambios pendientes y plataformas
+  retiradas. El resumen de Actions avisa de estas incidencias. Si todas las
+  consultas fallan, el job falla conservando la información conocida.
+- Las pruebas incluyen los fallos de nombres ya encontrados, cambios de título,
+  nuevas traducciones, límites de consultas y desapariciones transitorias.
+
+Esto evita pérdidas silenciosas causadas por el proceso, pero no garantiza que el
+catálogo de JustWatch sea completo ni confirme cada temporada de una serie.
+
 ## Horarios SUB y retrasos
 
 - «Hoy» muestra únicamente favoritos. «Todos» permite descubrir y añadir series.
