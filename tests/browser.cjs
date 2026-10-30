@@ -73,7 +73,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.match(await page.locator("#scheduleHealth").innerText(), /copia local/);
       await page.route("**/schedule.json", route => route.fulfill({ json: payload }));
       await page.locator("#retryScheduleBtn").click();
-      await page.waitForFunction(() => !state.scheduleHealth.error && !state.scheduleHealth.loading);
+      await ready(page);
       await page.locator("#showAllBtn").click();
       assert.equal(await page.locator(".anime-card").count(), 2);
     });

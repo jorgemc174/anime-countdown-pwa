@@ -152,3 +152,20 @@ test("an unrelated AniList search result cannot introduce aliases for a differen
   assert.equal(result.status, "not-found");
   assert.deepEqual(result.offers, []);
 });
+test("original Japanese titles and season markers resolve short native names", () => {
+  const item = { title: "Koori no Jouheki 2nd Season", anilistTitle: "The Ramparts of Ice Season 2", titles: ["氷の城壁 第2期"] };
+  const node = { id: "ice", objectType: "SHOW", content: { title: "Localized name", originalTitle: "氷の城壁" } };
+  assert.equal(policy.findMatch(item, [node]).id, "ice");
+  assert.ok(policy.searchTitles(item).includes("氷の城壁"));
+});
+test("roman-numeral TV sequels can find their parent without changing film identity", () => {
+  const item = { title: "The Iceblade Sorcerer Shall Rule the World II" };
+  const node = { id: "iceblade", objectType: "SHOW", content: { title: "The Iceblade Sorcerer Shall Rule the World" } };
+  assert.equal(policy.findMatch(item, [node]).id, "iceblade");
+  assert.equal(policy.findMatch({ ...item, format: "MOVIE" }, [{ ...node, objectType: "MOVIE" }]), null);
+});
+test("The Ramparts of Ice matches the Jouheki/Jyouheki romanization variant", () => {
+  const item = { title: "Koori no Jouheki 2nd Season", anilistTitle: "The Ramparts of Ice Season 2" };
+  const node = { id: "ramparts", objectType: "SHOW", content: { title: "Koori no Jyouheki", originalTitle: "Koori no Jyouheki" } };
+  assert.equal(policy.findMatch(item, [node]).id, "ramparts");
+});

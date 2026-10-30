@@ -3,12 +3,12 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 3;
+const LOOKUP_VERSION = 4;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
   popularTitles(country: $country, filter: $filter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) {
-    edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear }
+    edges { node { id objectType content(country: $country, language: $language) { title originalTitle originalReleaseYear }
       offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType }
     } }
   }
@@ -55,7 +55,10 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
     headers: { "content-type": "application/json", accept: "application/json" },
     body: JSON.stringify({ query, variables: { id, search: id ? null : item.title } })
   });
-  if (!response.ok) throw new Error(`AniList HTTP ${response.status} al resolver nombres`);
+  if (!response.ok) {
+    const error = new Error(`AniList HTTP ${response.status} al resolver nombres`);
+    error.provider = "AniList"; error.status = response.status; throw error;
+  }
   const json = await response.json();
   if (json.errors?.some(error => error.status !== 404)) throw new Error("No se pudieron consultar los nombres de AniList");
   const media = json.data?.Media;
@@ -72,8 +75,11 @@ async function lookupAvailability(item, country, options = {}) {
   if (direct.status !== "not-found") return direct;
   const key = policy.seriesKey(item);
   const aliasCache = options.aliasCache || new Map();
+  if (options.aliasState?.unavailable) { const error = new Error("Resolución de nombres temporalmente no disponible"); error.provider = "AniList"; throw error; }
   if (!aliasCache.has(key)) aliasCache.set(key, resolveTitleAliases(item, options));
-  const aliases = await aliasCache.get(key);
+  let aliases;
+  try { aliases = await aliasCache.get(key); }
+  catch (error) { error.provider = "AniList"; throw error; }
   if (!aliases) return direct;
   const enriched = { ...item, anilistTitle: aliases.english || item.anilistTitle,
     titles: [...new Set([...(item.titles || []), ...aliases.titles])] };
@@ -88,6 +94,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
   const rows = validate(payload);
   let nextRequestAt = 0;
   const aliasCache = new Map();
+  const aliasState = { unavailable: false };
   const throttledFetch = async (url, options) => {
     const start = Math.max(Date.now(), nextRequestAt);
     nextRequestAt = start + 1300;
@@ -124,15 +131,17 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       const previous = cache.series[key].countries[country.code];
       try {
         const target = { ...row, titles: [...new Set([...(row.titles || []), ...(cache.series[key].aliases || [])])] };
-        const result = await lookup(target, country, { aliasCache, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
+        const result = await lookup(target, country, { aliasCache, aliasState, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
         if (result.aliases?.length) cache.series[key].aliases = result.aliases;
         cache.series[key].countries[country.code] = { ...result, lookupVersion: LOOKUP_VERSION, checkedAt: timestamp, lastAttemptAt: timestamp };
       } catch (error) {
         errors++;
-        if (error.status === 429) rateLimited = true;
+        if (error.provider === "AniList" && [403, 429].includes(error.status)) aliasState.unavailable = true;
+        if (error.status === 429 && error.provider !== "AniList") rateLimited = true;
         cache.series[key].countries[country.code] = { ...(previous || { status: "error", offers: [] }), lastAttemptAt: timestamp,
-          lastError: "No se pudo consultar JustWatch; se reintentará automáticamente." };
+          lastError: error.provider === "AniList" ? "No se pudieron resolver los nombres; se reintentará automáticamente." : "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          errorProvider: error.provider || "JustWatch" };
       }
       checked++;
       if (cursor < tasks.length && !rateLimited) await new Promise(resolve => setTimeout(resolve, 200));

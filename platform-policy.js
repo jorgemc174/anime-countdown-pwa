@@ -42,31 +42,38 @@
     let previous;
     do {
       previous = title;
-      title = title.replace(/\s+(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth)\s+(?:season|cour)|(?:season|part|cour)\s+\d+)\s*$/i, "").trim();
+      title = title.replace(/\s*[-–—]?\s*(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth)\s+(?:season|cour)|(?:season|part|cour)\s+\d+|第[0-9一二三四五六七八九十]+期)\s*[-–—]?\s*$/i, "").trim();
+      title = title.replace(/\s+(?:II|III|IV|V|VI)$/i, "").trim();
     } while (title !== previous);
     return title;
   }
+  function validSeriesRoot(value) {
+    const key = normalize(value);
+    return key.length >= 5 || (key.length >= 2 && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(key));
+  }
   function searchTitles(item) {
     const raw = [...new Set([item.anilistTitle, item.title, ...(item.titles || [])].filter(Boolean))];
-    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : raw.map(seriesTitle).filter((value, index) => value !== raw[index] && normalize(value).length >= 5);
+    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : raw.map(seriesTitle).filter((value, index) => value !== raw[index] && validSeriesRoot(value));
     return [...new Set([...raw.slice(0, 2), ...roots.slice(0, 3)])];
   }
   function findMatch(item, nodes) {
+    const matchKey = value => normalize(value).replace(/jyo/g, "jo").replace(/jyu/g, "ju").replace(/syo/g, "sho").replace(/syu/g, "shu").replace(/tyo/g, "cho").replace(/tyu/g, "chu");
     const raw = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean);
-    const titles = new Set(raw.map(normalize));
+    const titles = new Set(raw.map(matchKey));
     const type = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW";
     const candidates = nodes.filter(node => node.objectType === type);
-    const unique = [...new Map(candidates.filter(node => titles.has(normalize(node.content?.title))).map(node => [node.id, node])).values()];
+    const matchesTitle = (node, names) => [node.content?.title, node.content?.originalTitle].some(title => title && names.has(matchKey(title)));
+    const unique = [...new Map(candidates.filter(node => matchesTitle(node, titles)).map(node => [node.id, node])).values()];
     const year = item.anilistYear || item.originalReleaseYear;
     if (year) {
       const byYear = unique.filter(node => Number(node.content?.originalReleaseYear) === Number(year));
       if (byYear.length === 1) return byYear[0];
     } else if (unique.length === 1) return unique[0];
     if (type === "MOVIE") return null;
-    const roots = new Set(raw.map(seriesTitle).filter((value, index) => value !== raw[index] && normalize(value).length >= 5).map(normalize));
+    const roots = new Set(raw.map(seriesTitle).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
     // A sequel may be listed under the parent series, with its original premiere year.
     // Keep numbers within the title, remake years and spin-off names intact.
-    const parents = [...new Map(candidates.filter(node => roots.has(normalize(node.content?.title))).map(node => [node.id, node])).values()];
+    const parents = [...new Map(candidates.filter(node => matchesTitle(node, roots)).map(node => [node.id, node])).values()];
     if (parents.length === 1) return parents[0];
     const available = parents.filter(node => allowedOffers(node).length > 0);
     return available.length === 1 ? available[0] : null;

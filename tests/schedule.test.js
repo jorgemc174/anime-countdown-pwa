@@ -32,6 +32,11 @@ test("normalization retains indefinite delay, without creating a date", () => {
   assert.equal(rows[0].releaseDate, null);
   assert.equal(rows[0].scheduleStatus, "pending");
 });
+test("source English aliases are retained for regional platform matching", () => {
+  const [item] = normalizeSchedule([{ title: "FX Senshi Kurumi-chan", english: "FX Fighter Kurumi-chan", native: "FX戦士くるみちゃん", episodeNumber: 1, subReleaseDate: "2026-11-01T18:00:00Z" }], "Europe/Madrid");
+  assert.ok(item.titles.includes("FX Fighter Kurumi-chan"));
+  assert.ok(item.titles.includes("FX戦士くるみちゃん"));
+});
 test("a date without a SUB hour never becomes a midnight release", () => {
   const [result] = normalizeSchedule([{ title: "Sample", episodeNumber: 4, subReleaseDate: "2026-11-01" }], "Europe/Madrid");
   assert.equal(result.releaseDate, null);

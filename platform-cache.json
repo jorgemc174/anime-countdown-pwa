@@ -538,29 +538,56 @@
       "title": "FX Senshi Kurumi-chan",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts536242",
+          "matchedTitle": "FX Fighter Kurumi-chan",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.969Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "FX Fighter Kurumi-chan",
+        "FX Senshi Kurumi-chan"
+      ]
     },
     "anilist-213805": {
       "title": "Koori no Jouheki 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.970Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Koori no Jyouheki",
+        "The Ramparts of Ice"
+      ]
     },
     "anilist-199594": {
       "title": "Tetsuryou! Meet with Tetsudou Musume",

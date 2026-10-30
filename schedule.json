@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T16:10:16.240Z",
+  "updatedAt": "2026-10-30T16:45:12.971Z",
   "checkedAt": "2026-10-30T16:10:16.240Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
@@ -1602,10 +1602,13 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-10-29T12:31:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+      "allServices": [
+        "Crunchyroll",
+        "Crunchyroll Amazon Channel"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/fx-senshi-kurumi-chan-4252f926b1ce50a8b7d35adcd2fa7406.jpg",
       "basePlatforms": {
         "service": "Crunchyroll",
@@ -1618,21 +1621,36 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts536242",
+          "matchedTitle": "FX Fighter Kurumi-chan",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.969Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.969Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-5-2026-10-29t16-30-00-01-00",
@@ -1646,10 +1664,12 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-10-29T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82031882",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213805-Nokui3uWlIlw.png",
       "anilistId": 213805,
       "anilistTitle": "The Ramparts of Ice Season 2",
@@ -1672,21 +1692,30 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.970Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.970Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/82031882"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-4-2026-10-29t17-00-00-01-00",
@@ -6281,10 +6310,13 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-05T12:31:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+      "allServices": [
+        "Crunchyroll",
+        "Crunchyroll Amazon Channel"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/fx-senshi-kurumi-chan-4252f926b1ce50a8b7d35adcd2fa7406.jpg",
       "basePlatforms": {
         "service": "Crunchyroll",
@@ -6297,21 +6329,36 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts536242",
+          "matchedTitle": "FX Fighter Kurumi-chan",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.969Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.969Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-6-2026-11-05t16-30-00-01-00",
@@ -6325,10 +6372,12 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-05T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82031882",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213805-Nokui3uWlIlw.png",
       "anilistId": 213805,
       "anilistTitle": "The Ramparts of Ice Season 2",
@@ -6351,21 +6400,30 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.970Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.970Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/82031882"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-5-2026-11-05t17-00-00-01-00",
@@ -11090,10 +11148,13 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-12T12:31:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+      "allServices": [
+        "Crunchyroll",
+        "Crunchyroll Amazon Channel"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/fx-senshi-kurumi-chan-4252f926b1ce50a8b7d35adcd2fa7406.jpg",
       "basePlatforms": {
         "service": "Crunchyroll",
@@ -11106,21 +11167,36 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts536242",
+          "matchedTitle": "FX Fighter Kurumi-chan",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.969Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.969Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-7-2026-11-12t16-30-00-01-00",
@@ -11134,10 +11210,12 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-12T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82031882",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213805-Nokui3uWlIlw.png",
       "anilistId": 213805,
       "anilistTitle": "The Ramparts of Ice Season 2",
@@ -11160,21 +11238,30 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.970Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.970Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/82031882"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-6-2026-11-12t17-00-00-01-00",
@@ -16039,10 +16126,13 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-19T12:31:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+      "allServices": [
+        "Crunchyroll",
+        "Crunchyroll Amazon Channel"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/fx-senshi-kurumi-chan-4252f926b1ce50a8b7d35adcd2fa7406.jpg",
       "basePlatforms": {
         "service": "Crunchyroll",
@@ -16055,21 +16145,36 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts536242",
+          "matchedTitle": "FX Fighter Kurumi-chan",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.969Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.969Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384203JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.941d8e50-762c-40ab-8abe-a31d2bfd9914"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-8-2026-11-19t16-30-00-01-00",
@@ -16083,10 +16188,12 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-19T15:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/82031882",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213805-Nokui3uWlIlw.png",
       "anilistId": 213805,
       "anilistTitle": "The Ramparts of Ice Season 2",
@@ -16109,21 +16216,30 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "lookupVersion": 4,
+          "checkedAt": "2026-10-30T16:45:12.970Z",
+          "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "jwVerified": false,
+      "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T16:45:12.970Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/82031882"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-7-2026-11-19t17-00-00-01-00",
@@ -19849,9 +19965,9 @@
     "coverage": {
       "ES": {
         "total": 78,
-        "verified": 48,
+        "verified": 50,
         "pending": 2,
-        "stale": 21
+        "stale": 19
       },
       "MX": {
         "total": 78,

@@ -471,6 +471,7 @@ function normalizeSchedule(items, timeZone) {
     out.push({
       id: stableId("schedule", title, episodeNumber, releaseDate),
       animeKey: stableId(title),
+      titles: [...new Set([title, item.romaji, item.english, item.native, ...(Array.isArray(item.synonyms) ? item.synonyms : []), ...(Array.isArray(item.titles) ? item.titles : [])].filter(value => typeof value === "string" && value.trim()))],
       title,
       route: item.route || "",
       episode: `Ep ${episodeNumber}`,
@@ -508,7 +509,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
       anilistFormat: media.anilistFormat || item.anilistFormat,
       anilistYear: media.anilistYear || item.anilistYear || null,
       anilistScore: media.anilistScore ?? item.anilistScore,
-      titles: media.titles?.length ? media.titles : (item.titles || []),
+      titles: [...new Set([...(item.titles || []), ...(media.titles || [])])],
       coverUrl: media.coverUrl || item.coverUrl,
 
     };

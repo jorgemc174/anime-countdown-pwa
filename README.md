@@ -53,7 +53,12 @@ frente a «Blue Exorcist»), se consulta AniList por ID o nombre exacto y se
 reintenta JustWatch con los nombres de esa misma serie. Estos alias se guardan
 para futuras actualizaciones; las plataformas siguen procediendo exclusivamente
 del país seleccionado en JustWatch. La búsqueda reconoce sufijos de temporada y cour
-y prueba títulos en inglés manteniendo siempre el país de las ofertas. No se
+y prueba títulos en inglés manteniendo siempre el país de las ofertas. También
+compara el título original de JustWatch y variantes habituales de romanización
+(como Jouheki/Jyouheki). Los alias en inglés y japonés recibidos de AnimeSchedule
+se conservan al enriquecer metadatos. Si AniList bloquea la resolución de nombres,
+no se confunde ese fallo con falta de ofertas de JustWatch ni se repite esa misma
+consulta bloqueada para cada país durante la ejecución. No se
 mezclan películas, remakes o spin-offs por coincidencias parciales de nombre.
 Se conservan las últimas ofertas conocidas del mismo país ante fallos. Un
 resultado sin coincidencia, pendiente o sin ofertas deja la serie sin plataforma
