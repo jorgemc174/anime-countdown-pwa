@@ -21,6 +21,11 @@ dependencias, pruebas ni scripts de mantenimiento. Para compilar el APK con el
 Gradle actual hacen falta JDK 17 y Android SDK 34; después de `cap:sync`, ejecutar
 `bash android/gradlew -p android assembleDebug` (Windows: `gradlew.bat`).
 
+Los iconos Android están incluidos en `android/app/src/main/res/mipmap-*`.
+Si cambia el logo, ejecutar `python3 scripts/generate_icons.py` (requiere Pillow)
+y guardar los recursos generados: actualiza tanto el icono clásico como el
+adaptativo que usan los móviles recientes.
+
 ## Base compartida de horarios y plataformas
 
 El usuario solo sincroniza su biblioteca de AniList. No prepara horarios ni hace
