@@ -24,7 +24,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
+        }
+      ]
     },
     "anilist-209219": {
       "title": "Tensei Goblin dakedo Shitsumon Aru?",
@@ -49,7 +55,25 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLYld27spJ0aA"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2433441"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/ffeb3x9fd5"
+        }
+      ]
     },
     "anilist-204011": {
       "title": "PSYЯEN",
@@ -74,7 +98,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+        }
+      ]
     },
     "bleachsennenkessenhenkashintan": {
       "title": "BLEACH: Sennen Kessen-hen - Kashin-tan",
@@ -84,11 +114,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-160803": {
       "title": "Mahou Shoujo Ikusei Keikaku: Restart",
@@ -98,11 +132,104 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.eeeecd67-4f2d-423c-9e53-bcfc57d510d6",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project Restart",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@mahoiku2official"
+        },
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/544"
+        }
+      ],
+      "aliases": [
+        "Mahou Shoujo Ikusei Keikaku: Restart",
+        "MAGICAL GIRL RAISING PROJECT restart",
+        "Magical Girl Raising Project: Restart",
+        "魔法少女育成計画 restart",
+        "Mahou Shoujo Ikusei Keikaku: restart",
+        "まほいく",
+        "MahoIku",
+        "Magical Girl Raising Project Restart"
+      ]
     },
     "cocoonarunatsunoshoujotachiyori": {
       "title": "cocoon: Aru Natsu no Shoujo-tachi Yori",
@@ -112,11 +239,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-206949": {
       "title": "Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku",
@@ -131,14 +262,32 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Nia Liston: The Merciless Maiden",
         "Kyouran Reijou Nia Liston",
         "凶乱令嬢ニア・リストン"
+      ],
+      "anilistOffers": [
+        {
+          "service": "HIDIVE",
+          "url": "https://www.hidive.com/season/39540"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2433665"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/tvod2397yt"
+        }
       ]
     },
     "anilist-209502": {
@@ -165,7 +314,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2433556"
+        }
+      ]
     },
     "anilist-187990": {
       "title": "Battle Spirits [Re] Zekkai No Ku",
@@ -190,7 +349,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLWdHQdMNZfrM"
+        }
+      ]
     },
     "anilist-187316": {
       "title": "Gensou Suikoden",
@@ -205,14 +374,24 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Gensou Suikoden",
         "幻想水滸伝",
         "Suikoden: The Anime"
+      ],
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLVEC_1AvVqqE"
+        }
       ]
     },
     "anilist-200294": {
@@ -238,7 +417,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
+        }
+      ]
     },
     "anilist-207329": {
       "title": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \"Kyouka Point\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?",
@@ -264,7 +449,21 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384016/"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432178"
+        }
+      ]
     },
     "anilist-198727": {
       "title": "Chitose-kun wa Ramune Bin no Naka Part 2",
@@ -290,7 +489,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+        }
+      ]
     },
     "anilist-207809": {
       "title": "Sora wa Akai Kawa no Hotori",
@@ -315,7 +520,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378099/red-river"
+        }
+      ]
     },
     "anilist-179876": {
       "title": "DARK MACHINE: The Animation",
@@ -340,7 +551,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@DarkMachineGame"
+        }
+      ]
     },
     "sasakitopiichan2ndseason": {
       "title": "Sasaki to Pii-chan 2nd Season",
@@ -366,19 +587,58 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-211778": {
       "title": "Sekai Saikyou no Majo, Hajimemashita",
       "countries": {
         "ES": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385842ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.148ba47b-9b79-4352-96e5-9f204abee607",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts529488",
+          "matchedTitle": "The World's Strongest Witch",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"Sekai Saikyou no Majo, Hajimemashita\",\"Sekai Saikyou no Majo, Hajimemashita: Watashi dake \\\"Kouryaku Site\\\" wo Mireru Sekai de Jiyuu ni Ikimasu\",\"Sekamajo\",\"The World's Strongest Witch\",\"せかまじょ\",\"世界最強の魔女、始めました\",\"世界最強の魔女、始めました　～私だけ『攻略サイト』を見れる世界で自由に生きます～\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432827"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLLJ_VmZxSJuY"
+        }
+      ],
+      "aliases": [
+        "Sekai Saikyou no Majo, Hajimemashita",
+        "The World's Strongest Witch",
+        "世界最強の魔女、始めました",
+        "Sekai Saikyou no Majo, Hajimemashita: Watashi dake \"Kouryaku Site\" wo Mireru Sekai de Jiyuu ni Ikimasu",
+        "世界最強の魔女、始めました　～私だけ『攻略サイト』を見れる世界で自由に生きます～",
+        "Sekamajo",
+        "せかまじょ"
+      ]
     },
     "anilist-152677": {
       "title": "Tantei wa Mou, Shindeiru. 2nd Season",
@@ -402,23 +662,304 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUNDVMQ",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "La detective está muerta",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUNDVMQ&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "The Detective Is Already Dead",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUNDVMQ",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "La detective está muerta",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUNDVMQ",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "La detective está muerta",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUNDVMQ",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "The Detective Is Already Dead",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GVWU04E0G",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "The Detective Is Already Dead",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUNDVMQ",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.2bb307af-5228-4210-8424-4ddc170fc2dc",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "Tantei wa Mou, Shindeiru.",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GVWU04E0G",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "The Detective Is Already Dead",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUNDVMQ&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "La detective está muerta",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GVWU04E0G",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "The Detective Is Already Dead",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUNDVMQ&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.2bb307af-5228-4210-8424-4ddc170fc2dc",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "Tantei wa Mou, Shindeiru.",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/the-detective-is-already-dead"
+        }
+      ],
+      "aliases": [
+        "Tantei wa Mou, Shindeiru. 2nd Season",
+        "The Detective Is Already Dead Season 2",
+        "The Detective Is Already Dead 2nd Season",
+        "探偵はもう、死んでいる。Season2",
+        "Tantei wa mou, Shindeiru. Season 2",
+        "La detective esta muerta. 2",
+        "Tanmoshi 2",
+        "นักสืบตายเเล้ว ภาค 2",
+        "たんもし 2",
+        "La detective está muerta",
+        "The Detective Is Already Dead",
+        "Tantei wa Mou, Shindeiru."
+      ]
     },
     "zijinyumiaofang": {
       "title": "Zi Jin: Yu Miao Fang",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385715ZHCN",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.4f2bd8af-825f-431b-9d44-a7082ad2fa3e",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts507665",
+          "matchedTitle": "Paw & Palaces",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"SHOW\",null,[\"Paw & Palaces\",\"Zi Jin: Yu Miao Fang\",\"紫禁·御喵房\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [],
+      "aliases": [
+        "Zi Jin: Yu Miao Fang",
+        "Paw & Palaces",
+        "紫禁·御喵房"
+      ]
     },
     "anilist-178868": {
       "title": "Magic Knight Rayearth (2026)",
@@ -433,14 +974,28 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Magic Knight Rayearth (2026)",
         "魔法騎士レイアース (2026)",
         "Magical Knight Rayearth New Project"
+      ],
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLVs8KIyueUjWQEJ83sa8kpo4jIjWh_aWT"
+        }
       ]
     },
     "anilist-159042": {
@@ -460,9 +1015,300 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tensei Shitara Ken Deshita",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Reincarnated as a Sword",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tensei Shitara Ken Deshita",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tensei Shitara Ken Deshita",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/970-reincarnated-as-a-sword/20532-folge-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Joyn Plus",
+              "url": "https://www.joyn.de/serien/reincarnated-as-a-sword",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Magenta TV+",
+              "url": "https://www.magenta.tv/serie/-/GN_EP048591690012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "ProSieben Fun Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Seven Entertainment Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Reincarnated as a Sword",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/970-reincarnated-as-a-sword/20532-episode-1",
+              "monetizationType": "ADS"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Moi quand je me réincarne en épée",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Reincarnated as a Sword",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Generation Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tenken - Reincarnato in una spada",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tensei Shitara Ken Deshita",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Reincarnated as a Sword",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/interstitial/536320",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hulu",
+              "url": "https://www.hulu.com/watch/9fa3c924-7aa6-4248-a156-29edd512b4c1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.ea44e2b0-aeff-4059-9bfd-a17c4841cfcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Reincarnated as a Sword",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "HIDIVE",
+          "url": "https://www.hidive.com/season/39506"
+        },
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/1v4ebkyoz21"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLcSpWjb7H0lk"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432099"
+        }
+      ],
+      "aliases": [
+        "Tensei shitara Ken deshita 2",
+        "Reincarnated as a Sword Season 2",
+        "Tensei Shitara Ken Deshita 2",
+        "Reincarnated as a Sword 2",
+        "転生したら剣でした2",
+        "Tensei Shitara Ken Deshita 2nd Season",
+        "転生したら剣でした 第2期",
+        "Reincarnated as a Sword II",
+        "I Became the Sword by Transmigrating 2",
+        "TenKen 2",
+        "ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2",
+        "TENKEN - Reincarnato in una spada",
+        "Tensei Shitara Ken Deshita",
+        "Reincarnated as a Sword",
+        "Moi quand je me réincarne en épée",
+        "Tenken - Reincarnato in una spada"
+      ]
     },
     "anilist-199068": {
       "title": "Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen",
@@ -477,14 +1323,28 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
         "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
         "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+      ],
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@%E3%82%A2%E3%83%8B%E3%83%A1%E6%96%B0%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3"
+        }
       ]
     },
     "anilist-213068": {
@@ -511,7 +1371,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
+        }
+      ]
     },
     "anilist-172192": {
       "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
@@ -532,7 +1398,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432495"
+        }
+      ]
     },
     "fxsenshikurumichan": {
       "title": "FX Senshi Kurumi-chan",
@@ -558,11 +1434,12 @@
           "lastAttemptAt": "2026-10-30T16:45:12.969Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "FX Fighter Kurumi-chan",
         "FX Senshi Kurumi-chan"
-      ]
+      ],
+      "anilistOffers": []
     },
     "anilist-213805": {
       "title": "Koori no Jouheki 2nd Season",
@@ -583,10 +1460,16 @@
           "lastAttemptAt": "2026-10-30T16:45:12.970Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Koori no Jyouheki",
         "The Ramparts of Ice"
+      ],
+      "anilistOffers": [
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/82031882"
+        }
       ]
     },
     "anilist-199594": {
@@ -603,15 +1486,29 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "TETSURYO! Meet With Tetsudou Musume",
         "Tetsuryou! meet with Tetsudou Musume",
         "てつりょー！meet with 鉄道むすめ",
         "TETSURYO! meet with Tetsudou Musume"
+      ],
+      "anilistOffers": [
+        {
+          "service": "HIDIVE",
+          "url": "https://www.hidive.com/season/39542"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
+        }
       ]
     },
     "anilist-180136": {
@@ -637,7 +1534,25 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3yq1oZEC8iNCwgMsg0NmIZ"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/media/2411725"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/a5a0t3nwm1"
+        }
+      ]
     },
     "anilist-212144": {
       "title": "Kizu darake Seijo yori Houfuku wo Komete 2nd Season",
@@ -647,25 +1562,65 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
+        }
+      ]
     },
     "anilist-212503": {
       "title": "Hyouken no Majutsushi ga Sekai wo Suberu II",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e9770b58-b8ee-433d-bf48-6f2b6169c4a4",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts377736",
+          "matchedTitle": "Magician of the Ice Sword",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432333"
+        }
+      ],
+      "aliases": [
+        "Hyouken no Majutsushi ga Sekai wo Suberu II",
+        "The Iceblade Sorcerer Shall Rule the World II",
+        "冰剣の魔術師が世界を統べるII",
+        "冰剣の魔術師が世界を統べるⅡ",
+        "The Iceblade Sorcerer Shall Rule the World Season 2",
+        "Magician of the Ice Sword"
+      ]
     },
     "anilist-178083": {
       "title": "Tokyo Revengers: Santen Sensou-hen",
@@ -675,37 +1630,112 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Hulu",
+          "url": "https://www.hulu.com/series/1a195a35-e19c-4e36-b609-3b1c451f6ce4"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@animetoman"
+        }
+      ]
     },
     "anilist-210482": {
       "title": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE",
       "countries": {
         "ES": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "aliases": [
+            "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+            "JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE",
+            "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+            "JoJo's Bizarre Adventure: Part 7–Steel Ball Run",
+            "SBR"
+          ],
+          "anilistOffers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82116553"
+            }
+          ],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/82116553"
+        }
+      ],
+      "aliases": [
+        "JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE",
+        "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+        "JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE",
+        "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE",
+        "JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE",
+        "ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE",
+        "JoJo's Bizarre Adventure: Part 7–Steel Ball Run",
+        "SBR"
+      ]
     },
     "anilist-218532": {
       "title": "Kusuriya no Hitorigoto 3rd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUMNJ5K",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.09bc7869-150b-41c6-80c5-77cc284dff0e",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395707",
+          "matchedTitle": "Los diarios de la boticaria",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no Hitorigoto 3rd Season Mini Anime\",\"Los diarios de la boticaria\",\"Maomao no Hitorigoto 3rd Season\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3 Mini Anime\",\"The Apothecary Diaries: Maomao's Monologue Season 3\",\"猫猫のひとりごと 第3期\",\"薬屋のひとりごと 第3期\",\"薬屋のひとりごと 第3期 ミニアニメ\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLtdSPZNWT1AtlB6oZ-OLqZKXwMdMnIDiC"
+        }
+      ],
+      "aliases": [
+        "Kusuriya no Hitorigoto 3rd Season",
+        "Maomao no Hitorigoto 3rd Season",
+        "The Apothecary Diaries 3rd Season",
+        "薬屋のひとりごと 第3期",
+        "猫猫のひとりごと 第3期",
+        "Kusuriya no Hitorigoto 3rd Season Mini Anime",
+        "The Apothecary Diaries Season 3 Mini Anime",
+        "薬屋のひとりごと 第3期 ミニアニメ",
+        "The Apothecary Diaries: Maomao's Monologue Season 3",
+        "Los diarios de la boticaria"
+      ]
     },
     "anilist-186742": {
       "title": "Toaru Anbu no Item",
@@ -730,7 +1760,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+        }
+      ]
     },
     "hotarunoyomeiri": {
       "title": "Hotaru no Yomeiri",
@@ -756,7 +1792,8 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-204650": {
       "title": "Tougen Anki: Nikko Kegon no Taki-hen",
@@ -797,7 +1834,29 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
+        },
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/dp/B0FCM3YGCQ"
+        },
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/81969861"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@tougen_anki"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2431878"
+        }
+      ]
     },
     "anilist-203490": {
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -822,7 +1881,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371926/"
+        }
+      ]
     },
     "anilist-214703": {
       "title": "Ghost Meets Gal!",
@@ -836,13 +1901,23 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Ghost Meets Gal!",
         "ごーすと・みーつ・ぎゃる！"
+      ],
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
+        }
       ]
     },
     "anilist-209032": {
@@ -864,7 +1939,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLKPsuBIKuejMR6v7XCBOMy7Xesql1re66"
+        }
+      ]
     },
     "anilist-216557": {
       "title": "Keroro Gunsou☆",
@@ -890,7 +1971,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383995/"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@keroro"
+        }
+      ]
     },
     "anilist-183231": {
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -915,7 +2006,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLwLSw1_eDZl39KDdjidupfewWK2xookSn&si=KFtJ1_LN_fRNx4QX"
+        }
+      ]
     },
     "anilist-195571": {
       "title": "Shuiro no Kamen",
@@ -940,7 +2041,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/watch/GE00384363JAJP"
+        }
+      ]
     },
     "romeliasenki": {
       "title": "Romelia Senki",
@@ -991,7 +2098,25 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371633"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2431959"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLFsBVQsxttbw"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/1tnlbxdm3vt"
+        }
+      ]
     },
     "anilist-204389": {
       "title": "Yasei no Last Boss ga Arawareta! 2nd Season",
@@ -1017,7 +2142,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLbuF5Onrcu9fs9Jo_IR9nZ7WrulQuDup-"
+        }
+      ]
     },
     "anilist-195604": {
       "title": "Black Clover 2nd Season",
@@ -1043,7 +2178,21 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432940"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/qchxviq611"
+        }
+      ]
     },
     "anilist-212799": {
       "title": "Marronnier Oukoku no Shichinin no Kishi",
@@ -1069,7 +2218,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/dp/B0HG6N5R36"
+        }
+      ]
     },
     "anilist-199007": {
       "title": "#Zombie Sagashitemasu",
@@ -1094,7 +2249,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
+        }
+      ]
     },
     "anilist-209562": {
       "title": "Vertex Force",
@@ -1119,7 +2280,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
+        }
+      ]
     },
     "magicalexplorererogenoyuujincharanitenseishitakedogamechishikitsukattejiyuuniikiru": {
       "title": "Magical★Explorer: Eroge no Yuujin Chara ni Tensei Shitakedo, Game Chishiki Tsukatte Jiyuu ni Ikiru",
@@ -1129,25 +2296,51 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-209872": {
       "title": "Ranma ½ (2024) 3rd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animebox Channel Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.47342490-6bf0-40ae-a3c6-6e8bdf276755",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts20738",
+          "matchedTitle": "Ranma ½",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"Ranma 1/2 (2024) 3rd Season\",\"Ranma ½\",\"Ranma ½ (2024) 3rd Season\",\"Ranma1/2 (2024) Season 3\",\"らんま1/2 (2024) 第3期\",\"らんま1/2 第3期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/81171925"
+        }
+      ],
+      "aliases": [
+        "Ranma ½ (2024) 3rd Season",
+        "Ranma1/2 (2024) Season 3",
+        "らんま1/2 第3期",
+        "Ranma 1/2 (2024) 3rd Season",
+        "らんま1/2 (2024) 第3期",
+        "Ranma ½"
+      ]
     },
     "seitokainimoanawaaru": {
       "title": "Seitokai ni mo Ana wa Aru!",
@@ -1157,11 +2350,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-203473": {
       "title": "Kyoufu Collector",
@@ -1186,7 +2383,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383993"
+        }
+      ]
     },
     "anilist-202250": {
       "title": "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu",
@@ -1211,7 +2414,21 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432615"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLAzayY4fPdjw"
+        }
+      ]
     },
     "anilist-202957": {
       "title": "Meitantei Precure!",
@@ -1236,7 +2453,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00369409"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@precure/videos"
+        }
+      ]
     },
     "mahoukakoukounorettouseimovieyotsubakeishouhen": {
       "title": "Mahouka Koukou no Rettousei Movie: Yotsuba Keishou-hen",
@@ -1246,11 +2473,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-213657": {
       "title": "Yozakura-san Chi no Daisakusen 2nd Season Part 2",
@@ -1271,7 +2502,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Disney+",
+          "url": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb"
+        },
+        {
+          "service": "Hulu",
+          "url": "https://www.hulu.com/series/ac689bea-f955-4d95-8693-7b87b5a309cb"
+        }
+      ]
     },
     "anilist-191788": {
       "title": "Ao Ashi 2nd Season",
@@ -1297,7 +2538,21 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/aoashi"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLYavYYpKm3cc"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/1627dg47zxl"
+        }
+      ]
     },
     "anilist-213658": {
       "title": "Diamond no Ace Act II: Second Season Part 2",
@@ -1307,11 +2562,20 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond"
+        }
+      ]
     },
     "anilist-118123": {
       "title": "Holo no Graffiti",
@@ -1330,16 +2594,110 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         },
         "AR": {
           "status": "error",
           "offers": [],
           "lastAttemptAt": "2026-10-30T16:10:16.429Z",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "Holo no Graffiti",
         "ホロのぐらふぃてぃ",
@@ -1348,21 +2706,47 @@
         "ホロぐら",
         "Hololive",
         "הולולייב"
+      ],
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
+        }
       ]
     },
     "mezametarasaikyousoubitouchuusenmochidattanodeikkodatemezashiteyouheitoshitejiyuuniikitai": {
       "title": "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00389229PTBR",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.46be8191-8efd-4650-bef7-bd640a44f1b2",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469750",
+          "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"SHOW\",null,[\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [],
+      "aliases": [
+        "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
+        "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+        "目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい",
+        "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship"
+      ]
     },
     "anilist-202079": {
       "title": "Oji-san wa Kawaii Mono ga Osuki.",
@@ -1382,7 +2766,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLTx6Ft3jb3mg"
+        }
+      ]
     },
     "anilist-209499": {
       "title": "Tank Chair",
@@ -1407,7 +2801,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://www.primevideo.com/detail/0FYBTVJ1JB731K9U0XDE7U20F1"
+        }
+      ]
     },
     "anilist-212888": {
       "title": "OVERGEARED",
@@ -1433,7 +2833,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384004"
+        }
+      ]
     },
     "anilist-205896": {
       "title": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
@@ -1458,7 +2864,13 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
+        }
+      ]
     },
     "anilist-200455": {
       "title": "Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
@@ -1484,7 +2896,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365562"
+        }
+      ]
     },
     "anilist-185756": {
       "title": "Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season",
@@ -1510,7 +2928,25 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/onlibp0le1"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2432255"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLfEwGegYhFGY"
+        }
+      ]
     },
     "anilist-199426": {
       "title": "Hotel Inhumans 2nd Season",
@@ -1536,7 +2972,17 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLL3w2EaZKrjI"
+        }
+      ]
     },
     "anilist-206814": {
       "title": "Dragon Ball Super: Beerus",
@@ -1576,7 +3022,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+        },
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/83189604"
+        }
+      ]
     },
     "anilist-209463": {
       "title": "Kanata kara",
@@ -1601,7 +3057,17 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/vbssu42k2p"
+        }
+      ]
     },
     "mousecursordegenjitsuwosousadekiruyouninattanodeonnanokowoippaiclickshimaasu": {
       "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
@@ -1611,11 +3077,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa": {
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
@@ -1625,11 +3095,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-217782": {
       "title": "Kanojo no Tomodachi",
@@ -1644,14 +3118,24 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
       "aliases": [
         "My Girlfriend's Friend Mini Anime",
         "Kanojo no Tomodachi Mini Anime Gekijou",
         "彼女の友達 ミニアニメ劇場"
+      ],
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/537"
+        }
       ]
     },
     "darksummonertodekiteiru": {
@@ -1662,11 +3146,15 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
     },
     "anilist-203275": {
       "title": "Demons' Crest",
@@ -1676,12 +3164,27 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "lookupVersion": 3,
-          "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://amazon.com/"
+        }
+      ],
+      "aliases": [
+        "Demons' Crest",
+        "Devils' Crest",
+        "デモンズ・クレスト",
+        "デモクレ",
+        "DemoKure"
+      ]
     },
     "anilist-235": {
       "title": "Detective Conan",
@@ -1727,7 +3230,25 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/The-Bizarre-Manhunt-Murder/dp/B09Q2CH8RS/ref=sr_1_1?crid=3667GOL0MHJ0P"
+        },
+        {
+          "service": "Crackle",
+          "url": "https://www.crackle.com/details/00bf3d7c-564a-49a7-9661-b57c8743882c/case-closed"
+        },
+        {
+          "service": "Tubi TV",
+          "url": "https://tubitv.com/series/300010357/case-closed-subbed?start=true"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@conan_anime"
+        }
+      ]
     },
     "anilist-189123": {
       "title": "Ao no Hako 2nd Season",
@@ -1748,7 +3269,13 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": [
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/81663323"
+        }
+      ]
     },
     "anilist-189046": {
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -1774,7 +3301,56 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:10:16.429Z"
+      "lastSeenAt": "2026-10-30T17:11:17.896Z",
+      "anilistOffers": []
+    },
+    "anilist-180894": {
+      "title": "Romelia Senki",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@anime.romeliasenki"
+        }
+      ],
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384291JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ec671e5c-bf1c-4130-92c1-52c157e60691",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts535458",
+          "matchedTitle": "Romelia Senki",
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "inputSignature": "[\"ONA\",null,[\"A History of the Romelia\",\"Romelia Senki\",\"Romelia Senki: Maou wo Taoshita nochi mo Jinrui Yabasou dakara Guntai Soshiki Shita\",\"Romelia War Chronicle\",\"ロメリア戦記\",\"ロメリア戦記 〜魔王を倒した後も人類やばそうだから軍隊組織した〜\"]]"
+        }
+      },
+      "aliases": [
+        "Romelia Senki",
+        "Romelia War Chronicle",
+        "ロメリア戦記",
+        "Romelia Senki: Maou wo Taoshita nochi mo Jinrui Yabasou dakara Guntai Soshiki Shita",
+        "ロメリア戦記 〜魔王を倒した後も人類やばそうだから軍隊組織した〜",
+        "A History of the Romelia"
+      ],
+      "lastSeenAt": "2026-10-30T17:11:17.896Z"
     }
+  },
+  "cooldowns": {
+    "AniList": "2026-10-30T18:11:17.896Z"
   }
 }

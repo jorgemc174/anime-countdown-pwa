@@ -35,7 +35,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
+      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -110,8 +110,8 @@
       "anilistYear": null,
       "anilistScore": 82,
       "titles": [
-        "Meitantei Conan",
         "Detective Conan",
+        "Meitantei Conan",
         "名探偵コナン",
         "Case Closed",
         "Detectiu Conan",
@@ -129,7 +129,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
+      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -201,7 +201,25 @@
         "Rakuten TV": "https://www.rakuten.tv/es/tv_shows/detective-conan"
       },
       "platformStatus": "verified",
-      "platformStale": false
+      "platformStale": false,
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/The-Bizarre-Manhunt-Murder/dp/B09Q2CH8RS/ref=sr_1_1?crid=3667GOL0MHJ0P"
+        },
+        {
+          "service": "Crackle",
+          "url": "https://www.crackle.com/details/00bf3d7c-564a-49a7-9661-b57c8743882c/case-closed"
+        },
+        {
+          "service": "Tubi TV",
+          "url": "https://tubitv.com/series/300010357/case-closed-subbed?start=true"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@conan_anime"
+        }
+      ]
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
@@ -229,15 +247,16 @@
       "anilistYear": null,
       "anilistScore": 81,
       "titles": [
+        "Ao no Hako 2nd Season",
+        "Blue Box 2nd Season",
+        "アオのハコ 第2期",
         "Ao no Hako Season 2",
         "Blue Box Season 2",
-        "アオのハコ Season２",
-        "Ao no Hako 2nd Season",
-        "アオのハコ 第2期"
+        "アオのハコ Season２"
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
+      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -276,7 +295,13 @@
         "Netflix": "https://www.netflix.com/title/81663323"
       },
       "platformStatus": "verified",
-      "platformStale": false
+      "platformStale": false,
+      "anilistOffers": [
+        {
+          "service": "Netflix",
+          "url": "https://www.netflix.com/title/81663323"
+        }
+      ]
     },
     {
       "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
@@ -307,12 +332,13 @@
       "titles": [
         "PSYЯEN",
         "PSYREN",
+        "PSYЯEN -サイレン-",
         "PSYREN -サイレン-",
         "САЙРЕН"
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
+      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
@@ -358,7 +384,13 @@
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
       },
       "platformStatus": "verified",
-      "platformStale": false
+      "platformStale": false,
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+        }
+      ]
     }
   ]
 }
