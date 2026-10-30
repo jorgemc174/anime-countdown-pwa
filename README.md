@@ -48,7 +48,11 @@ Las consultas se agrupan por serie y país, se reutilizan durante doce horas y s
 limitan a tres simultáneas y cuatro minutos por ejecución. Los pendientes continúan
 en los próximos cron. Las peticiones se espacian al menos 1,3 segundos y se
 prioriza completar España antes de otros países. Un límite 429 detiene nuevas
-consultas hasta otra ejecución. La búsqueda reconoce sufijos de temporada y cour
+consultas hasta otra ejecución. Si falta un alias (por ejemplo, «Ao no Exorcist»
+frente a «Blue Exorcist»), se consulta AniList por ID o nombre exacto y se
+reintenta JustWatch con los nombres de esa misma serie. Estos alias se guardan
+para futuras actualizaciones; las plataformas siguen procediendo exclusivamente
+del país seleccionado en JustWatch. La búsqueda reconoce sufijos de temporada y cour
 y prueba títulos en inglés manteniendo siempre el país de las ofertas. No se
 mezclan películas, remakes o spin-offs por coincidencias parciales de nombre.
 Se conservan las últimas ofertas conocidas del mismo país ante fallos. Un

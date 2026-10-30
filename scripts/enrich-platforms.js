@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 2;
+const LOOKUP_VERSION = 3;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
@@ -14,7 +14,7 @@ const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $lang
   }
 }`;
 
-async function lookupAvailability(item, country, { fetchImpl = fetch, signal } = {}) {
+async function lookupJustWatch(item, country, { fetchImpl = fetch, signal } = {}) {
   const titles = policy.searchTitles(item);
   const languages = [...new Set([country.lang, "en"])];
   const attempts = titles.flatMap(searchQuery => languages.map(language => ({ searchQuery, language })));
@@ -43,12 +43,51 @@ async function lookupAvailability(item, country, { fetchImpl = fetch, signal } =
   return { status: "not-found", offers: [] };
 }
 
+async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
+  const query = `query ResolveStreamingTitle($id: Int, $search: String) {
+    Media(id: $id, search: $search, type: ANIME) {
+      id title { romaji english native } synonyms
+    }
+  }`;
+  const id = Number(item.anilistId) || null;
+  const response = await fetchImpl("https://graphql.anilist.co", {
+    method: "POST", signal: signal || AbortSignal.timeout(15000),
+    headers: { "content-type": "application/json", accept: "application/json" },
+    body: JSON.stringify({ query, variables: { id, search: id ? null : item.title } })
+  });
+  if (!response.ok) throw new Error(`AniList HTTP ${response.status} al resolver nombres`);
+  const json = await response.json();
+  if (json.errors?.some(error => error.status !== 404)) throw new Error("No se pudieron consultar los nombres de AniList");
+  const media = json.data?.Media;
+  if (!media) return null;
+  const titles = [...new Set([media.title?.english, media.title?.romaji, media.title?.native, ...(media.synonyms || [])].filter(Boolean))];
+  const normalize = value => String(value || "").normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+  const expected = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean).map(normalize);
+  if (id ? Number(media.id) !== id : !titles.some(title => expected.includes(normalize(title)))) return null;
+  return { english: media.title?.english, titles };
+}
+
+async function lookupAvailability(item, country, options = {}) {
+  const direct = await lookupJustWatch(item, country, options);
+  if (direct.status !== "not-found") return direct;
+  const key = policy.seriesKey(item);
+  const aliasCache = options.aliasCache || new Map();
+  if (!aliasCache.has(key)) aliasCache.set(key, resolveTitleAliases(item, options));
+  const aliases = await aliasCache.get(key);
+  if (!aliases) return direct;
+  const enriched = { ...item, anilistTitle: aliases.english || item.anilistTitle,
+    titles: [...new Set([...(item.titles || []), ...aliases.titles])] };
+  const result = await lookupJustWatch(enriched, country, options);
+  return { ...result, aliases: aliases.titles };
+}
+
 async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
   countries = policy.COUNTRIES, lookup = lookupAvailability, now = Date.now(),
   budgetMs = 240000, concurrency = 3, ttlMs = 12 * 3600000
 } = {}) {
   const rows = validate(payload);
   let nextRequestAt = 0;
+  const aliasCache = new Map();
   const throttledFetch = async (url, options) => {
     const start = Math.max(Date.now(), nextRequestAt);
     nextRequestAt = start + 1300;
@@ -84,8 +123,10 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       const { key, row, country } = tasks[cursor++];
       const previous = cache.series[key].countries[country.code];
       try {
-        const result = await lookup(row, country, { signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
+        const target = { ...row, titles: [...new Set([...(row.titles || []), ...(cache.series[key].aliases || [])])] };
+        const result = await lookup(target, country, { aliasCache, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
+        if (result.aliases?.length) cache.series[key].aliases = result.aliases;
         cache.series[key].countries[country.code] = { ...result, lookupVersion: LOOKUP_VERSION, checkedAt: timestamp, lastAttemptAt: timestamp };
       } catch (error) {
         errors++;

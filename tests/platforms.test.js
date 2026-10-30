@@ -126,3 +126,29 @@ test("localized names use English metadata but keep the same country for offers"
   assert.equal(result.offers[0].service, "Crunchyroll");
   assert.ok(calls.every(call => call.country === "ES"));
 });
+test("a missing English alias is resolved from AniList before retrying JustWatch in the same country", async () => {
+  let resolved = 0;
+  const countries = [];
+  const result = await lookupAvailability({ title: "Ao no Exorcist" }, es, { fetchImpl: async (url, options) => {
+    if (url === "https://graphql.anilist.co") {
+      resolved++;
+      return Response.json({ data: { Media: { id: 9919, title: { romaji: "Ao no Exorcist", english: "Blue Exorcist" }, synonyms: [] } } });
+    }
+    countries.push(JSON.parse(options.body).variables.country);
+    return Response.json({ data: { popularTitles: { edges: [{ node: { id: "blue", objectType: "SHOW", content: { title: "Blue Exorcist" }, offers: [
+      { package: { technicalName: "crunchyroll" }, standardWebURL: "https://www.crunchyroll.com/series/blue", monetizationType: "FLATRATE" }
+    ] } }] } } });
+  } });
+  assert.equal(resolved, 1);
+  assert.equal(result.status, "verified");
+  assert.equal(result.offers[0].service, "Crunchyroll");
+  assert.ok(countries.every(country => country === "ES"));
+});
+test("an unrelated AniList search result cannot introduce aliases for a different anime", async () => {
+  const result = await lookupAvailability({ title: "Ao no Exorcist" }, es, { fetchImpl: async url => {
+    if (url === "https://graphql.anilist.co") return Response.json({ data: { Media: { id: 7, title: { romaji: "Different anime", english: "Wrong alias" } } } });
+    return Response.json({ data: { popularTitles: { edges: [] } } });
+  } });
+  assert.equal(result.status, "not-found");
+  assert.deepEqual(result.offers, []);
+});
