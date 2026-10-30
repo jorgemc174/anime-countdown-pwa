@@ -1,0 +1,44 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+      - name: Prepare Android SDK
+        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+      - run: npm ci
+      - name: Package current web app and native plugins
+        run: npm run cap:sync
+      - name: Build installable debug APK
+        run: bash android/gradlew -p android :app:assembleDebug --no-daemon --max-workers=2
+      - name: Verify APK signature and package
+        run: |
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose "$APK"
+          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging "$APK"
+          cp "$APK" "$RUNNER_TEMP/AnimeCountdown-debug.apk"
+          sha256sum "$RUNNER_TEMP/AnimeCountdown-debug.apk"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AnimeCountdown-debug
+          path: ${{ runner.temp }}/AnimeCountdown-debug.apk
+          if-no-files-found: error
+          retention-days: 30
