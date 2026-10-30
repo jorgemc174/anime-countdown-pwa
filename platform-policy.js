@@ -62,7 +62,9 @@
     const offers = record?.status === "verified" && Array.isArray(record.offers)
       ? record.offers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
     const best = offers[0];
-    return { ...item, ...base, basePlatforms: base,
+    // Global AnimeSchedule/AniList links are metadata, not regional availability.
+    // Missing evidence must not turn a US/global service into a local watch link.
+    return { ...item, service: "No legal platform", serviceUrl: "", allServices: [], hasAllowedPlatform: false, basePlatforms: base,
       ...(best ? { service: best.service, serviceUrl: best.url, allServices: offers.map(offer => offer.service), hasAllowedPlatform: true } : {}),
       jwVerified: Boolean(best), jwSource: "shared", jwCountry: country,
       jwVerifiedAt: record?.checkedAt || "",

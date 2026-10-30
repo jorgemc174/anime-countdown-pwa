@@ -500,7 +500,6 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
     const media = findMatchingRelease(item, anilistReleases);
     if (!media) return item;
     matched++;
-    const hasNewPlatform = !item.hasAllowedPlatform && media.hasAllowedPlatform;
     return {
       ...item,
       anilistId: media.anilistId || item.anilistId,
@@ -511,12 +510,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
       anilistScore: media.anilistScore ?? item.anilistScore,
       titles: media.titles?.length ? media.titles : (item.titles || []),
       coverUrl: media.coverUrl || item.coverUrl,
-      ...(hasNewPlatform ? {
-        service: media.service,
-        serviceUrl: media.serviceUrl,
-        allServices: media.allServices || [media.service],
-        hasAllowedPlatform: true
-      } : {})
+
     };
   });
   const missing = []; // AniList alone does not establish a SUB release.

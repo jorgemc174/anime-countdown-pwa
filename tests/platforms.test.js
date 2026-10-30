@@ -46,13 +46,18 @@ test("negative regional results do not borrow another country's availability", (
   const spanish = policy.applyCountryPlatforms(item, "ES", now);
   const mexican = policy.applyCountryPlatforms(spanish, "MX", now);
   assert.equal(spanish.service, "Netflix");
-  assert.equal(mexican.service, "Crunchyroll");
+  assert.equal(mexican.service, "No legal platform");
+  assert.equal(mexican.serviceUrl, "");
+  assert.equal(mexican.hasAllowedPlatform, false);
   assert.equal(mexican.jwVerified, false);
   assert.deepEqual(mexican.serviceUrls, {});
 });
-test("inconclusive searches preserve AnimeSchedule platforms without claiming JustWatch verification", async () => {
+test("inconclusive regional searches never expose global AnimeSchedule or AniList platforms", async () => {
   const result = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => ({ status: "not-found", offers: [] }) });
-  assert.equal(result.payload.releases[0].service, "Crunchyroll");
+  assert.equal(result.payload.releases[0].service, "No legal platform");
+  assert.equal(result.payload.releases[0].serviceUrl, "");
+  assert.deepEqual(result.payload.releases[0].allServices, []);
+  assert.equal(result.payload.releases[0].basePlatforms.service, "Crunchyroll");
   assert.equal(result.payload.releases[0].jwVerified, false);
   assert.equal(result.summary.coverage.ES.pending, 0);
 });

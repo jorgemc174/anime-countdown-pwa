@@ -208,7 +208,7 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v102";
+const APP_CACHE_NAME = "anime-countdown-pwa-v103";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -748,7 +748,7 @@ async function saveJwCountry() {
 
 function getDetectedPlatforms() {
   const platforms = new Set();
-  for (const item of [...state.releases, ...state.anilistLibrary]) {
+  for (const item of state.releases) {
     const svc = getDisplayService(item);
     if (svc && svc !== "No legal platform") platforms.add(svc);
     for (const s of (item.allServices || [])) {
@@ -1780,8 +1780,6 @@ async function fetchAnilistLibrary(username) {
     const media = entry.media;
     const titles = [media.title?.romaji, media.title?.english, media.title?.native, ...(media.synonyms || [])].filter(Boolean);
     const title = media.title?.english || media.title?.romaji || media.title?.native || "Sin título";
-    const streams = getAnilistStreams(media);
-    const best = chooseBestStream(streams);
     return sanitizePlatformFields({
       id: `anilist-${media.id}`,
       animeKey: stableId(title),
@@ -1793,10 +1791,10 @@ async function fetchAnilistLibrary(username) {
       delayed: false,
       releaseDate: "",
       anilistAiringDate: media.nextAiringEpisode?.airingAt ? new Date(media.nextAiringEpisode.airingAt * 1000).toISOString() : "",
-      service: best?.service || "No legal platform",
-      serviceUrl: best?.url || "",
-      allServices: streams.map((stream) => stream.service),
-      hasAllowedPlatform: Boolean(best),
+      service: "No legal platform",
+      serviceUrl: "",
+      allServices: [],
+      hasAllowedPlatform: false,
       source: "anilist-library",
       favorite: true,
       coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
@@ -2028,15 +2026,8 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
   for (const titleKey of buildTitleKeys(media.titles || [media.title])) state.anilistMap[titleKey] = media;
   state.releases = state.releases.map((item) => {
     if (getSeriesKey(item) !== seriesKey) return item;
-    const platform = !item.hasAllowedPlatform && media.hasAllowedPlatform ? {
-      service: media.service,
-      serviceUrl: media.serviceUrl,
-      allServices: media.allServices,
-      hasAllowedPlatform: true
-    } : {};
     return {
       ...item,
-      ...platform,
       anilistId: media.anilistId || item.anilistId,
       anilistTitle: media.title || item.anilistTitle,
       anilistUrl: media.siteUrl || item.anilistUrl,

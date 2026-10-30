@@ -40,14 +40,17 @@ El catálogo incluye los doce países del selector, con España por defecto.
 `JUSTWATCH_COUNTRIES=ES,MX` permite limitar la generación si se desea. Cada episodio
 incluye `basePlatforms` (fuente original) y `platformsByCountry` con ofertas,
 fecha de comprobación y estado por país. Cambiar de país selecciona esos datos
-localmente; nunca reutiliza como verificadas ofertas de otro país.
+localmente; solo se muestran las ofertas de JustWatch del país seleccionado.
+Las plataformas globales de AniList y AnimeSchedule se conservan como metadatos
+internos, pero no se usan como alternativa cuando falta disponibilidad local.
 
 Las consultas se agrupan por serie y país, se reutilizan durante doce horas y se
 limitan a tres simultáneas y cuatro minutos por ejecución. Los pendientes continúan
 en los próximos cron. Un límite 429 detiene nuevas consultas hasta otra ejecución.
-Se conservan las ofertas anteriores ante fallos y se indica su antigüedad. Un
-resultado sin coincidencia o sin ofertas no se presenta como verificado ni borra
-la información original de AnimeSchedule. Las plataformas son disponibilidad de
+Se conservan las últimas ofertas conocidas del mismo país ante fallos. Un
+resultado sin coincidencia, pendiente o sin ofertas deja la serie sin plataforma
+indicada; eso no prueba que no exista una opción legal. Nunca se utiliza una
+plataforma de Estados Unidos como alternativa para España u otro país. Las plataformas son disponibilidad de
 la serie, no una garantía de cada temporada o episodio.
 
 Se excluyen alquileres y compras; los canales adicionales son suscripciones
