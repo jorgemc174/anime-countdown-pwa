@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T15:56:05.621Z",
-  "checkedAt": "2026-10-30T15:50:01.367Z",
+  "updatedAt": "2026-10-30T16:10:16.240Z",
+  "checkedAt": "2026-10-30T16:10:16.240Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -262,7 +262,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -271,7 +272,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-mahou-shoujo-ikusei-keikaku-restart-4-2026-10-26t18-30-00-01-00",
@@ -315,7 +316,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -324,7 +326,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-cocoon-aru-natsu-no-shoujo-tachi-yori-1-2026-10-27t08-00-00-01-00",
@@ -357,7 +359,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -366,7 +369,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-4-2026-10-27t13-55-00-01-00",
@@ -410,15 +413,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Nia Liston: The Merciless Maiden",
+            "Kyouran Reijou Nia Liston",
+            "凶乱令嬢ニア・リストン"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -610,15 +618,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Gensou Suikoden",
+            "幻想水滸伝",
+            "Suikoden: The Anime"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -1227,7 +1240,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1236,7 +1250,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-magic-knight-rayearth-2026-4-2026-10-28t16-15-00-01-00",
@@ -1280,15 +1294,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Magic Knight Rayearth (2026)",
+            "魔法騎士レイアース (2026)",
+            "Magical Knight Rayearth New Project"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -1406,15 +1425,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+            "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+            "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -1598,7 +1622,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1607,7 +1632,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-5-2026-10-29t16-30-00-01-00",
@@ -1651,7 +1676,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1660,7 +1686,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-4-2026-10-29t17-00-00-01-00",
@@ -1704,15 +1730,21 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "TETSURYO! Meet With Tetsudou Musume",
+            "Tetsuryou! meet with Tetsudou Musume",
+            "てつりょー！meet with 鉄道むすめ",
+            "TETSURYO! meet with Tetsudou Musume"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -1835,7 +1867,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1844,7 +1877,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-4-2026-10-29t18-00-00-01-00",
@@ -1891,7 +1924,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1900,7 +1934,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tokyo-revengers-santen-sensou-hen-5-2026-10-30t09-00-00-01-00",
@@ -1947,7 +1981,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -1956,7 +1991,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-6-2026-10-30t09-01-00-01-00",
@@ -2059,7 +2094,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -2068,7 +2104,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-toaru-anbu-no-item-4-2026-10-30t16-31-00-01-00",
@@ -2418,15 +2454,19 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Ghost Meets Gal!",
+            "ごーすと・みーつ・ぎゃる！"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -3260,7 +3300,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3269,7 +3310,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ranma-½-2024-3rd-season-5-2026-10-31t18-00-00-01-00",
@@ -3313,7 +3354,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3322,7 +3364,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-seitokai-ni-mo-ana-wa-aru-5-2026-10-31t18-00-00-01-00",
@@ -3355,7 +3397,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3364,7 +3407,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyoufu-collector-4-2026-10-31t18-15-00-01-00",
@@ -3619,7 +3662,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3628,7 +3672,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-yozakura-san-chi-no-daisakusen-2nd-season-part-2-4-2026-11-01t09-30-00-01-00",
@@ -3813,7 +3857,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3822,7 +3867,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-holo-no-graffiti-390-2026-11-01t10-01-00-01-00",
@@ -3866,15 +3911,30 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Holo no Graffiti",
+            "ホロのぐらふぃてぃ",
+            "Hologra 3D Short Animation",
+            "Hologra",
+            "ホロぐら",
+            "Hololive",
+            "הולולייב"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -3911,7 +3971,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -3920,7 +3981,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-oji-san-wa-kawaii-mono-ga-osuki-5-2026-11-01t15-00-00-01-00",
@@ -4630,7 +4691,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -4639,7 +4701,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-5-2026-11-01t17-06-00-01-00",
@@ -4670,7 +4732,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -4679,7 +4742,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kanojo-no-tomodachi-5-2026-11-01t17-06-00-01-00",
@@ -4719,15 +4782,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "My Girlfriend's Friend Mini Anime",
+            "Kanojo no Tomodachi Mini Anime Gekijou",
+            "彼女の友達 ミニアニメ劇場"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -4764,7 +4832,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -4773,7 +4842,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-5-2026-11-02t13-31-00-01-00",
@@ -4969,7 +5038,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -4978,7 +5048,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-5-2026-11-03t13-55-00-01-00",
@@ -5022,15 +5092,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Nia Liston: The Merciless Maiden",
+            "Kyouran Reijou Nia Liston",
+            "凶乱令嬢ニア・リストン"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -5222,15 +5297,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Gensou Suikoden",
+            "幻想水滸伝",
+            "Suikoden: The Anime"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -5839,7 +5919,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -5848,7 +5929,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-magic-knight-rayearth-2026-5-2026-11-04t16-15-00-01-00",
@@ -5892,15 +5973,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Magic Knight Rayearth (2026)",
+            "魔法騎士レイアース (2026)",
+            "Magical Knight Rayearth New Project"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -6018,15 +6104,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+            "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+            "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -6210,7 +6301,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6219,7 +6311,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-6-2026-11-05t16-30-00-01-00",
@@ -6263,7 +6355,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6272,7 +6365,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-5-2026-11-05t17-00-00-01-00",
@@ -6316,15 +6409,21 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "TETSURYO! Meet With Tetsudou Musume",
+            "Tetsuryou! meet with Tetsudou Musume",
+            "てつりょー！meet with 鉄道むすめ",
+            "TETSURYO! meet with Tetsudou Musume"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -6447,7 +6546,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6456,7 +6556,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-5-2026-11-05t18-00-00-01-00",
@@ -6503,7 +6603,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6512,7 +6613,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tokyo-revengers-santen-sensou-hen-6-2026-11-06t09-00-00-01-00",
@@ -6559,7 +6660,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6568,7 +6670,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-7-2026-11-06t09-01-00-01-00",
@@ -6667,15 +6769,15 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -6727,7 +6829,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -6736,7 +6839,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-toaru-anbu-no-item-5-2026-11-06t16-31-00-01-00",
@@ -7086,15 +7189,19 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Ghost Meets Gal!",
+            "ごーすと・みーつ・ぎゃる！"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -8043,7 +8150,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -8052,7 +8160,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ranma-½-2024-3rd-season-6-2026-11-07t18-00-00-01-00",
@@ -8096,7 +8204,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -8105,7 +8214,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-seitokai-ni-mo-ana-wa-aru-6-2026-11-07t18-00-00-01-00",
@@ -8138,7 +8247,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -8147,7 +8257,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyoufu-collector-5-2026-11-07t18-15-00-01-00",
@@ -8556,7 +8666,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -8565,7 +8676,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-holo-no-graffiti-391-2026-11-08t10-01-00-01-00",
@@ -8609,15 +8720,30 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Holo no Graffiti",
+            "ホロのぐらふぃてぃ",
+            "Hologra 3D Short Animation",
+            "Hologra",
+            "ホロぐら",
+            "Hololive",
+            "הולולייב"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -8654,7 +8780,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -8663,7 +8790,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-oji-san-wa-kawaii-mono-ga-osuki-6-2026-11-08t15-00-00-01-00",
@@ -9373,7 +9500,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -9382,7 +9510,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-6-2026-11-08t17-06-00-01-00",
@@ -9413,7 +9541,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -9422,7 +9551,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kanojo-no-tomodachi-6-2026-11-08t17-06-00-01-00",
@@ -9462,15 +9591,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "My Girlfriend's Friend Mini Anime",
+            "Kanojo no Tomodachi Mini Anime Gekijou",
+            "彼女の友達 ミニアニメ劇場"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -9507,7 +9641,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -9516,7 +9651,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-6-2026-11-09t13-31-00-01-00",
@@ -9712,7 +9847,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -9721,7 +9857,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-6-2026-11-10t13-55-00-01-00",
@@ -9765,15 +9901,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Nia Liston: The Merciless Maiden",
+            "Kyouran Reijou Nia Liston",
+            "凶乱令嬢ニア・リストン"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -9965,15 +10106,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Gensou Suikoden",
+            "幻想水滸伝",
+            "Suikoden: The Anime"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -10582,7 +10728,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -10591,7 +10738,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-magic-knight-rayearth-2026-6-2026-11-11t16-15-00-01-00",
@@ -10635,15 +10782,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Magic Knight Rayearth (2026)",
+            "魔法騎士レイアース (2026)",
+            "Magical Knight Rayearth New Project"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -10761,15 +10913,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+            "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+            "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -10953,7 +11110,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -10962,7 +11120,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-7-2026-11-12t16-30-00-01-00",
@@ -11006,7 +11164,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -11015,7 +11174,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-6-2026-11-12t17-00-00-01-00",
@@ -11059,15 +11218,21 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "TETSURYO! Meet With Tetsudou Musume",
+            "Tetsuryou! meet with Tetsudou Musume",
+            "てつりょー！meet with 鉄道むすめ",
+            "TETSURYO! meet with Tetsudou Musume"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -11190,7 +11355,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -11199,7 +11365,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-6-2026-11-12t18-00-00-01-00",
@@ -11246,7 +11412,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -11255,7 +11422,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tokyo-revengers-santen-sensou-hen-7-2026-11-13t09-00-00-01-00",
@@ -11302,7 +11469,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -11311,7 +11479,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-8-2026-11-13t09-01-00-01-00",
@@ -11410,15 +11578,15 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -11470,7 +11638,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -11479,7 +11648,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-toaru-anbu-no-item-6-2026-11-13t16-31-00-01-00",
@@ -11829,15 +11998,19 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Ghost Meets Gal!",
+            "ごーすと・みーつ・ぎゃる！"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -12786,7 +12959,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -12795,7 +12969,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ranma-½-2024-3rd-season-7-2026-11-14t18-00-00-01-00",
@@ -12839,7 +13013,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -12848,7 +13023,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-seitokai-ni-mo-ana-wa-aru-7-2026-11-14t18-00-00-01-00",
@@ -12881,7 +13056,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -12890,7 +13066,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyoufu-collector-6-2026-11-14t18-15-00-01-00",
@@ -13366,7 +13542,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -13375,7 +13552,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-holo-no-graffiti-392-2026-11-15t10-01-00-01-00",
@@ -13419,15 +13596,30 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Holo no Graffiti",
+            "ホロのぐらふぃてぃ",
+            "Hologra 3D Short Animation",
+            "Hologra",
+            "ホロぐら",
+            "Hololive",
+            "הולולייב"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -13464,7 +13656,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -13473,7 +13666,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-oji-san-wa-kawaii-mono-ga-osuki-7-2026-11-15t15-00-00-01-00",
@@ -14183,7 +14376,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -14192,7 +14386,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-7-2026-11-15t17-06-00-01-00",
@@ -14223,7 +14417,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -14232,7 +14427,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kanojo-no-tomodachi-7-2026-11-15t17-06-00-01-00",
@@ -14272,15 +14467,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "My Girlfriend's Friend Mini Anime",
+            "Kanojo no Tomodachi Mini Anime Gekijou",
+            "彼女の友達 ミニアニメ劇場"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -14317,7 +14517,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -14326,7 +14527,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-7-2026-11-16t13-31-00-01-00",
@@ -14595,7 +14796,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -14604,7 +14806,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-7-2026-11-17t13-55-00-01-00",
@@ -14648,15 +14850,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Nia Liston: The Merciless Maiden",
+            "Kyouran Reijou Nia Liston",
+            "凶乱令嬢ニア・リストン"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -14848,15 +15055,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Gensou Suikoden",
+            "幻想水滸伝",
+            "Suikoden: The Anime"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -15465,7 +15677,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -15474,7 +15687,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-magic-knight-rayearth-2026-7-2026-11-18t16-15-00-01-00",
@@ -15518,15 +15731,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Magic Knight Rayearth (2026)",
+            "魔法騎士レイアース (2026)",
+            "Magical Knight Rayearth New Project"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -15644,15 +15862,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+            "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+            "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -15836,7 +16059,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -15845,7 +16069,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-koori-no-jouheki-2nd-season-8-2026-11-19t16-30-00-01-00",
@@ -15889,7 +16113,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -15898,7 +16123,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tetsuryou-meet-with-tetsudou-musume-7-2026-11-19t17-00-00-01-00",
@@ -15942,15 +16167,21 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "TETSURYO! Meet With Tetsudou Musume",
+            "Tetsuryou! meet with Tetsudou Musume",
+            "てつりょー！meet with 鉄道むすめ",
+            "TETSURYO! meet with Tetsudou Musume"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -16073,7 +16304,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -16082,7 +16314,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-7-2026-11-19t18-00-00-01-00",
@@ -16129,7 +16361,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -16138,7 +16371,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tokyo-revengers-santen-sensou-hen-8-2026-11-20t09-00-00-01-00",
@@ -16185,7 +16418,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -16194,7 +16428,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-9-2026-11-20t09-01-00-01-00",
@@ -16293,15 +16527,15 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -16353,7 +16587,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -16362,7 +16597,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-toaru-anbu-no-item-7-2026-11-20t16-31-00-01-00",
@@ -16712,15 +16947,19 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Ghost Meets Gal!",
+            "ごーすと・みーつ・ぎゃる！"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -17669,7 +17908,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -17678,7 +17918,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ranma-½-2024-3rd-season-8-2026-11-21t18-00-00-01-00",
@@ -17722,7 +17962,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -17731,7 +17972,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-seitokai-ni-mo-ana-wa-aru-8-2026-11-21t18-00-00-01-00",
@@ -17764,7 +18005,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -17773,7 +18015,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kyoufu-collector-7-2026-11-21t18-15-00-01-00",
@@ -18249,7 +18491,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -18258,7 +18501,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-holo-no-graffiti-393-2026-11-22t10-01-00-01-00",
@@ -18302,15 +18545,30 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Holo no Graffiti",
+            "ホロのぐらふぃてぃ",
+            "Hologra 3D Short Animation",
+            "Hologra",
+            "ホロぐら",
+            "Hololive",
+            "הולולייב"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -18347,7 +18605,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -18356,7 +18615,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-oji-san-wa-kawaii-mono-ga-osuki-8-2026-11-22t15-00-00-01-00",
@@ -19066,7 +19325,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -19075,7 +19335,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-8-2026-11-22t17-06-00-01-00",
@@ -19106,7 +19366,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -19115,7 +19376,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-kanojo-no-tomodachi-8-2026-11-22t17-06-00-01-00",
@@ -19155,15 +19416,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "My Girlfriend's Friend Mini Anime",
+            "Kanojo no Tomodachi Mini Anime Gekijou",
+            "彼女の友達 ミニアニメ劇場"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -19200,7 +19466,8 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
       "jwVerified": false,
@@ -19209,7 +19476,7 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-12t16-00-00-02-00",
@@ -19245,7 +19512,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -19342,7 +19609,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -19450,7 +19717,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -19525,7 +19792,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
@@ -19575,23 +19842,100 @@
     }
   ],
   "platforms": {
-    "checked": 53,
-    "errors": 0,
-    "queued": 0,
+    "checked": 29,
+    "errors": 20,
+    "queued": 857,
     "rateLimited": false,
     "coverage": {
       "ES": {
         "total": 78,
         "verified": 48,
         "pending": 2,
-        "stale": 2
+        "stale": 21
+      },
+      "MX": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "AR": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 1
+      },
+      "CL": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "CO": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "US": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "GB": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "DE": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "FR": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "IT": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "BR": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
+      },
+      "PT": {
+        "total": 78,
+        "verified": 0,
+        "pending": 78,
+        "stale": 0
       }
     },
     "countries": [
-      "ES"
+      "ES",
+      "MX",
+      "AR",
+      "CL",
+      "CO",
+      "US",
+      "GB",
+      "DE",
+      "FR",
+      "IT",
+      "BR",
+      "PT"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-10-30T16:02:17.050Z",
+    "checkedAt": "2026-10-30T16:10:16.429Z",
     "series": 78
   }
 }

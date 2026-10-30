@@ -35,10 +35,52 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll",
+          "Bilibili"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-detective-conan-1218-2026-10-31t12-30-00-01-00",
@@ -87,13 +129,79 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://www.crunchyroll.com/case-closed",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll",
+          "Netflix"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G8WUN280N",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "CanalSurMas",
+              "url": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
+              "monetizationType": "ADS"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab656f99-4349-458a-a967-6ce017d3d207",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Rakuten TV",
+              "url": "https://www.rakuten.tv/es/tv_shows/detective-conan",
+              "monetizationType": "ADS"
+            }
+          ],
+          "justwatchId": "ts10145",
+          "matchedTitle": "Meitantei Conan",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/G8WUN280N",
+        "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+        "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+        "CanalSurMas": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab656f99-4349-458a-a967-6ce017d3d207",
+        "Rakuten TV": "https://www.rakuten.tv/es/tv_shows/detective-conan"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
@@ -129,12 +237,46 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Netflix",
+        "serviceUrl": "https://www.netflix.com/title/81663323",
+        "allServices": [
+          "Netflix"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/81663323"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
@@ -170,13 +312,53 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "lastDelayCheck": "2026-10-30T16:10:10.790Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252ES419",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "checkedAt": "2026-10-30T15:50:01.545Z",
+          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+        }
+      },
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T15:50:01.545Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384252ES419",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     }
   ]
 }

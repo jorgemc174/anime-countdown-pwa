@@ -24,7 +24,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-209219": {
       "title": "Tensei Goblin dakedo Shitsumon Aru?",
@@ -49,7 +49,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-204011": {
       "title": "PSYЯEN",
@@ -74,7 +74,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "bleachsennenkessenhenkashintan": {
       "title": "BLEACH: Sennen Kessen-hen - Kashin-tan",
@@ -84,10 +84,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-160803": {
       "title": "Mahou Shoujo Ikusei Keikaku: Restart",
@@ -97,10 +98,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "cocoonarunatsunoshoujotachiyori": {
       "title": "cocoon: Aru Natsu no Shoujo-tachi Yori",
@@ -110,10 +112,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-206949": {
       "title": "Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku",
@@ -121,12 +124,22 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Nia Liston: The Merciless Maiden",
+            "Kyouran Reijou Nia Liston",
+            "凶乱令嬢ニア・リストン"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Nia Liston: The Merciless Maiden",
+        "Kyouran Reijou Nia Liston",
+        "凶乱令嬢ニア・リストン"
+      ]
     },
     "anilist-209502": {
       "title": "Shiotaiou no Satou-san ga Ore ni dake Amai",
@@ -152,7 +165,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-187990": {
       "title": "Battle Spirits [Re] Zekkai No Ku",
@@ -177,7 +190,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-187316": {
       "title": "Gensou Suikoden",
@@ -185,12 +198,22 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Gensou Suikoden",
+            "幻想水滸伝",
+            "Suikoden: The Anime"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Gensou Suikoden",
+        "幻想水滸伝",
+        "Suikoden: The Anime"
+      ]
     },
     "anilist-200294": {
       "title": "Choujun! Choujou Senpai",
@@ -215,7 +238,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-207329": {
       "title": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \"Kyouka Point\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?",
@@ -241,7 +264,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-198727": {
       "title": "Chitose-kun wa Ramune Bin no Naka Part 2",
@@ -267,7 +290,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-207809": {
       "title": "Sora wa Akai Kawa no Hotori",
@@ -292,7 +315,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-179876": {
       "title": "DARK MACHINE: The Animation",
@@ -317,7 +340,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "sasakitopiichan2ndseason": {
       "title": "Sasaki to Pii-chan 2nd Season",
@@ -343,7 +366,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-211778": {
       "title": "Sekai Saikyou no Majo, Hajimemashita",
@@ -355,7 +378,7 @@
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-152677": {
       "title": "Tantei wa Mou, Shindeiru. 2nd Season",
@@ -381,7 +404,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "zijinyumiaofang": {
       "title": "Zi Jin: Yu Miao Fang",
@@ -391,10 +414,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-178868": {
       "title": "Magic Knight Rayearth (2026)",
@@ -402,12 +426,22 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Magic Knight Rayearth (2026)",
+            "魔法騎士レイアース (2026)",
+            "Magical Knight Rayearth New Project"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Magic Knight Rayearth (2026)",
+        "魔法騎士レイアース (2026)",
+        "Magical Knight Rayearth New Project"
+      ]
     },
     "anilist-159042": {
       "title": "Tensei shitara Ken deshita 2",
@@ -428,7 +462,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-199068": {
       "title": "Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen",
@@ -436,12 +470,22 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+            "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+            "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+        "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
+        "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦"
+      ]
     },
     "anilist-213068": {
       "title": "Juuou Mujin Dandivine",
@@ -467,7 +511,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-172192": {
       "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
@@ -488,7 +532,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "fxsenshikurumichan": {
       "title": "FX Senshi Kurumi-chan",
@@ -498,10 +542,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-213805": {
       "title": "Koori no Jouheki 2nd Season",
@@ -511,10 +556,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-199594": {
       "title": "Tetsuryou! Meet with Tetsudou Musume",
@@ -522,12 +568,24 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "TETSURYO! Meet With Tetsudou Musume",
+            "Tetsuryou! meet with Tetsudou Musume",
+            "てつりょー！meet with 鉄道むすめ",
+            "TETSURYO! meet with Tetsudou Musume"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "TETSURYO! Meet With Tetsudou Musume",
+        "Tetsuryou! meet with Tetsudou Musume",
+        "てつりょー！meet with 鉄道むすめ",
+        "TETSURYO! meet with Tetsudou Musume"
+      ]
     },
     "anilist-180136": {
       "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
@@ -552,7 +610,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-212144": {
       "title": "Kizu darake Seijo yori Houfuku wo Komete 2nd Season",
@@ -562,10 +620,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-212503": {
       "title": "Hyouken no Majutsushi ga Sekai wo Suberu II",
@@ -575,10 +634,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-178083": {
       "title": "Tokyo Revengers: Santen Sensou-hen",
@@ -588,10 +648,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-210482": {
       "title": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE",
@@ -603,7 +664,7 @@
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-218532": {
       "title": "Kusuriya no Hitorigoto 3rd Season",
@@ -613,10 +674,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-186742": {
       "title": "Toaru Anbu no Item",
@@ -641,7 +703,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "hotarunoyomeiri": {
       "title": "Hotaru no Yomeiri",
@@ -667,7 +729,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-204650": {
       "title": "Tougen Anki: Nikko Kegon no Taki-hen",
@@ -708,7 +770,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-203490": {
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -733,7 +795,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-214703": {
       "title": "Ghost Meets Gal!",
@@ -741,12 +803,20 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Ghost Meets Gal!",
+            "ごーすと・みーつ・ぎゃる！"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Ghost Meets Gal!",
+        "ごーすと・みーつ・ぎゃる！"
+      ]
     },
     "anilist-209032": {
       "title": "Mahou no Shimai Lulutto Lilly Part 2",
@@ -767,7 +837,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-216557": {
       "title": "Keroro Gunsou☆",
@@ -793,7 +863,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-183231": {
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -818,7 +888,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-195571": {
       "title": "Shuiro no Kamen",
@@ -843,7 +913,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "romeliasenki": {
       "title": "Romelia Senki",
@@ -869,7 +939,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-187402": {
       "title": "Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
@@ -894,7 +964,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-204389": {
       "title": "Yasei no Last Boss ga Arawareta! 2nd Season",
@@ -920,7 +990,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-195604": {
       "title": "Black Clover 2nd Season",
@@ -946,7 +1016,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-212799": {
       "title": "Marronnier Oukoku no Shichinin no Kishi",
@@ -972,7 +1042,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-199007": {
       "title": "#Zombie Sagashitemasu",
@@ -997,7 +1067,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-209562": {
       "title": "Vertex Force",
@@ -1022,7 +1092,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "magicalexplorererogenoyuujincharanitenseishitakedogamechishikitsukattejiyuuniikiru": {
       "title": "Magical★Explorer: Eroge no Yuujin Chara ni Tensei Shitakedo, Game Chishiki Tsukatte Jiyuu ni Ikiru",
@@ -1032,10 +1102,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-209872": {
       "title": "Ranma ½ (2024) 3rd Season",
@@ -1045,10 +1116,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "seitokainimoanawaaru": {
       "title": "Seitokai ni mo Ana wa Aru!",
@@ -1058,10 +1130,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-203473": {
       "title": "Kyoufu Collector",
@@ -1086,7 +1159,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-202250": {
       "title": "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu",
@@ -1111,7 +1184,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-202957": {
       "title": "Meitantei Precure!",
@@ -1136,7 +1209,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "mahoukakoukounorettouseimovieyotsubakeishouhen": {
       "title": "Mahouka Koukou no Rettousei Movie: Yotsuba Keishou-hen",
@@ -1146,10 +1219,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-213657": {
       "title": "Yozakura-san Chi no Daisakusen 2nd Season Part 2",
@@ -1170,7 +1244,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-191788": {
       "title": "Ao Ashi 2nd Season",
@@ -1196,7 +1270,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-213658": {
       "title": "Diamond no Ace Act II: Second Season Part 2",
@@ -1206,10 +1280,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-118123": {
       "title": "Holo no Graffiti",
@@ -1217,12 +1292,36 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "Holo no Graffiti",
+            "ホロのぐらふぃてぃ",
+            "Hologra 3D Short Animation",
+            "Hologra",
+            "ホロぐら",
+            "Hololive",
+            "הולולייב"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "Holo no Graffiti",
+        "ホロのぐらふぃてぃ",
+        "Hologra 3D Short Animation",
+        "Hologra",
+        "ホロぐら",
+        "Hololive",
+        "הולולייב"
+      ]
     },
     "mezametarasaikyousoubitouchuusenmochidattanodeikkodatemezashiteyouheitoshitejiyuuniikitai": {
       "title": "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
@@ -1232,10 +1331,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-202079": {
       "title": "Oji-san wa Kawaii Mono ga Osuki.",
@@ -1255,7 +1355,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-209499": {
       "title": "Tank Chair",
@@ -1280,7 +1380,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-212888": {
       "title": "OVERGEARED",
@@ -1306,7 +1406,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-205896": {
       "title": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
@@ -1331,7 +1431,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-200455": {
       "title": "Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
@@ -1357,7 +1457,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-185756": {
       "title": "Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season",
@@ -1383,7 +1483,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-199426": {
       "title": "Hotel Inhumans 2nd Season",
@@ -1409,7 +1509,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-206814": {
       "title": "Dragon Ball Super: Beerus",
@@ -1449,7 +1549,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-209463": {
       "title": "Kanata kara",
@@ -1474,7 +1574,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "mousecursordegenjitsuwosousadekiruyouninattanodeonnanokowoippaiclickshimaasu": {
       "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
@@ -1484,10 +1584,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa": {
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
@@ -1497,10 +1598,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-217782": {
       "title": "Kanojo no Tomodachi",
@@ -1508,12 +1610,22 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "aliases": [
+            "My Girlfriend's Friend Mini Anime",
+            "Kanojo no Tomodachi Mini Anime Gekijou",
+            "彼女の友達 ミニアニメ劇場"
+          ],
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z",
+      "aliases": [
+        "My Girlfriend's Friend Mini Anime",
+        "Kanojo no Tomodachi Mini Anime Gekijou",
+        "彼女の友達 ミニアニメ劇場"
+      ]
     },
     "darksummonertodekiteiru": {
       "title": "Dark Summoner to Dekiteiru",
@@ -1523,10 +1635,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-203275": {
       "title": "Demons' Crest",
@@ -1536,12 +1649,12 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+          "lookupVersion": 3,
+          "checkedAt": "2026-10-30T16:10:16.429Z",
+          "lastAttemptAt": "2026-10-30T16:10:16.429Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-235": {
       "title": "Detective Conan",
@@ -1587,7 +1700,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-189123": {
       "title": "Ao no Hako 2nd Season",
@@ -1608,7 +1721,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     },
     "anilist-189046": {
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -1634,7 +1747,7 @@
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T16:02:17.050Z"
+      "lastSeenAt": "2026-10-30T16:10:16.429Z"
     }
   }
 }
