@@ -1,6 +1,15 @@
 "use strict";
 
 const fs = require("node:fs/promises");
+const policy = require("../schedule-policy");
+const { trackDelays } = require("./delayed-releases");
+const nativeFetch = globalThis.fetch;
+const generationDeadline = Date.now() + 180000;
+const fetch = (url, options = {}) => {
+  const remaining = generationDeadline - Date.now();
+  if (remaining <= 0) throw new Error("Tiempo de consulta del horario agotado");
+  return nativeFetch(url, { ...options, signal: options.signal || AbortSignal.timeout(Math.min(20000, remaining)) });
+};
 const path = require("node:path");
 
 const API_BASE = process.env.ANIMESCHEDULE_API_BASE || "https://animeschedule.net/api/v3";
@@ -33,6 +42,7 @@ async function main() {
   }
 
   for (const week of getNextWeeks(weeks)) {
+    if (Date.now() >= generationDeadline) break;
     const response = await fetchAnimeScheduleWeekWithRetry(week, timezone, token);
     if (!response) {
       console.warn(`No se pudo leer ${week.year} semana ${week.week}; se continua con el resto.`);
@@ -62,23 +72,18 @@ async function main() {
     throw new Error("ANIMESCHEDULE_TOKEN fue rechazado (401/403). Actualiza el secreto de GitHub Actions.");
   }
 
-  const minimumWeeks = Math.max(1, Math.ceil(getNextWeeks(weeks).length / 2));
-  if (successfulWeeks < minimumWeeks && await hasUsableExistingSchedule()) {
-    console.warn(`Solo respondieron ${successfulWeeks} semanas de ${weeks}; se conserva la agenda anterior y se reintentara despues.`);
-    return;
-  }
+  // Future weeks legitimately return 404. Requiring half of 14 weeks to exist
+  // prevented valid current timetables from ever being published.
+  if (!successfulWeeks) throw new Error("Ninguna semana de AnimeSchedule respondió correctamente; se conserva el horario anterior.");
 
-  // AnimeSchedule and AniList are the only sources allowed to create releases.
+  // Only AnimeSchedule creates SUB releases; AniList enriches metadata.
   // Never invent a weekly follow-up: the latest episode may have been the finale.
   const normalized = normalizeSchedule(rawItems, timezone);
-  const shouldEnrichWithAnilist = process.env.ANILIST_VERIFY === "true";
   let releases = [];
   if (normalized.length) {
-    releases = shouldEnrichWithAnilist
-      ? await applyAnilistCorrections(normalized, timezone)
-      : normalized;
+    releases = normalized;
   }
-  let source = shouldEnrichWithAnilist ? "AnimeSchedule+AniList" : "AnimeSchedule";
+  let source = "AnimeSchedule";
 
   if (releases.length && process.env.INCLUDE_ANILIST_MISSING !== "false") {
     try {
@@ -86,44 +91,31 @@ async function main() {
       releases = result.releases;
       if (result.matched || result.added) source = "AnimeSchedule+AniList";
     } catch (error) {
-      // AniList is authoritative for the calendar day. Without it we cannot
-      // safely accept newly generated dates from AnimeSchedule, so retain the
-      // last verified file and retry on the next cron without failing the job.
-      if (await hasUsableExistingSchedule()) {
-        console.warn(`AniList no disponible; se conserva la ultima agenda verificada: ${error.message || error}`);
-        return;
-      }
-      console.warn(`AniList no disponible y no existe una agenda anterior: ${error.message || error}`);
+      console.warn("AniList no disponible; se conservan exclusivamente las fechas SUB de AnimeSchedule.");
     }
-  }
-
-  if (!releases.length && process.env.ALLOW_ANILIST_FALLBACK === "true") {
-    console.warn("AnimeSchedule no devolvio episodios validos; generando schedule.json desde AniList por ALLOW_ANILIST_FALLBACK=true.");
-    releases = await fetchPublicAnilistSchedule();
-    source = "AniList";
   }
 
   if (!releases.length) {
-    if (await hasUsableExistingSchedule()) {
-      console.warn("Las fuentes no devolvieron episodios validos; se conserva el ultimo schedule.json para reintentar en la proxima ejecucion.");
-      return;
-    }
-    throw new Error("No se pudo generar schedule.json y no existe una agenda anterior valida.");
+    throw new Error("Las fuentes no devolvieron episodios SUB válidos; se conserva el archivo anterior y la ejecución falla.");
   }
 
+  const previous = await readExistingSchedule();
+  const tracked = await readDelayTracking();
+  releases = await trackDelays([...(previous?.releases || []), ...tracked], releases, { timezone, discoverSources: discoverOfficialSources });
+  await saveDelayTracking(releases);
+  if (!policy.health({ releases }).future) throw new Error("El horario generado no contiene emisiones SUB futuras confirmadas; no se sustituye el archivo anterior.");
+  const changed = !previous || previous.source !== source || JSON.stringify(previous.releases) !== JSON.stringify(releases);
   const payload = {
-    updatedAt: new Date().toISOString(),
+    updatedAt: changed ? new Date().toISOString() : previous.updatedAt,
+    checkedAt: new Date().toISOString(),
     timezone,
     source,
     releases
   };
 
-  if (await scheduleDataIsUnchanged(payload)) {
-    console.log("schedule.json no tiene cambios de episodios o plataformas; no se crea un despliegue nuevo.");
-    return;
-  }
-
-  await fs.writeFile(OUT_FILE, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  policy.validate(payload);
+  await fs.writeFile(`${OUT_FILE}.tmp`, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  await fs.rename(`${OUT_FILE}.tmp`, OUT_FILE);
   console.log(`schedule.json actualizado: ${releases.length} episodios (${rawItems.length} items leidos, fuente ${source}).`);
 }
 
@@ -137,66 +129,24 @@ async function readExistingSchedule() {
 
 async function hasUsableExistingSchedule() {
   const current = await readExistingSchedule();
-  return Array.isArray(current?.releases) && current.releases.length > 0;
+  return Array.isArray(current?.releases) && policy.health(current).future > 0;
 }
 
-async function scheduleDataIsUnchanged(next) {
-  const current = await readExistingSchedule();
-  if (!Array.isArray(current?.releases)) return false;
-  return current.timezone === next.timezone &&
-    current.source === next.source &&
-    JSON.stringify(current.releases) === JSON.stringify(next.releases);
+const TRACKING_FILE = path.resolve(__dirname, "..", "delay-tracking.json");
+async function readDelayTracking() {
+  try { return JSON.parse(await fs.readFile(TRACKING_FILE, "utf8")).releases || []; }
+  catch (error) { if (error.code === "ENOENT") return []; throw error; }
 }
-
-async function applyAnilistCorrections(releases, timeZone) {
-  const byAnime = new Map();
-  for (const release of releases) {
-    const key = release.animeKey || stableId(release.title);
-    if (!byAnime.has(key)) byAnime.set(key, []);
-    byAnime.get(key).push(release);
-  }
-
-  let corrected = 0;
-  const out = [];
-  for (const group of byAnime.values()) {
-    const sample = group[0];
-    const media = await findAnilistMedia(sample).catch((error) => {
-      console.warn(`AniList no disponible para "${sample.title}": ${error.message || error}`);
-      return null;
-    });
-    await wait(ANILIST_REQUEST_DELAY_MS);
-
-    for (const release of group) {
-      const next = media?.nextAiringEpisode;
-      const releaseEpisode = parseEpisodeNumber(release.episodeNumber || release.episode);
-      const nextEpisode = Number(next?.episode);
-      const strongTitleMatch = media ? getAnilistReleaseMatchScore(release, media) >= 0.9 : false;
-      if (String(media?.format || "").toUpperCase() === "MOVIE" && releaseEpisode === 1 && strongTitleMatch) {
-        corrected++;
-        continue;
-      }
-      const canCorrectEpisode = Number.isFinite(releaseEpisode) && Number.isFinite(nextEpisode) &&
-        releaseEpisode === 1 && nextEpisode > 1 && strongTitleMatch;
-      if (!media || (!canCorrectEpisode && !media.id)) {
-        out.push(release);
-        continue;
-      }
-
-      corrected++;
-      out.push({
-        ...release,
-        ...(canCorrectEpisode ? { episode: `Ep ${nextEpisode}`, episodeNumber: String(nextEpisode) } : {}),
-        anilistId: media.id,
-        anilistTitle: media.title?.romaji || media.title?.english || release.title,
-        anilistUrl: media.siteUrl || "",
-        coverUrl: media.coverImage?.large || media.coverImage?.medium || release.coverUrl,
-        correctedByAniList: canCorrectEpisode || undefined
-      });
-    }
-  }
-
-  console.log(`AniList verifico ${byAnime.size} series; correcciones aplicadas: ${corrected}.`);
-  return out.sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+async function saveDelayTracking(releases) {
+  const pending = releases.filter(row => row.delayed || policy.isPending(row) || row.scheduleStatus === "cancelled");
+  await fs.writeFile(`${TRACKING_FILE}.tmp`, JSON.stringify({ releases: pending }, null, 2) + "\n");
+  await fs.rename(`${TRACKING_FILE}.tmp`, TRACKING_FILE);
+}
+async function retryPendingAfterFailure() {
+  const previous = await readExistingSchedule();
+  const tracked = await readDelayTracking();
+  const releases = await trackDelays([...(previous?.releases || []), ...tracked], [], { timezone: process.env.SYNC_TIMEZONE || "Europe/Madrid", discoverSources: discoverOfficialSources });
+  await saveDelayTracking(releases);
 }
 
 async function findAnilistMedia(release) {
@@ -245,15 +195,18 @@ async function searchAnilist(search) {
         id
         title { romaji english native }
         synonyms
+        startDate { year }
         format
         coverImage { large medium }
         siteUrl
         nextAiringEpisode { episode airingAt }
+        externalLinks { site url type }
       }
     }
   }`;
 
-  const response = await fetch(ANILIST_API, {
+  const response = await nativeFetch(ANILIST_API, {
+    signal: AbortSignal.timeout(12000),
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -264,14 +217,12 @@ async function searchAnilist(search) {
 
   if (!response.ok) {
     const body = await response.text();
-    console.warn(`AniList ${response.status} para "${search}": ${body.slice(0, 120)}`);
-    return [];
+    throw new Error(`AniList respondió ${response.status}`);
   }
 
   const json = await response.json();
   if (json.errors?.length) {
-    console.warn(`AniList error para "${search}": ${json.errors[0].message}`);
-    return [];
+    throw new Error("AniList devolvió un error GraphQL");
   }
 
   return json.data?.Page?.media || [];
@@ -331,6 +282,7 @@ async function fetchAnilistAiringPage(page, now) {
         id
         title { romaji english native }
         synonyms
+        startDate { year }
         format
         genres
         isAdult
@@ -394,6 +346,7 @@ function mapPublicAnilistMedia(media) {
     coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
     siteUrl: media.siteUrl || "",
     anilistFormat: media.format || "",
+    anilistYear: media.startDate?.year || null,
     isAdult: Boolean(media.isAdult),
     genres: media.genres || [],
     tags: media.tags || [],
@@ -460,8 +413,7 @@ async function fetchAnimeScheduleWeek(week, timezone, token) {
   const params = new URLSearchParams({
     year: String(week.year),
     week: String(week.week),
-    tz: timezone,
-    api_token: token
+    tz: timezone
   });
   const authorization = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
 
@@ -478,6 +430,7 @@ async function fetchAnimeScheduleWeek(week, timezone, token) {
 async function fetchAnimeScheduleWeekWithRetry(week, timezone, token) {
   const attempts = Number(process.env.ANIMESCHEDULE_RETRIES || "3");
   for (let attempt = 1; attempt <= attempts; attempt++) {
+    if (Date.now() >= generationDeadline) return null;
     try {
       const response = await fetchAnimeScheduleWeek(week, timezone, token);
       if (![429, 500, 502, 503, 504].includes(response.status) || attempt === attempts) {
@@ -503,8 +456,10 @@ function normalizeSchedule(items, timeZone) {
     if (airType !== "sub") continue;
 
     const releaseDate = getAnimeScheduleSubReleaseDate(item);
-    const normalizedReleaseDate = normalizeScheduleDate(releaseDate, timeZone);
-    if (!normalizedReleaseDate) continue;
+    const hasTime = /[T\s]\d{2}:\d{2}/.test(String(releaseDate || ""));
+    const normalizedReleaseDate = hasTime ? normalizeScheduleDate(releaseDate, timeZone) : "";
+    const delayed = isDelayed(item, timeZone) || item.delayed === true || Boolean(releaseDate && !hasTime);
+    if (!normalizedReleaseDate && !delayed) continue;
 
     const title = item.title || item.romaji || item.english || item.native || "Sin titulo";
     const episodeNumber = String(item.episodeNumber ?? item.episode_number ?? item.episode ?? "?");
@@ -521,8 +476,9 @@ function normalizeSchedule(items, timeZone) {
       episode: `Ep ${episodeNumber}`,
       episodeNumber,
       airType: "SUB",
-      delayed: isDelayed(item, timeZone),
-      releaseDate: normalizedReleaseDate,
+      delayed,
+      scheduleStatus: delayed ? "pending" : "scheduled",
+      releaseDate: normalizedReleaseDate || null,
       originalReleaseDate: normalizeScheduleDate(getAnimeScheduleOriginalReleaseDate(item), timeZone) || "",
       service: best?.service || "No legal platform",
       serviceUrl: hasAllowedPlatform ? normalizeUrl(best.url || "") : "",
@@ -551,6 +507,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
       anilistTitle: media.anilistTitle || media.title || item.anilistTitle,
       anilistUrl: media.anilistUrl || item.anilistUrl,
       anilistFormat: media.anilistFormat || item.anilistFormat,
+      anilistYear: media.anilistYear || item.anilistYear || null,
       anilistScore: media.anilistScore ?? item.anilistScore,
       titles: media.titles?.length ? media.titles : (item.titles || []),
       coverUrl: media.coverUrl || item.coverUrl,
@@ -562,9 +519,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
       } : {})
     };
   });
-  const missing = anilistReleases
-    .filter((item) => !hasScheduledSeriesMatch(item, enriched))
-    .map((item) => ({ ...item, source: "anilist-missing", id: stableId("anilist-missing", item.anilistId || item.title, item.episodeNumber, item.releaseDate) }));
+  const missing = []; // AniList alone does not establish a SUB release.
 
   if (missing.length) console.log(`AniList anadio ${missing.length} animes que no estaban en AnimeSchedule.`);
   return {
@@ -588,6 +543,7 @@ async function fetchAnilistSeasonPage(page, { season, year }) {
         id
         title { romaji english native }
         synonyms
+        startDate { year }
         format
         genres
         isAdult
@@ -627,93 +583,18 @@ async function fetchAnilistSeasonPage(page, { season, year }) {
   };
 }
 
-function reconcileAnimeScheduleWithAnilist(baseReleases, anilistReleases, timeZone = "Europe/Madrid") {
-  const groups = new Map();
-  for (const item of baseReleases) {
-    const key = stableId(item.animeKey || item.route || item.title);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(item);
-  }
+function reconcileAnimeScheduleWithAnilist(baseReleases, anilistReleases) {
+  // AniList broadcast dates cannot confirm a subtitled platform release.
+  return baseReleases;
+}
 
-  const verified = [];
-  let removed = 0;
-  let corrected = 0;
-  for (const group of groups.values()) {
-    const media = findMatchingRelease(group[0], anilistReleases);
-    if (!media) {
-      if (hasRepeatedEpisodeOnDifferentDates(group)) {
-        removed += group.length;
-        console.warn(`Se descarta "${group[0].title}": AnimeSchedule repite el mismo episodio en varias fechas y AniList no confirma uno siguiente.`);
-      } else {
-        verified.push(...group);
-      }
-      continue;
-    }
-
-    const confirmedAt = Date.parse(media.releaseDate || "");
-    const confirmedEpisode = parseEpisodeNumber(media.episodeNumber ?? media.episode);
-    if (!Number.isFinite(confirmedAt) || !Number.isFinite(confirmedEpisode)) {
-      verified.push(...group);
-      continue;
-    }
-
-    const confirmedDay = getCalendarDayKey(confirmedAt, timeZone);
-    const consistent = group.filter((item) => {
-      const releaseAt = Date.parse(item.releaseDate || "");
-      const episode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-      if (!Number.isFinite(releaseAt)) return false;
-      const releaseDay = getCalendarDayKey(releaseAt, timeZone);
-      if (releaseDay < confirmedDay) return false;
-      if (Number.isFinite(episode) && episode < confirmedEpisode) return false;
-      // AniList decides the calendar day. AnimeSchedule remains authoritative
-      // for the hour, so a different time on the same day is not a conflict.
-      if (Number.isFinite(episode) && episode === confirmedEpisode && releaseDay !== confirmedDay) return false;
-      return true;
-    });
-    removed += group.length - consistent.length;
-
-    const hasConfirmedRow = consistent.some((item) => {
-      const releaseAt = Date.parse(item.releaseDate || "");
-      const episode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-      return episode === confirmedEpisode && getCalendarDayKey(releaseAt, timeZone) === confirmedDay;
-    });
-
-    if (!hasConfirmedRow) {
-      const sameEpisodeTemplates = group.filter((item) =>
-        parseEpisodeNumber(item.episodeNumber ?? item.episode) === confirmedEpisode
-      );
-      const template = [...(sameEpisodeTemplates.length ? sameEpisodeTemplates : group)]
-        .sort((a, b) => scoreItem(b) - scoreItem(a))[0];
-      const templateAt = Date.parse(template?.releaseDate || "");
-      const correctedReleaseDate = Number.isFinite(templateAt)
-        ? replaceCalendarDayKeepTime(templateAt, confirmedAt, timeZone)
-        : new Date(confirmedAt).toISOString();
-      const hasTemplatePlatform = Boolean(template?.hasAllowedPlatform);
-      const service = hasTemplatePlatform ? template.service : media.service;
-      const serviceUrl = hasTemplatePlatform ? template.serviceUrl : media.serviceUrl;
-      consistent.push({
-        ...template,
-        id: stableId("schedule-anilist-confirmed", media.anilistId || media.title, confirmedEpisode, correctedReleaseDate),
-        episode: `Ep ${confirmedEpisode}`,
-        episodeNumber: String(confirmedEpisode),
-        releaseDate: correctedReleaseDate,
-        originalReleaseDate: "",
-        delayed: false,
-        service: service || "No legal platform",
-        serviceUrl: normalizeUrl(serviceUrl || ""),
-        allServices: hasTemplatePlatform ? (template.allServices || [template.service]) : (media.allServices || []),
-        hasAllowedPlatform: Boolean(service && service !== "No legal platform"),
-        confirmedByAniList: true
-      });
-      corrected++;
-    }
-    verified.push(...consistent);
-  }
-
-  if (removed || corrected) {
-    console.log(`Verificacion AniList: ${removed} horarios contradictorios eliminados, ${corrected} proximos episodios corregidos.`);
-  }
-  return dedupeByEpisode(verified).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+async function discoverOfficialSources(release) {
+  const media = await findAnilistMedia(release);
+  if (!media || getAnilistReleaseMatchScore(release, media) < 0.9 ||
+    (release.anilistId && String(release.anilistId) !== String(media.id))) return [];
+  return (media.externalLinks || [])
+    .filter(link => /^(official site|official website)$/i.test(link.site || "") && /^https:\/\//.test(link.url || ""))
+    .map(link => link.url);
 }
 
 function hasRepeatedEpisodeOnDifferentDates(group) {
@@ -747,6 +628,10 @@ function findMatchingRelease(item, candidates) {
 
 function getAnimeScheduleSubReleaseDate(item) {
   return firstDateValue(
+    item.subDelayedTimetable,
+    item.sub_delayed_timetable,
+    item.subDelayedUntil,
+    item.sub_delayed_until,
     item.subReleaseDate,
     item.sub_release_date,
     item.subEpisodeDate,
@@ -757,10 +642,6 @@ function getAnimeScheduleSubReleaseDate(item) {
     item.sub_airing_date,
     item.subTimetable,
     item.sub_timetable,
-    item.subDelayedTimetable,
-    item.sub_delayed_timetable,
-    item.subDelayedUntil,
-    item.sub_delayed_until,
     item.releaseDate,
     item.release_date,
     item.episodeDate,
@@ -1171,13 +1052,17 @@ function normalizeUrl(url) {
 }
 
 if (require.main === module) {
-  main().catch((error) => {
-    console.error(error);
-    process.exit(1);
+  main().catch(async (error) => {
+    console.error(error.message);
+    try { await retryPendingAfterFailure(); } catch { console.error("No se pudo completar la revisión de retrasos; se reintentará en la próxima ejecución."); }
+    process.exitCode = 1;
   });
 }
 
 module.exports = {
+  main,
+  normalizeSchedule,
+  hasUsableExistingSchedule,
   fetchPublicAnilistSchedule,
   reconcileAnimeScheduleWithAnilist,
   getSeriesMatchScore,

@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=97" />
+  <link rel="stylesheet" href="./styles.css?v=101" />
 </head>
 <body>
   <main class="app">
@@ -29,6 +29,10 @@
     </header>
 
     <section id="statusBox" class="status-box hidden" role="status" aria-live="polite"></section>
+    <section id="scheduleHealth" class="schedule-health" role="status" aria-live="polite">
+      <span id="scheduleHealthText">Cargando horarios…</span>
+      <button id="retryScheduleBtn" class="small-btn" type="button">Reintentar</button>
+    </section>
 
     <div class="content-grid">
       <section class="main-panel" aria-label="Próximos episodios">
@@ -72,7 +76,7 @@
         <label>Zona horaria
           <select id="timezoneInput"></select>
         </label>
-        <label>Pais (verificar plataformas)
+        <label>País de las plataformas
           <select id="countryInput"></select>
         </label>
 
@@ -101,12 +105,16 @@
           <span id="notificationLabel">Activar notificacion</span>
           <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false" aria-labelledby="notificationLabel"></button>
         </div>
-        <button id="refreshDataBtn" class="primary-btn" type="button">Refrescar horarios</button>
+        <p class="notification-help">En la web, los avisos requieren que la app esté abierta. En Android se programan los próximos siete días confirmados.</p>
+        <p class="notification-help">Horarios y plataformas actualizados automáticamente. Solo necesitas sincronizar tu biblioteca de AniList.</p>
+        <p id="platformDataStatus" class="notification-help" role="status"></p>
         <button id="resetBtn" class="danger-btn" type="button">Borrar datos</button>
       </section>
     </div>
   </main>
-  <script src="./config.js?v=99"></script>
-  <script src="./app.js?v=99"></script>
+  <script src="./schedule-policy.js?v=101"></script>
+  <script src="./platform-policy.js?v=101"></script>
+  <script src="./config.js?v=101"></script>
+  <script src="./app.js?v=101"></script>
 </body>
 </html>

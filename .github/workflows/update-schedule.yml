@@ -15,7 +15,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
@@ -24,6 +24,7 @@ jobs:
           node-version: 24
 
       - name: Generate schedule.json
+        id: generate
         run: node scripts/sync-animeschedule.js
         env:
           ANIMESCHEDULE_TOKEN: ${{ secrets.ANIMESCHEDULE_TOKEN }}
@@ -32,15 +33,39 @@ jobs:
           ANILIST_SEASON_MAX_PAGES: "5"
           ANILIST_VERIFY: "false"
 
+      - name: Prepare shared regional platforms
+        id: platforms
+        if: ${{ !cancelled() && steps.generate.outcome != 'skipped' }}
+        run: npm run sync:platforms
+
       - name: Commit updated schedule
+        if: ${{ !cancelled() && steps.platforms.outcome != 'skipped' }}
         run: |
-          if git diff --quiet -- schedule.json; then
+          if git diff --quiet -- schedule.json delay-tracking.json platform-cache.json; then
             echo "schedule.json has no changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add schedule.json
+          git add schedule.json delay-tracking.json platform-cache.json
           git commit -m "Update anime schedule"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
+
+      - name: Report update result
+        if: always()
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const policy = require('./schedule-policy');
+          const schedule = require('./schedule.json');
+          const health = policy.health(schedule);
+          const pending = require('./delay-tracking.json').releases.filter(policy.isPending).length;
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Horario SUB\n\nÚltimos datos: ${schedule.updatedAt}\n\nEmisiones futuras: ${health.future}\n\nRetrasos en seguimiento: ${pending}\n`);
+          const platforms = schedule.platforms;
+          if (platforms) {
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n## Plataformas compartidas (JustWatch)\n\nConsultas: ${platforms.checked}; errores: ${platforms.errors}; pendientes: ${platforms.queued}\n\nCobertura por país: ${JSON.stringify(platforms.coverage)}\n`);
+            if (platforms.errors || platforms.queued) console.warn('::warning::Plataformas parcialmente actualizadas; se conserva la caché y se continuará en el próximo cron.');
+          } else { console.error('::error::Falta el catálogo compartido de plataformas.'); process.exitCode = 1; }
+          if (health.stale) { console.error('::error::El horario publicado no tiene emisiones SUB futuras.'); process.exitCode = 1; }
+          NODE

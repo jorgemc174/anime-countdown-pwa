@@ -9,8 +9,11 @@
     "cap:add:android": "npx cap add android",
     "cap:sync": "npm run build:www && npx cap sync",
     "cap:open:android": "npx cap open android",
-    "build:www": "powershell -ExecutionPolicy Bypass -File scripts/build-www.ps1",
-    "cap:build": "npm run build:www && npx cap sync && npx cap copy android"
+    "build:www": "node scripts/build-www.js",
+    "cap:build": "npm run build:www && npx cap sync && npx cap copy android",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser.cjs",
+    "sync:platforms": "node scripts/enrich-platforms.js"
   },
   "dependencies": {
     "@capacitor/core": "^6.0.0",
@@ -19,6 +22,7 @@
   },
   "devDependencies": {
     "@capacitor/android": "^6.0.0",
-    "@capacitor/cli": "^6.0.0"
+    "@capacitor/cli": "^6.0.0",
+    "playwright": "^1.64.1"
   }
 }

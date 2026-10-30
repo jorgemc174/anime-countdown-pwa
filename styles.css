@@ -1195,3 +1195,13 @@ html.light .platform-chip.active {
     scroll-behavior: auto !important;
   }
 }
+:root { color-scheme: dark; }
+html.light { color-scheme: light; }
+.schedule-health { display: flex; align-items: center; gap: 12px; justify-content: space-between; padding: 12px; margin: 12px 0; border: 1px solid #64748b; border-radius: 12px; font-size: .85rem; }
+.schedule-health[data-warning="true"] { border-color: #d97706; }
+.schedule-health button { flex-shrink: 0; width: auto; }
+.schedule-health span { min-width: 0; overflow-wrap: anywhere; }
+.pending-heading { grid-column: 1 / -1; font-size: 1rem; margin: 16px 0 4px; }
+.official-evidence { display: block; margin-top: 6px; color: inherit; text-decoration: underline; }
+.notification-help { color: var(--muted); font-size: .8rem; line-height: 1.5; }
+button:focus-visible, a:focus-visible, .anime-card:focus-visible { outline: 3px solid #a78bfa; outline-offset: 3px; }

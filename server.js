@@ -11,13 +11,17 @@ const API_BASE = "https://animeschedule.net/api/v3";
 const ANILIST_API = "https://graphql.anilist.co";
 const JUSTWATCH_API = "https://apis.justwatch.com/graphql";
 
+const nativeFetch = globalThis.fetch;
+const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: AbortSignal.timeout(20000) });
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".png": "image/png",
-  ".ico": "image/x-icon"
+  ".ico": "image/x-icon",
+  ".svg": "image/svg+xml"
 };
 
 const server = http.createServer(async (req, res) => {
@@ -66,13 +70,10 @@ const server = http.createServer(async (req, res) => {
 async function proxyAnimeSchedule(req, res, url, endpoint) {
   const target = new URL(`${API_BASE}/${endpoint}`);
   for (const [key, value] of url.searchParams) {
-    target.searchParams.set(key, value);
+    if (key !== "api_token") target.searchParams.set(key, value);
   }
 
-  const rawToken = url.searchParams.get("api_token") || "";
-  const authorization = rawToken
-    ? (rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`)
-    : req.headers.authorization || "";
+  const authorization = req.headers.authorization || "";
 
   const response = await fetch(target, {
     headers: {
@@ -159,7 +160,10 @@ function serveStatic(res, pathname) {
   const cleanPath = decodeURIComponent(pathname === "/" ? "/index.html" : pathname);
   const filePath = path.resolve(ROOT, `.${cleanPath}`);
 
-  if (!filePath.startsWith(ROOT)) {
+  const relative = path.relative(ROOT, filePath);
+  if (relative.startsWith("..") || path.isAbsolute(relative) || relative.split(path.sep).some(part => part.startsWith(".")) ||
+    /^(?:node_modules|scripts|tests|android|api)(?:[\\/]|$)/.test(relative) ||
+    /^(?:server\.js|package(?:-lock)?\.json)$/.test(relative)) {
     res.writeHead(403);
     res.end("Forbidden");
     return;
@@ -181,5 +185,6 @@ function serveStatic(res, pathname) {
 }
 
 server.listen(PORT, HOST, () => {
-  console.log(`Anime Countdown listo en http://${HOST}:${PORT}/`);
+  console.log(`Anime Countdown listo en http://${HOST}:${server.address().port}/`);
 });
+module.exports = server;

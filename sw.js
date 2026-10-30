@@ -1,18 +1,20 @@
-const CACHE_NAME = "anime-countdown-pwa-v99";
+const CACHE_NAME = "anime-countdown-pwa-v101";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=97",
-  "./config.js?v=99",
-  "./app.js?v=99",
+  "./styles.css?v=101",
+  "./schedule-policy.js?v=101",
+  "./platform-policy.js?v=101",
+  "./config.js?v=101",
+  "./app.js?v=101",
   "./manifest.json",
-  "./favicon.ico"
+  "./icons/favicon.ico"
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
-      Promise.allSettled(ASSETS.map((url) => cache.add(url)))
+      cache.addAll(ASSETS)
     )
   );
   self.skipWaiting();
@@ -30,7 +32,7 @@ self.addEventListener("notificationclick", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+      Promise.all(keys.filter((key) => key.startsWith("anime-countdown-pwa-") && key !== CACHE_NAME).map((key) => caches.delete(key)))
     )
   );
   self.clients.claim();
@@ -42,6 +44,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
+  if (url.pathname.includes("/api/") || request.headers.has("authorization")) return;
 
   if (url.pathname.endsWith("/schedule.json")) {
     event.respondWith(networkFirst(request));

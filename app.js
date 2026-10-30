@@ -5,6 +5,14 @@ const IDB_NAME = "animeCountdownDb";
 const IDB_STORE = "state";
 const IDB_VERSION = 1;
 let idbPromise = null;
+let memorySmallStorage = "{}";
+let smallStorageInMemory = false;
+let storageWriteQueue = Promise.resolve();
+function readSmallStorage() {
+  if (smallStorageInMemory) return memorySmallStorage;
+  try { return localStorage.getItem("animeCountdownStorage") || memorySmallStorage; }
+  catch { return memorySmallStorage; }
+}
 
 // Browser/PWA compatibility layer.
 // The original extension uses chrome.storage.local and chrome.tabs.
@@ -13,9 +21,13 @@ const browserApi = {
   storage: {
     local: {
       async get(keys) {
-        const raw = localStorage.getItem("animeCountdownStorage");
+        await storageWriteQueue;
+        const raw = readSmallStorage();
         const store = parseStoredState(raw);
-        Object.assign(store, await getLargeStorageValues(keys));
+        const large = await getLargeStorageValues(keys);
+        for (const [key, value] of Object.entries(large)) {
+          if (!(Array.isArray(store.__largeFallbackKeys) ? store.__largeFallbackKeys : []).includes(key)) store[key] = value;
+        }
 
         if (Array.isArray(keys)) {
           const result = {};
@@ -38,23 +50,10 @@ const browserApi = {
         return store;
       },
 
-      async set(values) {
-        const raw = localStorage.getItem("animeCountdownStorage");
-        const store = parseStoredState(raw);
-        const smallValues = {};
-        const largeValues = {};
-        for (const [key, value] of Object.entries(values || {})) {
-          if (LARGE_STORAGE_KEYS.has(key)) largeValues[key] = value;
-          else smallValues[key] = value;
-        }
-        if (Object.keys(largeValues).length) invalidateDataCaches();
-        const wroteLargeValues = await setLargeStorageValues(largeValues);
-        Object.assign(store, smallValues);
-        for (const key of Object.keys(largeValues)) {
-          if (wroteLargeValues) delete store[key];
-          else store[key] = largeValues[key];
-        }
-        localStorage.setItem("animeCountdownStorage", JSON.stringify(store));
+      set(values) {
+        const operation = storageWriteQueue.then(() => persistStorageValues(values));
+        storageWriteQueue = operation.catch(() => {});
+        return operation;
       }
     }
   },
@@ -66,22 +65,56 @@ const browserApi = {
   }
 };
 
+async function persistStorageValues(values) {
+  const raw = readSmallStorage();
+  const store = parseStoredState(raw);
+  const smallValues = {};
+  const largeValues = {};
+  for (const [key, value] of Object.entries(values || {})) {
+    if (LARGE_STORAGE_KEYS.has(key)) largeValues[key] = value;
+    else smallValues[key] = value;
+  }
+  if (Object.keys(largeValues).length) invalidateDataCaches();
+  const wroteLargeValues = await setLargeStorageValues(largeValues);
+  Object.assign(store, smallValues);
+  const fallbackKeys = new Set(Array.isArray(store.__largeFallbackKeys) ? store.__largeFallbackKeys : []);
+  for (const key of Object.keys(largeValues)) {
+    if (wroteLargeValues) fallbackKeys.delete(key); else fallbackKeys.add(key);
+    if (wroteLargeValues) delete store[key];
+    else store[key] = largeValues[key];
+  }
+  store.__largeFallbackKeys = [...fallbackKeys];
+  memorySmallStorage = JSON.stringify(store);
+  try { localStorage.setItem("animeCountdownStorage", memorySmallStorage); smallStorageInMemory = false; }
+  catch { smallStorageInMemory = true; memorySmallStorage = JSON.stringify(store); showStatus("No se pudieron guardar algunos ajustes en este dispositivo.", "warn"); }
+}
+
 function openStateDb() {
   if (!("indexedDB" in window)) return Promise.resolve(null);
   if (idbPromise) return idbPromise;
-  idbPromise = new Promise((resolve) => {
-    const request = indexedDB.open(IDB_NAME, IDB_VERSION);
+  const promise = new Promise(resolve => {
+    let request;
+    let settled = false;
+    const finish = db => {
+      if (settled) { db?.close(); return; }
+      settled = true;
+      clearTimeout(timeout);
+      if (db) db.onversionchange = () => { db.close(); idbPromise = null; };
+      resolve(db);
+    };
+    const timeout = setTimeout(() => finish(null), 3000);
+    try { request = indexedDB.open(IDB_NAME, IDB_VERSION); }
+    catch { finish(null); return; }
     request.onupgradeneeded = () => {
       const db = request.result;
       if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
     };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => {
-      console.warn("IndexedDB no disponible; se usará localStorage.");
-      resolve(null);
-    };
+    request.onsuccess = () => finish(request.result);
+    request.onblocked = request.onerror = () => finish(null);
   });
-  return idbPromise;
+  idbPromise = promise;
+  promise.then(db => { if (!db && idbPromise === promise) idbPromise = null; });
+  return promise;
 }
 
 function getRequestedLargeKeys(keys) {
@@ -94,7 +127,7 @@ function getRequestedLargeKeys(keys) {
 async function getLargeStorageValues(keys) {
   const requested = getRequestedLargeKeys(keys);
   if (!requested.length) return {};
-  const db = await openStateDb();
+  const db = await openStateDb().catch(() => null);
   if (!db) return {};
 
   return new Promise((resolve) => {
@@ -107,24 +140,26 @@ async function getLargeStorageValues(keys) {
         if (request.result !== undefined) result[key] = request.result;
       };
     }
-    tx.oncomplete = () => resolve(result);
-    tx.onerror = () => resolve(result);
-  });
+    const timeout = setTimeout(() => { try { tx.abort(); } catch {} resolve({}); }, 3000);
+    tx.oncomplete = () => { clearTimeout(timeout); resolve(result); };
+    tx.onerror = tx.onabort = () => { clearTimeout(timeout); resolve({}); };
+  }).catch(() => ({}));
 }
 
 async function setLargeStorageValues(values) {
   const entries = Object.entries(values || {});
   if (!entries.length) return true;
-  const db = await openStateDb();
+  const db = await openStateDb().catch(() => null);
   if (!db) return false;
 
   return new Promise((resolve) => {
     const tx = db.transaction(IDB_STORE, "readwrite");
     const store = tx.objectStore(IDB_STORE);
     for (const [key, value] of entries) store.put(value, key);
-    tx.oncomplete = () => resolve(true);
-    tx.onerror = () => resolve(false);
-  });
+    const timeout = setTimeout(() => { try { tx.abort(); } catch {} resolve(false); }, 3000);
+    tx.oncomplete = () => { clearTimeout(timeout); resolve(true); };
+    tx.onerror = tx.onabort = () => { clearTimeout(timeout); resolve(false); };
+  }).catch(() => false);
 }
 
 function openExternalUrl(url) {
@@ -146,10 +181,11 @@ function isMobileLike() {
 function parseStoredState(raw) {
   if (!raw) return {};
   try {
-    return JSON.parse(raw) || {};
+    const value = JSON.parse(raw);
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
   } catch (error) {
     console.warn("Datos locales corruptos; se reinicia el almacenamiento de la app.", error);
-    localStorage.removeItem("animeCountdownStorage");
+    try { localStorage.removeItem("animeCountdownStorage"); } catch {}
     return {};
   }
 }
@@ -160,8 +196,19 @@ function parseStoredState(raw) {
 const API_BASE = "https://animeschedule.net/api/v3";
 const IMAGE_BASE = "https://img.animeschedule.net/production/assets/public/img/";
 const APP_CONFIG = window.ANIME_COUNTDOWN_CONFIG || {};
-const SHARED_SCHEDULE_URL = String(APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json");
-const APP_CACHE_NAME = "anime-countdown-pwa-v99";
+const SHARED_SCHEDULE_URL = String(isCapacitor() ? (APP_CONFIG.REMOTE_SCHEDULE_URL || "https://anicountdown.com/schedule.json") : (APP_CONFIG.SHARED_SCHEDULE_URL || "./schedule.json"));
+const policy = window.SchedulePolicy;
+const platformPolicy = window.PlatformPolicy;
+const nativeFetch = window.fetch.bind(window);
+function requestTimeoutSignal() {
+  if (typeof AbortSignal !== "undefined" && AbortSignal.timeout) return AbortSignal.timeout(20000);
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), 20000);
+  return controller.signal;
+}
+const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
+let sharedRefreshPromise = null;
+const APP_CACHE_NAME = "anime-countdown-pwa-v101";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -175,8 +222,6 @@ const ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 15 * 60 * 1000;
-const PLATFORM_REFRESH_MS = 12 * 60 * 60 * 1000;
-const JUSTWATCH_SEARCH_LIMIT = 30;
 const VIRTUAL_LIST_BATCH_SIZE = 24;
 const SERVICE_PRIORITY = {
   "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
@@ -197,23 +242,10 @@ const CONTENT_FILTERS = [
   { key: "music", label: "Music", defaultHidden: true }
 ];
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
-const JUSTWATCH_COUNTRIES = [
-  { code: "ES", name: "España", lang: "es" },
-  { code: "MX", name: "México", lang: "es" },
-  { code: "AR", name: "Argentina", lang: "es" },
-  { code: "CL", name: "Chile", lang: "es" },
-  { code: "CO", name: "Colombia", lang: "es" },
-  { code: "US", name: "EE. UU.", lang: "en" },
-  { code: "GB", name: "Reino Unido", lang: "en" },
-  { code: "DE", name: "Alemania", lang: "de" },
-  { code: "FR", name: "Francia", lang: "fr" },
-  { code: "IT", name: "Italia", lang: "it" },
-  { code: "BR", name: "Brasil", lang: "pt" },
-  { code: "PT", name: "Portugal", lang: "pt" },
-];
+const JUSTWATCH_COUNTRIES = platformPolicy.COUNTRIES;
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -221,6 +253,7 @@ let swipeStart = null;
 var preRendered = {};
 let renderGeneration = 0;
 let renderRemainingTimer = null;
+let midnightRefreshTimer = null;
 let dataVersion = 0;
 const listMemo = new Map();
 let virtualListItems = [];
@@ -274,6 +307,8 @@ function startBackgroundRefreshes() {
   }, SHARED_SCHEDULE_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
+      invalidateDataCaches();
+      render();
       scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true, skipPublicAnilist: true }), 100);
     }
   });
@@ -281,7 +316,6 @@ function startBackgroundRefreshes() {
   // The shared schedule is already enriched by AniList on the server. Avoid
   // downloading the full public catalog on every phone after startup.
   if (!isSharedScheduleConfigured()) startPublicAnilistAutoRefresh();
-  scheduleBackgroundTask(() => maybeRefreshPlatforms(), isCapacitor() ? 45000 : 12000);
 }
 
 function scheduleBackgroundTask(fn, timeout = 1000) {
@@ -323,7 +357,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","refreshDataBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -398,30 +432,34 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme"]);
-  state.releases = (data.releases || [])
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme","scheduleMetadata"]);
+  state.releases = (Array.isArray(data.releases) ? data.releases : [])
+    .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
     .filter((item) => !isAniListTimedRelease(item) && !item.inferredFromAnimeSchedule && !item.inferred_from_animeschedule);
-  state.anilistLibrary = (data.anilistLibrary || []).map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
-  state.anilistMap = data.anilistMap || {};
-  state.customLinks = data.customLinks || {};
-  state.customPlatforms = data.customPlatforms || {};
-  state.userOverrides = data.userOverrides || {};
+  state.anilistLibrary = (Array.isArray(data.anilistLibrary) ? data.anilistLibrary : []).filter(item => item && typeof item === "object" && typeof item.title === "string").map(sanitizePlatformFields).map(stripAnilistOnlyTiming);
+  state.anilistMap = data.anilistMap && typeof data.anilistMap === "object" && !Array.isArray(data.anilistMap) ? data.anilistMap : {};
+  state.customLinks = data.customLinks && typeof data.customLinks === "object" && !Array.isArray(data.customLinks) ? data.customLinks : {};
+  state.customPlatforms = data.customPlatforms && typeof data.customPlatforms === "object" && !Array.isArray(data.customPlatforms) ? data.customPlatforms : {};
+  state.userOverrides = data.userOverrides && typeof data.userOverrides === "object" && !Array.isArray(data.userOverrides) ? data.userOverrides : {};
   sanitizeCustomPlatformStorage();
   migrateLegacyUserOverrides();
   applyCustomToReleases();
   applyUserOverridesToLists();
   state.viewMode = data.viewMode || "today";
   state.timezone = data.timezone || "Europe/Madrid";
-  state.jwCountry = data.jwCountry || "ES";
+  try { new Intl.DateTimeFormat("es", { timeZone: state.timezone }); } catch { state.timezone = "Europe/Madrid"; }
+  state.jwCountry = JUSTWATCH_COUNTRIES.some(country => country.code === data.jwCountry) ? data.jwCountry : "ES";
+  state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
   state.hiddenPlatforms = Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : [];
   state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
   populateCountryOptions();
   if (els.countryInput) els.countryInput.value = state.jwCountry;
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.showAnilistScore = data.showAnilistScore !== false;
-  state.notifiedReleaseIds = data.notifiedReleaseIds || {};
+  state.notifiedReleaseIds = data.notifiedReleaseIds && typeof data.notifiedReleaseIds === "object" && !Array.isArray(data.notifiedReleaseIds) ? data.notifiedReleaseIds : {};
   state.lastSharedSync = data.lastSharedSync || "";
+  state.scheduleHealth = { ...policy.health({ releases: state.releases, ...data.scheduleMetadata }), platforms: data.scheduleMetadata?.platforms || null, loading: true };
   state.lastAnilistSync = data.lastAnilistSync || "";
   state.lastAnilistSyncUsername = data.lastAnilistSyncUsername || "";
   state.lastPublicAnilistSync = data.lastPublicAnilistSync || "";
@@ -438,6 +476,7 @@ async function loadState() {
 }
 
 function bindEvents() {
+  $("retryScheduleBtn")?.addEventListener("click", () => refreshSharedSchedule({ force: true, silent: false, skipPublicAnilist: true }));
   els.settingsBtn.addEventListener("click", () => {
     setSettingsOpen(els.settingsPanel.classList.contains("hidden"));
   });
@@ -472,7 +511,6 @@ function bindEvents() {
   els.openAnimeScheduleBtn?.addEventListener("click", () => browserApi.tabs.create({ url: "https://animeschedule.net/" }));
   els.resetBtn.addEventListener("click", resetAll);
   els.themeBtn.addEventListener("click", toggleTheme);
-  els.refreshDataBtn.addEventListener("click", () => { setSettingsOpen(false); refreshData(); });
   els.scoreBtn?.addEventListener("click", toggleAnilistScore);
   const searchInput = document.getElementById("searchInput");
   const sortBtn = document.getElementById("sortBtn");
@@ -495,11 +533,7 @@ function bindEvents() {
   els.animeList.addEventListener("mousedown", (e) => { if (e.button === 1 && e.target.closest(".anime-card")) e.preventDefault(); });
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
-  let titleTapTimer = null;
-  document.querySelector(".header h1")?.addEventListener("click", () => {
-    if (titleTapTimer) { clearTimeout(titleTapTimer); titleTapTimer = null; refreshData(); }
-    else { titleTapTimer = setTimeout(() => { titleTapTimer = null; }, 400); }
-  });
+
 }
 
 function setSettingsOpen(open) {
@@ -690,7 +724,7 @@ function goToAdjacentMode(direction) {
 
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
-async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; invalidateDataCaches(); await browserApi.storage.local.set({ timezone: state.timezone }); render(); }
+async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; invalidateDataCaches(); await browserApi.storage.local.set({ timezone: state.timezone }); render(); scheduleMidnightRefresh(); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
 function populateCountryOptions() {
@@ -702,31 +736,14 @@ function populateCountryOptions() {
 
 async function saveJwCountry() {
   const code = els.countryInput?.value || "ES";
-  state.jwCountry = code;
-  state.lastPlatformSync = "";
-  const restorePreviousPlatform = (item) => {
-    if (!item.jwVerified || item.jwCountry === code) return item;
-    const service = item.jwPreviousService || "No legal platform";
-    return {
-      ...item,
-      service,
-      serviceUrl: item.jwPreviousServiceUrl || "",
-      allServices: item.jwPreviousAllServices || (service === "No legal platform" ? [] : [service]),
-      hasAllowedPlatform: service !== "No legal platform",
-      jwVerified: false,
-      jwCountry: "",
-      jwVerifiedAt: ""
-    };
-  };
-  state.releases = state.releases.map(restorePreviousPlatform);
-  state.anilistLibrary = state.anilistLibrary.map(restorePreviousPlatform);
-  await browserApi.storage.local.set({ jwCountry: code, lastPlatformSync: "" });
-  const name = JUSTWATCH_COUNTRIES.find((c) => c.code === code)?.name || code;
+  state.jwCountry = JUSTWATCH_COUNTRIES.some(country => country.code === code) ? code : "ES";
+  state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
+  await browserApi.storage.local.set({ jwCountry: state.jwCountry });
   applyCustomToReleases();
   await saveAllLists();
   render();
-  showStatus(`País actualizado a ${name}.`, "success");
-  scheduleBackgroundTask(() => maybeRefreshPlatforms({ force: true }), 250);
+  const name = JUSTWATCH_COUNTRIES.find(country => country.code === state.jwCountry)?.name || state.jwCountry;
+  showStatus(`Mostrando plataformas de ${name}.`, "success");
 }
 
 function getDetectedPlatforms() {
@@ -1073,39 +1090,6 @@ function updateNotificationButton() {
   if (label) label.textContent = active ? "Notificaciones activadas" : "Activar notificación";
 }
 
-async function refreshData() {
-  try {
-    showStatus("Actualizando próximos estrenos...", "success");
-    const beforeCount = getOneNextPerSeries(state.releases).length;
-    await refreshSharedSchedule({ silent: true, force: true, skipPublicAnilist: true });
-    if (!isSharedScheduleConfigured()) await maybeRefreshPublicAnilist({ silent: true, force: true });
-    await saveAllLists();
-    if (isCapacitor()) {
-      queueNativeNotificationSync({ force: true });
-    }
-    await deferRender();
-    const afterCount = getOneNextPerSeries(state.releases).length;
-    const diff = afterCount - beforeCount;
-    const favs = state.releases.filter(i => i.favorite).length;
-    const notifMsg = isCapacitor() ? ` | ${favs} con notificaciones` : "";
-    const diffMsg = diff === 0 ? "" : ` | ${diff > 0 ? "+" : ""}${diff}`;
-    showStatus(`Actualizado: ${afterCount} próximos${diffMsg}.${notifMsg}`, "success");
-
-    verifyPlatformsWithJustWatch().then(async (result) => {
-      if (result.checked && result.errors < result.checked) {
-        state.lastPlatformSync = new Date().toISOString();
-        await browserApi.storage.local.set({ lastPlatformSync: state.lastPlatformSync });
-      }
-      await saveAllLists();
-      if (isCapacitor()) {
-        queueNativeNotificationSync({ force: true });
-      }
-      await deferRender();
-    }).catch(() => {});
-  } catch (error) {
-    showStatus(error.message || "Error al refrescar", "error");
-  }
-}
 
 function deferRender() {
   return new Promise(resolve => {
@@ -1117,35 +1101,22 @@ function deferRender() {
 }
 
 async function syncAnilist() {
+  if (els.syncAnilistBtn.disabled) return;
   try {
     const username = els.anilistInput.value.trim();
     if (!username) return showStatus("Pon tu usuario de AniList.", "error");
     const last = Date.parse(state.lastAnilistSync || "");
-    const isSameUser = state.lastAnilistSyncUsername === username;
-    if (isSameUser && Number.isFinite(last) && Date.now() - last < ANILIST_MANUAL_COOLDOWN_MS) {
-      const minutes = Math.ceil((ANILIST_MANUAL_COOLDOWN_MS - (Date.now() - last)) / 60000);
-      return showStatus(`AniList ya se sincronizó hace poco. Espera ${minutes} min.`, "warn");
+    if (state.lastAnilistSyncUsername === username && Number.isFinite(last) && Date.now() - last < ANILIST_MANUAL_COOLDOWN_MS) {
+      return showStatus("AniList ya está sincronizado. Espera un minuto para volver a intentarlo.", "warn");
     }
-    showStatus("Sincronizando base y AniList...", "success");
-    await refreshSharedSchedule({ silent: true, force: true });
+    els.syncAnilistBtn.disabled = true;
+    showStatus("Sincronizando tu biblioteca de AniList…", "success");
     const library = await refreshAnilistData(username);
-    showStatus("Verificando plataformas con JustWatch...", "success");
-    const jwResult = await verifyPlatformsWithJustWatch();
-    if (jwResult.checked && jwResult.errors < jwResult.checked) {
-      state.lastPlatformSync = new Date().toISOString();
-      await browserApi.storage.local.set({ lastPlatformSync: state.lastPlatformSync });
-    }
-    await saveAllLists();
-    // Only show scheduled count in Capacitor
-    let scheduled = 0;
-    if (isCapacitor()) {
-      scheduled = await syncNativeNotificationsIfNeeded({ force: true });
-    }
+    if (isCapacitor()) queueNativeNotificationSync({ force: true });
     render();
-    const jwMsg = jwResult.checked > 0 ? ` | JustWatch: ${jwResult.changed} de ${jwResult.checked}` : "";
-    const notifMsg = isCapacitor() ? ` | Notificaciones: ${scheduled} programadas` : "";
-    showStatus(`AniList sincronizado: ${library.length} animes en emisión.${jwMsg}${notifMsg}`, "success");
-  } catch (error) { showStatus(error.message, "error"); }
+    showStatus(`AniList sincronizado: ${library.length} animes. Los horarios y plataformas se actualizan automáticamente.`, "success");
+  } catch (error) { showStatus(error.message || "No se pudo sincronizar AniList.", "error"); }
+  finally { els.syncAnilistBtn.disabled = false; }
 }
 
 function startAnilistAutoRefresh() {
@@ -1285,7 +1256,13 @@ function isSharedScheduleConfigured() {
   return Boolean(SHARED_SCHEDULE_URL);
 }
 
-async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false, force = false } = {}) {
+function refreshSharedSchedule(options = {}) {
+  if (sharedRefreshPromise) return sharedRefreshPromise;
+  sharedRefreshPromise = performSharedRefresh(options).finally(() => { sharedRefreshPromise = null; });
+  return sharedRefreshPromise;
+}
+
+async function performSharedRefresh({ silent = false, skipPublicAnilist = false, force = false } = {}) {
   if (!isSharedScheduleConfigured()) return false;
 
   if (!force && silent && state.releases.length > 0) {
@@ -1294,19 +1271,19 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
   }
 
   try {
+    state.scheduleHealth = { ...state.scheduleHealth, loading: true };
+    renderScheduleHealth();
     if (!silent) {
       if (els.importPreview) els.importPreview.innerHTML = `<div class="empty-message">Cargando horarios compartidos...</div>`;
       showStatus("Actualizando horarios compartidos...", "success");
     }
 
     const rows = await fetchSharedSchedule();
+    if (state.scheduleHealth.stale && state.releases.some(item => policy.hasConfirmedTime(item) && Date.parse(item.releaseDate) > Date.now())) {
+      throw new Error("El servidor devolvió un horario sin emisiones futuras; se conserva la copia local más reciente.");
+    }
     await yieldToMainThread();
     const imported = rows.map(mapSharedRelease).map(enrichScheduleItem).map((item) => preserveExistingAnimeData(item));
-    const previousUnassigned = new Set(getOneNextPerSeries(state.releases)
-      .filter((item) => !item.hasAllowedPlatform)
-      .map(getSeriesKey));
-    const hasNewUnassignedSeries = getOneNextPerSeries(imported)
-      .some((item) => !item.hasAllowedPlatform && !previousUnassigned.has(getSeriesKey(item)));
     await yieldToMainThread();
     const localOnly = state.releases.filter((item) =>
       item.source !== "animeschedule-api" &&
@@ -1318,29 +1295,22 @@ async function refreshSharedSchedule({ silent = false, skipPublicAnilist = false
     state.releases = mergeDuplicateItems(mergeById(localOnly, imported));
     applyAnilistToReleases();
     reconcileAnilistFavoritesWithSchedule();
-    if (!skipPublicAnilist) {
-      const lastAl = Date.parse(state.lastPublicAnilistSync || "");
-      if (force || !state.releases.length || !Number.isFinite(lastAl) || Date.now() - lastAl >= PUBLIC_ANILIST_REFRESH_MS) {
-        await yieldToMainThread();
-        await refreshPublicAnilistData();
-      }
-    }
     applyCustomToReleases();
     applyUserOverridesToLists();
     state.lastSharedSync = new Date().toISOString();
-    if (hasNewUnassignedSeries) state.lastPlatformSync = "";
-    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync, lastPlatformSync: state.lastPlatformSync });
+    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync, lastPlatformSync: state.lastPlatformSync, scheduleMetadata: { updatedAt: state.scheduleHealth.updatedAt, checkedAt: state.scheduleHealth.checkedAt, platforms: state.scheduleHealth.platforms } });
     renderPreview(imported);
     scheduleRender();
     checkReleaseNotifications();
-    queueNativeNotificationSync();
-    if (hasNewUnassignedSeries) scheduleBackgroundTask(() => maybeRefreshPlatforms({ force: true }), 800);
+    queueNativeNotificationSync({ force: true, delay: 100 });
 
     if (!silent) {
       showStatus(`Actualizados ${imported.length} episodios desde la base compartida.`, "success");
     }
     return true;
   } catch (error) {
+    state.scheduleHealth = { ...state.scheduleHealth, loading: false, error: getFriendlyFetchError(error) };
+    render();
     if (!silent) {
       if (els.importPreview) els.importPreview.innerHTML = "";
       showStatus(getFriendlyFetchError(error), "error");
@@ -1355,10 +1325,16 @@ async function fetchSharedSchedule() {
   const now = new Date();
   const recentSince = now.getTime() - RECENT_RELEASE_DAYS * 24 * 60 * 60 * 1000;
   const until = new Date(now.getTime() + PUBLIC_SCHEDULE_DAYS * 24 * 60 * 60 * 1000);
-  const response = await fetch(SHARED_SCHEDULE_URL, {
-    headers: { accept: "application/json" },
-    cache: "no-cache"
-  });
+  let response;
+  let bundled = false;
+  try {
+    response = await fetch(SHARED_SCHEDULE_URL, { headers: { accept: "application/json" }, cache: "no-store" });
+    if (!response.ok) throw new Error(`Horario HTTP ${response.status}`);
+  } catch (error) {
+    if (!isCapacitor() || state.releases.length) throw error;
+    response = await fetch("./schedule.json", { cache: "no-store" });
+    bundled = true;
+  }
 
   if (!response.ok) {
     const body = await response.text().catch(() => "");
@@ -1369,10 +1345,12 @@ async function fetchSharedSchedule() {
   try { json = await response.json(); } catch (_) {
     throw new Error("La respuesta del horario compartido no es JSON válido.");
   }
-  const rows = Array.isArray(json) ? json : (json.releases || json.data || []);
+  const rows = policy.validate(json);
+  state.scheduleHealth = { ...policy.health(json), platforms: json.platforms || null, loading: false, bundled, error: "" };
   const filtered = rows.filter((row) => {
     if (!isAnimeScheduleBackedRow(row, json)) return false;
     if (row.inferredFromAnimeSchedule || row.inferred_from_animeschedule) return false;
+    if (policy.isPending(row) || row.scheduleStatus === "cancelled") return true;
     const releaseDate = getSharedSubReleaseDate(row);
     const releaseAt = Date.parse(releaseDate);
     if (!Number.isFinite(releaseAt)) return false;
@@ -1393,7 +1371,7 @@ function mapSharedRelease(row) {
   const releaseDate = getSharedSubReleaseDate(row);
   const title = row.title || "Sin titulo";
   const episodeNumber = row.episode_number ?? row.episodeNumber ?? "?";
-  return sanitizePlatformFields({
+  return sanitizePlatformFields(platformPolicy.applyCountryPlatforms({
     id: row.id || stableId("schedule", title, episodeNumber, releaseDate),
     animeKey: row.anime_key || row.animeKey || stableId(title),
     title,
@@ -1401,9 +1379,17 @@ function mapSharedRelease(row) {
     episode: row.episode || `Ep ${episodeNumber}`,
     episodeNumber,
     airType: row.air_type || row.airType || "SUB",
-    delayed: isDelayed(row),
-    releaseDate: new Date(releaseDate).toISOString(),
+    delayed: Boolean(row.delayed) || isDelayed(row),
+    scheduleStatus: row.scheduleStatus || "scheduled",
+    confirmedSubDate: row.confirmedSubDate || "",
+    officialEvidence: row.officialEvidence || [],
+    officialSources: row.officialSources || [],
+    lastDelayCheck: row.lastDelayCheck || "",
+    delayCheckError: row.delayCheckError || "",
+    releaseDate: releaseDate && Number.isFinite(Date.parse(releaseDate)) ? new Date(releaseDate).toISOString() : null,
     originalReleaseDate: row.originalReleaseDate || row.original_release_date || "",
+    basePlatforms: row.basePlatforms,
+    platformsByCountry: row.platformsByCountry || {},
     service: row.service || "No legal platform",
     serviceUrl: normalizeUrl(row.service_url || row.serviceUrl || ""),
     allServices: row.all_services || row.allServices || [],
@@ -1421,7 +1407,7 @@ function mapSharedRelease(row) {
     titles: row.titles || [],
     customUrl: "",
     customPlatformName: ""
-  });
+  }, state.jwCountry));
 }
 
 function preserveExistingAnimeData(item) {
@@ -1441,26 +1427,6 @@ function preserveExistingAnimeData(item) {
     customUrl: override?.customUrl || item.customUrl || existing.customUrl || "",
     customPlatformName: override?.customPlatformName || item.customPlatformName || existing.customPlatformName || ""
   };
-  // Preserve JW-verified platform data across schedule refreshes so the user doesn't
-  // lose platform info every 30 min. Only applies when same country and not Crunchyroll
-  // (which is never sent through JW verification).
-  const jwVerifiedAt = Date.parse(existing.jwVerifiedAt || "");
-  const jwStillFresh = Number.isFinite(jwVerifiedAt) && Date.now() - jwVerifiedAt < PLATFORM_REFRESH_MS;
-  if (!item.hasAllowedPlatform && existing.jwVerified && jwStillFresh && existing.jwCountry === state.jwCountry && item.service !== "Crunchyroll") {
-    return {
-      ...base,
-      service: existing.service,
-      serviceUrl: existing.serviceUrl,
-      allServices: existing.allServices || [],
-      hasAllowedPlatform: existing.hasAllowedPlatform,
-      jwVerified: true,
-      jwCountry: existing.jwCountry,
-      jwVerifiedAt: existing.jwVerifiedAt,
-      jwPreviousService: existing.jwPreviousService,
-      jwPreviousServiceUrl: existing.jwPreviousServiceUrl,
-      jwPreviousAllServices: existing.jwPreviousAllServices
-    };
-  }
   return applyUserOverride(base, override);
 }
 
@@ -1496,74 +1462,18 @@ function getNextSeason({ season, year }) {
 }
 
 async function fetchAnimeSeason(season, year, timezone, token) {
-  const params = new URLSearchParams({ season, year, tz: timezone });
-  const directUrl = `${API_BASE}/anime?${params}&api_token=${encodeURIComponent(token)}`;
-  const errors = [];
-
-  async function tryFetch(name, fetchFn, passThroughStatuses = []) {
-    try {
-      const res = await fetchFn();
-      const text = await res.text();
-      const t = text.trimStart();
-      const isJson = t.startsWith("{") || t.startsWith("[");
-      if (passThroughStatuses.includes(res.status) && isJson) {
-        return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
-      }
-      if (!res.ok) { errors.push(`${name}:${res.status}:${text.slice(0, 80)}`); return null; }
-      if (!isJson) { errors.push(`${name}:no-json`); return null; }
-      return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
-    } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
-  }
-
-  const sameOriginResult = await tryFetch("api", () => fetch(`/api/anime?${params}&api_token=${encodeURIComponent(token)}`), [404]);
-  if (sameOriginResult) return sameOriginResult;
-
-  const result =
-    await tryFetch("direct", () => fetch(directUrl), [404]) ||
-    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(directUrl)}`)) ||
-    await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(directUrl)}`)) ||
-    await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(directUrl)}`));
-
-  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
-  return result;
+  return fetchAnimeSchedule("anime", { season, year, tz: timezone }, token);
 }
-
 async function fetchTimetable(weekInfo, timezone, token) {
-  const params = new URLSearchParams({ year: weekInfo.year, week: weekInfo.week, tz: timezone });
-  const urlWithToken = `${API_BASE}/timetables?${params}&api_token=${encodeURIComponent(token)}`;
-  const errors = [];
-
-  // Reads response, validates it's JSON, returns buffered Response or null.
-  // passThroughStatuses: status codes to return as-is (if body is JSON) without treating as error.
-  async function tryFetch(name, fetchFn, passThroughStatuses = []) {
-    try {
-      const res = await fetchFn();
-      const text = await res.text();
-      const t = text.trimStart();
-      const isJson = t.startsWith("{") || t.startsWith("[");
-      if (passThroughStatuses.includes(res.status) && isJson) {
-        return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
-      }
-      if (!res.ok) { errors.push(`${name}:${res.status}:${text.slice(0, 80)}`); return null; }
-      if (!isJson) { errors.push(`${name}:no-json`); return null; }
-      return new Response(text, { status: res.status, headers: { "content-type": "application/json; charset=utf-8" } });
-    } catch (e) { errors.push(`${name}:${(e.message || "error").slice(0, 40)}`); return null; }
-  }
-
-  // 1. Same-origin API route (Vercel deployment) 窶・no CORS, works for everyone automatically.
-  //    Pass 404 through: AnimeSchedule uses it to signal a week has no data yet.
-  const sameOriginResult = await tryFetch("api", () => fetch(`/api/timetable?${params}&api_token=${encodeURIComponent(token)}`), [404]);
-  if (sameOriginResult) return sameOriginResult;
-
-  // 2. Public CORS proxies as last resort
-  const result =
-    await tryFetch("direct", () => fetch(urlWithToken)) ||
-    await tryFetch("corsproxy", () => fetch(`https://corsproxy.io/?url=${encodeURIComponent(urlWithToken)}`)) ||
-    await tryFetch("codetabs", () => fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(urlWithToken)}`)) ||
-    await tryFetch("allorigins", () => fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(urlWithToken)}`));
-
-  if (!result) throw new Error(`Sin conexión con AnimeSchedule (${errors.join(" | ")}).`);
-  return result;
+  return fetchAnimeSchedule("timetable", { year: weekInfo.year, week: weekInfo.week, tz: timezone }, token);
+}
+async function fetchAnimeSchedule(endpoint, values, token) {
+  const authorization = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+  const response = await fetch(`/api/${endpoint}?${new URLSearchParams(values)}`, {
+    headers: { accept: "application/json", authorization }
+  });
+  if (!response.ok && response.status !== 404) throw new Error(`AnimeSchedule:${response.status}`);
+  return response;
 }
 
 function getFriendlyFetchError(error) {
@@ -1622,6 +1532,10 @@ function normalizeSchedule(items) {
 
 function getAnimeScheduleSubReleaseDate(item) {
   return firstDateValue(
+    item.subDelayedTimetable,
+    item.sub_delayed_timetable,
+    item.subDelayedUntil,
+    item.sub_delayed_until,
     item.subReleaseDate,
     item.sub_release_date,
     item.subEpisodeDate,
@@ -1632,10 +1546,6 @@ function getAnimeScheduleSubReleaseDate(item) {
     item.sub_airing_date,
     item.subTimetable,
     item.sub_timetable,
-    item.subDelayedTimetable,
-    item.sub_delayed_timetable,
-    item.subDelayedUntil,
-    item.sub_delayed_until,
     item.releaseDate,
     item.release_date,
     item.episodeDate,
@@ -1711,9 +1621,14 @@ function platformToService(platform) {
 function chooseBestStream(streams) { return [...streams].sort((a,b) => (SERVICE_PRIORITY[a.service] || 50) - (SERVICE_PRIORITY[b.service] || 50))[0] || null; }
 function normalizeAllowedService(service) { const mapped = platformToService(String(service || "").toLowerCase()) || String(service || "").trim(); return mapped || ""; }
 function sanitizePlatformFields(item) {
-  const normalizedService = normalizeAllowedService(item.service);
+  item = { ...item };
+  for (const key of ["titles", "genres", "tags", "allServices", "officialEvidence", "officialSources"]) {
+    if (!Array.isArray(item[key])) item[key] = [];
+  }
+  const normalizeService = item.jwSource === "shared" ? value => String(value || "").trim() : normalizeAllowedService;
+  const normalizedService = normalizeService(item.service);
   const service = normalizedService === "No legal platform" ? "" : normalizedService;
-  const allServices = [...new Set((item.allServices || []).map(normalizeAllowedService).filter((value) => value && value !== "No legal platform"))];
+  const allServices = [...new Set((item.allServices || []).map(normalizeService).filter((value) => value && value !== "No legal platform"))];
   return {
     ...item,
     service: service || "No legal platform",
@@ -1748,257 +1663,6 @@ function stripAnilistOnlyTiming(item) {
   };
 }
 
-async function verifyPlatformsWithJustWatch() {
-  const countryEntry = JUSTWATCH_COUNTRIES.find((c) => c.code === state.jwCountry) || JUSTWATCH_COUNTRIES[0];
-  const allSeries = getOneNextPerSeries(state.releases)
-    .filter((item) => {
-      const service = item.service || "No legal platform";
-      return service !== "Crunchyroll" && (service === "No legal platform" || item.jwVerified);
-    })
-    .slice(0, JUSTWATCH_SEARCH_LIMIT);
-
-  if (!allSeries.length) return { checked: 0, changed: 0, errors: 0 };
-
-  let changed = 0, errors = 0;
-  const cache = new Map();
-  const limit = 3;
-  const batches = [];
-
-  for (let i = 0; i < allSeries.length; i += limit) {
-    batches.push(allSeries.slice(i, i + limit));
-  }
-
-  for (const batch of batches) {
-    const results = await Promise.allSettled(batch.map(async (item) => {
-      const key = getSeriesKey(item);
-      if (!cache.has(key)) {
-        cache.set(key, await fetchJustWatchAvailabilityWithFallback(item, countryEntry.code, countryEntry.lang));
-      }
-      return { key, result: cache.get(key) };
-    }));
-
-    for (const r of results) {
-      if (r.status === "rejected") { errors++; continue; }
-      const prev = getAllItems().filter((i) => getSeriesKey(i) === r.value.key && i.service !== "Crunchyroll");
-      const wasNoPlatform = prev.every((i) => (i.service || "") === "No legal platform");
-      applyJustWatchAvailabilityToSeries(r.value.key, r.value.result);
-      const now = getAllItems().filter((i) => getSeriesKey(i) === r.value.key && i.service !== "Crunchyroll");
-      const nowNoPlatform = now.every((i) => (i.service || "") === "No legal platform");
-      if (wasNoPlatform !== nowNoPlatform) changed++;
-    }
-  }
-
-  return { checked: allSeries.length, changed, errors };
-}
-
-async function maybeRefreshPlatforms({ force = false } = {}) {
-  const last = Date.parse(state.lastPlatformSync || "");
-  if (!force && Number.isFinite(last) && Date.now() - last < PLATFORM_REFRESH_MS) return false;
-  const result = await verifyPlatformsWithJustWatch();
-  if (!result.checked || result.errors >= result.checked) return false;
-  state.lastPlatformSync = new Date().toISOString();
-  await browserApi.storage.local.set({
-    releases: state.releases,
-    anilistLibrary: state.anilistLibrary,
-    lastPlatformSync: state.lastPlatformSync
-  });
-  if (result.changed) {
-    invalidateDataCaches();
-    scheduleRender();
-  }
-  return true;
-}
-
-async function fetchJustWatchAvailabilityWithFallback(item, countryCode, language) {
-  const strip = (t) => t ? t.replace(/\s*(season|s|part|cour)\s*\d+$/i, "").replace(/\s*\([^)]*\)\s*$/i, "").trim() : "";
-  const noArticle = (t) => t ? t.replace(/^(the|a|an|el|la|los|las|le|les|un|una)\s+/i, "").trim() : "";
-  const queries = [...new Set([
-    item.anilistTitle,
-    item.title,
-    ...(item.titles || []).slice(0, 3),
-    strip(item.anilistTitle),
-    strip(item.title),
-    noArticle(item.anilistTitle),
-    noArticle(item.title),
-    noArticle(strip(item.anilistTitle)),
-    noArticle(strip(item.title)),
-  ].filter(Boolean))];
-
-  for (const query of queries) {
-    const result = await fetchJustWatchAvailability(item, countryCode, language, query);
-    if (result.verified) return result;
-  }
-
-  return { verified: false };
-}
-
-async function fetchJustWatchAvailability(item, countryCode = "ES", language = "es", searchQuery = "") {
-  const q = searchQuery || item.anilistTitle || item.title;
-  const gqlPopular = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) { popularTitles(country: $country, filter: $filter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) { edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear } offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } } }`;
-  const gqlSearch = `query GetSearch($query: String!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) { searchTitles(query: $query, country: $country, first: $first, filter: { objectTypes: ["SHOW"] }) { edges { node { id objectType content(country: $country, language: $language) { title originalReleaseYear } offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } } }`;
-
-  const buildBody = (gql, vars) => ({
-    operationName: "GetSearch",
-    variables: vars,
-    query: gql
-  });
-
-  const locales = [
-    { country: countryCode, lang: language },
-    { country: countryCode, lang: "en" },
-  ];
-
-  const bodies = [];
-  for (const loc of locales) {
-    bodies.push(buildBody(gqlPopular, { first: 20, filter: { searchQuery: q, objectTypes: ["SHOW"] }, country: loc.country, language: loc.lang, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }));
-    bodies.push(buildBody(gqlSearch, { first: 20, query: q, country: loc.country, language: loc.lang, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }));
-  }
-
-  const tryFetchJson = async (url, body) => {
-    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-    if (!res.ok) return null;
-    return await res.json();
-  };
-
-  const findInNodes = (nodes) => {
-    if (!nodes || nodes.length === 0) return null;
-    const match = findJustWatchMatch(item, nodes);
-    if (match) return match;
-    const itemTitles = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean).map(t => t.toLowerCase().trim());
-    for (const node of nodes) {
-      const jwTitle = (node.content?.title || "").toLowerCase().trim();
-      if (jwTitle && itemTitles.some(t => t.includes(jwTitle) || jwTitle.includes(t))) return node;
-    }
-    return null;
-  };
-
-  try {
-    let matchNode = null;
-    let offersCountry = countryCode;
-
-    for (const body of bodies) {
-      let json = await tryFetchJson("/api/justwatch", body).catch(() => null);
-      if (!json) json = await tryFetchJson("https://apis.justwatch.com/graphql", body).catch(() => null);
-      if (!json) continue;
-
-      const rawNodes = json.data?.popularTitles || json.data?.searchTitles;
-      const nodes = Array.isArray(rawNodes)
-        ? rawNodes
-        : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
-
-      matchNode = findInNodes(nodes);
-      if (matchNode) break;
-    }
-
-    if (!matchNode && countryCode !== "US") {
-      const usBody = buildBody(gqlSearch, { first: 10, query: q, country: "US", language: "en", offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } });
-      let json = await tryFetchJson("/api/justwatch", usBody).catch(() => null);
-      if (!json) json = await tryFetchJson("https://apis.justwatch.com/graphql", usBody).catch(() => null);
-      if (json) {
-        const rawNodes = json.data?.popularTitles || json.data?.searchTitles;
-        const nodes = Array.isArray(rawNodes)
-          ? rawNodes
-          : ((rawNodes?.edges || []).map((edge) => edge.node).filter(Boolean));
-        const usNode = findInNodes(nodes);
-        if (usNode && usNode.id) {
-          const gqlOffers = `query GetOffers($id: ID!, $country: Country!, $offerFilter: OfferFilter!) { node(id: $id) { ... on Show { offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } } } }`;
-          const offBody = { operationName: "GetOffers", variables: { id: usNode.id, country: countryCode, offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] } }, query: gqlOffers };
-          let offJson = await tryFetchJson("/api/justwatch", offBody).catch(() => null);
-          if (!offJson) offJson = await tryFetchJson("https://apis.justwatch.com/graphql", offBody).catch(() => null);
-          if (offJson?.data?.node) {
-            matchNode = { content: usNode.content, offers: offJson.data.node.offers || [] };
-          }
-        }
-      }
-    }
-
-    if (!matchNode) return { verified: false };
-
-    const availability = getJustWatchAllowedAvailability(matchNode);
-    if (availability) return { verified: true, availability };
-    return { verified: false };
-  } catch (error) {
-    console.warn("No se pudo verificar JustWatch.", error);
-    return { verified: false };
-  }
-}
-
-function findJustWatchMatch(item, nodes) {
-  const itemTitles = [...new Set([item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean))];
-  const itemYear = item.releaseDate ? new Date(item.releaseDate).getFullYear() : null;
-  let best = null, bestScore = 0;
-  for (const node of nodes) {
-    const jwTitle = node.content?.title || "";
-    if (!jwTitle) continue;
-    let score = Math.max(...itemTitles.map((t) => titleSimilarityScore(t, jwTitle)));
-    if (score > 0 && itemYear) {
-      const jwYear = node.content?.originalReleaseYear;
-      if (jwYear && Math.abs(jwYear - itemYear) <= 1) score = Math.min(1, score + 0.05);
-      else if (jwYear && Math.abs(jwYear - itemYear) > 3) score *= 0.85;
-    }
-    if (score > bestScore) { bestScore = score; best = node; }
-  }
-  return bestScore >= 0.85 ? best : null;
-}
-
-function getJustWatchAllowedAvailability(node) {
-  const offers = (node.offers || []).filter((offer) => {
-    const mt = String(offer.monetizationType || "").toUpperCase();
-    return mt === "FLATRATE" || mt === "FREE" || mt === "ADS";
-  });
-  const mapped = offers
-    .map((offer) => {
-      const service = justWatchOfferToService(offer);
-      return service ? { service, url: offer.standardWebURL || "" } : null;
-    })
-    .filter(Boolean);
-  const best = chooseBestStream(mapped);
-  if (!best) return null;
-  const allServices = [...new Set(mapped.map((m) => m.service))];
-  const urls = {};
-  for (const m of mapped) {
-    if (!urls[m.service]) urls[m.service] = m.url;
-  }
-  return { service: best.service, allServices, urls, hasAllowedPlatform: true };
-}
-
-function justWatchOfferToService(offer) {
-  const pkg = offer.package || {};
-  const clearName = (pkg.clearName || "").trim();
-  const haystack = `${clearName} ${pkg.shortName || ""} ${pkg.technicalName || ""} ${offer.standardWebURL || ""}`.toLowerCase();
-  const mapped = platformToService(clearName.toLowerCase()) || platformToService(haystack);
-  return mapped || "";
-}
-
-function applyJustWatchAvailabilityToSeries(seriesKey, result) {
-  const availability = result?.verified ? result.availability : null;
-  const applyTo = (item) => {
-    if (getSeriesKey(item) !== seriesKey) return item;
-    const currentService = item.service || "No legal platform";
-    if (currentService === "Crunchyroll") return item;
-    // A failed/no-offer lookup is inconclusive. Never erase a platform from
-    // AnimeSchedule or AniList; a positive match can assign the newly announced one.
-    if (!availability) return item;
-    const newService = availability.service;
-    const newUrl = availability.urls?.[newService] || item.serviceUrl || "";
-    return {
-      ...item,
-      service: newService,
-      serviceUrl: newUrl,
-      allServices: availability.allServices,
-      hasAllowedPlatform: true,
-      jwVerified: true,
-      jwCountry: state.jwCountry,
-      jwVerifiedAt: new Date().toISOString(),
-      jwPreviousService: item.jwVerified ? item.jwPreviousService : currentService,
-      jwPreviousServiceUrl: item.jwVerified ? item.jwPreviousServiceUrl : (item.serviceUrl || ""),
-      jwPreviousAllServices: item.jwVerified ? item.jwPreviousAllServices : (item.allServices || [])
-    };
-  };
-  state.releases = state.releases.map(applyTo);
-  state.anilistLibrary = state.anilistLibrary.map(applyTo);
-  applyUserOverridesToLists();
-}
 function isDelayed(item) {
   const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
   const releaseAt = Date.parse(normalizeScheduleDate(getAnimeScheduleSubReleaseDate(item)));
@@ -2111,7 +1775,7 @@ async function fetchAnilistLibrary(username) {
   if (json.errors?.length) throw new Error(json.errors[0].message || "AniList devolvió error");
   return (json.data?.MediaListCollection?.lists || []).flatMap((list) => list.entries || []).filter((entry) => {
     const media = entry.media;
-    return entry.status === "CURRENT" && media?.status === "RELEASING" && Boolean(media?.nextAiringEpisode?.airingAt);
+    return entry.status === "CURRENT" && Boolean(media?.id);
   }).map((entry) => {
     const media = entry.media;
     const titles = [media.title?.romaji, media.title?.english, media.title?.native, ...(media.synonyms || [])].filter(Boolean);
@@ -2123,12 +1787,12 @@ async function fetchAnilistLibrary(username) {
       animeKey: stableId(title),
       title,
       titles,
-      episode: `Ep ${media.nextAiringEpisode.episode}`,
-      episodeNumber: media.nextAiringEpisode.episode,
+      episode: media.nextAiringEpisode?.episode ? `Ep ${media.nextAiringEpisode.episode}` : "Sin episodio confirmado",
+      episodeNumber: media.nextAiringEpisode?.episode || null,
       airType: "SUB",
       delayed: false,
       releaseDate: "",
-      anilistAiringDate: new Date(media.nextAiringEpisode.airingAt * 1000).toISOString(),
+      anilistAiringDate: media.nextAiringEpisode?.airingAt ? new Date(media.nextAiringEpisode.airingAt * 1000).toISOString() : "",
       service: best?.service || "No legal platform",
       serviceUrl: best?.url || "",
       allServices: streams.map((stream) => stream.service),
@@ -2386,7 +2050,7 @@ function applyPublicAnilistDataToSeries(seriesKey, media) {
 
 function getSharedSubReleaseDate(row) {
   const original = row.originalReleaseDate || row.original_release_date || "";
-  if (row.correctedByAniList && original) return original;
+  if (policy.isPending(row) || row.scheduleStatus === "cancelled") return "";
   return row.release_date || row.releaseDate || "";
 }
 
@@ -2491,45 +2155,9 @@ function buildTitleAliases(title) { const v=String(title||""); return [...new Se
 
 function applyAnilistToReleases() { state.releases = mergeDuplicateItems(state.releases.map(item => { const match = findAnilistMatch(item); if(!match) return item; const override = getAnilistOverride(item, match); return { ...item, ...override, favorite: match.favorite === true ? true : item.favorite, anilistId: match.anilistId, anilistTitle: match.title, anilistUrl: match.siteUrl, anilistScore: match.anilistScore ?? item.anilistScore, coverUrl: match.coverUrl || item.coverUrl }; })); }
 function getAnilistOverride(item, match) {
-  const nextTime = Date.parse(getAnilistAiringDate(match));
-  const itemTime = Date.parse(item.releaseDate || "");
-  const itemEpisode = parseEpisodeNumber(item.episodeNumber ?? item.episode);
-  const nextEpisode = parseEpisodeNumber(match.episodeNumber ?? match.episode);
-  const sameConfirmedSeries = getSeriesMatchScore(item, match) >= 0.9;
-  const targetsConfirmedEpisode = !Number.isFinite(itemEpisode) || !Number.isFinite(nextEpisode) || itemEpisode <= nextEpisode;
-  const contradictsConfirmedNext = sameConfirmedSeries && targetsConfirmedEpisode &&
-    Number.isFinite(nextTime) && Number.isFinite(itemTime) &&
-    !isSameCalendarDay(nextTime, itemTime);
-  const canOverrideTiming = item.source === "anilist-library" || contradictsConfirmedNext;
-  const delayedByDate = contradictsConfirmedNext;
-  let correctedReleaseDate = item.releaseDate;
-  if (item.source === "anilist-library" && Number.isFinite(nextTime)) {
-    correctedReleaseDate = new Date(nextTime).toISOString();
-  } else if (contradictsConfirmedNext) {
-    // AniList corrects only the calendar day. Keep AnimeSchedule's local hour.
-    correctedReleaseDate = replaceCalendarDayKeepTime(itemTime, nextTime);
-  }
-  const override = {
-    title: match.title || item.title,
-    episode: canOverrideTiming ? (match.episode || item.episode) : item.episode,
-    episodeNumber: canOverrideTiming ? (match.episodeNumber ?? item.episodeNumber) : item.episodeNumber,
-    releaseDate: correctedReleaseDate,
-    delayed: delayedByDate || Boolean(item.delayed),
-    originalReleaseDate: delayedByDate ? (item.originalReleaseDate || item.releaseDate || "") : (item.originalReleaseDate || ""),
-    source: item.source === "shared-json" ? "shared-json+anilist" : item.source
-  };
-  if (item.hasAllowedPlatform === false && match.hasAllowedPlatform) {
-    override.service = match.service;
-    override.serviceUrl = match.serviceUrl;
-    override.allServices = match.allServices || [match.service];
-    override.hasAllowedPlatform = true;
-  } else if (item.hasAllowedPlatform === false) {
-    override.service = "No legal platform";
-    override.serviceUrl = "";
-    override.hasAllowedPlatform = false;
-  }
-  return override;
+  return { title: match.title || item.title };
 }
+
 function getAnilistAiringDate(match) {
   return match?.releaseDate || match?.anilistAiringDate || "";
 }
@@ -2799,12 +2427,17 @@ function getDelayToNextQuarterHour(date = new Date()) {
   return Math.max(1000, next.getTime() - date.getTime());
 }
 
+let notificationCheckRunning = false;
 async function checkReleaseNotifications() {
+  if (isCapacitor()) { queueNativeNotificationSync(); return; }
+  if (notificationCheckRunning) return;
   if (!state.notificationEnabled) return;
   if (!isCapacitor() && (!("Notification" in window) || Notification.permission !== "granted")) return;
+  notificationCheckRunning = true;
+  try {
   const now = Date.now();
   const favorites = getFavoriteItems();
-  const candidates = getDueNotificationItems(favorites.length ? favorites : state.releases, now);
+  const candidates = getDueNotificationItems(favorites, now);
   let changed = false;
 
   for (const item of candidates) {
@@ -2815,16 +2448,19 @@ async function checkReleaseNotifications() {
     const key = `${item.id}|${new Date(item.releaseDate).toISOString()}`;
     if (state.notifiedReleaseIds[key]) continue;
 
+    await showReleaseNotification(item);
     state.notifiedReleaseIds[key] = true;
     changed = true;
-    await showReleaseNotification(item);
   }
 
   if (changed) await browserApi.storage.local.set({ notifiedReleaseIds: state.notifiedReleaseIds });
+  } catch (error) { console.warn("No se pudo mostrar el aviso de estreno.", error); }
+  finally { notificationCheckRunning = false; }
 }
 
 function getDueNotificationItems(items, now = Date.now()) {
   const due = items.filter((item) => {
+    if (!policy.hasConfirmedTime(item)) return false;
     const releaseAt = new Date(item.releaseDate).getTime();
     if (!Number.isFinite(releaseAt)) return false;
     const diff = releaseAt - now;
@@ -2864,7 +2500,7 @@ async function showReleaseNotification(item) {
   };
 
   try {
-    const registration = "serviceWorker" in navigator ? await navigator.serviceWorker.ready : null;
+    const registration = "serviceWorker" in navigator ? await Promise.race([navigator.serviceWorker.ready, new Promise(resolve => setTimeout(() => resolve(null), 3000))]) : null;
     if (registration?.showNotification) {
       await registration.showNotification(title, options);
       return;
@@ -2905,6 +2541,7 @@ async function scheduleNativeNotifications() {
     const toSchedule = [];
 
     for (const item of favorites) {
+      if (!policy.hasConfirmedTime(item)) continue;
       const releaseAt = new Date(item.releaseDate).getTime();
       if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
       if (releaseAt > now + 7 * 24 * 3600 * 1000) continue;
@@ -2946,6 +2583,7 @@ async function cancelStaleNativeNotifications() {
     const now = Date.now();
     const favorites = state.releases.filter((item) => item.favorite);
     for (const item of favorites) {
+      if (!policy.hasConfirmedTime(item)) continue;
       const releaseAt = new Date(item.releaseDate).getTime();
       if (Number.isFinite(releaseAt) && releaseAt > now) {
         validIds.add(hashNotificationId(item));
@@ -3024,13 +2662,13 @@ async function downloadCoverImage(url, notifId) {
 }
 
 function hashNotificationId(item) {
-  const key = `${item.id || getEpisodeKey(item)}`;
+  const key = `${item.id || getEpisodeKey(item)}|${item.releaseDate || "no-date"}`;
   let hash = 0;
   for (let i = 0; i < key.length; i++) {
     hash = ((hash << 5) - hash) + key.charCodeAt(i);
     hash |= 0;
   }
-  return Math.abs(hash) % 2147483647;
+  return Math.max(1, Math.abs(hash) % 2147483647);
 }
 
 function setupCapacitorNotificationTap() {
@@ -3058,6 +2696,41 @@ function toAbsoluteUrl(url) {
   }
 }
 
+function getReleaseTimingLabel(item) {
+  if (item.scheduleStatus === "conflict") return "Reprogramación pendiente de confirmar";
+  if (item.scheduleStatus === "date-confirmed") return "Hora SUB por confirmar";
+  if (policy.isPending(item)) return "Retrasado · fecha por confirmar";
+  return getCountdown(item.releaseDate).text;
+}
+
+function renderOfficialEvidence(item) {
+  const entry = (item.officialEvidence || []).find(source => /^https:\/\//.test(source.url || ""));
+  if (!entry) return "";
+  return `<a class="official-evidence" href="${escapeHtml(entry.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Anuncio oficial</a>`;
+}
+
+function renderScheduleHealth() {
+  const box = $("scheduleHealth");
+  const label = $("scheduleHealthText");
+  if (!box || !label) return;
+  const health = state.scheduleHealth;
+  const updated = health.updatedAt && Number.isFinite(Date.parse(health.updatedAt))
+    ? ` Datos: ${new Intl.DateTimeFormat("es-ES", { timeZone: getSelectedTimezone(), dateStyle: "medium", timeStyle: "short" }).format(new Date(health.updatedAt))}.` : "";
+  label.textContent = (health.loading ? "Cargando horarios…" : health.error ? `${health.error} Se conserva la copia local.` :
+    health.stale ? "Horario desactualizado: no contiene próximas emisiones SUB confirmadas." :
+    health.bundled ? "Sin conexión: usando el horario incluido en la app." : "Horario SUB disponible.") + updated;
+  box.dataset.warning = String(Boolean(health.error || health.stale || health.bundled));
+  const button = $("retryScheduleBtn");
+  if (button) button.disabled = Boolean(health.loading);
+  const platformLabel = $("platformDataStatus");
+  if (platformLabel) {
+    const coverage = health.platforms?.coverage?.[state.jwCountry];
+    platformLabel.textContent = !coverage ? "Plataformas: pendientes de la próxima actualización automática." :
+      coverage.pending || coverage.stale ? "Algunas plataformas están pendientes de verificación. Se actualizarán automáticamente." :
+      "Plataformas regionales comprobadas automáticamente. La disponibilidad puede variar por temporada.";
+  }
+}
+
 function scheduleRender(delay = 80) {
   const generation = ++renderGeneration;
   setTimeout(() => {
@@ -3073,6 +2746,7 @@ function render() {
   }
   cleanupVirtualListObserver();
   setActiveTab();
+  renderScheduleHealth();
   renderNextModern();
   renderListModern();
   renderSettingsPlatformFilter();
@@ -3095,49 +2769,41 @@ function updateLiveCountdowns() {
   els.animeList.querySelectorAll(".anime-card").forEach((card) => {
     const item = findItemById(card.dataset.id);
     const countdown = card.querySelector(".countdown");
-    if (item && countdown) countdown.textContent = getCountdown(item.releaseDate).text;
+    if (item && countdown) countdown.textContent = getReleaseTimingLabel(item);
   });
 }
 
 function scheduleMidnightRefresh() {
+  clearTimeout(midnightRefreshTimer);
   try {
     const tz = getSelectedTimezone();
     const now = new Date();
-    const parts = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).formatToParts(now);
-    const h = parseInt(parts.find((p) => p.type === "hour")?.value || "0") % 24;
-    const m = parseInt(parts.find((p) => p.type === "minute")?.value || "0");
-    const s = parseInt(parts.find((p) => p.type === "second")?.value || "0");
-    const msUntilMidnight = 86400000 - (h * 3600 + m * 60 + s) * 1000;
-    setTimeout(() => {
-      if (state.viewMode === "today") render();
+    const day = getDateKeyInZone(now, tz);
+    const tomorrow = new Date(`${day}T12:00:00Z`);
+    tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+    const localMidnight = `${tomorrow.toISOString().slice(0, 10)}T00:00:00`;
+    const msUntilMidnight = Math.max(1000, Date.parse(zonedLocalIsoToUtcIso(localMidnight, tz)) - now.getTime());
+    midnightRefreshTimer = setTimeout(() => {
+      invalidateDataCaches();
+      render();
       scheduleMidnightRefresh();
     }, msUntilMidnight);
   } catch (e) {
-    setTimeout(scheduleMidnightRefresh, 3600000);
+    midnightRefreshTimer = setTimeout(scheduleMidnightRefresh, 3600000);
   }
 }
 function setActiveTab() { els.showAllBtn.classList.toggle("active", state.viewMode==="all"); els.showTodayBtn.classList.toggle("active", state.viewMode==="today"); els.showFavsBtn.classList.toggle("active", state.viewMode==="favorites"); const modes=["all","today","favorites"]; const idx=modes.indexOf(state.viewMode); const ind=document.querySelector(".tab-indicator"); if(ind){ind.style.transition="transform 280ms var(--ease)";ind.style.transform=`translateX(calc(${idx*100}% + ${idx*8}px))`;} }
-function adjustDelayedDates(items) {
-  const { year: cy, week: cw } = getIsoWeek(new Date());
-  return items.map(item => {
-    if (!item.delayed || !item.releaseDate) return item;
-    const d = new Date(item.releaseDate);
-    if (isNaN(d.getTime())) return item;
-    const { year, week } = getIsoWeek(d);
-    if (year !== cy || week !== cw) return item;
-    const shifted = new Date(d);
-    shifted.setUTCDate(shifted.getUTCDate() + 7);
-    return { ...item, releaseDate: shifted.toISOString() };
-  });
-}
+function adjustDelayedDates(items) { return items; }
+function getPendingItems(items) { return items.filter(item => policy.isPending(item) && isSchedulableItem(item)); }
+
 function getVisibleItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
   const hiddenKey = state.hiddenPlatforms.join("|");
   const contentKey = state.hiddenContent.join("|");
   return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
-    if(state.viewMode==="favorites") return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
+    if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()));
     if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
-    return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
+    return getOneNextPerSeries(getCatalogItems()).concat(getPendingItems(getCatalogItems()));
   });
 }
 function getDisplayService(item) {
@@ -3156,7 +2822,7 @@ function getOneNextPerSeries(items) {
   if (memoKey) return memoList(`oneNext|${memoKey}`, () => buildOneNextPerSeries(items));
   return buildOneNextPerSeries(items);
 }
-function buildOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(isSchedulableItem)) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
+function buildOneNextPerSeries(items) { const now = new Date(); const groups = new Map(); for(const item of mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && policy.hasConfirmedTime(item))) { if(!item.releaseDate) continue; const d = new Date(item.releaseDate); if(Number.isNaN(d.getTime()) || d <= now) continue; const key=getSeriesKey(item); if(!groups.has(key)) groups.set(key, []); groups.get(key).push(item); } const result=[]; for(const eps of groups.values()) { const ordered=sortByDate(eps); if(ordered.length) result.push(ordered[0]); } return sortByDate(result); }
 function getTodayItems(items) {
   const memoKey = items?.__memoKey;
   if (memoKey) return memoList(`today|${memoKey}|${getDateKeyInZone(new Date(), getSelectedTimezone())}`, () => sortByDate(mergeDuplicateItems(items).filter(item => isSchedulableItem(item) && isToday(item.releaseDate))));
@@ -3168,9 +2834,9 @@ function getRemainingTodayItems(items) { const now = new Date(); return getOneNe
 function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; const priority=cls.includes("next-cover")?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"'; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" ${priority} decoding="async" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
 function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
-function getCountdown(dateValue) { const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
-function formatDate(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false}).format(d); }
-function isToday(value) { const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
+function getCountdown(dateValue) { if (!dateValue) return { text:"Fecha por confirmar", expired:false }; const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
+function formatDate(value) { if (!value) return "Sin fecha confirmada"; const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false}).format(d); }
+function isToday(value) { if (!value) return false; const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
 function getSelectedTimezone() { return state.timezone || els.timezoneInput?.value?.trim() || "Europe/Madrid"; }
 function getDateKeyInZone(date, timeZone) {
   return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
@@ -3186,9 +2852,9 @@ function mergeItem(win, lose={}) { return { ...win, favorite:Boolean(win.favorit
 function scoreItem(item) { let s=0; if(item.customUrl)s+=100; if(item.serviceUrl)s+=85; if(item.service==="Crunchyroll")s+=80; if(item.service==="Netflix")s+=60; if(item.service==="Prime Video")s+=50; if(item.source==="animeschedule-api")s+=40; if(item.coverUrl)s+=10; if(item.favorite)s+=5; if(item.source==="anilist-library")s-=20; return s; }
 function sortByDate(items) { return [...items].sort((a,b)=>new Date(a.releaseDate||"9999-12-31")-new Date(b.releaseDate||"9999-12-31")); }
 function sortRelevantByDate(items) { const now = Date.now(); return [...items].sort((a,b)=>{ const at=Date.parse(a.releaseDate||""), bt=Date.parse(b.releaseDate||""); const af=Number.isFinite(at)&&at>now, bf=Number.isFinite(bt)&&bt>now; if(af!==bf) return af ? -1 : 1; if(af) return at-bt; return bt-at; }); }
-function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const date=item.releaseDate ? new Date(item.releaseDate).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
+function getEpisodeKey(item) { const ep=item.episodeNumber || String(item.episode||"").replace(/[^0-9]/g,""); const time=Date.parse(item.releaseDate || ""); const date=Number.isFinite(time) ? new Date(time).toISOString().slice(0,10) : "no-date"; return `${getSeriesKey(item)}|${ep}|${date}`; }
 function isSchedulableItem(item) {
-  if (item.excludeFromSchedule) return false;
+  if (item.excludeFromSchedule || item.scheduleStatus === "cancelled") return false;
   if (state.hiddenContent.includes("adult") && (item.isAdult || hasAdultAnilistTag(item))) return false;
   const format = String(item.anilistFormat || item.format || "").toUpperCase();
   if (state.hiddenContent.includes("ova") && format === "OVA") return false;
@@ -3262,6 +2928,8 @@ function getBestWatchUrl(item, displayService) {
   const custom = normalizeUrl(item.customUrl);
   if (custom) return custom;
   const effective = displayService !== undefined ? displayService : getDisplayService(item);
+  const regionalUrl = normalizeUrl(item.serviceUrls?.[effective]);
+  if (regionalUrl) return regionalUrl;
   if (effective === (item.service || "No legal platform")) {
     const serviceUrl = normalizeUrl(item.serviceUrl);
     if (serviceUrl) {
@@ -3306,11 +2974,15 @@ function renderNextModern() {
   if (!items.length) {
     state.currentNext = null;
     els.nextRelease.className = "next-release empty";
-    if (state.viewMode === "today") {
+    if (state.viewMode === "today" && !state.scheduleHealth.loading && !state.scheduleHealth.error && !state.scheduleHealth.stale && getFavoriteItems().length) {
       els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">¡Fin del día!</div><div class="next-title">Hoy no sale nada más</div><div class="next-episode">Revisa abajo los estrenos de hoy.</div></div>`;
       return;
     }
-    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : "Actualiza horarios en Ajustes."}</div></div>`;
+    if (state.scheduleHealth.loading || state.scheduleHealth.error || state.scheduleHealth.stale) {
+      els.nextRelease.textContent = state.scheduleHealth.loading ? "Cargando horarios…" : state.scheduleHealth.error ? "No se pudo actualizar el horario" : "Horario desactualizado";
+      return;
+    }
+    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : "Los horarios se actualizan automáticamente."}</div></div>`;
     return;
   }
 
@@ -3349,7 +3021,13 @@ function renderListModern() {
   if (!visible.length) {
     var empty = document.createElement("div");
     empty.className = "empty-message";
-    empty.textContent = "No hay episodios para mostrar.";
+    empty.textContent = state.scheduleHealth.loading ? "Cargando horarios…" :
+      state.scheduleHealth.error ? "No se ha podido actualizar el horario. Reintenta arriba." :
+      state.scheduleHealth.stale ? "El horario disponible está desactualizado. Estamos pendientes de nuevos datos." :
+      state.searchQuery ? "No hay coincidencias para esta búsqueda." :
+      (state.viewMode !== "all" && !getFavoriteItems().length) ? "Aún no tienes favoritos. Añádelos desde Todos o sincroniza AniList." :
+      state.hiddenContent.length || state.hiddenPlatforms.length ? "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos." :
+      state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
     els.animeList.appendChild(empty);
     return;
   }
@@ -3363,8 +3041,10 @@ function getFilteredVisibleItems() {
     var q = state.searchQuery.toLowerCase();
     visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
   }
-  if (!state.sortAsc) visible = [].concat(visible).reverse();
-  return visible;
+  const scheduled = visible.filter(item => !policy.isPending(item));
+  const pending = visible.filter(item => policy.isPending(item));
+  if (!state.sortAsc) { scheduled.reverse(); pending.reverse(); }
+  return scheduled.concat(pending);
 }
 
 function cleanupVirtualListObserver() {
@@ -3385,6 +3065,12 @@ function renderVirtualListBatch(generation = renderGeneration) {
   var frag = document.createDocumentFragment();
   for (var i = start; i < end; i++) {
     if (generation !== renderGeneration) return;
+    if (policy.isPending(virtualListItems[i]) && (i === 0 || !policy.isPending(virtualListItems[i - 1]))) {
+      const heading = document.createElement("h2");
+      heading.className = "pending-heading";
+      heading.textContent = "Retrasos pendientes de confirmación";
+      frag.appendChild(heading);
+    }
     frag.appendChild(createCardModern(virtualListItems[i]));
   }
   els.animeList.appendChild(frag);
@@ -3415,7 +3101,7 @@ function appendVirtualListSentinel(generation) {
 }
 
 function createCardModern(item) {
-  const c = getCountdown(item.releaseDate);
+  const c = { text: getReleaseTimingLabel(item) };
   const service = getDisplayService(item);
   const openLabel = item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(service);
   const delayedBadge = getDelayedBadge(item);
@@ -3428,8 +3114,13 @@ function createCardModern(item) {
   card.className = "anime-card";
   card.dataset.id = item.id;
   card.dataset.action = "open";
+  card.tabIndex = 0;
+  card.setAttribute("aria-label", `${item.title}, ${item.episode}, ${getReleaseTimingLabel(item)}`);
+  card.addEventListener("keydown", event => {
+    if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
+  });
   const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(formatDate(item.releaseDate))}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}${getPlatformVerificationBadge(item)}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
 
@@ -3439,6 +3130,12 @@ function getPremiereBadge(item) {
 
 function getPremierePill(item) {
   return isPremiereEpisode(item) ? '<span class="today-pill premiere-pill">Nuevo estreno</span>' : "";
+}
+
+function getPlatformVerificationBadge(item) {
+  if (item.jwVerified && item.platformStale) return '<span class="badge badge-orange">Última disponibilidad conocida</span>';
+  if (item.jwVerified) return `<span class="badge badge-green">Verificado en ${escapeHtml(item.jwCountry)}</span>`;
+  return '<span class="badge badge-orange">Sin confirmación regional</span>';
 }
 
 function getDelayedBadge(item) {

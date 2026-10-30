@@ -3,20 +3,14 @@
 // Se despliega automáticamente cuando subes el proyecto a Vercel.
 module.exports = async (req, res) => {
   const { api_token, ...rest } = req.query;
-  const rawToken = Array.isArray(api_token) ? api_token[0] : api_token;
-
-  // Try both auth methods: Bearer header + api_token query param
-  const params = new URLSearchParams({
-    ...rest,
-    ...(rawToken && { api_token: rawToken }),
-  }).toString();
+  const params = new URLSearchParams(rest).toString();
   const upstream = `https://animeschedule.net/api/v3/timetables?${params}`;
-  const authorization = rawToken
-    ? (rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`)
-    : "";
+  const authorization = req.headers.authorization || "";
+  res.setHeader("cache-control", "no-store");
 
   try {
     const r = await fetch(upstream, {
+      signal: AbortSignal.timeout(20000),
       headers: {
         accept: "application/json, */*",
         "accept-language": "es-ES,es;q=0.9,en;q=0.8",

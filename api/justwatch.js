@@ -3,6 +3,7 @@
 const JUSTWATCH_API = "https://apis.justwatch.com/graphql";
 
 module.exports = async (req, res) => {
+  res.setHeader("cache-control", "no-store");
   res.setHeader("access-control-allow-origin", "*");
   res.setHeader("access-control-allow-methods", "GET, POST, OPTIONS");
   res.setHeader("access-control-allow-headers", "authorization, accept, content-type");
@@ -21,6 +22,7 @@ module.exports = async (req, res) => {
     const body = typeof req.body === "string" ? req.body : JSON.stringify(req.body || {});
     const r = await fetch(JUSTWATCH_API, {
       method: "POST",
+      signal: AbortSignal.timeout(20000),
       headers: {
         "content-type": "application/json",
         accept: "application/json",

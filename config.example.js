@@ -2,6 +2,7 @@
 
 // Copia este archivo como config.js si quieres cambiar la ruta del JSON.
 window.ANIME_COUNTDOWN_CONFIG = {
+  REMOTE_SCHEDULE_URL: "https://anicountdown.com/schedule.json",
   SHARED_SCHEDULE_URL: "./schedule.json",
   PUBLIC_SCHEDULE_DAYS: 45,
   ANILIST_AIRING_MAX_PAGES: 20
