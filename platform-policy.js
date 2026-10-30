@@ -37,15 +37,39 @@
     }
     return [...offers.values()].sort((a, b) => (PRIORITY[a.service] || 50) - (PRIORITY[b.service] || 50) || a.service.localeCompare(b.service));
   }
+  function seriesTitle(value) {
+    let title = String(value || "").trim();
+    let previous;
+    do {
+      previous = title;
+      title = title.replace(/\s+(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth)\s+(?:season|cour)|(?:season|part|cour)\s+\d+)\s*$/i, "").trim();
+    } while (title !== previous);
+    return title;
+  }
+  function searchTitles(item) {
+    const raw = [...new Set([item.anilistTitle, item.title, ...(item.titles || [])].filter(Boolean))];
+    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : raw.map(seriesTitle).filter((value, index) => value !== raw[index] && normalize(value).length >= 5);
+    return [...new Set([...raw.slice(0, 2), ...roots.slice(0, 3)])];
+  }
   function findMatch(item, nodes) {
-    const titles = new Set([item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean).map(normalize));
+    const raw = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean);
+    const titles = new Set(raw.map(normalize));
     const type = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW";
-    const matches = nodes.filter(node => node.objectType === type && titles.has(normalize(node.content?.title)));
-    const unique = [...new Map(matches.map(node => [node.id, node])).values()];
+    const candidates = nodes.filter(node => node.objectType === type);
+    const unique = [...new Map(candidates.filter(node => titles.has(normalize(node.content?.title))).map(node => [node.id, node])).values()];
     const year = item.anilistYear || item.originalReleaseYear;
-    const byYear = year ? unique.filter(node => Number(node.content?.originalReleaseYear) === Number(year)) : [];
-    if (year) return byYear.length === 1 ? byYear[0] : null;
-    return unique.length === 1 ? unique[0] : null;
+    if (year) {
+      const byYear = unique.filter(node => Number(node.content?.originalReleaseYear) === Number(year));
+      if (byYear.length === 1) return byYear[0];
+    } else if (unique.length === 1) return unique[0];
+    if (type === "MOVIE") return null;
+    const roots = new Set(raw.map(seriesTitle).filter((value, index) => value !== raw[index] && normalize(value).length >= 5).map(normalize));
+    // A sequel may be listed under the parent series, with its original premiere year.
+    // Keep numbers within the title, remake years and spin-off names intact.
+    const parents = [...new Map(candidates.filter(node => roots.has(normalize(node.content?.title))).map(node => [node.id, node])).values()];
+    if (parents.length === 1) return parents[0];
+    const available = parents.filter(node => allowedOffers(node).length > 0);
+    return available.length === 1 ? available[0] : null;
   }
   function basePlatforms(item) {
     if (item.basePlatforms) return item.basePlatforms;
@@ -73,5 +97,5 @@
       platformStale: Boolean(record?.lastError) || Boolean(record?.checkedAt && now - Date.parse(record.checkedAt) > 24 * 3600000)
     };
   }
-  return { COUNTRIES, seriesKey, findMatch, allowedOffers, basePlatforms, applyCountryPlatforms };
+  return { COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, basePlatforms, applyCountryPlatforms };
 });

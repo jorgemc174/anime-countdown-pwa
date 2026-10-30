@@ -3,6 +3,8 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
+const LOOKUP_VERSION = 2;
+const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
   popularTitles(country: $country, filter: $filter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) {
@@ -13,12 +15,14 @@ const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $lang
 }`;
 
 async function lookupAvailability(item, country, { fetchImpl = fetch, signal } = {}) {
-  const titles = [...new Set([item.anilistTitle, item.title, ...(item.titles || [])].filter(Boolean))].slice(0, 3);
-  for (const searchQuery of titles) {
+  const titles = policy.searchTitles(item);
+  const languages = [...new Set([country.lang, "en"])];
+  const attempts = titles.flatMap(searchQuery => languages.map(language => ({ searchQuery, language })));
+  for (const { searchQuery, language } of attempts) {
     const response = await fetchImpl(ENDPOINT, { method: "POST", signal: signal || AbortSignal.timeout(15000),
       headers: { "content-type": "application/json", accept: "application/json" },
       body: JSON.stringify({ operationName: "GetSearch", query: SEARCH, variables: {
-        first: 20, country: country.code, language: country.lang,
+        first: 20, country: country.code, language,
         filter: { searchQuery, objectTypes: [String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW"] },
         offerFilter: { bestOnly: false, monetizationTypes: ["FLATRATE", "FREE", "ADS"] }
       } })
@@ -44,6 +48,13 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
   budgetMs = 240000, concurrency = 3, ttlMs = 12 * 3600000
 } = {}) {
   const rows = validate(payload);
+  let nextRequestAt = 0;
+  const throttledFetch = async (url, options) => {
+    const start = Math.max(Date.now(), nextRequestAt);
+    nextRequestAt = start + 1300;
+    if (start > Date.now()) await delay(start - Date.now(), undefined, { signal: options.signal });
+    return fetch(url, options);
+  };
   cache = { version: 1, series: { ...(cache.series || {}) } };
   const series = new Map();
   for (const row of rows) {
@@ -58,13 +69,13 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
     for (const country of countries) {
       const previous = cache.series[key].countries[country.code];
       const lastAttempt = Date.parse(previous?.lastAttemptAt || previous?.checkedAt || "") || 0;
-      const fresh = previous?.checkedAt && now - Date.parse(previous.checkedAt) < ttlMs;
+      const fresh = previous?.checkedAt && (previous.status === "verified" || previous.lookupVersion === LOOKUP_VERSION) && now - Date.parse(previous.checkedAt) < ttlMs;
       const retryLater = previous?.lastError && now - lastAttempt < 3600000;
       if ((!fresh || previous?.lastError) && !retryLater) tasks.push({ key, row, country, lastAttempt });
     }
   }
-  tasks.sort((a, b) => a.lastAttempt - b.lastAttempt ||
-    Number(b.country.code === "ES") - Number(a.country.code === "ES") || a.key.localeCompare(b.key) || a.country.code.localeCompare(b.country.code));
+  tasks.sort((a, b) => Number(b.country.code === "ES") - Number(a.country.code === "ES") ||
+    a.lastAttempt - b.lastAttempt || a.key.localeCompare(b.key) || a.country.code.localeCompare(b.country.code));
   let cursor = 0, checked = 0, errors = 0, rateLimited = false;
   const deadline = Date.now() + budgetMs;
   const timestamp = new Date(now).toISOString();
@@ -73,9 +84,9 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       const { key, row, country } = tasks[cursor++];
       const previous = cache.series[key].countries[country.code];
       try {
-        const result = await lookup(row, country, { signal: AbortSignal.timeout(Math.max(1, Math.min(20000, deadline - Date.now()))) });
+        const result = await lookup(row, country, { signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
-        cache.series[key].countries[country.code] = { ...result, checkedAt: timestamp, lastAttemptAt: timestamp };
+        cache.series[key].countries[country.code] = { ...result, lookupVersion: LOOKUP_VERSION, checkedAt: timestamp, lastAttemptAt: timestamp };
       } catch (error) {
         errors++;
         if (error.status === 429) rateLimited = true;

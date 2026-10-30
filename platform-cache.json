@@ -24,7 +24,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209219": {
       "title": "Tensei Goblin dakedo Shitsumon Aru?",
@@ -49,7 +49,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-204011": {
       "title": "PSYЯEN",
@@ -74,12 +74,20 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "bleachsennenkessenhenkashintan": {
       "title": "BLEACH: Sennen Kessen-hen - Kashin-tan",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-160803": {
       "title": "Mahou Shoujo Ikusei Keikaku: Restart",
@@ -87,16 +95,25 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "cocoonarunatsunoshoujotachiyori": {
       "title": "cocoon: Aru Natsu no Shoujo-tachi Yori",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-206949": {
       "title": "Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku",
@@ -104,23 +121,38 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209502": {
       "title": "Shiotaiou no Satou-san ga Ore ni dake Amai",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00389847JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.cfc37635-b22f-4bb8-8777-c181e96790c2",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts525137",
+          "matchedTitle": "The Cold Sato-san Is Only Sweet to Me",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-187990": {
       "title": "Battle Spirits [Re] Zekkai No Ku",
@@ -145,7 +177,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-187316": {
       "title": "Gensou Suikoden",
@@ -153,11 +185,12 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-200294": {
       "title": "Choujun! Choujou Senpai",
@@ -182,31 +215,59 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-207329": {
       "title": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \"Kyouka Point\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384387ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.34758ecb-6558-4076-8951-ab52bced281a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts520240",
+          "matchedTitle": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-198727": {
       "title": "Chitose-kun wa Ramune Bin no Naka Part 2",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose-kun wa Ramune Bin no Naka",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-207809": {
       "title": "Sora wa Akai Kawa no Hotori",
@@ -231,7 +292,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-179876": {
       "title": "DARK MACHINE: The Animation",
@@ -256,12 +317,33 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "sasakitopiichan2ndseason": {
       "title": "Sasaki to Pii-chan 2nd Season",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G4VUQVP2P",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9dd1b40b-661e-4b27-8c64-85b3e7d3b7f5",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts360266",
+          "matchedTitle": "Sasaki to Pii-chan",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-211778": {
       "title": "Sekai Saikyou no Majo, Hajimemashita",
@@ -273,24 +355,46 @@
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-152677": {
       "title": "Tantei wa Mou, Shindeiru. 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GVWU04E0G",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb11c80b-8a54-4cb3-8347-08f0ae38221a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts279925",
+          "matchedTitle": "Tantei wa Mou, Shindeiru.",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "zijinyumiaofang": {
       "title": "Zi Jin: Yu Miao Fang",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-178868": {
       "title": "Magic Knight Rayearth (2026)",
@@ -298,23 +402,33 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-159042": {
       "title": "Tensei shitara Ken deshita 2",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81642998",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts311625",
+          "matchedTitle": "Tensei Shitara Ken Deshita",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-199068": {
       "title": "Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen",
@@ -322,38 +436,85 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-213068": {
       "title": "Juuou Mujin Dandivine",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00389700JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.1465de62-6777-4bcb-ade4-694c8422db76",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts530010",
+          "matchedTitle": "Dandivine",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-172192": {
       "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "fxsenshikurumichan": {
       "title": "FX Senshi Kurumi-chan",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-213805": {
       "title": "Koori no Jouheki 2nd Season",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-199594": {
       "title": "Tetsuryou! Meet with Tetsudou Musume",
@@ -361,11 +522,12 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-180136": {
       "title": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
@@ -390,17 +552,33 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-212144": {
       "title": "Kizu darake Seijo yori Houfuku wo Komete 2nd Season",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-212503": {
       "title": "Hyouken no Majutsushi ga Sekai wo Suberu II",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-178083": {
       "title": "Tokyo Revengers: Santen Sensou-hen",
@@ -408,11 +586,12 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-210482": {
       "title": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE",
@@ -424,12 +603,20 @@
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente."
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-218532": {
       "title": "Kusuriya no Hitorigoto 3rd Season",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-186742": {
       "title": "Toaru Anbu no Item",
@@ -454,24 +641,74 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "hotarunoyomeiri": {
       "title": "Hotaru no Yomeiri",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384155ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d518b586-4bdb-4c0a-8877-a182a4a853b0",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts516716",
+          "matchedTitle": "Hotaru no Yomeiri",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-204650": {
       "title": "Tougen Anki: Nikko Kegon no Taki-hen",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00390546ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.7615134a-e25b-418c-b819-076215c15863",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81969861",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.7615134a-e25b-418c-b819-076215c15863",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.7615134a-e25b-418c-b819-076215c15863",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts432739",
+          "matchedTitle": "Tougen Anki",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-203490": {
       "title": "Uchi no Otouto-domo ga Sumimasen",
@@ -496,29 +733,67 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-214703": {
       "title": "Ghost Meets Gal!",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209032": {
       "title": "Mahou no Shimai Lulutto Lilly Part 2",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animebox Channel Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9f570540-182f-4499-9f2a-23586a38fb76",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts473665",
+          "matchedTitle": "Magical Sisters LuluttoLilly",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-216557": {
       "title": "Keroro Gunsou☆",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385911JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.1e6ba42c-994a-4f99-8758-1933236e6508",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts36105",
+          "matchedTitle": "Sgt. Frog",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-183231": {
       "title": "Rilakkuma: Goyururi Yume no Tabi",
@@ -543,7 +818,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-195571": {
       "title": "Shuiro no Kamen",
@@ -568,12 +843,33 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "romeliasenki": {
       "title": "Romelia Senki",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384291JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ec671e5c-bf1c-4130-92c1-52c157e60691",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts535458",
+          "matchedTitle": "Romelia Senki",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-187402": {
       "title": "Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
@@ -598,36 +894,85 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-204389": {
       "title": "Yasei no Last Boss ga Arawareta! 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00361957DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.88e3b06d-48d7-4dc3-9c8f-6f60a73c8c9e",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts463839",
+          "matchedTitle": "A Wild Last Boss Appeared!",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-195604": {
       "title": "Black Clover 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-212799": {
       "title": "Marronnier Oukoku no Shichinin no Kishi",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts530857",
+          "matchedTitle": "Los siete caballeros del Reino Marronnier",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-199007": {
       "title": "#Zombie Sagashitemasu",
@@ -652,7 +997,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209562": {
       "title": "Vertex Force",
@@ -677,12 +1022,20 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "magicalexplorererogenoyuujincharanitenseishitakedogamechishikitsukattejiyuuniikiru": {
       "title": "Magical★Explorer: Eroge no Yuujin Chara ni Tensei Shitakedo, Game Chishiki Tsukatte Jiyuu ni Ikiru",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209872": {
       "title": "Ranma ½ (2024) 3rd Season",
@@ -690,16 +1043,25 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "seitokainimoanawaaru": {
       "title": "Seitokai ni mo Ana wa Aru!",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-203473": {
       "title": "Kyoufu Collector",
@@ -724,7 +1086,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-202250": {
       "title": "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu",
@@ -749,7 +1111,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-202957": {
       "title": "Meitantei Precure!",
@@ -774,34 +1136,80 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "mahoukakoukounorettouseimovieyotsubakeishouhen": {
       "title": "Mahouka Koukou no Rettousei Movie: Yotsuba Keishou-hen",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-213657": {
       "title": "Yozakura-san Chi no Daisakusen 2nd Season Part 2",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts419586",
+          "matchedTitle": "Mission: Yozakura Family",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-191788": {
       "title": "Ao Ashi 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GJWUQ2VVD",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-213658": {
       "title": "Diamond no Ace Act II: Second Season Part 2",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-118123": {
       "title": "Holo no Graffiti",
@@ -809,16 +1217,25 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "mezametarasaikyousoubitouchuusenmochidattanodeikkodatemezashiteyouheitoshitejiyuuniikitai": {
       "title": "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-202079": {
       "title": "Oji-san wa Kawaii Mono ga Osuki.",
@@ -838,7 +1255,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209499": {
       "title": "Tank Chair",
@@ -863,12 +1280,33 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-212888": {
       "title": "OVERGEARED",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384228TLPH",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.de0581bf-0804-48bd-980f-80a99ab258a8",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts531364",
+          "matchedTitle": "Overgeared",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-205896": {
       "title": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku",
@@ -893,43 +1331,85 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-200455": {
       "title": "Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00366150JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.947a74e7-ede1-4f8f-a182-d052c3f9519f",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts506202",
+          "matchedTitle": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet from My Cunning Fiancé",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-185756": {
       "title": "Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00332690ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fc3ea12e-e3b6-4ed8-99e1-4e732437fe2f",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts427119",
+          "matchedTitle": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-199426": {
       "title": "Hotel Inhumans 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GEVUWQ41K",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.80de40a5-1083-4ef1-b74c-12dd6a33f424",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts484417",
+          "matchedTitle": "HOTEL INHUMANS",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-206814": {
       "title": "Dragon Ball Super: Beerus",
@@ -969,7 +1449,7 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-209463": {
       "title": "Kanata kara",
@@ -994,27 +1474,59 @@
           "lastAttemptAt": "2026-10-30T15:50:01.545Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "mousecursordegenjitsuwosousadekiruyouninattanodeonnanokowoippaiclickshimaasu": {
       "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa": {
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-217782": {
       "title": "Kanojo no Tomodachi",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "darksummonertodekiteiru": {
       "title": "Dark Summoner to Dekiteiru",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-203275": {
       "title": "Demons' Crest",
@@ -1024,40 +1536,105 @@
           "offers": [],
           "justwatchId": "ts545844",
           "matchedTitle": "Demons' Crest",
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-235": {
       "title": "Detective Conan",
-      "countries": {},
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G8WUN280N",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "CanalSurMas",
+              "url": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
+              "monetizationType": "ADS"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab656f99-4349-458a-a967-6ce017d3d207",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Rakuten TV",
+              "url": "https://www.rakuten.tv/es/tv_shows/detective-conan",
+              "monetizationType": "ADS"
+            }
+          ],
+          "justwatchId": "ts10145",
+          "matchedTitle": "Meitantei Conan",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        }
+      },
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-189123": {
       "title": "Ao no Hako 2nd Season",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     },
     "anilist-189046": {
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
       "countries": {
         "ES": {
-          "status": "not-found",
-          "offers": [],
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
         }
       },
-      "lastSeenAt": "2026-10-30T15:50:01.545Z"
+      "lastSeenAt": "2026-10-30T16:02:17.050Z"
     }
   }
 }

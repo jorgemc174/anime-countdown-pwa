@@ -107,3 +107,22 @@ test("rate limits stop the batch and leave other series for the next automatic r
   assert.equal(result.summary.queued, 1);
   assert.equal(result.summary.rateLimited, true);
 });
+test("a season resolves to its parent series without confusing spin-offs or remakes", () => {
+  const node = { id: "aoashi", objectType: "SHOW", content: { title: "Ao Ashi", originalReleaseYear: 2022 } };
+  assert.equal(policy.findMatch({ title: "Ao Ashi 2nd Season", anilistYear: 2026 }, [node]).id, "aoashi");
+  assert.equal(policy.findMatch({ title: "Ao Ashi Special 2nd Season" }, [node]), null);
+  assert.equal(policy.findMatch({ title: "Ranma (2024) 3rd Season" }, [{ ...node, content: { title: "Ranma" } }]), null);
+});
+test("localized names use English metadata but keep the same country for offers", async () => {
+  const calls = [];
+  const result = await lookupAvailability({ title: "Ao no Exorcist", anilistTitle: "Blue Exorcist" }, es, { fetchImpl: async (url, options) => {
+    const { variables } = JSON.parse(options.body);
+    calls.push(variables);
+    return Response.json({ data: { popularTitles: { edges: [{ node: { id: "blue", objectType: "SHOW", content: { title: variables.language === "en" ? "Blue Exorcist" : "El exorcista azul" }, offers: [
+      { package: { technicalName: "crunchyroll" }, standardWebURL: "https://www.crunchyroll.com/series/blue", monetizationType: "FLATRATE" }
+    ] } }] } } });
+  } });
+  assert.equal(result.status, "verified");
+  assert.equal(result.offers[0].service, "Crunchyroll");
+  assert.ok(calls.every(call => call.country === "ES"));
+});

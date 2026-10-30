@@ -46,7 +46,11 @@ internos, pero no se usan como alternativa cuando falta disponibilidad local.
 
 Las consultas se agrupan por serie y país, se reutilizan durante doce horas y se
 limitan a tres simultáneas y cuatro minutos por ejecución. Los pendientes continúan
-en los próximos cron. Un límite 429 detiene nuevas consultas hasta otra ejecución.
+en los próximos cron. Las peticiones se espacian al menos 1,3 segundos y se
+prioriza completar España antes de otros países. Un límite 429 detiene nuevas
+consultas hasta otra ejecución. La búsqueda reconoce sufijos de temporada y cour
+y prueba títulos en inglés manteniendo siempre el país de las ofertas. No se
+mezclan películas, remakes o spin-offs por coincidencias parciales de nombre.
 Se conservan las últimas ofertas conocidas del mismo país ante fallos. Un
 resultado sin coincidencia, pendiente o sin ofertas deja la serie sin plataforma
 indicada; eso no prueba que no exista una opción legal. Nunca se utiliza una
