@@ -1,3 +1,182 @@
 {
-  "releases": []
+  "releases": [
+    {
+      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-12t16-00-00-02-00",
+      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
+      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+      "episode": "Ep 12",
+      "episodeNumber": "12",
+      "airType": "SUB",
+      "delayed": true,
+      "releaseDate": null,
+      "originalReleaseDate": "2026-08-12T14:00:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
+      "anilistId": 189046,
+      "anilistTitle": "Re:ZERO -Starting Life in Another World- Season 4",
+      "anilistUrl": "https://anilist.co/anime/189046",
+      "anilistFormat": "TV",
+      "anilistScore": 90,
+      "titles": [
+        "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+        "Re:ZERO -Starting Life in Another World- Season 4",
+        "Re:ゼロから始める異世界生活 4th season",
+        "Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4",
+        "Re:ZERO – Жизнь с нуля в альтернативном мире 4"
+      ],
+      "scheduleStatus": "pending",
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "officialSources": [],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
+      "id": "schedule-detective-conan-1218-2026-10-31t12-30-00-01-00",
+      "animeKey": "detective-conan",
+      "title": "Detective Conan",
+      "route": "detective-conan",
+      "episode": "Ep 1218",
+      "episodeNumber": "1218",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "pending",
+      "releaseDate": null,
+      "originalReleaseDate": "2026-10-31T11:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/case-closed",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "anilistId": 235,
+      "anilistTitle": "Detective Conan",
+      "anilistUrl": "https://anilist.co/anime/235",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 82,
+      "titles": [
+        "Meitantei Conan",
+        "Detective Conan",
+        "名探偵コナン",
+        "Case Closed",
+        "Detectiu Conan",
+        "הבלש קונאן",
+        "Detektyw Conan",
+        "المحقق كونان",
+        "名侦探柯南",
+        "Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story",
+        "名探偵コナン 警察学校編 Wild Police Story",
+        "Détective Conan",
+        "ยอดนักสืบจิ๋วโคนัน",
+        "Thám Tử Lừng Danh Conan",
+        "Detektiv Conan",
+        "Detetive Conan"
+      ],
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "officialSources": [
+        "https://www.ytv.co.jp/conan/",
+        "https://www.ytv.co.jp/conan/police/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
+      "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
+      "animeKey": "ao-no-hako-2nd-season",
+      "title": "Ao no Hako 2nd Season",
+      "route": "ao-no-hako-2nd-season",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "pending",
+      "releaseDate": null,
+      "originalReleaseDate": "2026-11-08T08:00:00.000Z",
+      "service": "Netflix",
+      "serviceUrl": "https://www.netflix.com/title/81663323",
+      "allServices": [
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189123-0secXELIhkIW.jpg",
+      "anilistId": 189123,
+      "anilistTitle": "Blue Box Season 2",
+      "anilistUrl": "https://anilist.co/anime/189123",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 81,
+      "titles": [
+        "Ao no Hako Season 2",
+        "Blue Box Season 2",
+        "アオのハコ Season２",
+        "Ao no Hako 2nd Season",
+        "アオのハコ 第2期"
+      ],
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "officialSources": [
+        "https://aonohako-anime.com/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
+      "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
+      "animeKey": "psyяen",
+      "title": "PSYЯEN",
+      "route": "psyren",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "pending",
+      "releaseDate": null,
+      "originalReleaseDate": "2026-11-09T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204011-j45RZoqYbdZK.jpg",
+      "anilistId": 204011,
+      "anilistTitle": "PSYREN",
+      "anilistUrl": "https://anilist.co/anime/204011",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 69,
+      "titles": [
+        "PSYЯEN",
+        "PSYREN",
+        "PSYREN -サイレン-",
+        "САЙРЕН"
+      ],
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-10-30T15:49:56.582Z",
+      "officialSources": [
+        "https://psyren-anime.com/",
+        "https://psyren-anime-global.com/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    }
+  ]
 }
