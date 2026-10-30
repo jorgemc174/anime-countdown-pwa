@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T17:11:17.756Z",
-  "checkedAt": "2026-10-30T17:11:17.756Z",
+  "updatedAt": "2026-10-30T19:57:37.748Z",
+  "checkedAt": "2026-10-30T19:57:37.748Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -304,11 +304,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -341,13 +341,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-10-26T17:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/@mahoiku2official",
-      "allServices": [
-        "YouTube",
-        "OceanVeil"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx160803-Rcr3IvhE7q9c.png",
       "anilistId": 160803,
       "anilistOffers": [
@@ -373,15 +370,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
           "status": "error",
@@ -452,19 +449,60 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/@mahoiku2official",
-        "OceanVeil": "https://oceanveil.net/anime_titles/544"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-cocoon-aru-natsu-no-shoujo-tachi-yori-1-2026-10-27t08-00-00-01-00",
@@ -503,11 +541,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -588,11 +626,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -832,11 +870,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -1896,11 +1934,110 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -2328,11 +2465,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -2502,6 +2639,193 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGZ7UV201Q%2Fdestruction&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -2721,11 +3045,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -2889,11 +3213,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -3053,11 +3377,110 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -3652,11 +4075,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -4639,11 +5062,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -4767,11 +5190,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -5076,11 +5499,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -5315,11 +5738,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -5393,13 +5816,16 @@
             "Hololive",
             "הולולייב"
           ],
-          "lookupVersion": 3,
-          "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "anilistOffers": [
+            {
+              "service": "YouTube",
+              "url": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
+            }
+          ],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         },
         "AR": {
           "status": "error",
@@ -5502,12 +5928,12 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-mezametara-saikyou-soubi-to-uchuusenmochi-datta-node-ikkodate-mezashite-youhei-toshite-jiyuu-ni-ikitai-5-2026-11-01t15-00-00-01-00",
@@ -6387,11 +6813,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -6438,11 +6864,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -6510,11 +6936,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -6566,11 +6992,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -6783,13 +7209,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-02T17:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/@mahoiku2official",
-      "allServices": [
-        "YouTube",
-        "OceanVeil"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx160803-Rcr3IvhE7q9c.png",
       "anilistId": 160803,
       "anilistOffers": [
@@ -6815,15 +7238,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
           "status": "error",
@@ -6894,19 +7317,60 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/@mahoiku2official",
-        "OceanVeil": "https://oceanveil.net/anime_titles/544"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-5-2026-11-03t13-55-00-01-00",
@@ -6977,11 +7441,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -7221,11 +7685,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -8285,11 +8749,110 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -8717,11 +9280,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -8891,6 +9454,193 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGZ7UV201Q%2Fdestruction&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -9110,11 +9860,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -9278,11 +10028,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -9442,11 +10192,110 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -10106,11 +10955,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -11227,11 +12076,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -11355,11 +12204,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -11852,11 +12701,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -11930,13 +12779,16 @@
             "Hololive",
             "הולולייב"
           ],
-          "lookupVersion": 3,
-          "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "anilistOffers": [
+            {
+              "service": "YouTube",
+              "url": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
+            }
+          ],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         },
         "AR": {
           "status": "error",
@@ -12039,12 +12891,12 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-mezametara-saikyou-soubi-to-uchuusenmochi-datta-node-ikkodate-mezashite-youhei-toshite-jiyuu-ni-ikitai-6-2026-11-08t15-00-00-01-00",
@@ -12924,11 +13776,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -12975,11 +13827,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -13047,11 +13899,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -13103,11 +13955,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -13320,13 +14172,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-09T17:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/@mahoiku2official",
-      "allServices": [
-        "YouTube",
-        "OceanVeil"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx160803-Rcr3IvhE7q9c.png",
       "anilistId": 160803,
       "anilistOffers": [
@@ -13352,15 +14201,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
           "status": "error",
@@ -13431,19 +14280,60 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/@mahoiku2official",
-        "OceanVeil": "https://oceanveil.net/anime_titles/544"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-6-2026-11-10t13-55-00-01-00",
@@ -13514,11 +14404,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -13758,11 +14648,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -14822,11 +15712,110 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -15254,11 +16243,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -15428,6 +16417,193 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGZ7UV201Q%2Fdestruction&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -15647,11 +16823,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -15815,11 +16991,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -15979,11 +17155,110 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -16643,11 +17918,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -17764,11 +19039,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -17892,11 +19167,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -18464,11 +19739,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -18542,13 +19817,16 @@
             "Hololive",
             "הולולייב"
           ],
-          "lookupVersion": 3,
-          "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "anilistOffers": [
+            {
+              "service": "YouTube",
+              "url": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
+            }
+          ],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         },
         "AR": {
           "status": "error",
@@ -18651,12 +19929,12 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-mezametara-saikyou-soubi-to-uchuusenmochi-datta-node-ikkodate-mezashite-youhei-toshite-jiyuu-ni-ikitai-7-2026-11-15t15-00-00-01-00",
@@ -19536,11 +20814,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -19587,11 +20865,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -19659,11 +20937,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -19715,11 +20993,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -20013,13 +21291,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-16T17:30:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/@mahoiku2official",
-      "allServices": [
-        "YouTube",
-        "OceanVeil"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx160803-Rcr3IvhE7q9c.png",
       "anilistId": 160803,
       "anilistOffers": [
@@ -20045,15 +21320,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
           "status": "error",
@@ -20124,19 +21399,60 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts557407",
+          "matchedTitle": "Magical Girl Raising Project: Restart",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/@mahoiku2official",
-        "OceanVeil": "https://oceanveil.net/anime_titles/544"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-kyouran-reijou-nia-liston-byoujaku-reijou-ni-tensei-shita-kamigoroshi-no-bujin-no-karei-naru-musouroku-7-2026-11-17t13-55-00-01-00",
@@ -20207,11 +21523,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -20451,11 +21767,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -21515,11 +22831,110 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -21947,11 +23362,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -22121,6 +23536,193 @@
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
           "lastAttemptAt": "2026-10-30T16:02:17.050Z"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GZ7UV201Q/destruction",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG14U49DM9&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "La magia de un retornado debe ser especial",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G14U49DM9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGZ7UV201Q%2Fdestruction&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts395803",
+          "matchedTitle": "A Returner's Magic Should Be Special",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -22340,11 +23942,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -22508,11 +24110,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -22672,11 +24274,110 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -23336,11 +25037,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -24457,11 +26158,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -24585,11 +26286,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -25157,11 +26858,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -25235,13 +26936,16 @@
             "Hololive",
             "הולולייב"
           ],
-          "lookupVersion": 3,
-          "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "anilistOffers": [
+            {
+              "service": "YouTube",
+              "url": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
+            }
+          ],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-30T19:57:37.986Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         },
         "AR": {
           "status": "error",
@@ -25344,12 +27048,12 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:10:16.429Z",
+      "jwVerifiedAt": "2026-10-30T19:57:37.986Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-mezametara-saikyou-soubi-to-uchuusenmochi-datta-node-ikkodate-mezashite-youhei-toshite-jiyuu-ni-ikitai-8-2026-11-22t15-00-00-01-00",
@@ -26229,11 +27933,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -26280,11 +27984,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -26352,11 +28056,11 @@
           ],
           "lookupVersion": 3,
           "checkedAt": "2026-10-30T16:10:16.429Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "anilist",
@@ -26408,11 +28112,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T17:11:17.896Z",
+          "lastAttemptAt": "2026-10-30T19:57:37.986Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-10-30T17:26:17.896Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-10-30T20:27:37.986Z"
         }
       },
       "platformSource": "",
@@ -26458,7 +28162,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -26557,7 +28261,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -26685,7 +28389,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -26768,7 +28472,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
@@ -26825,8 +28529,8 @@
     }
   ],
   "platforms": {
-    "checked": 68,
-    "errors": 36,
+    "checked": 57,
+    "errors": 40,
     "issues": [
       {
         "key": "anilist-207191",
@@ -27132,7 +28836,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "bleachsennenkessenhenkashintan",
@@ -27228,24 +28932,6 @@
         "key": "bleachsennenkessenhenkashintan",
         "title": "BLEACH: Sennen Kessen-hen - Kashin-tan",
         "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-160803",
-        "title": "Mahou Shoujo Ikusei Keikaku: Restart",
-        "country": "ES",
-        "reason": "lookup-error",
-        "status": "not-found",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
-      },
-      {
-        "key": "anilist-160803",
-        "title": "Mahou Shoujo Ikusei Keikaku: Restart",
-        "country": "MX",
         "reason": "not-checked",
         "status": "pending",
         "errorProvider": null,
@@ -27281,15 +28967,6 @@
       {
         "key": "anilist-160803",
         "title": "Mahou Shoujo Ikusei Keikaku: Restart",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-160803",
-        "title": "Mahou Shoujo Ikusei Keikaku: Restart",
         "country": "GB",
         "reason": "lookup-error",
         "status": "error",
@@ -27308,15 +28985,6 @@
       {
         "key": "anilist-160803",
         "title": "Mahou Shoujo Ikusei Keikaku: Restart",
-        "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-160803",
-        "title": "Mahou Shoujo Ikusei Keikaku: Restart",
         "country": "BR",
         "reason": "lookup-error",
         "status": "error",
@@ -27324,22 +28992,13 @@
         "lastAttemptAt": "2026-10-30T17:11:17.896Z"
       },
       {
-        "key": "anilist-160803",
-        "title": "Mahou Shoujo Ikusei Keikaku: Restart",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
         "key": "cocoonarunatsunoshoujotachiyori",
         "title": "cocoon: Aru Natsu no Shoujo-tachi Yori",
         "country": "ES",
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "cocoonarunatsunoshoujotachiyori",
@@ -27447,7 +29106,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-206949",
@@ -27753,7 +29412,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-187316",
@@ -28653,106 +30312,106 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-199068",
@@ -28761,7 +30420,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-199068",
@@ -28955,105 +30614,6 @@
       {
         "key": "anilist-213068",
         "title": "Juuou Mujin Dandivine",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
         "country": "PT",
         "reason": "not-checked",
         "status": "pending",
@@ -29265,7 +30825,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-199594",
@@ -29472,7 +31032,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-212144",
@@ -29679,106 +31239,106 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-210482",
@@ -30390,7 +31950,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-214703",
@@ -31587,7 +33147,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "magicalexplorererogenoyuujincharanitenseishitakedogamechishikitsukattejiyuuniikiru",
@@ -31794,7 +33354,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "seitokainimoanawaaru",
@@ -32199,7 +33759,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "mahoukakoukounorettouseimovieyotsubakeishouhen",
@@ -32505,7 +34065,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-213658",
@@ -32605,15 +34165,6 @@
         "status": "pending",
         "errorProvider": null,
         "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-118123",
-        "title": "Holo no Graffiti",
-        "country": "ES",
-        "reason": "lookup-error",
-        "status": "not-found",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
       },
       {
         "key": "anilist-118123",
@@ -33711,7 +35262,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "mousecursordegenjitsuwosousadekiruyouninattanodeonnanokowoippaiclickshimaasu",
@@ -33819,7 +35370,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
@@ -33927,7 +35478,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "anilist-217782",
@@ -34035,7 +35586,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-10-30T17:11:17.896Z"
+        "lastAttemptAt": "2026-10-30T19:57:37.986Z"
       },
       {
         "key": "darksummonertodekiteiru",
@@ -34534,80 +36085,80 @@
       }
     ],
     "totalFailure": false,
-    "queued": 819,
+    "queued": 811,
     "rateLimited": false,
     "coverage": {
       "ES": {
         "total": 78,
         "verified": 56,
         "pending": 0,
-        "stale": 20
+        "stale": 18
       },
       "MX": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 1
+        "verified": 3,
+        "pending": 74,
+        "stale": 3
       },
       "AR": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "CL": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "CO": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "US": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 1
+        "verified": 3,
+        "pending": 74,
+        "stale": 3
       },
       "GB": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "DE": {
         "total": 78,
-        "verified": 3,
-        "pending": 75,
-        "stale": 1
+        "verified": 4,
+        "pending": 74,
+        "stale": 3
       },
       "FR": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "IT": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 1
+        "verified": 3,
+        "pending": 74,
+        "stale": 3
       },
       "BR": {
         "total": 78,
-        "verified": 2,
-        "pending": 76,
-        "stale": 2
+        "verified": 3,
+        "pending": 75,
+        "stale": 4
       },
       "PT": {
         "total": 78,
-        "verified": 1,
-        "pending": 76,
-        "stale": 1
+        "verified": 2,
+        "pending": 74,
+        "stale": 3
       }
     },
     "countries": [
@@ -34625,7 +36176,7 @@
       "PT"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-10-30T17:11:17.896Z",
+    "checkedAt": "2026-10-30T19:57:37.986Z",
     "series": 78
   }
 }

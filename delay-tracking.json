@@ -35,7 +35,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -80,7 +80,9 @@
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96"
       },
       "platformStatus": "verified",
-      "platformStale": false
+      "platformStale": false,
+      "anilistOffers": [],
+      "platformSource": "justwatch"
     },
     {
       "id": "schedule-detective-conan-1218-2026-10-31t12-30-00-01-00",
@@ -129,7 +131,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -219,7 +221,8 @@
           "service": "YouTube",
           "url": "https://www.youtube.com/@conan_anime"
         }
-      ]
+      ],
+      "platformSource": "justwatch"
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
@@ -256,7 +259,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -301,7 +304,8 @@
           "service": "Netflix",
           "url": "https://www.netflix.com/title/81663323"
         }
-      ]
+      ],
+      "platformSource": "justwatch"
     },
     {
       "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
@@ -338,7 +342,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-10-30T17:11:13.247Z",
+      "lastDelayCheck": "2026-10-30T19:57:33.793Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
@@ -390,7 +394,8 @@
           "service": "Crunchyroll",
           "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
         }
-      ]
+      ],
+      "platformSource": "justwatch"
     }
   ]
 }
