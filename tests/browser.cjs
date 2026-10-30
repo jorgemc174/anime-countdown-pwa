@@ -234,6 +234,20 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.equal(await page.evaluate(() => state.releases.find(row => row.anilistId === 42).favorite), true);
       assert.equal(justwatchRequests, 0);
     });
+    await scenario("unmatched shows open the AniList fallback and later prefer a regional JustWatch result", async page => {
+      const row = { ...baseRow, anilistOffers: [{ service: "Hulu", url: "https://www.hulu.com/series/fallback" }], platformsByCountry: { ES: { status: "not-found", offers: [] } } };
+      await page.route("**/schedule.json", route => route.fulfill({ json: { ...payload, releases: [row] } }));
+      await page.goto(base);
+      await ready(page);
+      await page.locator("#showAllBtn").click();
+      assert.match(await page.locator("#animeList").innerText(), /Ver en Hulu/);
+      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://www.hulu.com/series/fallback");
+      assert.equal(await page.evaluate(() => state.releases[0].jwVerified), false);
+      await page.route("**/schedule.json", route => route.fulfill({ json: { ...payload, releases: [{ ...row, platformsByCountry: { ES: { status: "verified", offers: [{ service: "Netflix", url: "https://www.netflix.com/title/local" }] } } }] } }));
+      await page.evaluate(() => refreshSharedSchedule({ force: true }));
+      assert.equal(await page.evaluate(() => state.releases[0].service), "Netflix");
+      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://www.netflix.com/title/local");
+    });
     await scenario("search and filters are usable with a keyboard", async page => {
       await page.goto(base);
       await ready(page);

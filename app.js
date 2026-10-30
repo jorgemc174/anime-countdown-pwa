@@ -208,7 +208,7 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v104";
+const APP_CACHE_NAME = "anime-countdown-pwa-v105";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -1389,6 +1389,7 @@ function mapSharedRelease(row) {
     releaseDate: releaseDate && Number.isFinite(Date.parse(releaseDate)) ? new Date(releaseDate).toISOString() : null,
     originalReleaseDate: row.originalReleaseDate || row.original_release_date || "",
     basePlatforms: row.basePlatforms,
+    anilistOffers: row.anilistOffers || [],
     platformsByCountry: row.platformsByCountry || {},
     service: row.service || "No legal platform",
     serviceUrl: normalizeUrl(row.service_url || row.serviceUrl || ""),

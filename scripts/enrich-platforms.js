@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 5;
+const LOOKUP_VERSION = 6;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
@@ -88,6 +88,7 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
   const query = `query ResolveStreamingTitle($id: Int, $search: String) {
     Media(id: $id, search: $search, type: ANIME) {
       id title { romaji english native } synonyms
+      externalLinks { site url type } streamingEpisodes { site url }
     }
   }`;
   const id = Number(item.anilistId) || null;
@@ -108,7 +109,7 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
   const normalize = value => String(value || "").normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
   const expected = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean).map(normalize);
   if (id ? Number(media.id) !== id : !titles.some(title => expected.includes(normalize(title)))) return null;
-  return { english: media.title?.english, titles };
+  return { english: media.title?.english, titles, anilistOffers: policy.anilistOffers(media) };
 }
 
 async function lookupAvailability(item, country, options = {}) {
@@ -127,7 +128,7 @@ async function lookupAvailability(item, country, options = {}) {
   const enriched = { ...item, anilistTitle: aliases.english || item.anilistTitle,
     titles: [...new Set([...(item.titles || []), ...aliases.titles])] };
   const result = await lookupJustWatch(enriched, country, options);
-  return { ...result, aliases: aliases.titles };
+  return { ...result, aliases: aliases.titles, anilistOffers: aliases.anilistOffers };
 }
 
 function mergeResult(previous, result, timestamp) {
@@ -167,7 +168,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
   }
   const tasks = [];
   for (const [key, row] of series) {
-    cache.series[key] = { ...cache.series[key], title: row.title, countries: { ...cache.series[key]?.countries } };
+    cache.series[key] = { ...cache.series[key], title: row.title, anilistOffers: Array.isArray(row.anilistOffers) ? row.anilistOffers : (cache.series[key]?.anilistOffers || []), countries: { ...cache.series[key]?.countries } };
     for (const country of countries) {
       const previous = cache.series[key].countries[country.code];
       const lastAttempt = Date.parse(previous?.lastAttemptAt || previous?.checkedAt || "") || 0;
@@ -194,6 +195,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
         const knownIds = [...new Set(Object.values(cache.series[key].countries).filter(record => record.status === "verified").map(record => record.justwatchId).filter(Boolean))];
         const result = await lookup(target, country, { previous, knownId: knownIds.length === 1 ? knownIds[0] : null, aliasCache, aliasState, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
+        if (Array.isArray(result.anilistOffers)) cache.series[key].anilistOffers = result.anilistOffers;
         cache.series[key].aliases = [...new Set([...(cache.series[key].aliases || []), row.title, row.anilistTitle,
           ...(row.titles || []), ...(result.aliases || []), result.matchedTitle].filter(Boolean))];
         const signature = inputSignature({ ...row, titles: [...new Set([...(row.titles || []), ...cache.series[key].aliases])] });
@@ -208,6 +210,8 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
           consecutiveErrors: (previous?.consecutiveErrors || 0) + 1,
           nextRetryAt: new Date(now + Math.max(error.retryAfterMs || 0, Math.min(6 * 3600000, 15 * 60000 * 2 ** Math.min(previous?.consecutiveErrors || 0, 5)))).toISOString() };
       }
+      const metadata = await (aliasCache.get(key) || Promise.resolve(null)).catch(() => null);
+      if (Array.isArray(metadata?.anilistOffers)) cache.series[key].anilistOffers = metadata.anilistOffers;
       checked++;
       if (cursor < tasks.length && !rateLimited) await new Promise(resolve => setTimeout(resolve, 200));
     }
@@ -220,7 +224,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
   }
   const enriched = rows.map(row => {
     const records = cache.series[policy.seriesKey(row)]?.countries || {};
-    return policy.applyCountryPlatforms({ ...row, basePlatforms: policy.basePlatforms(row), platformsByCountry: records }, "ES", now);
+    return policy.applyCountryPlatforms({ ...row, anilistOffers: cache.series[policy.seriesKey(row)]?.anilistOffers || row.anilistOffers || [], basePlatforms: policy.basePlatforms(row), platformsByCountry: records }, "ES", now);
   });
   const coverage = Object.fromEntries(countries.map(country => {
     const records = [...series.keys()].map(key => cache.series[key].countries[country.code]);

@@ -87,22 +87,39 @@
       allServices: (legacy ? item.jwPreviousAllServices : item.allServices) || [],
       hasAllowedPlatform: service !== "No legal platform" };
   }
+  function anilistOffers(media) {
+    const candidates = [
+      ...(media.externalLinks || []).filter(link => String(link.type || "").toUpperCase() === "STREAMING"),
+      ...(media.streamingEpisodes || [])
+    ];
+    const result = new Map();
+    for (const link of candidates) {
+      const name = String(link.site || "").trim();
+      const service = ({ "Amazon Prime Video": "Prime Video", "Disney Plus": "Disney+" })[name] || name;
+      const url = httpsUrl(link.url);
+      if (service && url && !result.has(service)) result.set(service, { service, url });
+    }
+    return [...result.values()].sort((a, b) => (PRIORITY[a.service] || 50) - (PRIORITY[b.service] || 50));
+  }
   function applyCountryPlatforms(item, country = "ES", now = Date.now()) {
     const base = basePlatforms(item);
     const record = item.platformsByCountry?.[country];
     const offers = record?.status === "verified" && Array.isArray(record.offers)
       ? record.offers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
-    const best = offers[0];
-    // Global AnimeSchedule/AniList links are metadata, not regional availability.
-    // Missing evidence must not turn a US/global service into a local watch link.
+    const useAnilist = !offers.length && (!record || ["not-found", "pending", "error"].includes(record.status));
+    const fallback = useAnilist && Array.isArray(item.anilistOffers)
+      ? item.anilistOffers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
+    const visibleOffers = offers.length ? offers : fallback;
+    const best = visibleOffers[0];
     return { ...item, service: "No legal platform", serviceUrl: "", allServices: [], hasAllowedPlatform: false, basePlatforms: base,
-      ...(best ? { service: best.service, serviceUrl: best.url, allServices: offers.map(offer => offer.service), hasAllowedPlatform: true } : {}),
-      jwVerified: Boolean(best), jwSource: "shared", jwCountry: country,
+      ...(best ? { service: best.service, serviceUrl: best.url, allServices: visibleOffers.map(offer => offer.service), hasAllowedPlatform: true } : {}),
+      platformSource: offers.length ? "justwatch" : fallback.length ? "anilist" : "",
+      jwVerified: Boolean(offers.length), jwSource: "shared", jwCountry: country,
       jwVerifiedAt: record?.checkedAt || "",
-      serviceUrls: Object.fromEntries(offers.map(offer => [offer.service, offer.url])),
+      serviceUrls: Object.fromEntries(visibleOffers.map(offer => [offer.service, offer.url])),
       platformStatus: record?.status || "pending",
       platformStale: Boolean(record?.lastError || record?.pendingNegative) || Boolean(record?.checkedAt && now - Date.parse(record.checkedAt) > 24 * 3600000)
     };
   }
-  return { COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, basePlatforms, applyCountryPlatforms };
+  return { COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, anilistOffers, basePlatforms, applyCountryPlatforms };
 });

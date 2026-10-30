@@ -40,9 +40,10 @@ El catálogo incluye los doce países del selector, con España por defecto.
 `JUSTWATCH_COUNTRIES=ES,MX` permite limitar la generación si se desea. Cada episodio
 incluye `basePlatforms` (fuente original) y `platformsByCountry` con ofertas,
 fecha de comprobación y estado por país. Cambiar de país selecciona esos datos
-localmente; solo se muestran las ofertas de JustWatch del país seleccionado.
-Las plataformas globales de AniList y AnimeSchedule se conservan como metadatos
-internos, pero no se usan como alternativa cuando falta disponibilidad local.
+localmente; las ofertas regionales de JustWatch tienen prioridad. Si la serie no
+se encuentra o la consulta está pendiente o falla, se utilizan los enlaces de
+streaming de AniList como alternativa, sin marcarlos como disponibilidad regional
+verificada. No se recurre a plataformas globales de AnimeSchedule.
 
 Las consultas se agrupan por serie y país, se reutilizan durante doce horas y se
 limitan a tres simultáneas y cuatro minutos por ejecución. Los pendientes continúan
@@ -51,8 +52,9 @@ prioriza completar España antes de otros países. Un límite 429 detiene nuevas
 consultas hasta otra ejecución. Si falta un alias (por ejemplo, «Ao no Exorcist»
 frente a «Blue Exorcist»), se consulta AniList por ID o nombre exacto y se
 reintenta JustWatch con los nombres de esa misma serie. Estos alias se guardan
-para futuras actualizaciones; las plataformas siguen procediendo exclusivamente
-del país seleccionado en JustWatch. La búsqueda reconoce sufijos de temporada y cour
+para futuras actualizaciones. Los enlaces de AniList se guardan también en la
+base compartida (`anilistOffers`) y en la caché central: no dependen de que el
+usuario sincronice su biblioteca. La búsqueda reconoce sufijos de temporada y cour
 y prueba títulos en inglés manteniendo siempre el país de las ofertas. También
 compara el título original de JustWatch y variantes habituales de romanización
 (como Jouheki/Jyouheki). Los alias en inglés y japonés recibidos de AnimeSchedule
@@ -61,9 +63,10 @@ no se confunde ese fallo con falta de ofertas de JustWatch ni se repite esa mism
 consulta bloqueada para cada país durante la ejecución. No se
 mezclan películas, remakes o spin-offs por coincidencias parciales de nombre.
 Se conservan las últimas ofertas conocidas del mismo país ante fallos. Un
-resultado sin coincidencia, pendiente o sin ofertas deja la serie sin plataforma
-indicada; eso no prueba que no exista una opción legal. Nunca se utiliza una
-plataforma de Estados Unidos como alternativa para España u otro país. Las plataformas son disponibilidad de
+resultado sin coincidencia o pendiente puede usar los enlaces globales de AniList,
+que pueden corresponder a otro país. Si JustWatch encuentra la serie pero no hay
+ofertas locales, no se sustituye ese resultado por enlaces globales. Si tampoco
+AniList tiene enlaces de streaming, la serie sigue sin plataforma indicada. Las plataformas son disponibilidad de
 la serie, no una garantía de cada temporada o episodio.
 
 Se excluyen alquileres y compras; los canales adicionales son suscripciones

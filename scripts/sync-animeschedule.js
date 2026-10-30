@@ -2,6 +2,7 @@
 
 const fs = require("node:fs/promises");
 const policy = require("../schedule-policy");
+const platformPolicy = require("../platform-policy");
 const { trackDelays } = require("./delayed-releases");
 const nativeFetch = globalThis.fetch;
 const generationDeadline = Date.now() + 180000;
@@ -341,6 +342,7 @@ function mapPublicAnilistMedia(media) {
   const best = chooseBestStream(streams);
   return {
     anilistId: media.id,
+    anilistOffers: platformPolicy.anilistOffers(media),
     title,
     titles,
     coverUrl: media.coverImage?.large || media.coverImage?.medium || "",
@@ -369,6 +371,7 @@ function mapPublicAnilistRelease(media) {
     id: stableId("anilist-missing", media.anilistId || title, episodeNumber, releaseDate),
     animeKey: stableId(title),
     anilistId: media.anilistId,
+    anilistOffers: media.anilistOffers || [],
     anilistTitle: title,
     anilistUrl: media.siteUrl || "",
     anilistFormat: media.anilistFormat || "",
@@ -504,6 +507,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
     return {
       ...item,
       anilistId: media.anilistId || item.anilistId,
+      anilistOffers: media.anilistOffers || [],
       anilistTitle: media.anilistTitle || media.title || item.anilistTitle,
       anilistUrl: media.anilistUrl || item.anilistUrl,
       anilistFormat: media.anilistFormat || item.anilistFormat,

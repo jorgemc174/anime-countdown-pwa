@@ -239,3 +239,32 @@ test("a known catalog ID is reusable across countries but its offers are queried
   assert.equal(result.status, "no-offers");
   assert.deepEqual(result.offers, []);
 });
+test("unmatched shows use AniList links without claiming regional verification", () => {
+  const item = policy.applyCountryPlatforms({ ...row, anilistOffers: [{ service: "Hulu", url: "https://www.hulu.com/series/sample" }], platformsByCountry: { ES: { status: "not-found", offers: [] } } }, "ES", now);
+  assert.equal(item.service, "Hulu");
+  assert.equal(item.serviceUrl, "https://www.hulu.com/series/sample");
+  assert.equal(item.platformSource, "anilist");
+  assert.equal(item.jwVerified, false);
+});
+test("JustWatch takes precedence and a confirmed lack of local offers does not trigger AniList fallback", () => {
+  const item = { ...row, anilistOffers: [{ service: "Hulu", url: "https://www.hulu.com/series/sample" }], platformsByCountry: { ES: { ...positive }, MX: { status: "no-offers", offers: [] } } };
+  assert.equal(policy.applyCountryPlatforms(item, "ES", now).service, "Netflix");
+  assert.equal(policy.applyCountryPlatforms(item, "MX", now).service, "No legal platform");
+});
+test("AniList fallback only extracts genuine streaming links", () => {
+  const offers = policy.anilistOffers({ externalLinks: [
+    { site: "Crunchyroll", type: "STREAMING", url: "https://www.crunchyroll.com/series/sample" },
+    { site: "Official Site", type: "INFO", url: "https://official.example" },
+    { site: "Bad link", type: "STREAMING", url: "javascript:alert(1)" }
+  ], streamingEpisodes: [{ site: "Crunchyroll", url: "https://www.crunchyroll.com/watch/episode" }] });
+  assert.equal(offers.length, 1);
+  assert.equal(offers[0].service, "Crunchyroll");
+});
+test("AniList fallback is prepared and cached centrally without a user's library sync", async () => {
+  const schedule = { ...payload, releases: payload.releases.map(item => ({ ...item, anilistOffers: [{ service: "Crunchyroll", url: "https://www.crunchyroll.com/series/sample" }] })) };
+  const first = await enrichPlatforms(schedule, undefined, { now, countries: [es], lookup: async () => ({ status: "not-found", offers: [] }) });
+  assert.equal(first.payload.releases[0].service, "Crunchyroll");
+  assert.equal(first.payload.releases[0].platformSource, "anilist");
+  const cached = await enrichPlatforms(payload, first.cache, { now: now + 3600000, countries: [es], lookup: async () => { throw Error("must not run"); } });
+  assert.equal(cached.payload.releases[0].service, "Crunchyroll");
+});
