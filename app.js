@@ -208,7 +208,7 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v101";
+const APP_CACHE_NAME = "anime-countdown-pwa-v102";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -2714,21 +2714,15 @@ function renderScheduleHealth() {
   const label = $("scheduleHealthText");
   if (!box || !label) return;
   const health = state.scheduleHealth;
+  box.classList.toggle("hidden", !health.loading && !health.error && !health.stale && !health.bundled);
   const updated = health.updatedAt && Number.isFinite(Date.parse(health.updatedAt))
     ? ` Datos: ${new Intl.DateTimeFormat("es-ES", { timeZone: getSelectedTimezone(), dateStyle: "medium", timeStyle: "short" }).format(new Date(health.updatedAt))}.` : "";
   label.textContent = (health.loading ? "Cargando horarios…" : health.error ? `${health.error} Se conserva la copia local.` :
     health.stale ? "Horario desactualizado: no contiene próximas emisiones SUB confirmadas." :
-    health.bundled ? "Sin conexión: usando el horario incluido en la app." : "Horario SUB disponible.") + updated;
+    health.bundled ? "Sin conexión: usando el horario incluido en la app." : "") + updated;
   box.dataset.warning = String(Boolean(health.error || health.stale || health.bundled));
   const button = $("retryScheduleBtn");
   if (button) button.disabled = Boolean(health.loading);
-  const platformLabel = $("platformDataStatus");
-  if (platformLabel) {
-    const coverage = health.platforms?.coverage?.[state.jwCountry];
-    platformLabel.textContent = !coverage ? "Plataformas: pendientes de la próxima actualización automática." :
-      coverage.pending || coverage.stale ? "Algunas plataformas están pendientes de verificación. Se actualizarán automáticamente." :
-      "Plataformas regionales comprobadas automáticamente. La disponibilidad puede variar por temporada.";
-  }
 }
 
 function scheduleRender(delay = 80) {
@@ -3120,7 +3114,7 @@ function createCardModern(item) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
   const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}${getPlatformVerificationBadge(item)}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
 
@@ -3132,11 +3126,6 @@ function getPremierePill(item) {
   return isPremiereEpisode(item) ? '<span class="today-pill premiere-pill">Nuevo estreno</span>' : "";
 }
 
-function getPlatformVerificationBadge(item) {
-  if (item.jwVerified && item.platformStale) return '<span class="badge badge-orange">Última disponibilidad conocida</span>';
-  if (item.jwVerified) return `<span class="badge badge-green">Verificado en ${escapeHtml(item.jwCountry)}</span>`;
-  return '<span class="badge badge-orange">Sin confirmación regional</span>';
-}
 
 function getDelayedBadge(item) {
   return item.delayed ? '<span class="badge badge-orange">Retrasado</span>' : "";

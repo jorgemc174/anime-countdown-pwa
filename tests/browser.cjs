@@ -61,7 +61,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       await page.locator("#showAllBtn").click();
       await page.locator('.anime-card[data-id="sample-4"] [data-action="favorite"]').click();
       await page.route("**/schedule.json", route => route.fulfill({ json: { releases: [{ title: "Broken", releaseDate: "invalid" }] } }));
-      await page.locator("#retryScheduleBtn").click();
+      await page.evaluate(() => refreshSharedSchedule({ force: true }));
       await page.waitForFunction(() => Boolean(state.scheduleHealth.error));
       assert.equal(await page.evaluate(() => state.releases.find(row => row.id === "sample-4").favorite), true);
       assert.equal(await page.locator(".anime-card").count(), 2);
@@ -102,7 +102,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       await page.locator("#showAllBtn").click();
       await page.locator('.anime-card[data-id="sample-4"] [data-action="favorite"]').click();
       await page.route("https://anicountdown.com/schedule.json", route => route.fulfill({ json: { ...payload, releases: [{ ...baseRow, id: "sample-new-date", releaseDate: "2026-11-01T17:00:00Z" }] } }));
-      await page.locator("#retryScheduleBtn").click();
+      await page.evaluate(() => refreshSharedSchedule({ force: true }));
       await page.waitForFunction(() => state.releases.some(row => row.id === "sample-new-date"));
       assert.equal(await page.evaluate(() => state.releases[0].favorite), true);
     });
@@ -262,7 +262,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         await page.locator("#showAllBtn").click();
         assert.ok(await page.locator(".anime-card").count() > 0);
         await page.locator('[data-action="favorite"]').first().click();
-        await page.locator("#retryScheduleBtn").click();
+        await page.evaluate(() => refreshSharedSchedule({ force: true }));
         await ready(page);
         await page.evaluate(async () => {
           await fetch("/api/health");
