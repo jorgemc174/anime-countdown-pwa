@@ -208,7 +208,7 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v103";
+const APP_CACHE_NAME = "anime-countdown-pwa-v104";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -2910,16 +2910,20 @@ function normalizeTitle(value) { return String(value||"").toLowerCase().normaliz
 function normalizeUrl(url) { const v=String(url||"").trim(); if(!v)return ""; if(v.startsWith("http://")||v.startsWith("https://"))return v; if(v.startsWith("//"))return `https:${v}`; if(v.includes("."))return `https://${v}`; return ""; }
 function getOpenLabel(service) { if(!service || service==="No legal platform" || service==="AniList")return "Asociar plataforma"; return `Ver en ${service}`; }
 function getBestWatchUrl(item, displayService) {
+  const effective = displayService !== undefined ? displayService : getDisplayService(item);
+  if (effective === "Prime Video") {
+    const record = item.platformsByCountry?.[state.jwCountry];
+    const offer = record?.status === "verified" ? record.offers?.find(offer => offer.service === "Prime Video") : null;
+    const justwatchUrl = normalizeUrl(offer?.url);
+    if (justwatchUrl) return justwatchUrl;
+  }
   const custom = normalizeUrl(item.customUrl);
   if (custom) return custom;
-  const effective = displayService !== undefined ? displayService : getDisplayService(item);
   const regionalUrl = normalizeUrl(item.serviceUrls?.[effective]);
   if (regionalUrl) return regionalUrl;
   if (effective === (item.service || "No legal platform")) {
     const serviceUrl = normalizeUrl(item.serviceUrl);
     if (serviceUrl) {
-      if (effective === "Prime Video" && /amzn\.to|amazon\.(com|es|co\.uk|de|fr|it)/.test(serviceUrl))
-        return `https://www.primevideo.com/search?phrase=${encodeURIComponent(item.title)}`;
       return serviceUrl;
     }
   }
