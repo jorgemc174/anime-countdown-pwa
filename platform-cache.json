@@ -27,7 +27,7 @@
           "inputSignature": "[\"TV\",null,[\"Doumo, Suki na Hito ni Horegusuri wo Irai Sareta Majo desu.\",\"Doumo, Suki na Hito ni Horegusuri wo Irai sareta Majo desu.\",\"Hello, I am a Witch and my Crush Wants me to Make a Love Potion!\",\"Hi, I'm a Witch, and My Crush Wants Me to Make a Love Potion\",\"Horemajo\",\"I'm a witch who's crush requested a love potion\",\"どうも、好きな人に惚れ薬を依頼された魔女です。\",\"惚れ魔女\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -71,7 +71,7 @@
           "inputSignature": "[\"ONA\",null,[\"So What's Wrong with Getting Reborn as a Goblin?\",\"Tengobu\",\"Tensei Goblin Dakedo Shitsumon Aru?\",\"Tensei Goblin dakedo Shitsumon Aru?\",\"เกิดใหม่เป็นก็อบลินแล้วไง มีคำถามอะไรไหม?\",\"転ゴブ\",\"転生ゴブリンだけど質問ある？\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -126,7 +126,7 @@
           "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -150,14 +150,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-160803": {
@@ -170,8 +170,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -289,7 +289,7 @@
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -319,14 +319,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-206949": {
@@ -356,11 +356,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Nia Liston: The Merciless Maiden",
         "Kyouran Reijou Nia Liston",
@@ -409,7 +413,7 @@
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -454,9 +458,246 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re]: Zekkai no Kuu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00385794JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re]: Zekkai no Kuu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re]: Zekkai no Kuu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "dAnime Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00385794JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re]: Zekkai no Kuu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00385794JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re] ZEKKAI NO KU",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -471,7 +712,8 @@
         "Battle Spirits [Re] Zekkai No Ku",
         "Battle Spirits [Re] 絶界の空",
         "Battle Spirits [Re] Zekkai no Kuu",
-        "Battle Spirits [Re]: Zekkai no Kuu"
+        "Battle Spirits [Re]: Zekkai no Kuu",
+        "Battle Spirits [Re] ZEKKAI NO KU"
       ]
     },
     "anilist-187316": {
@@ -488,8 +730,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -619,7 +861,7 @@
           "nextRetryAt": "2026-10-31T01:07:28.479Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Gensou Suikoden",
         "幻想水滸伝",
@@ -659,7 +901,7 @@
           "inputSignature": "[\"TV\",null,[\"Choujun! Choujou Senpai\",\"Choujun! Choujou-senpai\",\"Super Psychic Policeman Chojo\",\"超巡！超条先輩\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -699,7 +941,7 @@
           "inputSignature": "[\"TV\",null,[\"Chii-Fuyo\",\"The Exiled Cheat Enchanter Enjoys a Leisurely Second Life: I Can Imbue \\\"Enhancement Points\\\" on Everything, Not Just Weapons, and I Can Cancel the Effects Anytime I Want, But Are the People Who Remained Really Okay?\",\"The Exiled Cheating Magician Enjoys an Unrestrained Second Life.: I Can Give \\\"Strengthening Points\\\" Not Only to Weapons, But Also to Everything, and I Can Unlock the Effect at Any Time of My Will, But are the Rest Okay?\",\"The Laid-Off Cheat-Granting Mage Enjoys a New Life\",\"The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life\",\"Tsuihou Sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka Suru.: Ore wa Buki dake ja Naku, Arayuru Mono ni \\\"Kyouka Point\\\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?\",\"Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \\\"Kyouka Point\\\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?\",\"チー付与\",\"追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。 ～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～\",\"追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -751,9 +993,241 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785THTH",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose-kun wa Ramune Bin no Naka",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00364785THTH&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785THTH",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose-kun wa Ramune Bin no Naka",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785THTH",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose-kun wa Ramune Bin no Naka",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785THTH",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose is in the Ramune Bottle\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00364785THTH&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose-kun wa Ramune Bin no Naka",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose is in the Ramune Bottle\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00364785JAJP",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose is in the Ramune Bottle\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00364785THTH&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.c0856933-9209-47d6-864a-e01cff065351",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts457197",
+          "matchedTitle": "Chitose Is in the Ramune Bottle",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose is in the Ramune Bottle\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -768,7 +1242,9 @@
         "千歳くんはラムネ瓶のなか 2クール",
         "Chiramune",
         "チラムネ",
-        "Chitose-kun wa Ramune Bin no Naka"
+        "Chitose-kun wa Ramune Bin no Naka",
+        "Chitose Is in the Ramune Bottle",
+        "Chitose is in the Ramune Bottle"
       ]
     },
     "anilist-207809": {
@@ -797,7 +1273,7 @@
           "inputSignature": "[\"TV\",null,[\"Anatolia Story\",\"Red River\",\"Sora wa Akai Kawa no Hotori\",\"天は赤い河のほとり\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1079,7 +1555,7 @@
           "inputSignature": "[\"TV\",null,[\"DARK MACHINE -The Animation-\",\"DARK MACHINE THE ANIMATION\",\"DARK MACHINE: The Animation\",\"Dark Machine the Animation\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1123,7 +1599,7 @@
           "inputSignature": "[\"SHOW\",null,[\"Sasaki and Peeps 2nd Season\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"佐々木とピーちゃん 第２期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [],
       "aliases": [
         "Sasaki to Pii-chan 2nd Season",
@@ -1158,7 +1634,7 @@
           "inputSignature": "[\"TV\",null,[\"Sekai Saikyou no Majo, Hajimemashita\",\"Sekai Saikyou no Majo, Hajimemashita: Watashi dake \\\"Kouryaku Site\\\" wo Mireru Sekai de Jiyuu ni Ikimasu\",\"Sekamajo\",\"The World's Strongest Witch\",\"せかまじょ\",\"世界最強の魔女、始めました\",\"世界最強の魔女、始めました　～私だけ『攻略サイト』を見れる世界で自由に生きます～\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1451,7 +1927,7 @@
           "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1499,7 +1975,7 @@
           "inputSignature": "[\"SHOW\",null,[\"Paw & Palaces\",\"Zi Jin: Yu Miao Fang\",\"紫禁·御喵房\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [],
       "aliases": [
         "Zi Jin: Yu Miao Fang",
@@ -1530,8 +2006,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         },
         "AR": {
           "status": "error",
@@ -1633,7 +2113,7 @@
           "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Magic Knight Rayearth (2026)",
         "魔法騎士レイアース (2026)",
@@ -1922,7 +2402,7 @@
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "HIDIVE",
@@ -1987,11 +2467,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
         "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
@@ -2036,7 +2520,7 @@
           "inputSignature": "[\"TV\",null,[\"Beast King War God Dandivine\",\"DANDIVINE\",\"Dandivine\",\"Gattaishin Series\",\"Gattaishin: Dandivine\",\"Juuou Mujin Dandivine\",\"Juuоu Mujin Dandivine\",\"獣王武神ダンデヴァイン\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2262,7 +2746,7 @@
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2312,7 +2796,7 @@
           "inputSignature": "[\"SHOW\",null,[\"FX Fighter Kurumi-chan\",\"FX Senshi Kurumi-chan\",\"FX戦士くるみちゃん\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "FX Fighter Kurumi-chan",
         "FX Senshi Kurumi-chan",
@@ -2341,7 +2825,7 @@
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Koori no Jyouheki",
         "The Ramparts of Ice",
@@ -2382,11 +2866,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "TETSURYO! Meet With Tetsudou Musume",
         "Tetsuryou! meet with Tetsudou Musume",
@@ -2673,7 +3161,7 @@
           "inputSignature": "[\"TV\",null,[\"Juukishi\",\"Kesatria Kelas Berat Tereinkarnasi yang Diasingkan Jadi Tanpa Tanding Dengan Pengetahuan Gimnya\",\"The Exiled Heavy Knight Knows How to Game the System\",\"The Exiled Reincarnated Heavy Knight Is Unrivaled in Game Knowledge\",\"Tsuihou Sareta Tensei Juukishi wa Game Chishiki de Musou Suru\",\"Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru\",\"เกิดใหม่เป็นอัศวินเกราะหนักผู้ถูกขับไล่แต่ใช้ความรู้จากเกมจนไร้เทียมทาน\",\"追放された転生重騎士はゲーム知識で無双する\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2711,14 +3199,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -2752,7 +3240,7 @@
           "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2796,8 +3284,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         },
         "AR": {
           "status": "error",
@@ -2899,7 +3391,7 @@
           "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Hulu",
@@ -2938,11 +3430,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -2986,7 +3482,7 @@
           "inputSignature": "[\"ONA\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no Hitorigoto 3rd Season Mini Anime\",\"Los diarios de la boticaria\",\"Maomao no Hitorigoto 3rd Season\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3 Mini Anime\",\"The Apothecary Diaries: Maomao's Monologue Season 3\",\"猫猫のひとりごと 第3期\",\"薬屋のひとりごと 第3期\",\"薬屋のひとりごと 第3期 ミニアニメ\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -3274,7 +3770,7 @@
           "inputSignature": "[\"TV\",null,[\"A Certain Dark Item\",\"A Certain Dark Side's Item\",\"Toaru Anbu no ITEM\",\"Toaru Anbu no Item\",\"とある暗部の少女共棲\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3315,7 +3811,7 @@
           "inputSignature": "[\"SHOW\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [],
       "aliases": [
         "Hotaru no Yomeiri",
@@ -3364,7 +3860,7 @@
           "inputSignature": "[\"TV\",null,[\"TOUGEN ANKI: Nikko Kegon Falls Arc\",\"Tougen Anki\",\"Tougen Anki Season 2\",\"Tougen Anki: Nikko Kegon Falls Arc\",\"Tougen Anki: Nikko Kegon no Taki-hen\",\"Tougen Anki: Nikko・Kegon no Taki-hen\",\"桃源暗鬼 2期\",\"桃源暗鬼 日光・華厳の滝編\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3424,7 +3920,7 @@
           "inputSignature": "[\"TV\",null,[\"Please Excuse My Younger Brothers\",\"Sorry About My Little Brothers\",\"Uchi no Otouto-domo ga Sumimasen\",\"UchiOto\",\"うちの弟どもがすみません\",\"うち弟\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3458,11 +3954,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Ghost Meets Gal!",
         "ごーすと・みーつ・ぎゃる！"
@@ -3495,7 +3995,7 @@
           "inputSignature": "[\"TV\",null,[\"MSLL\",\"Magical Sisters Lulutto Lilly Part 2\",\"Magical Sisters LuluttoLilly\",\"Magical Sisters LuluttoLilly Part 2\",\"Mahou no Shimai Lulutto Lilly Part 2\",\"Mahou no Shimai LuluttoLilly Part 2\",\"るるりり\",\"魔法の姉妹ルルットリリィ 第2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -3539,7 +4039,7 @@
           "inputSignature": "[\"TV\",null,[\"KERORO☆\",\"Keroro Gunsou☆\",\"Sargento Keroro\",\"Sgt. Frog☆\",\"ケロロ軍曹☆\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3846,7 +4346,7 @@
           "inputSignature": "[\"TV_SHORT\",null,[\"RILAKKUMA\",\"Rilakkuma\",\"Rilakkuma Anime\",\"Rilakkuma: A Fine Day for a Full Tummy\",\"Rilakkuma: A Leisurely Dream Journey\",\"Rilakkuma: Goyururi Yume no Tabi\",\"Rilakkuma: Tekuteku Sekai Ryokou\",\"リラックマ\",\"リラックマ てくてく世界旅行\",\"リラックマ アニメ\",\"リラックマ ～ごゆるり夢の旅～\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3895,9 +4395,251 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384363JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384363JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384363JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.67d902a8-b03b-4739-960a-baa6c9fc0ce9",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts486271",
+          "matchedTitle": "The Vermilion Mask",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3969,9 +4711,229 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-10-31T01:07:28.479Z"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384073JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "A Tale of the Secret Saint",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "A Tale of the Secret Saint",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "A Tale of the Secret Saint",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384073JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384073JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "A Tale of the Secret Saint",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384073JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.2e9784c7-afcb-4ecf-b9be-97233123a243",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts505937",
+          "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4026,7 +4988,7 @@
           "inputSignature": "[\"ONA\",null,[\"A Wild Last Boss Appeared!\",\"A Wild Last Boss Appeared! 2nd Season\",\"A Wild Last Boss Appeared! Season 2\",\"Yasei no Last Boss ga Arawareta! 2nd Season\",\"野生のラスボスが現れた！\",\"野生のラスボスが現れた！ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4070,9 +5032,406 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Max",
+              "url": "https://play.hbomax.com/video/watch/ea108ee1-0372-46b8-abea-fdce1e97575c?utm_source=universal_search",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00004788ITIT&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Max",
+              "url": "https://play.hbomax.com/video/watch/ea108ee1-0372-46b8-abea-fdce1e97575c?utm_source=universal_search",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "HBO Max Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Max",
+              "url": "https://play.hbomax.com/video/watch/ea108ee1-0372-46b8-abea-fdce1e97575c?utm_source=universal_search",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Max",
+              "url": "https://play.hbomax.com/video/watch/ea108ee1-0372-46b8-abea-fdce1e97575c?utm_source=universal_search",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "HBO Max Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Joyn",
+              "url": "https://www.joyn.de/serien/black-clover",
+              "monetizationType": "ADS"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/449-black-clover/26699-episode-2",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Molotov TV",
+              "url": "https://www.molotov.tv/fr_fr/p/6587697/black-clover-s2-simulcast",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "SFR Play",
+              "url": "https://tv.sfr.fr/vod/info-programmes/la-porte-des-enfers/Product::NEUF_MANGAS_MNG_2026-03914_S2_E2",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.18ad8011-94eb-4821-9d1c-2f9c2ae2bddb",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00004788ITIT&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Disney+",
+              "url": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Max",
+              "url": "https://play.hbomax.com/video/watch/ea108ee1-0372-46b8-abea-fdce1e97575c?utm_source=universal_search",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "HBO Max Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00004788ITIT",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.919679e4-6146-4383-80b4-b5be9bd04258",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00004788ITIT&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/80238012",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hulu",
+              "url": "https://www.hulu.com/watch/997e2438-a62a-455d-92cb-51b962314f9a",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.18ad8011-94eb-4821-9d1c-2f9c2ae2bddb",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts296797",
+          "matchedTitle": "Black Clover",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4120,7 +5479,7 @@
           "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -4160,9 +5519,168 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384049JAJP&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking For a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\",\"Zommasu\",\"ゾンます\"]]"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4205,7 +5723,7 @@
           "inputSignature": "[\"TV\",null,[\"VERTEX FORCE\",\"Vertex Force\",\"バーテックスフォース\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4226,14 +5744,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-209872": {
@@ -4257,7 +5775,7 @@
           "inputSignature": "[\"TV\",null,[\"Ranma 1/2 (2024) 3rd Season\",\"Ranma ½\",\"Ranma ½ (2024) 3rd Season\",\"Ranma1/2 (2024) Season 3\",\"らんま1/2 (2024) 第3期\",\"らんま1/2 第3期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -4281,14 +5799,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T00:52:28.479Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 3,
-          "nextRetryAt": "2026-10-31T01:52:28.479Z"
+          "consecutiveErrors": 4,
+          "nextRetryAt": "2026-10-31T19:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-203473": {
@@ -4317,7 +5835,7 @@
           "inputSignature": "[\"TV\",null,[\"HORROR COLLECTOR\",\"Horror Collector\",\"Kyoufu Collector\",\"恐怖コレクター\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4357,7 +5875,7 @@
           "inputSignature": "[\"TV\",null,[\"Kashita Maryoku wa \\\"Revo Barai\\\" de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu ~Youzumi to Party Tsuihou sareta Ore wa, Kawaii Support Yousei to Issho ni Toritateta Maryoku wo Unyou shite Saikyou wo Mezasu.\",\"Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Maryoku Revo\",\"貸した魔力は【リボ払い】で強制徴収\",\"貸した魔力は【リボ払い】で強制徴収～用済みとパーティー追放された俺は、可愛いサポート妖精と一緒に取り立てた魔力を運用して最強を目指す。～\",\"魔力リボ\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4409,7 +5927,7 @@
           "inputSignature": "[\"TV\",null,[\"Meitantei Precure!\",\"Star Detective Precure!\",\"TanPre\",\"たんプリ\",\"名探偵プリキュア！\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4436,14 +5954,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-213657": {
@@ -4467,7 +5985,7 @@
           "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Disney+",
@@ -4511,9 +6029,251 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGN7UND4V1&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Aoashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Aoashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Aoashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGN7UND4V1&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GN7UND4V1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Ao Ashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGN7UND4V1&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5f6e0226-c7a6-4c9a-9340-5ca457ce0fde",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts288276",
+          "matchedTitle": "Aoashi",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4533,7 +6293,8 @@
         "Aoashi Season 2",
         "アオアシ 第2期",
         "Aoashi 2nd Season",
-        "Ao Ashi"
+        "Ao Ashi",
+        "Aoashi"
       ]
     },
     "anilist-213658": {
@@ -4544,14 +6305,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4582,8 +6343,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         },
         "AR": {
           "status": "error",
@@ -4682,7 +6447,7 @@
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "Holo no Graffiti",
         "ホロのぐらふぃてぃ",
@@ -4726,7 +6491,7 @@
           "inputSignature": "[\"SHOW\",null,[\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [],
       "aliases": [
         "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
@@ -4756,7 +6521,7 @@
           "inputSignature": "[\"TV\",null,[\"Oji-san wa Kawaii Mono ga Osuki.\",\"Ojikawa\",\"Om-Om Suka yang Unyu-Unyu\",\"Pops Loves Kawaii Stuff\",\"Uncle's Obsession with Cute Things\",\"おじかわ\",\"おじさんはカワイイものがお好き。\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4803,7 +6568,7 @@
           "inputSignature": "[\"TV\",null,[\"TANK CHAIR\",\"TANK CHAIR-戦車椅子-\",\"TANK CHAIR: Sensha Isu\",\"Tank Chair\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -4843,7 +6608,7 @@
           "inputSignature": "[\"ONA\",null,[\"OVERGEARED\",\"Overgeared\",\"Tempal - Item no Chikara\",\"Tempal: Item no Chikara\",\"Temppal\",\"テムパル ～アイテムの力～\",\"テムパル～アイテムの力～\",\"템빨\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4887,7 +6652,7 @@
           "inputSignature": "[\"TV\",null,[\"Clear the World Like a Game with the Zero Believer Goddess\",\"Full Clearing Another World under a Goddess with Zero Believers\",\"Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku\",\"信者ゼロの女神サマと始める異世界攻略\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4927,7 +6692,7 @@
           "inputSignature": "[\"TV\",null,[\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé\",\"Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta\",\"Yowaki MAX Reijou nanoni, Ratsuwan Konyakusha-sama\",\"弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5209,7 +6974,7 @@
           "inputSignature": "[\"TV\",null,[\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the New World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World 3rd Season\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3\",\"Tensei Kizoku, Kantei Skill de Nariagaru\",\"Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season\",\"転生貴族、鑑定スキルで成り上がる 第3期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5264,7 +7029,7 @@
           "inputSignature": "[\"TV\",null,[\"HOTEL INHUMANS\",\"HOTEL INHUMANS Season 2\",\"Hotel Inhumans 2nd Season\",\"ホテル・インヒューマンズ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5323,7 +7088,7 @@
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5366,7 +7131,7 @@
           "inputSignature": "[\"TV\",null,[\"From Far Away\",\"Kanata Kara\",\"Kanata kara\",\"彼方から\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5392,14 +7157,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T00:52:28.479Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 3,
-          "nextRetryAt": "2026-10-31T01:52:28.479Z"
+          "consecutiveErrors": 4,
+          "nextRetryAt": "2026-10-31T19:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa": {
@@ -5410,14 +7175,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-217782": {
@@ -5439,11 +7204,15 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-10-31T17:31:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "aliases": [
         "My Girlfriend's Friend Mini Anime",
         "Kanojo no Tomodachi Mini Anime Gekijou",
@@ -5467,14 +7236,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 4,
-          "nextRetryAt": "2026-10-31T11:46:25.589Z"
+          "consecutiveErrors": 5,
+          "nextRetryAt": "2026-10-31T21:16:46.556Z"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": []
     },
     "anilist-203275": {
@@ -5487,12 +7256,12 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-10-31T09:46:25.589Z",
-          "lastAttemptAt": "2026-10-31T09:46:25.589Z",
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -5553,7 +7322,7 @@
           "inputSignature": "[\"TV\",null,[\"Case Closed\",\"Detectiu Conan\",\"Detective Conan\",\"Detektiv Conan\",\"Detektyw Conan\",\"Detetive Conan\",\"Détective Conan\",\"Meitantei Conan\",\"Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story\",\"O Detective Conan\",\"Thám Tử Lừng Danh Conan\",\"הבלש קונאן\",\"المحقق كونان\",\"ยอดนักสืบจิ๋วโคนัน\",\"名侦探柯南\",\"名探偵コナン\",\"名探偵コナン 警察学校編 Wild Police Story\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -5611,9 +7380,196 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -5627,7 +7583,8 @@
         "アオのハコ 第2期",
         "Ao no Hako Season 2",
         "アオのハコ Season２",
-        "La caja azul"
+        "La caja azul",
+        "Blue Box"
       ]
     },
     "anilist-189046": {
@@ -5654,9 +7611,256 @@
           "checkedAt": "2026-10-31T09:46:25.589Z",
           "lastAttemptAt": "2026-10-31T09:46:25.589Z",
           "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUMN8WM",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Empezar de cero en un mundo diferente",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUMN8WM&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:ZERO -Starting Life in Another World-",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUMN8WM",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Empezar de cero en un mundo diferente",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUMN8WM",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Empezar de cero en un mundo diferente",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00345525DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Starting Life in Another World",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Starting Life in Another World",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G0DUMN8WM",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero -Starting Life in Another World",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re: Zero -Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUMN8WM&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re: Zero - Empezar de cero en un mundo diferente",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re: Zero -Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:ZERO -Starting Life in Another World-",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re: Zero -Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FG0DUMN8WM&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hulu",
+              "url": "https://www.hulu.com/watch/2c655a6c-0b29-48e3-9d03-233e78daacf8",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts41257",
+          "matchedTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-10-31T17:16:46.556Z",
+          "lastAttemptAt": "2026-10-31T17:16:46.556Z",
+          "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re: Zero -Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
         }
       },
-      "lastSeenAt": "2026-10-31T09:46:25.589Z",
+      "lastSeenAt": "2026-10-31T17:16:46.556Z",
       "anilistOffers": [],
       "aliases": [
         "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -5665,7 +7869,11 @@
         "Re:ゼロから始める異世界生活 4th season",
         "Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4",
         "Re:ZERO – Жизнь с нуля в альтернативном мире 4",
-        "Re: Zero - Empezar de cero en un mundo diferente"
+        "Re: Zero - Empezar de cero en un mundo diferente",
+        "Re:ZERO -Starting Life in Another World-",
+        "Re: Zero - Starting Life in Another World",
+        "Re:Zero kara Hajimeru Isekai Seikatsu",
+        "Re: Zero -Starting Life in Another World"
       ]
     },
     "anilist-180894": {
@@ -5954,10 +8162,10 @@
         "ロメリア戦記 〜魔王を倒した後も人類やばそうだから軍隊組織した〜",
         "A History of the Romelia"
       ],
-      "lastSeenAt": "2026-10-31T09:46:25.589Z"
+      "lastSeenAt": "2026-10-31T17:16:46.556Z"
     }
   },
   "cooldowns": {
-    "AniList": "2026-10-31T01:52:28.479Z"
+    "AniList": "2026-10-31T18:16:46.556Z"
   }
 }
