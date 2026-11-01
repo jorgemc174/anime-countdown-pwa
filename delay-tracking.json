@@ -1,6 +1,38 @@
 {
   "releases": [
     {
+      "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-5-2026-11-08t17-06-00-01-00",
+      "animeKey": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
+      "titles": [
+        "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+        "The Lonely Snow Widow and the Cursed Ring",
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+      ],
+      "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+      "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
+      "episode": "Ep 5",
+      "episodeNumber": "5",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "pending",
+      "releaseDate": null,
+      "originalReleaseDate": "2026-11-08T16:06:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "officialSources": [
+        "https://anime-yukionna.af-original.com/",
+        "https://anime-yukionna.af-original.com/en/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-12t16-00-00-02-00",
       "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
       "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -35,7 +67,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T16:06:56.218Z",
+      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -131,7 +163,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T16:06:56.218Z",
+      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -259,7 +291,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T16:06:56.218Z",
+      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -342,7 +374,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T16:06:56.218Z",
+      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"

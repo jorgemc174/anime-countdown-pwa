@@ -22,12 +22,12 @@
           "matchedTitle": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Doumo, Suki na Hito ni Horegusuri wo Irai Sareta Majo desu.\",\"Doumo, Suki na Hito ni Horegusuri wo Irai sareta Majo desu.\",\"Hello, I am a Witch and my Crush Wants me to Make a Love Potion!\",\"Hi, I'm a Witch, and My Crush Wants Me to Make a Love Potion\",\"Horemajo\",\"I'm a witch who's crush requested a love potion\",\"どうも、好きな人に惚れ薬を依頼された魔女です。\",\"惚れ魔女\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -66,12 +66,12 @@
           "matchedTitle": "Tensei Goblin dakedo Shitsumon Aru?",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"So What's Wrong with Getting Reborn as a Goblin?\",\"Tengobu\",\"Tensei Goblin Dakedo Shitsumon Aru?\",\"Tensei Goblin dakedo Shitsumon Aru?\",\"เกิดใหม่เป็นก็อบลินแล้วไง มีคำถามอะไรไหม?\",\"転ゴブ\",\"転生ゴブリンだけど質問ある？\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -121,8 +121,8 @@
           "matchedTitle": "Psyren",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
         },
         "AR": {
@@ -133,9 +133,18 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-01T16:22:00.300Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-01T22:24:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -159,14 +168,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-160803": {
@@ -179,8 +188,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T16:07:00.300Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -298,7 +307,7 @@
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -328,14 +337,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-206949": {
@@ -364,16 +373,12 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Nia Liston: The Merciless Maiden",
         "Kyouran Reijou Nia Liston",
@@ -417,12 +422,12 @@
           "matchedTitle": "Shiotaio no Sato-san ga Ore ni Dake Amai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -706,7 +711,7 @@
           "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -739,8 +744,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T16:07:00.300Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -870,7 +875,7 @@
           "nextRetryAt": "2026-10-31T01:07:28.479Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Gensou Suikoden",
         "幻想水滸伝",
@@ -905,8 +910,8 @@
           "matchedTitle": "Choujun! Choujou-senpai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Choujun! Choujou Senpai\",\"Choujun! Choujou-senpai\",\"Super Psychic Policeman Chojo\",\"超巡！超条先輩\"]]"
         },
         "AR": {
@@ -1152,7 +1157,7 @@
           "inputSignature": "[\"TV\",null,[\"Choujun! Choujou Senpai\",\"Choujun! Choujou-senpai\",\"Super Psychic Policeman Chojo\",\"超巡！超条先輩\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1187,12 +1192,12 @@
           "matchedTitle": "The Exiled Cheat Enchanter Enjoys a Leisurely Second Life: I Can Imbue \"Enhancement Points\" on Everything, Not Just Weapons, and I Can Cancel the Effects Anytime I Want, But Are the People Who Remained Really Okay?",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Chii-Fuyo\",\"The Exiled Cheat Enchanter Enjoys a Leisurely Second Life: I Can Imbue \\\"Enhancement Points\\\" on Everything, Not Just Weapons, and I Can Cancel the Effects Anytime I Want, But Are the People Who Remained Really Okay?\",\"The Exiled Cheating Magician Enjoys an Unrestrained Second Life.: I Can Give \\\"Strengthening Points\\\" Not Only to Weapons, But Also to Everything, and I Can Unlock the Effect at Any Time of My Will, But are the Rest Okay?\",\"The Laid-Off Cheat-Granting Mage Enjoys a New Life\",\"The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life\",\"Tsuihou Sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka Suru.: Ore wa Buki dake ja Naku, Arayuru Mono ni \\\"Kyouka Point\\\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?\",\"Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \\\"Kyouka Point\\\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?\",\"チー付与\",\"追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。 ～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～\",\"追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。　～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1478,7 +1483,7 @@
           "inputSignature": "[\"TV\",null,[\"Chiramune\",\"Chitose Is in the Ramune Bottle\",\"Chitose Is in the Ramune Bottle 2nd Cour\",\"Chitose Is in the Ramune Bottle Part 2\",\"Chitose is in the Ramune Bottle\",\"Chitose-kun wa Ramune Bin no Naka\",\"Chitose-kun wa Ramune Bin no Naka Part 2\",\"チラムネ\",\"千歳くんはラムネ瓶のなか 2クール\",\"千歳くんはラムネ瓶のなか 第2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1519,12 +1524,12 @@
           "matchedTitle": "Red River",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Anatolia Story\",\"Red River\",\"Sora wa Akai Kawa no Hotori\",\"天は赤い河のほとり\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1559,8 +1564,8 @@
           "matchedTitle": "Dark Machine the Animation",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"DARK MACHINE -The Animation-\",\"DARK MACHINE THE ANIMATION\",\"DARK MACHINE: The Animation\",\"Dark Machine the Animation\"]]"
         },
         "AR": {
@@ -1806,7 +1811,7 @@
           "inputSignature": "[\"TV\",null,[\"DARK MACHINE -The Animation-\",\"DARK MACHINE THE ANIMATION\",\"DARK MACHINE: The Animation\",\"Dark Machine the Animation\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1845,12 +1850,12 @@
           "matchedTitle": "Sasaki to Pii-chan",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"SHOW\",null,[\"Sasaki and Peeps 2nd Season\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"佐々木とピーちゃん 第２期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [],
       "aliases": [
         "Sasaki to Pii-chan 2nd Season",
@@ -1880,12 +1885,12 @@
           "matchedTitle": "The World's Strongest Witch",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Sekai Saikyou no Majo, Hajimemashita\",\"Sekai Saikyou no Majo, Hajimemashita: Watashi dake \\\"Kouryaku Site\\\" wo Mireru Sekai de Jiyuu ni Ikimasu\",\"Sekamajo\",\"The World's Strongest Witch\",\"せかまじょ\",\"世界最強の魔女、始めました\",\"世界最強の魔女、始めました　～私だけ『攻略サイト』を見れる世界で自由に生きます～\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -1918,7 +1923,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GVWU04E0G",
+              "url": "https://www.crunchyroll.com/watch/GMKUXG2E0",
               "monetizationType": "FLATRATE"
             },
             {
@@ -1931,8 +1936,8 @@
           "matchedTitle": "La detective está muerta",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
         },
         "AR": {
@@ -2178,7 +2183,7 @@
           "inputSignature": "[\"TV\",null,[\"La detective esta muerta. 2\",\"La detective está muerta\",\"Tanmoshi 2\",\"Tantei wa Mou, Shindeiru.\",\"Tantei wa Mou, Shindeiru. 2nd Season\",\"Tantei wa mou, Shindeiru. Season 2\",\"The Detective Is Already Dead\",\"The Detective Is Already Dead 2nd Season\",\"The Detective Is Already Dead Season 2\",\"นักสืบตายเเล้ว ภาค 2\",\"たんもし 2\",\"探偵はもう、死んでいる。Season2\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2208,7 +2213,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00385715ZHCN",
+              "url": "https://www.crunchyroll.com/watch/GE00375141JAJP",
               "monetizationType": "FLATRATE"
             },
             {
@@ -2221,12 +2226,12 @@
           "matchedTitle": "Paw & Palaces",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"SHOW\",null,[\"Paw & Palaces\",\"Zi Jin: Yu Miao Fang\",\"紫禁·御喵房\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [],
       "aliases": [
         "Zi Jin: Yu Miao Fang",
@@ -2256,13 +2261,9 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
         },
         "AR": {
           "status": "error",
@@ -2364,7 +2365,7 @@
           "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Magic Knight Rayearth (2026)",
         "魔法騎士レイアース (2026)",
@@ -2397,8 +2398,8 @@
           "matchedTitle": "Tensei Shitara Ken Deshita",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         },
         "AR": {
@@ -2653,7 +2654,7 @@
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "HIDIVE",
@@ -2717,13 +2718,9 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
         },
         "AR": {
           "status": "error",
@@ -2825,7 +2822,7 @@
           "nextRetryAt": "2026-10-31T21:57:55.220Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
         "Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen",
@@ -2865,12 +2862,12 @@
           "matchedTitle": "Dandivine",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Beast King War God Dandivine\",\"DANDIVINE\",\"Dandivine\",\"Gattaishin Series\",\"Gattaishin: Dandivine\",\"Juuou Mujin Dandivine\",\"Juuоu Mujin Dandivine\",\"獣王武神ダンデヴァイン\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -2904,8 +2901,8 @@
           "matchedTitle": "La magia de un retornado debe ser especial",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         },
         "AR": {
@@ -3096,7 +3093,7 @@
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3170,12 +3167,12 @@
           "matchedTitle": "Rompiendo el hielo",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Koori no Jyouheki",
         "The Ramparts of Ice",
@@ -3207,8 +3204,8 @@
             "TETSURYO! meet with Tetsudou Musume"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T16:07:00.300Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         },
         "AR": {
@@ -3318,7 +3315,7 @@
           "nextRetryAt": "2026-11-01T06:34:51.371Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "TETSURYO! Meet With Tetsudou Musume",
         "Tetsuryou! meet with Tetsudou Musume",
@@ -3359,8 +3356,8 @@
           "matchedTitle": "The Exiled Heavy Knight Knows How to Game the System",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Juukishi\",\"Kesatria Kelas Berat Tereinkarnasi yang Diasingkan Jadi Tanpa Tanding Dengan Pengetahuan Gimnya\",\"The Exiled Heavy Knight Knows How to Game the System\",\"The Exiled Reincarnated Heavy Knight Is Unrivaled in Game Knowledge\",\"Tsuihou Sareta Tensei Juukishi wa Game Chishiki de Musou Suru\",\"Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru\",\"เกิดใหม่เป็นอัศวินเกราะหนักผู้ถูกขับไล่แต่ใช้ความรู้จากเกมจนไร้เทียมทาน\",\"追放された転生重騎士はゲーム知識で無双する\"]]"
         },
         "AR": {
@@ -3606,7 +3603,7 @@
           "inputSignature": "[\"TV\",null,[\"Juukishi\",\"Kesatria Kelas Berat Tereinkarnasi yang Diasingkan Jadi Tanpa Tanding Dengan Pengetahuan Gimnya\",\"The Exiled Heavy Knight Knows How to Game the System\",\"The Exiled Reincarnated Heavy Knight Is Unrivaled in Game Knowledge\",\"Tsuihou Sareta Tensei Juukishi wa Game Chishiki de Musou Suru\",\"Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru\",\"เกิดใหม่เป็นอัศวินเกราะหนักผู้ถูกขับไล่แต่ใช้ความรู้จากเกมจนไร้เทียมทาน\",\"追放された転生重騎士はゲーム知識で無双する\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3644,14 +3641,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -3667,7 +3664,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
+              "url": "https://www.crunchyroll.com/watch/G8WUNMDDG",
               "monetizationType": "FLATRATE"
             },
             {
@@ -3680,12 +3677,12 @@
           "matchedTitle": "Magician of the Ice Sword",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -3728,13 +3725,9 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
         },
         "AR": {
           "status": "error",
@@ -3836,7 +3829,7 @@
           "nextRetryAt": "2026-10-30T20:12:37.986Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Hulu",
@@ -3874,16 +3867,12 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -3922,12 +3911,12 @@
           "matchedTitle": "Los diarios de la boticaria",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no Hitorigoto 3rd Season Mini Anime\",\"Los diarios de la boticaria\",\"Maomao no Hitorigoto 3rd Season\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3 Mini Anime\",\"The Apothecary Diaries: Maomao's Monologue Season 3\",\"猫猫のひとりごと 第3期\",\"薬屋のひとりごと 第3期\",\"薬屋のひとりごと 第3期 ミニアニメ\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -3968,8 +3957,8 @@
           "matchedTitle": "Toaru Anbu no Item",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"A Certain Dark Item\",\"A Certain Dark Side's Item\",\"Toaru Anbu no ITEM\",\"Toaru Anbu no Item\",\"とある暗部の少女共棲\"]]"
         },
         "AR": {
@@ -4215,7 +4204,7 @@
           "inputSignature": "[\"TV\",null,[\"A Certain Dark Item\",\"A Certain Dark Side's Item\",\"Toaru Anbu no ITEM\",\"Toaru Anbu no Item\",\"とある暗部の少女共棲\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4238,7 +4227,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384155PLPL",
+              "url": "https://www.crunchyroll.com/watch/GE00384155FRFR",
               "monetizationType": "FLATRATE"
             },
             {
@@ -4251,12 +4240,12 @@
           "matchedTitle": "Firefly Wedding",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"SHOW\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [],
       "aliases": [
         "Hotaru no Yomeiri",
@@ -4300,12 +4289,12 @@
           "matchedTitle": "Tougen Anki",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"TOUGEN ANKI: Nikko Kegon Falls Arc\",\"Tougen Anki\",\"Tougen Anki Season 2\",\"Tougen Anki: Nikko Kegon Falls Arc\",\"Tougen Anki: Nikko Kegon no Taki-hen\",\"Tougen Anki: Nikko・Kegon no Taki-hen\",\"桃源暗鬼 2期\",\"桃源暗鬼 日光・華厳の滝編\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4360,9 +4349,9 @@
           "matchedTitle": "Please Excuse My Younger Brothers",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
-          "inputSignature": "[\"TV\",null,[\"Please Excuse My Younger Brothers\",\"Sorry About My Little Brothers\",\"Uchi no Otouto-domo ga Sumimasen\",\"UchiOto\",\"うちの弟どもがすみません\",\"うち弟\"]]"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Please Excuse My Younger Brothers\",\"Quatre frères pour moi !\",\"Sorry About My Little Brothers\",\"Uchi no Otouto-domo ga Sumimasen\",\"UchiOto\",\"うちの弟どもがすみません\",\"うち弟\"]]"
         },
         "AR": {
           "status": "verified",
@@ -4581,7 +4570,7 @@
           "nextRetryAt": "2026-11-01T16:22:00.300Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4615,16 +4604,12 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Ghost Meets Gal!",
         "ごーすと・みーつ・ぎゃる！"
@@ -4652,12 +4637,12 @@
           "matchedTitle": "Magical Sisters LuluttoLilly",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"MSLL\",\"Magical Sisters Lulutto Lilly Part 2\",\"Magical Sisters LuluttoLilly\",\"Magical Sisters LuluttoLilly Part 2\",\"Mahou no Shimai Lulutto Lilly Part 2\",\"Mahou no Shimai LuluttoLilly Part 2\",\"るるりり\",\"魔法の姉妹ルルットリリィ 第2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "YouTube",
@@ -4696,12 +4681,12 @@
           "matchedTitle": "Sargento Keroro",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"KERORO☆\",\"Keroro Gunsou☆\",\"Sargento Keroro\",\"Sgt. Frog☆\",\"ケロロ軍曹☆\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -4728,7 +4713,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00375528JAJP",
+              "url": "https://www.crunchyroll.com/watch/GE00375528ENUS",
               "monetizationType": "FLATRATE"
             },
             {
@@ -4741,8 +4726,8 @@
           "matchedTitle": "Rilakkuma",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"RILAKKUMA\",\"Rilakkuma\",\"Rilakkuma Anime\",\"Rilakkuma: A Fine Day for a Full Tummy\",\"Rilakkuma: A Leisurely Dream Journey\",\"Rilakkuma: Goyururi Yume no Tabi\",\"Rilakkuma: Tekuteku Sekai Ryokou\",\"リラックマ\",\"リラックマ てくてく世界旅行\",\"リラックマ アニメ\",\"リラックマ ～ごゆるり夢の旅～\"]]"
         },
         "AR": {
@@ -5008,7 +4993,7 @@
           "inputSignature": "[\"TV_SHORT\",null,[\"RILAKKUMA\",\"Rilakkuma\",\"Rilakkuma Anime\",\"Rilakkuma: A Fine Day for a Full Tummy\",\"Rilakkuma: A Leisurely Dream Journey\",\"Rilakkuma: Goyururi Yume no Tabi\",\"Rilakkuma: Tekuteku Sekai Ryokou\",\"リラックマ\",\"リラックマ てくてく世界旅行\",\"リラックマ アニメ\",\"リラックマ ～ごゆるり夢の旅～\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5041,7 +5026,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384363JAJP",
+              "url": "https://www.crunchyroll.com/watch/GE00384363FRFR",
               "monetizationType": "FLATRATE"
             },
             {
@@ -5054,8 +5039,8 @@
           "matchedTitle": "The Vermilion Mask",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
         },
         "AR": {
@@ -5301,7 +5286,7 @@
           "inputSignature": "[\"TV\",null,[\"Shuiro no Kamen\",\"The Vermilion Mask\",\"朱色の仮面\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5361,8 +5346,8 @@
           "matchedTitle": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         },
         "AR": {
@@ -5595,7 +5580,7 @@
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5645,12 +5630,12 @@
           "matchedTitle": "A Wild Last Boss Appeared!",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"A Wild Last Boss Appeared!\",\"A Wild Last Boss Appeared! 2nd Season\",\"A Wild Last Boss Appeared! Season 2\",\"Yasei no Last Boss ga Arawareta! 2nd Season\",\"野生のラスボスが現れた！\",\"野生のラスボスが現れた！ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -5691,8 +5676,8 @@
           "matchedTitle": "Black Clover",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
         },
         "AR": {
@@ -6093,7 +6078,7 @@
           "inputSignature": "[\"TV\",null,[\"Black Clover\",\"Black Clover 2nd Season\",\"Black Clover Season 2\",\"ブラッククローバー 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -6136,12 +6121,12 @@
           "matchedTitle": "Los siete caballeros del Reino Marronnier",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -6424,12 +6409,12 @@
           "matchedTitle": "Vertex Force",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"VERTEX FORCE\",\"Vertex Force\",\"バーテックスフォース\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -6450,14 +6435,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-209872": {
@@ -6476,12 +6461,12 @@
           "matchedTitle": "Ranma ½",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Ranma 1/2 (2024) 3rd Season\",\"Ranma ½\",\"Ranma ½ (2024) 3rd Season\",\"Ranma1/2 (2024) Season 3\",\"らんま1/2 (2024) 第3期\",\"らんま1/2 第3期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -6505,14 +6490,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 7,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 8,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-203473": {
@@ -6536,8 +6521,8 @@
           "matchedTitle": "Horror Collector",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"HORROR COLLECTOR\",\"Horror Collector\",\"Kyoufu Collector\",\"恐怖コレクター\"]]"
         },
         "AR": {
@@ -6783,7 +6768,7 @@
           "inputSignature": "[\"TV\",null,[\"HORROR COLLECTOR\",\"Horror Collector\",\"Kyoufu Collector\",\"恐怖コレクター\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -6818,9 +6803,9 @@
           "matchedTitle": "Kashita Maryoku wa \"Revo Barai\" de Kyousei Choushuu",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
-          "inputSignature": "[\"TV\",null,[\"Kashita Maryoku wa \\\"Revo Barai\\\" de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu ~Youzumi to Party Tsuihou sareta Ore wa, Kawaii Support Yousei to Issho ni Toritateta Maryoku wo Unyou shite Saikyou wo Mezasu.\",\"Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Maryoku Revo\",\"貸した魔力は【リボ払い】で強制徴収\",\"貸した魔力は【リボ払い】で強制徴収～用済みとパーティー追放された俺は、可愛いサポート妖精と一緒に取り立てた魔力を運用して最強を目指す。～\",\"魔力リボ\"]]"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Kashita Maryoku wa \\\"Revo Barai\\\" de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu ~Youzumi to Party Tsuihou sareta Ore wa, Kawaii Support Yousei to Issho ni Toritateta Maryoku wo Unyou shite Saikyou wo Mezasu.\",\"Magic Repo Man: Dumped by My Party, I'll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Magic Repo Man: Dumped by My Party, I'll Cash In with a Cute Support Fairy to Become the Strongest!\",\"Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Maryoku Revo\",\"貸した魔力は【リボ払い】で強制徴収\",\"貸した魔力は【リボ払い】で強制徴収～用済みとパーティー追放された俺は、可愛いサポート妖精と一緒に取り立てた魔力を運用して最強を目指す。～\",\"魔力リボ\"]]"
         },
         "AR": {
           "status": "verified",
@@ -7065,7 +7050,7 @@
           "inputSignature": "[\"TV\",null,[\"Kashita Maryoku wa \\\"Revo Barai\\\" de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu\",\"Kashita Maryoku wa [Revo Barai] de Kyousei Choushuu ~Youzumi to Party Tsuihou sareta Ore wa, Kawaii Support Yousei to Issho ni Toritateta Maryoku wo Unyou shite Saikyou wo Mezasu.\",\"Magic Repo Man: Dumped by My Party, I'll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Magic Repo Man: Dumped by My Party, I'll Cash In with a Cute Support Fairy to Become the Strongest!\",\"Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!\",\"Maryoku Revo\",\"貸した魔力は【リボ払い】で強制徴収\",\"貸した魔力は【リボ払い】で強制徴収～用済みとパーティー追放された俺は、可愛いサポート妖精と一緒に取り立てた魔力を運用して最強を目指す。～\",\"魔力リボ\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -7114,9 +7099,9 @@
           "matchedTitle": "Star Detective Precure!",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
-          "inputSignature": "[\"TV\",null,[\"Meitantei Precure!\",\"Star Detective Precure!\",\"TanPre\",\"たんプリ\",\"名探偵プリキュア！\"]]"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Meitantei Precure!\",\"Star Detective PreCure!\",\"Star Detective Precure!\",\"TanPre\",\"たんプリ\",\"名探偵プリキュア！\"]]"
         },
         "AR": {
           "status": "verified",
@@ -7361,7 +7346,7 @@
           "inputSignature": "[\"TV\",null,[\"Meitantei Precure!\",\"Star Detective PreCure!\",\"Star Detective Precure!\",\"TanPre\",\"たんプリ\",\"名探偵プリキュア！\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -7389,14 +7374,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-213657": {
@@ -7415,12 +7400,12 @@
           "matchedTitle": "Mission: Yozakura Family",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Disney+",
@@ -7708,7 +7693,7 @@
           "inputSignature": "[\"TV\",null,[\"Ao Ashi\",\"Ao Ashi 2nd Season\",\"Aoashi\",\"Aoashi 2nd Season\",\"Aoashi Season 2\",\"アオアシ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -7740,14 +7725,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -7777,8 +7762,8 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T16:07:00.300Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         },
         "AR": {
@@ -7878,7 +7863,7 @@
           "nextRetryAt": "2026-10-30T17:26:17.896Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "Holo no Graffiti",
         "ホロのぐらふぃてぃ",
@@ -7904,7 +7889,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00389229FRFR",
+              "url": "https://www.crunchyroll.com/watch/GE00389229PTBR",
               "monetizationType": "FLATRATE"
             },
             {
@@ -7917,12 +7902,12 @@
           "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"SHOW\",null,[\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [],
       "aliases": [
         "Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai",
@@ -7947,8 +7932,8 @@
           "matchedTitle": "Uncle's Obsession with Cute Things",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Oji-san wa Kawaii Mono ga Osuki.\",\"Ojikawa\",\"Om-Om Suka yang Unyu-Unyu\",\"Pops Loves Kawaii Stuff\",\"Uncle's Obsession with Cute Things\",\"おじかわ\",\"おじさんはカワイイものがお好き。\"]]"
         },
         "AR": {
@@ -8139,7 +8124,7 @@
           "inputSignature": "[\"TV\",null,[\"Oji-san wa Kawaii Mono ga Osuki.\",\"Ojikawa\",\"Om-Om Suka yang Unyu-Unyu\",\"Pops Loves Kawaii Stuff\",\"Uncle's Obsession with Cute Things\",\"おじかわ\",\"おじさんはカワイイものがお好き。\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -8181,12 +8166,12 @@
           "matchedTitle": "TANK CHAIR",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"TANK CHAIR\",\"TANK CHAIR-戦車椅子-\",\"TANK CHAIR: Sensha Isu\",\"Tank Chair\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -8221,12 +8206,12 @@
           "matchedTitle": "Overgeared",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"OVERGEARED\",\"Overgeared\",\"Tempal - Item no Chikara\",\"Tempal: Item no Chikara\",\"Temppal\",\"テムパル ～アイテムの力～\",\"テムパル～アイテムの力～\",\"템빨\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -8265,12 +8250,12 @@
           "matchedTitle": "Full Clearing Another World under a Goddess with Zero Believers",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Clear the World Like a Game with the Zero Believer Goddess\",\"Full Clearing Another World under a Goddess with Zero Believers\",\"Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku\",\"信者ゼロの女神サマと始める異世界攻略\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -8305,9 +8290,9 @@
           "matchedTitle": "Yowaki MAX Reijou nanoni, Ratsuwan Konyakusha-sama",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
-          "inputSignature": "[\"TV\",null,[\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé\",\"Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta\",\"Yowaki MAX Reijou nanoni, Ratsuwan Konyakusha-sama\",\"弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった\"]]"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV\",null,[\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé\",\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet from My Cunning Fiancé\",\"Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta\",\"Yowaki MAX Reijou nanoni, Ratsuwan Konyakusha-sama\",\"弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった\"]]"
         },
         "AR": {
           "status": "verified",
@@ -8552,7 +8537,7 @@
           "inputSignature": "[\"TV\",null,[\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé\",\"Even Though I'm a Super Timid Noble Girl, I Accepted the Bet from My Cunning Fiancé\",\"Yowaki MAX Reijou Nano ni, Ratsuwan Konyakusha-sama no Kake ni Notte Shimatta\",\"Yowaki MAX Reijou nanoni, Ratsuwan Konyakusha-sama\",\"弱気MAX令嬢なのに、辣腕婚約者様の賭けに乗ってしまった\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -8588,8 +8573,8 @@
           "matchedTitle": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the New World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World 3rd Season\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3\",\"Tensei Kizoku, Kantei Skill de Nariagaru\",\"Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season\",\"転生貴族、鑑定スキルで成り上がる 第3期\"]]"
         },
         "AR": {
@@ -8835,7 +8820,7 @@
           "inputSignature": "[\"TV\",null,[\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the New World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World 3rd Season\",\"As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3\",\"Tensei Kizoku, Kantei Skill de Nariagaru\",\"Tensei Kizoku, Kantei Skill de Nariagaru 3rd Season\",\"転生貴族、鑑定スキルで成り上がる 第3期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -8885,8 +8870,8 @@
           "matchedTitle": "HOTEL INHUMANS",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"HOTEL INHUMANS\",\"HOTEL INHUMANS Season 2\",\"Hotel Inhumans\",\"Hotel Inhumans 2nd Season\",\"ホテル・インヒューマンズ 第2期\"]]"
         },
         "AR": {
@@ -9132,7 +9117,7 @@
           "inputSignature": "[\"TV\",null,[\"HOTEL INHUMANS\",\"HOTEL INHUMANS Season 2\",\"Hotel Inhumans\",\"Hotel Inhumans 2nd Season\",\"ホテル・インヒューマンズ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -9187,12 +9172,12 @@
           "matchedTitle": "Dragon Ball Super: Beerus",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -9230,12 +9215,12 @@
           "matchedTitle": "Kanata kara",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"From Far Away\",\"Kanata Kara\",\"Kanata kara\",\"彼方から\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Crunchyroll",
@@ -9261,14 +9246,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 7,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 8,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa": {
@@ -9279,14 +9264,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-217782": {
@@ -9307,16 +9292,12 @@
             }
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "aliases": [
         "My Girlfriend's Friend Mini Anime",
         "Kanojo no Tomodachi Mini Anime Gekijou",
@@ -9340,14 +9321,14 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 8,
-          "nextRetryAt": "2026-11-01T22:07:00.300Z"
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": []
     },
     "anilist-203275": {
@@ -9360,8 +9341,8 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T16:07:00.300Z",
-          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         },
         "AR": {
@@ -9475,7 +9456,7 @@
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -9531,12 +9512,12 @@
           "matchedTitle": "O Detective Conan",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"TV\",null,[\"Case Closed\",\"Detectiu Conan\",\"Detective Conan\",\"Detektiv Conan\",\"Detektyw Conan\",\"Detetive Conan\",\"Détective Conan\",\"Meitantei Conan\",\"Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story\",\"O Detective Conan\",\"Thám Tử Lừng Danh Conan\",\"הבלש קונאן\",\"المحقق كونان\",\"ยอดนักสืบจิ๋วโคนัน\",\"名侦探柯南\",\"名探偵コナン\",\"名探偵コナン 警察学校編 Wild Police Story\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Prime Video",
@@ -9783,7 +9764,7 @@
           "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [
         {
           "service": "Netflix",
@@ -10074,7 +10055,7 @@
           "inputSignature": "[\"TV\",null,[\"Re: Zero - Empezar de cero en un mundo diferente\",\"Re: Zero - Starting Life in Another World\",\"Re: Zero -Starting Life in Another World\",\"Re:ZERO -Starting Life in Another World-\",\"Re:ZERO -Starting Life in Another World- Season 4\",\"Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4\",\"Re:ZERO – Жизнь с нуля в альтернативном мире 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4\",\"Re:Zero kara Hajimeru Isekai Seikatsu 4th Season\",\"Re:ゼロから始める異世界生活 4th season\"]]"
         }
       },
-      "lastSeenAt": "2026-11-01T16:07:00.300Z",
+      "lastSeenAt": "2026-11-01T22:09:51.733Z",
       "anilistOffers": [],
       "aliases": [
         "Re:Zero kara Hajimeru Isekai Seikatsu 4",
@@ -10121,8 +10102,8 @@
           "matchedTitle": "Romelia Senki",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-01T06:19:51.371Z",
-          "lastAttemptAt": "2026-11-01T06:19:51.371Z",
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
           "inputSignature": "[\"ONA\",null,[\"A History of the Romelia\",\"Romelia Senki\",\"Romelia Senki: Maou wo Taoshita nochi mo Jinrui Yabasou dakara Guntai Soshiki Shita\",\"Romelia War Chronicle\",\"ロメリア戦記\",\"ロメリア戦記 〜魔王を倒した後も人類やばそうだから軍隊組織した〜\"]]"
         },
         "AR": {
@@ -10376,7 +10357,7 @@
         "ロメリア戦記 〜魔王を倒した後も人類やばそうだから軍隊組織した〜",
         "A History of the Romelia"
       ],
-      "lastSeenAt": "2026-11-01T16:07:00.300Z"
+      "lastSeenAt": "2026-11-01T22:09:51.733Z"
     },
     "anilist-206401": {
       "title": "FX Senshi Kurumi-chan",
@@ -10420,7 +10401,41 @@
         "FX戦士くるみちゃん",
         "Kurumi si Pejuang Forex"
       ],
-      "lastSeenAt": "2026-11-01T16:07:00.300Z"
+      "lastSeenAt": "2026-11-01T22:09:51.733Z"
+    },
+    "zombiesagashitemasu": {
+      "title": "#Zombie Sagashitemasu",
+      "anilistOffers": [],
+      "countries": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-01T22:09:51.733Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        }
+      },
+      "aliases": [
+        "#Zombie Sagashitemasu",
+        "#‌‌​I'm Looking For a Zombie",
+        "#ゾンビさがしてます",
+        "#I'm Looking for a Zombie"
+      ],
+      "lastSeenAt": "2026-11-01T22:09:51.733Z"
     }
   },
   "cooldowns": {
