@@ -24,13 +24,41 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "lastDelayCheck": "2026-11-02T06:21:23.632Z",
       "officialSources": [
         "https://anime-yukionna.af-original.com/",
         "https://anime-yukionna.af-original.com/en/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "anilistOffers": [],
+      "basePlatforms": {
+        "service": "No legal platform",
+        "serviceUrl": "",
+        "allServices": [],
+        "hasAllowedPlatform": false
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 9,
+          "nextRetryAt": "2026-11-02T04:09:51.733Z"
+        }
+      },
+      "platformSource": "",
+      "jwVerified": false,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "serviceUrls": {},
+      "platformStatus": "not-found",
+      "platformStale": true
     },
     {
       "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-12t16-00-00-02-00",
@@ -67,7 +95,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "lastDelayCheck": "2026-11-02T06:21:23.632Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -163,7 +191,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "lastDelayCheck": "2026-11-02T06:21:23.632Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -291,7 +319,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "lastDelayCheck": "2026-11-02T06:21:23.632Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -374,7 +402,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-01T22:09:45.236Z",
+      "lastDelayCheck": "2026-11-02T06:21:23.632Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
