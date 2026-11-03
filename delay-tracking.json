@@ -27,12 +27,57 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/zombie-sagashitemasu-6954f50ac029cfe366caf31f9f476f99.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [
         "https://zommasu.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "anilistOffers": [],
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://crunchyroll.com/series/GT00383996/im-looking-for-a-zombie",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T19:34:53.278Z",
+          "lastAttemptAt": "2026-11-02T19:34:53.278Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-02T19:34:53.278Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-5-2026-11-08t17-06-00-01-00",
@@ -58,7 +103,7 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [
         "https://anime-yukionna.af-original.com/",
         "https://anime-yukionna.af-original.com/en/"
@@ -129,7 +174,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -225,7 +270,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -353,7 +398,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -436,7 +481,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-02T19:34:44.781Z",
+      "lastDelayCheck": "2026-11-03T02:57:24.196Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
