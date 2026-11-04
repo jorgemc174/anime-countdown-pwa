@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-04T01:28:19.189Z",
-  "checkedAt": "2026-11-04T01:28:19.189Z",
+  "updatedAt": "2026-11-04T11:07:07.492Z",
+  "checkedAt": "2026-11-04T11:07:07.492Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -730,8 +730,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -853,7 +853,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -924,8 +924,8 @@
             "凶乱令嬢ニア・リストン"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         },
         "AR": {
@@ -1084,7 +1084,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -1162,8 +1162,8 @@
           "matchedTitle": "Shiotaio no Sato-san ga Ore ni Dake Amai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san Is Only Sweet to Me\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         },
         "AR": {
@@ -1374,7 +1374,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389847JAJP",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.cfc37635-b22f-4bb8-8777-c181e96790c2"
@@ -1741,7 +1741,7 @@
       "anilistUrl": "https://anilist.co/anime/200294",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384013",
@@ -2081,8 +2081,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -2216,7 +2216,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -4414,8 +4414,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -4527,7 +4531,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLVs8KIyueUjWQEJ83sa8kpo4jIjWh_aWT"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tensei-shitara-ken-deshita-2-6-2026-11-04t16-30-00-01-00",
@@ -4954,8 +4958,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -5067,7 +5075,7 @@
         "YouTube": "https://www.youtube.com/@%E3%82%A2%E3%83%8B%E3%83%A1%E6%96%B0%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-juuou-mujin-dandivine-5-2026-11-04t18-00-00-01-00",
@@ -6061,6 +6069,193 @@
           "checkedAt": "2026-11-04T01:28:19.359Z",
           "lastAttemptAt": "2026-11-04T01:28:19.359Z",
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -6136,8 +6331,8 @@
             "TETSURYO! meet with Tetsudou Musume"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         },
         "AR": {
@@ -6251,7 +6446,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -6619,12 +6814,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-05T16:05:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU",
-      "allServices": [
-        "YouTube"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
       "anilistId": 212144,
       "anilistOffers": [
@@ -6646,15 +6839,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "justwatchId": "ts484026",
+          "matchedTitle": "With Vengeance, Sincerely, Your Broken Saintess",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         },
         "AR": {
           "status": "error",
@@ -6789,16 +6982,14 @@
           "nextRetryAt": "2026-11-03T19:50:04.049Z"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-5-2026-11-05t18-00-00-01-00",
@@ -6820,7 +7011,7 @@
       "releaseDate": "2026-11-05T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/watch/G0DUN805P",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GX9UQJZGM",
       "allServices": [
         "Crunchyroll",
         "Crunchyroll Amazon Channel"
@@ -6859,7 +7050,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/G0DUN805P",
+              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
               "monetizationType": "FLATRATE"
             },
             {
@@ -6872,9 +7063,9 @@
           "matchedTitle": "Magician of the Ice Sword",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu\",\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         },
         "AR": {
           "status": "error",
@@ -7097,9 +7288,9 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUN805P",
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GX9UQJZGM",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e9770b58-b8ee-433d-bf48-6f2b6169c4a4"
       },
       "platformStatus": "verified",
@@ -7173,8 +7364,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -7285,7 +7480,7 @@
         "Netflix": "https://www.netflix.com/title/82116553"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-demons-crest-2-2026-11-06t13-01-00-01-00",
@@ -7338,8 +7533,8 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         },
         "AR": {
@@ -7457,7 +7652,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -8009,7 +8204,7 @@
       "anilistUrl": "https://anilist.co/anime/204650",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 72,
+      "anilistScore": 73,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki",
@@ -8918,8 +9113,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -9031,7 +9230,7 @@
         "YouTube": "https://www.youtube.com/@animetoman"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ghost-meets-gal-10-2026-11-07t00-01-00-01-00",
@@ -9090,8 +9289,66 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -9103,7 +9360,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-mahou-no-shimai-lulutto-lilly-part-2-5-2026-11-07t01-01-00-01-00",
@@ -9449,7 +9706,7 @@
       "anilistUrl": "https://anilist.co/anime/183231",
       "anilistFormat": "TV_SHORT",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
@@ -10599,7 +10856,7 @@
       "anilistUrl": "https://anilist.co/anime/187402",
       "anilistFormat": "ONA",
       "anilistYear": null,
-      "anilistScore": 69,
+      "anilistScore": 70,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://crunchyroll.com/series/GT00371633/a-tale-of-the-secret-saint",
@@ -11761,9 +12018,9 @@
           "matchedTitle": "Los siete caballeros del Reino Marronnier",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Die sieben Ritter des Königreichs der Marronniers\",\"I sette cavalieri del regno di Marronnier\",\"Les 7 Chevaliers du Royaume des Marronniers\",\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         },
         "AR": {
           "status": "verified",
@@ -11992,7 +12249,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
         "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd"
@@ -12323,11 +12580,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -12633,11 +12890,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -13708,9 +13965,9 @@
           "matchedTitle": "Mission: Yozakura Family",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura Family\",\"Yozakura-san Chi no Daisakusen\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         },
         "AR": {
           "status": "verified",
@@ -13888,7 +14145,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Disney+": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb"
       },
@@ -13963,8 +14220,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -14072,7 +14333,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ao-ashi-2nd-season-6-2026-11-08t11-00-00-01-00",
@@ -14445,7 +14706,7 @@
       "anilistUrl": "https://anilist.co/anime/213658",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 80,
+      "anilistScore": 81,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
@@ -14461,11 +14722,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -14475,6 +14736,96 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-04T01:43:19.359Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -16529,8 +16880,8 @@
           "matchedTitle": "Dragon Ball Super: Beerus",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super : Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         },
         "AR": {
@@ -16800,7 +17151,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389313JAJP",
         "Netflix": "https://www.netflix.com/title/83189604",
@@ -16852,7 +17203,7 @@
       "anilistUrl": "https://anilist.co/anime/209463",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 68,
+      "anilistScore": 69,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384000/from-far-away",
@@ -17513,11 +17864,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -17591,8 +17942,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -17604,7 +17959,7 @@
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-dark-summoner-to-dekiteiru-6-2026-11-08t17-21-00-01-00",
@@ -17644,11 +17999,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -18386,8 +18741,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -18509,7 +18864,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -18580,8 +18935,8 @@
             "凶乱令嬢ニア・リストン"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         },
         "AR": {
@@ -18740,7 +19095,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -18818,8 +19173,8 @@
           "matchedTitle": "Shiotaio no Sato-san ga Ore ni Dake Amai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san Is Only Sweet to Me\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         },
         "AR": {
@@ -19030,7 +19385,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389847JAJP",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.cfc37635-b22f-4bb8-8777-c181e96790c2"
@@ -19397,7 +19752,7 @@
       "anilistUrl": "https://anilist.co/anime/200294",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384013",
@@ -19737,8 +20092,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -19872,7 +20227,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -22070,8 +22425,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -22183,7 +22542,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLVs8KIyueUjWQEJ83sa8kpo4jIjWh_aWT"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tensei-shitara-ken-deshita-2-7-2026-11-11t16-30-00-01-00",
@@ -22610,8 +22969,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -22723,7 +23086,7 @@
         "YouTube": "https://www.youtube.com/@%E3%82%A2%E3%83%8B%E3%83%A1%E6%96%B0%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-juuou-mujin-dandivine-6-2026-11-11t18-00-00-01-00",
@@ -23717,6 +24080,193 @@
           "checkedAt": "2026-11-04T01:28:19.359Z",
           "lastAttemptAt": "2026-11-04T01:28:19.359Z",
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -23792,8 +24342,8 @@
             "TETSURYO! meet with Tetsudou Musume"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         },
         "AR": {
@@ -23907,7 +24457,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -24275,12 +24825,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-12T16:05:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU",
-      "allServices": [
-        "YouTube"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
       "anilistId": 212144,
       "anilistOffers": [
@@ -24302,15 +24850,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "justwatchId": "ts484026",
+          "matchedTitle": "With Vengeance, Sincerely, Your Broken Saintess",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         },
         "AR": {
           "status": "error",
@@ -24445,16 +24993,14 @@
           "nextRetryAt": "2026-11-03T19:50:04.049Z"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-6-2026-11-12t18-00-00-01-00",
@@ -24476,7 +25022,7 @@
       "releaseDate": "2026-11-12T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/watch/G0DUN805P",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GX9UQJZGM",
       "allServices": [
         "Crunchyroll",
         "Crunchyroll Amazon Channel"
@@ -24515,7 +25061,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/G0DUN805P",
+              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
               "monetizationType": "FLATRATE"
             },
             {
@@ -24528,9 +25074,9 @@
           "matchedTitle": "Magician of the Ice Sword",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu\",\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         },
         "AR": {
           "status": "error",
@@ -24753,9 +25299,9 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUN805P",
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GX9UQJZGM",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e9770b58-b8ee-433d-bf48-6f2b6169c4a4"
       },
       "platformStatus": "verified",
@@ -24829,8 +25375,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -24941,7 +25491,7 @@
         "Netflix": "https://www.netflix.com/title/82116553"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-demons-crest-3-2026-11-13t13-01-00-01-00",
@@ -24994,8 +25544,8 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         },
         "AR": {
@@ -25113,7 +25663,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -25665,7 +26215,7 @@
       "anilistUrl": "https://anilist.co/anime/204650",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 72,
+      "anilistScore": 73,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki",
@@ -26574,8 +27124,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -26687,7 +27241,7 @@
         "YouTube": "https://www.youtube.com/@animetoman"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ghost-meets-gal-11-2026-11-14t00-01-00-01-00",
@@ -26746,8 +27300,66 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -26759,7 +27371,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-mahou-no-shimai-lulutto-lilly-part-2-6-2026-11-14t01-01-00-01-00",
@@ -27105,7 +27717,7 @@
       "anilistUrl": "https://anilist.co/anime/183231",
       "anilistFormat": "TV_SHORT",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
@@ -28255,7 +28867,7 @@
       "anilistUrl": "https://anilist.co/anime/187402",
       "anilistFormat": "ONA",
       "anilistYear": null,
-      "anilistScore": 69,
+      "anilistScore": 70,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://crunchyroll.com/series/GT00371633/a-tale-of-the-secret-saint",
@@ -29417,9 +30029,9 @@
           "matchedTitle": "Los siete caballeros del Reino Marronnier",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Die sieben Ritter des Königreichs der Marronniers\",\"I sette cavalieri del regno di Marronnier\",\"Les 7 Chevaliers du Royaume des Marronniers\",\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         },
         "AR": {
           "status": "verified",
@@ -29648,7 +30260,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
         "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd"
@@ -29979,11 +30591,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -30289,11 +30901,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -31628,9 +32240,9 @@
           "matchedTitle": "Mission: Yozakura Family",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura Family\",\"Yozakura-san Chi no Daisakusen\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         },
         "AR": {
           "status": "verified",
@@ -31808,7 +32420,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Disney+": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb"
       },
@@ -31883,8 +32495,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -31992,7 +32608,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ao-ashi-2nd-season-7-2026-11-15t11-00-00-01-00",
@@ -32365,7 +32981,7 @@
       "anilistUrl": "https://anilist.co/anime/213658",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 80,
+      "anilistScore": 81,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
@@ -32381,11 +32997,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -32395,6 +33011,96 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-04T01:43:19.359Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -34449,8 +35155,8 @@
           "matchedTitle": "Dragon Ball Super: Beerus",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super : Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         },
         "AR": {
@@ -34720,7 +35426,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389313JAJP",
         "Netflix": "https://www.netflix.com/title/83189604",
@@ -34772,7 +35478,7 @@
       "anilistUrl": "https://anilist.co/anime/209463",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 68,
+      "anilistScore": 69,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384000/from-far-away",
@@ -35433,11 +36139,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -35484,11 +36190,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -35562,8 +36268,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -35575,7 +36285,7 @@
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-dark-summoner-to-dekiteiru-7-2026-11-15t17-21-00-01-00",
@@ -35615,11 +36325,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -36657,8 +37367,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -36780,7 +37490,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -36851,8 +37561,8 @@
             "凶乱令嬢ニア・リストン"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         },
         "AR": {
@@ -37011,7 +37721,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -37089,8 +37799,8 @@
           "matchedTitle": "Shiotaio no Sato-san ga Ore ni Dake Amai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san Is Only Sweet to Me\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         },
         "AR": {
@@ -37301,7 +38011,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389847JAJP",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.cfc37635-b22f-4bb8-8777-c181e96790c2"
@@ -37668,7 +38378,7 @@
       "anilistUrl": "https://anilist.co/anime/200294",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384013",
@@ -38008,8 +38718,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -38143,7 +38853,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -40341,8 +41051,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -40454,7 +41168,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLVs8KIyueUjWQEJ83sa8kpo4jIjWh_aWT"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tensei-shitara-ken-deshita-2-8-2026-11-18t16-30-00-01-00",
@@ -40881,8 +41595,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -40994,7 +41712,7 @@
         "YouTube": "https://www.youtube.com/@%E3%82%A2%E3%83%8B%E3%83%A1%E6%96%B0%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-juuou-mujin-dandivine-7-2026-11-18t18-00-00-01-00",
@@ -41988,6 +42706,193 @@
           "checkedAt": "2026-11-04T01:28:19.359Z",
           "lastAttemptAt": "2026-11-04T01:28:19.359Z",
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -42063,8 +42968,8 @@
             "TETSURYO! meet with Tetsudou Musume"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         },
         "AR": {
@@ -42178,7 +43083,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -42546,12 +43451,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-19T16:05:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU",
-      "allServices": [
-        "YouTube"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
       "anilistId": 212144,
       "anilistOffers": [
@@ -42573,15 +43476,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "justwatchId": "ts484026",
+          "matchedTitle": "With Vengeance, Sincerely, Your Broken Saintess",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         },
         "AR": {
           "status": "error",
@@ -42716,16 +43619,14 @@
           "nextRetryAt": "2026-11-03T19:50:04.049Z"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-7-2026-11-19t18-00-00-01-00",
@@ -42747,7 +43648,7 @@
       "releaseDate": "2026-11-19T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/watch/G0DUN805P",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GX9UQJZGM",
       "allServices": [
         "Crunchyroll",
         "Crunchyroll Amazon Channel"
@@ -42786,7 +43687,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/G0DUN805P",
+              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
               "monetizationType": "FLATRATE"
             },
             {
@@ -42799,9 +43700,9 @@
           "matchedTitle": "Magician of the Ice Sword",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu\",\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         },
         "AR": {
           "status": "error",
@@ -43024,9 +43925,9 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUN805P",
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GX9UQJZGM",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e9770b58-b8ee-433d-bf48-6f2b6169c4a4"
       },
       "platformStatus": "verified",
@@ -43100,8 +44001,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -43212,7 +44117,7 @@
         "Netflix": "https://www.netflix.com/title/82116553"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-demons-crest-4-2026-11-20t13-01-00-01-00",
@@ -43265,8 +44170,8 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         },
         "AR": {
@@ -43384,7 +44289,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -43936,7 +44841,7 @@
       "anilistUrl": "https://anilist.co/anime/204650",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 72,
+      "anilistScore": 73,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki",
@@ -44845,8 +45750,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -44958,7 +45867,7 @@
         "YouTube": "https://www.youtube.com/@animetoman"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ghost-meets-gal-12-2026-11-21t00-01-00-01-00",
@@ -45017,8 +45926,66 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -45030,7 +45997,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-mahou-no-shimai-lulutto-lilly-part-2-7-2026-11-21t01-01-00-01-00",
@@ -45376,7 +46343,7 @@
       "anilistUrl": "https://anilist.co/anime/183231",
       "anilistFormat": "TV_SHORT",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
@@ -46526,7 +47493,7 @@
       "anilistUrl": "https://anilist.co/anime/187402",
       "anilistFormat": "ONA",
       "anilistYear": null,
-      "anilistScore": 69,
+      "anilistScore": 70,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://crunchyroll.com/series/GT00371633/a-tale-of-the-secret-saint",
@@ -47688,9 +48655,9 @@
           "matchedTitle": "Los siete caballeros del Reino Marronnier",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Die sieben Ritter des Königreichs der Marronniers\",\"I sette cavalieri del regno di Marronnier\",\"Les 7 Chevaliers du Royaume des Marronniers\",\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         },
         "AR": {
           "status": "verified",
@@ -47919,7 +48886,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
         "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd"
@@ -48321,11 +49288,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -48631,11 +49598,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -49970,9 +50937,9 @@
           "matchedTitle": "Mission: Yozakura Family",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura Family\",\"Yozakura-san Chi no Daisakusen\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         },
         "AR": {
           "status": "verified",
@@ -50150,7 +51117,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Disney+": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb"
       },
@@ -50225,8 +51192,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -50334,7 +51305,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ao-ashi-2nd-season-8-2026-11-22t11-00-00-01-00",
@@ -50707,7 +51678,7 @@
       "anilistUrl": "https://anilist.co/anime/213658",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 80,
+      "anilistScore": 81,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
@@ -50723,11 +51694,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -50737,6 +51708,96 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-04T01:43:19.359Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -52791,8 +53852,8 @@
           "matchedTitle": "Dragon Ball Super: Beerus",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super : Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         },
         "AR": {
@@ -53062,7 +54123,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389313JAJP",
         "Netflix": "https://www.netflix.com/title/83189604",
@@ -53114,7 +54175,7 @@
       "anilistUrl": "https://anilist.co/anime/209463",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 68,
+      "anilistScore": 69,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384000/from-far-away",
@@ -53775,11 +54836,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -53826,11 +54887,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -53904,8 +54965,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -53917,7 +54982,7 @@
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-dark-summoner-to-dekiteiru-8-2026-11-22t17-21-00-01-00",
@@ -53957,11 +55022,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -54999,8 +56064,8 @@
           "matchedTitle": "Mahou Shoujo Ikusei Keikaku: Restart",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         },
         "AR": {
@@ -55122,7 +56187,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -55193,8 +56258,8 @@
             "凶乱令嬢ニア・リストン"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         },
         "AR": {
@@ -55353,7 +56418,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -55431,8 +56496,8 @@
           "matchedTitle": "Shiotaio no Sato-san ga Ore ni Dake Amai",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"ShioAma\",\"Shiotaio no Sato-san ga Ore ni Dake Amai\",\"Shiotaiou no Satou-san ga Ore ni dake Amai\",\"The Cold Sato-san Is Only Sweet to Me\",\"The Cold Sato-san is Only Sweet to Me\",\"The Salty Koharu Has a Soft Spot for Me\",\"しおあま\",\"塩対応の佐藤さんが俺にだけ甘い\"]]"
         },
         "AR": {
@@ -55643,7 +56708,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389847JAJP",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.cfc37635-b22f-4bb8-8777-c181e96790c2"
@@ -56010,7 +57075,7 @@
       "anilistUrl": "https://anilist.co/anime/200294",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384013",
@@ -56350,8 +57415,8 @@
             "Suikoden: The Anime"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         },
         "AR": {
@@ -56485,7 +57550,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -58683,8 +59748,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -58796,7 +59865,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLVs8KIyueUjWQEJ83sa8kpo4jIjWh_aWT"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-tensei-shitara-ken-deshita-2-9-2026-11-25t16-30-00-01-00",
@@ -59223,8 +60292,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Shin Tennis no Ouji-sama: U-17 WORLD CUP Kesshou Member Ketteisen\",\"Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen\",\"The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match\",\"The Prince of Tennis II U-17 WORLD CUP: The Final Tryouts\",\"新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -59336,7 +60409,7 @@
         "YouTube": "https://www.youtube.com/@%E3%82%A2%E3%83%8B%E3%83%A1%E6%96%B0%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E7%8E%8B%E5%AD%90%E6%A7%98%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-juuou-mujin-dandivine-8-2026-11-25t18-00-00-01-00",
@@ -59987,8 +61060,8 @@
           "matchedTitle": "Fool night",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"ONA\",null,[\"Fool Night\",\"Fool night\",\"フールナイト\"]]"
         },
         "AR": {
@@ -60106,7 +61179,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -60502,6 +61575,193 @@
           "checkedAt": "2026-11-04T01:28:19.359Z",
           "lastAttemptAt": "2026-11-04T01:28:19.359Z",
           "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "The Ramparts of Ice",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Rompiendo el hielo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Quebrar o Gelo",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/82031882",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts469083",
+          "matchedTitle": "Koori no Jyouheki",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Koori no Jouheki 2nd Season\",\"Koori no Jyouheki\",\"Quebrar o Gelo\",\"Rompiendo el hielo\",\"The Ramparts of Ice\",\"The Ramparts of Ice 2nd Season\",\"The Ramparts of Ice Season 2\",\"氷の城壁 第2期\"]]"
         }
       },
       "platformSource": "justwatch",
@@ -60577,8 +61837,8 @@
             "TETSURYO! meet with Tetsudou Musume"
           ],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         },
         "AR": {
@@ -60692,7 +61952,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -61060,12 +62320,10 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-26T16:05:00.000Z",
       "originalReleaseDate": "",
-      "service": "YouTube",
-      "serviceUrl": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU",
-      "allServices": [
-        "YouTube"
-      ],
-      "hasAllowedPlatform": true,
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
       "anilistId": 212144,
       "anilistOffers": [
@@ -61087,15 +62345,15 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "justwatchId": "ts484026",
+          "matchedTitle": "With Vengeance, Sincerely, Your Broken Saintess",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         },
         "AR": {
           "status": "error",
@@ -61230,16 +62488,14 @@
           "nextRetryAt": "2026-11-03T19:50:04.049Z"
         }
       },
-      "platformSource": "anilist",
+      "platformSource": "",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
-      },
-      "platformStatus": "not-found",
-      "platformStale": true
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
+      "serviceUrls": {},
+      "platformStatus": "no-offers",
+      "platformStale": false
     },
     {
       "id": "schedule-hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-8-2026-11-26t18-00-00-01-00",
@@ -61261,7 +62517,7 @@
       "releaseDate": "2026-11-26T17:00:00.000Z",
       "originalReleaseDate": "",
       "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/watch/G0DUN805P",
+      "serviceUrl": "https://www.crunchyroll.com/watch/GX9UQJZGM",
       "allServices": [
         "Crunchyroll",
         "Crunchyroll Amazon Channel"
@@ -61300,7 +62556,7 @@
           "offers": [
             {
               "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/G0DUN805P",
+              "url": "https://www.crunchyroll.com/watch/GX9UQJZGM",
               "monetizationType": "FLATRATE"
             },
             {
@@ -61313,9 +62569,9 @@
           "matchedTitle": "Magician of the Ice Sword",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Hyouken no Majutsushi ga Sekai wo Suberu\",\"Hyouken no Majutsushi ga Sekai wo Suberu II\",\"Magician of the Ice Sword\",\"The Iceblade Sorcerer Shall Rule the World\",\"The Iceblade Sorcerer Shall Rule the World II\",\"The Iceblade Sorcerer Shall Rule the World Season 2\",\"冰剣の魔術師が世界を統べるII\",\"冰剣の魔術師が世界を統べるⅡ\"]]"
         },
         "AR": {
           "status": "error",
@@ -61538,9 +62794,9 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUN805P",
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GX9UQJZGM",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e9770b58-b8ee-433d-bf48-6f2b6169c4a4"
       },
       "platformStatus": "verified",
@@ -61614,8 +62870,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE\",\"JoJo no Kimyou na Bouken: Steel Ball Run - 2nd & 3rd STAGE\",\"JoJo's Bizarre Adventure: Part 7–Steel Ball Run\",\"JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE\",\"SBR\",\"STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd - 3rd STAGE\",\"ジョジョの奇妙な冒険 スティール・ボール・ラン 2nd＆3rd STAGE\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -61726,7 +62986,7 @@
         "Netflix": "https://www.netflix.com/title/82116553"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-demons-crest-5-2026-11-27t13-01-00-01-00",
@@ -61779,8 +63039,8 @@
           "matchedTitle": "Demons' Crest",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DemoKure\",\"Demons' Crest\",\"Devils' Crest\",\"デモクレ\",\"デモンズ・クレスト\"]]"
         },
         "AR": {
@@ -61898,7 +63158,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {},
       "platformStatus": "no-offers",
       "platformStale": false
@@ -62450,7 +63710,7 @@
       "anilistUrl": "https://anilist.co/anime/204650",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 72,
+      "anilistScore": 73,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki",
@@ -63359,8 +64619,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Tokyo Revengers (Sequel)\",\"Tokyo Revengers: Santen Sensou-hen\",\"Tokyo Revengers: War of the Three Titans Arc\",\"東京リベンジャーズ 三天戦争編\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -63472,7 +64736,7 @@
         "YouTube": "https://www.youtube.com/@animetoman"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ghost-meets-gal-13-2026-11-28t00-01-00-01-00",
@@ -63531,8 +64795,66 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -63544,7 +64866,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-mahou-no-shimai-lulutto-lilly-part-2-8-2026-11-28t01-01-00-01-00",
@@ -63890,7 +65212,7 @@
       "anilistUrl": "https://anilist.co/anime/183231",
       "anilistFormat": "TV_SHORT",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 65,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00374493/rilakkuma",
@@ -65040,7 +66362,7 @@
       "anilistUrl": "https://anilist.co/anime/187402",
       "anilistFormat": "ONA",
       "anilistYear": null,
-      "anilistScore": 69,
+      "anilistScore": 70,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://crunchyroll.com/series/GT00371633/a-tale-of-the-secret-saint",
@@ -66202,9 +67524,9 @@
           "matchedTitle": "Los siete caballeros del Reino Marronnier",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Die sieben Ritter des Königreichs der Marronniers\",\"I sette cavalieri del regno di Marronnier\",\"Les 7 Chevaliers du Royaume des Marronniers\",\"Los siete caballeros del Reino Marronnier\",\"Marronnier Oukoku no Shichinin no Kishi\",\"Os Sete Cavaleiros do Reino Marronnier\",\"Siedmiu Rycerzy Królestwa Marronnier\",\"The Seven Knights of the Marronnier Kingdom\",\"マロニエ王国の七人の騎士\"]]"
         },
         "AR": {
           "status": "verified",
@@ -66433,7 +67755,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd",
         "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.3bbd9a28-ec6d-4ade-ae49-0a6754e5ffcd"
@@ -66835,11 +68157,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -67145,11 +68467,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 13,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 14,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -68484,9 +69806,9 @@
           "matchedTitle": "Mission: Yozakura Family",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV\",null,[\"Mission: Yozakura Family\",\"Mission: Yozakura Family 2nd Season Part 2\",\"Mission: Yozakura Family Season 2 Part 2\",\"Yozakura Family\",\"Yozakura-san Chi no Daisakusen\",\"Yozakura-san Chi no Daisakusen 2nd Season Part 2\",\"夜桜さんちの大作戦 第2期 第2クール\",\"夜桜さんちの大作戦 第2期2クール\"]]"
         },
         "AR": {
           "status": "verified",
@@ -68664,7 +69986,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-04T01:28:19.359Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Disney+": "https://www.disneyplus.com/browse/entity-ac689bea-f955-4d95-8693-7b87b5a309cb"
       },
@@ -68739,8 +70061,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -68848,7 +70174,7 @@
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-ao-ashi-2nd-season-9-2026-11-29t11-00-00-01-00",
@@ -69221,7 +70547,7 @@
       "anilistUrl": "https://anilist.co/anime/213658",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 80,
+      "anilistScore": 81,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond",
@@ -69237,11 +70563,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         },
         "AR": {
           "status": "error",
@@ -69251,6 +70577,96 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-04T01:43:19.359Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -71305,8 +72721,8 @@
           "matchedTitle": "Dragon Ball Super: Beerus",
           "aliases": [],
           "lookupVersion": 6,
-          "checkedAt": "2026-11-03T19:35:04.049Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "checkedAt": "2026-11-04T11:07:07.683Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "inputSignature": "[\"TV\",null,[\"DBS Beerus\",\"Dragon Ball Super : Beerus\",\"Dragon Ball Super: Beerus\",\"ドラゴンボール超 ビルス\"]]"
         },
         "AR": {
@@ -71576,7 +72992,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-03T19:35:04.049Z",
+      "jwVerifiedAt": "2026-11-04T11:07:07.683Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389313JAJP",
         "Netflix": "https://www.netflix.com/title/83189604",
@@ -71628,7 +73044,7 @@
       "anilistUrl": "https://anilist.co/anime/209463",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 68,
+      "anilistScore": 69,
       "basePlatforms": {
         "service": "Crunchyroll",
         "serviceUrl": "https://www.crunchyroll.com/series/GT00384000/from-far-away",
@@ -72289,11 +73705,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -72367,8 +73783,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-04T01:28:19.359Z",
-          "lastAttemptAt": "2026-11-04T01:28:19.359Z",
-          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]"
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"Kanojo no Tomodachi Mini Anime Gekijou\",\"My Girlfriend's Friend\",\"My Girlfriend's Friend Mini Anime\",\"彼女の友達\",\"彼女の友達 ミニアニメ劇場\"]]",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-04T11:22:07.683Z"
         }
       },
       "platformSource": "anilist",
@@ -72380,7 +73800,7 @@
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
       "platformStatus": "not-found",
-      "platformStale": false
+      "platformStale": true
     },
     {
       "id": "schedule-dark-summoner-to-dekiteiru-9-2026-11-29t17-21-00-01-00",
@@ -72420,11 +73840,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -72463,7 +73883,7 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/zombie-sagashitemasu-6954f50ac029cfe366caf31f9f476f99.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [
         "https://zommasu.com/"
       ],
@@ -72539,7 +73959,7 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [
         "https://anime-yukionna.af-original.com/",
         "https://anime-yukionna.af-original.com/en/"
@@ -72559,11 +73979,11 @@
           "offers": [],
           "lookupVersion": 2,
           "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-03T19:35:04.049Z",
+          "lastAttemptAt": "2026-11-04T11:07:07.683Z",
           "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
           "errorProvider": "AniList",
-          "consecutiveErrors": 14,
-          "nextRetryAt": "2026-11-04T01:35:04.049Z"
+          "consecutiveErrors": 15,
+          "nextRetryAt": "2026-11-04T17:07:07.683Z"
         }
       },
       "platformSource": "",
@@ -72609,7 +74029,7 @@
       "scheduleStatus": "pending",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
@@ -72957,7 +74377,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [
         "https://www.ytv.co.jp/conan/",
         "https://www.ytv.co.jp/conan/police/"
@@ -73087,7 +74507,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [
         "https://aonohako-anime.com/"
       ],
@@ -73359,7 +74779,7 @@
       ],
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-04T01:28:10.925Z",
+      "lastDelayCheck": "2026-11-04T11:07:00.489Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
@@ -73635,8 +75055,8 @@
     }
   ],
   "platforms": {
-    "checked": 132,
-    "errors": 3,
+    "checked": 52,
+    "errors": 29,
     "issues": [
       {
         "key": "anilist-160803",
@@ -74002,10 +75422,10 @@
         "key": "anilist-178868",
         "title": "Magic Knight Rayearth (2026)",
         "country": "ES",
-        "reason": "unresolved-title-with-source-platform",
+        "reason": "lookup-error",
         "status": "not-found",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-04T01:28:19.359Z"
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-178868",
@@ -74110,10 +75530,10 @@
         "key": "anilist-199068",
         "title": "Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen",
         "country": "ES",
-        "reason": "unresolved-title-with-source-platform",
+        "reason": "lookup-error",
         "status": "not-found",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-04T01:28:19.359Z"
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-199068",
@@ -74213,105 +75633,6 @@
         "status": "error",
         "errorProvider": "AniList",
         "lastAttemptAt": "2026-10-31T21:42:55.220Z"
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-213805",
-        "title": "Koori no Jouheki 2nd Season",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
       },
       {
         "key": "anilist-199594",
@@ -74406,15 +75727,6 @@
       {
         "key": "anilist-212144",
         "title": "Kizu darake Seijo yori Houfuku wo Komete 2nd Season",
-        "country": "ES",
-        "reason": "lookup-error",
-        "status": "not-found",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
-      },
-      {
-        "key": "anilist-212144",
-        "title": "Kizu darake Seijo yori Houfuku wo Komete 2nd Season",
         "country": "AR",
         "reason": "lookup-error",
         "status": "error",
@@ -74479,10 +75791,10 @@
         "key": "anilist-210482",
         "title": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run - 2nd - 3rd STAGE",
         "country": "ES",
-        "reason": "unresolved-title-with-source-platform",
+        "reason": "lookup-error",
         "status": "not-found",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-04T01:28:19.359Z"
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-210482",
@@ -74803,10 +76115,10 @@
         "key": "anilist-178083",
         "title": "Tokyo Revengers: Santen Sensou-hen",
         "country": "ES",
-        "reason": "unresolved-title-with-source-platform",
+        "reason": "lookup-error",
         "status": "not-found",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-04T01:28:19.359Z"
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-178083",
@@ -74910,6 +76222,15 @@
       {
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
+        "country": "ES",
+        "reason": "lookup-error",
+        "status": "not-found",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
+      },
+      {
+        "key": "anilist-214703",
+        "title": "Ghost Meets Gal!",
         "country": "MX",
         "reason": "not-checked",
         "status": "pending",
@@ -74920,28 +76241,28 @@
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
@@ -74965,19 +76286,19 @@
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
@@ -74992,10 +76313,10 @@
         "key": "anilist-214703",
         "title": "Ghost Meets Gal!",
         "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-214703",
@@ -75247,7 +76568,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "magicalexplorererogenoyuujincharanitenseishitakedogamechishikitsukattejiyuuniikiru",
@@ -75355,7 +76676,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "seitokainimoanawaaru",
@@ -75473,6 +76794,15 @@
         "status": "error",
         "errorProvider": "JustWatch",
         "lastAttemptAt": "2026-11-04T01:28:19.359Z"
+      },
+      {
+        "key": "anilist-118123",
+        "title": "Holo no Graffiti",
+        "country": "ES",
+        "reason": "lookup-error",
+        "status": "not-found",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-118123",
@@ -75580,16 +76910,16 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
@@ -75604,82 +76934,82 @@
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-213658",
         "title": "Diamond no Ace Act II: Second Season Part 2",
         "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "reason": "lookup-error",
+        "status": "error",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "mezametarasaikyousoubitouchuusenmochidattanodeikkodatemezashiteyouheitoshitejiyuuniikitai",
@@ -75832,7 +77162,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "mousecursordegenjitsuwosousadekiruyouninattanodeonnanokowoippaiclickshimaasu",
@@ -75932,6 +77262,15 @@
         "status": "pending",
         "errorProvider": null,
         "lastAttemptAt": null
+      },
+      {
+        "key": "anilist-217782",
+        "title": "Kanojo no Tomodachi",
+        "country": "ES",
+        "reason": "lookup-error",
+        "status": "not-found",
+        "errorProvider": "AniList",
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "anilist-217782",
@@ -76039,7 +77378,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "darksummonertodekiteiru",
@@ -76147,7 +77486,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-03T19:35:04.049Z"
+        "lastAttemptAt": "2026-11-04T11:07:07.683Z"
       },
       {
         "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
@@ -76367,80 +77706,80 @@
       }
     ],
     "totalFailure": false,
-    "queued": 753,
+    "queued": 775,
     "rateLimited": false,
     "coverage": {
       "ES": {
         "total": 76,
         "verified": 56,
         "pending": 0,
-        "stale": 7
+        "stale": 13
       },
       "MX": {
         "total": 76,
-        "verified": 44,
-        "pending": 25,
-        "stale": 50
+        "verified": 45,
+        "pending": 24,
+        "stale": 54
       },
       "AR": {
         "total": 76,
-        "verified": 41,
-        "pending": 31,
-        "stale": 53
+        "verified": 42,
+        "pending": 30,
+        "stale": 56
       },
       "CL": {
         "total": 76,
-        "verified": 45,
-        "pending": 28,
-        "stale": 51
+        "verified": 46,
+        "pending": 27,
+        "stale": 55
       },
       "CO": {
         "total": 76,
-        "verified": 46,
-        "pending": 27,
-        "stale": 51
+        "verified": 47,
+        "pending": 26,
+        "stale": 55
       },
       "US": {
         "total": 76,
-        "verified": 46,
-        "pending": 27,
-        "stale": 51
+        "verified": 47,
+        "pending": 26,
+        "stale": 55
       },
       "GB": {
         "total": 76,
-        "verified": 46,
-        "pending": 24,
-        "stale": 50
+        "verified": 47,
+        "pending": 23,
+        "stale": 54
       },
       "DE": {
         "total": 76,
-        "verified": 48,
-        "pending": 24,
-        "stale": 50
+        "verified": 49,
+        "pending": 23,
+        "stale": 55
       },
       "FR": {
         "total": 76,
-        "verified": 46,
-        "pending": 26,
-        "stale": 51
+        "verified": 47,
+        "pending": 25,
+        "stale": 55
       },
       "IT": {
         "total": 76,
-        "verified": 45,
-        "pending": 24,
-        "stale": 50
+        "verified": 46,
+        "pending": 23,
+        "stale": 54
       },
       "BR": {
         "total": 76,
-        "verified": 43,
-        "pending": 30,
-        "stale": 52
+        "verified": 44,
+        "pending": 29,
+        "stale": 56
       },
       "PT": {
         "total": 76,
-        "verified": 41,
-        "pending": 26,
-        "stale": 51
+        "verified": 42,
+        "pending": 25,
+        "stale": 55
       }
     },
     "countries": [
@@ -76458,7 +77797,7 @@
       "PT"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-11-04T01:28:19.359Z",
+    "checkedAt": "2026-11-04T11:07:07.683Z",
     "series": 76
   }
 }
