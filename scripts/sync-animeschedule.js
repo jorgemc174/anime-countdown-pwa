@@ -237,7 +237,6 @@ async function fetchPublicAnilistSchedule() {
   const appendMedia = (media) => {
     if (!media?.anilistId || seen.has(media.anilistId)) return;
     if (!Number.isFinite(Date.parse(media.releaseDate || ""))) return;
-    if (media.isAdult === true || (media.genres || []).some(genre => String(genre).toLowerCase() === "hentai")) return;
     if (!isSeasonalSeriesItem(media)) return;
     seen.add(media.anilistId);
     releases.push(mapPublicAnilistRelease(media));
@@ -372,6 +371,7 @@ function mapPublicAnilistRelease(media) {
     animeKey: stableId(title),
     anilistId: media.anilistId,
     anilistOffers: media.anilistOffers || [],
+    ...(media.isAdult || (media.genres || []).some(genre => ["hentai", "erotica"].includes(String(genre).toLowerCase())) ? { isAdult: true } : {}),
     anilistTitle: title,
     anilistUrl: media.siteUrl || "",
     anilistFormat: media.anilistFormat || "",
@@ -510,6 +510,7 @@ async function enrichAndAppendAnilistReleases(baseReleases, timeZone = "Europe/M
       ...item,
       anilistId: media.anilistId || item.anilistId,
       anilistOffers: media.anilistOffers || [],
+      ...(media.isAdult ? { isAdult: true } : {}),
       anilistTitle: media.anilistTitle || media.title || item.anilistTitle,
       anilistUrl: media.anilistUrl || item.anilistUrl,
       anilistFormat: media.anilistFormat || item.anilistFormat,
@@ -1065,6 +1066,7 @@ module.exports = {
   normalizeSchedule,
   hasUsableExistingSchedule,
   fetchPublicAnilistSchedule,
+  enrichAndAppendAnilistReleases,
   reconcileAnimeScheduleWithAnilist,
   getSeriesMatchScore,
   normalizeTitle,

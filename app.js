@@ -208,7 +208,7 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v105";
+const APP_CACHE_NAME = "anime-countdown-pwa-v106";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -1048,7 +1048,10 @@ async function toggleNotifications() {
   if (hasNativeNotif) {
     try {
       const LocalNotifications = getLocalNotifications();
-      if (LocalNotifications) await LocalNotifications.cancelAll();
+      if (LocalNotifications) {
+        const { notifications } = await LocalNotifications.getPending();
+        if (notifications.length) await LocalNotifications.cancel({ notifications });
+      }
     } catch (_) {}
   }
   updateNotificationButton();
@@ -1394,6 +1397,7 @@ function mapSharedRelease(row) {
     originalReleaseDate: row.originalReleaseDate || row.original_release_date || "",
     basePlatforms: row.basePlatforms,
     anilistOffers: row.anilistOffers || [],
+    ...(row.isAdult === true ? { isAdult: true } : {}),
     platformsByCountry: row.platformsByCountry || {},
     service: row.service || "No legal platform",
     serviceUrl: normalizeUrl(row.service_url || row.serviceUrl || ""),
@@ -2879,16 +2883,8 @@ function hasKodomoSignal(item) {
 }
 function hasAdultAnilistTag(item) {
   const blockedGenres = ["hentai", "erotica"];
-  const blockedTags = ["hentai", "nudity", "sexual", "erotica", "incest"];
   const genres = Array.isArray(item.genres) ? item.genres : [];
-  const tags = Array.isArray(item.tags) ? item.tags : [];
-  if (genres.some((genre) => blockedGenres.includes(String(genre || "").toLowerCase()))) return true;
-  return tags.some((tag) => {
-    const name = String(tag?.name || tag || "").toLowerCase();
-    const rank = Number(tag?.rank || 0);
-    const tokens = name.split(/[^a-z0-9]+/).filter(Boolean);
-    return tag?.isAdult === true || (rank >= 40 && blockedTags.some((word) => tokens.includes(word)));
-  });
+  return genres.some(genre => blockedGenres.includes(String(genre || "").toLowerCase()));
 }
 function getAllItems() { return [...state.releases, ...state.anilistLibrary]; }
 function findItemById(id) { return getAllItems().find(item=>item.id===id); }
@@ -3122,8 +3118,10 @@ function createCardModern(item) {
   card.addEventListener("keydown", event => {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
+  const fallbackSource = { anilist: "AniList", animeschedule: "AnimeSchedule" }[item.platformSource];
+  const unverifiedBadge = fallbackSource ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource}: puede no estar disponible en tu país">Sin verificar</span>` : "";
   const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
 

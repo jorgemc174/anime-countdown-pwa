@@ -32,6 +32,42 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await scenario("disabling native notifications cancels pending entries only when present", async page => {
+      await page.goto(base); await ready(page);
+      assert.deepEqual(await page.evaluate(async () => {
+        const cancelled = [];
+        let notifications = [{ id: 11 }, { id: 22 }];
+        window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+          getPending: async () => ({ notifications }),
+          cancel: async value => cancelled.push(value)
+        } } };
+        state.notificationEnabled = true; await toggleNotifications();
+        notifications = [];
+        state.notificationEnabled = true; await toggleNotifications();
+        delete window.Capacitor;
+        return { cancelled, enabled: state.notificationEnabled };
+      }), { cancelled: [{ notifications: [{ id: 11 }, { id: 22 }] }], enabled: false });
+    });
+    await scenario("shared adult rows are hidden by default and shown when enabled", async page => {
+      await page.route("**/schedule.json", route => route.fulfill({ json: { ...payload, releases: [{ ...baseRow, isAdult: true }] } }));
+      await page.goto(base); await ready(page);
+      await page.locator("#showAllBtn").click();
+      assert.equal(await page.locator(".anime-card").count(), 0);
+      await page.evaluate(() => toggleContentFilter("adult"));
+      assert.equal(await page.locator(".anime-card").count(), 1);
+    });
+    await scenario("cards label only fallback links and isolated tags do not mark adult", async page => {
+      await page.goto(base); await ready(page);
+      assert.deepEqual(await page.evaluate(() => {
+        const sources = ["anilist", "animeschedule", "justwatch", ""];
+        return sources.map(platformSource => {
+          const card = createCardModern({ ...state.releases[0], platformSource });
+          const badge = [...card.querySelectorAll(".badge")].find(el => el.textContent === "Sin verificar");
+          return badge?.title || "";
+        });
+      }), ["Enlace de AniList: puede no estar disponible en tu país", "Enlace de AnimeSchedule: puede no estar disponible en tu país", "", ""]);
+      assert.equal(await page.evaluate(() => isSchedulableItem({ tags: [{ name: "Nudity", rank: 90, isAdult: true }] })), true);
+    });
     await scenario("ONA is visible by default and its stored filter migrates only once", async page => {
       await page.addInitScript(() => {
         if (!localStorage.getItem("animeCountdownStorage")) localStorage.setItem("animeCountdownStorage", JSON.stringify({ hiddenContent: ["adult", "kodomo", "ona"] }));

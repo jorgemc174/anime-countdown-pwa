@@ -197,14 +197,14 @@ test("indefinite source statuses suppress even a supplied SUB timestamp", () => 
   }
 });
 
-test("public AniList metadata ignores isolated tags but excludes adult and Hentai media", async t => {
+test("public AniList metadata retains adult media and ignores isolated tags", async t => {
   const airingAt = Math.floor(Date.now() / 1000) + 86400;
   const media = [
     ["Sasaki to Pii-chan", "Vore"], ["#Zombie Sagashitemasu", "Amputation"], ["Magical★Explorer", "Nudity"],
-    ["Adult", ""], ["Hentai", ""]
+    ["Adult", ""], ["Hentai", ""], ["Erotica", ""]
   ].map(([title, tag], index) => ({
     id: index + 1, title: { romaji: title }, format: "TV", isAdult: index === 3,
-    genres: index === 4 ? ["Hentai"] : [], tags: [{ name: tag, isAdult: true, rank: 80 }],
+    genres: index === 4 ? ["Hentai"] : index === 5 ? ["Erotica"] : [], tags: [{ name: tag, isAdult: true, rank: 80 }],
     nextAiringEpisode: { episode: 1, airingAt },
     externalLinks: [{ site: "Crunchyroll", type: "STREAMING", url: "https://crunchyroll.com/show" }]
   }));
@@ -218,11 +218,19 @@ test("public AniList metadata ignores isolated tags but excludes adult and Henta
   const originalModule = require.cache[modulePath];
   delete require.cache[modulePath];
   t.after(() => { require.cache[modulePath] = originalModule; });
-  const { fetchPublicAnilistSchedule } = require(modulePath);
+  const { fetchPublicAnilistSchedule, enrichAndAppendAnilistReleases } = require(modulePath);
   const result = await fetchPublicAnilistSchedule();
-  assert.deepEqual(result.map(item => item.anilistId).sort(), [1, 2, 3]);
+  assert.deepEqual(result.map(item => item.anilistId).sort(), [1, 2, 3, 4, 5, 6]);
+  const enriched = await enrichAndAppendAnilistReleases(result.map(({ isAdult, ...item }) => item));
+  assert.equal(enriched.matched, 6);
+  assert.equal(enriched.added, 0);
+  for (const item of enriched.releases) {
+    assert.equal(item.isAdult, item.anilistId >= 4 ? true : undefined);
+    assert.equal("isAdult" in item, item.anilistId >= 4);
+  }
   for (const item of result) {
     assert.equal(item.anilistOffers[0].service, "Crunchyroll");
-    for (const key of ["tags", "genres", "isAdult"]) assert.equal(key in item, false);
+    for (const key of ["tags", "genres"]) assert.equal(key in item, false);
+    assert.equal(item.isAdult, item.anilistId >= 4 ? true : undefined);
   }
 });

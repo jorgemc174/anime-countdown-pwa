@@ -397,3 +397,36 @@ test("title lookups without an AniList id omit the id and treat a 404 as no matc
   assert.equal(result.status, "not-found");
   assert.deepEqual(anilistVariables, [{ search: "Serie sin ficha" }]);
 });
+
+
+test("fallback brands require their own domain while JustWatch remains authoritative", () => {
+  const cases = [
+    ["Crunchyroll", "https://evilcrunchyroll.com/", false],
+    ["Crunchyroll", "https://crunchyroll.com.evil.example/", false],
+    ["Netflix", "https://unrelated.example/", false],
+    ["Prime Video", "https://www.amazon.es/show", true],
+    ["Prime Video", "https://amazon.evil/show", false],
+    ["Crunchyroll", "https://www.crunchyroll.com/", true],
+    ["Bilibili TV", "https://www.bilibili.tv/", true],
+    ...[
+      ["HIDIVE", "hidive.com"], ["Netflix", "netflix.com"], ["Disney+", "disneyplus.com"],
+      ["Hulu", "hulu.com"], ["Max", "max.com"], ["Max", "hbomax.com"],
+      ["Prime Video", "primevideo.com"], ["Apple TV+", "tv.apple.com"], ["Apple TV+", "apple.co"],
+      ["YouTube", "youtube.com"], ["YouTube", "youtu.be"], ["Bilibili", "bilibili.com"],
+      ["iQ", "iq.com"], ["iQIYI", "iqiyi.com"], ["OceanVeil", "oceanveil.net"],
+      ["Tubi TV", "tubitv.com"], ["Crackle", "crackle.com"], ["Tencent Video", "v.qq.com"], ["WeTV", "wetv.vip"],
+      ...["com", "es", "de", "fr", "it", "co.uk", "co.jp", "com.mx", "com.br"].map(tld => ["Prime Video", `amazon.${tld}`])
+    ].flatMap(([service, host]) => [[service, `https://${host}/`, true], [service, "https://unrelated.example/", false]]),
+    ["Unknown", "https://unrelated.example/", true],
+    ["constructor", "https://unrelated.example/", true]
+  ];
+  for (const [service, url, accepted] of cases) {
+    const offer = { service, url };
+    const fallback = policy.applyCountryPlatforms({ anilistOffers: [offer] });
+    assert.equal(fallback.platformSource, accepted ? "anilist" : "", `${service}: ${url}`);
+    const schedule = policy.applyCountryPlatforms({ service, serviceUrl: url });
+    assert.equal(schedule.platformSource, accepted ? "animeschedule" : "", `${service}: ${url}`);
+    const verified = policy.applyCountryPlatforms({ platformsByCountry: { ES: { status: "verified", offers: [offer] } } });
+    assert.equal(verified.platformSource, "justwatch");
+  }
+});

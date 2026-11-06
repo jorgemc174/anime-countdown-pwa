@@ -123,6 +123,23 @@
     }
     return [...result.values()].sort((a, b) => (PRIORITY[a.service] || 50) - (PRIORITY[b.service] || 50));
   }
+  const FALLBACK_DOMAINS = {
+    crunchyroll: ["crunchyroll.com"], hidive: ["hidive.com"], netflix: ["netflix.com"],
+    disney: ["disneyplus.com"], disneyplus: ["disneyplus.com"], hulu: ["hulu.com"], max: ["max.com", "hbomax.com"],
+    primevideo: ["primevideo.com", ...["com", "es", "de", "fr", "it", "co.uk", "co.jp", "com.mx", "com.br"].map(tld => `amazon.${tld}`)],
+    appletv: ["tv.apple.com", "apple.co"], youtube: ["youtube.com", "youtu.be"],
+    bilibili: ["bilibili.tv", "bilibili.com"], bilibilitv: ["bilibili.tv", "bilibili.com"],
+    iq: ["iq.com"], iqiyi: ["iqiyi.com"], oceanveil: ["oceanveil.net"], tubitv: ["tubitv.com"],
+    crackle: ["crackle.com"], tencentvideo: ["v.qq.com"], wetv: ["wetv.vip"]
+  };
+  function validFallbackOffer(offer) {
+    const url = httpsUrl(offer.url);
+    if (!offer.service || !url) return false;
+    const serviceKey = normalize(offer.service);
+    const domains = Object.hasOwn(FALLBACK_DOMAINS, serviceKey) ? FALLBACK_DOMAINS[serviceKey] : null;
+    const host = new URL(url).hostname;
+    return !domains || domains.some(domain => host === domain || host.endsWith(`.${domain}`));
+  }
   function applyCountryPlatforms(item, country = "ES", now = Date.now()) {
     const base = basePlatforms(item);
     const record = item.platformsByCountry?.[country];
@@ -130,9 +147,9 @@
       ? record.offers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
     const useAnilist = !offers.length && (!record || ["not-found", "pending", "error", "no-offers"].includes(record.status));
     const fallback = useAnilist && Array.isArray(item.anilistOffers)
-      ? item.anilistOffers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
+      ? item.anilistOffers.filter(validFallbackOffer) : [];
     const baseUrl = httpsUrl(base.serviceUrl);
-    const scheduleOffers = base.service && base.service !== "No legal platform" && baseUrl
+    const scheduleOffers = base.service && base.service !== "No legal platform" && validFallbackOffer({ service: base.service, url: baseUrl })
       ? [{ service: base.service, url: baseUrl }] : [];
     const visibleOffers = offers.length ? offers : fallback.length ? fallback : scheduleOffers;
     const best = visibleOffers[0];

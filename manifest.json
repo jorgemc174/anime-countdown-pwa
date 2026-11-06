@@ -1,6 +1,6 @@
 {
-  "name": "Anime Countdown",
-  "short_name": "AnimeCountdown",
+  "name": "AniCountdown",
+  "short_name": "AniCountdown",
   "description": "Anime release countdown with AnimeSchedule and AniList.",
   "start_url": "./index.html",
   "scope": "./",

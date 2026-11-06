@@ -1,6 +1,6 @@
 {
   "appId": "com.animecountdown.app",
-  "appName": "AnimeCountdown",
+  "appName": "AniCountdown",
   "webDir": "www",
   "server": {
     "androidScheme": "https",

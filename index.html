@@ -9,20 +9,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
-  <title>Anime Countdown</title>
+  <title>AniCountdown</title>
   <script>
     try {
       const s = JSON.parse(localStorage.getItem("animeCountdownStorage") || "{}");
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=105" />
+  <link rel="stylesheet" href="./styles.css?v=106" />
 </head>
 <body>
   <main class="app">
     <header class="header">
       <div>
-        <p class="eyebrow">Anime Countdown</p>
+        <p class="eyebrow">AniCountdown</p>
         <h1>Estrenos SUB</h1>
       </div>
       <button id="settingsBtn" class="settings-top-btn" type="button" aria-label="Mostrar ajustes" aria-expanded="false">Ajustes</button>
@@ -111,9 +111,9 @@
       </section>
     </div>
   </main>
-  <script src="./schedule-policy.js?v=105"></script>
-  <script src="./platform-policy.js?v=105"></script>
-  <script src="./config.js?v=105"></script>
-  <script src="./app.js?v=105"></script>
+  <script src="./schedule-policy.js?v=106"></script>
+  <script src="./platform-policy.js?v=106"></script>
+  <script src="./config.js?v=106"></script>
+  <script src="./app.js?v=106"></script>
 </body>
 </html>

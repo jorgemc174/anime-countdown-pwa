@@ -794,6 +794,12 @@ h3 {
   background: rgba(112, 84, 170, 0.28);
 }
 
+.badge-unverified {
+  color: var(--muted);
+  background: rgba(128, 128, 128, 0.12);
+  font-weight: 500;
+}
+
 .badge-premiere {
   color: #c6f7e5;
   background: rgba(47, 175, 135, 0.22);
