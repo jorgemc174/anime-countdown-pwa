@@ -341,7 +341,8 @@
       "titles": [
         "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "The Lonely Snow Widow and the Cursed Ring",
-        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+        "The Shy Snow Woman and the Cursed Ring"
       ],
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
       "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
@@ -356,7 +357,7 @@
       "serviceUrl": "",
       "allServices": [],
       "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212667-8g5ktyrx34Yl.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
       "lastDelayCheck": "2026-11-06T21:27:49.453Z",
@@ -366,7 +367,12 @@
       ],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
-      "anilistOffers": [],
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/523"
+        }
+      ],
       "basePlatforms": {
         "service": "No legal platform",
         "serviceUrl": "",
@@ -492,7 +498,14 @@
       "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": true,
+      "anilistId": 212667,
+      "isAdult": true,
+      "anilistTitle": "The Lonely Snow Widow and the Cursed Ring",
+      "anilistUrl": "https://anilist.co/anime/212667",
+      "anilistFormat": "ONA",
+      "anilistYear": null,
+      "anilistScore": 64
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",

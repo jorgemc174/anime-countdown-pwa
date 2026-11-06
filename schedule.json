@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-06T21:44:21.571Z",
-  "checkedAt": "2026-11-06T21:44:21.571Z",
+  "updatedAt": "2026-11-06T22:04:02.279Z",
+  "checkedAt": "2026-11-06T22:04:02.279Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -3649,10 +3649,11 @@
           ],
           "justwatchId": "ts360266",
           "matchedTitle": "Sasaki to Pii-chan",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -3901,7 +3902,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G4VUQVP2P",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9dd1b40b-661e-4b27-8c64-85b3e7d3b7f5"
@@ -8015,12 +8016,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-06T19:30:09.325Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-06T21:59:21.721Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-11-06T22:34:02.463Z"
         },
         "AR": {
           "status": "error",
@@ -8895,10 +8896,11 @@
           ],
           "justwatchId": "ts516716",
           "matchedTitle": "Firefly Wedding",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"Les Noces des Lucioles\",\"ホタルの嫁入り\"]]"
         },
         "AR": {
           "status": "verified",
@@ -9147,7 +9149,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384155ES419",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d518b586-4bdb-4c0a-8877-a182a4a853b0"
@@ -10303,12 +10305,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-06T19:30:09.325Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-06T21:59:21.721Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-11-06T22:34:02.463Z"
         },
         "AR": {
           "status": "error",
@@ -15000,8 +15002,10 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
+          "justwatchId": "ts471256",
+          "matchedTitle": "Seitokai ni mo Ana wa Aru!",
           "aliases": [
             "Even the Student Council Has Its Holes!",
             "Seitokai ni mo Ana wa Aru!",
@@ -15010,24 +15014,10 @@
             "NamaAnaru",
             "สภานักเรียนฉบับรั่ว!"
           ],
-          "anilistOffers": [
-            {
-              "service": "OceanVeil",
-              "url": "https://oceanveil.net/anime_titles/542"
-            },
-            {
-              "service": "Bilibili TV",
-              "url": "https://www.bilibili.tv/en/media/2433041"
-            },
-            {
-              "service": "iQ",
-              "url": "https://www.iq.com/album/28ki6pjn6a1"
-            }
-          ],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         },
         "AR": {
           "status": "not-found",
@@ -15262,13 +15252,13 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
         "iQ": "https://www.iq.com/album/28ki6pjn6a1"
       },
-      "platformStatus": "not-found",
+      "platformStatus": "no-offers",
       "platformStale": false
     },
     {
@@ -17269,10 +17259,11 @@
           ],
           "justwatchId": "ts469750",
           "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Mezameza\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         },
         "AR": {
           "status": "verified",
@@ -17521,7 +17512,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389229PTBR",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.46be8191-8efd-4650-bef7-bd640a44f1b2"
@@ -20543,6 +20534,115 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-06T21:59:21.721Z"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-folge-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-episode-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+            "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+            "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+            "Click Me All Over",
+            "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
       "platformSource": "anilist",
@@ -20616,6 +20716,184 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1430-my-girlfriends-friend/32966-folge-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1430-my-girlfriends-friend/32966-episode-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb13fae3-da50-46f9-bd78-8fb8910b3ed8",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "Kanojo no Tomodachi",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -20694,6 +20972,207 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "DE": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "FR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/interstitial/1025227",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "IT": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "MX": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -24353,10 +24832,11 @@
           ],
           "justwatchId": "ts360266",
           "matchedTitle": "Sasaki to Pii-chan",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -24605,7 +25085,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G4VUQVP2P",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9dd1b40b-661e-4b27-8c64-85b3e7d3b7f5"
@@ -29098,10 +29578,11 @@
           ],
           "justwatchId": "ts395707",
           "matchedTitle": "Los diarios de la boticaria",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Die Tagebücher der Apothekerin\",\"Diários de uma Apotecária\",\"Il monologo della speziale\",\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no hitorigoto\",\"Les Carnets de l'apothicaire\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -29445,7 +29926,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUMNJ5K",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.09bc7869-150b-41c6-80c5-77cc284dff0e"
@@ -29844,10 +30325,11 @@
           ],
           "justwatchId": "ts516716",
           "matchedTitle": "Firefly Wedding",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"Les Noces des Lucioles\",\"ホタルの嫁入り\"]]"
         },
         "AR": {
           "status": "verified",
@@ -30096,7 +30578,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384155ES419",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d518b586-4bdb-4c0a-8877-a182a4a853b0"
@@ -31252,12 +31734,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-06T19:30:09.325Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-06T21:59:21.721Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-11-06T22:34:02.463Z"
         },
         "AR": {
           "status": "error",
@@ -35949,8 +36431,10 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
+          "justwatchId": "ts471256",
+          "matchedTitle": "Seitokai ni mo Ana wa Aru!",
           "aliases": [
             "Even the Student Council Has Its Holes!",
             "Seitokai ni mo Ana wa Aru!",
@@ -35959,24 +36443,10 @@
             "NamaAnaru",
             "สภานักเรียนฉบับรั่ว!"
           ],
-          "anilistOffers": [
-            {
-              "service": "OceanVeil",
-              "url": "https://oceanveil.net/anime_titles/542"
-            },
-            {
-              "service": "Bilibili TV",
-              "url": "https://www.bilibili.tv/en/media/2433041"
-            },
-            {
-              "service": "iQ",
-              "url": "https://www.iq.com/album/28ki6pjn6a1"
-            }
-          ],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         },
         "AR": {
           "status": "not-found",
@@ -36211,13 +36681,13 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
         "iQ": "https://www.iq.com/album/28ki6pjn6a1"
       },
-      "platformStatus": "not-found",
+      "platformStatus": "no-offers",
       "platformStale": false
     },
     {
@@ -38482,10 +38952,11 @@
           ],
           "justwatchId": "ts469750",
           "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Mezameza\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         },
         "AR": {
           "status": "verified",
@@ -38734,7 +39205,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389229PTBR",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.46be8191-8efd-4650-bef7-bd640a44f1b2"
@@ -41756,6 +42227,115 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-06T21:59:21.721Z"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-folge-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-episode-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+            "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+            "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+            "Click Me All Over",
+            "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
       "platformSource": "anilist",
@@ -41775,7 +42355,8 @@
       "titles": [
         "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "The Lonely Snow Widow and the Cursed Ring",
-        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+        "The Shy Snow Woman and the Cursed Ring"
       ],
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
       "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
@@ -41786,12 +42367,26 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-15T16:06:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
-      "anilistOffers": [],
+      "service": "OceanVeil",
+      "serviceUrl": "https://oceanveil.net/anime_titles/523",
+      "allServices": [
+        "OceanVeil"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212667-8g5ktyrx34Yl.jpg",
+      "anilistId": 212667,
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/523"
+        }
+      ],
+      "isAdult": true,
+      "anilistTitle": "The Lonely Snow Widow and the Cursed Ring",
+      "anilistUrl": "https://anilist.co/anime/212667",
+      "anilistFormat": "ONA",
+      "anilistYear": null,
+      "anilistScore": 64,
       "basePlatforms": {
         "service": "No legal platform",
         "serviceUrl": "",
@@ -41802,122 +42397,121 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 20,
-          "nextRetryAt": "2026-11-07T01:30:09.325Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "AR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "BR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CL": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CO": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "DE": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
         "FR": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
-        "GB": {
+        "DE": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "IT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "MX": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "PT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "US": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         }
       },
-      "platformSource": "",
+      "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
+      "serviceUrls": {
+        "OceanVeil": "https://oceanveil.net/anime_titles/523"
+      },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-kanojo-no-tomodachi-7-2026-11-15t17-06-00-01-00",
@@ -41979,6 +42573,184 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1430-my-girlfriends-friend/32966-folge-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1430-my-girlfriends-friend/32966-episode-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb13fae3-da50-46f9-bd78-8fb8910b3ed8",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "Kanojo no Tomodachi",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -42057,6 +42829,207 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "DE": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "FR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/interstitial/1025227",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "IT": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "MX": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -46016,10 +46989,11 @@
           ],
           "justwatchId": "ts360266",
           "matchedTitle": "Sasaki to Pii-chan",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -46268,7 +47242,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G4VUQVP2P",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9dd1b40b-661e-4b27-8c64-85b3e7d3b7f5"
@@ -50761,10 +51735,11 @@
           ],
           "justwatchId": "ts395707",
           "matchedTitle": "Los diarios de la boticaria",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Die Tagebücher der Apothekerin\",\"Diários de uma Apotecária\",\"Il monologo della speziale\",\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no hitorigoto\",\"Les Carnets de l'apothicaire\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -51108,7 +52083,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUMNJ5K",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.09bc7869-150b-41c6-80c5-77cc284dff0e"
@@ -51507,10 +52482,11 @@
           ],
           "justwatchId": "ts516716",
           "matchedTitle": "Firefly Wedding",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"Les Noces des Lucioles\",\"ホタルの嫁入り\"]]"
         },
         "AR": {
           "status": "verified",
@@ -51759,7 +52735,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384155ES419",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d518b586-4bdb-4c0a-8877-a182a4a853b0"
@@ -52915,12 +53891,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-06T19:30:09.325Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-06T21:59:21.721Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-11-06T22:34:02.463Z"
         },
         "AR": {
           "status": "error",
@@ -57900,8 +58876,10 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
+          "justwatchId": "ts471256",
+          "matchedTitle": "Seitokai ni mo Ana wa Aru!",
           "aliases": [
             "Even the Student Council Has Its Holes!",
             "Seitokai ni mo Ana wa Aru!",
@@ -57910,24 +58888,10 @@
             "NamaAnaru",
             "สภานักเรียนฉบับรั่ว!"
           ],
-          "anilistOffers": [
-            {
-              "service": "OceanVeil",
-              "url": "https://oceanveil.net/anime_titles/542"
-            },
-            {
-              "service": "Bilibili TV",
-              "url": "https://www.bilibili.tv/en/media/2433041"
-            },
-            {
-              "service": "iQ",
-              "url": "https://www.iq.com/album/28ki6pjn6a1"
-            }
-          ],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         },
         "AR": {
           "status": "not-found",
@@ -58162,13 +59126,13 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
         "iQ": "https://www.iq.com/album/28ki6pjn6a1"
       },
-      "platformStatus": "not-found",
+      "platformStatus": "no-offers",
       "platformStale": false
     },
     {
@@ -60433,10 +61397,11 @@
           ],
           "justwatchId": "ts469750",
           "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Mezameza\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         },
         "AR": {
           "status": "verified",
@@ -60685,7 +61650,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389229PTBR",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.46be8191-8efd-4650-bef7-bd640a44f1b2"
@@ -63707,6 +64672,115 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-06T21:59:21.721Z"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-folge-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-episode-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+            "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+            "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+            "Click Me All Over",
+            "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
       "platformSource": "anilist",
@@ -63726,7 +64800,8 @@
       "titles": [
         "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "The Lonely Snow Widow and the Cursed Ring",
-        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+        "The Shy Snow Woman and the Cursed Ring"
       ],
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
       "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
@@ -63737,12 +64812,26 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-22T16:06:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
-      "anilistOffers": [],
+      "service": "OceanVeil",
+      "serviceUrl": "https://oceanveil.net/anime_titles/523",
+      "allServices": [
+        "OceanVeil"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212667-8g5ktyrx34Yl.jpg",
+      "anilistId": 212667,
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/523"
+        }
+      ],
+      "isAdult": true,
+      "anilistTitle": "The Lonely Snow Widow and the Cursed Ring",
+      "anilistUrl": "https://anilist.co/anime/212667",
+      "anilistFormat": "ONA",
+      "anilistYear": null,
+      "anilistScore": 64,
       "basePlatforms": {
         "service": "No legal platform",
         "serviceUrl": "",
@@ -63753,122 +64842,121 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 20,
-          "nextRetryAt": "2026-11-07T01:30:09.325Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "AR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "BR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CL": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CO": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "DE": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
         "FR": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
-        "GB": {
+        "DE": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "IT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "MX": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "PT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "US": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         }
       },
-      "platformSource": "",
+      "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
+      "serviceUrls": {
+        "OceanVeil": "https://oceanveil.net/anime_titles/523"
+      },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-kanojo-no-tomodachi-8-2026-11-22t17-06-00-01-00",
@@ -63930,6 +65018,184 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1430-my-girlfriends-friend/32966-folge-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1430-my-girlfriends-friend/32966-episode-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb13fae3-da50-46f9-bd78-8fb8910b3ed8",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "Kanojo no Tomodachi",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -64008,6 +65274,207 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "DE": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "FR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/interstitial/1025227",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "IT": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "MX": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -67967,10 +69434,11 @@
           ],
           "justwatchId": "ts360266",
           "matchedTitle": "Sasaki to Pii-chan",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"SasaPii 2\",\"Sasaki and Peeps\",\"Sasaki and Peeps 2nd Season\",\"Sasaki and Peeps Season 2\",\"Sasaki to Pii-chan\",\"Sasaki to Pii-chan 2nd Season\",\"Sasaki to Pii-chan Season 2\",\"ささピー 2\",\"佐々木とピーちゃん シーズン２\",\"佐々木とピーちゃん 第２期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -68219,7 +69687,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G4VUQVP2P",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9dd1b40b-661e-4b27-8c64-85b3e7d3b7f5"
@@ -72888,10 +74356,11 @@
           ],
           "justwatchId": "ts395707",
           "matchedTitle": "Los diarios de la boticaria",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Kusuriya no Hitorigoto 3rd Season\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Die Tagebücher der Apothekerin\",\"Diários de uma Apotecária\",\"Il monologo della speziale\",\"Kusuriya no Hitorigoto 3rd Season\",\"Kusuriya no hitorigoto\",\"Les Carnets de l'apothicaire\",\"Los diarios de la boticaria\",\"The Apothecary Diaries 3rd Season\",\"The Apothecary Diaries Season 3\",\"薬屋のひとりごと 第3期\"]]"
         },
         "AR": {
           "status": "verified",
@@ -73235,7 +74704,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/G0DUMNJ5K",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.09bc7869-150b-41c6-80c5-77cc284dff0e"
@@ -73634,10 +75103,11 @@
           ],
           "justwatchId": "ts516716",
           "matchedTitle": "Firefly Wedding",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"ホタルの嫁入り\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Firefly Wedding\",\"Hotaru no Yomeiri\",\"Les Noces des Lucioles\",\"ホタルの嫁入り\"]]"
         },
         "AR": {
           "status": "verified",
@@ -73886,7 +75356,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384155ES419",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d518b586-4bdb-4c0a-8877-a182a4a853b0"
@@ -75042,12 +76512,12 @@
           ],
           "lookupVersion": 6,
           "checkedAt": "2026-11-06T19:30:09.325Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-06T21:59:21.721Z"
+          "consecutiveErrors": 2,
+          "nextRetryAt": "2026-11-06T22:34:02.463Z"
         },
         "AR": {
           "status": "error",
@@ -80027,8 +81497,10 @@
       },
       "platformsByCountry": {
         "ES": {
-          "status": "not-found",
+          "status": "no-offers",
           "offers": [],
+          "justwatchId": "ts471256",
+          "matchedTitle": "Seitokai ni mo Ana wa Aru!",
           "aliases": [
             "Even the Student Council Has Its Holes!",
             "Seitokai ni mo Ana wa Aru!",
@@ -80037,24 +81509,10 @@
             "NamaAnaru",
             "สภานักเรียนฉบับรั่ว!"
           ],
-          "anilistOffers": [
-            {
-              "service": "OceanVeil",
-              "url": "https://oceanveil.net/anime_titles/542"
-            },
-            {
-              "service": "Bilibili TV",
-              "url": "https://www.bilibili.tv/en/media/2433041"
-            },
-            {
-              "service": "iQ",
-              "url": "https://www.iq.com/album/28ki6pjn6a1"
-            }
-          ],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         },
         "AR": {
           "status": "not-found",
@@ -80289,13 +81747,13 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
         "iQ": "https://www.iq.com/album/28ki6pjn6a1"
       },
-      "platformStatus": "not-found",
+      "platformStatus": "no-offers",
       "platformStale": false
     },
     {
@@ -82560,10 +84018,11 @@
           ],
           "justwatchId": "ts469750",
           "matchedTitle": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship",
+          "aliases": [],
           "lookupVersion": 7,
-          "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-06T21:44:21.721Z",
-          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV\",null,[\"Mezametara Saikyou Soubi to Uchuusen-mochi datta node, Ikkodate Mezashite Youhei to shite Jiyuu ni Ikitai\",\"Mezametara Saikyou Soubi to Uchuusenmochi Datta node, Ikkodate Mezashite Youhei toshite Jiyuu ni Ikitai\",\"Mezameza\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship\",\"Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!\",\"Saikyosoubi\",\"めざめざ\",\"目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい\"]]"
         },
         "AR": {
           "status": "verified",
@@ -82812,7 +84271,7 @@
       "jwVerified": true,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-06T21:44:21.721Z",
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00389229PTBR",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.46be8191-8efd-4650-bef7-bd640a44f1b2"
@@ -85834,6 +87293,115 @@
           "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
           "nextRetryAt": "2026-11-06T21:59:21.721Z"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-folge-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1429-now-that-i-can-control-reality-with-a-mouse-cursor-im-gonna-click-away-on-the-girls/32958-episode-1",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+            "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+            "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+            "Click Me All Over",
+            "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555220",
+          "matchedTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
       "platformSource": "anilist",
@@ -85853,7 +87421,8 @@
       "titles": [
         "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "The Lonely Snow Widow and the Cursed Ring",
-        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+        "The Shy Snow Woman and the Cursed Ring"
       ],
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
       "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
@@ -85864,12 +87433,26 @@
       "scheduleStatus": "scheduled",
       "releaseDate": "2026-11-29T16:06:00.000Z",
       "originalReleaseDate": "",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
-      "anilistOffers": [],
+      "service": "OceanVeil",
+      "serviceUrl": "https://oceanveil.net/anime_titles/523",
+      "allServices": [
+        "OceanVeil"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212667-8g5ktyrx34Yl.jpg",
+      "anilistId": 212667,
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/523"
+        }
+      ],
+      "isAdult": true,
+      "anilistTitle": "The Lonely Snow Widow and the Cursed Ring",
+      "anilistUrl": "https://anilist.co/anime/212667",
+      "anilistFormat": "ONA",
+      "anilistYear": null,
+      "anilistScore": 64,
       "basePlatforms": {
         "service": "No legal platform",
         "serviceUrl": "",
@@ -85880,122 +87463,121 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 20,
-          "nextRetryAt": "2026-11-07T01:30:09.325Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "AR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "BR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CL": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CO": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "DE": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
         "FR": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
-        "GB": {
+        "DE": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "IT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "MX": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "PT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "US": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         }
       },
-      "platformSource": "",
+      "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
+      "serviceUrls": {
+        "OceanVeil": "https://oceanveil.net/anime_titles/523"
+      },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-kanojo-no-tomodachi-9-2026-11-29t17-06-00-01-00",
@@ -86057,6 +87639,184 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/de/video/1430-my-girlfriends-friend/32966-folge-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Aniverse Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.75efaca5-c1f4-4184-bb91-15cfd9965c63",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Animation Digital Network",
+              "url": "https://animationdigitalnetwork.com/video/1430-my-girlfriends-friend/32966-episode-1",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Anime Digital Network Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb13fae3-da50-46f9-bd78-8fb8910b3ed8",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "GB": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "IT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "MX": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "Kanojo no Tomodachi",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "My Girlfriend's Friend",
+            "Kanojo no Tomodachi",
+            "彼女の友達"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/537"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
+        },
+        "US": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts558559",
+          "matchedTitle": "My Girlfriend's Friend",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -86135,6 +87895,207 @@
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
           "lastAttemptAt": "2026-11-06T21:44:21.721Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "AR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "BR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CL": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "CO": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "DE": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "FR": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "PT": {
+          "status": "no-offers",
+          "offers": [],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/interstitial/1025227",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Hidive Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.5966dee8-dda5-4d72-8a0d-d6777c9937bf",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts555091",
+          "matchedTitle": "I'm Dating a Dark Summoner",
+          "aliases": [],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "IT": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
+        },
+        "MX": {
+          "status": "not-found",
+          "offers": [],
+          "aliases": [
+            "I'm Dating a Dark Summoner",
+            "Dark Summoner to Dekiteiru",
+            "ダークサモナーとデキている"
+          ],
+          "anilistOffers": [
+            {
+              "service": "HIDIVE",
+              "url": "https://www.hidive.com/season/39541"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -86451,7 +88412,8 @@
       "titles": [
         "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "The Lonely Snow Widow and the Cursed Ring",
-        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪"
+        "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+        "The Shy Snow Woman and the Cursed Ring"
       ],
       "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
       "route": "hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa",
@@ -86462,11 +88424,13 @@
       "scheduleStatus": "rescheduled",
       "releaseDate": "2026-11-08T16:06:00.000Z",
       "originalReleaseDate": "2026-11-08T16:06:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
+      "service": "OceanVeil",
+      "serviceUrl": "https://oceanveil.net/anime_titles/523",
+      "allServices": [
+        "OceanVeil"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx212667-8g5ktyrx34Yl.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
       "lastDelayCheck": "2026-11-06T21:27:49.453Z",
@@ -86476,7 +88440,12 @@
       ],
       "delayCheckError": "",
       "delayResearchStatus": "unconfirmed",
-      "anilistOffers": [],
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/523"
+        }
+      ],
       "basePlatforms": {
         "service": "No legal platform",
         "serviceUrl": "",
@@ -86487,122 +88456,128 @@
         "ES": {
           "status": "not-found",
           "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 20,
-          "nextRetryAt": "2026-11-07T01:30:09.325Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "AR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "BR": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CL": {
-          "status": "error",
+          "status": "not-found",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+          "aliases": [
+            "The Lonely Snow Widow and the Cursed Ring",
+            "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
+            "人付き合いが苦手な未亡人の雪女さんと呪いの指輪",
+            "The Shy Snow Woman and the Cursed Ring"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/anime_titles/523"
+            }
+          ],
+          "lookupVersion": 7,
+          "checkedAt": "2026-11-06T22:04:02.463Z",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         },
         "CO": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "DE": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
         "FR": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         },
-        "GB": {
+        "DE": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
+          "lastAttemptAt": "2026-11-06T22:04:02.463Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
           "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "IT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "MX": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "PT": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
-        },
-        "US": {
-          "status": "error",
-          "offers": [],
-          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+          "nextRetryAt": "2026-11-06T22:19:02.463Z"
         }
       },
-      "platformSource": "",
+      "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
+      "jwVerifiedAt": "2026-11-06T22:04:02.463Z",
+      "serviceUrls": {
+        "OceanVeil": "https://oceanveil.net/anime_titles/523"
+      },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false,
+      "anilistId": 212667,
+      "isAdult": true,
+      "anilistTitle": "The Lonely Snow Widow and the Cursed Ring",
+      "anilistUrl": "https://anilist.co/anime/212667",
+      "anilistFormat": "ONA",
+      "anilistYear": null,
+      "anilistScore": 64
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
@@ -87187,7 +89162,7 @@
     }
   ],
   "platforms": {
-    "checked": 92,
+    "checked": 43,
     "errors": 4,
     "issues": [
       {
@@ -87620,7 +89595,7 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-06T21:44:21.721Z"
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-216895",
@@ -88048,15 +90023,6 @@
       {
         "key": "anilist-191656",
         "title": "Seitokai ni mo Ana wa Aru!",
-        "country": "ES",
-        "reason": "unresolved-title-with-source-platform",
-        "status": "not-found",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-06T21:44:21.721Z"
-      },
-      {
-        "key": "anilist-191656",
-        "title": "Seitokai ni mo Ana wa Aru!",
         "country": "AR",
         "reason": "unresolved-title-with-source-platform",
         "status": "not-found",
@@ -88363,15 +90329,6 @@
       {
         "key": "anilist-206774",
         "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
         "country": "AR",
         "reason": "lookup-error",
         "status": "error",
@@ -88390,173 +90347,11 @@
       {
         "key": "anilist-206774",
         "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
         "country": "BR",
         "reason": "lookup-error",
         "status": "error",
         "errorProvider": "JustWatch",
         "lastAttemptAt": "2026-11-06T21:44:21.721Z"
-      },
-      {
-        "key": "anilist-206774",
-        "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-211877",
-        "title": "Kanojo no Tomodachi",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
       },
       {
         "key": "anilist-208025",
@@ -88571,208 +90366,145 @@
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "MX",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "AR",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "CL",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "CO",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-208025",
-        "title": "Dark Summoner to Dekiteiru",
-        "country": "US",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-208025",
-        "title": "Dark Summoner to Dekiteiru",
-        "country": "GB",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "DE",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "FR",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "IT",
-        "reason": "not-checked",
-        "status": "pending",
+        "reason": "unresolved-title-with-source-platform",
+        "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": null
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
         "key": "anilist-208025",
         "title": "Dark Summoner to Dekiteiru",
         "country": "BR",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "anilist-208025",
-        "title": "Dark Summoner to Dekiteiru",
-        "country": "PT",
-        "reason": "not-checked",
-        "status": "pending",
-        "errorProvider": null,
-        "lastAttemptAt": null
-      },
-      {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
-        "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-        "country": "ES",
-        "reason": "lookup-error",
+        "reason": "unresolved-title-with-source-platform",
         "status": "not-found",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-06T19:30:09.325Z"
+        "errorProvider": null,
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "MX",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "reason": "not-checked",
+        "status": "pending",
+        "errorProvider": null,
+        "lastAttemptAt": null
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
-        "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-        "country": "AR",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-05T01:30:21.806Z"
-      },
-      {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
-        "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-        "country": "CL",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-05T01:30:21.806Z"
-      },
-      {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "CO",
         "reason": "lookup-error",
         "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "US",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "reason": "not-checked",
+        "status": "pending",
+        "errorProvider": null,
+        "lastAttemptAt": null
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "GB",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "reason": "not-checked",
+        "status": "pending",
+        "errorProvider": null,
+        "lastAttemptAt": null
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "DE",
         "reason": "lookup-error",
         "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "FR",
         "reason": "lookup-error",
         "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "errorProvider": "JustWatch",
+        "lastAttemptAt": "2026-11-06T22:04:02.463Z"
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "IT",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "reason": "not-checked",
+        "status": "pending",
+        "errorProvider": null,
+        "lastAttemptAt": null
       },
       {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
-        "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
-        "country": "BR",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-05T01:30:21.806Z"
-      },
-      {
-        "key": "hitozukiaiganigatenamiboujinnoyukionnasantonoroinoyubiwa",
+        "key": "anilist-212667",
         "title": "Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa",
         "country": "PT",
-        "reason": "lookup-error",
-        "status": "error",
-        "errorProvider": "AniList",
-        "lastAttemptAt": "2026-11-05T11:07:56.302Z"
+        "reason": "not-checked",
+        "status": "pending",
+        "errorProvider": null,
+        "lastAttemptAt": null
       },
       {
         "key": "anilist-204011",
@@ -88821,80 +90553,80 @@
       }
     ],
     "totalFailure": false,
-    "queued": 586,
+    "queued": 576,
     "rateLimited": false,
     "coverage": {
       "ES": {
         "total": 76,
         "verified": 60,
         "pending": 0,
-        "stale": 3
+        "stale": 2
       },
       "MX": {
         "total": 76,
         "verified": 52,
-        "pending": 16,
-        "stale": 49
+        "pending": 13,
+        "stale": 48
       },
       "AR": {
         "total": 76,
         "verified": 51,
-        "pending": 17,
-        "stale": 49
-      },
-      "CL": {
-        "total": 76,
-        "verified": 54,
-        "pending": 15,
-        "stale": 49
-      },
-      "CO": {
-        "total": 76,
-        "verified": 55,
         "pending": 14,
         "stale": 48
       },
-      "US": {
-        "total": 76,
-        "verified": 55,
-        "pending": 15,
-        "stale": 48
-      },
-      "GB": {
+      "CL": {
         "total": 76,
         "verified": 54,
         "pending": 12,
         "stale": 48
       },
+      "CO": {
+        "total": 76,
+        "verified": 55,
+        "pending": 11,
+        "stale": 48
+      },
+      "US": {
+        "total": 76,
+        "verified": 56,
+        "pending": 12,
+        "stale": 47
+      },
+      "GB": {
+        "total": 76,
+        "verified": 55,
+        "pending": 9,
+        "stale": 47
+      },
       "DE": {
         "total": 76,
-        "verified": 58,
-        "pending": 13,
+        "verified": 60,
+        "pending": 10,
         "stale": 48
       },
       "FR": {
         "total": 76,
-        "verified": 56,
-        "pending": 14,
+        "verified": 58,
+        "pending": 11,
         "stale": 48
       },
       "IT": {
         "total": 76,
         "verified": 54,
-        "pending": 14,
-        "stale": 49
+        "pending": 11,
+        "stale": 48
       },
       "BR": {
         "total": 76,
         "verified": 52,
-        "pending": 17,
-        "stale": 49
+        "pending": 14,
+        "stale": 48
       },
       "PT": {
         "total": 76,
         "verified": 50,
-        "pending": 16,
-        "stale": 49
+        "pending": 13,
+        "stale": 48
       }
     },
     "countries": [
@@ -88912,7 +90644,7 @@
       "PT"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-11-06T21:44:21.721Z",
+    "checkedAt": "2026-11-06T22:04:02.463Z",
     "series": 76
   }
 }
