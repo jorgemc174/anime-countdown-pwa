@@ -1,15 +1,44 @@
 name: Build Android APK
 
+# Publica la APK en GitHub Releases. Enlace fijo a la última versión:
+# https://github.com/jorgemc174/anime-countdown-pwa/releases/latest/download/AniCountdown.apk
+# Los horarios los descarga la app de internet: solo se recompila si cambia lo
+# que va dentro de la APK, no con cada actualización de schedule.json.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - app.js
+      - schedule-policy.js
+      - platform-policy.js
+      - config.js
+      - styles.css
+      - sw.js
+      - manifest.json
+      - icons/**
+      - android/**
+      - capacitor.config.json
+      - package.json
+      - package-lock.json
+      - scripts/build-www.js
+      - .github/workflows/build-apk.yml
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: false
 
 jobs:
   apk:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    env:
+      APP_VERSION_CODE: ${{ github.run_number }}
+      APP_VERSION_NAME: 1.0.${{ github.run_number }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
@@ -28,20 +57,42 @@ jobs:
       - name: Prepare Android SDK
         run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
       - run: npm ci
+      - run: npm test
       - name: Package current web app and native plugins
         run: npm run cap:sync
-      - name: Build installable debug APK
-        run: bash android/gradlew -p android :app:assembleDebug --no-daemon --max-workers=2
+      - name: Build APK
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            export ANDROID_KEYSTORE_PATH="$RUNNER_TEMP/release.jks"
+            base64 -d <<<"$KEYSTORE_BASE64" > "$ANDROID_KEYSTORE_PATH"
+            bash android/gradlew -p android :app:assembleRelease --no-daemon --max-workers=2
+            rm -f "$ANDROID_KEYSTORE_PATH"
+            cp android/app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/AniCountdown.apk"
+          else
+            echo "::warning::Sin clave fija: firma debug, cada versión exige desinstalar la anterior"
+            bash android/gradlew -p android :app:assembleDebug --no-daemon --max-workers=2
+            cp android/app/build/outputs/apk/debug/app-debug.apk "$RUNNER_TEMP/AniCountdown.apk"
+          fi
       - name: Verify APK signature and package
         run: |
-          APK=android/app/build/outputs/apk/debug/app-debug.apk
-          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose "$APK"
-          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging "$APK"
-          cp "$APK" "$RUNNER_TEMP/AnimeCountdown-debug.apk"
-          sha256sum "$RUNNER_TEMP/AnimeCountdown-debug.apk"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: AnimeCountdown-debug
-          path: ${{ runner.temp }}/AnimeCountdown-debug.apk
-          if-no-files-found: error
-          retention-days: 30
+          APK="$RUNNER_TEMP/AniCountdown.apk"
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs "$APK"
+          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging "$APK" | tee "$RUNNER_TEMP/badging.txt"
+          grep -q "versionCode='$APP_VERSION_CODE'" "$RUNNER_TEMP/badging.txt"
+          sha256sum "$APK"
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v$APP_VERSION_NAME"
+          APK="$RUNNER_TEMP/AniCountdown.apk"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$APK" --clobber
+          else
+            gh release create "$TAG" "$APK" --target "$GITHUB_SHA" --latest \
+              --title "AniCountdown $APP_VERSION_NAME" \
+              --notes "APK para Android compilada automáticamente desde ${GITHUB_SHA::7}."
+          fi

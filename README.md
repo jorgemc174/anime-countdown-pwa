@@ -1,5 +1,12 @@
 # Anime Countdown PWA
 
+## Descargar la app para Android
+
+**[Descargar la última APK](https://github.com/jorgemc174/anime-countdown-pwa/releases/latest/download/AniCountdown.apk)**
+
+El enlace siempre apunta a la última versión. Se compila sola al cambiar la app;
+los horarios se actualizan dentro de la app, sin instalar nada.
+
 ## Desarrollo y comprobaciones
 
 Requiere Node.js 24. El checkout existente es suficiente.
