@@ -236,7 +236,7 @@ const CONTENT_FILTERS = [
   { key: "adult", label: "Adulto / hentai", defaultHidden: true },
   { key: "kodomo", label: "Kodomo", defaultHidden: true },
   { key: "ova", label: "OVA", defaultHidden: true },
-  { key: "ona", label: "ONA", defaultHidden: true },
+  { key: "ona", label: "ONA", defaultHidden: false },
   { key: "movie", label: "Películas", defaultHidden: true },
   { key: "special", label: "Especiales", defaultHidden: true },
   { key: "music", label: "Music", defaultHidden: true }
@@ -432,7 +432,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme","scheduleMetadata"]);
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -453,6 +453,10 @@ async function loadState() {
   state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
   state.hiddenPlatforms = Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : [];
   state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
+  if (data.contentFiltersVersion !== 1) {
+    state.hiddenContent = state.hiddenContent.filter(key => key !== "ona");
+    await browserApi.storage.local.set({ hiddenContent: state.hiddenContent, contentFiltersVersion: 1 });
+  }
   populateCountryOptions();
   if (els.countryInput) els.countryInput.value = state.jwCountry;
   state.notificationEnabled = Boolean(data.notificationEnabled);
@@ -2689,6 +2693,7 @@ function toAbsoluteUrl(url) {
 }
 
 function getReleaseTimingLabel(item) {
+  if (item.scheduleStatus === "unscheduled") return `Emisión en Japón: ${formatDate(item.anilistAiringDate)}`;
   if (item.scheduleStatus === "conflict") return "Reprogramación pendiente de confirmar";
   if (item.scheduleStatus === "date-confirmed") return "Hora SUB por confirmar";
   if (policy.isPending(item)) return "Retrasado · fecha por confirmar";
@@ -2787,7 +2792,7 @@ function getVisibleItems() {
   const hiddenKey = state.hiddenPlatforms.join("|");
   const contentKey = state.hiddenContent.join("|");
   return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
-    if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()));
+    if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()), getUnscheduledLibraryItems());
     if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
     return getOneNextPerSeries(getCatalogItems()).concat(getPendingItems(getCatalogItems()));
   });
@@ -2802,6 +2807,12 @@ function getDisplayService(item) {
   return fallback || "No legal platform";
 }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
+function getUnscheduledLibraryItems() {
+  return state.anilistLibrary.filter(item => item.favorite !== false && isSchedulableItem(item)
+    && Date.parse(item.anilistAiringDate || "") > Date.now()
+    && !state.releases.some(release => getSeriesKey(release) === getSeriesKey(item) || getSeriesMatchScore(release, item) >= 0.78))
+    .map(item => ({ ...item, releaseDate: null, delayed: false, scheduleStatus: "unscheduled", favorite: true }));
+}
 function getCatalogItems() { return memoList("catalog", () => mergeDuplicateItems(state.releases)); }
 function getOneNextPerSeries(items) {
   const memoKey = items?.__memoKey;
@@ -2861,16 +2872,10 @@ function isSeasonalSeriesItem(item) {
 }
 
 function hasKodomoSignal(item) {
-  const fields = [
-    item.title,
-    item.anilistTitle,
-    item.animeKey,
-    item.route,
-    item.anilistFormat,
-    ...(item.genres || []),
-    ...(item.tags || []).map((tag) => tag?.name || tag)
-  ];
-  return fields.some((value) => /\bkodomo\b|kids?|children|childrens|preschool|family/i.test(String(value || "")));
+  const textFields = [item.title, item.anilistTitle, item.animeKey, item.route];
+  if (textFields.some(value => /\bkodomo\b/i.test(String(value || "")))) return true;
+  const names = [...(item.genres || []), ...(item.tags || [])];
+  return names.some(value => /^(kids|kodomo|children|preschool)$/i.test(String(value?.name || value || "")));
 }
 function hasAdultAnilistTag(item) {
   const blockedGenres = ["hentai", "erotica"];
@@ -3031,10 +3036,11 @@ function getFilteredVisibleItems() {
     var q = state.searchQuery.toLowerCase();
     visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
   }
-  const scheduled = visible.filter(item => !policy.isPending(item));
+  const scheduled = visible.filter(item => !policy.isPending(item) && item.scheduleStatus !== "unscheduled");
   const pending = visible.filter(item => policy.isPending(item));
-  if (!state.sortAsc) { scheduled.reverse(); pending.reverse(); }
-  return scheduled.concat(pending);
+  const unscheduled = visible.filter(item => item.scheduleStatus === "unscheduled");
+  if (!state.sortAsc) { scheduled.reverse(); pending.reverse(); unscheduled.reverse(); }
+  return scheduled.concat(pending, unscheduled);
 }
 
 function cleanupVirtualListObserver() {
@@ -3059,6 +3065,12 @@ function renderVirtualListBatch(generation = renderGeneration) {
       const heading = document.createElement("h2");
       heading.className = "pending-heading";
       heading.textContent = "Retrasos pendientes de confirmación";
+      frag.appendChild(heading);
+    }
+    if (virtualListItems[i].scheduleStatus === "unscheduled" && (i === 0 || virtualListItems[i - 1].scheduleStatus !== "unscheduled")) {
+      const heading = document.createElement("h2");
+      heading.className = "pending-heading";
+      heading.textContent = "Sin horario de subtítulos";
       frag.appendChild(heading);
     }
     frag.appendChild(createCardModern(virtualListItems[i]));
@@ -3091,6 +3103,7 @@ function appendVirtualListSentinel(generation) {
 }
 
 function createCardModern(item) {
+  const unscheduled = item.scheduleStatus === "unscheduled";
   const c = { text: getReleaseTimingLabel(item) };
   const service = getDisplayService(item);
   const openLabel = item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(service);
@@ -3110,7 +3123,7 @@ function createCardModern(item) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
   const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div><div class="countdown">${escapeHtml(c.text)}</div><div class="meta">${escapeHtml(item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
   return card;
 }
 

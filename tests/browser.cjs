@@ -32,6 +32,81 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await scenario("ONA is visible by default and its stored filter migrates only once", async page => {
+      await page.addInitScript(() => {
+        if (!localStorage.getItem("animeCountdownStorage")) localStorage.setItem("animeCountdownStorage", JSON.stringify({ hiddenContent: ["adult", "kodomo", "ona"] }));
+      });
+      await page.route("**/schedule.json", route => route.fulfill({ json: { ...payload, releases: [{ ...baseRow, anilistFormat: "ONA" }] } }));
+      await page.goto(base); await ready(page);
+      await page.locator("#showAllBtn").click();
+      assert.equal(await page.locator(".anime-card").count(), 1);
+      assert.equal(await page.evaluate(() => DEFAULT_HIDDEN_CONTENT.includes("ona")), false);
+      assert.equal(await page.evaluate(async () => (await browserApi.storage.local.get(["contentFiltersVersion"])).contentFiltersVersion), 1);
+      await page.evaluate(() => toggleContentFilter("ona"));
+      await page.reload(); await ready(page);
+      assert.equal(await page.evaluate(() => state.hiddenContent.includes("ona")), true);
+      assert.equal(await page.locator(".anime-card").count(), 0);
+    });
+    await scenario("Kodomo matches exact audience tags without hiding Yozakura Family", async page => {
+      await page.goto(base); await ready(page);
+      assert.deepEqual(await page.evaluate(() => [
+        { title: "Mission: Yozakura Family", tags: [{ name: "Family Life" }] },
+        { title: "Kids on the Slope", genres: ["Family"] },
+        { title: "Kodomo no Anime" }, { tags: [{ name: "KiDs" }] },
+        { genres: ["children"] }, { tags: ["preschool"] }, { animeKey: "kodomo-series" }
+      ].map(isSchedulableItem)), [true, true, false, false, false, false, false]);
+    });
+    await scenario("library series matching a schedule row by similar title are not listed as unscheduled", async page => {
+      await page.goto(base); await ready(page);
+      assert.deepEqual(await page.evaluate(() => {
+        const airing = new Date(Date.now() + 86400000).toISOString();
+        state.releases = [{ title: "Sasaki to Pii-chan 2nd Season", animeKey: "sasaki-to-pii-chan-2nd-season", anilistId: null, releaseDate: airing }];
+        state.anilistLibrary = [
+          { title: "Sasaki and Peeps Season 2", titles: ["Sasaki to Pii-chan 2nd Season"], anilistId: 1, anilistAiringDate: airing, source: "anilist-library" },
+          { title: "Otra serie distinta", titles: ["Otra serie distinta"], anilistId: 2, anilistAiringDate: airing, source: "anilist-library" }
+        ];
+        return getUnscheduledLibraryItems().map(item => item.title);
+      }), ["Otra serie distinta"]);
+    });
+    await scenario("AniList favorites without SUB schedules have a separate section only in Favorites", async page => {
+      await page.goto(base); await ready(page);
+      await page.evaluate(() => {
+        state.releases = state.releases.map(item => ({ ...item, favorite: true, anilistId: item.id === "sample-4" ? 1 : null }));
+        const library = (id, extra = {}) => ({ id: `library-${id}`, anilistId: id, title: `Library ${id}`, source: "anilist-library", anilistAiringDate: "2026-10-31T18:00:00Z", ...extra });
+        state.anilistLibrary = [library(1), library(3), library(4, { favorite: false }), library(5, { anilistAiringDate: "2026-10-29T18:00:00Z" }), library(6, { tags: ["Kids"] }), library(7, { anilistId: null, animeKey: "delayed" }), library(8)];
+        invalidateDataCaches(); setMode("favorites");
+      });
+      assert.equal(await page.locator(".anime-card").count(), 4);
+      assert.deepEqual(await page.locator("#animeList h2").allTextContents(), ["Retrasos pendientes de confirmación", "Sin horario de subtítulos"]);
+      const card = page.locator('.anime-card[data-id="library-3"]');
+      assert.match(await card.innerText(), /Emisión en Japón:/);
+      assert.equal(await card.locator(".countdown, .badge-orange").count(), 0);
+      await page.evaluate(() => updateLiveCountdowns());
+      assert.doesNotMatch(await card.innerText(), /Retrasado|Fecha por confirmar/);
+      assert.deepEqual(await page.evaluate(() => getNextHighlightItems().map(item => item.id)), ["sample-4"]);
+      assert.deepEqual(await page.evaluate(() => getDueNotificationItems(getFavoriteItems(), Date.parse("2026-10-30T18:00:00Z")).map(item => item.id)), ["sample-4"]);
+      assert.deepEqual(await page.evaluate(async () => {
+        const scheduled = [];
+        window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+          getPending: async () => ({ notifications: [] }),
+          schedule: async ({ notifications }) => scheduled.push(...notifications)
+        } } };
+        state.notificationEnabled = true;
+        await scheduleNativeNotifications();
+        state.notificationEnabled = false;
+        delete window.Capacitor;
+        return scheduled.map(item => item.extra.title);
+      }), ["Sample"]);
+      await page.evaluate(() => { state.searchQuery = "Library"; state.sortAsc = false; render(); });
+      assert.deepEqual(await page.locator(".anime-card").evaluateAll(cards => cards.map(card => card.dataset.id)), ["library-8", "library-3"]);
+      await page.evaluate(() => { state.searchQuery = ""; setMode("today"); });
+      assert.equal(await page.locator('[data-id^="library-"]').count(), 0);
+      await page.locator("#showAllBtn").click();
+      assert.equal(await page.locator('[data-id^="library-"]').count(), 0);
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.locator("#showFavsBtn").click();
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    });
     await scenario("first visit explains favorites; All includes undated delays", async page => {
       await page.goto(base);
       await ready(page);

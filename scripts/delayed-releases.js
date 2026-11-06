@@ -1,5 +1,5 @@
 "use strict";
-const { isPending, episodeKey } = require("../schedule-policy");
+const { isPending, episodeKey, hasConfirmedTime } = require("../schedule-policy");
 const dns = require("node:dns/promises");
 const net = require("node:net");
 
@@ -95,7 +95,16 @@ function resolveDelay(item, candidate, evidence, now = new Date().toISOString(),
   const base = { ...item, delayed: true, releaseDate: null, scheduleStatus: "pending", confirmedSubDate: "", officialEvidence: [], originalReleaseDate: item.originalReleaseDate || item.releaseDate || "", lastDelayCheck: now };
   if (evidence.some(entry => entry.kind === "official-sub-cancellation")) return { ...base, scheduleStatus: "cancelled", officialEvidence: evidence.map(entry => ({ ...entry, checkedAt: now })) };
   const sources = evidence.filter(entry => entry.kind === "official-sub-announcement");
-  if (!sources.length) return base;
+  if (!sources.length) {
+    // Only the current SUB feed can restore an exact timestamp.
+    const feedTime = candidate && hasConfirmedTime({ ...candidate, scheduleStatus: "scheduled" });
+    if (feedTime && Date.parse(candidate.releaseDate) > Date.parse(now)) {
+      return { ...candidate, id: item.id, originalReleaseDate: base.originalReleaseDate,
+        delayed: Boolean(candidate.delayed), scheduleStatus: candidate.delayed ? "rescheduled" : "scheduled",
+        confirmedSubDate: "", officialEvidence: [], lastDelayCheck: now };
+    }
+    return base;
+  }
   const days = new Set(sources.map(entry => officialDay(entry, timezone)));
   const officialEvidence = sources.map(entry => ({ ...entry, checkedAt: entry.checkedAt || now }));
   if (days.size !== 1) return { ...base, scheduleStatus: "conflict", officialEvidence };
@@ -130,8 +139,18 @@ async function trackDelays(previous, current, { discoverSources = async () => []
   const sourceCache = new Map();
   const ordered = [...tracked].sort((a, b) => String(a[1].lastDelayCheck || "").localeCompare(String(b[1].lastDelayCheck || "")));
   for (const [key, row] of ordered) {
-    if (row.scheduleStatus === "cancelled") { results.push(row); continue; }
     const candidate = candidates.get(key);
+    const originalAt = Date.parse(row.originalReleaseDate || "");
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(now));
+    const futureOfficialDay = row.scheduleStatus === "date-confirmed" && row.confirmedSubDate >= today;
+    if (!candidate && (isPending(row) || row.scheduleStatus === "cancelled") && !futureOfficialDay && originalAt < Date.parse(now)) {
+      const superseded = current.some(item =>
+        ((row.anilistId && item.anilistId && String(row.anilistId) === String(item.anilistId)) ||
+          (row.animeKey && item.animeKey === row.animeKey)) &&
+        Number(item.episodeNumber) > Number(row.episodeNumber));
+      if (superseded || Date.parse(now) - originalAt > 21 * 86400000) continue;
+    }
+    if (row.scheduleStatus === "cancelled") { results.push(row); continue; }
     if (row.scheduleStatus === "rescheduled" && candidate?.releaseDate === row.releaseDate) {
       results.push(row);
       continue;
@@ -141,7 +160,13 @@ async function trackDelays(previous, current, { discoverSources = async () => []
       continue;
     }
     if (checks >= 12 || Date.now() - started > 100000) {
-      results.push({ ...row, releaseDate: null, scheduleStatus: isPending(row) ? row.scheduleStatus : "pending", delayResearchStatus: "queued" });
+      const known = row.officialEvidence || [];
+      const resolved = resolveDelay(row, candidate, known, now, timezone);
+      // Preserve a known conflict/date while its next official check is queued.
+      const retained = !known.length && (row.scheduleStatus === "conflict" ||
+        (row.scheduleStatus === "date-confirmed" && !resolved.releaseDate))
+        ? { ...row, releaseDate: null } : resolved;
+      results.push({ ...retained, lastDelayCheck: row.lastDelayCheck, delayResearchStatus: "queued" });
       continue;
     }
     checks++;

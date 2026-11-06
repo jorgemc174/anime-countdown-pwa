@@ -460,7 +460,9 @@ function normalizeSchedule(items, timeZone) {
 
     const releaseDate = getAnimeScheduleSubReleaseDate(item);
     const hasTime = /[T\s]\d{2}:\d{2}/.test(String(releaseDate || ""));
-    const normalizedReleaseDate = hasTime ? normalizeScheduleDate(releaseDate, timeZone) : "";
+    const status = String(item.delayedTimetable || item.subDelayedTimetable || item.status || item.airingStatus || "").trim().toLowerCase();
+    const indefinite = ["postponed indefinitely", "on break", "hiatus", "cancelled"].includes(status);
+    const normalizedReleaseDate = hasTime && !indefinite ? normalizeScheduleDate(releaseDate, timeZone) : "";
     const delayed = isDelayed(item, timeZone) || item.delayed === true || Boolean(releaseDate && !hasTime);
     if (!normalizedReleaseDate && !delayed) continue;
 

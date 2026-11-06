@@ -65,7 +65,7 @@ test("plain official news needs an explicit SUB statement, exact episode and una
   assert.deepEqual(extractOfficialEvidence(page.replace("2026-11-01", "2026-11-01 or 2026-11-02"), 4, evidence.url, ["Sample"]), []);
 });
 test("without official evidence, a delayed episode has no date or countdown", () => {
-  const result = resolveDelay(row, candidate, [], now);
+  const result = resolveDelay(row, null, [], now);
   assert.equal(result.scheduleStatus, "pending");
   assert.equal(result.releaseDate, null);
   assert.equal(result.originalReleaseDate, row.releaseDate);
@@ -136,4 +136,63 @@ test("a successful official check can resolve the retained episode", async () =>
 test("private and loopback official destinations are blocked", () => {
   for (const ip of ["127.0.0.1", "10.1.2.3", "169.254.169.254", "192.168.1.1", "::1", "fd00::1", "::ffff:127.0.0.1"]) assert.equal(privateAddress(ip), true, ip);
   assert.equal(privateAddress("8.8.8.8"), false);
+});
+
+
+test("Ao no Hako returns to the feed date and delayed candidates keep their countdown", async () => {
+  for (const delayed of [false, true]) {
+    const fresh = { ...candidate, id: "feed-id", delayed, scheduleStatus: delayed ? "pending" : "scheduled" };
+    const [result] = await trackDelays([row], [fresh], { now });
+    assert.equal(result.id, row.id);
+    assert.equal(result.releaseDate, fresh.releaseDate);
+    assert.equal(result.delayed, delayed);
+    assert.equal(result.scheduleStatus, delayed ? "rescheduled" : "scheduled");
+    assert.equal(policy.hasConfirmedTime(result), true);
+    assert.equal(result.originalReleaseDate, row.releaseDate);
+  }
+});
+test("queued checks also use future feed dates while retaining official conflicts", async () => {
+  const rows = Array.from({ length: 17 }, (_, i) => ({ ...row, animeKey: `series-${i}`, id: `old-${i}` }));
+  const current = rows.slice(12).map(item => ({ ...item, id: `feed-${item.id}`, releaseDate: candidate.releaseDate, delayed: false, scheduleStatus: "scheduled" }));
+  current[3].delayed = true;
+  current[3].scheduleStatus = "pending";
+  rows[16].scheduleStatus = "date-confirmed";
+  rows[16].confirmedSubDate = "2026-11-01";
+  rows[14].officialEvidence = [evidence, { ...evidence, date: "2026-11-02" }];
+  const result = await trackDelays(rows, current, { now });
+  for (const i of [12, 13]) {
+    assert.equal(result.find(item => item.id === `old-${i}`).scheduleStatus, "scheduled");
+    assert.equal(result.find(item => item.id === `old-${i}`).releaseDate, candidate.releaseDate);
+  }
+  assert.equal(result.find(item => item.id === "old-14").scheduleStatus, "conflict");
+  assert.equal(result.find(item => item.id === "old-15").scheduleStatus, "rescheduled");
+  assert.equal(result.find(item => item.id === "old-15").releaseDate, candidate.releaseDate);
+  assert.equal(result.find(item => item.id === "old-16").scheduleStatus, "scheduled");
+});
+test("Re:Zero expires after 21 days and Conan expires when later episodes are in the feed", async () => {
+  const old = { ...row, releaseDate: null, originalReleaseDate: "2026-08-12T18:00:00Z", scheduleStatus: "pending" };
+  for (const scheduleStatus of ["pending", "conflict", "cancelled"]) {
+    assert.deepEqual(await trackDelays([{ ...old, scheduleStatus }], [], { now }), []);
+  }
+  for (const identity of [{ animeKey: row.animeKey }, { animeKey: "other-key", anilistId: 235 }]) {
+    const conan = { ...old, anilistId: 235, episodeNumber: "1218", originalReleaseDate: "2026-10-29T18:00:00Z" };
+    const later = { ...candidate, ...identity, episodeNumber: "1219", delayed: false, scheduleStatus: "scheduled" };
+    assert.deepEqual(await trackDelays([conan], [later], { now }), [later]);
+  }
+});
+test("expiry runs before the check budget but preserves unknown origins and future official days", async () => {
+  const rows = Array.from({ length: 13 }, (_, i) => ({ ...row, animeKey: `series-${i}`, id: `old-${i}` }));
+  rows.push({ ...row, id: "expired", animeKey: "expired", originalReleaseDate: "2026-09-01T12:00:00Z", scheduleStatus: "pending" });
+  rows.push({ ...row, id: "unknown", animeKey: "unknown", releaseDate: null, scheduleStatus: "pending" });
+  rows.push({ ...row, id: "confirmed", animeKey: "confirmed", originalReleaseDate: "2026-09-01T12:00:00Z", releaseDate: null, scheduleStatus: "date-confirmed", confirmedSubDate: "2026-10-30" });
+  const result = await trackDelays(rows, [], { now });
+  assert.equal(result.some(item => item.id === "expired"), false);
+  assert.equal(result.some(item => item.id === "unknown"), true);
+  assert.equal(result.some(item => item.id === "confirmed"), true);
+});
+test("indefinite source statuses suppress even a supplied SUB timestamp", () => {
+  for (const status of ["postponed indefinitely", "on break", "hiatus", "cancelled"]) {
+    const [result] = normalizeSchedule([{ title: "Sample", episodeNumber: 4, status, subReleaseDate: candidate.releaseDate }], "Europe/Madrid");
+    assert.equal(result.releaseDate, null, status);
+  }
 });
