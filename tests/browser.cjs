@@ -32,6 +32,71 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await scenario("settings opens with close focus and Escape restores the trigger", async page => {
+      await page.goto(base); await ready(page);
+      await page.locator("#settingsBtn").click();
+      assert.equal(await page.locator("#closeSettingsBtn").evaluate(el => el === document.activeElement), true);
+      await page.keyboard.press("Escape");
+      assert.equal(await page.locator("#settingsPanel").isVisible(), false);
+      assert.equal(await page.locator("#settingsBtn").evaluate(el => el === document.activeElement), true);
+    });
+    await scenario("settings shows persisted sync time and filter counts follow pressed chips", async page => {
+      await page.goto(base); await ready(page);
+      await page.locator("#settingsBtn").click();
+      assert.equal(await page.locator("#anilistSyncStatus").innerText(), "Aún no has sincronizado");
+      await page.evaluate(async () => {
+        await browserApi.storage.local.set({ lastAnilistSync: "2026-10-29T16:30:00Z" });
+      });
+      await page.reload(); await ready(page);
+      await page.locator("#settingsBtn").click();
+      assert.equal(await page.locator("#anilistSyncStatus").innerText(), await page.evaluate(() => `Última sincronización: ${formatDate(state.lastAnilistSync)}`));
+      for (const [container, counter] of [["platformFilterContainer", "platformFilterCount"], ["contentFilterContainer", "contentFilterCount"]]) {
+        const details = page.locator(`#${container}`).locator("..");
+        await details.locator("summary").click();
+        const chip = page.locator(`#${container} button`).first();
+        const before = await chip.getAttribute("aria-pressed");
+        assert.ok(["true", "false"].includes(before));
+        await chip.click();
+        assert.equal(await chip.getAttribute("aria-pressed"), before === "true" ? "false" : "true");
+        assert.equal(await chip.evaluate(el => el === document.activeElement), true);
+        const active = await page.locator(`#${container} [aria-pressed="true"]`).count();
+        const total = await page.locator(`#${container} button`).count();
+        assert.equal(await page.locator(`#${counter}`).innerText(), `${active} de ${total}`);
+        assert.equal(await page.locator(`#${container} [aria-pressed="true"] svg`).count(), active);
+      }
+    });
+    await scenario("settings fits mobile and desktop in both themes with accessible touch targets", async page => {
+      await page.goto(base); await ready(page);
+      await page.locator("#settingsBtn").click();
+      await page.locator("#settingsPanel details").evaluateAll(nodes => nodes.forEach(el => el.open = true));
+      fs.mkdirSync("/tmp/ajustes", { recursive: true });
+      for (const width of [360, 390, 1280]) {
+        await page.setViewportSize({ width, height: 1000 });
+        for (const theme of ["dark", "light"]) {
+          await page.evaluate(theme => applyTheme(theme), theme);
+          await page.evaluate(() => document.getAnimations().forEach(animation => animation.finish()));
+          const contrast = await page.locator("#settingsPanel").evaluate(panel => {
+            const rgb = value => value.match(/[\d.]+/g).slice(0, 3).map(Number);
+            const luminance = value => rgb(value).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }).reduce((sum, v, i) => sum + v * [0.2126, 0.7152, 0.0722][i], 0);
+            return [...panel.querySelectorAll("h3, .settings-help, .filter-count, .platform-chip, input, select, .danger-btn")].map(el => {
+              const style = getComputedStyle(el);
+              let parent = el;
+              while (getComputedStyle(parent).backgroundColor === "rgba(0, 0, 0, 0)") parent = parent.parentElement;
+              const a = luminance(style.color), b = luminance(getComputedStyle(parent).backgroundColor);
+              return { text: el.textContent.slice(0, 40), ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05), color: style.color, background: getComputedStyle(parent).backgroundColor };
+            }).filter(result => result.ratio < 4.5);
+          });
+          assert.deepEqual(contrast, [], `${width} ${theme}: text contrast`);
+          assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && els.settingsPanel.scrollWidth <= els.settingsPanel.clientWidth), true);
+          assert.equal(await page.locator("#settingsPanel .toggle-switch, #settingsPanel summary").evaluateAll(nodes => nodes.every(el => { const r = el.getBoundingClientRect(); return r.height >= 44 && r.width >= 44; })), true);
+          await page.locator("#settingsPanel").evaluate(el => el.scrollTop = 0);
+          await page.screenshot({ path: `/tmp/ajustes/${width}-${theme}.png` });
+          await page.locator("#settingsPanel").evaluate(el => el.scrollTop = el.scrollHeight);
+          await page.screenshot({ path: `/tmp/ajustes/${width}-${theme}-inferior.png` });
+          assert.equal(await page.locator("#closeSettingsBtn").evaluate(el => { const r = el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; }), true);
+        }
+      }
+    });
     await scenario("disabling native notifications cancels pending entries only when present", async page => {
       await page.goto(base); await ready(page);
       assert.deepEqual(await page.evaluate(async () => {
@@ -333,6 +398,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       await page.locator("#anilistInput").fill("test-user");
       await page.locator("#syncAnilistBtn").click();
       await page.waitForFunction(() => state.lastAnilistSyncUsername === "test-user" && !els.syncAnilistBtn.disabled);
+      assert.equal(await page.locator("#anilistSyncStatus").innerText(), await page.evaluate(() => `Última sincronización: ${formatDate(state.lastAnilistSync)}`));
       assert.equal(scheduleRequests, 1);
       assert.equal(justwatchRequests, 0);
       assert.equal(anilistRequests, 1);

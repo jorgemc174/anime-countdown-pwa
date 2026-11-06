@@ -485,6 +485,9 @@ function bindEvents() {
     setSettingsOpen(els.settingsPanel.classList.contains("hidden"));
   });
   els.closeSettingsBtn.addEventListener("click", () => setSettingsOpen(false));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
+  });
   document.addEventListener("click", (e) => {
     if (!els.settingsPanel.classList.contains("hidden") &&
         !els.settingsPanel.contains(e.target) &&
@@ -544,6 +547,8 @@ function setSettingsOpen(open) {
   els.settingsPanel.classList.toggle("hidden", !open);
   document.body.classList.toggle("settings-open", open);
   els.settingsBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  if (open) renderAnilistSyncStatus();
+  (open ? els.closeSettingsBtn : els.settingsBtn).focus({ preventScroll: true });
 }
 
 async function setMode(mode, direction) {
@@ -762,6 +767,18 @@ function getDetectedPlatforms() {
   return [...platforms].sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50) || a.localeCompare(b));
 }
 
+function renderAnilistSyncStatus() {
+  const status = $("anilistSyncStatus");
+  if (status) status.textContent = state.lastAnilistSync
+    ? `Última sincronización: ${formatDate(state.lastAnilistSync)}`
+    : "Aún no has sincronizado";
+}
+
+function renderSettingsChip(label, active, attribute, value) {
+  const check = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>';
+  return `<button class="platform-chip${active ? " active" : ""}" ${attribute}="${escapeHtml(value)}" aria-pressed="${active}" type="button">${active ? check : ""}${escapeHtml(label)}</button>`;
+}
+
 function renderSettingsPlatformFilter() {
   const container = document.getElementById("platformFilterContainer");
   if (!container) return;
@@ -769,8 +786,10 @@ function renderSettingsPlatformFilter() {
   container.innerHTML = platforms.map((p) => {
     const hidden = state.hiddenPlatforms.includes(p);
     const label = p === "No legal platform" ? "Sin plataforma" : p;
-    return `<button class="platform-chip${hidden ? "" : " active"}" data-platform="${escapeHtml(p)}" type="button">${escapeHtml(label)}</button>`;
+    return renderSettingsChip(label, !hidden, "data-platform", p);
   }).join("");
+  const count = $("platformFilterCount");
+  if (count) count.textContent = `${platforms.filter(p => !state.hiddenPlatforms.includes(p)).length} de ${platforms.length}`;
 }
 
 function renderContentFilter() {
@@ -778,8 +797,10 @@ function renderContentFilter() {
   if (!container) return;
   container.innerHTML = CONTENT_FILTERS.map((filter) => {
     const visible = !state.hiddenContent.includes(filter.key);
-    return `<button class="platform-chip${visible ? " active" : ""}" data-filter="${escapeHtml(filter.key)}" type="button">${escapeHtml(filter.label)}</button>`;
+    return renderSettingsChip(filter.label, visible, "data-filter", filter.key);
   }).join("");
+  const count = $("contentFilterCount");
+  if (count) count.textContent = `${CONTENT_FILTERS.filter(f => !state.hiddenContent.includes(f.key)).length} de ${CONTENT_FILTERS.length}`;
 }
 
 async function toggleContentFilter(filterKey) {
@@ -787,7 +808,6 @@ async function toggleContentFilter(filterKey) {
   const idx = state.hiddenContent.indexOf(filterKey);
   if (idx >= 0) state.hiddenContent.splice(idx, 1);
   else state.hiddenContent.push(filterKey);
-  renderContentFilter();
   invalidateDataCaches();
   await browserApi.storage.local.set({ hiddenContent: state.hiddenContent });
   render();
@@ -800,7 +820,6 @@ async function togglePlatformFilter(platform) {
   } else {
     state.hiddenPlatforms.push(platform);
   }
-  renderSettingsPlatformFilter();
   invalidateDataCaches();
   await browserApi.storage.local.set({ hiddenPlatforms: state.hiddenPlatforms });
   render();
@@ -1183,6 +1202,7 @@ async function refreshAnilistData(username) {
   state.anilistMap = buildAnilistMap(library);
   state.lastAnilistSync = new Date().toISOString();
   state.lastAnilistSyncUsername = username;
+  renderAnilistSyncStatus();
   clearStaleAnilistFavorites();
   applyAnilistToReleases();
   reconcileAnilistFavoritesWithSchedule();
@@ -2742,10 +2762,18 @@ function render() {
   cleanupVirtualListObserver();
   setActiveTab();
   renderScheduleHealth();
+  renderAnilistSyncStatus();
   renderNextModern();
   renderListModern();
+  const focusedChip = document.activeElement?.closest("#settingsPanel .platform-chip");
+  const focusAttribute = focusedChip?.hasAttribute("data-platform") ? "data-platform" : "data-filter";
+  const focusValue = focusedChip?.getAttribute(focusAttribute);
   renderSettingsPlatformFilter();
   renderContentFilter();
+  if (focusedChip) {
+    [...els.settingsPanel.querySelectorAll(".platform-chip")]
+      .find(chip => chip.getAttribute(focusAttribute) === focusValue)?.focus({ preventScroll: true });
+  }
 }
 function updateLiveCountdowns() {
   if (state.currentNext) {
