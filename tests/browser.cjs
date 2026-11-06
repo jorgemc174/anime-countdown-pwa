@@ -22,6 +22,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     await page.waitForFunction(() => !document.getElementById("animeList").textContent.includes("Cargando"));
   }
   async function scenario(name, fn) {
+    if (process.env.BROWSER_SCENARIO && !name.includes(process.env.BROWSER_SCENARIO)) return;
     const context = await browser.newContext({ serviceWorkers: "block", viewport: { width: 390, height: 844 }, timezoneId: "Europe/Madrid", reducedMotion: "reduce" });
     const page = await context.newPage();
     page.on("pageerror", error => errors.push(`${name}: ${error.message}`));
@@ -91,6 +92,30 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         }
       }
     });
+    for (const action of ["enable", "reset"]) {
+      await scenario(`native ${action} forces reconciliation despite recent sync and subsequent checks`, async (page, context) => {
+        await context.grantPermissions(["notifications"]);
+        await page.goto(base); await ready(page);
+        await page.evaluate(async action => {
+          window.nativeResult = { cancelled: [], scheduled: [] };
+          window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+            requestPermissions: async () => ({ display: "granted" }),
+            getPending: async () => ({ notifications: action === "reset" ? [{ id: 123 }] : [] }),
+            cancel: async value => nativeResult.cancelled.push(...value.notifications),
+            schedule: async value => nativeResult.scheduled.push(...value.notifications)
+          } } };
+          state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+          state.lastNativeNotificationSync = new Date().toISOString();
+          state.notificationEnabled = action === "reset";
+          window.confirm = () => true;
+          if (action === "reset") await resetAll(); else await toggleNotifications();
+          checkReleaseNotifications();
+        }, action);
+        await page.clock.runFor(5000);
+        assert.equal(await page.evaluate(action => action === "reset" ? nativeResult.cancelled.length : nativeResult.scheduled.length, action), 1);
+        assert.equal(await page.evaluate(() => nativeResult.scheduled.length), action === "reset" ? 0 : 1);
+      });
+    }
     await scenario("disabling native notifications cancels pending entries only when present", async page => {
       await page.goto(base); await ready(page);
       assert.deepEqual(await page.evaluate(async () => {
@@ -429,8 +454,9 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.equal(await page.locator(".anime-card").getAttribute("tabindex"), "0");
       await page.screenshot({ path: "/tmp/anime-countdown-mobile.png" });
     });
-    {
+    if (!process.env.BROWSER_SCENARIO || process.env.BROWSER_SCENARIO === "offline") {
       const context = await browser.newContext({ serviceWorkers: "allow", reducedMotion: "reduce" });
+      await context.route("https://**/*", route => route.abort());
       const page = await context.newPage();
       page.on("pageerror", error => errors.push(`offline PWA: ${error.message}`));
       try {
@@ -439,6 +465,12 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         const dates = timetable.releases.map(row => Date.parse(row.releaseDate || "")).filter(Number.isFinite);
         assert.ok(dates.length > 0, "offline fixture needs at least one dated release");
         await page.clock.install({ time: new Date(Math.min(...dates) - 3600000) });
+        // Seed older caches before activation, which owns their cleanup.
+        await page.goto(base + "/manifest.json");
+        await page.evaluate(async () => {
+          await caches.open("another-app-cache");
+          await caches.open("anime-countdown-pwa-v98");
+        });
         await page.goto(base);
         await ready(page);
         await page.evaluate(() => navigator.serviceWorker.ready);
@@ -450,10 +482,12 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         await ready(page);
         await page.evaluate(async () => {
           await fetch("/api/health");
-          await caches.open("another-app-cache");
-          await caches.open("anime-countdown-pwa-v98");
         });
         assert.equal(await page.evaluate(async () => Boolean(await caches.match("/api/health"))), false);
+        // A later startup must retain the active worker's precache too.
+        await page.reload();
+        await ready(page);
+        assert.equal(await page.evaluate(async () => Boolean(await caches.match("/index.html"))), true, "startup preserves the active worker precache");
         await context.setOffline(true);
         await page.reload();
         await ready(page);

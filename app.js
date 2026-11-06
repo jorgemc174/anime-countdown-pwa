@@ -208,7 +208,6 @@ function requestTimeoutSignal() {
 }
 const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: options.signal || requestTimeoutSignal() });
 let sharedRefreshPromise = null;
-const APP_CACHE_NAME = "anime-countdown-pwa-v106";
 const PUBLIC_SCHEDULE_DAYS = Number(APP_CONFIG.PUBLIC_SCHEDULE_DAYS || 90);
 const ANILIST_AIRING_MAX_PAGES = Number(APP_CONFIG.ANILIST_AIRING_MAX_PAGES || APP_CONFIG.ANILIST_CATALOG_MAX_PAGES || 20);
 const RECENT_RELEASE_DAYS = Number(APP_CONFIG.RECENT_RELEASE_DAYS || 7);
@@ -259,6 +258,7 @@ const listMemo = new Map();
 let virtualListItems = [];
 let virtualListRendered = 0;
 let virtualListObserver = null;
+let nativeNotificationSyncForce = false;
 let nativeNotificationSyncTimer = null;
 let nativeNotificationSyncRunning = false;
 
@@ -271,7 +271,6 @@ async function init() {
     await loadState();
     bindEvents();
     registerServiceWorker();
-    cleanupLegacyCaches();
     updateNotificationButton();
     render();
     setInterval(updateLiveCountdowns, 1000);
@@ -281,16 +280,6 @@ async function init() {
     setupCapacitorNotificationTap();
   } catch (error) {
     showFatal(error);
-  }
-}
-
-function cleanupLegacyCaches() {
-  if ("caches" in window) {
-    caches.keys()
-      .then((keys) => keys
-        .filter((key) => key.startsWith("anime-countdown-pwa-") && key !== APP_CACHE_NAME)
-        .forEach((key) => caches.delete(key)))
-      .catch(() => {});
   }
 }
 
@@ -2374,6 +2363,7 @@ async function resetAll() {
   }
   await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides });
   render();
+  queueNativeNotificationSync({ force: true });
   showStatus("Favoritos borrados.", "success");
 }
 
@@ -2397,10 +2387,14 @@ function startNotificationScheduler() {
 
 function queueNativeNotificationSync({ force = false, delay = 4000 } = {}) {
   if (!isCapacitor() || !state.notificationEnabled) return;
+  if (nativeNotificationSyncTimer && nativeNotificationSyncForce && !force) return;
+  nativeNotificationSyncForce ||= force;
   if (nativeNotificationSyncTimer) clearTimeout(nativeNotificationSyncTimer);
   nativeNotificationSyncTimer = setTimeout(() => {
     nativeNotificationSyncTimer = null;
-    syncNativeNotificationsIfNeeded({ force });
+    const forceSync = nativeNotificationSyncForce;
+    nativeNotificationSyncForce = false;
+    syncNativeNotificationsIfNeeded({ force: forceSync });
   }, delay);
 }
 

@@ -6,7 +6,7 @@ on:
     - cron: "17 */3 * * *"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: update-anime-schedule
@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   update:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -83,3 +85,18 @@ jobs:
           } else { console.error('::error::Falta el catálogo compartido de plataformas.'); process.exitCode = 1; }
           if (health.stale) { console.error('::error::El horario publicado no tiene emisiones SUB futuras.'); process.exitCode = 1; }
           NODE
+
+  keep-enabled:
+    needs: update
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Keep schedule workflow enabled
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api --method PUT "repos/$GITHUB_REPOSITORY/actions/workflows/update-schedule.yml/enable"; then
+            echo "::warning::No se pudo reactivar el workflow; revisar su estado en GitHub Actions."
+          fi

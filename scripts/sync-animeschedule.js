@@ -35,6 +35,7 @@ async function main() {
   const timezone = process.env.SYNC_TIMEZONE || "Europe/Madrid";
   const weeks = Number(process.env.SYNC_WEEKS || "14");
   const rawItems = [];
+  const failedWeeks = [];
   let successfulWeeks = 0;
   let authenticationFailed = false;
 
@@ -43,9 +44,10 @@ async function main() {
   }
 
   for (const week of getNextWeeks(weeks)) {
-    if (Date.now() >= generationDeadline) break;
+    if (Date.now() >= generationDeadline) { failedWeeks.push(week); continue; }
     const response = await fetchAnimeScheduleWeekWithRetry(week, timezone, token);
     if (!response) {
+      failedWeeks.push(week);
       console.warn(`No se pudo leer ${week.year} semana ${week.week}; se continua con el resto.`);
       continue;
     }
@@ -54,7 +56,8 @@ async function main() {
       continue;
     }
     if (!response.ok) {
-      const body = await response.text();
+      failedWeeks.push(week);
+      const body = await response.text().catch(() => "");
       console.warn(`AnimeSchedule ${response.status} en ${week.year} semana ${week.week}: ${body.slice(0, 200)}`);
       if (response.status === 401 || response.status === 403) authenticationFailed = true;
       continue;
@@ -65,6 +68,7 @@ async function main() {
       successfulWeeks++;
       rawItems.push(...extractArray(data));
     } catch (error) {
+      failedWeeks.push(week);
       console.warn(`AnimeSchedule devolvio JSON invalido en ${week.year} semana ${week.week}: ${error.message || error}`);
     }
   }
@@ -96,11 +100,25 @@ async function main() {
     }
   }
 
+  const previous = await readExistingSchedule();
+  const keys = new Set(releases.map(policy.episodeKey));
+  const failed = new Set(failedWeeks.map(({ year, week }) => `${year}-${week}`));
+  let retained = 0;
+  for (const row of previous?.releases || []) {
+    const timestamp = Date.parse(row.releaseDate || "");
+    if (!(timestamp > Date.now()) || keys.has(policy.episodeKey(row))) continue;
+    const localDay = new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(timestamp));
+    const { year, week } = getIsoWeek(new Date(`${localDay}T12:00:00`));
+    if (!failed.has(`${year}-${week}`)) continue;
+    releases.push(row); keys.add(policy.episodeKey(row)); retained++;
+  }
+  if (failedWeeks.length) console.warn(`::warning::Filas conservadas de semanas fallidas: ${retained}.`);
+  releases.sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+
   if (!releases.length) {
     throw new Error("Las fuentes no devolvieron episodios SUB válidos; se conserva el archivo anterior y la ejecución falla.");
   }
 
-  const previous = await readExistingSchedule();
   const tracked = await readDelayTracking();
   releases = await trackDelays([...(previous?.releases || []), ...tracked], releases, { timezone, discoverSources: discoverOfficialSources });
   await saveDelayTracking(releases);

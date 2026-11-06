@@ -2,6 +2,8 @@
 const { isPending, episodeKey, hasConfirmedTime } = require("../schedule-policy");
 const dns = require("node:dns/promises");
 const net = require("node:net");
+const https = require("node:https");
+const { Readable } = require("node:stream");
 
 // Never infer a SUB release from an article's publication date or a Japanese broadcast.
 function extractOfficialEvidence(html, episode, url, titles = []) {
@@ -60,25 +62,45 @@ function privateAddress(address) {
     (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127);
 }
 
-async function readOfficialPage(url, fetchImpl = fetch) {
+function requestOfficialPage(target, address) {
+  return new Promise((resolve, reject) => {
+    const request = https.request(target, {
+      signal: AbortSignal.timeout(12000),
+      headers: { accept: "text/html" },
+      // Retain the hostname for TLS/SNI and Host, but never resolve it again.
+      lookup: (_hostname, options, callback) => options.all
+        ? callback(null, [address]) : callback(null, address.address, address.family)
+    }, response => resolve(new Response(Readable.toWeb(response), {
+      status: response.statusCode, headers: response.headers
+    })));
+    request.on("error", reject);
+    request.end();
+  });
+}
+
+async function readOfficialPage(url) {
   for (let redirects = 0; redirects < 4; redirects++) {
     const target = new URL(url);
     if (target.protocol !== "https:" || target.username || target.password || target.port || net.isIP(target.hostname)) throw new Error("Fuente oficial no pública o no HTTPS");
     const addresses = await dns.lookup(target.hostname, { all: true });
     if (!addresses.length || addresses.some(({ address }) => privateAddress(address))) throw new Error("Destino oficial no público");
-    const response = await fetchImpl(target, { redirect: "manual", signal: AbortSignal.timeout(12000), headers: { accept: "text/html" } });
+    const response = await requestOfficialPage(target, addresses[0]);
     if ([301, 302, 303, 307, 308].includes(response.status)) {
       url = new URL(response.headers.get("location"), target).href;
       await response.body?.cancel();
       continue;
     }
-    if (!response.ok) throw new Error(`Fuente oficial HTTP ${response.status}`);
-    if (!/text\/html/i.test(response.headers.get("content-type") || "")) throw new Error("Fuente oficial sin HTML");
+    if (!response.ok || !/text\/html/i.test(response.headers.get("content-type") || "")) {
+      await response.body?.cancel();
+      throw new Error(!response.ok ? `Fuente oficial HTTP ${response.status}` : "Fuente oficial sin HTML");
+    }
     let html = "";
+    let bytes = 0;
     const decoder = new TextDecoder();
     for await (const chunk of response.body) {
+      bytes += chunk.byteLength;
+      if (bytes > 1500000) throw new Error("Anuncio oficial demasiado grande");
       html += decoder.decode(chunk, { stream: true });
-      if (html.length > 1500000) throw new Error("Anuncio oficial demasiado grande");
     }
     html += decoder.decode();
     return { html, url: target.href };
