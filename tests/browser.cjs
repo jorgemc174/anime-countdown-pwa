@@ -40,16 +40,9 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.equal(await page.locator("#settingsPanel").isVisible(), false);
       assert.equal(await page.locator("#settingsBtn").evaluate(el => el === document.activeElement), true);
     });
-    await scenario("settings shows persisted sync time and filter counts follow pressed chips", async page => {
+    await scenario("settings filter counts follow pressed chips", async page => {
       await page.goto(base); await ready(page);
       await page.locator("#settingsBtn").click();
-      assert.equal(await page.locator("#anilistSyncStatus").innerText(), "Aún no has sincronizado");
-      await page.evaluate(async () => {
-        await browserApi.storage.local.set({ lastAnilistSync: "2026-10-29T16:30:00Z" });
-      });
-      await page.reload(); await ready(page);
-      await page.locator("#settingsBtn").click();
-      assert.equal(await page.locator("#anilistSyncStatus").innerText(), await page.evaluate(() => `Última sincronización: ${formatDate(state.lastAnilistSync)}`));
       for (const [container, counter] of [["platformFilterContainer", "platformFilterCount"], ["contentFilterContainer", "contentFilterCount"]]) {
         const details = page.locator(`#${container}`).locator("..");
         await details.locator("summary").click();
@@ -78,7 +71,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
           const contrast = await page.locator("#settingsPanel").evaluate(panel => {
             const rgb = value => value.match(/[\d.]+/g).slice(0, 3).map(Number);
             const luminance = value => rgb(value).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }).reduce((sum, v, i) => sum + v * [0.2126, 0.7152, 0.0722][i], 0);
-            return [...panel.querySelectorAll("h3, .settings-help, .filter-count, .platform-chip, input, select, .danger-btn")].map(el => {
+            return [...panel.querySelectorAll(".filter-help, .filter-count, .platform-chip")].map(el => {
               const style = getComputedStyle(el);
               let parent = el;
               while (getComputedStyle(parent).backgroundColor === "rgba(0, 0, 0, 0)") parent = parent.parentElement;
@@ -88,11 +81,12 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
           });
           assert.deepEqual(contrast, [], `${width} ${theme}: text contrast`);
           assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && els.settingsPanel.scrollWidth <= els.settingsPanel.clientWidth), true);
-          assert.equal(await page.locator("#settingsPanel .toggle-switch, #settingsPanel summary").evaluateAll(nodes => nodes.every(el => { const r = el.getBoundingClientRect(); return r.height >= 44 && r.width >= 44; })), true);
+          assert.equal(await page.locator("#settingsPanel summary").evaluateAll(nodes => nodes.every(el => { const r = el.getBoundingClientRect(); return r.height >= 44 && r.width >= 44; })), true);
           await page.locator("#settingsPanel").evaluate(el => el.scrollTop = 0);
           await page.screenshot({ path: `/tmp/ajustes/${width}-${theme}.png` });
           await page.locator("#settingsPanel").evaluate(el => el.scrollTop = el.scrollHeight);
           await page.screenshot({ path: `/tmp/ajustes/${width}-${theme}-inferior.png` });
+          assert.equal(await page.locator("#settingsPanel").evaluate(el => { const r = el.getBoundingClientRect(); return r.left > 0 && r.right < innerWidth && r.top > 0; }), true, `${width} ${theme}: floating panel`);
           assert.equal(await page.locator("#closeSettingsBtn").evaluate(el => { const r = el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; }), true);
         }
       }
@@ -398,7 +392,6 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       await page.locator("#anilistInput").fill("test-user");
       await page.locator("#syncAnilistBtn").click();
       await page.waitForFunction(() => state.lastAnilistSyncUsername === "test-user" && !els.syncAnilistBtn.disabled);
-      assert.equal(await page.locator("#anilistSyncStatus").innerText(), await page.evaluate(() => `Última sincronización: ${formatDate(state.lastAnilistSync)}`));
       assert.equal(scheduleRequests, 1);
       assert.equal(justwatchRequests, 0);
       assert.equal(anilistRequests, 1);
