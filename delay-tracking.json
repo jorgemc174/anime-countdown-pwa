@@ -14,8 +14,8 @@
       "episodeNumber": "6",
       "airType": "SUB",
       "delayed": true,
-      "scheduleStatus": "pending",
-      "releaseDate": null,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-11-14T15:00:00.000Z",
       "originalReleaseDate": "2026-11-14T15:00:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://crunchyroll.com/series/GT00383996/im-looking-for-a-zombie",
@@ -27,57 +27,12 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/zombie-sagashitemasu-6954f50ac029cfe366caf31f9f476f99.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
+      "lastDelayCheck": "2026-11-06T21:27:49.453Z",
       "officialSources": [
         "https://zommasu.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "anilistOffers": [],
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://crunchyroll.com/series/GT00383996/im-looking-for-a-zombie",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts508735",
-          "matchedTitle": "#I'm Looking for a Zombie",
-          "aliases": [],
-          "lookupVersion": 6,
-          "checkedAt": "2026-11-02T19:34:53.278Z",
-          "lastAttemptAt": "2026-11-02T19:34:53.278Z",
-          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
-        }
-      },
-      "platformSource": "justwatch",
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-02T19:34:53.278Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384049JAJP",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315"
-      },
-      "platformStatus": "verified",
-      "platformStale": false
+      "delayResearchStatus": "unconfirmed"
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-5-2026-11-08t17-06-00-01-00",
@@ -93,8 +48,8 @@
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": true,
-      "scheduleStatus": "pending",
-      "releaseDate": null,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-11-08T16:06:00.000Z",
       "originalReleaseDate": "2026-11-08T16:06:00.000Z",
       "service": "No legal platform",
       "serviceUrl": "",
@@ -103,277 +58,33 @@
       "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-0f212be0a77629006e5418afb775701d.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
+      "lastDelayCheck": "2026-11-06T21:27:49.453Z",
       "officialSources": [
         "https://anime-yukionna.af-original.com/",
         "https://anime-yukionna.af-original.com/en/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "anilistOffers": [],
-      "basePlatforms": {
-        "service": "No legal platform",
-        "serviceUrl": "",
-        "allServices": [],
-        "hasAllowedPlatform": false
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "not-found",
-          "offers": [],
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
-          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
-          "errorProvider": "AniList",
-          "consecutiveErrors": 9,
-          "nextRetryAt": "2026-11-02T04:09:51.733Z"
-        }
-      },
-      "platformSource": "",
-      "jwVerified": false,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {},
-      "platformStatus": "not-found",
-      "platformStale": true
-    },
-    {
-      "id": "schedule-re-zero-kara-hajimeru-isekai-seikatsu-4-12-2026-08-12t16-00-00-02-00",
-      "animeKey": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4",
-      "route": "re-zero-kara-hajimeru-isekai-seikatsu-4",
-      "episode": "Ep 12",
-      "episodeNumber": "12",
-      "airType": "SUB",
-      "delayed": true,
-      "releaseDate": null,
-      "originalReleaseDate": "2026-08-12T14:00:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg",
-      "anilistId": 189046,
-      "anilistTitle": "Re:ZERO -Starting Life in Another World- Season 4",
-      "anilistUrl": "https://anilist.co/anime/189046",
-      "anilistFormat": "TV",
-      "anilistScore": 90,
-      "titles": [
-        "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
-        "Re:ZERO -Starting Life in Another World- Season 4",
-        "Re:ゼロから始める異世界生活 4th season",
-        "Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก ซีซั่น 4",
-        "Re:ZERO – Жизнь с нуля в альтернативном мире 4"
-      ],
-      "scheduleStatus": "pending",
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
-      "officialSources": [],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll",
-          "Bilibili"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts41257",
-          "matchedTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
-        }
-      },
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/GD9UEZ2VX",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0787268f-3ff4-43e1-a853-cdfe632eff96"
-      },
-      "platformStatus": "verified",
-      "platformStale": false,
-      "anilistOffers": [],
-      "platformSource": "justwatch"
-    },
-    {
-      "id": "schedule-detective-conan-1218-2026-10-31t12-30-00-01-00",
-      "animeKey": "detective-conan",
-      "title": "Detective Conan",
-      "route": "detective-conan",
-      "episode": "Ep 1218",
-      "episodeNumber": "1218",
-      "airType": "SUB",
-      "delayed": true,
-      "scheduleStatus": "pending",
-      "releaseDate": null,
-      "originalReleaseDate": "2026-10-31T11:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/case-closed",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
-      "anilistId": 235,
-      "anilistTitle": "Detective Conan",
-      "anilistUrl": "https://anilist.co/anime/235",
-      "anilistFormat": "TV",
-      "anilistYear": null,
-      "anilistScore": 82,
-      "titles": [
-        "Detective Conan",
-        "Meitantei Conan",
-        "名探偵コナン",
-        "Case Closed",
-        "Detectiu Conan",
-        "הבלש קונאן",
-        "Detektyw Conan",
-        "المحقق كونان",
-        "名侦探柯南",
-        "Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story",
-        "名探偵コナン 警察学校編 Wild Police Story",
-        "Détective Conan",
-        "ยอดนักสืบจิ๋วโคนัน",
-        "Thám Tử Lừng Danh Conan",
-        "Detektiv Conan",
-        "Detetive Conan"
-      ],
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
-      "officialSources": [
-        "https://www.ytv.co.jp/conan/",
-        "https://www.ytv.co.jp/conan/police/"
-      ],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://www.crunchyroll.com/case-closed",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll",
-          "Netflix"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/G8WUN280N",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Prime Video",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Amazon Prime Video with Ads",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "CanalSurMas",
-              "url": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
-              "monetizationType": "ADS"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab656f99-4349-458a-a967-6ce017d3d207",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Rakuten TV",
-              "url": "https://www.rakuten.tv/es/tv_shows/detective-conan",
-              "monetizationType": "ADS"
-            }
-          ],
-          "justwatchId": "ts10145",
-          "matchedTitle": "Meitantei Conan",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
-        }
-      },
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/G8WUN280N",
-        "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
-        "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
-        "CanalSurMas": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab656f99-4349-458a-a967-6ce017d3d207",
-        "Rakuten TV": "https://www.rakuten.tv/es/tv_shows/detective-conan"
-      },
-      "platformStatus": "verified",
-      "platformStale": false,
-      "anilistOffers": [
-        {
-          "service": "Prime Video",
-          "url": "https://www.amazon.com/The-Bizarre-Manhunt-Murder/dp/B09Q2CH8RS/ref=sr_1_1?crid=3667GOL0MHJ0P"
-        },
-        {
-          "service": "Crackle",
-          "url": "https://www.crackle.com/details/00bf3d7c-564a-49a7-9661-b57c8743882c/case-closed"
-        },
-        {
-          "service": "Tubi TV",
-          "url": "https://tubitv.com/series/300010357/case-closed-subbed?start=true"
-        },
-        {
-          "service": "YouTube",
-          "url": "https://www.youtube.com/@conan_anime"
-        }
-      ],
-      "platformSource": "justwatch"
+      "delayResearchStatus": "unconfirmed"
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
       "animeKey": "ao-no-hako-2nd-season",
+      "titles": [
+        "Ao no Hako 2nd Season",
+        "Blue Box 2nd Season",
+        "アオのハコ 第2期",
+        "Ao no Hako Season 2",
+        "Blue Box Season 2",
+        "アオのハコ Season２"
+      ],
       "title": "Ao no Hako 2nd Season",
       "route": "ao-no-hako-2nd-season",
       "episode": "Ep 5",
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": true,
-      "scheduleStatus": "pending",
-      "releaseDate": null,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-11-08T08:00:00.000Z",
       "originalReleaseDate": "2026-11-08T08:00:00.000Z",
       "service": "Netflix",
       "serviceUrl": "https://www.netflix.com/title/81663323",
@@ -383,80 +94,44 @@
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189123-0secXELIhkIW.jpg",
       "anilistId": 189123,
-      "anilistTitle": "Blue Box Season 2",
-      "anilistUrl": "https://anilist.co/anime/189123",
-      "anilistFormat": "TV",
-      "anilistYear": null,
-      "anilistScore": 81,
-      "titles": [
-        "Ao no Hako 2nd Season",
-        "Blue Box 2nd Season",
-        "アオのハコ 第2期",
-        "Ao no Hako Season 2",
-        "Blue Box Season 2",
-        "アオのハコ Season２"
-      ],
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
-      "officialSources": [
-        "https://aonohako-anime.com/"
-      ],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "basePlatforms": {
-        "service": "Netflix",
-        "serviceUrl": "https://www.netflix.com/title/81663323",
-        "allServices": [
-          "Netflix"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Netflix",
-              "url": "https://www.netflix.com/title/81663323",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts361082",
-          "matchedTitle": "Blue Box",
-          "lookupVersion": 2,
-          "checkedAt": "2026-10-30T16:02:17.050Z",
-          "lastAttemptAt": "2026-10-30T16:02:17.050Z"
-        }
-      },
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
-      "serviceUrls": {
-        "Netflix": "https://www.netflix.com/title/81663323"
-      },
-      "platformStatus": "verified",
-      "platformStale": false,
       "anilistOffers": [
         {
           "service": "Netflix",
           "url": "https://www.netflix.com/title/81663323"
         }
       ],
-      "platformSource": "justwatch"
+      "anilistTitle": "Blue Box Season 2",
+      "anilistUrl": "https://anilist.co/anime/189123",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 81,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-06T21:27:49.453Z",
+      "officialSources": [
+        "https://aonohako-anime.com/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
     },
     {
       "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
       "animeKey": "psyяen",
+      "titles": [
+        "PSYЯEN",
+        "PSYREN",
+        "PSYЯEN -サイレン-",
+        "PSYREN -サイレン-",
+        "САЙРЕН"
+      ],
       "title": "PSYЯEN",
       "route": "psyren",
       "episode": "Ep 5",
       "episodeNumber": "5",
       "airType": "SUB",
       "delayed": true,
-      "scheduleStatus": "pending",
-      "releaseDate": null,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-11-09T15:30:00.000Z",
       "originalReleaseDate": "2026-11-09T14:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
@@ -467,74 +142,26 @@
       "hasAllowedPlatform": true,
       "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx204011-j45RZoqYbdZK.jpg",
       "anilistId": 204011,
-      "anilistTitle": "PSYREN",
-      "anilistUrl": "https://anilist.co/anime/204011",
-      "anilistFormat": "TV",
-      "anilistYear": null,
-      "anilistScore": 70,
-      "titles": [
-        "PSYЯEN",
-        "PSYREN",
-        "PSYЯEN -サイレン-",
-        "PSYREN -サイレン-",
-        "САЙРЕН"
-      ],
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-06T19:30:03.538Z",
-      "officialSources": [
-        "https://psyren-anime.com/",
-        "https://psyren-anime-global.com/"
-      ],
-      "delayCheckError": "No se pudo consultar el directorio de fuentes oficiales",
-      "delayResearchStatus": "error",
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384252ES419",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts492175",
-          "matchedTitle": "Psyren",
-          "checkedAt": "2026-10-30T15:50:01.545Z",
-          "lastAttemptAt": "2026-10-30T15:50:01.545Z"
-        }
-      },
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-10-30T15:50:01.545Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384252ES419",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
-      },
-      "platformStatus": "verified",
-      "platformStale": false,
       "anilistOffers": [
         {
           "service": "Crunchyroll",
           "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
         }
       ],
-      "platformSource": "justwatch"
+      "anilistTitle": "PSYREN",
+      "anilistUrl": "https://anilist.co/anime/204011",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 70,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-06T21:27:49.453Z",
+      "officialSources": [
+        "https://psyren-anime.com/",
+        "https://psyren-anime-global.com/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
     }
   ]
 }
