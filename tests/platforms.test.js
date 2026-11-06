@@ -2,7 +2,7 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const policy = require("../platform-policy");
-const { lookupAvailability, enrichPlatforms } = require("../scripts/enrich-platforms");
+const { LOOKUP_VERSION, lookupAvailability, enrichPlatforms } = require("../scripts/enrich-platforms");
 const now = Date.parse("2026-10-30T12:00:00Z");
 const row = { id: "a4", animeKey: "sample", title: "Sample", episodeNumber: 4,
   releaseDate: "2026-11-01T18:00:00Z", service: "Crunchyroll", serviceUrl: "https://www.crunchyroll.com/series/a", allServices: ["Crunchyroll"] };
@@ -171,7 +171,7 @@ test("The Ramparts of Ice matches the Jouheki/Jyouheki romanization variant", ()
 });
 test("known JustWatch IDs survive renamed or translated catalog titles", async () => {
   let calls = 0;
-  const result = await lookupAvailability(row, es, { previous: { status: "verified", justwatchId: "ts-known" }, fetchImpl: async (url, options) => {
+  const result = await lookupAvailability(row, es, { previous: { status: "verified", justwatchId: "ts-known", lookupVersion: LOOKUP_VERSION }, fetchImpl: async (url, options) => {
     calls++;
     const body = JSON.parse(options.body);
     assert.equal(body.operationName, "GetKnownTitle");
@@ -379,7 +379,7 @@ test("subtitle roots use both source services but never paid offers", () => {
 });
 test("a previous no-offers ID retains its result when AniList aliases are unavailable", async () => {
   const result = await lookupAvailability(row, es, {
-    previous: { status: "no-offers", justwatchId: "known" }, aliasState: { unavailable: true },
+    previous: { status: "no-offers", justwatchId: "known", lookupVersion: LOOKUP_VERSION }, aliasState: { unavailable: true },
     fetchImpl: async () => Response.json({ data: { node: { ...catalogNode("Renamed", "netflix", "known"), offers: [] } } })
   });
   assert.equal(result.status, "no-offers");
@@ -429,4 +429,48 @@ test("fallback brands require their own domain while JustWatch remains authorita
     const verified = policy.applyCountryPlatforms({ platformsByCountry: { ES: { status: "verified", offers: [offer] } } });
     assert.equal(verified.platformSource, "justwatch");
   }
+});
+const jwNode = (id, title, year, service) => ({ id, objectType: "SHOW", content: { title, originalTitle: title, originalReleaseYear: year },
+  offers: service ? [{ package: { technicalName: service.toLowerCase(), clearName: service }, standardWebURL: `https://www.${service.toLowerCase()}.com/title/${id}`, monetizationType: "FLATRATE" }] : [] });
+const ranma = { title: "Ranma ½ (2024) 3rd Season", titles: ["らんま1/2 第3期", "Ranma 1/2 (2024) 3rd Season", "Ranma1/2 (2024) Season 3"], anilistFormat: "TV",
+  anilistOffers: [{ service: "Netflix", url: "https://www.netflix.com/title/81171925" }] };
+test("a year declared in the title selects the remake and never the older series", () => {
+  const old = jwNode("ts20738", "Ranma ½", 1989, "Animebox");
+  const remake = jwNode("ts438720", "Ranma ½", 2024, "Netflix");
+  assert.equal(policy.findMatch(ranma, [old, remake]).id, "ts438720");
+  assert.equal(policy.findMatch({ ...ranma, anilistOffers: [] }, [old, remake]).id, "ts438720");
+  assert.equal(policy.findMatch(ranma, [old]), null);
+  assert.ok(policy.searchTitles({ title: "Ranma1/2 (2024) Season 3" }).includes("Ranma1/2"));
+});
+test("same-title series without a declared year are resolved by the known platform", () => {
+  const item = { title: "Sample Remake 2nd Season", anilistFormat: "TV", anilistOffers: [{ service: "Netflix", url: "https://www.netflix.com/title/1" }] };
+  const old = jwNode("old", "Sample Remake", 1990, "Hulu");
+  const remake = jwNode("new", "Sample Remake", 2024, "Netflix");
+  assert.equal(policy.findMatch(item, [old, remake]).id, "new");
+  assert.equal(policy.findMatch({ ...item, title: "Sample Remake", anilistOffers: item.anilistOffers }, [old, remake]).id, "new");
+});
+test("records from an older matching version are looked up again and their id is not reused", async () => {
+  const previous = { status: "verified", offers, justwatchId: "ts20738", lookupVersion: 1, checkedAt: new Date(now).toISOString() };
+  const stale = { ...payload, releases: payload.releases.map(item => ({ ...item, anilistOffers: [] })) };
+  const seen = [];
+  await enrichPlatforms(stale, { version: 1, series: { sample: { countries: { ES: previous, MX: previous } } } }, {
+    now, countries: [es], lookup: async (item, country, options) => { seen.push(options.knownId); return { status: "verified", offers }; }
+  });
+  assert.deepEqual(seen, [null]);
+  const known = [];
+  const fetchImpl = async (url, options) => { known.push(JSON.parse(options.body).operationName); return new Response(JSON.stringify({ data: { popularTitles: { edges: [] } } }), { status: 200 }); };
+  await lookupAvailability({ title: "Sample", anilistId: 1, anilistOffers: offers }, es, { previous, fetchImpl }).catch(() => {});
+  assert.equal(known.includes("GetKnownTitle"), false);
+});
+test("a no-offers id from an older version is kept when the new search finds nothing", async () => {
+  const fetchImpl = async (url, options) => {
+    const body = JSON.parse(options.body);
+    if (body.operationName === "GetKnownTitle") return Response.json({ data: { node: { ...catalogNode("Renamed", "netflix", "kept"), offers: [] } } });
+    return Response.json({ data: { popularTitles: { edges: [] } } });
+  };
+  const result = await lookupAvailability({ ...row, anilistOffers: offers }, es, { previous: { status: "no-offers", justwatchId: "kept", lookupVersion: 1 }, fetchImpl });
+  assert.equal(result.status, "no-offers");
+  assert.equal(result.justwatchId, "kept");
+  const wrong = await lookupAvailability({ ...row, anilistOffers: offers }, es, { previous: { status: "verified", justwatchId: "wrong", offers, lookupVersion: 1 }, fetchImpl, aliasState: { unavailable: true } }).catch(error => error);
+  assert.notEqual(wrong.justwatchId, "wrong");
 });

@@ -52,12 +52,14 @@
     const key = normalize(value);
     return key.length >= 5 || (key.length >= 2 && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(key));
   }
+  const DECLARED_YEAR = /\s*\(((?:19|20)\d{2})\)/;
+  const withoutYear = value => String(value || "").replace(DECLARED_YEAR, "").trim();
   function subtitleRoot(value) {
     return seriesTitle(String(value || "").split(/: | - | ~ /)[0]);
   }
   function searchTitles(item) {
     const raw = [...new Set([item.anilistTitle, item.title, ...(item.titles || [])].filter(Boolean))];
-    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : [...raw.map(seriesTitle), ...raw.map(subtitleRoot)].filter(value => !raw.includes(value) && validSeriesRoot(value));
+    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : [...raw.map(seriesTitle), ...raw.map(value => seriesTitle(withoutYear(value))), ...raw.map(subtitleRoot)].filter(value => !raw.includes(value) && validSeriesRoot(value));
     return [...new Set([...raw.slice(0, 2), ...roots])].slice(0, 6);
   }
   function findMatch(item, nodes) {
@@ -65,7 +67,12 @@
     const raw = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean);
     const titles = new Set(raw.map(matchKey));
     const type = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW";
-    const candidates = nodes.filter(node => node.objectType === type);
+    // A title such as "Ranma ½ (2024)" names a remake: an older series with the same name is another show.
+    const declaredYear = raw.map(value => value.match(DECLARED_YEAR)?.[1]).find(Boolean);
+    const candidates = nodes.filter(node => node.objectType === type &&
+      (!declaredYear || Number(node.content?.originalReleaseYear) === Number(declaredYear)));
+    const services = new Set([...(item.anilistOffers || []).map(offer => offer.service), ...(basePlatforms(item).allServices || [])]);
+    const sharesService = node => allowedOffers(node).some(offer => services.has(offer.service));
     const matchesTitle = (node, names) => [node.content?.title, node.content?.originalTitle].some(title => title && names.has(matchKey(title)));
     const dedupe = values => [...new Map(values.map(node => [node.id, node])).values()];
     const year = item.anilistYear || item.originalReleaseYear;
@@ -73,8 +80,11 @@
       const matching = year ? values.filter(node => Number(node.content?.originalReleaseYear) === Number(year)) : values;
       return matching.length === 1 ? matching[0] : null;
     };
-    const exact = selectExact(dedupe(candidates.filter(node => matchesTitle(node, titles))));
+    const exactNodes = dedupe(candidates.filter(node => matchesTitle(node, titles)));
+    const exact = selectExact(exactNodes);
     if (exact) return exact;
+    const exactShared = exactNodes.filter(sharesService);
+    if (exactShared.length === 1) return exactShared[0];
     const wordKey = value => {
       const words = [...new Set((type === "MOVIE" ? String(value || "") : seriesTitle(value)).toLowerCase().match(/[\p{L}\p{N}]+/gu) || [])];
       return words.length >= 3 ? words.sort().join(" ") : "";
@@ -87,17 +97,17 @@
       if (match) return match;
     }
     if (type === "MOVIE") return null;
-    const roots = new Set(raw.map(seriesTitle).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
+    const roots = new Set(raw.map(value => seriesTitle(withoutYear(value))).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
     // A sequel may be listed under the parent series, with its original premiere year.
     // Keep numbers within the title, remake years and spin-off names intact.
     const parents = [...new Map(candidates.filter(node => matchesTitle(node, roots)).map(node => [node.id, node])).values()];
     if (parents.length === 1) return parents[0];
+    const parentsShared = parents.filter(sharesService);
+    if (parentsShared.length === 1) return parentsShared[0];
     const available = parents.filter(node => allowedOffers(node).length > 0);
     if (available.length === 1) return available[0];
     const subtitleRoots = new Set(raw.map(subtitleRoot).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
-    const services = new Set([...(item.anilistOffers || []).map(offer => offer.service), ...(basePlatforms(item).allServices || [])]);
-    const corroborated = dedupe(candidates.filter(node => matchesTitle(node, subtitleRoots)
-      && allowedOffers(node).some(offer => services.has(offer.service))));
+    const corroborated = dedupe(candidates.filter(node => matchesTitle(node, subtitleRoots) && sharesService(node)));
     return corroborated.length === 1 ? corroborated[0] : null;
   }
   function basePlatforms(item) {

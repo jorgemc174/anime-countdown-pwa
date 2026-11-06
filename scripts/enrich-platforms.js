@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 7;
+const LOOKUP_VERSION = 8;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
@@ -38,7 +38,8 @@ function providerError(response) {
 }
 
 async function lookupKnownTitle(item, country, { previous, knownId, fetchImpl = fetch, signal } = {}) {
-  const id = previous?.justwatchId && ["verified", "no-offers"].includes(previous.status) ? previous.justwatchId : knownId;
+  // An id found with older matching rules may be the wrong series: match it again.
+  const id = previous?.justwatchId && previous.lookupVersion === LOOKUP_VERSION && ["verified", "no-offers"].includes(previous.status) ? previous.justwatchId : knownId;
   if (!id) return null;
   const response = await fetchImpl(ENDPOINT, { method: "POST", signal: signal || AbortSignal.timeout(15000),
     headers: { "content-type": "application/json", accept: "application/json" },
@@ -116,7 +117,11 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
 
 async function lookupAvailability(item, country, options = {}) {
   const known = await lookupKnownTitle(item, country, options);
-  const direct = known || await lookupJustWatch(item, country, options);
+  let direct = known || await lookupJustWatch(item, country, options);
+  // Without offers an old id cannot show a wrong platform: keep watching it if the search finds nothing.
+  if (direct.status === "not-found" && options.previous?.status === "no-offers" && options.previous.justwatchId) {
+    direct = await lookupKnownTitle(item, country, { ...options, previous: { ...options.previous, lookupVersion: LOOKUP_VERSION } }) || direct;
+  }
   const needsOffers = direct.status === "no-offers" && !item.anilistOffers?.length;
   if (direct.status !== "not-found" && !needsOffers) return direct;
   const key = policy.seriesKey(item);
@@ -180,7 +185,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       const changedNames = previous?.inputSignature && previous.inputSignature !== inputSignature(target);
       const lifespan = previous?.status === "verified" ? ttlMs : NEGATIVE_RETRY_MS;
       const fresh = !changedNames && !previous?.pendingNegative && previous?.checkedAt &&
-        (previous.status === "verified" || previous.lookupVersion === LOOKUP_VERSION) && now - Date.parse(previous.checkedAt) < lifespan;
+        previous.lookupVersion === LOOKUP_VERSION && now - Date.parse(previous.checkedAt) < lifespan;
       const retryLater = previous?.nextRetryAt ? now < Date.parse(previous.nextRetryAt) : previous?.lastError && now - lastAttempt < 3600000;
       if ((!fresh || previous?.lastError) && (!retryLater || changedNames)) tasks.push({ key, row, country, lastAttempt });
     }
@@ -196,7 +201,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       const previous = cache.series[key].countries[country.code];
       try {
         const target = { ...row, titles: [...new Set([...(row.titles || []), ...(cache.series[key].aliases || [])])] };
-        const knownIds = [...new Set(Object.values(cache.series[key].countries).filter(record => record.status === "verified").map(record => record.justwatchId).filter(Boolean))];
+        const knownIds = [...new Set(Object.values(cache.series[key].countries).filter(record => record.status === "verified" && record.lookupVersion === LOOKUP_VERSION).map(record => record.justwatchId).filter(Boolean))];
         const result = await lookup(target, country, { previous, knownId: knownIds.length === 1 ? knownIds[0] : null, aliasCache, aliasState, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
         if (Array.isArray(result.anilistOffers)) cache.series[key].anilistOffers = result.anilistOffers;
@@ -277,4 +282,4 @@ async function main() {
   if (result.summary.errors) console.warn("JustWatch incompleto: se conserva la última información válida y se reintentará en el siguiente cron.");
 }
 if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });
-module.exports = { lookupAvailability, enrichPlatforms, main };
+module.exports = { LOOKUP_VERSION, lookupAvailability, enrichPlatforms, main };
