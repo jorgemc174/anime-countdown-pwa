@@ -6,7 +6,10 @@
       "titles": [
         "#Zombie Sagashitemasu",
         "#‌‌​I'm Looking For a Zombie",
-        "#ゾンビさがしてます"
+        "#ゾンビさがしてます",
+        "#I'm Looking For a Zombie",
+        "Zommasu",
+        "ゾンます"
       ],
       "title": "#Zombie Sagashitemasu",
       "route": "zombie-sagashitemasu",
@@ -24,7 +27,7 @@
         "Crunchyroll"
       ],
       "hasAllowedPlatform": true,
-      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/zombie-sagashitemasu-6954f50ac029cfe366caf31f9f476f99.jpg",
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199007-8R1HsnflnHJE.jpg",
       "confirmedSubDate": "",
       "officialEvidence": [],
       "lastDelayCheck": "2026-11-06T21:27:49.453Z",
@@ -32,7 +35,305 @@
         "https://zommasu.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
+        }
+      ],
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://crunchyroll.com/series/GT00383996/im-looking-for-a-zombie",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T11:04:37.082Z",
+          "lastAttemptAt": "2026-11-06T11:04:37.082Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384049ENUS&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking For a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384049ENUS&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384049ENUS",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384049ENUS&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts508735",
+          "matchedTitle": "#I'm Looking for a Zombie",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T01:37:17.743Z",
+          "lastAttemptAt": "2026-11-06T01:37:17.743Z",
+          "inputSignature": "[\"SHOW\",null,[\"#I'm Looking For a Zombie\",\"#I'm Looking for a Zombie\",\"#Zombie Sagashitemasu\",\"#‌‌​I'm Looking For a Zombie\",\"#ゾンビさがしてます\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-06T11:04:37.082Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384049JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ab7f5cfd-28fa-4c58-be32-197407ec4315"
+      },
+      "platformStatus": "verified",
+      "platformStale": false,
+      "anilistId": 199007,
+      "anilistTitle": "#I'm Looking For a Zombie",
+      "anilistUrl": "https://anilist.co/anime/199007",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 58
     },
     {
       "id": "schedule-hitozukiai-ga-nigate-na-miboujin-no-yukionna-san-to-noroi-no-yubiwa-5-2026-11-08t17-06-00-01-00",
@@ -64,7 +365,134 @@
         "https://anime-yukionna.af-original.com/en/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "anilistOffers": [],
+      "basePlatforms": {
+        "service": "No legal platform",
+        "serviceUrl": "",
+        "allServices": [],
+        "hasAllowedPlatform": false
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "lookupVersion": 2,
+          "checkedAt": "2026-10-30T16:02:17.050Z",
+          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 20,
+          "nextRetryAt": "2026-11-07T01:30:09.325Z"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+        },
+        "CL": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T01:30:21.806Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T01:45:21.806Z"
+        },
+        "CO": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "DE": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "FR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "GB": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "IT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "MX": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "PT": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        },
+        "US": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-05T11:07:56.302Z",
+          "lastError": "No se pudieron resolver los nombres; se reintentará automáticamente.",
+          "errorProvider": "AniList",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-05T11:22:56.302Z"
+        }
+      },
+      "platformSource": "",
+      "jwVerified": false,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-10-30T16:02:17.050Z",
+      "serviceUrls": {},
+      "platformStatus": "not-found",
+      "platformStale": true
     },
     {
       "id": "schedule-ao-no-hako-2nd-season-5-2026-11-08t09-00-00-01-00",
@@ -112,7 +540,231 @@
         "https://aonohako-anime.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Netflix",
+        "serviceUrl": "https://www.netflix.com/title/81663323",
+        "allServices": [
+          "Netflix"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T19:30:09.325Z",
+          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "AR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "BR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "La caja azul",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Netflix",
+              "url": "https://www.netflix.com/title/81663323",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts361082",
+          "matchedTitle": "Blue Box",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T21:27:54.791Z",
+          "lastAttemptAt": "2026-11-06T21:27:54.791Z",
+          "inputSignature": "[\"TV\",null,[\"Ao no Hako 2nd Season\",\"Ao no Hako Season 2\",\"Blue Box\",\"Blue Box 2nd Season\",\"Blue Box Season 2\",\"La caja azul\",\"アオのハコ Season２\",\"アオのハコ 第2期\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-06T19:30:09.325Z",
+      "serviceUrls": {
+        "Netflix": "https://www.netflix.com/title/81663323"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     },
     {
       "id": "schedule-psyяen-5-2026-11-09t15-30-00-01-00",
@@ -161,7 +813,267 @@
         "https://psyren-anime-global.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-06T19:30:09.325Z",
+          "lastAttemptAt": "2026-11-06T19:30:09.325Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "AR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-01T16:07:00.300Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-01T16:22:00.300Z"
+        },
+        "BR": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-01T22:09:51.733Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-01T22:24:51.733Z"
+        },
+        "CL": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252HIIN",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "CO": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252HIIN",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "DE": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.de/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "FR": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "PSYREN",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "GB": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252HIIN",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "PSYREN",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "IT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "PSYREN",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "MX": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384252HIIN&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "Psyren",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "PT": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "PSYREN",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        },
+        "US": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://crunchyroll.pxf.io/xk92Nv?u=https%3A%2F%2Fwww.crunchyroll.com%2Fwatch%2FGE00384252HIIN&subId3=justappsvod",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts492175",
+          "matchedTitle": "PSYREN",
+          "aliases": [],
+          "lookupVersion": 6,
+          "checkedAt": "2026-11-02T06:21:29.356Z",
+          "lastAttemptAt": "2026-11-02T06:21:29.356Z",
+          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-06T19:30:09.325Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384252DEDE",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
     }
   ]
 }
