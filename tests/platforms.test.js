@@ -41,22 +41,22 @@ test("upstream errors retain the last confirmed offers and their original verifi
   assert.equal(item.jwVerifiedAt, new Date(now).toISOString());
   assert.equal(second.summary.errors, 1);
 });
-test("negative regional results do not borrow another country's availability", () => {
+test("negative regional results fall back to source links without borrowing verified offers", () => {
   const item = { ...row, platformsByCountry: { ES: { ...positive, checkedAt: new Date(now).toISOString() }, MX: { status: "no-offers", offers: [] } } };
   const spanish = policy.applyCountryPlatforms(item, "ES", now);
   const mexican = policy.applyCountryPlatforms(spanish, "MX", now);
   assert.equal(spanish.service, "Netflix");
-  assert.equal(mexican.service, "No legal platform");
-  assert.equal(mexican.serviceUrl, "");
-  assert.equal(mexican.hasAllowedPlatform, false);
+  assert.equal(mexican.service, "Crunchyroll");
+  assert.equal(mexican.serviceUrl, row.serviceUrl);
+  assert.equal(mexican.hasAllowedPlatform, true);
   assert.equal(mexican.jwVerified, false);
-  assert.deepEqual(mexican.serviceUrls, {});
+  assert.deepEqual(mexican.serviceUrls, { Crunchyroll: row.serviceUrl });
 });
-test("inconclusive regional searches never expose global AnimeSchedule or AniList platforms", async () => {
+test("inconclusive regional searches use linked AnimeSchedule platforms", async () => {
   const result = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => ({ status: "not-found", offers: [] }) });
-  assert.equal(result.payload.releases[0].service, "No legal platform");
-  assert.equal(result.payload.releases[0].serviceUrl, "");
-  assert.deepEqual(result.payload.releases[0].allServices, []);
+  assert.equal(result.payload.releases[0].service, "Crunchyroll");
+  assert.equal(result.payload.releases[0].serviceUrl, row.serviceUrl);
+  assert.deepEqual(result.payload.releases[0].allServices, ["Crunchyroll"]);
   assert.equal(result.payload.releases[0].basePlatforms.service, "Crunchyroll");
   assert.equal(result.payload.releases[0].jwVerified, false);
   assert.equal(result.summary.coverage.ES.pending, 0);
@@ -195,7 +195,7 @@ test("a single empty catalog response cannot remove a known regional platform", 
   const early = await enrichPlatforms(payload, second.cache, { now: now + 14 * 3600000, countries: [es], lookup: negative });
   assert.equal(early.summary.checked, 0);
   const confirmed = await enrichPlatforms(payload, second.cache, { now: now + 16 * 3600000, countries: [es], lookup: negative });
-  assert.equal(confirmed.payload.releases[0].service, "No legal platform");
+  assert.equal(confirmed.payload.releases[0].service, "Crunchyroll");
   assert.ok(confirmed.summary.issues.some(issue => issue.reason === "confirmed-availability-removed"));
 });
 test("new source names invalidate cached misses immediately", async () => {
@@ -222,12 +222,12 @@ test("Retry-After is retained across automatic runs and prevents repeated thrott
   await enrichPlatforms(payload, first.cache, { now: now + 3600000, countries: [es], lookup });
   assert.equal(calls, 1);
 });
-test("platform lookup failures appear in the audit without exposing unverified services", async () => {
+test("platform lookup failures appear in the audit while retaining source links", async () => {
   const result = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => { throw Error("offline"); } });
   assert.equal(result.summary.totalFailure, true);
   assert.equal(result.summary.issues[0].reason, "lookup-error");
   assert.equal(result.summary.issues[0].country, "ES");
-  assert.equal(result.payload.releases[0].hasAllowedPlatform, false);
+  assert.equal(result.payload.releases[0].hasAllowedPlatform, true);
 });
 test("a known catalog ID is reusable across countries but its offers are queried again locally", async () => {
   const result = await lookupAvailability(row, mx, { knownId: "ts-canonical", fetchImpl: async (url, options) => {
@@ -246,10 +246,10 @@ test("unmatched shows use AniList links without claiming regional verification",
   assert.equal(item.platformSource, "anilist");
   assert.equal(item.jwVerified, false);
 });
-test("JustWatch takes precedence and a confirmed lack of local offers does not trigger AniList fallback", () => {
+test("JustWatch takes precedence and no-offers triggers AniList fallback", () => {
   const item = { ...row, anilistOffers: [{ service: "Hulu", url: "https://www.hulu.com/series/sample" }], platformsByCountry: { ES: { ...positive }, MX: { status: "no-offers", offers: [] } } };
   assert.equal(policy.applyCountryPlatforms(item, "ES", now).service, "Netflix");
-  assert.equal(policy.applyCountryPlatforms(item, "MX", now).service, "No legal platform");
+  assert.equal(policy.applyCountryPlatforms(item, "MX", now).service, "Hulu");
 });
 test("AniList fallback only extracts genuine streaming links", () => {
   const offers = policy.anilistOffers({ externalLinks: [
@@ -267,4 +267,133 @@ test("AniList fallback is prepared and cached centrally without a user's library
   assert.equal(first.payload.releases[0].platformSource, "anilist");
   const cached = await enrichPlatforms(payload, first.cache, { now: now + 3600000, countries: [es], lookup: async () => { throw Error("must not run"); } });
   assert.equal(cached.payload.releases[0].service, "Crunchyroll");
+});
+
+function catalogNode(title, service = "crunchyroll", id = title) {
+  return { id, objectType: "SHOW", content: { title }, offers: [
+    { package: { technicalName: service }, standardWebURL: "https://stream.example/show", monetizationType: "FLATRATE" }
+  ] };
+}
+test("comparison romanization keeps cache keys unchanged", () => {
+  for (const title of ["Sôsô no Frieren", "Sōsō no Frieren"]) {
+    assert.equal(policy.findMatch({ title }, [catalogNode("Sousou no Frieren")])?.id, "Sousou no Frieren");
+  }
+  assert.equal(policy.findMatch({ title: "You & Me" }, [catalogNode("You and Me")])?.id, "You and Me");
+  assert.equal(policy.findMatch({ title: "Sôsô no Furîren" }, [catalogNode("Sousou no Frieren")]), null);
+  assert.equal(policy.findMatch({ title: "Sôsô no Furîren Extra" }, [catalogNode("Sousou no Frieren")]), null);
+  assert.equal(policy.seriesKey({ title: "Sôsô no Furîren" }), "sôsônofurîren");
+});
+test("real JustWatch parent titles require corroboration and preserve remake identity", () => {
+  for (const [title, parent, service, source] of [
+    ["Tokyo Revengers: Santen Sensou-hen", "Tokyo Revengers", "disneyplus", "Disney+"],
+    ["Tokyo Revengers: War of the Three Titans Arc", "Tokyo Revengers", "crunchyroll", "Crunchyroll"],
+    ["Magical★Explorer: Eroge no Yuujin Chara ni Tensei Shitakedo…", "Magical★Explorer", "crunchyroll", "Crunchyroll"],
+    ["Shin Tennis no Oujisama: U-17 World Cup Kesshou Member Ketteisen", "Shin Tennis no Ouji-sama", "crunchyroll", "Crunchyroll"],
+    ["Ace of the Diamond Act II: Second Season Part 2", "Ace of the Diamond", "crunchyroll", "Crunchyroll"]
+  ]) {
+    const item = { title, anilistOffers: [{ service: source, url: "https://stream.example/a" }] };
+    assert.equal(policy.findMatch(item, [catalogNode(parent, service)])?.id, parent, title);
+    assert.ok(policy.searchTitles(item).includes(parent === "Shin Tennis no Ouji-sama" ? "Shin Tennis no Oujisama" : parent));
+  }
+  const dragon = catalogNode("Dragon Ball", "netflix");
+  assert.equal(policy.findMatch({ title: "Dragon Ball: Daima", anilistOffers: [{ service: "Crunchyroll" }] }, [dragon]), null);
+  assert.equal(policy.findMatch({ title: "Dragon Ball: Daima" }, [dragon]), null);
+  assert.equal(policy.findMatch({ title: "Dragon Ball: Daima", format: "MOVIE", allServices: ["Netflix"] }, [{ ...dragon, objectType: "MOVIE" }]), null);
+  assert.equal(policy.findMatch({ title: "Magic Knight Rayearth (2026)", allServices: ["Crunchyroll"] }, [catalogNode("Magic Knight Rayearth")]), null);
+  assert.equal(policy.findMatch({ title: "Dragon Ball: Daima", allServices: ["Netflix"] }, [dragon, { ...dragon, id: "other" }]), null);
+  assert.equal(policy.findMatch({ title: "Dragon Ball: Daima", allServices: ["Netflix"] }, [dragon])?.id, dragon.id);
+});
+test("reordered season titles select Steel Ball Run rather than JoJo 2012", () => {
+  const steel = catalogNode("Steel Ball Run: JoJo's Bizarre Adventure", "netflix");
+  const old = catalogNode("JoJo's Bizarre Adventure", "netflix");
+  const item = { title: "JoJo's Bizarre Adventure: Steel Ball Run 2nd - 3rd STAGE", allServices: ["Netflix"] };
+  assert.equal(policy.findMatch(item, [old, steel])?.id, steel.id);
+  assert.equal(policy.findMatch({ ...item, allServices: [] }, [old]), null);
+  assert.equal(policy.findMatch(item, [steel, { ...steel, id: "duplicate" }]), null);
+  assert.equal(policy.findMatch({ title: "Example Show Title 2nd Stage" }, [catalogNode("Example Show Title")])?.id, "Example Show Title");
+  assert.equal(policy.findMatch({ title: "Example Show Title Act 2" }, [catalogNode("Example Show Title")])?.id, "Example Show Title");
+});
+test("search roots follow full titles and never exceed six", () => {
+  const item = { title: "Alpha Beta: Arc 2nd Season", anilistTitle: "Gamma Delta: Arc", titles: ["Other One: Arc", "Other Two: Arc", "Other Three: Arc", "Other Four: Arc"] };
+  const titles = policy.searchTitles(item);
+  assert.deepEqual(titles.slice(0, 2), [item.anilistTitle, item.title]);
+  assert.ok(titles.length <= 6);
+  assert.ok(titles.includes("Alpha Beta"));
+  assert.deepEqual(policy.searchTitles({ title: item.title, format: "MOVIE" }), [item.title]);
+});
+test("fallback ladder validates URLs and retains only the linked AnimeSchedule service", () => {
+  for (const status of [undefined, "not-found", "pending", "error", "no-offers"]) {
+    const item = { ...row, anilistOffers: [{ service: "Hulu", url: "https://hulu.com/show" }], platformsByCountry: status ? { ES: { status } } : {} };
+    const result = policy.applyCountryPlatforms(item);
+    assert.equal(result.platformSource, "anilist", status);
+    assert.equal(result.jwVerified, false);
+    const base = policy.applyCountryPlatforms({ ...item, anilistOffers: [{ service: "Bad", url: "http://bad.example" }], allServices: ["Crunchyroll", "Netflix"] });
+    assert.equal(base.platformSource, "animeschedule");
+    assert.equal(base.hasAllowedPlatform, true);
+    assert.deepEqual(base.allServices, ["Crunchyroll"]);
+    assert.deepEqual(base.serviceUrls, { Crunchyroll: row.serviceUrl });
+  }
+  assert.equal(policy.applyCountryPlatforms({ ...row, serviceUrl: "http://bad.example" }).hasAllowedPlatform, false);
+});
+test("no-offers resolves AniList once across known and direct lookups and tolerates failure", async () => {
+  for (const knownId of [undefined, "known"]) {
+    for (const fail of [false, true]) {
+      let calls = 0;
+      const aliasCache = new Map();
+      const fetchImpl = async url => {
+        if (url === "https://graphql.anilist.co") {
+          calls++;
+          if (fail) throw Error("offline");
+          return Response.json({ data: { Media: { id: 1, title: { romaji: row.title }, externalLinks: [{ site: "Hulu", type: "STREAMING", url: "https://hulu.com/show" }] } } });
+        }
+        const node = { ...catalogNode(row.title, "netflix", knownId || "direct"), offers: [] };
+        return Response.json({ data: knownId ? { node } : { popularTitles: { edges: [{ node }] } } });
+      };
+      for (const country of [es, mx]) {
+        const result = await lookupAvailability(row, country, { knownId, aliasCache, fetchImpl });
+        assert.equal(result.status, "no-offers");
+        if (!fail) assert.equal(result.anilistOffers[0].service, "Hulu");
+      }
+      assert.equal(calls, 1);
+      await lookupAvailability({ ...row, anilistOffers: [{ service: "Hulu", url: "https://hulu.com/show" }] }, es, { knownId, fetchImpl });
+      assert.equal(calls, 1);
+    }
+  }
+});
+
+test("reordered matches respect year, original titles and the three-word minimum", () => {
+  const node = { ...catalogNode("Localized title"), content: { title: "Localized title", originalTitle: "Three Two One", originalReleaseYear: 2020 } };
+  assert.equal(policy.findMatch({ title: "One Two Three", anilistYear: 2020 }, [node])?.id, node.id);
+  assert.equal(policy.findMatch({ title: "One Two Three", anilistYear: 2026 }, [node]), null);
+  assert.equal(policy.findMatch({ title: "One Two" }, [catalogNode("Two One")]), null);
+  assert.equal(policy.findMatch({ title: "Show 86 Title 2nd Stage" }, [catalogNode("Show Title")]), null);
+});
+test("subtitle roots use both source services but never paid offers", () => {
+  for (const separator of [": ", " - ", " ~ "]) {
+    const item = { title: "Parent Show" + separator + "New Arc", basePlatforms: { allServices: ["Netflix"] } };
+    const node = catalogNode("Parent Show", "netflix");
+    assert.equal(policy.findMatch(item, [node])?.id, node.id);
+    assert.equal(policy.findMatch(item, [{ ...node, offers: node.offers.map(offer => ({ ...offer, monetizationType: "RENT" })) }]), null);
+    assert.ok(policy.searchTitles(item).includes("Parent Show"));
+  }
+});
+test("a previous no-offers ID retains its result when AniList aliases are unavailable", async () => {
+  const result = await lookupAvailability(row, es, {
+    previous: { status: "no-offers", justwatchId: "known" }, aliasState: { unavailable: true },
+    fetchImpl: async () => Response.json({ data: { node: { ...catalogNode("Renamed", "netflix", "known"), offers: [] } } })
+  });
+  assert.equal(result.status, "no-offers");
+  assert.equal(result.justwatchId, "known");
+});
+test("title lookups without an AniList id omit the id and treat a 404 as no match", async () => {
+  const anilistVariables = [];
+  const fetchImpl = async (url, options) => {
+    const body = JSON.parse(options.body);
+    if (!String(url).includes("anilist")) return new Response(JSON.stringify({ data: { popularTitles: { edges: [] } } }), { status: 200 });
+    anilistVariables.push(body.variables);
+    return new Response(JSON.stringify({ errors: [{ status: 404 }], data: { Media: null } }), { status: 404 });
+  };
+  const result = await lookupAvailability({ title: "Serie sin ficha", titles: ["Serie sin ficha"] }, { code: "ES", lang: "es" }, { fetchImpl });
+  assert.equal(result.status, "not-found");
+  assert.deepEqual(anilistVariables, [{ search: "Serie sin ficha" }]);
 });

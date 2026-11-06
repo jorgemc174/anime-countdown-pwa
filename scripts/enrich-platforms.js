@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 6;
+const LOOKUP_VERSION = 7;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
@@ -95,8 +95,10 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
   const response = await fetchImpl("https://graphql.anilist.co", {
     method: "POST", signal: signal || AbortSignal.timeout(15000),
     headers: { "content-type": "application/json", accept: "application/json" },
-    body: JSON.stringify({ query, variables: { id, search: id ? null : item.title } })
+    body: JSON.stringify({ query, variables: id ? { id } : { search: item.title } })
   });
+  // AniList answers 404 when a search has no result: that is not a provider failure.
+  if (response.status === 404) return null;
   if (!response.ok) {
     const error = new Error(`AniList HTTP ${response.status} al resolver nombres`);
     error.provider = "AniList"; error.status = response.status; throw error;
@@ -114,17 +116,19 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
 
 async function lookupAvailability(item, country, options = {}) {
   const known = await lookupKnownTitle(item, country, options);
-  if (known) return known;
-  const direct = await lookupJustWatch(item, country, options);
-  if (direct.status !== "not-found") return direct;
+  const direct = known || await lookupJustWatch(item, country, options);
+  const needsOffers = direct.status === "no-offers" && !item.anilistOffers?.length;
+  if (direct.status !== "not-found" && !needsOffers) return direct;
   const key = policy.seriesKey(item);
   const aliasCache = options.aliasCache || new Map();
+  if (needsOffers && options.aliasState?.unavailable) return direct;
   if (options.aliasState?.unavailable) { const error = new Error("Resolución de nombres temporalmente no disponible"); error.provider = "AniList"; throw error; }
   if (!aliasCache.has(key)) aliasCache.set(key, resolveTitleAliases(item, options));
   let aliases;
   try { aliases = await aliasCache.get(key); }
-  catch (error) { error.provider = "AniList"; throw error; }
+  catch (error) { if (needsOffers) return direct; error.provider = "AniList"; throw error; }
   if (!aliases) return direct;
+  if (needsOffers) return { ...direct, aliases: aliases.titles, anilistOffers: aliases.anilistOffers };
   const enriched = { ...item, anilistTitle: aliases.english || item.anilistTitle,
     titles: [...new Set([...(item.titles || []), ...aliases.titles])] };
   const result = await lookupJustWatch(enriched, country, options);

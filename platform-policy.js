@@ -43,6 +43,7 @@
     do {
       previous = title;
       title = title.replace(/\s*[-–—]?\s*(?:(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth)\s+(?:season|cour)|(?:season|part|cour)\s+\d+|第[0-9一二三四五六七八九十]+期)\s*[-–—]?\s*$/i, "").trim();
+      title = title.replace(/\s+(?:(?:\d+(?:st|nd|rd|th)\s*(?:-\s*\d+(?:st|nd|rd|th))?\s+stage)|act\s+(?:[IVX]+|\d+))$/i, "").trim();
       title = title.replace(/\s+(?:II|III|IV|V|VI)$/i, "").trim();
     } while (title !== previous);
     return title;
@@ -51,24 +52,40 @@
     const key = normalize(value);
     return key.length >= 5 || (key.length >= 2 && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(key));
   }
+  function subtitleRoot(value) {
+    return seriesTitle(String(value || "").split(/: | - | ~ /)[0]);
+  }
   function searchTitles(item) {
     const raw = [...new Set([item.anilistTitle, item.title, ...(item.titles || [])].filter(Boolean))];
-    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : raw.map(seriesTitle).filter((value, index) => value !== raw[index] && validSeriesRoot(value));
-    return [...new Set([...raw.slice(0, 2), ...roots.slice(0, 3)])];
+    const roots = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? [] : [...raw.map(seriesTitle), ...raw.map(subtitleRoot)].filter(value => !raw.includes(value) && validSeriesRoot(value));
+    return [...new Set([...raw.slice(0, 2), ...roots])].slice(0, 6);
   }
   function findMatch(item, nodes) {
-    const matchKey = value => normalize(value).replace(/jyo/g, "jo").replace(/jyu/g, "ju").replace(/syo/g, "sho").replace(/syu/g, "shu").replace(/tyo/g, "cho").replace(/tyu/g, "chu");
+    const matchKey = value => normalize(String(value || "").normalize("NFKD").replace(/\p{M}/gu, "").replace(/&/g, "and")).replace(/ou/g, "o").replace(/uu/g, "u").replace(/jyo/g, "jo").replace(/jyu/g, "ju").replace(/syo/g, "sho").replace(/syu/g, "shu").replace(/tyo/g, "cho").replace(/tyu/g, "chu");
     const raw = [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean);
     const titles = new Set(raw.map(matchKey));
     const type = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW";
     const candidates = nodes.filter(node => node.objectType === type);
     const matchesTitle = (node, names) => [node.content?.title, node.content?.originalTitle].some(title => title && names.has(matchKey(title)));
-    const unique = [...new Map(candidates.filter(node => matchesTitle(node, titles)).map(node => [node.id, node])).values()];
+    const dedupe = values => [...new Map(values.map(node => [node.id, node])).values()];
     const year = item.anilistYear || item.originalReleaseYear;
-    if (year) {
-      const byYear = unique.filter(node => Number(node.content?.originalReleaseYear) === Number(year));
-      if (byYear.length === 1) return byYear[0];
-    } else if (unique.length === 1) return unique[0];
+    const selectExact = values => {
+      const matching = year ? values.filter(node => Number(node.content?.originalReleaseYear) === Number(year)) : values;
+      return matching.length === 1 ? matching[0] : null;
+    };
+    const exact = selectExact(dedupe(candidates.filter(node => matchesTitle(node, titles))));
+    if (exact) return exact;
+    const wordKey = value => {
+      const words = [...new Set((type === "MOVIE" ? String(value || "") : seriesTitle(value)).toLowerCase().match(/[\p{L}\p{N}]+/gu) || [])];
+      return words.length >= 3 ? words.sort().join(" ") : "";
+    };
+    const wordTitles = new Set(raw.map(wordKey).filter(Boolean));
+    const reordered = dedupe(candidates.filter(node => [node.content?.title, node.content?.originalTitle]
+      .some(title => title && wordTitles.has(wordKey(title)))));
+    if (reordered.length === 1) {
+      const match = selectExact(reordered);
+      if (match) return match;
+    }
     if (type === "MOVIE") return null;
     const roots = new Set(raw.map(seriesTitle).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
     // A sequel may be listed under the parent series, with its original premiere year.
@@ -76,7 +93,12 @@
     const parents = [...new Map(candidates.filter(node => matchesTitle(node, roots)).map(node => [node.id, node])).values()];
     if (parents.length === 1) return parents[0];
     const available = parents.filter(node => allowedOffers(node).length > 0);
-    return available.length === 1 ? available[0] : null;
+    if (available.length === 1) return available[0];
+    const subtitleRoots = new Set(raw.map(subtitleRoot).filter((value, index) => value !== raw[index] && validSeriesRoot(value)).map(matchKey));
+    const services = new Set([...(item.anilistOffers || []).map(offer => offer.service), ...(basePlatforms(item).allServices || [])]);
+    const corroborated = dedupe(candidates.filter(node => matchesTitle(node, subtitleRoots)
+      && allowedOffers(node).some(offer => services.has(offer.service))));
+    return corroborated.length === 1 ? corroborated[0] : null;
   }
   function basePlatforms(item) {
     if (item.basePlatforms) return item.basePlatforms;
@@ -106,14 +128,17 @@
     const record = item.platformsByCountry?.[country];
     const offers = record?.status === "verified" && Array.isArray(record.offers)
       ? record.offers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
-    const useAnilist = !offers.length && (!record || ["not-found", "pending", "error"].includes(record.status));
+    const useAnilist = !offers.length && (!record || ["not-found", "pending", "error", "no-offers"].includes(record.status));
     const fallback = useAnilist && Array.isArray(item.anilistOffers)
       ? item.anilistOffers.filter(offer => offer.service && httpsUrl(offer.url)) : [];
-    const visibleOffers = offers.length ? offers : fallback;
+    const baseUrl = httpsUrl(base.serviceUrl);
+    const scheduleOffers = base.service && base.service !== "No legal platform" && baseUrl
+      ? [{ service: base.service, url: baseUrl }] : [];
+    const visibleOffers = offers.length ? offers : fallback.length ? fallback : scheduleOffers;
     const best = visibleOffers[0];
     return { ...item, service: "No legal platform", serviceUrl: "", allServices: [], hasAllowedPlatform: false, basePlatforms: base,
       ...(best ? { service: best.service, serviceUrl: best.url, allServices: visibleOffers.map(offer => offer.service), hasAllowedPlatform: true } : {}),
-      platformSource: offers.length ? "justwatch" : fallback.length ? "anilist" : "",
+      platformSource: offers.length ? "justwatch" : fallback.length ? "anilist" : scheduleOffers.length ? "animeschedule" : "",
       jwVerified: Boolean(offers.length), jwSource: "shared", jwCountry: country,
       jwVerifiedAt: record?.checkedAt || "",
       serviceUrls: Object.fromEntries(visibleOffers.map(offer => [offer.service, offer.url])),

@@ -237,7 +237,7 @@ async function fetchPublicAnilistSchedule() {
   const appendMedia = (media) => {
     if (!media?.anilistId || seen.has(media.anilistId)) return;
     if (!Number.isFinite(Date.parse(media.releaseDate || ""))) return;
-    if (!isSchedulableItem(media)) return;
+    if (media.isAdult === true || (media.genres || []).some(genre => String(genre).toLowerCase() === "hentai")) return;
     if (!isSeasonalSeriesItem(media)) return;
     seen.add(media.anilistId);
     releases.push(mapPublicAnilistRelease(media));

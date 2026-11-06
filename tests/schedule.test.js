@@ -196,3 +196,33 @@ test("indefinite source statuses suppress even a supplied SUB timestamp", () => 
     assert.equal(result.releaseDate, null, status);
   }
 });
+
+test("public AniList metadata ignores isolated tags but excludes adult and Hentai media", async t => {
+  const airingAt = Math.floor(Date.now() / 1000) + 86400;
+  const media = [
+    ["Sasaki to Pii-chan", "Vore"], ["#Zombie Sagashitemasu", "Amputation"], ["Magical★Explorer", "Nudity"],
+    ["Adult", ""], ["Hentai", ""]
+  ].map(([title, tag], index) => ({
+    id: index + 1, title: { romaji: title }, format: "TV", isAdult: index === 3,
+    genres: index === 4 ? ["Hentai"] : [], tags: [{ name: tag, isAdult: true, rank: 80 }],
+    nextAiringEpisode: { episode: 1, airingAt },
+    externalLinks: [{ site: "Crunchyroll", type: "STREAMING", url: "https://crunchyroll.com/show" }]
+  }));
+  t.mock.method(globalThis, "fetch", async (_url, options) => {
+    const { query } = JSON.parse(options.body);
+    return Response.json({ data: { Page: { pageInfo: { hasNextPage: false },
+      ...(query.includes("airingSchedules(") ? { airingSchedules: media.map(m => ({ media: m, episode: 1, airingAt })) } : { media })
+    } } });
+  });
+  const modulePath = require.resolve("../scripts/sync-animeschedule");
+  const originalModule = require.cache[modulePath];
+  delete require.cache[modulePath];
+  t.after(() => { require.cache[modulePath] = originalModule; });
+  const { fetchPublicAnilistSchedule } = require(modulePath);
+  const result = await fetchPublicAnilistSchedule();
+  assert.deepEqual(result.map(item => item.anilistId).sort(), [1, 2, 3]);
+  for (const item of result) {
+    assert.equal(item.anilistOffers[0].service, "Crunchyroll");
+    for (const key of ["tags", "genres", "isAdult"]) assert.equal(key in item, false);
+  }
+});
