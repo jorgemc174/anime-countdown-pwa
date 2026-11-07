@@ -814,8 +814,11 @@ async function togglePlatformFilter(platform) {
 }
 
 function filterByPlatform(items) {
-  return items.filter(item => item.favorite || item.customUrl
-    || getKnownServices(item).some(service => !state.hiddenPlatforms.includes(service)));
+  return items.filter(item => {
+    if (item.favorite || item.customUrl) return true;
+    const services = getKnownServices(item);
+    return !services.length || services.some(service => !state.hiddenPlatforms.includes(service));
+  });
 }
 
 async function testNotification() {
@@ -3049,7 +3052,7 @@ function getEmptyViewMessage() {
   const candidates = source.filter(item => (state.viewMode === "all" || item.favorite)
     && (state.viewMode === "today" ? isToday(item.releaseDate) : (new Date(item.releaseDate) > new Date() || policy.isPending(item) || (state.viewMode === "favorites" && item.scheduleStatus === "unscheduled"))));
   if (state.viewMode === "all" && candidates.some(item => !filterByPlatform([item]).length))
-    return "Tus filtros muestran solo las plataformas marcadas. Las series sin esas plataformas quedan ocultas; las favoritas y los enlaces propios siempre se muestran.";
+    return "Con tus filtros solo se ocultan las series que estén únicamente en plataformas desmarcadas. Las series sin plataforma, las favoritas y los enlaces propios siempre se muestran.";
   if (candidates.some(item => !isSchedulableItem(item) || (state.viewMode === "all" && !filterByPlatform([item]).length)))
     return "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos.";
   return state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
