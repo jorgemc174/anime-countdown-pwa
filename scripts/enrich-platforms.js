@@ -3,20 +3,25 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const policy = require("../platform-policy");
 const { validate, isPending } = require("../schedule-policy");
-const LOOKUP_VERSION = 8;
+const LOOKUP_VERSION = 9;
 const delay = require("node:timers/promises").setTimeout;
 const ENDPOINT = "https://apis.justwatch.com/graphql";
+const SEASONS = `seasons { id content(country: $country, language: $language) { seasonNumber title }
+  offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType }
+}`;
 const SEARCH = `query GetSearch($filter: TitleFilter!, $country: Country!, $language: Language!, $first: Int!, $offerFilter: OfferFilter!) {
   popularTitles(country: $country, filter: $filter, first: $first, sortBy: POPULAR, sortRandomSeed: 0) {
     edges { node { id objectType content(country: $country, language: $language) { title originalTitle originalReleaseYear }
       offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType }
+      ... on Show { ${SEASONS} }
     } }
   }
 }`;
 const BY_ID = `query GetKnownTitle($id: ID!, $country: Country!, $language: Language!, $offerFilter: OfferFilter!) {
   node(id: $id) {
     ... on Show { id objectType content(country: $country, language: $language) { title originalTitle originalReleaseYear }
-      offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } }
+      offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType }
+      ${SEASONS} }
     ... on Movie { id objectType content(country: $country, language: $language) { title originalTitle originalReleaseYear }
       offers(country: $country, platform: WEB, filter: $offerFilter) { package { clearName shortName technicalName } standardWebURL monetizationType } }
   }
@@ -31,6 +36,30 @@ function inputSignature(item) {
     [...new Set([item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean))].sort()]);
 }
 
+function detectSeason(item) {
+  const numbers = new Set();
+  const ordinals = { first: 1, second: 2, third: 3, fourth: 4 };
+  const romans = { ii: 2, iii: 3, iv: 4, v: 5 };
+  for (const alias of [item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean)) {
+    const title = String(alias).normalize("NFKC").toLowerCase();
+    for (const match of title.matchAll(/\b([1-9]\d{0,2})(?:st|nd|rd|th)\s+season\b|\bseason\s*([1-9]\d{0,2})\b|\b([1-9]\d{0,2})\s*[ªa]\s+temporada\b|\b(first|second|third|fourth)\s+season\b/g)) {
+      numbers.add(match[4] ? ordinals[match[4]] : Number(match[1] || match[2] || match[3]));
+    }
+    const roman = title.match(/\b(ii|iii|iv|v)\s*$/);
+    if (roman) numbers.add(romans[roman[1]]);
+  }
+  // A bare final digit is not evidence: it is usable only when another alias
+  // already establishes the same season explicitly. It cannot resolve a conflict.
+  return numbers.size === 1 ? [...numbers][0] : null;
+}
+
+function seasonOffers(node, requested) {
+  const season = node.seasons?.find(entry => entry.content?.seasonNumber === (requested || 1));
+  if (requested >= 2) return { offers: policy.allowedOffers(season || {}), season: requested };
+  const offers = policy.allowedOffers(season || {});
+  return offers.length ? { offers, season: 1 } : { offers: policy.allowedOffers(node), season: null };
+}
+
 function providerError(response) {
   const error = new Error(`JustWatch HTTP ${response.status}`);
   error.status = response.status;
@@ -41,7 +70,7 @@ function providerError(response) {
   return error;
 }
 
-async function lookupKnownTitle(item, country, { previous, knownId, fetchImpl = fetch, signal } = {}) {
+async function lookupKnownTitle(item, country, { previous, knownId, fetchImpl = fetch, signal, season: requested = detectSeason(item) } = {}) {
   // An id found with older matching rules may be the wrong series: match it again.
   const id = previous?.justwatchId && previous.lookupVersion === LOOKUP_VERSION && ["verified", "no-offers"].includes(previous.status) ? previous.justwatchId : knownId;
   if (!id) return null;
@@ -59,12 +88,12 @@ async function lookupKnownTitle(item, country, { previous, knownId, fetchImpl = 
   if (!node) return null;
   const type = String(item.anilistFormat || item.format).toUpperCase() === "MOVIE" ? "MOVIE" : "SHOW";
   if (node.id !== id || node.objectType !== type || !Array.isArray(node.offers)) throw new Error("Identidad de JustWatch incoherente");
-  const offers = policy.allowedOffers(node);
+  const { offers, season } = seasonOffers(node, requested);
   return { status: offers.length ? "verified" : "no-offers", offers, justwatchId: node.id,
-    matchedTitle: node.content?.title || previous?.matchedTitle, aliases: previous?.aliases || [] };
+    matchedTitle: node.content?.title || previous?.matchedTitle, aliases: previous?.aliases || [], season };
 }
 
-async function lookupJustWatch(item, country, { fetchImpl = fetch, signal } = {}) {
+async function lookupJustWatch(item, country, { fetchImpl = fetch, signal, season: requested = detectSeason(item) } = {}) {
   const titles = policy.searchTitles(item);
   const languages = [...new Set([country.lang, "en"])];
   const attempts = titles.flatMap(searchQuery => languages.map(language => ({ searchQuery, language })));
@@ -83,10 +112,10 @@ async function lookupJustWatch(item, country, { fetchImpl = fetch, signal } = {}
     const nodes = json.data.popularTitles.edges.map(edge => edge.node).filter(Boolean);
     const node = policy.findMatch(item, nodes);
     if (!node) continue;
-    const offers = policy.allowedOffers(node);
-    return { status: offers.length ? "verified" : "no-offers", offers, justwatchId: node.id, matchedTitle: node.content.title };
+    const { offers, season } = seasonOffers(node, requested);
+    return { status: offers.length ? "verified" : "no-offers", offers, justwatchId: node.id, matchedTitle: node.content.title, season };
   }
-  return { status: "not-found", offers: [] };
+  return { status: "not-found", offers: [], season: requested };
 }
 
 async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
@@ -120,6 +149,10 @@ async function resolveTitleAliases(item, { fetchImpl = fetch, signal } = {}) {
 }
 
 async function lookupAvailability(item, country, options = {}) {
+  // Cached search aliases also contain JustWatch's parent title. Only the input
+  // item (and aliases resolved from its AniList identity) can identify its season.
+  const seasonItem = options.seasonItem || item;
+  options = { ...options, season: detectSeason(seasonItem) };
   const known = await lookupKnownTitle(item, country, options);
   let direct = known || await lookupJustWatch(item, country, options);
   // Without offers an old id cannot show a wrong platform: keep watching it if the search finds nothing.
@@ -140,13 +173,17 @@ async function lookupAvailability(item, country, options = {}) {
   if (needsOffers) return { ...direct, aliases: aliases.titles, anilistOffers: aliases.anilistOffers };
   const enriched = { ...item, anilistTitle: aliases.english || item.anilistTitle,
     titles: [...new Set([...(item.titles || []), ...aliases.titles])] };
-  const result = await lookupJustWatch(enriched, country, options);
+  const result = await lookupJustWatch(enriched, country, { ...options,
+    season: detectSeason({ ...seasonItem, titles: [...(seasonItem.titles || []), ...aliases.titles] }) });
   return { ...result, aliases: aliases.titles, anilistOffers: aliases.anilistOffers };
 }
 
 function mergeResult(previous, result, timestamp) {
   const negative = result.status !== "verified" || result.offers.length === 0;
-  if (previous?.status === "verified" && previous.offers?.length && negative) {
+  // Migrating a parent-series offer to an identified season corrects its scope;
+  // the normal confirmation window still applies to subsequent availability loss.
+  const seasonCorrection = result.status === "no-offers" && result.season >= 2 && previous?.lookupVersion !== LOOKUP_VERSION;
+  if (previous?.status === "verified" && previous.offers?.length && negative && !seasonCorrection) {
     const firstSeenAt = previous.pendingNegative?.firstSeenAt || timestamp;
     if (Date.parse(timestamp) - Date.parse(firstSeenAt) < NEGATIVE_RETRY_MS) {
       return { ...previous, lastAttemptAt: timestamp, lastError: undefined, errorProvider: undefined,
@@ -209,7 +246,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
       try {
         const target = { ...row, titles: [...new Set([...(row.titles || []), ...(cache.series[key].aliases || [])])] };
         const knownIds = [...new Set(Object.values(cache.series[key].countries).filter(record => record.status === "verified" && record.lookupVersion === LOOKUP_VERSION).map(record => record.justwatchId).filter(Boolean))];
-        const result = await lookup(target, country, { previous, knownId: knownIds.length === 1 ? knownIds[0] : null, aliasCache, aliasState, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
+        const result = await lookup(target, country, { previous, knownId: knownIds.length === 1 ? knownIds[0] : null, seasonItem: row, aliasCache, aliasState, signal: AbortSignal.timeout(Math.max(1, Math.min(45000, deadline - Date.now()))), fetchImpl: throttledFetch });
         if (!["verified", "no-offers", "not-found"].includes(result.status) || !Array.isArray(result.offers)) throw new Error("Registro de plataformas inválido");
         if (Array.isArray(result.anilistOffers)) cache.series[key].anilistOffers = result.anilistOffers;
         cache.series[key].aliases = [...new Set([...(cache.series[key].aliases || []), row.title, row.anilistTitle,
@@ -311,4 +348,4 @@ async function main() {
   if (result.summary.errors) console.warn("JustWatch incompleto: se conserva la última información válida y se reintentará en el siguiente cron.");
 }
 if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });
-module.exports = { LOOKUP_VERSION, lookupAvailability, enrichPlatforms, main };
+module.exports = { LOOKUP_VERSION, detectSeason, lookupAvailability, enrichPlatforms, main };
