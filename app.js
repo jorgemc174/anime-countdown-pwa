@@ -715,6 +715,7 @@ async function savePersonalSearchTemplate() {
   state.personalSearchTemplate = validatePersonalSearchTemplate(value);
   renderPersonalSearchValidation();
   await browserApi.storage.local.set({ personalSearchTemplate: state.personalSearchTemplate });
+  queueNativeNotificationSync({ force: true });
   render();
 }
 function getPersonalSearchUrl(item) {
@@ -810,15 +811,8 @@ async function togglePlatformFilter(platform) {
   }
   invalidateDataCaches();
   await browserApi.storage.local.set({ hiddenPlatforms: state.hiddenPlatforms });
+  queueNativeNotificationSync({ force: true });
   render();
-}
-
-function filterByPlatform(items) {
-  return items.filter(item => {
-    if (item.favorite || item.customUrl) return true;
-    const services = getKnownServices(item);
-    return !services.length || services.some(service => !state.hiddenPlatforms.includes(service));
-  });
 }
 
 async function testNotification() {
@@ -2881,12 +2875,11 @@ function getPendingItems(items) { return items.filter(item => policy.isPending(i
 
 function getVisibleItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
-  const hiddenKey = state.hiddenPlatforms.join("|");
   const contentKey = state.hiddenContent.join("|");
-  return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
+  return memoList(`visible|${state.viewMode}|${dayKey}|${contentKey}`, () => {
     if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()), getUnscheduledLibraryItems());
     if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
-    const catalog = filterByPlatform(getCatalogItems());
+    const catalog = getCatalogItems();
     return getOneNextPerSeries(catalog).concat(getPendingItems(catalog));
   });
 }
@@ -2894,14 +2887,12 @@ function getKnownServices(item) {
   return [...new Set([item.service, ...(item.allServices || [])].map(subscriptionService).filter(Boolean))];
 }
 function getDisplayService(item) {
-  const custom = subscriptionService(item.customPlatformName);
-  if (custom && item.customUrl) return custom;
   const services = getKnownServices(item);
   const available = services.filter(service => !state.hiddenPlatforms.includes(service));
   const primary = subscriptionService(item.service);
   if (available.includes(primary)) return primary;
   return available.sort((a, b) => SERVICE_PRIORITY[a] - SERVICE_PRIORITY[b])[0]
-    || services[0] || "No legal platform";
+    || "No legal platform";
 }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
 function getUnscheduledLibraryItems({ includeFiltered = false } = {}) {
@@ -3013,12 +3004,15 @@ function getSeriesKey(item) { return stableId(item.anilistId || item.anilistTitl
 function stableId(...parts) { return parts.filter(Boolean).join("-").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\p{L}\p{N}]+/gu,"-").replace(/(^-|-$)/g,""); }
 function normalizeTitle(value) { return String(value||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\([^)]*\)/g,"").replace(/\[[^\]]*\]/g,"").replace(/&/g,"and").replace(/\b(\d+)(?:st|nd|rd|th)\s+season\b/g,"season $1").replace(/\bseason\s*(\d+)\b/g,"$1").replace(/\bs(\d+)\b/g,"$1").replace(/\bpart\s*\d+\b/g,"").replace(/\bcour\s*\d+\b/g,"").replace(/\bthe\b/g,"").replace(/\ba\b/g,"").replace(/\ban\b/g,"").replace(/[^\p{L}\p{N}]+/gu,""); }
 function normalizeUrl(url) { const v=String(url||"").trim(); if(!v)return ""; if(v.startsWith("http://")||v.startsWith("https://"))return v; if(v.startsWith("//"))return `https:${v}`; if(v.includes("."))return `https://${v}`; return ""; }
-function getOpenLabel(service) { if(!service || service==="No legal platform" || service==="AniList")return "Asociar plataforma"; return `Ver en ${service}`; }
+function getActiveCustomUrl(item) {
+  const service = subscriptionService(item.customPlatformName);
+  return service && state.hiddenPlatforms.includes(service) ? "" : normalizeUrl(item.customUrl);
+}
 function getBestWatchUrl(item, displayService) {
-  const custom = normalizeUrl(item.customUrl);
+  const custom = getActiveCustomUrl(item);
   if (custom) return custom;
   const effective = subscriptionService(displayService !== undefined ? displayService : getDisplayService(item));
-  if (!effective) return getPersonalSearchUrl(item);
+  if (!effective || state.hiddenPlatforms.includes(effective)) return getPersonalSearchUrl(item);
   const record = item.platformsByCountry?.[state.jwCountry];
   const offer = record?.status === "verified" ? record.offers?.find(offer => subscriptionService(offer.service) === effective) : null;
   const offerUrl = normalizeUrl(offer?.url);
@@ -3051,9 +3045,7 @@ function getEmptyViewMessage() {
     : state.releases;
   const candidates = source.filter(item => (state.viewMode === "all" || item.favorite)
     && (state.viewMode === "today" ? isToday(item.releaseDate) : (new Date(item.releaseDate) > new Date() || policy.isPending(item) || (state.viewMode === "favorites" && item.scheduleStatus === "unscheduled"))));
-  if (state.viewMode === "all" && candidates.some(item => !filterByPlatform([item]).length))
-    return "Con tus filtros solo se ocultan las series que estén únicamente en plataformas desmarcadas. Las series sin plataforma, las favoritas y los enlaces propios siempre se muestran.";
-  if (candidates.some(item => !isSchedulableItem(item) || (state.viewMode === "all" && !filterByPlatform([item]).length)))
+  if (candidates.some(item => !isSchedulableItem(item)))
     return "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos.";
   return state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
 }
@@ -3093,7 +3085,7 @@ function getNextHighlightItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
   const contentKey = state.hiddenContent.join("|");
   return memoList(`highlight|${state.viewMode}|${dayKey}|${contentKey}`, () => {
-    if (state.viewMode === "all") return getOneNextPerSeries(filterByPlatform(adjustDelayedDates(getCatalogItems())));
+    if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
     if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
     return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
   });
@@ -3203,11 +3195,15 @@ function createCardModern(item) {
   const unscheduled = item.scheduleStatus === "unscheduled";
   const c = { text: getReleaseTimingLabel(item) };
   const service = getDisplayService(item);
-  const openLabel = item.customUrl ? `Ver en ${item.customPlatformName?.trim() || "link asociado"}` : service === "No legal platform" && getPersonalSearchUrl(item) ? "Buscar" : getOpenLabel(service);
+  const customUrl = getActiveCustomUrl(item);
+  const personalUrl = service === "No legal platform" ? getPersonalSearchUrl(item) : "";
+  const openLabel = customUrl ? `Ver en ${item.customPlatformName?.trim() || "link asociado"}` : personalUrl ? "Buscar" : `Ver en ${service}`;
+  const watchButton = getBestWatchUrl(item, service)
+    ? `<button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>` : "";
   const delayedBadge = getDelayedBadge(item);
   const premiereBadge = getPremiereBadge(item);
   const scorePill = getAnilistScorePill(item);
-  const customButton = item.customUrl
+  const customButton = customUrl
     ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar link</button>`
     : `<button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar link</button>`;
   const card = document.createElement("article");
@@ -3220,11 +3216,11 @@ function createCardModern(item) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
   const fallbackSource = { anilist: "AniList", animeschedule: "AnimeSchedule" }[item.platformSource];
-  const unverifiedBadge = fallbackSource && getKnownServices(item).length && !item.customUrl ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
-  const badgeLabel = item.customUrl && item.customPlatformName?.trim() ? item.customPlatformName.trim() : serviceLabel(service);
+  const unverifiedBadge = fallbackSource && service !== "No legal platform" && !customUrl ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
+  const badgeLabel = customUrl ? item.customPlatformName?.trim() || "link asociado" : personalUrl ? "Enlace personal" : serviceLabel(service);
   const jellyfinButton = getJellyfinSearchUrl(item)
     ? `<button class="small-btn" type="button" data-action="jellyfin" data-id="${escapeHtml(item.id)}">Jellyfin</button>` : "";
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(service))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${jellyfinButton ? " has-jellyfin" : ""}"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${jellyfinButton}${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(service))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${jellyfinButton && watchButton ? " has-jellyfin" : ""}">${watchButton}${jellyfinButton}${customButton}</div></div>`;
   return card;
 }
 

@@ -33,44 +33,154 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
-    await scenario("F7 subscriptions keep unlisted services and hide only unchecked subscriptions", async page => {
+    await scenario("F8R1 manual subscription links follow chips without losing saved data", async page => {
       await page.goto(base); await ready(page);
       const cases = [
-        { service: "HIDIVE", services: ["HIDIVE"], hidden: [], shown: true, display: "Sin plataforma" },
-        { service: "HIDIVE", services: ["HIDIVE"], hidden: ["Crunchyroll", "Prime Video", "Disney+", "Netflix"], shown: true, display: "Sin plataforma" },
-        { service: "No legal platform", services: [], hidden: ["Crunchyroll", "Prime Video", "Disney+", "Netflix"], shown: true, display: "Sin plataforma" },
-        { service: "Netflix", services: ["Netflix", "YouTube"], hidden: ["Netflix"], shown: false },
-        { service: "Netflix", services: ["Netflix", "Crunchyroll"], hidden: ["Netflix"], shown: true, display: "Crunchyroll" },
-        { service: "Netflix", services: ["Netflix", "YouTube"], hidden: ["Netflix"], favorite: true, shown: true, display: "Netflix" },
-        { service: "Netflix", services: ["Netflix", "YouTube"], hidden: ["Netflix"], customUrl: "https://ejemplo.test/propio", shown: true, display: "Netflix" }
+        { name: "Netflix", services: ["Netflix", "Crunchyroll"], hidden: ["Netflix"], badge: "Crunchyroll", url: "https://ejemplo.test/crunchyroll" },
+        { name: "Netflix", services: ["Netflix"], hidden: ["Netflix"], template: true, badge: "Enlace personal", url: "https://ejemplo.test/media/Sample" },
+        { name: "Netflix", services: ["Netflix"], hidden: ["Netflix"], badge: "Sin plataforma", url: "" },
+        { name: "Crunchyroll Amazon Channel", services: ["Crunchyroll", "Netflix"], hidden: ["Crunchyroll"], badge: "Netflix", url: "https://ejemplo.test/netflix" },
+        { name: "Amazon Prime Video with Ads", services: ["Prime Video"], hidden: ["Prime Video"], template: true, badge: "Enlace personal", url: "https://ejemplo.test/media/Sample" },
+        { name: "Disney+", services: ["Disney+"], hidden: ["Disney+"], badge: "Sin plataforma", url: "" },
+        { name: "MiSitio", services: ["Netflix"], hidden: ["Crunchyroll", "Prime Video", "Disney+", "Netflix"], badge: "MiSitio", url: "https://ejemplo.test/manual" },
+        { name: "", services: ["Netflix"], hidden: ["Crunchyroll", "Prime Video", "Disney+", "Netflix"], badge: "link asociado", url: "https://ejemplo.test/manual" }
       ];
       for (const test of cases) {
         await page.evaluate(test => {
-          state.releases = [{ ...state.releases[0], service: test.service, allServices: test.services, favorite: Boolean(test.favorite), customUrl: test.customUrl || "" }];
+          state.releases = [{ ...state.releases[0], service: test.services[0], allServices: test.services, customUrl: "https://ejemplo.test/manual", customPlatformName: test.name,
+            serviceUrls: { Netflix: "https://ejemplo.test/netflix", Crunchyroll: "https://ejemplo.test/crunchyroll" }, platformSource: "anilist" }];
           state.hiddenPlatforms = test.hidden;
+          state.personalSearchTemplate = test.template ? "https://ejemplo.test/media/{titulo}" : "";
           invalidateDataCaches(); setMode("all");
         }, test);
-        assert.equal(await page.locator(".anime-card").count(), Number(test.shown));
-        assert.match(await page.locator("#listTitle").innerText(), new RegExp(` · ${Number(test.shown)}$`));
-        assert.equal(await page.evaluate(() => Boolean(state.currentNext)), test.shown);
-        if (test.shown) {
-          assert.equal(await page.locator(".badge-purple").textContent(), test.display);
-          assert.match(await page.locator("#nextRelease").innerText(), new RegExp(test.display));
-        } else {
-          assert.match(await page.locator("#animeList").innerText(), /solo se ocultan las series que estén únicamente en plataformas desmarcadas/i);
-          assert.match(await page.locator("#nextRelease").innerText(), /únicamente en plataformas desmarcadas/);
-        }
+        assert.equal(await page.locator(".anime-card").count(), 1);
+        assert.equal(await page.locator(".badge-purple").textContent(), test.badge);
+        assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), test.url);
+        const manualActive = test.url.endsWith("/manual");
+        assert.equal(await page.getByRole("button", { name: "Quitar link", exact: true }).count(), Number(manualActive));
+        if (test.url) assert.equal(await page.locator(".primary-link").textContent(), manualActive ? `Ver en ${test.name || "link asociado"}` : test.badge === "Enlace personal" ? "Buscar" : `Ver en ${test.badge}`);
+        else assert.equal(await page.locator(".primary-link").count(), 0);
+        if (!manualActive) assert.doesNotMatch(await page.locator("#animeList").innerText(), new RegExp(`Ver en ${test.name}|${test.name} Amazon Channel`));
       }
-      await page.evaluate(() => {
-        state.releases = [{ ...state.releases[0], service: "HIDIVE", allServices: ["HIDIVE"], favorite: false, customUrl: "" }];
-        state.personalSearchTemplate = "https://ejemplo.test/media/{slug}";
-        state.jellyfinServer = "http://servidor.test:8096";
-        invalidateDataCaches(); render();
+      await page.evaluate(async () => {
+        const item = { ...state.releases[0], service: "Netflix", allServices: ["Netflix"], customPlatformName: "Netflix" };
+        state.releases = [item]; state.hiddenPlatforms = ["Netflix"];
+        state.customLinks[getAnimeKey(item)] = item.customUrl;
+        state.customPlatforms[getAnimeKey(item)] = item.customPlatformName;
+        upsertUserOverride(item, { customUrl: item.customUrl, customPlatformName: item.customPlatformName });
+        await saveAllLists(); render();
+        window.savedLinksBefore = await browserApi.storage.local.get(["customLinks", "customPlatforms", "userOverrides"]);
       });
-      assert.equal(await page.getByRole("button", { name: "Buscar", exact: true }).count(), 1);
-      assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 1);
-      assert.doesNotMatch(await page.locator("#animeList").innerText(), /HIDIVE/);
-      assert.equal(await page.locator("#platformFilterContainer").locator("..").locator(".filter-help").textContent(), "Desmarca las que no tengas: se ocultan las series que solo estén en ellas.");
+      await page.locator("#settingsBtn").click();
+      await page.locator("#platformFilterContainer").locator("..").locator("summary").click();
+      await page.locator('[data-platform="Netflix"]').click();
+      assert.equal(await page.locator(".badge-purple").textContent(), "Netflix");
+      assert.equal(await page.locator(".primary-link").textContent(), "Ver en Netflix");
+      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://ejemplo.test/manual");
+      await page.locator('[data-platform="Netflix"]').click();
+      assert.equal(await page.locator(".badge-purple").textContent(), "Sin plataforma");
+      assert.equal(await page.evaluate(async () => JSON.stringify(await browserApi.storage.local.get(["customLinks", "customPlatforms", "userOverrides"])) === JSON.stringify(savedLinksBefore)), true);
+      await page.reload(); await ready(page);
+      await page.evaluate(() => setMode("all"));
+      assert.equal(await page.locator('.anime-card[data-id="sample-4"] .badge-purple').textContent(), "Crunchyroll");
+      await page.evaluate(() => togglePlatformFilter("Netflix"));
+      assert.equal(await page.locator('.anime-card[data-id="sample-4"] .primary-link').textContent(), "Ver en Netflix");
+      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://ejemplo.test/manual");
+    });
+    await scenario("F8R1 inactive manual links cannot enter native or web alerts", async page => {
+      await nativeMock(page);
+      await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(r => r.releaseDate), favorite: true, service: "Netflix", allServices: ["Netflix", "Crunchyroll"], customPlatformName: "Netflix", customUrl: "https://ejemplo.test/manual", serviceUrls: { Crunchyroll: "https://ejemplo.test/crunchyroll" } }];
+        state.personalSearchTemplate = "https://ejemplo.test/media/{titulo}";
+        window.webAlerts = [];
+        Object.defineProperty(navigator, "serviceWorker", { configurable: true, value: { ready: Promise.resolve({ showNotification: async (title, options) => webAlerts.push(options) }) } });
+        await syncNativeNotificationsIfNeeded({ force: true });
+        await togglePlatformFilter("Netflix");
+      });
+      await page.clock.runFor(5000);
+      await page.evaluate(() => showReleaseNotification(state.releases[0]));
+      assert.deepEqual(await page.evaluate(() => ({ native: nativeTest.pending.map(n => [n.body, n.extra.url]), web: webAlerts.map(n => [n.body, n.data.url]) })), {
+        native: [["Ya disponible en Crunchyroll.", "https://ejemplo.test/crunchyroll"]], web: [["Ya disponible en Crunchyroll.", "https://ejemplo.test/crunchyroll"]]
+      });
+      await page.evaluate(() => togglePlatformFilter("Crunchyroll")); await page.clock.runFor(5000);
+      await page.evaluate(() => showReleaseNotification(state.releases[0]));
+      assert.deepEqual(await page.evaluate(() => [nativeTest.pending[0].body, nativeTest.pending[0].extra.url, webAlerts.at(-1).body, webAlerts.at(-1).data.url]),
+        ["Ya disponible.", "https://ejemplo.test/media/Sample", "Ya disponible.", "https://ejemplo.test/media/Sample"]);
+      await page.evaluate(() => togglePlatformFilter("Netflix")); await page.clock.runFor(5000);
+      assert.deepEqual(await page.evaluate(() => [nativeTest.pending[0].body, nativeTest.pending[0].extra.url]), ["Ya disponible en Netflix.", "https://ejemplo.test/manual"]);
+    });
+    await scenario("F8 platform preference never hides cards and chooses watch links", async page => {
+      await page.goto(base); await ready(page);
+      const all = ["Crunchyroll", "Prime Video", "Disney+", "Netflix"];
+      const cases = [
+        { services: ["Netflix", "Crunchyroll"], hidden: ["Netflix"], display: "Crunchyroll" },
+        { services: ["Netflix", "Crunchyroll", "Prime Video", "Disney+"], hidden: [], display: "Netflix" },
+        { services: ["Netflix", "Crunchyroll", "Prime Video", "Disney+"], hidden: ["Netflix", "Crunchyroll"], display: "Prime Video" },
+        { services: ["Netflix", "Crunchyroll", "Prime Video", "Disney+"], hidden: ["Netflix", "Crunchyroll", "Prime Video"], display: "Disney+" },
+        { services: ["Netflix"], hidden: ["Netflix"], display: "Sin plataforma" },
+        { services: ["Netflix"], hidden: ["Netflix"], template: true, display: "Enlace personal" },
+        { services: ["Netflix", "Crunchyroll"], hidden: all, template: true, favorite: true, display: "Enlace personal" },
+        { services: ["Netflix", "Crunchyroll"], hidden: all, favorite: true, display: "Sin plataforma" },
+        { services: ["HIDIVE", "YouTube"], hidden: [], template: true, display: "Enlace personal" },
+        { services: ["HIDIVE", "YouTube"], hidden: all, display: "Sin plataforma" },
+        { services: [], hidden: all, template: true, display: "Enlace personal" },
+        { services: ["Netflix"], hidden: [], template: true, custom: true, display: "MiSitio" },
+        { services: ["Netflix"], hidden: all, template: true, custom: true, display: "MiSitio" },
+        { services: ["Netflix"], hidden: all, invalidTemplate: true, display: "Sin plataforma" }
+      ];
+      for (const test of cases) {
+        const result = await page.evaluate(test => {
+          state.releases = [{ ...state.releases[0], title: "Sample", titles: ["Sample"], service: test.services[0] || "No legal platform", allServices: test.services,
+            serviceUrl: "https://ejemplo.test/plataforma", serviceUrls: Object.fromEntries(test.services.map(s => [s, `https://ejemplo.test/${encodeURIComponent(s)}`])),
+            favorite: Boolean(test.favorite), customUrl: test.custom ? "https://ejemplo.test/propio" : "", customPlatformName: test.custom ? "MiSitio" : "", platformSource: "anilist" }];
+          state.hiddenPlatforms = test.hidden;
+          state.personalSearchTemplate = test.template ? "https://ejemplo.test/media/{slug}" : test.invalidTemplate ? "http://ejemplo.test/{titulo}" : "";
+          state.jellyfinServer = "http://servidor.test:8096";
+          invalidateDataCaches(); setMode("all");
+          const item = state.releases[0];
+          return { service: getDisplayService(item), url: getBestWatchUrl(item), next: Boolean(state.currentNext) };
+        }, test);
+        assert.equal(await page.locator(".anime-card").count(), 1);
+        assert.match(await page.locator("#listTitle").innerText(), / · 1$/);
+        assert.equal(result.next, true);
+        assert.equal(await page.locator(".badge-purple").textContent(), test.display);
+        const noPlatform = result.service === "No legal platform";
+        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), Number(noPlatform));
+        assert.equal(test.hidden.includes(result.service), false);
+        if (test.display === "Sin plataforma") {
+          assert.equal(await page.locator(".primary-link").count(), 0);
+          assert.equal(result.url, "");
+        } else {
+          assert.equal(await page.locator(".primary-link").textContent(), test.custom ? "Ver en MiSitio" : noPlatform ? "Buscar" : `Ver en ${test.display}`);
+          assert.equal(result.url, test.custom ? "https://ejemplo.test/propio" : noPlatform ? "https://ejemplo.test/media/sample" : `https://ejemplo.test/${encodeURIComponent(test.display)}`);
+        }
+        if (noPlatform) assert.equal(await page.locator(".badge-unverified").count(), 0);
+      }
+      assert.equal(await page.locator("#platformFilterContainer").locator("..").locator(".filter-help").textContent(), "Desmarca las que no tengas: la serie pasa a la siguiente plataforma o a tu enlace personal.");
+      await page.setViewportSize({ width: 360, height: 800 });
+      await page.evaluate(() => { state.personalSearchTemplate = "https://ejemplo.test/media/{slug}"; render(); });
+      await page.screenshot({ path: "/tmp/f8-personal-360.png", animations: "disabled" });
+    });
+    await scenario("F8 native and web notification text follows checked platforms", async page => {
+      await page.goto(base); await ready(page);
+      const result = await page.evaluate(async () => {
+        const native = [], web = [];
+        window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+          getPending: async () => ({ notifications: [] }), schedule: async ({ notifications }) => native.push(...notifications)
+        } } };
+        Object.defineProperty(navigator, "serviceWorker", { configurable: true, value: { ready: Promise.resolve({ showNotification: async (title, options) => web.push(options) }) } });
+        state.notificationEnabled = true;
+        state.personalSearchTemplate = "https://ejemplo.test/media/{slug}";
+        const item = { ...state.releases[0], title: "Sample", titles: ["Sample"], favorite: true, service: "Netflix", allServices: ["Netflix", "Crunchyroll"], serviceUrls: { Crunchyroll: "https://ejemplo.test/plataforma" } };
+        state.releases = [item];
+        for (const hidden of [["Netflix"], ["Netflix", "Crunchyroll", "Prime Video", "Disney+"]]) {
+          state.hiddenPlatforms = hidden;
+          await scheduleNativeNotifications(); await showReleaseNotification(item);
+        }
+        return { native: native.map(n => ({ body: n.body, url: n.extra.url })), web: web.map(n => ({ body: n.body, url: n.data.url })) };
+      });
+      const expected = [{ body: "Ya disponible en Crunchyroll.", url: "https://ejemplo.test/plataforma" }, { body: "Ya disponible.", url: "https://ejemplo.test/media/sample" }];
+      assert.deepEqual(result, { native: expected, web: expected });
     });
     await scenario("F6R1 custom link preserves its visual name", async page => {
       await page.goto(base); await ready(page);
@@ -205,7 +315,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         const ignored = ["YouTube", "HIDIVE", "OceanVeil", "Bilibili", "iQ", "Animebox", "CanalSurMas", "Rakuten", "Animebox Channel Amazon Channel"];
         const allIgnored = ignored.map(service => {
           const item = { ...base, service, allServices: [service], serviceUrl: "https://ejemplo.test/ignorado", serviceUrls: { [service]: "https://ejemplo.test/ignorado" }, platformSource: "anilist", customPlatformName: service };
-          return { visible: filterByPlatform([item]).length, url: getBestWatchUrl(item), text: createCardModern({ ...item, favorite: true }).textContent };
+          return { url: getBestWatchUrl(item), text: createCardModern({ ...item, favorite: true }).textContent };
         });
         const scheduled = [];
         window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
@@ -216,16 +326,16 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         await scheduleNativeNotifications();
         return { results, allIgnored, notifications: scheduled.map(n => ({ body: n.body, url: n.extra.url })) };
       });
-      assert.deepEqual(result.results.map(r => r.visible), [0, 1, 1, 1, 1, 1, 1, 1, 1]);
-      assert.deepEqual(result.results.map(r => r.next), [false, true, true, true, true, true, true, true, true]);
+      assert.deepEqual(result.results.map(r => r.visible), [1, 1, 1, 1, 1, 1, 1, 1, 1]);
+      assert.deepEqual(result.results.map(r => r.next), [true, true, true, true, true, true, true, true, true]);
       assert.equal(result.results[3].service, "Crunchyroll");
       assert.equal(result.results[4].service, "Prime Video");
       assert.match(result.results[6].text, /Sin plataforma/);
       assert.equal(result.results[6].url, "");
-      assert.equal(result.results[7].service, "Netflix");
+      assert.equal(result.results[7].service, "No legal platform");
       assert.equal(result.results[8].url, "https://ejemplo.test/propio");
       for (const r of result.allIgnored) {
-        assert.equal(r.visible, 1); assert.equal(r.url, "");
+        assert.equal(r.url, "");
         assert.doesNotMatch(r.text, /HIDIVE|YouTube|OceanVeil|Bilibili|iQ|Animebox|CanalSurMas|Rakuten|Puede no estar disponible/);
         assert.match(r.text, /Sin plataforma/);
       }
@@ -241,7 +351,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         state.releases = [{ ...state.releases[0], title: "Título & / ? # 日本", service: "HIDIVE", allServices: ["HIDIVE"], favorite: true }];
         invalidateDataCaches(); setMode("all");
       });
-      assert.equal(await page.locator(".primary-link").textContent(), "Asociar plataforma");
+      assert.equal(await page.locator(".primary-link").count(), 0);
       for (const invalid of ["http://ejemplo.test/{titulo}", "https://usuario:clave@ejemplo.test/{titulo}", "https://ejemplo.test/buscar", "no es una URL {titulo}"]) {
         await input.fill(invalid);
         await page.waitForFunction(() => $("personalSearchInput").getAttribute("aria-invalid") === "true");
@@ -261,10 +371,10 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       const popup = await popupPromise; await popup.close();
       assert.deepEqual(await page.evaluate(() => {
         const item = state.releases[0];
-        return [filterByPlatform([{ ...item, favorite: false }]).length,
+        return [
           getBestWatchUrl({ ...item, service: "Netflix", allServices: ["Netflix"], serviceUrl: "https://ejemplo.test/plataforma" }),
           getBestWatchUrl({ ...item, service: "Prime Video", allServices: ["Prime Video"], customUrl: "https://ejemplo.test/propio", platformsByCountry: { ES: { status: "verified", offers: [{ service: "Prime Video", url: "https://ejemplo.test/plataforma" }] } } })];
-      }), [1, "https://ejemplo.test/plataforma", "https://ejemplo.test/propio"]);
+      }), ["https://ejemplo.test/plataforma", "https://ejemplo.test/propio"]);
       await page.reload(); await ready(page);
       assert.equal(await page.locator("#personalSearchInput").inputValue(), template);
       await page.locator("#settingsBtn").click(); await input.fill("");
@@ -278,10 +388,18 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       await page.goto(base); await ready(page);
       const count = await page.evaluate(() => {
         state.hiddenContent = []; state.hiddenPlatforms = []; invalidateDataCaches();
-        const catalog = getCatalogItems();
-        return { total: new Set(catalog.map(getSeriesKey)).size, shown: new Set(filterByPlatform(catalog).map(getSeriesKey)).size };
+        setMode("all");
+        const counts = [];
+        const platforms = getDetectedPlatforms();
+        for (let mask = 0; mask < 16; mask++) {
+          state.hiddenPlatforms = platforms.filter((_, i) => mask & (1 << i));
+          invalidateDataCaches(); render();
+          counts.push(getFilteredVisibleItems().length);
+        }
+        return { total: new Set(getCatalogItems().map(getSeriesKey)).size, counts };
       });
-      assert.deepEqual(count, { total: 76, shown: 76 });
+      assert.deepEqual(count, { total: 76, counts: Array(16).fill(76) });
+      await page.evaluate(() => { state.hiddenPlatforms = []; });
       await page.setViewportSize({ width: 360, height: 800 });
       await page.evaluate(() => {
         state.releases = [{ id: "badge", animeKey: "badge", title: "Badge", episode: "Ep 1", releaseDate: "2026-10-30T18:00:00Z", service: "Crunchyroll", allServices: ["Crunchyroll"], platformSource: "anilist" }];
@@ -364,8 +482,9 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         }, mode);
         assert.match(await page.locator("#listTitle").innerText(), / · 2$/);
         await page.getByRole("button", { name: "Quitar de favoritos" }).first().click();
-        await page.waitForFunction(() => document.getElementById("listTitle").textContent.endsWith(" · 1"), null, { timeout: 2000 });
-        assert.equal(await page.locator(".anime-card").count(), 1);
+        const expectedCount = mode === "all" ? 2 : 1;
+        await page.waitForFunction(count => document.getElementById("listTitle").textContent.endsWith(` · ${count}`), expectedCount, { timeout: 2000 });
+        assert.equal(await page.locator(".anime-card").count(), expectedCount);
       });
     }
     await scenario("F5 Android back closes settings then navigates or exits", async page => {
@@ -456,25 +575,24 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
           setMode("favorites");
           return { all, today, favorites: document.querySelectorAll(".anime-card").length };
         }, rule);
-        const visible = !["hidden", "custom"].includes(rule);
+        const visible = true;
         assert.equal(result.all.count, Number(visible));
         assert.ok(result.all.title.endsWith(` · ${Number(visible)}`));
         assert.equal(Boolean(result.all.next), visible);
         assert.equal(result.today, Number(rule.startsWith("favorite")));
         assert.equal(result.favorites, Number(rule.startsWith("favorite")));
-        if (rule === "hidden") { assert.match(result.all.text, /filtros/i); assert.match(result.all.nextText, /filtros/i); }
         if (rule === "alternative") assert.equal(result.all.service, "Netflix");
-        if (rule === "favorite") assert.equal(result.all.service, "Crunchyroll");
+        if (rule === "favorite") assert.equal(result.all.service, "No legal platform");
         if (rule === "hidden") assert.ok(result.all.platforms.includes("Crunchyroll"));
         if (rule === "unknown") assert.ok(!result.all.platforms.includes("No legal platform"));
       });
     }
-    await scenario("subscriptions hide pending rows and keep detected chips", async page => {
+    await scenario("subscriptions keep pending rows and detected chips", async page => {
       await page.goto(base); await ready(page);
       await page.locator("#showAllBtn").click();
       assert.equal(await page.locator(".anime-card").count(), 2);
       await page.evaluate(() => togglePlatformFilter("Crunchyroll"));
-      assert.equal(await page.locator(".anime-card").count(), 0);
+      assert.equal(await page.locator(".anime-card").count(), 2);
       assert.equal(await page.locator('[data-platform="Crunchyroll"]').getAttribute("aria-pressed"), "false");
       await page.evaluate(() => togglePlatformFilter("Crunchyroll"));
       assert.equal(await page.locator(".anime-card").count(), 2);
@@ -491,7 +609,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         } finally { Intl.DateTimeFormat = Original; }
       }), ["Europe/Madrid", "Europe/Madrid"]);
     });
-    await scenario("subscriptions favorite notification keeps real platform", async page => {
+    await scenario("subscriptions favorite notification follows checked platforms", async page => {
       await page.goto(base); await ready(page);
       const bodies = await page.evaluate(async () => {
         const scheduled = [];
@@ -505,7 +623,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         await scheduleNativeNotifications();
         return scheduled.map(n => n.body);
       });
-      assert.deepEqual(bodies, ["Ya disponible en Crunchyroll."]);
+      assert.deepEqual(bodies, ["Ya disponible."]);
     });
     for (const zone of ["Europe/Madrid", "America/Los_Angeles"]) {
       await scenario(`device timezone ${zone} ignores storage and updates on return`, async (page, context) => {
@@ -649,6 +767,26 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         state.notificationEnabled = true;
       });
     }
+    await scenario("F8 chip changes reconcile existing native alarms despite recent sync", async page => {
+      await nativeMock(page);
+      await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true, service: "Netflix", allServices: ["Netflix", "Crunchyroll"], serviceUrl: "https://ejemplo.test/netflix", serviceUrls: { Crunchyroll: "https://ejemplo.test/crunchyroll" } }];
+        state.personalSearchTemplate = "https://ejemplo.test/media/{titulo}";
+        await syncNativeNotificationsIfNeeded({ force: true });
+      });
+      assert.equal(await page.evaluate(() => nativeTest.pending[0].body), "Ya disponible en Netflix.");
+      await page.locator("#settingsBtn").click();
+      await page.locator("#platformFilterContainer").locator("..").locator("summary").click();
+      await page.locator('[data-platform="Netflix"]').click();
+      await page.clock.runFor(5000);
+      assert.deepEqual(await page.evaluate(() => nativeTest.pending.map(n => ({ body: n.body, url: n.extra.url }))), [{ body: "Ya disponible en Crunchyroll.", url: "https://ejemplo.test/crunchyroll" }]);
+      await page.locator('[data-platform="Crunchyroll"]').click();
+      await page.clock.runFor(5000);
+      assert.deepEqual(await page.evaluate(() => nativeTest.pending.map(n => ({ body: n.body, url: n.extra.url }))), [{ body: "Ya disponible.", url: "https://ejemplo.test/media/Sample" }]);
+      await page.locator("#personalSearchInput").fill("https://ejemplo.test/nuevo/{titulo}");
+      await page.clock.runFor(5000);
+      assert.equal(await page.evaluate(() => nativeTest.pending[0].extra.url), "https://ejemplo.test/nuevo/Sample");
+    });
     await scenario("native idle alarms cover fourteen days on an explicit channel and show coverage", async page => {
       const consoleErrors = [];
       page.on("console", message => { if (message.type() === "error") consoleErrors.push(message.text()); });
