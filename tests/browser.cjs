@@ -33,6 +33,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await require("./app-updates.browser.cjs")({ scenario, base, ready });
     await require("./active-links.browser.cjs")({ scenario, base, ready, nativeMock });
     await scenario("F8R1 manual subscription links follow chips without losing saved data", async page => {
       await page.goto(base); await ready(page);

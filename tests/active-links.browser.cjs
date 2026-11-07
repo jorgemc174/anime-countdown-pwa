@@ -267,7 +267,7 @@ module.exports = async ({ scenario, base, ready, nativeMock }) => {
   await scenario("F9 Android back and floating 360px dialog in both themes", async page => {
     await page.addInitScript(() => {
       window.backExits = 0;
-      window.Capacitor = { isNativePlatform: () => true, getPlatform: () => "android", Plugins: { App: { addListener: async (name, cb) => { window.nativeBack = cb; }, exitApp: () => { backExits++; } } } };
+      window.Capacitor = { isNativePlatform: () => true, getPlatform: () => "android", Plugins: { App: { addListener: async (name, cb) => { if (name === "backButton") window.nativeBack = cb; }, exitApp: () => { backExits++; } } } };
     });
     await setup(page);
     fs.mkdirSync("/tmp/f10-screenshots", { recursive: true });

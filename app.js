@@ -248,7 +248,7 @@ const CONTENT_FILTERS = [
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", personalLinkName: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", personalLinkName: "", installedAppVersion: "", latestUpdateVersion: "", lastUpdateCheck: "", dismissedUpdateVersion: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -270,6 +270,86 @@ const NATIVE_NOTIFICATION_VERSION = 1;
 const NATIVE_NOTIFICATION_WINDOW_MS = 14 * 24 * 3600 * 1000;
 const NATIVE_NOTIFICATION_CHANNEL = "anime-releases";
 
+const APP_UPDATE_CHECK_MS = 24 * 60 * 60 * 1000;
+const APP_LATEST_RELEASE_URL = "https://api.github.com/repos/jorgemc174/anime-countdown-pwa/releases/latest";
+const APP_DOWNLOAD_URL = "https://github.com/jorgemc174/anime-countdown-pwa/releases/latest/download/AniCountdown.apk";
+let updateCheckPromise = null;
+
+function isNativeAndroid() {
+  try { return isCapacitor() && Capacitor.getPlatform?.() === "android"; }
+  catch { return false; }
+}
+function normalizeAppVersion(value) {
+  if (typeof value !== "string") return "";
+  const match = value.trim().match(/^v?(\d+)\.(\d+)\.(\d+)$/);
+  if (!match) return "";
+  const parts = match.slice(1).map(Number);
+  return parts.every(Number.isSafeInteger) ? parts.join(".") : "";
+}
+function compareAppVersions(left, right) {
+  const a = left.split(".").map(Number), b = right.split(".").map(Number);
+  for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] > b[i] ? 1 : -1;
+  return 0;
+}
+function hasNewAppVersion() {
+  return isNativeAndroid() && Boolean(state.installedAppVersion && state.latestUpdateVersion)
+    && compareAppVersions(state.latestUpdateVersion, state.installedAppVersion) > 0;
+}
+function renderAppUpdateNotice() {
+  const installed = isNativeAndroid() ? state.installedAppVersion : "";
+  const available = hasNewAppVersion();
+  const banner = $("updateNotice");
+  const wasFocused = banner.contains(document.activeElement);
+  banner.hidden = !available || Boolean(state.dismissedUpdateVersion && compareAppVersions(state.latestUpdateVersion, state.dismissedUpdateVersion) <= 0);
+  $("updateNoticeText").textContent = available ? `Hay una versión nueva (${state.latestUpdateVersion})` : "";
+  $("appVersionStatus").hidden = !installed;
+  $("installedAppVersion").textContent = installed ? `Versión instalada: ${installed}` : "";
+  $("availableAppVersion").hidden = !available;
+  $("availableAppVersion").textContent = available ? `Nueva versión disponible: ${state.latestUpdateVersion}` : "";
+  if (banner.hidden && wasFocused) els.showAllBtn.focus({ preventScroll: true });
+}
+function checkForAppUpdate() {
+  if (!isNativeAndroid()) return Promise.resolve();
+  if (updateCheckPromise) return updateCheckPromise;
+  updateCheckPromise = (async () => {
+    try {
+      const app = Capacitor.Plugins?.App;
+      if (!app?.getInfo) return;
+      const installed = normalizeAppVersion((await app.getInfo())?.version);
+      if (!installed) return;
+      state.installedAppVersion = installed;
+      renderAppUpdateNotice();
+      const now = Date.now(), last = Date.parse(state.lastUpdateCheck);
+      if (Number.isFinite(last) && now >= last && now - last < APP_UPDATE_CHECK_MS) return;
+      // Record attempts, including failures, to avoid exceeding one request per day.
+      state.lastUpdateCheck = new Date(now).toISOString();
+      await browserApi.storage.local.set({ lastUpdateCheck: state.lastUpdateCheck });
+      const response = await fetch(APP_LATEST_RELEASE_URL, {
+        headers: { Accept: "application/vnd.github+json" }, credentials: "omit", referrerPolicy: "no-referrer"
+      });
+      if (!response.ok) return;
+      const latest = normalizeAppVersion((await response.json())?.tag_name);
+      if (!latest) return;
+      state.latestUpdateVersion = latest;
+      await browserApi.storage.local.set({ latestUpdateVersion: latest });
+      renderAppUpdateNotice();
+    } catch { /* An unavailable check must not interrupt the app or produce an error toast. */ }
+  })().finally(() => { updateCheckPromise = null; });
+  return updateCheckPromise;
+}
+async function setupAppUpdateChecks() {
+  if (!isNativeAndroid()) return;
+  checkForAppUpdate();
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") checkForAppUpdate();
+  });
+  try {
+    await Capacitor.Plugins?.App?.addListener?.("appStateChange", ({ isActive }) => {
+      if (isActive) checkForAppUpdate();
+    });
+  } catch { /* The initial check and visibility fallback still work without this listener. */ }
+}
+
 init();
 
 async function init() {
@@ -286,6 +366,7 @@ async function init() {
     startBackgroundRefreshes();
     setupCapacitorNotificationTap();
     setupAndroidBackButton();
+    setupAppUpdateChecks();
   } catch (error) {
     showFatal(error);
   }
@@ -365,7 +446,7 @@ function bindElements() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","lastUpdateCheck","latestUpdateVersion","dismissedUpdateVersion","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   const preferencesMigrated = platformPolicy.migrateLocalPreferences(data);
   if (preferencesMigrated) await browserApi.storage.local.set({ userOverrides: data.userOverrides });
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
@@ -411,6 +492,9 @@ async function loadState() {
   state.lastNativeNotificationSync = data.lastNativeNotificationSync || "";
   state.nativeNotificationVersion = data.nativeNotificationVersion || 0;
   state.nativeNotificationsUntil = data.nativeNotificationsUntil || "";
+  state.lastUpdateCheck = typeof data.lastUpdateCheck === "string" ? data.lastUpdateCheck : "";
+  state.latestUpdateVersion = normalizeAppVersion(data.latestUpdateVersion);
+  state.dismissedUpdateVersion = normalizeAppVersion(data.dismissedUpdateVersion);
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.anilistInput.value = data.anilistUsername || "";
@@ -421,6 +505,15 @@ async function loadState() {
 }
 
 function bindEvents() {
+  $("downloadAppUpdate").addEventListener("click", () => {
+    if (hasNewAppVersion()) openExternalUrl(APP_DOWNLOAD_URL);
+  });
+  $("dismissAppUpdate").addEventListener("click", async () => {
+    if (!hasNewAppVersion()) return;
+    state.dismissedUpdateVersion = state.latestUpdateVersion;
+    renderAppUpdateNotice();
+    await browserApi.storage.local.set({ dismissedUpdateVersion: state.dismissedUpdateVersion });
+  });
   bindLinkDialog();
   bindCardGestures();
   $("retryScheduleBtn")?.addEventListener("click", () => refreshSharedSchedule({ force: true, silent: false, skipPublicAnilist: true }));
@@ -2983,6 +3076,7 @@ function scheduleRender(delay = 80) {
 }
 
 function render() {
+  renderAppUpdateNotice();
   renderLinkOptions();
   renderGeneration++;
   if (renderRemainingTimer) {

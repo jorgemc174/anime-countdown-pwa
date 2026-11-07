@@ -1272,3 +1272,23 @@ html.light .score-value, html.light .countdown, html.light .next-label, html.lig
 .link-dialog-open { overflow: hidden; }
 .anime-card { -webkit-touch-callout: none; }
 .anime-card img { -webkit-user-drag: none; user-select: none; }
+
+.update-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--soft);
+  font-size: 13px;
+}
+.update-notice[hidden] { display: none; }
+.update-notice p { margin: 0; overflow-wrap: anywhere; }
+.update-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.update-notice button { width: auto; min-width: 44px; min-height: 44px; }
+.update-notice button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }

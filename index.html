@@ -47,6 +47,13 @@
           <div class="tab-indicator"></div>
         </section>
 
+        <section id="updateNotice" class="update-notice" role="status" aria-live="polite" hidden>
+          <p id="updateNoticeText"></p>
+          <div class="update-actions">
+            <button id="downloadAppUpdate" class="small-btn" type="button">Descargar</button>
+            <button id="dismissAppUpdate" class="small-btn" type="button">Más tarde</button>
+          </div>
+        </section>
         <div class="list-header" id="listHeader">
           <span class="section-title" id="listTitle">Cargando...</span>
           <div class="search-box">
@@ -116,6 +123,10 @@
         <p id="nativeNotificationStatus" class="notification-help" role="status" hidden></p>
         <p class="notification-help">En la web, los avisos requieren que la app esté abierta. En Android se programan los próximos 14 días con hora confirmada. Vuelve a abrir la app antes de que termine ese plazo para renovarlos.</p>
         <p class="notification-help">Horarios y plataformas actualizados automáticamente. Solo necesitas sincronizar tu biblioteca de AniList.</p>
+        <div id="appVersionStatus" hidden>
+          <p id="installedAppVersion" class="filter-help"></p>
+          <p id="availableAppVersion" class="filter-help" hidden></p>
+        </div>
         <button id="resetBtn" class="danger-btn" type="button">Borrar favoritos</button>
       </section>
     </div>
