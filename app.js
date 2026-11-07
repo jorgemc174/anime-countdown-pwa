@@ -280,6 +280,7 @@ async function init() {
     startNotificationScheduler();
     startBackgroundRefreshes();
     setupCapacitorNotificationTap();
+    setupAndroidBackButton();
   } catch (error) {
     showFatal(error);
   }
@@ -447,7 +448,15 @@ function bindEvents() {
   const sortBtn = document.getElementById("sortBtn");
   if (searchInput) searchInput.addEventListener("input", () => {
     state.searchQuery = searchInput.value.trim();
+    $("clearSearchBtn").hidden = !state.searchQuery;
     render();
+  });
+  $("clearSearchBtn")?.addEventListener("click", () => {
+    searchInput.value = "";
+    state.searchQuery = "";
+    $("clearSearchBtn").hidden = true;
+    render();
+    searchInput.focus();
   });
   if (sortBtn) {
     sortBtn.addEventListener("click", () => {
@@ -465,6 +474,22 @@ function bindEvents() {
   els.animeList.addEventListener("auxclick", handleListAuxClick);
   bindSwipeNavigation();
 
+}
+
+async function setupAndroidBackButton() {
+  if (!isCapacitor() || Capacitor.getPlatform?.() !== "android") return;
+  const app = Capacitor.Plugins?.App;
+  if (!app) return;
+  try {
+    // App 6 disables its default back handling when this listener is registered.
+    await app.addListener("backButton", ({ canGoBack }) => {
+      if (!els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
+      else if (canGoBack) window.history.back();
+      else app.exitApp();
+    });
+  } catch (error) {
+    console.warn("No se pudo registrar el botón Atrás.", error);
+  }
 }
 
 function setSettingsOpen(open) {
@@ -2277,11 +2302,8 @@ async function toggleFavorite(key) {
 
   const btn = els.animeList.querySelector(`[data-action="favorite"][data-key="${CSS.escape(key)}"]`);
 
-  if (!should && (state.viewMode === "favorites" || state.viewMode === "today")) {
-    const card = btn?.closest(".anime-card");
-    if (card) card.remove();
-    if (!els.animeList.querySelector(".anime-card")) render();
-    renderNextModern();
+  if (!should) {
+    render();
     return;
   }
 
@@ -2816,7 +2838,7 @@ function getVisibleItems() {
   const contentKey = state.hiddenContent.join("|");
   return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
     if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()), getUnscheduledLibraryItems());
-    if(state.viewMode==="today") return getTodayItems(filterByPlatform(adjustDelayedDates(getFavoriteItems())));
+    if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
     const catalog = filterByPlatform(getCatalogItems());
     return getOneNextPerSeries(catalog).concat(getPendingItems(catalog));
   });
@@ -2834,8 +2856,8 @@ function getDisplayService(item) {
     || services[0] || "No legal platform";
 }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
-function getUnscheduledLibraryItems() {
-  return state.anilistLibrary.filter(item => item.favorite !== false && isSchedulableItem(item)
+function getUnscheduledLibraryItems({ includeFiltered = false } = {}) {
+  return state.anilistLibrary.filter(item => item.favorite !== false && (includeFiltered || isSchedulableItem(item))
     && Date.parse(item.anilistAiringDate || "") > Date.now()
     && !state.releases.some(release => getSeriesKey(release) === getSeriesKey(item) || getSeriesMatchScore(release, item) >= 0.78))
     .map(item => ({ ...item, releaseDate: null, delayed: false, scheduleStatus: "unscheduled", favorite: true }));
@@ -2993,20 +3015,38 @@ async function saveReleases() { invalidateDataCaches(); await browserApi.storage
 async function saveAllLists() { invalidateDataCaches(); await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks }); }
 function showStatus(message,type="") { els.statusBox.textContent=message; els.statusBox.className=`status-box ${type}`; setTimeout(()=>{ els.statusBox.className="status-box hidden"; },6000); }
 function showFatal(error) { document.body.innerHTML=`<main style="padding:16px;font-family:Arial;background:#0f172a;color:white;min-height:650px"><h1>Error cargando extensión</h1><pre style="white-space:pre-wrap;color:#fecaca;background:#450a0a;border:1px solid #991b1b;border-radius:12px;padding:10px">${escapeHtml(error?.stack||error?.message||String(error))}</pre></main>`; }
+function getEmptyViewMessage() {
+  if (state.searchQuery) return "No hay coincidencias para esta búsqueda.";
+  if (state.viewMode !== "all" && !getFavoriteItems().length && !state.anilistLibrary.some(item => item.favorite !== false))
+    return "Aún no tienes favoritos. Añádelos desde Todos o sincroniza AniList.";
+  const source = state.viewMode === "favorites"
+    ? state.releases.concat(getUnscheduledLibraryItems({ includeFiltered: true }))
+    : state.releases;
+  const candidates = source.filter(item => (state.viewMode === "all" || item.favorite)
+    && (state.viewMode === "today" ? isToday(item.releaseDate) : (new Date(item.releaseDate) > new Date() || policy.isPending(item) || (state.viewMode === "favorites" && item.scheduleStatus === "unscheduled"))));
+  if (candidates.some(item => !isSchedulableItem(item) || (state.viewMode === "all" && !filterByPlatform([item]).length)))
+    return "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos.";
+  return state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
+}
+
 function renderNextModern() {
-  const items = getNextHighlightItems();
-  if (!items.length) {
+  let items = getNextHighlightItems();
+  const todayEmpty = state.viewMode === "today" && !getFilteredVisibleItems().length;
+  const emptyMessage = getEmptyViewMessage();
+  let nextFavorite = false;
+  if (state.viewMode === "today" && !items.length && todayEmpty && !state.searchQuery && !emptyMessage.includes("filtros")) {
+    items = getOneNextPerSeries(getFavoriteItems());
+    nextFavorite = items.length > 0;
+  }
+  if (!items.length || (todayEmpty && state.searchQuery)) {
     state.currentNext = null;
     els.nextRelease.className = "next-release empty";
-    if (state.viewMode === "today" && !state.scheduleHealth.loading && !state.scheduleHealth.error && !state.scheduleHealth.stale && getFavoriteItems().length) {
-      els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">¡Fin del día!</div><div class="next-title">Hoy no sale nada más</div><div class="next-episode">Revisa abajo los estrenos de hoy.</div></div>`;
-      return;
-    }
     if (state.scheduleHealth.loading || state.scheduleHealth.error || state.scheduleHealth.stale) {
       els.nextRelease.textContent = state.scheduleHealth.loading ? "Cargando horarios…" : state.scheduleHealth.error ? "No se pudo actualizar el horario" : "Horario desactualizado";
       return;
     }
-    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : state.hiddenPlatforms.length ? "Comprueba tus filtros de suscripciones." : "Los horarios se actualizan automáticamente."}</div></div>`;
+    const hasTodayList = state.viewMode === "today" && !todayEmpty;
+    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">${hasTodayList ? "¡Fin del día!" : "Sin estrenos"}</div><div class="next-title">${hasTodayList ? "Hoy no sale nada más" : "No hay próximos episodios"}</div><div class="next-episode">${escapeHtml(hasTodayList ? "Revisa abajo los estrenos de hoy." : emptyMessage)}</div></div>`;
     return;
   }
 
@@ -3017,7 +3057,7 @@ function renderNextModern() {
   const premierePill = getPremierePill(item);
   const delayedPill = getDelayedPill(item);
   els.nextRelease.className = "next-release";
-  els.nextRelease.innerHTML = `<div class="cover-stack next-cover-stack">${renderCover(item, "next-cover")}${scorePill}</div><div class="next-content"><div class="next-label">Próximo episodio</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(getDisplayService(item))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}${premierePill}${delayedPill}</div></div>`;
+  els.nextRelease.innerHTML = `<div class="cover-stack next-cover-stack">${renderCover(item, "next-cover")}${scorePill}</div><div class="next-content"><div class="next-label${nextFavorite ? " next-favorite-label" : ""}">${nextFavorite ? "Próximo favorito" : "Próximo episodio"}</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(getDisplayService(item))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}${premierePill}${delayedPill}</div></div>`;
 }
 
 function getNextHighlightItems() {
@@ -3025,7 +3065,7 @@ function getNextHighlightItems() {
   const contentKey = state.hiddenContent.join("|");
   return memoList(`highlight|${state.viewMode}|${dayKey}|${contentKey}`, () => {
     if (state.viewMode === "all") return getOneNextPerSeries(filterByPlatform(adjustDelayedDates(getCatalogItems())));
-    if (state.viewMode === "today") return getRemainingTodayItems(filterByPlatform(adjustDelayedDates(getFavoriteItems())));
+    if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
     return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
   });
 }
@@ -3048,10 +3088,7 @@ function renderListModern() {
     empty.textContent = state.scheduleHealth.loading ? "Cargando horarios…" :
       state.scheduleHealth.error ? "No se ha podido actualizar el horario. Reintenta arriba." :
       state.scheduleHealth.stale ? "El horario disponible está desactualizado. Estamos pendientes de nuevos datos." :
-      state.searchQuery ? "No hay coincidencias para esta búsqueda." :
-      (state.viewMode !== "all" && !getFavoriteItems().length) ? "Aún no tienes favoritos. Añádelos desde Todos o sincroniza AniList." :
-      state.hiddenContent.length || state.hiddenPlatforms.length ? "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos." :
-      state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
+      getEmptyViewMessage();
     els.animeList.appendChild(empty);
     return;
   }
@@ -3062,8 +3099,10 @@ function renderListModern() {
 function getFilteredVisibleItems() {
   var visible = getVisibleItems();
   if (state.searchQuery) {
-    var q = state.searchQuery.toLowerCase();
-    visible = visible.filter(function(item) { return (item.title||"").toLowerCase().indexOf(q)>=0 || (item.episode||"").toLowerCase().indexOf(q)>=0 || (getDisplayService(item)||"").toLowerCase().indexOf(q)>=0; });
+    const normalizeSearch = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const q = normalizeSearch(state.searchQuery);
+    visible = visible.filter(item => [item.title, ...(item.titles || []), item.anilistTitle, item.episode, getDisplayService(item)]
+      .some(value => normalizeSearch(value).includes(q)));
   }
   const scheduled = visible.filter(item => !policy.isPending(item) && item.scheduleStatus !== "unscheduled");
   const pending = visible.filter(item => policy.isPending(item));

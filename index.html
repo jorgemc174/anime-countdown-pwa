@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=111" />
+  <link rel="stylesheet" href="./styles.css?v=112" />
 </head>
 <body>
   <main class="app">
@@ -49,7 +49,10 @@
 
         <div class="list-header" id="listHeader">
           <span class="section-title" id="listTitle">Cargando...</span>
-          <input id="searchInput" class="search-input" type="text" placeholder="Buscar..." autocomplete="off" />
+          <div class="search-box">
+            <input aria-label="Buscar anime" id="searchInput" class="search-input" type="text" placeholder="Buscar..." autocomplete="off" />
+            <button id="clearSearchBtn" class="clear-search-btn" type="button" aria-label="Borrar búsqueda" hidden>&times;</button>
+          </div>
           <button id="sortBtn" class="sort-btn" type="button" aria-label="Invertir orden">&darr;&uarr;</button>
         </div>
         <div class="swipe-stage">
@@ -108,9 +111,9 @@
       </section>
     </div>
   </main>
-  <script src="./schedule-policy.js?v=111"></script>
-  <script src="./platform-policy.js?v=111"></script>
-  <script src="./config.js?v=111"></script>
-  <script src="./app.js?v=111"></script>
+  <script src="./schedule-policy.js?v=112"></script>
+  <script src="./platform-policy.js?v=112"></script>
+  <script src="./config.js?v=112"></script>
+  <script src="./app.js?v=112"></script>
 </body>
 </html>

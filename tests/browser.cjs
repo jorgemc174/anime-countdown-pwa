@@ -33,6 +33,149 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await scenario("F5 search aliases, accents and clear button", async page => {
+      await page.goto(base); await ready(page);
+      await page.evaluate(() => {
+        state.releases = [{ ...state.releases[0], title: "Konnichiwa", titles: ["Hello, I am a Witch", "Brujá"], anilistTitle: "Magíc English" }];
+        invalidateDataCaches(); setMode("all");
+      });
+      for (const query of ["HELLO, I AM A WITCH", "bruja", "MAGIC ENGLISH"]) {
+        await page.locator("#searchInput").fill(query);
+        assert.equal(await page.locator(".anime-card").count(), 1, query);
+      }
+      await page.getByRole("button", { name: "Borrar búsqueda" }).click();
+      assert.equal(await page.locator("#searchInput").inputValue(), "");
+      assert.equal(await page.locator("#searchInput").evaluate(el => el === document.activeElement), true);
+      assert.equal(await page.getByRole("button", { name: "Borrar búsqueda" }).isVisible(), false);
+    });
+    await scenario("F5 today empty reasons and next favorite", async page => {
+      await page.goto(base); await ready(page);
+      const setup = data => page.evaluate(data => {
+        const row = state.releases[0];
+        state.releases = [{ ...row, favorite: data.favorite, releaseDate: data.date, format: data.format || "TV" }];
+        state.searchQuery = ""; state.hiddenContent = ["ona"]; state.hiddenPlatforms = ["Netflix"];
+        invalidateDataCaches(); setMode("today");
+      }, data);
+      await setup({ favorite: false, date: "2026-10-30T18:00:00Z" });
+      assert.match(await page.locator("#animeList").innerText(), /Aún no tienes favoritos/);
+      assert.match(await page.locator("#nextRelease").innerText(), /Aún no tienes favoritos/);
+      await setup({ favorite: true, date: "2026-10-31T18:00:00Z" });
+      assert.match(await page.locator("#animeList").innerText(), /Hoy no hay estrenos/);
+      assert.match(await page.locator("#nextRelease").innerText(), /Próximo favorito.*Sample/is);
+      assert.doesNotMatch(await page.locator("body").innerText(), /Revisa abajo|Comprueba tus filtros/);
+      await setup({ favorite: true, date: "2026-10-30T18:00:00Z", format: "ONA" });
+      assert.match(await page.locator("#animeList").innerText(), /filtros/);
+      assert.match(await page.locator("#nextRelease").innerText(), /filtros/);
+      await setup({ favorite: true, date: "2026-10-30T10:00:00Z" });
+      assert.match(await page.locator("#nextRelease").innerText(), /Revisa abajo/);
+      await page.locator("#searchInput").fill("absent");
+      assert.match(await page.locator("#animeList").innerText(), /No hay coincidencias/);
+      assert.doesNotMatch(await page.locator("#nextRelease").innerText(), /Revisa abajo/);
+    });
+    await scenario("F5 hidden unscheduled library is still a favorite", async page => {
+      await page.goto(base); await ready(page);
+      await page.evaluate(() => {
+        state.releases = [];
+        state.anilistLibrary = [{ title: "Hidden library", animeKey: "hidden", favorite: true, format: "ONA" }];
+        state.hiddenContent = ["ona"];
+        invalidateDataCaches(); setMode("today");
+      });
+      assert.match(await page.locator("#animeList").innerText(), /Hoy no hay estrenos/);
+      await page.locator("#showFavsBtn").click();
+      assert.doesNotMatch(await page.locator("#animeList").innerText(), /filtros/);
+      await page.evaluate(() => {
+        state.anilistLibrary[0].anilistAiringDate = "2026-10-31T18:00:00Z";
+        invalidateDataCaches(); render();
+      });
+      assert.match(await page.locator("#animeList").innerText(), /filtros/);
+      await page.evaluate(() => { state.hiddenContent = []; invalidateDataCaches(); render(); });
+      assert.equal(await page.locator(".anime-card").count(), 1);
+    });
+    for (const mode of ["today", "favorites", "all"]) {
+      await scenario(`F5 favorite removal updates count ${mode}`, async page => {
+        await page.goto(base); await ready(page);
+        await page.evaluate(mode => {
+          const row = state.releases[0];
+          state.releases = [row, { ...row, id: "second", animeKey: "second", title: "Second" }].map(item => ({ ...item, favorite: true }));
+          if (mode === "all") state.hiddenPlatforms = ["Crunchyroll"];
+          invalidateDataCaches(); setMode(mode);
+        }, mode);
+        assert.match(await page.locator("#listTitle").innerText(), / · 2$/);
+        await page.getByRole("button", { name: "Quitar de favoritos" }).first().click();
+        await page.waitForFunction(() => document.getElementById("listTitle").textContent.endsWith(" · 1"), null, { timeout: 2000 });
+        assert.equal(await page.locator(".anime-card").count(), 1);
+      });
+    }
+    await scenario("F5 Android back closes settings then navigates or exits", async page => {
+      await page.addInitScript(() => {
+        window.backCalls = [];
+        window.Capacitor = { isNativePlatform: () => true, getPlatform: () => "android", Plugins: { App: {
+          addListener: async (name, callback) => { if (name === "backButton") window.nativeBack = callback; return { remove() {} }; },
+          exitApp: async () => window.backCalls.push("exit")
+        } } };
+      });
+      await page.goto(base); await ready(page);
+      await page.waitForFunction(() => typeof window.nativeBack === "function");
+      await page.locator("#settingsBtn").click();
+      await page.evaluate(() => nativeBack({ canGoBack: false }));
+      assert.equal(await page.locator("#settingsPanel").isVisible(), false);
+      assert.deepEqual(await page.evaluate(() => backCalls), []);
+      await page.evaluate(() => { history.pushState({}, "", "#previous"); history.pushState({}, "", "#current"); nativeBack({ canGoBack: true }); });
+      await page.waitForFunction(() => location.hash === "#previous");
+      await page.evaluate(() => nativeBack({ canGoBack: false }));
+      assert.deepEqual(await page.evaluate(() => backCalls), ["exit"]);
+    });
+    await scenario("F5 contrast, touch targets and mobile screenshots in both themes", async page => {
+      await page.goto(base); await ready(page);
+      await page.evaluate(() => { window.f5SearchRow = { ...state.releases[0] }; });
+      fs.mkdirSync("/tmp/f5-screenshots", { recursive: true });
+      for (const theme of ["light", "dark"]) {
+        await page.evaluate(theme => { applyTheme(theme); state.releases = []; invalidateDataCaches(); setMode("today"); }, theme);
+        await page.evaluate(() => document.getAnimations().forEach(a => a.finish()));
+        await page.screenshot({ animations: "disabled", path: `/tmp/f5-screenshots/${theme}-today.png` });
+        for (const asc of [true, false]) {
+          await page.evaluate(asc => $("sortBtn").classList.toggle("asc", asc), asc);
+          const result = await page.evaluate(() => {
+            const parse = v => v.match(/[\d.]+/g).map(Number);
+            const blend = (fg, bg) => fg.slice(0, 3).map((v, i) => v * (fg[3] ?? 1) + bg[i] * (1 - (fg[3] ?? 1)));
+            const background = el => { const c = parse(getComputedStyle(el).backgroundColor); return blend(c, el.parentElement ? background(el.parentElement) : [255, 255, 255]); };
+            const lum = c => c.map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((s,v,i) => s + v * [.2126,.7152,.0722][i],0);
+            const ratio = (a,b) => (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+            return [".empty-message", ".next-title", ".next-episode", ".eyebrow", "#listTitle", "#sortBtn", "#searchInput", "#anilistInput"].map(selector => {
+              const el = document.querySelector(selector), style = getComputedStyle(el), bg = background(el);
+              const r = el.getBoundingClientRect();
+              const color = el.tagName === "INPUT" ? getComputedStyle(el, "::placeholder") : style;
+              const fg = blend([...parse(color.color).slice(0,3), Number(color.opacity)], bg);
+              return { selector, contrast: ratio(lum(fg),lum(bg)), width: r.width, height: r.height };
+            });
+          });
+          for (const item of result) {
+            assert.ok(item.contrast >= (item.selector === "#sortBtn" ? 3 : 4.5), `${theme} ${item.selector}: ${item.contrast}`);
+            if (item.selector === "#sortBtn") assert.ok(item.width >= 44 && item.height >= 44);
+          }
+        }
+        await page.evaluate(() => {
+          state.releases = [
+            { ...window.f5SearchRow, titles: ["Hello, I am a Witch"] },
+            { ...window.f5SearchRow, id: "second", animeKey: "second", title: "Second", releaseDate: "2026-10-30T19:00:00Z" }
+          ];
+          state.sortAsc = true;
+          invalidateDataCaches(); setMode("all");
+        });
+        await page.getByRole("button", { name: "Invertir orden" }).click();
+        assert.deepEqual(await page.locator(".anime-title").allTextContents(), ["Second", "Sample"]);
+        await page.getByRole("button", { name: "Invertir orden" }).click();
+        assert.deepEqual(await page.locator(".anime-title").allTextContents(), ["Sample", "Second"]);
+        await page.locator("#searchInput").fill("Witch");
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await page.screenshot({ animations: "disabled", path: `/tmp/f5-screenshots/${theme}-search.png` });
+        await page.locator("#settingsBtn").click();
+        await page.locator("#settingsPanel").waitFor({ state: "visible" });
+        await page.screenshot({ animations: "disabled", path: `/tmp/f5-screenshots/${theme}-panel.png` });
+        await page.locator("#closeSettingsBtn").click();
+        await page.locator("#searchInput").fill("");
+      }
+    });
     for (const rule of ["unchanged", "alternative", "hidden", "unknown", "unknown-on", "custom", "custom-link", "favorite", "favorite-unknown"]) {
       await scenario(`subscriptions ${rule}: lists, count and next episode`, async page => {
         await page.goto(base); await ready(page);
