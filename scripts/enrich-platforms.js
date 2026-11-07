@@ -22,6 +22,10 @@ const BY_ID = `query GetKnownTitle($id: ID!, $country: Country!, $language: Lang
   }
 }`;
 const NEGATIVE_RETRY_MS = 3 * 3600000;
+// Individual removals still need confirmation; losing over half of a sample of
+// ten verified shows at once signals an outage even after that retry interval.
+const MIN_VERIFIED_SAMPLE = 10;
+const MAX_VERIFIED_LOSS_RATIO = 0.5;
 function inputSignature(item) {
   return JSON.stringify([item.anilistFormat || item.format || "SHOW", item.anilistYear || null,
     [...new Set([item.title, item.anilistTitle, ...(item.titles || [])].filter(Boolean))].sort()]);
@@ -229,6 +233,27 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
     }
   }
   await Promise.all(Array.from({ length: Math.min(concurrency, tasks.length) }, worker));
+  const degraded = [];
+  for (const country of countries) {
+    const verifiedKeys = [...series.keys()].filter(key => priorSeries[key]?.countries?.[country.code]?.status === "verified");
+    const retained = verifiedKeys.filter(key => cache.series[key].countries[country.code]?.status === "verified").length;
+    if (verifiedKeys.length >= MIN_VERIFIED_SAMPLE && retained < verifiedKeys.length * (1 - MAX_VERIFIED_LOSS_RATIO)) {
+      if (process.env.ALLOW_DATA_DROP === "true") {
+        console.warn(`::warning::Descenso de plataformas autorizado en ${country.code}: verificadas ${verifiedKeys.length} → ${retained}.`);
+      } else {
+        degraded.push({ country: country.code, previousVerified: verifiedKeys.length, receivedVerified: retained });
+      }
+    }
+  }
+  if (degraded.length) {
+    // Restore every lost verification, including countries below the threshold.
+    for (const key of series.keys()) for (const country of countries) {
+      const previous = priorSeries[key]?.countries?.[country.code];
+      if (previous?.status === "verified" && cache.series[key].countries[country.code]?.status !== "verified") {
+        cache.series[key].countries[country.code] = previous;
+      }
+    }
+  }
   // Keep cache entries for temporarily absent shows, but expire unused ones after 180 days.
   for (const [key, entry] of Object.entries(cache.series)) {
     if (series.has(key)) { entry.lastSeenAt = timestamp; continue; }
@@ -255,7 +280,7 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
     if (reason) issues.push({ key, title: row.title, country: country.code, reason, status: record?.status || "pending",
       errorProvider: record?.errorProvider || null, lastAttemptAt: record?.lastAttemptAt || null });
   }
-  const summary = { checked, errors, issues, totalFailure: checked > 0 && errors === checked, queued: tasks.length - checked, rateLimited, coverage, countries: countries.map(country => country.code),
+  const summary = { checked, errors, issues, degraded: degraded.length ? degraded : false, totalFailure: checked > 0 && errors === checked, queued: tasks.length - checked, rateLimited, coverage, countries: countries.map(country => country.code),
     source: "JustWatch", checkedAt: timestamp, series: series.size };
   return { payload: { ...payload, releases: enriched, platforms: summary }, cache, summary };
 }
@@ -281,7 +306,8 @@ async function main() {
   await atomicWrite(cacheFile, result.cache);
   await atomicWrite(scheduleFile, result.payload);
   console.log(JSON.stringify(result.summary));
-  if (result.summary.totalFailure) process.exitCode = 1;
+  if (result.summary.totalFailure || result.summary.degraded) process.exitCode = 1;
+  if (result.summary.degraded) console.error("::error::JustWatch degradado: se conservan los registros verificados anteriores y se publica el horario actualizado.");
   if (result.summary.errors) console.warn("JustWatch incompleto: se conserva la última información válida y se reintentará en el siguiente cron.");
 }
 if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });

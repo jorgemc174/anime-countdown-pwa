@@ -30,6 +30,31 @@ const ANILIST_REQUEST_DELAY_MS = Number(process.env.ANILIST_REQUEST_DELAY_MS || 
 const ANILIST_AIRING_MAX_PAGES = Number(process.env.ANILIST_AIRING_MAX_PAGES || process.env.ANILIST_CATALOG_MAX_PAGES || "20");
 const ANILIST_SEASON_MAX_PAGES = Number(process.env.ANILIST_SEASON_MAX_PAGES || "5");
 
+// A loss over half of at least 20 future episodes is unlikely to be a routine
+// season rollover. Recount at execution time so expired episodes never lock updates.
+const MIN_COMPARABLE_FUTURE = 20;
+const MAX_FUTURE_LOSS_RATIO = 0.5;
+function assertScheduleNotDegraded(previous, releases, { now = Date.now(), weeks = getNextWeeks(14), timezone = "Europe/Madrid" } = {}) {
+  const window = new Set(weeks.map(({ year, week }) => `${year}-${week}`));
+  const comparable = rows => rows.filter(row => {
+    if (!policy.hasConfirmedTime(row) || Date.parse(row.releaseDate) < now) return false;
+    const day = new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(row.releaseDate));
+    const { year, week } = getIsoWeek(new Date(`${day}T12:00:00`));
+    return window.has(`${year}-${week}`);
+  }).length;
+  const before = comparable(previous?.releases || []);
+  const after = comparable(releases);
+  if (before >= MIN_COMPARABLE_FUTURE && after < before * (1 - MAX_FUTURE_LOSS_RATIO)) {
+    if (process.env.ALLOW_DATA_DROP === "true") {
+      console.warn(`::warning::Descenso del horario autorizado: emisiones futuras comparables ${before} → ${after}.`);
+      return;
+    }
+    const error = new Error(`Horario degradado: emisiones futuras comparables ${before} → ${after}; se conservan los datos anteriores.`);
+    error.code = "DATA_DEGRADED";
+    throw error;
+  }
+}
+
 async function main() {
   const token = process.env.ANIMESCHEDULE_TOKEN;
   const timezone = process.env.SYNC_TIMEZONE || "Europe/Madrid";
@@ -43,7 +68,8 @@ async function main() {
     throw new Error("ANIMESCHEDULE_TOKEN no configurado; no se genera una agenda con horas de AniList.");
   }
 
-  for (const week of getNextWeeks(weeks)) {
+  const requestedWeeks = getNextWeeks(weeks);
+  for (const week of requestedWeeks) {
     if (Date.now() >= generationDeadline) { failedWeeks.push(week); continue; }
     const response = await fetchAnimeScheduleWeekWithRetry(week, timezone, token);
     if (!response) {
@@ -115,13 +141,14 @@ async function main() {
   if (failedWeeks.length) console.warn(`::warning::Filas conservadas de semanas fallidas: ${retained}.`);
   releases.sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
 
+  assertScheduleNotDegraded(previous, releases, { weeks: requestedWeeks, timezone });
   if (!releases.length) {
     throw new Error("Las fuentes no devolvieron episodios SUB válidos; se conserva el archivo anterior y la ejecución falla.");
   }
 
   const tracked = await readDelayTracking();
   releases = await trackDelays([...(previous?.releases || []), ...tracked], releases, { timezone, discoverSources: discoverOfficialSources });
-  await saveDelayTracking(releases);
+  assertScheduleNotDegraded(previous, releases, { weeks: requestedWeeks, timezone });
   if (!policy.health({ releases }).future) throw new Error("El horario generado no contiene emisiones SUB futuras confirmadas; no se sustituye el archivo anterior.");
   const changed = !previous || previous.source !== source || JSON.stringify(previous.releases) !== JSON.stringify(releases);
   const payload = {
@@ -133,6 +160,7 @@ async function main() {
   };
 
   policy.validate(payload);
+  await saveDelayTracking(releases);
   await fs.writeFile(`${OUT_FILE}.tmp`, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
   await fs.rename(`${OUT_FILE}.tmp`, OUT_FILE);
   console.log(`schedule.json actualizado: ${releases.length} episodios (${rawItems.length} items leidos, fuente ${source}).`);
@@ -1074,13 +1102,14 @@ function normalizeUrl(url) {
 if (require.main === module) {
   main().catch(async (error) => {
     console.error(error.message);
-    try { await retryPendingAfterFailure(); } catch { console.error("No se pudo completar la revisión de retrasos; se reintentará en la próxima ejecución."); }
+    try { if (error.code !== "DATA_DEGRADED") await retryPendingAfterFailure(); } catch { console.error("No se pudo completar la revisión de retrasos; se reintentará en la próxima ejecución."); }
     process.exitCode = 1;
   });
 }
 
 module.exports = {
   main,
+  assertScheduleNotDegraded,
   normalizeSchedule,
   hasUsableExistingSchedule,
   fetchPublicAnilistSchedule,

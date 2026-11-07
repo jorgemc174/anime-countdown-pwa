@@ -7,7 +7,7 @@ const path = require("node:path");
 const { promisify } = require("node:util");
 const execFile = promisify(require("node:child_process").execFile);
 
-async function fixture(t, scenario) {
+async function fixture(t, scenario, extraEnv = {}) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), "anime-generator-"));
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
   await fs.mkdir(path.join(dir, "scripts"));
@@ -22,6 +22,13 @@ async function fixture(t, scenario) {
     previous.releases = [0, 1, 2].map(i => ({ id: `old-${i}`, animeKey: `old-${i}`, title: `Old ${i}`, episodeNumber: 1, airType: "SUB", releaseDate: new Date(+monday + i * 86400000).toISOString() }));
     await fs.writeFile(path.join(dir, "schedule.json"), JSON.stringify(previous));
   }
+  if (["massive", "massive-empty"].includes(scenario)) {
+    previous.releases = Array.from({ length: 299 }, (_, i) => ({ id: `old-${i}`, animeKey: `old-${i}`, title: `Old ${i}`, episodeNumber: 1,
+      releaseDate: new Date(Date.now() + (1 + i % 5) * 86400000).toISOString() }));
+    await fs.writeFile(path.join(dir, "schedule.json"), JSON.stringify(previous));
+  }
+  const tracking = { releases: ["massive", "massive-empty"].includes(scenario) ? [{ title: "Tracked", animeKey: "tracked", episodeNumber: 1, scheduleStatus: "pending", releaseDate: null }] : [] };
+  await fs.writeFile(path.join(dir, "delay-tracking.json"), JSON.stringify(tracking));
   const hook = `let calls=0; global.fetch=async (url, options)=>{
     const target=new URL(url);
     if(target.hostname==='apis.justwatch.com') {
@@ -35,7 +42,7 @@ async function fixture(t, scenario) {
     if(!options.headers.authorization) throw Error('Missing authorization');
     calls++;
     if (${JSON.stringify(scenario)} === 'auth') return new Response('{}',{status:401});
-    if (${JSON.stringify(scenario)} === 'empty') return new Response('[]',{status:200});
+    if (['empty', 'massive-empty'].includes(${JSON.stringify(scenario)})) return new Response('[]',{status:200});
     if (['network','server','json','missing'].includes(${JSON.stringify(scenario)})) {
       const monday = new Date(); monday.setUTCHours(0,0,0,0); monday.setUTCDate(monday.getUTCDate() + (8-(monday.getUTCDay()||7)));
       if(calls === 2) {
@@ -51,13 +58,13 @@ async function fixture(t, scenario) {
   await fs.writeFile(path.join(dir, "hook.cjs"), hook);
   let error, output;
   try { output = await execFile(process.execPath, ["--require", "./hook.cjs", "scripts/sync-animeschedule.js"], {
-    cwd: dir, env: { ...process.env, ANIMESCHEDULE_TOKEN: "test-placeholder", INCLUDE_ANILIST_MISSING: "false", ANIMESCHEDULE_RETRIES: "1" }
+    cwd: dir, env: { ...process.env, ANIMESCHEDULE_TOKEN: "test-placeholder", INCLUDE_ANILIST_MISSING: "false", ANIMESCHEDULE_RETRIES: "1", ALLOW_DATA_DROP: "false", ...extraEnv }
   }); } catch (failure) { error = failure; }
   if (scenario === "platforms" && !error) {
     await execFile(process.execPath, ["--require", "./hook.cjs", "scripts/enrich-platforms.js"], { cwd: dir, env: { ...process.env, JUSTWATCH_COUNTRIES: "ES" } });
   }
   const schedule = JSON.parse(await fs.readFile(path.join(dir, "schedule.json")));
-  return { error, schedule, previous, output };
+  return { error, schedule, previous, output, tracking, nextTracking: JSON.parse(await fs.readFile(path.join(dir, "delay-tracking.json"))) };
 }
 test("five valid weeks and nine future 404s replace an expired timetable", async t => {
   const result = await fixture(t, "partial");
@@ -98,3 +105,18 @@ for (const failure of ["network", "server", "json", "missing"]) {
     if (failure !== "missing") assert.match(result.output.stderr, /conservad.*2/i);
   });
 }
+
+for (const scenario of ["massive", "massive-empty"]) test(`a sparse or empty feed cannot replace 299 future rows or delay tracking: ${scenario}`, async t => {
+  const result = await fixture(t, scenario);
+  assert.equal(result.error?.code, 1);
+  assert.deepEqual(result.schedule, result.previous);
+  assert.deepEqual(result.nextTracking, result.tracking);
+});
+
+test("manual override publishes a legitimate massive schedule decrease with a warning", async t => {
+  const result = await fixture(t, "massive", { ALLOW_DATA_DROP: "true" });
+  assert.equal(result.error, undefined);
+  assert.match(result.output.stderr, /::warning::Descenso del horario autorizado/);
+  assert.equal(result.schedule.releases.filter(item => item.title === "Current").length, 5);
+  assert.notDeepEqual(result.schedule, result.previous);
+});

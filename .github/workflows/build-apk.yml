@@ -33,6 +33,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  # Public certificate from releases/latest/download/AniCountdown.apk (2026-11-07).
+  ANDROID_CERT_SHA256: 61e6fe3e7af63257dce586ae48b96c19b28e057079773ce9c1916035684f936a
   APP_VERSION_CODE: ${{ github.run_number }}
   APP_VERSION_NAME: 1.0.${{ github.run_number }}
 
@@ -70,21 +72,24 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         run: |
-          if [ -n "$KEYSTORE_BASE64" ]; then
-            export ANDROID_KEYSTORE_PATH="$RUNNER_TEMP/release.jks"
-            base64 -d <<<"$KEYSTORE_BASE64" > "$ANDROID_KEYSTORE_PATH"
-            bash android/gradlew -p android :app:assembleRelease --no-daemon --max-workers=2
-            rm -f "$ANDROID_KEYSTORE_PATH"
-            cp android/app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/AniCountdown.apk"
-          else
-            echo "::warning::Sin clave fija: firma debug, cada versión exige desinstalar la anterior"
-            bash android/gradlew -p android :app:assembleDebug --no-daemon --max-workers=2
-            cp android/app/build/outputs/apk/debug/app-debug.apk "$RUNNER_TEMP/AniCountdown.apk"
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$ANDROID_KEYSTORE_PASSWORD" ]; then
+            echo "::error::Falta la clave de firma release o su contraseña; no se publica ninguna APK."
+            exit 1
           fi
+          export ANDROID_KEYSTORE_PATH="$RUNNER_TEMP/release.jks"
+          trap 'rm -f "$ANDROID_KEYSTORE_PATH"' EXIT
+          base64 -d <<<"$KEYSTORE_BASE64" > "$ANDROID_KEYSTORE_PATH"
+          bash android/gradlew -p android :app:assembleRelease --no-daemon --max-workers=2
+          cp android/app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/AniCountdown.apk"
       - name: Verify APK signature and package
         run: |
           APK="$RUNNER_TEMP/AniCountdown.apk"
-          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs "$APK"
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs "$APK" > "$RUNNER_TEMP/apk-certs.txt"
+          CERT_SHA256=$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' "$RUNNER_TEMP/apk-certs.txt" | tr '[:upper:]' '[:lower:]')
+          if [ "$CERT_SHA256" != "$ANDROID_CERT_SHA256" ]; then
+            echo "::error::El certificado de la APK no coincide con la firma pública de AniCountdown."
+            exit 1
+          fi
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging "$APK" | tee "$RUNNER_TEMP/badging.txt"
           grep -q "versionCode='$APP_VERSION_CODE'" "$RUNNER_TEMP/badging.txt"
           sha256sum "$APK"

@@ -498,3 +498,19 @@ test("a no-offers id from an older version is kept when the new search finds not
   const wrong = await lookupAvailability({ ...row, anilistOffers: offers }, es, { previous: { status: "verified", justwatchId: "wrong", offers, lookupVersion: 1 }, fetchImpl, aliasState: { unavailable: true } }).catch(error => error);
   assert.notEqual(wrong.justwatchId, "wrong");
 });
+
+test("an empty JustWatch response twice after three hours cannot erase 60 verified series", async () => {
+  const input = { ...payload, releases: Array.from({ length: 60 }, (_, i) => ({ ...row, animeKey: `show-${i}`, title: `Show ${i}` })) };
+  const initial = await enrichPlatforms(input, undefined, { now, concurrency: 60, lookup: async () => positive });
+  const negative = async () => ({ status: "no-offers", offers: [] });
+  const first = await enrichPlatforms(initial.payload, initial.cache, { now: now + 13 * 3600000, concurrency: 60, lookup: negative });
+  const snapshot = JSON.stringify(first);
+  const result = await enrichPlatforms(first.payload, first.cache, { now: now + 17 * 3600000, concurrency: 60, lookup: negative });
+  assert.ok(result.summary.degraded);
+  assert.equal(result.summary.coverage.ES.verified, 60);
+  for (const [key, entry] of Object.entries(first.cache.series)) {
+    assert.equal(result.cache.series[key].countries.ES, entry.countries.ES);
+  }
+  assert.equal(JSON.stringify(first), snapshot);
+  assert.equal(Object.values(first.cache.series).filter(entry => entry.countries.ES.status === "verified").length, 60);
+});

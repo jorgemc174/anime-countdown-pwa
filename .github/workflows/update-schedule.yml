@@ -2,6 +2,11 @@ name: Update anime schedule
 
 on:
   workflow_dispatch:
+    inputs:
+      allow_data_drop:
+        description: Permitir un descenso masivo legítimo de datos
+        type: boolean
+        default: false
   schedule:
     - cron: "17 */3 * * *"
 
@@ -29,6 +34,7 @@ jobs:
         id: generate
         run: node scripts/sync-animeschedule.js
         env:
+          ALLOW_DATA_DROP: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_data_drop || false }}
           ANIMESCHEDULE_TOKEN: ${{ secrets.ANIMESCHEDULE_TOKEN }}
           SYNC_TIMEZONE: Europe/Madrid
           SYNC_WEEKS: "14"
@@ -39,6 +45,8 @@ jobs:
         id: platforms
         if: ${{ !cancelled() && steps.generate.outcome != 'skipped' }}
         run: npm run sync:platforms
+        env:
+          ALLOW_DATA_DROP: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_data_drop || false }}
 
       - name: Retain platform diagnostics
         if: ${{ !cancelled() && steps.platforms.outcome != 'skipped' }}
@@ -48,8 +56,13 @@ jobs:
           path: ${{ runner.temp }}/anime-platform-audit.json
           retention-days: 14
 
-      - name: Commit updated schedule
+      - name: Validate data before publishing
+        id: validate
         if: ${{ !cancelled() && steps.platforms.outcome != 'skipped' }}
+        run: node scripts/validate-publish.js
+
+      - name: Commit updated schedule
+        if: ${{ !cancelled() && steps.validate.outcome == 'success' }}
         run: |
           if git diff --quiet -- schedule.json delay-tracking.json platform-cache.json; then
             echo "schedule.json has no changes"
@@ -81,6 +94,7 @@ jobs:
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\nIncidencias para revisar: ${issues.length}. Ver el artefacto platform-audit.\n`);
               console.warn(`::warning::${issues.length} coincidencias, cambios de disponibilidad o consultas requieren seguimiento automático.`);
             }
+            if (platforms.degraded) { console.error('::error::JustWatch degradado: se restauraron las plataformas verificadas anteriores y se publicó el horario actualizado.'); process.exitCode = 1; }
             if (platforms.totalFailure) { console.error('::error::Ninguna consulta de plataformas pudo completarse; se conserva la información anterior.'); process.exitCode = 1; }
           } else { console.error('::error::Falta el catálogo compartido de plataformas.'); process.exitCode = 1; }
           if (health.stale) { console.error('::error::El horario publicado no tiene emisiones SUB futuras.'); process.exitCode = 1; }
