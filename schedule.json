@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-07T09:45:06.353Z",
-  "checkedAt": "2026-11-07T09:45:06.353Z",
+  "updatedAt": "2026-11-07T10:24:27.661Z",
+  "checkedAt": "2026-11-07T10:24:27.661Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -25970,8 +25970,8 @@
     }
   ],
   "platforms": {
-    "checked": 76,
-    "errors": 1,
+    "checked": 0,
+    "errors": 0,
     "issues": [
       {
         "key": "anilist-178868",
@@ -25980,24 +25980,6 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-07T09:45:06.545Z"
-      },
-      {
-        "key": "anilist-159042",
-        "title": "Tensei shitara Ken deshita 2",
-        "country": "ES",
-        "reason": "confirmed-availability-removed",
-        "status": "no-offers",
-        "errorProvider": null,
-        "lastAttemptAt": "2026-11-07T09:45:06.545Z"
-      },
-      {
-        "key": "anilist-172192",
-        "title": "Kikansha no Mahou wa Tokubetsu desu 2nd Season",
-        "country": "ES",
-        "reason": "confirmed-availability-removed",
-        "status": "no-offers",
-        "errorProvider": null,
         "lastAttemptAt": "2026-11-07T09:45:06.545Z"
       },
       {
@@ -26026,7 +26008,7 @@
       "ES"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-11-07T09:45:06.545Z",
+    "checkedAt": "2026-11-07T10:24:27.848Z",
     "series": 76
   }
 }
