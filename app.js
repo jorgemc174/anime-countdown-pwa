@@ -2291,12 +2291,6 @@ async function handleListClick(event) {
   if (!action || $("linkDialog").open) return;
   event.stopPropagation();
   if (action === "open") { const item = findItemById(id); if (item) await openOrAsk(item); return; }
-  if (action === "secondary") {
-    const item = findItemById(id);
-    const url = item && getSecondaryWatchSource(item)?.url;
-    if (url) browserApi.tabs.create({ url });
-    return;
-  }
   if (action === "favorite") { await toggleFavorite(actionEl.dataset.key); return; }
   if (action === "customLink") { await associatePlatform(actionEl.dataset.key); return; }
   if (action === "removeCustomLink") { await removePlatform(actionEl.dataset.key); return; }
@@ -2310,7 +2304,7 @@ function handleListAuxClick(event) {
   event.preventDefault();
   const item = findItemById(card.dataset.id);
   if (!item) return;
-  const url = event.target.closest('[data-action="secondary"]') ? getSecondaryWatchSource(item)?.url : getBestWatchUrl(item);
+  const url = getBestWatchUrl(item);
   if (url) window.open(url, "_blank", "noopener");
 }
 
@@ -3216,10 +3210,6 @@ function getActiveWatchSource(item) {
   const sources = getWatchSources(item);
   return sources.find(source => source.id === getUserOverride(item)?.activeLink) || getAutomaticWatchSource(item, sources);
 }
-function getSecondaryWatchSource(item, active = getActiveWatchSource(item)) {
-  if (active?.kind === "platform" || active?.id === "personal") return null;
-  return getWatchSources(item).find(source => source.id === "personal") || null;
-}
 function getBestWatchUrl(item) { return getActiveWatchSource(item)?.url || ""; }
 function defaultServiceUrl(service) {
   return {
@@ -3416,10 +3406,7 @@ function createCardModern(item) {
   const fallbackSource = { anilist: "AniList", animeschedule: "AnimeSchedule" }[item.platformSource];
   const unverifiedBadge = fallbackSource && activeSource?.kind === "platform" ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
   const badgeLabel = activeSource?.label || "Sin plataforma";
-  const secondarySource = getSecondaryWatchSource(item, activeSource);
-  const secondaryButton = secondarySource
-    ? `<button class="small-btn" type="button" data-action="secondary" data-id="${escapeHtml(item.id)}">${escapeHtml(secondarySource.label)}</button>` : "";
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${secondaryButton && watchButton ? " has-secondary" : ""}">${watchButton}${secondaryButton}${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions">${watchButton}${customButton}</div></div>`;
   return card;
 }
 

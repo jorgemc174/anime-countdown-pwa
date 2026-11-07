@@ -82,25 +82,25 @@ module.exports = async ({ scenario, base, ready, nativeMock }) => {
     assert.deepEqual(await inspect(), expected);
     assert.deepEqual(await page.evaluate(() => pendingNative.map(n => [n.body, n.extra.url])), [["Ya disponible.", "https://ejemplo.test/custom"]]);
   });
-  await scenario("F9 source radios, priority, badges, secondary links and constant count", async page => {
+  await scenario("F9 source radios, priority, badges, no extra card button and constant count", async page => {
     await setup(page); await open(page);
     assert.equal(await page.locator('#activeLinkOptions input[type="radio"]').count(), 7);
     const sources = [
-      ["platform:Netflix", "Netflix", "Ver en Netflix", "https://ejemplo.test/netflix", null],
-      ["platform:Crunchyroll", "Crunchyroll", "Ver en Crunchyroll", "https://ejemplo.test/crunchyroll", null],
-      ["platform:Prime Video", "Prime Video", "Ver en Prime Video", "https://ejemplo.test/prime", null],
-      ["platform:Disney+", "Disney+", "Ver en Disney+", "https://ejemplo.test/disney", null],
-      ["personal", "Mi búsqueda", "Ver en Mi búsqueda", "https://ejemplo.test/media/Sample", null],
-      ["custom", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom", "Mi búsqueda"],
-      ["auto", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom", "Mi búsqueda"]
+      ["platform:Netflix", "Netflix", "Ver en Netflix", "https://ejemplo.test/netflix"],
+      ["platform:Crunchyroll", "Crunchyroll", "Ver en Crunchyroll", "https://ejemplo.test/crunchyroll"],
+      ["platform:Prime Video", "Prime Video", "Ver en Prime Video", "https://ejemplo.test/prime"],
+      ["platform:Disney+", "Disney+", "Ver en Disney+", "https://ejemplo.test/disney"],
+      ["personal", "Mi búsqueda", "Ver en Mi búsqueda", "https://ejemplo.test/media/Sample"],
+      ["custom", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom"],
+      ["auto", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom"]
     ];
-    for (const [value, badge, label, url, secondary] of sources) {
+    for (const [value, badge, label, url] of sources) {
       await choose(page, value);
       assert.equal(await page.locator(".anime-card").count(), 1);
       assert.equal(await page.locator(".badge-purple").textContent(), badge);
       assert.equal(await page.locator(".primary-link").textContent(), label);
       assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), url);
-      assert.deepEqual(await page.locator('[data-action="secondary"]').allTextContents(), secondary ? [secondary] : []);
+      assert.equal(await page.locator(".anime-card .card-actions button").count(), 2);
     }
     assert.equal(await page.evaluate(() => Object.hasOwn(getUserOverride(state.releases[0]), "activeLink")), false);
     await page.evaluate(() => { state.hiddenPlatforms = ["Netflix"]; invalidateDataCaches(); render(); });
