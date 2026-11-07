@@ -3245,10 +3245,9 @@ function getActiveWatchSource(item) {
   return sources.find(source => source.id === getUserOverride(item)?.activeLink) || getAutomaticWatchSource(item, sources);
 }
 function getSecondaryWatchSource(item, active = getActiveWatchSource(item)) {
-  if (active?.kind === "platform") return null;
-  const sources = getWatchSources(item);
-  return sources.find(source => source.id === (active?.id === "personal" ? "jellyfin" : "personal"))
-    || (active?.id !== "jellyfin" ? sources.find(source => source.id === "jellyfin") : null) || null;
+  // Jellyfin is only reachable from the per-series panel: the card never shows a button for it.
+  if (active?.kind === "platform" || active?.id === "personal") return null;
+  return getWatchSources(item).find(source => source.id === "personal") || null;
 }
 function getBestWatchUrl(item) { return getActiveWatchSource(item)?.url || ""; }
 function defaultServiceUrl(service) {

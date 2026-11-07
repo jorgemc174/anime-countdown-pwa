@@ -30,7 +30,7 @@ module.exports = async ({ scenario, base, ready, nativeMock }) => {
       ["platform:Crunchyroll", "Crunchyroll", "Ver en Crunchyroll", "https://ejemplo.test/crunchyroll", null],
       ["platform:Prime Video", "Prime Video", "Ver en Prime Video", "https://ejemplo.test/prime", null],
       ["platform:Disney+", "Disney+", "Ver en Disney+", "https://ejemplo.test/disney", null],
-      ["personal", "Mi búsqueda", "Ver en Mi búsqueda", "https://ejemplo.test/media/Sample", "Jellyfin"],
+      ["personal", "Mi búsqueda", "Ver en Mi búsqueda", "https://ejemplo.test/media/Sample", null],
       ["jellyfin", "Jellyfin", "Jellyfin", "http://servidor.test:8096/web/#/search.html?query=Sample", "Mi búsqueda"],
       ["custom", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom", "Mi búsqueda"],
       ["auto", "MiSitio", "Ver en MiSitio", "https://ejemplo.test/custom", "Mi búsqueda"]

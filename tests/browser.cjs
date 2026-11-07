@@ -146,7 +146,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         assert.equal(result.next, true);
         assert.equal(await page.locator(".badge-purple").textContent(), test.display);
         const noPlatform = result.service === "No legal platform";
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), Number(noPlatform && !test.custom));
+        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
         assert.equal(test.hidden.includes(result.service), false);
         if (test.display === "Sin plataforma") {
           assert.equal(await page.locator(".primary-link").count(), 0);
@@ -252,8 +252,12 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         assert.equal(await page.locator("#jellyfinWarning").isVisible(), false);
         await page.locator("#closeSettingsBtn").click();
         const expected = `http://servidor.test:8096/web/#/search.html?query=${encodeURIComponent("Título & / ? # 日本")}`;
-        await page.getByRole("button", { name: "Jellyfin", exact: true }).click();
+        // The card has no Jellyfin button: it opens only once chosen as the active link of the series.
+        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
+        await page.evaluate(() => { upsertUserOverride(state.releases[0], { activeLink: "jellyfin" }); invalidateDataCaches(); render(); });
+        await page.locator(".primary-link").click();
         assert.deepEqual(await page.evaluate(() => openedUrls), [expected]);
+        await page.evaluate(() => { upsertUserOverride(state.releases[0], { activeLink: "auto" }); invalidateDataCaches(); render(); });
         await page.locator(".primary-link").click();
         assert.equal((await page.evaluate(() => openedUrls)).length, 2);
         await page.setViewportSize({ width: 360, height: 800 });
