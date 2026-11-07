@@ -56,6 +56,19 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.deepEqual(result.urls, ["https://ejemplo.test/media/tokyo-revengers-santen-sensou-hen", "https://ejemplo.test/media/arbol-de-accion", "https://ejemplo.test/media/fin-simbolos", "", ""]);
       assert.equal(result.both, `https://ejemplo.test/media/exito-accion?q=${encodeURIComponent("Éxito & acción")}`);
       assert.deepEqual(result.invalid, ["", "", ""]);
+      // The slug follows the romaji alias even when the main title is the English one.
+      assert.deepEqual(await page.evaluate(() => {
+        state.personalSearchTemplate = "https://ejemplo.test/media/{slug}?q={titulo}";
+        return [
+          getPersonalSearchUrl({ title: "So What's Wrong with Getting Reborn as a Goblin?", titles: ["Tensei Goblin dakedo Shitsumon Aru?", "So What's Wrong with Getting Reborn as a Goblin?"] }),
+          getPersonalSearchUrl({ title: "Solo título", titles: [] }),
+          getPersonalSearchUrl({ title: "Con alias vacío", titles: [" "] })
+        ];
+      }), [
+        `https://ejemplo.test/media/tensei-goblin-dakedo-shitsumon-aru?q=${encodeURIComponent("So What's Wrong with Getting Reborn as a Goblin?")}`,
+        "https://ejemplo.test/media/solo-titulo?q=Solo%20t%C3%ADtulo",
+        "https://ejemplo.test/media/con-alias-vacio?q=Con%20alias%20vac%C3%ADo"
+      ]);
       await page.locator("#settingsBtn").click();
       await page.getByRole("textbox", { name: "Enlace de búsqueda personal" }).fill("https://ejemplo.test/media/{slug}");
       await page.reload(); await ready(page);

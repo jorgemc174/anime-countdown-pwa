@@ -721,7 +721,9 @@ function getPersonalSearchUrl(item) {
   const template = validatePersonalSearchTemplate(state.personalSearchTemplate);
   const title = String(item.title || "");
   if (!template || !title.trim()) return "";
-  const slug = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  // The first alias is the romaji title (AnimeSchedule and AniList rows both put it first); item.title can be English.
+  const romaji = (Array.isArray(item.titles) && typeof item.titles[0] === "string" && item.titles[0].trim()) || title;
+  const slug = romaji.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   if (template.includes("{slug}") && !slug) return "";
   return template.replaceAll("{titulo}", encodeURIComponent(title)).replaceAll("{slug}", slug);
 }
