@@ -1,0 +1,30 @@
+# Publish only the web runtime; all other present and future files are excluded.
+# This also excludes .claude, .github, android, plans, tests, scripts,
+# node_modules, animeschedule-singlefile-fixed, www, api, server.js,
+# package*.json, capacitor.config.json, config.example.js, delay-tracking.json,
+# platform-cache.json, *.md and _headers.
+*
+!vercel.json
+!index.html
+!styles.css
+!app.js
+!schedule-policy.js
+!platform-policy.js
+!config.js
+!sw.js
+!schedule.json
+!manifest.json
+!favicon.ico
+!icons/
+icons/*
+!icons/favicon.ico
+!icons/favicon-16.png
+!icons/favicon-32.png
+!icons/apple-touch-icon.png
+!icons/icon-192.png
+!icons/icon-256.png
+!icons/icon-384.png
+!icons/icon-512.png
+!icons/icon-mobile-192.png
+!icons/icon-mobile-512.png
+!icons/notification-badge.svg

@@ -11,7 +11,7 @@ test('Vercel carries static host security headers and preserves resource cache p
   for (const [key, value] of shared) assert.ok(global.some(header => header.key === key && header.value === value), key);
   assert.ok(!global.some(header => header.key.toLowerCase() === 'content-security-policy'));
   const header = (source, key) => vercel.headers.find(row => row.source === source).headers.find(row => row.key === key).value;
-  assert.equal(header('/api/(.*)', 'Cache-Control'), 'no-store');
+  assert.ok(!vercel.headers.some(row => row.source.includes('/api')));
   assert.equal(header('/sw.js', 'Cache-Control'), 'no-cache');
   assert.equal(header('/index.html', 'Cache-Control'), 'no-cache');
   assert.equal(header('/schedule.json', 'Access-Control-Allow-Origin'), '*');

@@ -13,7 +13,10 @@ test("development server serves the app but denies internal files and traversal"
   for (const file of ["/", "/app.js", "/schedule-policy.js", "/manifest.json", "/schedule.json", "/icons/favicon.ico"]) {
     assert.equal((await fetch(base + file)).status, 200, file);
   }
-  for (const file of ["/.git/config", "/.env", "/server.js", "/package-lock.json", "/scripts/sync-animeschedule.js", "/node_modules/playwright/package.json", "/..%2fanime-countdown-pwa-other/private"]) {
+  for (const file of ["/api/anime", "/api/timetable", "/api/animeschedule/timetables", "/api/anilist", "/api/justwatch", "/.git/config", "/.env", "/server.js", "/package-lock.json", "/scripts/sync-animeschedule.js", "/node_modules/playwright/package.json", "/..%2fanime-countdown-pwa-other/private"]) {
     assert.equal((await fetch(base + file)).status, 403, file);
+  }
+  for (const route of ["/api/anilist", "/api/justwatch"]) {
+    assert.equal((await fetch(base + route, { method: "POST", body: "{}" })).status, 403, route);
   }
 });

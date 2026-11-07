@@ -7,13 +7,6 @@ const path = require("node:path");
 const ROOT = __dirname;
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PORT || 5175);
-const API_BASE = "https://animeschedule.net/api/v3";
-const ANILIST_API = "https://graphql.anilist.co";
-const JUSTWATCH_API = "https://apis.justwatch.com/graphql";
-
-const nativeFetch = globalThis.fetch;
-const fetch = (url, options = {}) => nativeFetch(url, { ...options, signal: AbortSignal.timeout(20000) });
-
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -40,111 +33,12 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    if (url.pathname === "/api/anime") {
-      await proxyAnimeSchedule(req, res, url, "anime");
-      return;
-    }
-
-    if (url.pathname === "/api/timetable" || url.pathname === "/api/animeschedule/timetables") {
-      await proxyAnimeSchedule(req, res, url, "timetables");
-      return;
-    }
-
-    if (url.pathname === "/api/anilist") {
-      await proxyAnilist(req, res);
-      return;
-    }
-
-    if (url.pathname === "/api/justwatch") {
-      await proxyJustWatch(req, res);
-      return;
-    }
-
     serveStatic(res, url.pathname);
   } catch (error) {
     writeCors(res, 500, { "content-type": "application/json; charset=utf-8" });
     res.end(JSON.stringify({ error: error.message || "Error interno" }));
   }
 });
-
-async function proxyAnimeSchedule(req, res, url, endpoint) {
-  const target = new URL(`${API_BASE}/${endpoint}`);
-  for (const [key, value] of url.searchParams) {
-    if (key !== "api_token") target.searchParams.set(key, value);
-  }
-
-  const authorization = req.headers.authorization || "";
-
-  const response = await fetch(target, {
-    headers: {
-      accept: "application/json, */*",
-      ...(authorization && { authorization })
-    }
-  });
-
-  const body = await response.arrayBuffer();
-  writeCors(res, response.status, {
-    "content-type": response.headers.get("content-type") || "application/json; charset=utf-8",
-    "cache-control": "no-store"
-  });
-  res.end(Buffer.from(body));
-}
-
-async function proxyAnilist(req, res) {
-  if (req.method !== "POST") {
-    writeCors(res, 405, { "content-type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify({ error: "Metodo no permitido" }));
-    return;
-  }
-
-  const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
-  const body = Buffer.concat(chunks).toString("utf8");
-
-  const response = await fetch(ANILIST_API, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      accept: "application/json"
-    },
-    body
-  });
-
-  const responseBody = await response.text();
-  writeCors(res, response.status, {
-    "content-type": response.headers.get("content-type") || "application/json; charset=utf-8",
-    "cache-control": "no-store"
-  });
-  res.end(responseBody);
-}
-
-async function proxyJustWatch(req, res) {
-  if (req.method !== "POST") {
-    writeCors(res, 405, { "content-type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify({ error: "Metodo no permitido" }));
-    return;
-  }
-
-  const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
-  const body = Buffer.concat(chunks).toString("utf8");
-
-  const response = await fetch(JUSTWATCH_API, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      accept: "application/json"
-    },
-    body
-  });
-
-  const responseBody = await response.text();
-  writeCors(res, response.status, {
-    "content-type": response.headers.get("content-type") || "application/json; charset=utf-8",
-    "cache-control": "no-store"
-  });
-  res.end(responseBody);
-}
 
 function writeCors(res, status, headers = {}) {
   res.writeHead(status, {
