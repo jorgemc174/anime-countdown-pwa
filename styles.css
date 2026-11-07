@@ -1250,3 +1250,34 @@ html.light .score-value, html.light .countdown, html.light .next-label, html.lig
 .card-actions.has-jellyfin > :last-child {
   grid-column: 1 / -1;
 }
+
+/* Series link editor: a floating dialog in both desktop and mobile layouts. */
+.link-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(760px, calc(100dvh - 48px));
+  margin: auto;
+  padding: 18px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .4);
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+.link-dialog::backdrop { background: rgba(0, 0, 0, .6); }
+.link-dialog-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.link-dialog-head h2 { flex: 1; min-width: 0; margin: 0; font-size: 18px; }
+.link-dialog button { min-height: 44px; }
+.link-dialog fieldset { min-width: 0; margin: 0 0 16px; padding: 8px; border: 1px solid var(--line); border-radius: var(--radius); }
+.link-dialog legend { padding: 0 6px; font-weight: 750; }
+.link-dialog .link-option { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: 0; padding: 4px; cursor: pointer; }
+.link-option input { flex: 0 0 20px; width: 20px; height: 20px; min-height: 20px; margin: 0; accent-color: var(--accent); }
+.link-option span { min-width: 0; }
+.link-dialog .button-row { flex-wrap: wrap; }
+.link-dialog :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.link-dialog-open { overflow: hidden; }
+.anime-card { -webkit-touch-callout: none; }
+.anime-card img { -webkit-user-drag: none; user-select: none; }

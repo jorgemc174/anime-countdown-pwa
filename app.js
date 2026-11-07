@@ -246,7 +246,7 @@ const CONTENT_FILTERS = [
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", jellyfinServer: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", personalLinkName: "", jellyfinServer: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -363,7 +363,7 @@ function bindElements() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","jellyfinServer","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","jellyfinServer","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -387,6 +387,8 @@ async function loadState() {
   state.personalSearchTemplate = validatePersonalSearchTemplate(data.personalSearchTemplate);
   $("personalSearchInput").value = typeof data.personalSearchTemplate === "string" ? data.personalSearchTemplate : "";
   renderPersonalSearchValidation();
+  state.personalLinkName = cleanPersonalLinkName(data.personalLinkName);
+  $("personalLinkNameInput").value = state.personalLinkName;
   state.jellyfinServer = validateJellyfinServer(data.jellyfinServer);
   $("jellyfinInput").value = state.jellyfinServer || (typeof data.jellyfinServer === "string" ? data.jellyfinServer : "");
   renderJellyfinValidation();
@@ -417,13 +419,16 @@ async function loadState() {
 }
 
 function bindEvents() {
+  bindLinkDialog();
+  bindCardGestures();
   $("retryScheduleBtn")?.addEventListener("click", () => refreshSharedSchedule({ force: true, silent: false, skipPublicAnilist: true }));
   els.settingsBtn.addEventListener("click", () => {
     setSettingsOpen(els.settingsPanel.classList.contains("hidden"));
   });
   els.closeSettingsBtn.addEventListener("click", () => setSettingsOpen(false));
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
+    if (e.key === "Escape" && $("linkDialog").open) { e.preventDefault(); closeLinkDialog(); }
+    else if (e.key === "Escape" && !els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
   });
   document.addEventListener("click", (e) => {
     if (!els.settingsPanel.classList.contains("hidden") &&
@@ -435,6 +440,7 @@ function bindEvents() {
   els.showAllBtn.addEventListener("click", () => switchTab("all"));
   els.showTodayBtn.addEventListener("click", () => switchTab("today"));
   els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
+  $("personalLinkNameInput").addEventListener("input", savePersonalLinkName);
   $("personalSearchInput").addEventListener("input", savePersonalSearchTemplate);
   $("jellyfinInput").addEventListener("input", saveJellyfinServer);
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
@@ -495,7 +501,8 @@ async function setupAndroidBackButton() {
   try {
     // App 6 disables its default back handling when this listener is registered.
     await app.addListener("backButton", ({ canGoBack }) => {
-      if (!els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
+      if ($("linkDialog").open) closeLinkDialog();
+      else if (!els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
       else if (canGoBack) window.history.back();
       else app.exitApp();
     });
@@ -644,7 +651,7 @@ function bindSwipeNavigation() {
   }
 
   list.addEventListener("touchmove", function(e) {
-    if (e.touches.length !== 1) return;
+    if ($("linkDialog").open || e.touches.length !== 1) return;
     if (!swiping) {
       if (!swipeStart) {
         swipeStartX = e.touches[0].clientX;
@@ -696,6 +703,12 @@ function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[ke
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
+function cleanPersonalLinkName(value) { return typeof value === "string" ? value.trim().slice(0, 30) : ""; }
+async function savePersonalLinkName() {
+  state.personalLinkName = cleanPersonalLinkName($("personalLinkNameInput").value);
+  await browserApi.storage.local.set({ personalLinkName: state.personalLinkName });
+  render();
+}
 function validatePersonalSearchTemplate(value) {
   if (typeof value !== "string" || !/{titulo}|{slug}/.test(value.trim())) return "";
   const template = value.trim();
@@ -746,12 +759,13 @@ async function saveJellyfinServer() {
   state.jellyfinServer = validateJellyfinServer($("jellyfinInput").value);
   renderJellyfinValidation();
   await browserApi.storage.local.set({ jellyfinServer: state.jellyfinServer });
+  queueNativeNotificationSync({ force: true });
   render();
 }
 function getJellyfinSearchUrl(item) {
   const base = validateJellyfinServer(state.jellyfinServer);
   const title = String(item.title || "");
-  return base && title.trim() && getDisplayService(item) === "No legal platform"
+  return base && title.trim()
     ? `${base}/web/#/search.html?query=${encodeURIComponent(title)}` : "";
 }
 function getDetectedPlatforms() { return Object.keys(SUBSCRIPTIONS); }
@@ -861,10 +875,10 @@ async function testNotification() {
       notifications: [{
         id: notifId,
         title: "Anime de Prueba Ep 1",
-        body: "Ya disponible en Netflix.",
+        body: getDisplayService(testItem) === "No legal platform" ? "Ya disponible." : `Ya disponible en ${getDisplayService(testItem)}.`,
         schedule: { at: new Date(releaseAt), allowWhileIdle: true },
         channelId: NATIVE_NOTIFICATION_CHANNEL,
-        extra: { url: "https://netflix.com" },
+        extra: { url: getBestWatchUrl(testItem) || location.href },
         smallIcon: "ic_stat_icon",
         largeIcon: coverPath || undefined,
         iconColor: "#111827",
@@ -2226,8 +2240,8 @@ function applyUserOverridesToLists() {
 
 function applyUserOverride(item, override) {
   if (!override) return item;
-  const customUrl = normalizeUrl(override.customUrl || item.customUrl || "");
-  const customPlatformName = override.customPlatformName || item.customPlatformName || "";
+  const customUrl = normalizeUrl(Object.hasOwn(override, "customUrl") ? override.customUrl : item.customUrl || "");
+  const customPlatformName = Object.hasOwn(override, "customPlatformName") ? override.customPlatformName : item.customPlatformName || "";
   return {
     ...item,
     favorite: Object.prototype.hasOwnProperty.call(override, "favorite") ? Boolean(override.favorite) : item.favorite,
@@ -2251,15 +2265,12 @@ function upsertUserOverride(item, values = {}) {
   if (Object.prototype.hasOwnProperty.call(values, "favorite") && values.favorite !== undefined) next.favorite = Boolean(values.favorite);
   if (Object.prototype.hasOwnProperty.call(values, "customUrl") && values.customUrl !== undefined) next.customUrl = normalizeUrl(values.customUrl || "");
   if (Object.prototype.hasOwnProperty.call(values, "customPlatformName") && values.customPlatformName !== undefined) next.customPlatformName = values.customPlatformName || "";
+  if (Object.prototype.hasOwnProperty.call(values, "activeLink")) {
+    if (values.activeLink === "auto") delete next.activeLink;
+    else next.activeLink = values.activeLink;
+  }
   state.userOverrides[existingKey] = next;
   return next;
-}
-
-function clearUserPlatformOverride(key) {
-  const overrideKey = findOverrideKeyByAlias(key);
-  if (!overrideKey) return;
-  delete state.userOverrides[overrideKey].customUrl;
-  delete state.userOverrides[overrideKey].customPlatformName;
 }
 
 function getUserOverride(item) {
@@ -2303,12 +2314,12 @@ async function handleListClick(event) {
   const card = event.target.closest(".anime-card");
   const action = actionEl?.dataset.action || card?.dataset.action;
   const id = actionEl?.dataset.id || card?.dataset.id;
-  if (!action) return;
+  if (!action || $("linkDialog").open) return;
   event.stopPropagation();
   if (action === "open") { const item = findItemById(id); if (item) await openOrAsk(item); return; }
-  if (action === "jellyfin") {
+  if (action === "secondary") {
     const item = findItemById(id);
-    const url = item && getJellyfinSearchUrl(item);
+    const url = item && getSecondaryWatchSource(item)?.url;
     if (url) browserApi.tabs.create({ url });
     return;
   }
@@ -2325,7 +2336,7 @@ function handleListAuxClick(event) {
   event.preventDefault();
   const item = findItemById(card.dataset.id);
   if (!item) return;
-  const url = event.target.closest('[data-action="jellyfin"]') ? getJellyfinSearchUrl(item) : getBestWatchUrl(item);
+  const url = event.target.closest('[data-action="secondary"]') ? getSecondaryWatchSource(item)?.url : getBestWatchUrl(item);
   if (url) window.open(url, "_blank", "noopener");
 }
 
@@ -2360,10 +2371,206 @@ async function toggleFavorite(key) {
   }
   renderNextModern();
 }
-async function associatePlatform(key) { const sample = findItemByKey(key) || { animeKey: key, title: key }; const current = getUserOverride(sample); const name = prompt("Nombre de la plataforma que quieres mostrar:", current?.customPlatformName || state.customPlatforms[key] || sample?.customPlatformName || "Crunchyroll"); if (name === null) return; const cleanName = normalizeAllowedService(name.trim()); if(!cleanName) return showStatus("Escribe un nombre de plataforma.", "warn"); const url = prompt(`Pega el enlace para ${cleanName}:`, current?.customUrl || state.customLinks[key] || sample?.customUrl || ""); if (url === null) return; const cleanUrl = normalizeUrl(url.trim()); if(!cleanUrl) return showStatus("Link inválido.", "warn"); state.customPlatforms[key]=cleanName; state.customLinks[key]=cleanUrl; upsertUserOverride(sample, { customPlatformName: cleanName, customUrl: cleanUrl }); await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks, userOverrides: state.userOverrides }); applyCustomToReleases(); applyUserOverridesToLists(); await saveAllLists(); render(); showStatus(`Plataforma "${cleanName}" asociada.`, "success"); }
-async function removePlatform(key) { delete state.customPlatforms[key]; delete state.customLinks[key]; clearUserPlatformOverride(key); await browserApi.storage.local.set({ customPlatforms: state.customPlatforms, customLinks: state.customLinks, userOverrides: state.userOverrides }); state.releases = state.releases.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); state.anilistLibrary = state.anilistLibrary.map(item => getAnimeKey(item) === key ? { ...item, customUrl:"", customPlatformName:"" } : item); await saveAllLists(); render(); }
+let linkDialogItem = null;
+let linkDialogReturn = null;
+let releaseCardClick = false;
 
-async function openOrAsk(item) { const displayService = getDisplayService(item); const url = getBestWatchUrl(item, displayService); if (url) { browserApi.tabs.create({ url }); return; } const ok = confirm(`No hay plataforma asociada para "${item.title}". ¿Quieres asociar un link ahora?`); if (ok) await associatePlatform(getAnimeKey(item)); }
+function currentDialogItem() {
+  return linkDialogItem && (findItemById(linkDialogItem.id) || findItemByKey(getAnimeKey(linkDialogItem)) || linkDialogItem);
+}
+function renderLinkOptions() {
+  const item = currentDialogItem();
+  if (!item || !$("linkDialog").open) return;
+  const sources = getWatchSources(item);
+  const automatic = getAutomaticWatchSource(item, sources);
+  const saved = getUserOverride(item)?.activeLink;
+  const selected = sources.some(source => source.id === saved) ? saved : "auto";
+  const options = [{ id: "auto", label: `Automático (${automatic?.label || "Sin plataforma"})` }, ...sources.map(source => ({
+    id: source.id,
+    label: source.kind === "platform" ? `${source.label}${state.hiddenPlatforms.includes(source.service) ? " (desmarcada)" : ""}`
+      : source.kind === "custom" ? `Enlace propio (${source.label})` : source.label
+  }))];
+  const container = $("activeLinkOptions");
+  const focused = container.contains(document.activeElement) ? document.activeElement.value : null;
+  const html = '<legend>Enlace activo</legend>' + options.map(option => `<label class="link-option"><input type="radio" name="activeLink" value="${escapeHtml(option.id)}"${option.id === selected ? " checked" : ""} /><span>${escapeHtml(option.label)}</span></label>`).join("");
+  if (container.innerHTML !== html) {
+    container.innerHTML = html;
+    if (focused) [...container.querySelectorAll("input")].find(input => input.value === focused)?.focus();
+  }
+}
+function openLinkDialog(item, card, focusCustom = false) {
+  if (!els.settingsPanel.classList.contains("hidden")) setSettingsOpen(false);
+  linkDialogItem = item;
+  linkDialogReturn = { card, id: item.id, key: getAnimeKey(item) };
+  $("linkDialogTitle").textContent = item.title;
+  $("customLinkName").value = item.customPlatformName || "";
+  $("customLinkAddress").value = item.customUrl || "";
+  $("customLinkError").hidden = true;
+  $("customLinkAddress").setAttribute("aria-invalid", "false");
+  $("linkDialogStatus").textContent = "";
+  $("removeDialogLink").disabled = !normalizeUrl(item.customUrl);
+  if (!$("linkDialog").open) $("linkDialog").showModal();
+  document.body.classList.add("link-dialog-open");
+  renderLinkOptions();
+  (focusCustom ? $("customLinkName") : $("closeLinkDialog")).focus({ preventScroll: true });
+}
+function closeLinkDialog() { if ($("linkDialog").open) $("linkDialog").close(); }
+function validateCustomLink(value) {
+  try {
+    const url = new URL(normalizeUrl(value));
+    return url.protocol === "https:" && !url.username && !url.password ? url.href : "";
+  } catch { return ""; }
+}
+async function saveDialogCustomLink(event) {
+  event.preventDefault();
+  const item = currentDialogItem();
+  if (!item) return;
+  const url = validateCustomLink($("customLinkAddress").value.trim());
+  $("customLinkError").hidden = Boolean(url);
+  $("customLinkAddress").setAttribute("aria-invalid", String(!url));
+  if (!url) { $("customLinkAddress").focus(); return; }
+  const name = $("customLinkName").value.trim();
+  const key = getAnimeKey(item);
+  state.customLinks[key] = url;
+  state.customPlatforms[key] = name;
+  upsertUserOverride(item, { customUrl: url, customPlatformName: name });
+  applyCustomToReleases();
+  applyUserOverridesToLists();
+  await saveAllLists();
+  queueNativeNotificationSync({ force: true });
+  $("removeDialogLink").disabled = false;
+  $("linkDialogStatus").textContent = "Enlace guardado.";
+  render();
+  renderLinkOptions();
+}
+async function saveDialogActiveLink(value) {
+  const item = currentDialogItem();
+  if (!item) return;
+  upsertUserOverride(item, { activeLink: value });
+  await saveAllLists();
+  queueNativeNotificationSync({ force: true });
+  render();
+  renderLinkOptions();
+}
+function bindLinkDialog() {
+  const dialog = $("linkDialog");
+  $("closeLinkDialog").addEventListener("click", closeLinkDialog);
+  dialog.addEventListener("cancel", event => { event.preventDefault(); closeLinkDialog(); });
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("link-dialog-open");
+    const target = linkDialogReturn;
+    linkDialogItem = null;
+    linkDialogReturn = null;
+    const card = target?.card?.isConnected ? target.card
+      : target && (els.animeList.querySelector(`.anime-card[data-id="${CSS.escape(target.id)}"]`) || els.animeList.querySelector(`.anime-card[data-key="${CSS.escape(target.key)}"]`));
+    (card || els.showAllBtn).focus({ preventScroll: true });
+  });
+  dialog.addEventListener("click", event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeLinkDialog();
+  });
+  dialog.addEventListener("keydown", event => {
+    if (event.key !== "Tab") return;
+    const focusable = [...dialog.querySelectorAll("button:not(:disabled), input:not(:disabled)")]
+      .filter(node => node.type !== "radio" || node.checked);
+    const first = focusable[0], last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  $("activeLinkOptions").addEventListener("change", event => {
+    if (event.target.matches('input[name="activeLink"]')) saveDialogActiveLink(event.target.value);
+  });
+  $("activeLinkOptions").addEventListener("click", event => {
+    // The fallback radio is already checked. An explicit click still clears the saved unavailable choice.
+    if (!event.target.matches('input[value="auto"]')) return;
+    const item = currentDialogItem();
+    const saved = item && getUserOverride(item)?.activeLink;
+    if (saved && !getWatchSources(item).some(source => source.id === saved)) saveDialogActiveLink("auto");
+  });
+  $("customLinkForm").addEventListener("submit", saveDialogCustomLink);
+  $("removeDialogLink").addEventListener("click", async () => {
+    const item = currentDialogItem();
+    if (!item) return;
+    await removePlatform(getAnimeKey(item));
+    $("customLinkName").value = "";
+    $("customLinkAddress").value = "";
+    $("customLinkError").hidden = true;
+    $("customLinkAddress").setAttribute("aria-invalid", "false");
+    $("removeDialogLink").disabled = true;
+    $("linkDialogStatus").textContent = "Enlace quitado.";
+    renderLinkOptions();
+  });
+}
+function bindCardGestures() {
+  let press = null;
+  const cancel = () => { if (press) clearTimeout(press.timer); press = null; };
+  // A new press is separate from the release click of the long press that opened the dialog.
+  document.addEventListener("pointerdown", () => { releaseCardClick = false; }, true);
+  document.addEventListener("click", event => {
+    if (!releaseCardClick) return;
+    releaseCardClick = false;
+    event.preventDefault(); event.stopImmediatePropagation();
+  }, true);
+  els.animeList.addEventListener("pointerdown", event => {
+    cancel();
+    if (event.button !== 0 || event.isPrimary === false || event.target.closest("button, a, input, select, textarea, label")) return;
+    const card = event.target.closest(".anime-card");
+    if (!card) return;
+    press = { id: event.pointerId, x: event.clientX, y: event.clientY, card };
+    press.timer = setTimeout(() => {
+      const target = press?.card;
+      cancel();
+      if (!target?.isConnected) return;
+      const item = findItemById(target.dataset.id);
+      if (item) { releaseCardClick = true; openLinkDialog(item, target); }
+    }, 500);
+  });
+  document.addEventListener("pointermove", event => {
+    if (press && (event.pointerId !== press.id || Math.hypot(event.clientX - press.x, event.clientY - press.y) > 10)) cancel();
+  }, { passive: true });
+  document.addEventListener("pointerup", cancel, { passive: true });
+  document.addEventListener("pointercancel", cancel, { passive: true });
+  window.addEventListener("blur", cancel);
+  window.addEventListener("scroll", cancel, { passive: true, capture: true });
+  els.animeList.addEventListener("contextmenu", event => {
+    const card = event.target.closest(".anime-card");
+    if (!card) return;
+    const releasingPress = Boolean(press);
+    event.preventDefault(); cancel();
+    const item = findItemById(card.dataset.id);
+    if (item && !$("linkDialog").open) {
+      releaseCardClick ||= releasingPress;
+      openLinkDialog(item, card);
+    }
+  });
+  els.animeList.addEventListener("dragstart", event => { if (event.target.closest(".anime-card")) event.preventDefault(); });
+}
+
+async function associatePlatform(key) {
+  const item = findItemByKey(key);
+  if (item) openLinkDialog(item, document.querySelector(`.anime-card[data-id="${CSS.escape(item.id)}"]`), true);
+}
+async function removePlatform(key) {
+  const item = findItemByKey(key);
+  if (!item) return;
+  const override = getUserOverride(item);
+  const matches = other => getSeriesKey(other) === getSeriesKey(item) || (override && getUserOverride(other) === override);
+  const affected = state.releases.concat(state.anilistLibrary).filter(matches);
+  const keys = new Set([key, ...(override?.keys || []), ...affected.flatMap(getOverrideKeys)]);
+  for (const alias of keys) { delete state.customPlatforms[alias]; delete state.customLinks[alias]; }
+  state.releases = state.releases.map(other => matches(other) ? { ...other, customUrl: "", customPlatformName: "" } : other);
+  state.anilistLibrary = state.anilistLibrary.map(other => matches(other) ? { ...other, customUrl: "", customPlatformName: "" } : other);
+  upsertUserOverride(item, { customUrl: "", customPlatformName: "" });
+  await saveAllLists();
+  queueNativeNotificationSync({ force: true });
+  render();
+}
+
+async function openOrAsk(item) {
+  const url = getBestWatchUrl(item);
+  if (url) browserApi.tabs.create({ url });
+  else await associatePlatform(getAnimeKey(item));
+}
 async function resetAll() {
   if (!confirm("¿Seguro que quieres borrar todos tus favoritos?")) return;
   state.releases = state.releases.map(item => ({ ...item, favorite: false }));
@@ -2553,7 +2760,7 @@ async function showReleaseNotification(item) {
   const title = `${item.title} ${item.episode}`;
   const displayService = getDisplayService(item);
   const body = displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`;
-  const url = getBestWatchUrl(item, displayService) || location.href;
+  const url = getBestWatchUrl(item) || location.href;
   const coverUrl = normalizeUrl(item.coverUrl);
   const fallbackIcon = toAbsoluteUrl("./icons/icon-192.png");
   const badgeIcon = toAbsoluteUrl("./icons/notification-badge.svg");
@@ -2636,7 +2843,7 @@ async function scheduleNativeNotifications(windowEnd = Date.now() + NATIVE_NOTIF
       body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
       schedule: { at: new Date(releaseAt), allowWhileIdle: true },
       channelId: NATIVE_NOTIFICATION_CHANNEL,
-      extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
+      extra: { url: getBestWatchUrl(item) || location.href, title: item.title },
       smallIcon: "ic_stat_icon",
       iconColor: "#111827",
       actionTypeId: "",
@@ -2808,6 +3015,7 @@ function scheduleRender(delay = 80) {
 }
 
 function render() {
+  renderLinkOptions();
   renderGeneration++;
   if (renderRemainingTimer) {
     clearTimeout(renderRemainingTimer);
@@ -2886,14 +3094,12 @@ function getVisibleItems() {
 function getKnownServices(item) {
   return [...new Set([item.service, ...(item.allServices || [])].map(subscriptionService).filter(Boolean))];
 }
-function getDisplayService(item) {
-  const services = getKnownServices(item);
-  const available = services.filter(service => !state.hiddenPlatforms.includes(service));
+function getMarkedService(item) {
+  const available = getKnownServices(item).filter(service => !state.hiddenPlatforms.includes(service));
   const primary = subscriptionService(item.service);
-  if (available.includes(primary)) return primary;
-  return available.sort((a, b) => SERVICE_PRIORITY[a] - SERVICE_PRIORITY[b])[0]
-    || "No legal platform";
+  return available.includes(primary) ? primary : available.sort((a, b) => SERVICE_PRIORITY[a] - SERVICE_PRIORITY[b])[0] || "No legal platform";
 }
+function getDisplayService(item) { return getActiveWatchSource(item)?.service || "No legal platform"; }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
 function getUnscheduledLibraryItems({ includeFiltered = false } = {}) {
   return state.anilistLibrary.filter(item => item.favorite !== false && (includeFiltered || isSchedulableItem(item))
@@ -3008,20 +3214,43 @@ function getActiveCustomUrl(item) {
   const service = subscriptionService(item.customPlatformName);
   return service && state.hiddenPlatforms.includes(service) ? "" : normalizeUrl(item.customUrl);
 }
-function getBestWatchUrl(item, displayService) {
-  const custom = getActiveCustomUrl(item);
-  if (custom) return custom;
-  const effective = subscriptionService(displayService !== undefined ? displayService : getDisplayService(item));
-  if (!effective || state.hiddenPlatforms.includes(effective)) return getPersonalSearchUrl(item);
+function getPlatformWatchUrl(item, service) {
   const record = item.platformsByCountry?.[state.jwCountry];
-  const offer = record?.status === "verified" ? record.offers?.find(offer => subscriptionService(offer.service) === effective) : null;
+  const offer = record?.status === "verified" ? record.offers?.find(offer => subscriptionService(offer.service) === service) : null;
   const offerUrl = normalizeUrl(offer?.url);
   if (offerUrl) return offerUrl;
-  const regionalUrl = Object.entries(item.serviceUrls || {}).find(([name]) => subscriptionService(name) === effective)?.[1];
+  const regionalUrl = Object.entries(item.serviceUrls || {}).find(([name]) => subscriptionService(name) === service)?.[1];
   if (normalizeUrl(regionalUrl)) return normalizeUrl(regionalUrl);
-  if (effective === subscriptionService(item.service) && normalizeUrl(item.serviceUrl)) return normalizeUrl(item.serviceUrl);
-  return defaultServiceUrl(effective);
+  if (service === subscriptionService(item.service) && normalizeUrl(item.serviceUrl)) return normalizeUrl(item.serviceUrl);
+  return defaultServiceUrl(service);
 }
+function getWatchSources(item) {
+  const sources = getKnownServices(item).sort((a, b) => SERVICE_PRIORITY[a] - SERVICE_PRIORITY[b])
+    .map(service => ({ id: `platform:${service}`, kind: "platform", label: service, buttonLabel: `Ver en ${service}`, service, url: getPlatformWatchUrl(item, service) }));
+  const personal = getPersonalSearchUrl(item);
+  const name = cleanPersonalLinkName(state.personalLinkName);
+  if (personal) sources.push({ id: "personal", kind: "personal", label: name || "Enlace personal", buttonLabel: name ? `Ver en ${name}` : "Buscar", url: personal });
+  const jellyfin = getJellyfinSearchUrl(item);
+  if (jellyfin) sources.push({ id: "jellyfin", kind: "jellyfin", label: "Jellyfin", buttonLabel: "Jellyfin", url: jellyfin });
+  const custom = normalizeUrl(item.customUrl);
+  if (custom) sources.push({ id: "custom", kind: "custom", label: item.customPlatformName?.trim() || "link asociado", buttonLabel: `Ver en ${item.customPlatformName?.trim() || "link asociado"}`, url: custom });
+  return sources;
+}
+function getAutomaticWatchSource(item, sources = getWatchSources(item)) {
+  if (getActiveCustomUrl(item)) return sources.find(source => source.id === "custom");
+  return sources.find(source => source.service === getMarkedService(item)) || sources.find(source => source.id === "personal") || null;
+}
+function getActiveWatchSource(item) {
+  const sources = getWatchSources(item);
+  return sources.find(source => source.id === getUserOverride(item)?.activeLink) || getAutomaticWatchSource(item, sources);
+}
+function getSecondaryWatchSource(item, active = getActiveWatchSource(item)) {
+  if (active?.kind === "platform") return null;
+  const sources = getWatchSources(item);
+  return sources.find(source => source.id === (active?.id === "personal" ? "jellyfin" : "personal"))
+    || (active?.id !== "jellyfin" ? sources.find(source => source.id === "jellyfin") : null) || null;
+}
+function getBestWatchUrl(item) { return getActiveWatchSource(item)?.url || ""; }
 function defaultServiceUrl(service) {
   return {
     "Crunchyroll": "https://www.crunchyroll.com/",
@@ -3194,21 +3423,20 @@ function appendVirtualListSentinel(generation) {
 function createCardModern(item) {
   const unscheduled = item.scheduleStatus === "unscheduled";
   const c = { text: getReleaseTimingLabel(item) };
-  const service = getDisplayService(item);
-  const customUrl = getActiveCustomUrl(item);
-  const personalUrl = service === "No legal platform" ? getPersonalSearchUrl(item) : "";
-  const openLabel = customUrl ? `Ver en ${item.customPlatformName?.trim() || "link asociado"}` : personalUrl ? "Buscar" : `Ver en ${service}`;
-  const watchButton = getBestWatchUrl(item, service)
-    ? `<button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>` : "";
+  const activeSource = getActiveWatchSource(item);
+  const watchButton = activeSource
+    ? `<button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(activeSource.buttonLabel)}</button>` : "";
   const delayedBadge = getDelayedBadge(item);
   const premiereBadge = getPremiereBadge(item);
   const scorePill = getAnilistScorePill(item);
-  const customButton = customUrl
+  const customButton = activeSource?.kind === "custom"
     ? `<button class="small-btn" type="button" data-action="removeCustomLink" data-key="${escapeHtml(getAnimeKey(item))}">Quitar link</button>`
     : `<button class="small-btn" type="button" data-action="customLink" data-key="${escapeHtml(getAnimeKey(item))}">Asociar link</button>`;
   const card = document.createElement("article");
   card.className = "anime-card";
   card.dataset.id = item.id;
+  card.dataset.key = getAnimeKey(item);
+  card.setAttribute("aria-haspopup", "dialog");
   card.dataset.action = "open";
   card.tabIndex = 0;
   card.setAttribute("aria-label", `${item.title}, ${item.episode}, ${getReleaseTimingLabel(item)}`);
@@ -3216,11 +3444,12 @@ function createCardModern(item) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
   const fallbackSource = { anilist: "AniList", animeschedule: "AnimeSchedule" }[item.platformSource];
-  const unverifiedBadge = fallbackSource && service !== "No legal platform" && !customUrl ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
-  const badgeLabel = customUrl ? item.customPlatformName?.trim() || "link asociado" : personalUrl ? "Enlace personal" : serviceLabel(service);
-  const jellyfinButton = getJellyfinSearchUrl(item)
-    ? `<button class="small-btn" type="button" data-action="jellyfin" data-id="${escapeHtml(item.id)}">Jellyfin</button>` : "";
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(service))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${jellyfinButton && watchButton ? " has-jellyfin" : ""}">${watchButton}${jellyfinButton}${customButton}</div></div>`;
+  const unverifiedBadge = fallbackSource && activeSource?.kind === "platform" ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
+  const badgeLabel = activeSource?.label || "Sin plataforma";
+  const secondarySource = getSecondaryWatchSource(item, activeSource);
+  const secondaryButton = secondarySource
+    ? `<button class="small-btn" type="button" data-action="secondary" data-id="${escapeHtml(item.id)}">${escapeHtml(secondarySource.label)}</button>` : "";
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${secondaryButton && watchButton ? " has-jellyfin" : ""}">${watchButton}${secondaryButton}${customButton}</div></div>`;
   return card;
 }
 

@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=118" />
+  <link rel="stylesheet" href="./styles.css?v=119" />
 </head>
 <body>
   <main class="app">
@@ -93,6 +93,9 @@
           <div id="platformFilterContainer" class="platform-filter-settings"></div>
         </details>
 
+        <label>Nombre del enlace personal
+          <input id="personalLinkNameInput" type="text" maxlength="30" autocomplete="off" />
+        </label>
         <label>Enlace de búsqueda personal
           <input id="personalSearchInput" type="text" autocomplete="off" spellcheck="false" aria-describedby="personalSearchHelp personalSearchWarning" />
         </label>
@@ -123,9 +126,27 @@
       </section>
     </div>
   </main>
-  <script src="./schedule-policy.js?v=118"></script>
-  <script src="./platform-policy.js?v=118"></script>
-  <script src="./config.js?v=118"></script>
-  <script src="./app.js?v=118"></script>
+  <dialog id="linkDialog" class="link-dialog" role="dialog" aria-modal="true" aria-labelledby="linkDialogTitle">
+    <div class="link-dialog-head">
+      <h2 id="linkDialogTitle"></h2>
+      <button id="closeLinkDialog" class="icon-btn" type="button" aria-label="Cerrar">&times;</button>
+    </div>
+    <fieldset id="activeLinkOptions"><legend>Enlace activo</legend></fieldset>
+    <form id="customLinkForm" novalidate>
+      <h3>Enlace propio</h3>
+      <label>Nombre<input id="customLinkName" type="text" autocomplete="off" /></label>
+      <label>Dirección<input id="customLinkAddress" type="text" autocomplete="off" spellcheck="false" aria-describedby="customLinkError" /></label>
+      <p id="customLinkError" class="filter-help" role="status" hidden>Escribe una dirección https válida y sin credenciales.</p>
+      <div class="button-row">
+        <button class="primary-btn" type="submit">Guardar enlace</button>
+        <button id="removeDialogLink" class="danger-btn" type="button">Quitar enlace</button>
+      </div>
+      <p id="linkDialogStatus" class="filter-help" role="status"></p>
+    </form>
+  </dialog>
+  <script src="./schedule-policy.js?v=119"></script>
+  <script src="./platform-policy.js?v=119"></script>
+  <script src="./config.js?v=119"></script>
+  <script src="./app.js?v=119"></script>
 </body>
 </html>

@@ -33,6 +33,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await require("./active-links.browser.cjs")({ scenario, base, ready, nativeMock });
     await scenario("F8R1 manual subscription links follow chips without losing saved data", async page => {
       await page.goto(base); await ready(page);
       const cases = [
@@ -107,7 +108,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.deepEqual(await page.evaluate(() => [nativeTest.pending[0].body, nativeTest.pending[0].extra.url, webAlerts.at(-1).body, webAlerts.at(-1).data.url]),
         ["Ya disponible.", "https://ejemplo.test/media/Sample", "Ya disponible.", "https://ejemplo.test/media/Sample"]);
       await page.evaluate(() => togglePlatformFilter("Netflix")); await page.clock.runFor(5000);
-      assert.deepEqual(await page.evaluate(() => [nativeTest.pending[0].body, nativeTest.pending[0].extra.url]), ["Ya disponible en Netflix.", "https://ejemplo.test/manual"]);
+      assert.deepEqual(await page.evaluate(() => [nativeTest.pending[0].body, nativeTest.pending[0].extra.url]), ["Ya disponible.", "https://ejemplo.test/manual"]);
     });
     await scenario("F8 platform preference never hides cards and chooses watch links", async page => {
       await page.goto(base); await ready(page);
@@ -145,7 +146,7 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         assert.equal(result.next, true);
         assert.equal(await page.locator(".badge-purple").textContent(), test.display);
         const noPlatform = result.service === "No legal platform";
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), Number(noPlatform));
+        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), Number(noPlatform && !test.custom));
         assert.equal(test.hidden.includes(result.service), false);
         if (test.display === "Sin plataforma") {
           assert.equal(await page.locator(".primary-link").count(), 0);
@@ -266,7 +267,8 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
           }), true);
         }
         await page.evaluate(() => { state.releases[0].customUrl = "https://ejemplo.test/propio"; state.releases[0].customPlatformName = "MiSitio"; invalidateDataCaches(); render(); });
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 1);
+        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
+        assert.equal(await page.locator('[data-action="secondary"]').textContent(), "Enlace personal");
         await page.evaluate(() => { state.releases[0].service = "Netflix"; state.releases[0].allServices = ["Netflix"]; invalidateDataCaches(); render(); });
         assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
         await page.reload(); await ready(page);
