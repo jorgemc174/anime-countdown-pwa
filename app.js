@@ -222,15 +222,18 @@ const ANILIST_MANUAL_COOLDOWN_MS = 1 * 60 * 1000;
 const PUBLIC_ANILIST_REFRESH_MS = 24 * 60 * 60 * 1000;
 const SHARED_SCHEDULE_REFRESH_MS = 15 * 60 * 1000;
 const VIRTUAL_LIST_BATCH_SIZE = 24;
-const SERVICE_PRIORITY = {
-  "Crunchyroll": 1, "Funimation": 2, "HIDIVE": 3,
-  "Prime Video": 4, "Netflix": 5, "Disney+": 6,
-  "Hulu": 7, "Max": 8, "Apple TV+": 9,
-  "Paramount+": 10, "Peacock": 11, "VRV": 12,
-  "Wakanim": 13, "Bilibili": 14, "Aniplus": 15,
-  "Muse Asia": 16, "Ani-One": 17, "Tubi": 18,
-  "No legal platform": 99
+// Solo estas variantes representan las suscripciones de la app; los demás canales se ignoran.
+const SUBSCRIPTIONS = {
+  "Crunchyroll": ["Crunchyroll", "Crunchyroll Amazon Channel"],
+  "Prime Video": ["Prime Video", "Amazon Prime Video with Ads"],
+  "Disney+": ["Disney+"],
+  "Netflix": ["Netflix"]
 };
+const SERVICE_PRIORITY = Object.fromEntries(Object.keys(SUBSCRIPTIONS).map((name, index) => [name, index + 1]));
+function subscriptionService(service) {
+  return Object.keys(SUBSCRIPTIONS).find(name => SUBSCRIPTIONS[name].includes(service)) || "";
+}
+function serviceLabel(service) { return service === "No legal platform" ? "Sin plataforma" : service; }
 const CONTENT_FILTERS = [
   { key: "adult", label: "Adulto / hentai", defaultHidden: true },
   { key: "kodomo", label: "Kodomo", defaultHidden: true },
@@ -243,7 +246,7 @@ const CONTENT_FILTERS = [
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", jellyfinServer: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -360,7 +363,7 @@ function bindElements() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","jellyfinServer","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -379,7 +382,14 @@ async function loadState() {
   state.jwCountry = "ES";
   if (data.jwCountry !== "ES") await browserApi.storage.local.set({ jwCountry: "ES" });
   state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
-  state.hiddenPlatforms = Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : [];
+  state.hiddenPlatforms = [...new Set((Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : []).filter(name => Object.hasOwn(SUBSCRIPTIONS, name)))];
+  await browserApi.storage.local.set({ hiddenPlatforms: state.hiddenPlatforms });
+  state.personalSearchTemplate = validatePersonalSearchTemplate(data.personalSearchTemplate);
+  $("personalSearchInput").value = typeof data.personalSearchTemplate === "string" ? data.personalSearchTemplate : "";
+  renderPersonalSearchValidation();
+  state.jellyfinServer = validateJellyfinServer(data.jellyfinServer);
+  $("jellyfinInput").value = state.jellyfinServer || (typeof data.jellyfinServer === "string" ? data.jellyfinServer : "");
+  renderJellyfinValidation();
   state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
   if (data.contentFiltersVersion !== 1) {
     state.hiddenContent = state.hiddenContent.filter(key => key !== "ona");
@@ -425,6 +435,8 @@ function bindEvents() {
   els.showAllBtn.addEventListener("click", () => switchTab("all"));
   els.showTodayBtn.addEventListener("click", () => switchTab("today"));
   els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
+  $("personalSearchInput").addEventListener("input", savePersonalSearchTemplate);
+  $("jellyfinInput").addEventListener("input", saveJellyfinServer);
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   document.getElementById("platformFilterContainer")?.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -684,16 +696,62 @@ function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[ke
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
-function getDetectedPlatforms() {
-  const platforms = new Set();
-  for (const item of state.releases) {
-    if (item.customPlatformName) platforms.add(item.customPlatformName);
-    const services = getKnownServices(item);
-    for (const service of services) platforms.add(service);
-    if (!services.length && !item.customPlatformName) platforms.add("No legal platform");
-  }
-  return [...platforms].sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50) || a.localeCompare(b));
+function validatePersonalSearchTemplate(value) {
+  if (typeof value !== "string" || !/{titulo}|{slug}/.test(value.trim())) return "";
+  const template = value.trim();
+  try {
+    const url = new URL(template.replaceAll("{titulo}", "prueba").replaceAll("{slug}", "prueba"));
+    return url.protocol === "https:" && !url.username && !url.password ? template : "";
+  } catch { return ""; }
 }
+function renderPersonalSearchValidation() {
+  const input = $("personalSearchInput");
+  const invalid = Boolean(input.value.trim() && !validatePersonalSearchTemplate(input.value));
+  input.setAttribute("aria-invalid", String(invalid));
+  $("personalSearchWarning").hidden = !invalid;
+}
+async function savePersonalSearchTemplate() {
+  const value = $("personalSearchInput").value.trim();
+  state.personalSearchTemplate = validatePersonalSearchTemplate(value);
+  renderPersonalSearchValidation();
+  await browserApi.storage.local.set({ personalSearchTemplate: state.personalSearchTemplate });
+  render();
+}
+function getPersonalSearchUrl(item) {
+  const template = validatePersonalSearchTemplate(state.personalSearchTemplate);
+  const title = String(item.title || "");
+  if (!template || !title.trim()) return "";
+  const slug = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  if (template.includes("{slug}") && !slug) return "";
+  return template.replaceAll("{titulo}", encodeURIComponent(title)).replaceAll("{slug}", slug);
+}
+function validateJellyfinServer(value) {
+  if (typeof value !== "string" || !value.trim()) return "";
+  try {
+    const url = new URL(value.trim());
+    if (!["http:", "https:"].includes(url.protocol) || url.username || url.password || value.includes("?") || value.includes("#")) return "";
+    return url.href.replace(/\/+$/, "");
+  } catch { return ""; }
+}
+function renderJellyfinValidation() {
+  const input = $("jellyfinInput");
+  const invalid = Boolean(input.value.trim() && !validateJellyfinServer(input.value));
+  input.setAttribute("aria-invalid", String(invalid));
+  $("jellyfinWarning").hidden = !invalid;
+}
+async function saveJellyfinServer() {
+  state.jellyfinServer = validateJellyfinServer($("jellyfinInput").value);
+  renderJellyfinValidation();
+  await browserApi.storage.local.set({ jellyfinServer: state.jellyfinServer });
+  render();
+}
+function getJellyfinSearchUrl(item) {
+  const base = validateJellyfinServer(state.jellyfinServer);
+  const title = String(item.title || "");
+  return base && title.trim() && getDisplayService(item) === "No legal platform"
+    ? `${base}/web/#/search.html?query=${encodeURIComponent(title)}` : "";
+}
+function getDetectedPlatforms() { return Object.keys(SUBSCRIPTIONS); }
 
 function renderAnilistSyncStatus() {
   const status = $("anilistSyncStatus");
@@ -713,8 +771,7 @@ function renderSettingsPlatformFilter() {
   const platforms = getDetectedPlatforms();
   container.innerHTML = platforms.map((p) => {
     const hidden = state.hiddenPlatforms.includes(p);
-    const label = p === "No legal platform" ? "Sin plataforma" : p;
-    return renderSettingsChip(label, !hidden, "data-platform", p);
+    return renderSettingsChip(p, !hidden, "data-platform", p);
   }).join("");
   const count = $("platformFilterCount");
   if (count) count.textContent = `${platforms.filter(p => !state.hiddenPlatforms.includes(p)).length} de ${platforms.length}`;
@@ -742,6 +799,7 @@ async function toggleContentFilter(filterKey) {
 }
 
 async function togglePlatformFilter(platform) {
+  if (!Object.hasOwn(SUBSCRIPTIONS, platform)) return;
   const idx = state.hiddenPlatforms.indexOf(platform);
   if (idx >= 0) {
     state.hiddenPlatforms.splice(idx, 1);
@@ -754,14 +812,8 @@ async function togglePlatformFilter(platform) {
 }
 
 function filterByPlatform(items) {
-  if (!state.hiddenPlatforms.length) return items;
-  return items.filter((item) => {
-    if (item.favorite || item.customPlatformName || item.customUrl) return true;
-    const services = getKnownServices(item);
-    return services.length
-      ? services.some(service => !state.hiddenPlatforms.includes(service))
-      : !state.hiddenPlatforms.includes("No legal platform");
-  });
+  return items.filter(item => item.favorite || item.customUrl
+    || getKnownServices(item).some(service => !state.hiddenPlatforms.includes(service)));
 }
 
 async function testNotification() {
@@ -895,8 +947,8 @@ async function addTestAnime30s() {
       await createNativeNotificationChannel(LocalNotifications);
       var notifId = hashNotificationId(testItem);
       var coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
-      var bodyText = testItem.service && testItem.service !== "No legal platform"
-        ? "Ya disponible en " + testItem.service + "."
+      var bodyText = getDisplayService(testItem) !== "No legal platform"
+        ? "Ya disponible en " + getDisplayService(testItem) + "."
         : "Ya disponible.";
 
       await LocalNotifications.schedule({
@@ -930,7 +982,7 @@ async function addTestAnime30s() {
       var cov = normalizeUrl(testItem.coverUrl);
       var u = getBestWatchUrl(testItem) || location.href;
       reg.showNotification(testItem.title + " " + testItem.episode, {
-        body: testItem.service ? "Ya disponible en " + testItem.service + "." : "Ya disponible.",
+        body: getDisplayService(testItem) !== "No legal platform" ? "Ya disponible en " + getDisplayService(testItem) + "." : "Ya disponible.",
         icon: cov || "./icons/icon-192.png",
         image: cov || undefined,
         badge: "./icons/notification-badge.svg",
@@ -1586,27 +1638,11 @@ function normalizeScheduleDate(value) {
 function getStreams(item) { if (Array.isArray(item.streams)) return item.streams; if (Array.isArray(item.websites?.streams)) return item.websites.streams; if (Array.isArray(item.website?.streams)) return item.website.streams; return []; }
 function normalizeStream(stream) { const platform = String(stream.platform || stream.name || "").toLowerCase(); const service = platformToService(platform); return { platform, service, url: stream.url || "" }; }
 function platformToService(platform) {
-  const v = String(platform || "").toLowerCase().trim();
-  if (!v) return null;
-  if (v.includes("crunchyroll")) return "Crunchyroll";
-  if (v.includes("funimation")) return "Funimation";
-  if (v.includes("hidive")) return "HIDIVE";
-  if (v.includes("netflix")) return "Netflix";
-  if (v.includes("amazon") || v.includes("prime video") || v.includes("primevideo")) return "Prime Video";
-  if (v.includes("disney")) return "Disney+";
-  if (v.includes("hulu") && !v.includes("nohulu")) return "Hulu";
-  if (v.includes("apple tv") || v.includes("appletv") || v === "apple") return "Apple TV+";
-  if (v.includes("hbo") || v.includes("hbomax") || (v === "max")) return "Max";
-  if (v.includes("paramount")) return "Paramount+";
-  if (v.includes("peacock")) return "Peacock";
-  if (v.includes("vrv")) return "VRV";
-  if (v.includes("wakanim")) return "Wakanim";
-  if (v.includes("bilibili")) return "Bilibili";
-  if (v.includes("aniplus")) return "Aniplus";
-  if (v.includes("muse asia") || v.includes("muse_asia")) return "Muse Asia";
-  if (v.includes("ani-one") || v.includes("anione")) return "Ani-One";
-  if (v.includes("tubi")) return "Tubi";
-  return null;
+  const value = String(platform || "").toLowerCase().trim();
+  const subscription = Object.keys(SUBSCRIPTIONS).find(name => SUBSCRIPTIONS[name].some(alias => alias.toLowerCase() === value));
+  if (subscription) return subscription;
+  const aliases = { crunchyroll: "Crunchyroll", netflix: "Netflix", amazon: "Prime Video", "amazon prime video": "Prime Video", primevideo: "Prime Video", disney: "Disney+", disneyplus: "Disney+", "disney plus": "Disney+" };
+  return aliases[value] || null;
 }
 function chooseBestStream(streams) { return [...streams].sort((a,b) => (SERVICE_PRIORITY[a.service] || 50) - (SERVICE_PRIORITY[b.service] || 50))[0] || null; }
 function normalizeAllowedService(service) { const mapped = platformToService(String(service || "").toLowerCase()) || String(service || "").trim(); return mapped || ""; }
@@ -2271,6 +2307,12 @@ async function handleListClick(event) {
   if (!action) return;
   event.stopPropagation();
   if (action === "open") { const item = findItemById(id); if (item) await openOrAsk(item); return; }
+  if (action === "jellyfin") {
+    const item = findItemById(id);
+    const url = item && getJellyfinSearchUrl(item);
+    if (url) browserApi.tabs.create({ url });
+    return;
+  }
   if (action === "favorite") { await toggleFavorite(actionEl.dataset.key); return; }
   if (action === "customLink") { await associatePlatform(actionEl.dataset.key); return; }
   if (action === "removeCustomLink") { await removePlatform(actionEl.dataset.key); return; }
@@ -2284,7 +2326,7 @@ function handleListAuxClick(event) {
   event.preventDefault();
   const item = findItemById(card.dataset.id);
   if (!item) return;
-  const url = getBestWatchUrl(item);
+  const url = event.target.closest('[data-action="jellyfin"]') ? getJellyfinSearchUrl(item) : getBestWatchUrl(item);
   if (url) window.open(url, "_blank", "noopener");
 }
 
@@ -2844,15 +2886,16 @@ function getVisibleItems() {
   });
 }
 function getKnownServices(item) {
-  return [...new Set([item.service, ...(item.allServices || [])])]
-    .filter(service => service && service !== "No legal platform");
+  return [...new Set([item.service, ...(item.allServices || [])].map(subscriptionService).filter(Boolean))];
 }
 function getDisplayService(item) {
-  if (item.customPlatformName) return item.customPlatformName;
+  const custom = subscriptionService(item.customPlatformName);
+  if (custom && item.customUrl) return custom;
   const services = getKnownServices(item);
   const available = services.filter(service => !state.hiddenPlatforms.includes(service));
-  if (available.includes(item.service)) return item.service;
-  return available.sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50))[0]
+  const primary = subscriptionService(item.service);
+  if (available.includes(primary)) return primary;
+  return available.sort((a, b) => SERVICE_PRIORITY[a] - SERVICE_PRIORITY[b])[0]
     || services[0] || "No legal platform";
 }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
@@ -2878,7 +2921,7 @@ function getOneTodayPerSeries(items) { const groups = new Map(); for(const item 
 function getRemainingTodayItems(items) { const now = new Date(); return getOneNextPerSeries(items.filter(item => isSchedulableItem(item) && isToday(item.releaseDate) && new Date(item.releaseDate) > now)); }
 
 function renderCover(item, cls) { const letter=escapeHtml(String(item.title||"?").trim().charAt(0).toUpperCase() || "?"); if(!item.coverUrl) return `<div class="${cls} placeholder">${letter}</div>`; const priority=cls.includes("next-cover")?'loading="eager" fetchpriority="high"':'loading="lazy" fetchpriority="low"'; return `<img class="${cls}" src="${escapeHtml(item.coverUrl)}" alt="${escapeHtml(item.title)}" ${priority} decoding="async" referrerpolicy="no-referrer" onerror="this.outerHTML='<div class=&quot;${cls} placeholder&quot;>${letter}</div>'"/>`; }
-function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(item.service)}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
+function renderPreview(items) { if(!els.importPreview) return; const shown=getOneNextPerSeries(items); els.importPreview.innerHTML=""; shown.slice(0,6).forEach(item => { const card=document.createElement("div"); card.className="result-card"; card.innerHTML=`<div class="result-title">${escapeHtml(item.title)}</div><div class="result-meta">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}<br/>${escapeHtml(formatDate(item.releaseDate))}</div>`; els.importPreview.appendChild(card); }); if(shown.length>6) { const more=document.createElement("div"); more.className="empty-message"; more.textContent=`Y ${shown.length-6} más...`; els.importPreview.appendChild(more); } }
 
 function getCountdown(dateValue) { if (!dateValue) return { text:"Fecha por confirmar", expired:false }; const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
 function formatDate(value) { if (!value) return "Sin fecha confirmada"; const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false}).format(d); }
@@ -2967,47 +3010,26 @@ function normalizeTitle(value) { return String(value||"").toLowerCase().normaliz
 function normalizeUrl(url) { const v=String(url||"").trim(); if(!v)return ""; if(v.startsWith("http://")||v.startsWith("https://"))return v; if(v.startsWith("//"))return `https:${v}`; if(v.includes("."))return `https://${v}`; return ""; }
 function getOpenLabel(service) { if(!service || service==="No legal platform" || service==="AniList")return "Asociar plataforma"; return `Ver en ${service}`; }
 function getBestWatchUrl(item, displayService) {
-  const effective = displayService !== undefined ? displayService : getDisplayService(item);
-  if (effective === "Prime Video") {
-    const record = item.platformsByCountry?.[state.jwCountry];
-    const offer = record?.status === "verified" ? record.offers?.find(offer => offer.service === "Prime Video") : null;
-    const justwatchUrl = normalizeUrl(offer?.url);
-    if (justwatchUrl) return justwatchUrl;
-  }
   const custom = normalizeUrl(item.customUrl);
   if (custom) return custom;
-  const regionalUrl = normalizeUrl(item.serviceUrls?.[effective]);
-  if (regionalUrl) return regionalUrl;
-  if (effective === (item.service || "No legal platform")) {
-    const serviceUrl = normalizeUrl(item.serviceUrl);
-    if (serviceUrl) {
-      return serviceUrl;
-    }
-  }
+  const effective = subscriptionService(displayService !== undefined ? displayService : getDisplayService(item));
+  if (!effective) return getPersonalSearchUrl(item);
+  const record = item.platformsByCountry?.[state.jwCountry];
+  const offer = record?.status === "verified" ? record.offers?.find(offer => subscriptionService(offer.service) === effective) : null;
+  const offerUrl = normalizeUrl(offer?.url);
+  if (offerUrl) return offerUrl;
+  const regionalUrl = Object.entries(item.serviceUrls || {}).find(([name]) => subscriptionService(name) === effective)?.[1];
+  if (normalizeUrl(regionalUrl)) return normalizeUrl(regionalUrl);
+  if (effective === subscriptionService(item.service) && normalizeUrl(item.serviceUrl)) return normalizeUrl(item.serviceUrl);
   return defaultServiceUrl(effective);
 }
 function defaultServiceUrl(service) {
-  const map = {
+  return {
     "Crunchyroll": "https://www.crunchyroll.com/",
-    "Netflix": "https://www.netflix.com/",
     "Prime Video": "https://www.primevideo.com/",
-    "HIDIVE": "https://www.hidive.com/",
     "Disney+": "https://www.disneyplus.com/",
-    "Hulu": "https://www.hulu.com/",
-    "Apple TV+": "https://tv.apple.com/",
-    "Max": "https://www.max.com/",
-    "Funimation": "https://www.funimation.com/",
-    "Paramount+": "https://www.paramountplus.com/",
-    "Peacock": "https://www.peacocktv.com/",
-    "Tubi": "https://tubitv.com/",
-    "VRV": "https://vrv.co/",
-    "Bilibili": "https://www.bilibili.tv/",
-    "Muse Asia": "https://www.youtube.com/@MuseAsia",
-    "Ani-One": "https://www.youtube.com/@AniOneAsia",
-    "Wakanim": "https://www.wakanim.tv/",
-    "Aniplus": "https://www.aniplus-asia.com/",
-  };
-  return map[service] || "";
+    "Netflix": "https://www.netflix.com/"
+  }[service] || "";
 }
 function escapeHtml(v) { return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 
@@ -3024,6 +3046,8 @@ function getEmptyViewMessage() {
     : state.releases;
   const candidates = source.filter(item => (state.viewMode === "all" || item.favorite)
     && (state.viewMode === "today" ? isToday(item.releaseDate) : (new Date(item.releaseDate) > new Date() || policy.isPending(item) || (state.viewMode === "favorites" && item.scheduleStatus === "unscheduled"))));
+  if (state.viewMode === "all" && candidates.some(item => !filterByPlatform([item]).length))
+    return "Tus filtros muestran solo las plataformas marcadas. Las series sin esas plataformas quedan ocultas; las favoritas y los enlaces propios siempre se muestran.";
   if (candidates.some(item => !isSchedulableItem(item) || (state.viewMode === "all" && !filterByPlatform([item]).length)))
     return "No hay episodios en esta vista. Comprueba tus filtros o consulta Todos.";
   return state.viewMode === "today" ? "Hoy no hay estrenos de tus favoritos." : "No hay próximos episodios para mostrar.";
@@ -3057,7 +3081,7 @@ function renderNextModern() {
   const premierePill = getPremierePill(item);
   const delayedPill = getDelayedPill(item);
   els.nextRelease.className = "next-release";
-  els.nextRelease.innerHTML = `<div class="cover-stack next-cover-stack">${renderCover(item, "next-cover")}${scorePill}</div><div class="next-content"><div class="next-label${nextFavorite ? " next-favorite-label" : ""}">${nextFavorite ? "Próximo favorito" : "Próximo episodio"}</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(getDisplayService(item))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}${premierePill}${delayedPill}</div></div>`;
+  els.nextRelease.innerHTML = `<div class="cover-stack next-cover-stack">${renderCover(item, "next-cover")}${scorePill}</div><div class="next-content"><div class="next-label${nextFavorite ? " next-favorite-label" : ""}">${nextFavorite ? "Próximo favorito" : "Próximo episodio"}</div><div class="next-title">${escapeHtml(item.title)}</div><div class="next-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div><div class="next-countdown">${escapeHtml(c.text)}</div><div class="next-meta">${escapeHtml(formatDate(item.releaseDate))}${premierePill}${delayedPill}</div></div>`;
 }
 
 function getNextHighlightItems() {
@@ -3174,7 +3198,7 @@ function createCardModern(item) {
   const unscheduled = item.scheduleStatus === "unscheduled";
   const c = { text: getReleaseTimingLabel(item) };
   const service = getDisplayService(item);
-  const openLabel = item.customUrl ? `Ver en ${item.customPlatformName || "link asociado"}` : getOpenLabel(service);
+  const openLabel = item.customUrl ? `Ver en ${item.customPlatformName?.trim() || "link asociado"}` : service === "No legal platform" && getPersonalSearchUrl(item) ? "Buscar" : getOpenLabel(service);
   const delayedBadge = getDelayedBadge(item);
   const premiereBadge = getPremiereBadge(item);
   const scorePill = getAnilistScorePill(item);
@@ -3191,9 +3215,11 @@ function createCardModern(item) {
     if (event.target === card && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); openOrAsk(item); }
   });
   const fallbackSource = { anilist: "AniList", animeschedule: "AnimeSchedule" }[item.platformSource];
-  const unverifiedBadge = fallbackSource ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource}: puede no estar disponible en tu país">Sin verificar</span>` : "";
-  const badgeLabel = service === "No legal platform" ? (item.customPlatformName || "Sin plataforma") : service;
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(service)}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${customButton}</div></div>`;
+  const unverifiedBadge = fallbackSource && getKnownServices(item).length && !item.customUrl ? `<span class="badge badge-unverified" title="Enlace de ${fallbackSource} sin confirmar: puede que no esté en ninguna plataforma en España">Puede no estar disponible</span>` : "";
+  const badgeLabel = item.customUrl && item.customPlatformName?.trim() ? item.customPlatformName.trim() : serviceLabel(service);
+  const jellyfinButton = getJellyfinSearchUrl(item)
+    ? `<button class="small-btn" type="button" data-action="jellyfin" data-id="${escapeHtml(item.id)}">Jellyfin</button>` : "";
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(service))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${jellyfinButton ? " has-jellyfin" : ""}"><button class="small-btn primary-link" type="button" data-action="open" data-id="${escapeHtml(item.id)}">${escapeHtml(openLabel)}</button>${jellyfinButton}${customButton}</div></div>`;
   return card;
 }
 

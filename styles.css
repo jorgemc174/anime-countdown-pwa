@@ -1241,3 +1241,12 @@ button:focus-visible, a:focus-visible, .anime-card:focus-visible { outline: 3px 
 html.light .score-value, html.light .countdown, html.light .next-label, html.light .eyebrow { color: #965017; }
 
 .next-label.next-favorite-label { display: block; }
+
+.card-actions.has-jellyfin {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-actions.has-jellyfin > :last-child {
+  grid-column: 1 / -1;
+}
