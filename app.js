@@ -270,7 +270,6 @@ init();
 async function init() {
   try {
     bindElements();
-    populateTimezoneOptions();
     await loadState();
     bindEvents();
     registerServiceWorker();
@@ -299,6 +298,11 @@ function startBackgroundRefreshes() {
   }, SHARED_SCHEDULE_REFRESH_MS);
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
+      const timezone = getDeviceTimezone();
+      if (state.timezone !== timezone) {
+        state.timezone = timezone;
+        scheduleMidnightRefresh();
+      }
       invalidateDataCaches();
       render();
       scheduleBackgroundTask(() => refreshSharedSchedule({ silent: true, skipPublicAnilist: true }), 100);
@@ -349,82 +353,13 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
 
-function getUTCOffset(zone) {
-  try {
-    const now = new Date();
-    const getMs = (tz) => {
-      const parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit",
-        hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
-      }).formatToParts(now);
-      const get = (type) => Number(parts.find((p) => p.type === type)?.value || "0");
-      return Date.UTC(get("year"), get("month") - 1, get("day"), get("hour") % 24, get("minute"), get("second"));
-    };
-    const offsetMs = getMs(zone) - getMs("UTC");
-    const sign = offsetMs >= 0 ? "+" : "-";
-    const absMinutes = Math.round(Math.abs(offsetMs) / 60000);
-    const hours = Math.floor(absMinutes / 60);
-    const minutes = absMinutes % 60;
-    return `${sign}${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
-  } catch (e) {
-    return "+00:00";
-  }
-}
-
-function populateTimezoneOptions() {
-  const zones = [
-    { name: "UTC", offset: "+00:00" },
-    { zone: "Europe/London" },
-    { zone: "Europe/Madrid" },
-    { zone: "Europe/Paris" },
-    { zone: "Europe/Berlin" },
-    { zone: "Europe/Rome" },
-    { zone: "Europe/Istanbul" },
-    { zone: "Asia/Dubai" },
-    { zone: "Asia/Kolkata" },
-    { zone: "Asia/Bangkok" },
-    { zone: "Asia/Shanghai" },
-    { zone: "Asia/Tokyo" },
-    { zone: "Asia/Seoul" },
-    { zone: "Australia/Sydney" },
-    { zone: "Pacific/Auckland" },
-    { zone: "America/Los_Angeles" },
-    { zone: "America/Denver" },
-    { zone: "America/Chicago" },
-    { zone: "America/New_York" },
-    { zone: "America/Argentina/Buenos_Aires" },
-    { zone: "America/Sao_Paulo" },
-  ];
-  
-  const preferred = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Madrid";
-  
-  const options = zones.map((item) => {
-    const zone = item.zone || item.name;
-    const offset = item.offset || getUTCOffset(zone);
-    const zoneName = zone.includes("/") ? zone.split("/")[1].replaceAll("_", " ") : zone;
-    const display = `${zoneName} (UTC ${offset})`;
-    return { zone, display };
-  });
-  
-  // Sort preferred first
-  const preferredIndex = options.findIndex((o) => o.zone === preferred);
-  if (preferredIndex > 0) {
-    const [preferred] = options.splice(preferredIndex, 1);
-    options.unshift(preferred);
-  }
-  
-  els.timezoneInput.innerHTML = options
-    .map((o) => `<option value="${escapeHtml(o.zone)}">${escapeHtml(o.display)}</option>`)
-    .join("");
-}
-
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -439,8 +374,7 @@ async function loadState() {
   applyCustomToReleases();
   applyUserOverridesToLists();
   state.viewMode = data.viewMode || "today";
-  state.timezone = data.timezone || "Europe/Madrid";
-  try { new Intl.DateTimeFormat("es", { timeZone: state.timezone }); } catch { state.timezone = "Europe/Madrid"; }
+  state.timezone = getDeviceTimezone();
   state.jwCountry = "ES";
   if (data.jwCountry !== "ES") await browserApi.storage.local.set({ jwCountry: "ES" });
   state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
@@ -464,7 +398,6 @@ async function loadState() {
   state.nativeNotificationsUntil = data.nativeNotificationsUntil || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
-  els.timezoneInput.value = state.timezone;
   els.anilistInput.value = data.anilistUsername || "";
   applyTheme(state.theme);
   updateScoreButton();
@@ -492,7 +425,6 @@ function bindEvents() {
   els.showTodayBtn.addEventListener("click", () => switchTab("today"));
   els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
-  els.timezoneInput.addEventListener("change", saveTimezone);
   document.getElementById("platformFilterContainer")?.addEventListener("click", (e) => {
     e.stopPropagation();
     const chip = e.target.closest(".platform-chip");
@@ -725,17 +657,15 @@ function goToAdjacentMode(direction) {
 
 function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[key]); autoSaveTimers[key] = setTimeout(fn, delay); }
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
-async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; invalidateDataCaches(); await browserApi.storage.local.set({ timezone: state.timezone }); render(); scheduleMidnightRefresh(); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
 
 function getDetectedPlatforms() {
   const platforms = new Set();
   for (const item of state.releases) {
-    const svc = getDisplayService(item);
-    if (svc && svc !== "No legal platform") platforms.add(svc);
-    for (const s of (item.allServices || [])) {
-      if (s && s !== "No legal platform") platforms.add(s);
-    }
+    if (item.customPlatformName) platforms.add(item.customPlatformName);
+    const services = getKnownServices(item);
+    for (const service of services) platforms.add(service);
+    if (!services.length && !item.customPlatformName) platforms.add("No legal platform");
   }
   return [...platforms].sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50) || a.localeCompare(b));
 }
@@ -801,8 +731,11 @@ async function togglePlatformFilter(platform) {
 function filterByPlatform(items) {
   if (!state.hiddenPlatforms.length) return items;
   return items.filter((item) => {
-    const service = getDisplayService(item);
-    return !state.hiddenPlatforms.includes(service);
+    if (item.favorite || item.customPlatformName || item.customUrl) return true;
+    const services = getKnownServices(item);
+    return services.length
+      ? services.some(service => !state.hiddenPlatforms.includes(service))
+      : !state.hiddenPlatforms.includes("No legal platform");
   });
 }
 
@@ -1249,7 +1182,7 @@ async function importSchedule() {
     }
 
     const token = els.tokenInput?.value?.trim() || "";
-    const timezone = els.timezoneInput.value.trim() || "Europe/Madrid";
+    const timezone = getSelectedTimezone();
     if (!token) return showStatus("Falta token de AnimeSchedule.", "error");
     const curr = getCurrentSeason();
     const weeks = getNextWeeks(DEFAULT_IMPORT_WEEKS);
@@ -1268,7 +1201,7 @@ async function importSchedule() {
     applyAnilistToReleases();
     applyCustomToReleases();
     applyUserOverridesToLists();
-    await browserApi.storage.local.set({ releases: state.releases, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, animeScheduleToken: token, timezone });
+    await browserApi.storage.local.set({ releases: state.releases, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, animeScheduleToken: token });
     renderPreview(imported);
     render();
     checkReleaseNotifications();
@@ -1328,7 +1261,7 @@ async function performSharedRefresh({ silent = false, skipPublicAnilist = false,
     applyCustomToReleases();
     applyUserOverridesToLists();
     state.lastSharedSync = new Date().toISOString();
-    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, timezone: state.timezone, lastSharedSync: state.lastSharedSync, lastPlatformSync: state.lastPlatformSync, scheduleMetadata: { updatedAt: state.scheduleHealth.updatedAt, checkedAt: state.scheduleHealth.checkedAt, platforms: state.scheduleHealth.platforms } });
+    await browserApi.storage.local.set({ releases: state.releases, anilistLibrary: state.anilistLibrary, userOverrides: state.userOverrides, customPlatforms: state.customPlatforms, customLinks: state.customLinks, lastSharedSync: state.lastSharedSync, lastPlatformSync: state.lastPlatformSync, scheduleMetadata: { updatedAt: state.scheduleHealth.updatedAt, checkedAt: state.scheduleHealth.checkedAt, platforms: state.scheduleHealth.platforms } });
     renderPreview(imported);
     scheduleRender();
     checkReleaseNotifications();
@@ -2883,18 +2816,22 @@ function getVisibleItems() {
   const contentKey = state.hiddenContent.join("|");
   return memoList(`visible|${state.viewMode}|${dayKey}|${hiddenKey}|${contentKey}`, () => {
     if(state.viewMode==="favorites") return getOneNextPerSeries(getFavoriteItems()).concat(getPendingItems(getFavoriteItems()), getUnscheduledLibraryItems());
-    if(state.viewMode==="today") return getTodayItems(adjustDelayedDates(getFavoriteItems()));
-    return getOneNextPerSeries(getCatalogItems()).concat(getPendingItems(getCatalogItems()));
+    if(state.viewMode==="today") return getTodayItems(filterByPlatform(adjustDelayedDates(getFavoriteItems())));
+    const catalog = filterByPlatform(getCatalogItems());
+    return getOneNextPerSeries(catalog).concat(getPendingItems(catalog));
   });
 }
+function getKnownServices(item) {
+  return [...new Set([item.service, ...(item.allServices || [])])]
+    .filter(service => service && service !== "No legal platform");
+}
 function getDisplayService(item) {
-  const service = item.customPlatformName || item.service || "No legal platform";
-  if (service === "No legal platform") return service;
-  if (!state.hiddenPlatforms.includes(service)) return service;
-  const fallback = (item.allServices || [])
-    .filter((s) => s && s !== "No legal platform" && !state.hiddenPlatforms.includes(s))
-    .sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50))[0];
-  return fallback || "No legal platform";
+  if (item.customPlatformName) return item.customPlatformName;
+  const services = getKnownServices(item);
+  const available = services.filter(service => !state.hiddenPlatforms.includes(service));
+  if (available.includes(item.service)) return item.service;
+  return available.sort((a, b) => (SERVICE_PRIORITY[a] || 50) - (SERVICE_PRIORITY[b] || 50))[0]
+    || services[0] || "No legal platform";
 }
 function getFavoriteItems() { return memoList("favorites", () => mergeDuplicateItems(state.releases.filter(item => item.favorite))); }
 function getUnscheduledLibraryItems() {
@@ -2924,7 +2861,17 @@ function renderPreview(items) { if(!els.importPreview) return; const shown=getOn
 function getCountdown(dateValue) { if (!dateValue) return { text:"Fecha por confirmar", expired:false }; const target=new Date(dateValue), now=new Date(), diff=target-now; if(Number.isNaN(target.getTime())) return { text:"Fecha inválida", expired:true }; if(diff<=0) return { text:"Ya disponible", expired:true }; const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60; return { text:`${d}d ${h}h ${m}min ${sec}s`, expired:false }; }
 function formatDate(value) { if (!value) return "Sin fecha confirmada"; const d=new Date(value); if(Number.isNaN(d.getTime())) return "Sin fecha"; return new Intl.DateTimeFormat("es-ES",{timeZone: getSelectedTimezone(),weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false}).format(d); }
 function isToday(value) { if (!value) return false; const d=new Date(value); if(Number.isNaN(d.getTime())) return false; return getDateKeyInZone(d, getSelectedTimezone()) === getDateKeyInZone(new Date(), getSelectedTimezone()); }
-function getSelectedTimezone() { return state.timezone || els.timezoneInput?.value?.trim() || "Europe/Madrid"; }
+function getDeviceTimezone() {
+  try {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (timezone) {
+      new Intl.DateTimeFormat("es", { timeZone: timezone });
+      return timezone;
+    }
+  } catch {}
+  return "Europe/Madrid";
+}
+function getSelectedTimezone() { return state.timezone; }
 function getDateKeyInZone(date, timeZone) {
   return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
 }
@@ -3059,7 +3006,7 @@ function renderNextModern() {
       els.nextRelease.textContent = state.scheduleHealth.loading ? "Cargando horarios…" : state.scheduleHealth.error ? "No se pudo actualizar el horario" : "Horario desactualizado";
       return;
     }
-    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : "Los horarios se actualizan automáticamente."}</div></div>`;
+    els.nextRelease.innerHTML = `<div class="next-content"><div class="next-label">Sin estrenos</div><div class="next-title">No hay próximos episodios</div><div class="next-episode">${state.viewMode === "today" ? "No hay favoritos para hoy." : state.hiddenPlatforms.length ? "Comprueba tus filtros de suscripciones." : "Los horarios se actualizan automáticamente."}</div></div>`;
     return;
   }
 
@@ -3077,8 +3024,8 @@ function getNextHighlightItems() {
   const dayKey = getDateKeyInZone(new Date(), getSelectedTimezone());
   const contentKey = state.hiddenContent.join("|");
   return memoList(`highlight|${state.viewMode}|${dayKey}|${contentKey}`, () => {
-    if (state.viewMode === "all") return getOneNextPerSeries(adjustDelayedDates(getCatalogItems()));
-    if (state.viewMode === "today") return getRemainingTodayItems(adjustDelayedDates(getFavoriteItems()));
+    if (state.viewMode === "all") return getOneNextPerSeries(filterByPlatform(adjustDelayedDates(getCatalogItems())));
+    if (state.viewMode === "today") return getRemainingTodayItems(filterByPlatform(adjustDelayedDates(getFavoriteItems())));
     return getOneNextPerSeries(adjustDelayedDates(getFavoriteItems()));
   });
 }

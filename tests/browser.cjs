@@ -21,9 +21,9 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     await page.waitForFunction(() => sharedRefreshPromise === null && !state.scheduleHealth.loading);
     await page.waitForFunction(() => !document.getElementById("animeList").textContent.includes("Cargando"));
   }
-  async function scenario(name, fn) {
+  async function scenario(name, fn, timezoneId = "Europe/Madrid") {
     if (process.env.BROWSER_SCENARIO && !name.includes(process.env.BROWSER_SCENARIO)) return;
-    const context = await browser.newContext({ serviceWorkers: "block", viewport: { width: 390, height: 844 }, timezoneId: "Europe/Madrid", reducedMotion: "reduce" });
+    const context = await browser.newContext({ serviceWorkers: "block", viewport: { width: 390, height: 844 }, timezoneId, reducedMotion: "reduce" });
     const page = await context.newPage();
     page.on("pageerror", error => errors.push(`${name}: ${error.message}`));
     await page.clock.install({ time: new Date(now) });
@@ -33,6 +33,105 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    for (const rule of ["unchanged", "alternative", "hidden", "unknown", "unknown-on", "custom", "custom-link", "favorite", "favorite-unknown"]) {
+      await scenario(`subscriptions ${rule}: lists, count and next episode`, async page => {
+        await page.goto(base); await ready(page);
+        const result = await page.evaluate(rule => {
+          const item = { ...state.releases[0], allServices: ["Crunchyroll", "Netflix"], favorite: rule.startsWith("favorite") };
+          if (rule === "hidden" || rule === "favorite") item.allServices = ["Crunchyroll"];
+          if (["unknown", "unknown-on", "favorite-unknown"].includes(rule)) { item.service = "No legal platform"; item.allServices = []; }
+          if (rule === "custom") item.customPlatformName = "Crunchyroll";
+          if (rule === "custom-link") { item.customUrl = "https://example.com/watch"; item.allServices = []; }
+          state.releases = [item];
+          state.hiddenPlatforms = rule === "unchanged" ? [] : rule === "unknown-on" ? ["Crunchyroll"] : ["Crunchyroll", "No legal platform"];
+          invalidateDataCaches(); setMode("all");
+          const all = { count: document.querySelectorAll(".anime-card").length, title: $("listTitle").textContent, next: state.currentNext?.id || null, text: $("animeList").textContent, service: getDisplayService(item), platforms: getDetectedPlatforms(), nextText: $("nextRelease").textContent };
+          setMode("today");
+          const today = document.querySelectorAll(".anime-card").length;
+          setMode("favorites");
+          return { all, today, favorites: document.querySelectorAll(".anime-card").length };
+        }, rule);
+        const visible = !["hidden", "unknown"].includes(rule);
+        assert.equal(result.all.count, Number(visible));
+        assert.ok(result.all.title.endsWith(` · ${Number(visible)}`));
+        assert.equal(Boolean(result.all.next), visible);
+        assert.equal(result.today, Number(rule.startsWith("favorite")));
+        assert.equal(result.favorites, Number(rule.startsWith("favorite")));
+        if (rule === "hidden" || rule === "unknown") { assert.match(result.all.text, /filtros/i); assert.match(result.all.nextText, /filtros/i); }
+        if (rule === "alternative") assert.equal(result.all.service, "Netflix");
+        if (rule === "favorite") assert.equal(result.all.service, "Crunchyroll");
+        if (rule === "hidden") assert.ok(result.all.platforms.includes("Crunchyroll"));
+        if (rule === "unknown") assert.ok(result.all.platforms.includes("No legal platform"));
+      });
+    }
+    await scenario("subscriptions hide pending rows and keep detected chips", async page => {
+      await page.goto(base); await ready(page);
+      await page.locator("#showAllBtn").click();
+      assert.equal(await page.locator(".anime-card").count(), 2);
+      await page.evaluate(() => togglePlatformFilter("Crunchyroll"));
+      assert.equal(await page.locator(".anime-card").count(), 0);
+      assert.equal(await page.locator('[data-platform="Crunchyroll"]').getAttribute("aria-pressed"), "false");
+      await page.evaluate(() => togglePlatformFilter("Crunchyroll"));
+      assert.equal(await page.locator(".anime-card").count(), 2);
+    });
+    await scenario("device timezone falls back for missing or invalid OS zone", async page => {
+      await page.goto(base); await ready(page);
+      assert.deepEqual(await page.evaluate(() => {
+        const Original = Intl.DateTimeFormat;
+        try {
+          return [undefined, "not/a/timezone"].map(timeZone => {
+            Intl.DateTimeFormat = new Proxy(Original, { apply: () => ({ resolvedOptions: () => ({ timeZone }) }) });
+            return getDeviceTimezone();
+          });
+        } finally { Intl.DateTimeFormat = Original; }
+      }), ["Europe/Madrid", "Europe/Madrid"]);
+    });
+    await scenario("subscriptions favorite notification keeps real platform", async page => {
+      await page.goto(base); await ready(page);
+      const bodies = await page.evaluate(async () => {
+        const scheduled = [];
+        window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+          getPending: async () => ({ notifications: [] }), schedule: async ({ notifications }) => scheduled.push(...notifications)
+        } } };
+        state.notificationEnabled = true;
+        state.hiddenPlatforms = ["Crunchyroll"];
+        const item = { ...state.releases[0], favorite: true, allServices: ["Crunchyroll"] };
+        state.releases = [item];
+        await scheduleNativeNotifications();
+        return scheduled.map(n => n.body);
+      });
+      assert.deepEqual(bodies, ["Ya disponible en Crunchyroll."]);
+    });
+    for (const zone of ["Europe/Madrid", "America/Los_Angeles"]) {
+      await scenario(`device timezone ${zone} ignores storage and updates on return`, async (page, context) => {
+        await page.addInitScript(() => localStorage.setItem("animeCountdownStorage", JSON.stringify({ timezone: "Asia/Tokyo" })));
+        await page.goto(base); await ready(page);
+        assert.equal(await page.locator("#timezoneInput").count(), 0);
+        assert.equal(await page.evaluate(() => state.timezone), zone);
+        const inspect = () => page.evaluate(() => {
+          state.releases = [{ ...state.releases[0], favorite: true, releaseDate: "2026-10-31T00:30:00Z" }];
+          invalidateDataCaches(); setMode("today");
+          return { count: getVisibleItems().length, date: formatDate(state.releases[0].releaseDate) };
+        });
+        const initial = await inspect();
+        assert.equal(initial.count, Number(zone === "America/Los_Angeles"));
+        assert.match(initial.date, zone === "Europe/Madrid" ? /01:30/ : /17:30/);
+        const other = zone === "Europe/Madrid" ? "America/Los_Angeles" : "Europe/Madrid";
+        // Chromium cannot replace Playwright's active timezone override. Simulate
+        // the OS reporting a new zone; explicit-zone formatting still uses Intl.
+        await page.evaluate(other => {
+          const Original = Intl.DateTimeFormat;
+          Intl.DateTimeFormat = new Proxy(Original, {
+            apply(target, receiver, args) {
+              return args.length ? Reflect.apply(target, receiver, args) : new Original("es", { timeZone: other });
+            }
+          });
+          document.dispatchEvent(new Event("visibilitychange"));
+        }, other);
+        assert.equal(await page.evaluate(() => state.timezone), other);
+        assert.equal(await page.evaluate(() => getVisibleItems().length), 1 - initial.count);
+      }, zone);
+    }
     await scenario("settings opens with close focus and Escape restores the trigger", async page => {
       await page.goto(base); await ready(page);
       await page.locator("#settingsBtn").click();
