@@ -38,4 +38,9 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Sideloaded app: exact release reminders on Android 13+, special access on 12. -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:maxSdkVersion="32" />
+    <!-- POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED and WAKE_LOCK are merged from
+         @capacitor/local-notifications/android/src/main/AndroidManifest.xml. -->
 </manifest>

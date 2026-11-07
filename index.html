@@ -16,7 +16,7 @@
       if (s.theme === "light") document.documentElement.classList.add("light");
     } catch (e) {}
   </script>
-  <link rel="stylesheet" href="./styles.css?v=109" />
+  <link rel="stylesheet" href="./styles.css?v=110" />
 </head>
 <body>
   <main class="app">
@@ -104,15 +104,16 @@
           <span id="notificationLabel">Activar notificación</span>
           <button id="notificationBtn" class="toggle-switch" type="button" role="switch" aria-checked="false" aria-labelledby="notificationLabel"></button>
         </div>
-        <p class="notification-help">En la web, los avisos requieren que la app esté abierta. En Android se programan los próximos siete días confirmados.</p>
+        <p id="nativeNotificationStatus" class="notification-help" role="status" hidden></p>
+        <p class="notification-help">En la web, los avisos requieren que la app esté abierta. En Android se programan los próximos 14 días con hora confirmada. Vuelve a abrir la app antes de que termine ese plazo para renovarlos.</p>
         <p class="notification-help">Horarios y plataformas actualizados automáticamente. Solo necesitas sincronizar tu biblioteca de AniList.</p>
         <button id="resetBtn" class="danger-btn" type="button">Borrar favoritos</button>
       </section>
     </div>
   </main>
-  <script src="./schedule-policy.js?v=109"></script>
-  <script src="./platform-policy.js?v=109"></script>
-  <script src="./config.js?v=109"></script>
-  <script src="./app.js?v=109"></script>
+  <script src="./schedule-policy.js?v=110"></script>
+  <script src="./platform-policy.js?v=110"></script>
+  <script src="./config.js?v=110"></script>
+  <script src="./app.js?v=110"></script>
 </body>
 </html>

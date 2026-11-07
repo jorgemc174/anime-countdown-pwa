@@ -100,11 +100,15 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
           window.nativeResult = { cancelled: [], scheduled: [] };
           window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
             requestPermissions: async () => ({ display: "granted" }),
+            createChannel: async () => {},
+            checkPermissions: async () => ({ display: "granted" }),
+            checkExactNotificationSetting: async () => ({ exact_alarm: "granted" }),
             getPending: async () => ({ notifications: action === "reset" ? [{ id: 123 }] : [] }),
             cancel: async value => nativeResult.cancelled.push(...value.notifications),
             schedule: async value => nativeResult.scheduled.push(...value.notifications)
           } } };
           state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+          state.nativeNotificationVersion = 1;
           state.lastNativeNotificationSync = new Date().toISOString();
           state.notificationEnabled = action === "reset";
           window.confirm = () => true;
@@ -116,6 +120,201 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         assert.equal(await page.evaluate(() => nativeResult.scheduled.length), action === "reset" ? 0 : 1);
       });
     }
+    async function nativeMock(page) {
+      await page.goto(base); await ready(page);
+      await page.evaluate(() => {
+        window.nativeTest = { pending: [], cancelled: [], scheduled: [], channels: [], display: "granted", exact: "granted", calls: 0 };
+        window.Capacitor = { isNativePlatform: () => true, Plugins: { LocalNotifications: {
+          checkPermissions: async () => ({ display: nativeTest.display }),
+          checkExactNotificationSetting: async () => ({ exact_alarm: nativeTest.exact }),
+          createChannel: async channel => nativeTest.channels.push(channel),
+          getPending: async () => ({ notifications: nativeTest.pending.slice() }),
+          cancel: async ({ notifications }) => {
+            nativeTest.cancelled.push(...notifications);
+            nativeTest.pending = nativeTest.pending.filter(n => !notifications.some(c => c.id === n.id));
+          },
+          schedule: async ({ notifications }) => {
+            nativeTest.calls++;
+            if (nativeTest.block) await nativeTest.block;
+            if (nativeTest.fail) throw new Error("Simulated scheduling failure");
+            nativeTest.scheduled.push(...notifications);
+            nativeTest.pending = nativeTest.pending.filter(n => !notifications.some(next => next.id === n.id));
+            nativeTest.pending.push(...notifications);
+          }
+        } } };
+        state.notificationEnabled = true;
+      });
+    }
+    await scenario("native idle alarms cover fourteen days on an explicit channel and show coverage", async page => {
+      const consoleErrors = [];
+      page.on("console", message => { if (message.type() === "error") consoleErrors.push(message.text()); });
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        const item = state.releases.find(row => row.releaseDate);
+        state.releases = [10, 15].map(days => ({ ...item, id: `day-${days}`, favorite: true, releaseDate: new Date(Date.now() + days * 86400000).toISOString() }));
+        const before = Date.now();
+        await syncNativeNotificationsIfNeeded({ force: true });
+        return { ...nativeTest, before, until: state.nativeNotificationsUntil };
+      });
+      assert.equal(result.scheduled.length, 1);
+      assert.equal(result.scheduled[0].schedule.allowWhileIdle, true);
+      assert.equal(result.scheduled[0].channelId, "anime-releases");
+      assert.equal(result.channels[0].id, "anime-releases");
+      assert.equal(result.channels[0].importance, 4);
+      assert.ok(Math.abs(Date.parse(result.until) - result.before - 14 * 86400000) < 2000);
+      await page.locator("#settingsBtn").click();
+      assert.match(await page.locator("#nativeNotificationStatus").innerText(), /Programados hasta el 13 de noviembre de 2026/);
+      // Coverage and migration survive a new app instance.
+      await page.reload(); await ready(page);
+      assert.equal(await page.evaluate(() => state.nativeNotificationsUntil), result.until);
+      assert.equal(await page.evaluate(() => state.nativeNotificationVersion), 1);
+      assert.deepEqual(consoleErrors, []);
+    });
+    await scenario("native existing pending IDs are rescheduled with current platform text", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true, service: "Netflix", serviceUrl: "https://www.netflix.com/" }];
+        const id = hashNotificationId(state.releases[0]);
+        nativeTest.pending = [{ id, body: "Ya disponible en Crunchyroll." }];
+        await scheduleNativeNotifications();
+        return { id, scheduled: nativeTest.scheduled };
+      });
+      assert.equal(result.scheduled.length, 1);
+      assert.equal(result.scheduled[0].id, result.id);
+      assert.equal(result.scheduled[0].schedule.allowWhileIdle, true);
+      assert.equal(result.scheduled[0].body, "Ya disponible en Netflix.");
+    });
+    for (const granted of [false, true]) {
+      await scenario(`native revoked permission click requests access: granted=${granted}`, async page => {
+        await nativeMock(page);
+        await page.evaluate(granted => {
+          state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+          state.nativeDisplayPermission = "denied";
+          state.nativeNotificationVersion = 1;
+          state.lastNativeNotificationSync = new Date().toISOString();
+          nativeTest.display = "denied";
+          nativeTest.requests = 0;
+          nativeTest.pending = [{ id: hashNotificationId(state.releases[0]) }];
+          Capacitor.Plugins.LocalNotifications.requestPermissions = async () => {
+            nativeTest.requests++;
+            nativeTest.display = granted ? "granted" : "denied";
+            return { display: nativeTest.display };
+          };
+          updateNotificationButton();
+        }, granted);
+        await page.locator("#settingsBtn").click();
+        assert.equal(await page.locator("#notificationBtn").getAttribute("aria-checked"), "false");
+        await page.locator("#notificationBtn").click();
+        assert.equal(await page.evaluate(() => nativeTest.requests), 1);
+        if (granted) {
+          await page.clock.runFor(5000);
+          assert.equal(await page.evaluate(() => nativeTest.scheduled.length), 1);
+        } else {
+          assert.match(await page.locator("#statusBox").textContent(), /denegado.*Ajustes/);
+        }
+        assert.equal(await page.evaluate(() => nativeTest.cancelled.length), 0);
+        assert.equal(await page.evaluate(() => state.notificationEnabled), granted);
+        assert.equal(await page.locator("#notificationBtn").getAttribute("aria-checked"), String(granted));
+        assert.equal(await page.evaluate(async () => (await browserApi.storage.local.get("notificationEnabled")).notificationEnabled), granted);
+      });
+    }
+    await scenario("native migration replaces legacy pending entries exactly once", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+        nativeTest.pending = [{ id: hashNotificationId(state.releases[0]) }];
+        await syncNativeNotificationsIfNeeded({ force: true });
+        await syncNativeNotificationsIfNeeded({ force: true });
+        return { cancelled: nativeTest.cancelled.length, scheduled: nativeTest.scheduled.length, pending: nativeTest.pending.length, version: state.nativeNotificationVersion };
+      });
+      assert.deepEqual(result, { cancelled: 1, scheduled: 2, pending: 1, version: 1 });
+    });
+    await scenario("native requests during synchronization run after the active operation", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+        let unblock;
+        nativeTest.block = new Promise(resolve => { unblock = resolve; });
+        const first = syncNativeNotificationsIfNeeded({ force: true });
+        while (!nativeTest.calls) await new Promise(resolve => setTimeout(resolve, 10));
+        state.releases = [];
+        queueNativeNotificationSync({ delay: 0 });
+        while (!nativeNotificationSyncPending) await new Promise(resolve => setTimeout(resolve, 10));
+        unblock();
+        await first;
+        return { pending: nativeTest.pending.length, cancelled: nativeTest.cancelled.length };
+      });
+      assert.deepEqual(result, { pending: 0, cancelled: 1 });
+    });
+    await scenario("disabling during native scheduling leaves no pending alarms or successful coverage", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+        let unblock;
+        nativeTest.block = new Promise(resolve => { unblock = resolve; });
+        const first = syncNativeNotificationsIfNeeded({ force: true });
+        while (!nativeTest.calls) await new Promise(resolve => setTimeout(resolve, 10));
+        await toggleNotifications();
+        unblock();
+        await first;
+        return { pending: nativeTest.pending.length, until: state.nativeNotificationsUntil, enabled: state.notificationEnabled };
+      });
+      assert.deepEqual(result, { pending: 0, until: "", enabled: false });
+    });
+    await scenario("native revoked display and exact permissions are visible despite recent sync", async page => {
+      await nativeMock(page);
+      await page.evaluate(async () => {
+        await syncNativeNotificationsIfNeeded({ force: true });
+        nativeTest.exact = "denied";
+        await syncNativeNotificationsIfNeeded();
+      });
+      assert.match(await page.locator("#nativeNotificationStatus").textContent(), /alarmas exactas.*Ajustes/i);
+      await page.evaluate(async () => {
+        nativeTest.display = "denied";
+        await syncNativeNotificationsIfNeeded();
+      });
+      assert.match(await page.locator("#nativeNotificationStatus").textContent(), /permiso.*revocado/i);
+      assert.equal(await page.locator("#notificationBtn").getAttribute("aria-checked"), "false");
+      assert.doesNotMatch(await page.locator("#nativeNotificationStatus").textContent(), /Programados hasta/);
+    });
+    await scenario("failed native scheduling leaves migration retryable and coverage unset", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        state.releases = [{ ...state.releases.find(row => row.releaseDate), favorite: true }];
+        nativeTest.fail = true;
+        await syncNativeNotificationsIfNeeded({ force: true });
+        const failed = { version: state.nativeNotificationVersion || 0, until: state.nativeNotificationsUntil || "" };
+        nativeTest.fail = false;
+        await syncNativeNotificationsIfNeeded({ force: true });
+        return { failed, version: state.nativeNotificationVersion, count: nativeTest.scheduled.length };
+      });
+      assert.deepEqual(result, { failed: { version: 0, until: "" }, version: 1, count: 1 });
+    });
+    await scenario("native channels tolerate older Android and test reminders use the same channel", async page => {
+      await nativeMock(page);
+      const result = await page.evaluate(async () => {
+        downloadCoverImage = async () => null;
+        await testNotification();
+        await addTestAnime30s();
+        const tests = nativeTest.scheduled.map(n => ({ channel: n.channelId, idle: n.schedule.allowWhileIdle }));
+        Capacitor.Plugins.LocalNotifications.createChannel = async () => { throw { code: "UNAVAILABLE" }; };
+        await syncNativeNotificationsIfNeeded({ force: true });
+        return { tests, version: state.nativeNotificationVersion };
+      });
+      assert.deepEqual(result.tests, [{ channel: "anime-releases", idle: true }, { channel: "anime-releases", idle: true }]);
+      assert.equal(result.version, 1);
+    });
+    await scenario("native enable ignores a denied web permission", async page => {
+      await nativeMock(page);
+      const enabled = await page.evaluate(async () => {
+        Object.defineProperty(Notification, "permission", { configurable: true, get: () => "denied" });
+        Capacitor.Plugins.LocalNotifications.requestPermissions = async () => ({ display: "granted" });
+        state.notificationEnabled = false;
+        await toggleNotifications();
+        return state.notificationEnabled;
+      });
+      assert.equal(enabled, true);
+    });
     await scenario("disabling native notifications cancels pending entries only when present", async page => {
       await page.goto(base); await ready(page);
       assert.deepEqual(await page.evaluate(async () => {

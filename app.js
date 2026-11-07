@@ -260,6 +260,10 @@ let virtualListObserver = null;
 let nativeNotificationSyncForce = false;
 let nativeNotificationSyncTimer = null;
 let nativeNotificationSyncRunning = false;
+let nativeNotificationSyncPending = false;
+const NATIVE_NOTIFICATION_VERSION = 1;
+const NATIVE_NOTIFICATION_WINDOW_MS = 14 * 24 * 3600 * 1000;
+const NATIVE_NOTIFICATION_CHANNEL = "anime-releases";
 
 init();
 
@@ -420,7 +424,7 @@ function populateTimezoneOptions() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","timezone","jwCountry","hiddenPlatforms","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -456,6 +460,8 @@ async function loadState() {
   state.lastPublicAnilistSync = data.lastPublicAnilistSync || "";
   state.lastPlatformSync = data.lastPlatformSync || "";
   state.lastNativeNotificationSync = data.lastNativeNotificationSync || "";
+  state.nativeNotificationVersion = data.nativeNotificationVersion || 0;
+  state.nativeNotificationsUntil = data.nativeNotificationsUntil || "";
   state.theme = data.theme || "dark";
   if (els.tokenInput) els.tokenInput.value = data.animeScheduleToken || "";
   els.timezoneInput.value = state.timezone;
@@ -839,6 +845,7 @@ async function testNotification() {
       }
     }
 
+    await createNativeNotificationChannel(LocalNotifications);
     const notifId = hashNotificationId(testItem);
     const coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
     await LocalNotifications.schedule({
@@ -846,7 +853,8 @@ async function testNotification() {
         id: notifId,
         title: "Anime de Prueba Ep 1",
         body: "Ya disponible en Netflix.",
-        schedule: { at: new Date(releaseAt) },
+        schedule: { at: new Date(releaseAt), allowWhileIdle: true },
+        channelId: NATIVE_NOTIFICATION_CHANNEL,
         extra: { url: "https://netflix.com" },
         smallIcon: "ic_stat_icon",
         largeIcon: coverPath || undefined,
@@ -926,6 +934,7 @@ async function addTestAnime30s() {
         }
       }
 
+      await createNativeNotificationChannel(LocalNotifications);
       var notifId = hashNotificationId(testItem);
       var coverPath = await downloadCoverImage(testItem.coverUrl, notifId);
       var bodyText = testItem.service && testItem.service !== "No legal platform"
@@ -939,7 +948,8 @@ async function addTestAnime30s() {
           body: bodyText,
           largeBody: bodyText,
           summaryText: bodyText,
-          schedule: { at: new Date(releaseAt) },
+          schedule: { at: new Date(releaseAt), allowWhileIdle: true },
+          channelId: NATIVE_NOTIFICATION_CHANNEL,
           extra: { url: getBestWatchUrl(testItem) || location.href, title: testItem.title },
           smallIcon: "ic_stat_icon",
           largeIcon: coverPath || undefined,
@@ -986,9 +996,10 @@ async function toggleNotifications() {
     return showStatus("Este dispositivo no soporta notificaciones.", "error");
   }
 
-  if (!state.notificationEnabled) {
-    let granted = hasNativeNotif;
-    if (hasWebNotif && Notification.permission !== "granted") {
+  const active = state.notificationEnabled && (hasNativeNotif ? state.nativeDisplayPermission !== "denied" : Notification.permission === "granted");
+  if (!active) {
+    let granted = false;
+    if (!hasNativeNotif && hasWebNotif && Notification.permission !== "granted") {
       if (Notification.permission === "denied") {
         state.notificationEnabled = false;
         await browserApi.storage.local.set({ notificationEnabled: false });
@@ -1003,12 +1014,14 @@ async function toggleNotifications() {
         return showStatus("No se activaron las notificaciones.", "warn");
       }
     }
+    if (!hasNativeNotif) granted = Notification.permission === "granted";
     if (hasNativeNotif) {
       try {
         const LocalNotifications = getLocalNotifications();
         if (LocalNotifications) {
           const permResult = await LocalNotifications.requestPermissions();
           granted = permResult.display === "granted";
+          state.nativeDisplayPermission = permResult.display;
         }
       } catch (_) {}
     }
@@ -1077,10 +1090,33 @@ function updateNotificationButton() {
     if (label) label.textContent = "Notificaciones (no disponible)";
     return;
   }
-  const active = state.notificationEnabled && (hasNativeNotif || Notification.permission === "granted");
+  const active = state.notificationEnabled && (hasNativeNotif ? state.nativeDisplayPermission !== "denied" : Notification.permission === "granted");
   els.notificationBtn.setAttribute("aria-checked", active ? "true" : "false");
   const label = document.getElementById("notificationLabel");
   if (label) label.textContent = active ? "Notificaciones activadas" : "Activar notificación";
+  updateNativeNotificationStatus();
+}
+
+
+function updateNativeNotificationStatus() {
+  const status = document.getElementById("nativeNotificationStatus");
+  if (!status) return;
+  status.hidden = !isCapacitor() || !state.notificationEnabled;
+  if (status.hidden) { status.textContent = ""; return; }
+  if (state.nativeDisplayPermission === "denied") {
+    status.textContent = "Permiso de notificaciones revocado. Actívalo en Ajustes > Notificaciones.";
+  } else if (state.nativeNotificationError) {
+    status.textContent = "No se pudieron programar los avisos. Se reintentará al volver a abrir la app.";
+  } else if (state.nativeExactPermission === "denied") {
+    status.textContent = "Sin permiso de alarmas exactas: los avisos pueden retrasarse. Actívalo en Ajustes > Aplicaciones > Acceso especial > Alarmas y recordatorios.";
+  } else if (state.nativeNotificationsUntil) {
+    const until = new Date(state.nativeNotificationsUntil);
+    status.textContent = Number.isFinite(until.getTime())
+      ? `Programados hasta el ${new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric", timeZone: state.timezone }).format(until)} (estrenos con hora confirmada).`
+      : "Avisos pendientes de programar.";
+  } else {
+    status.textContent = "Avisos pendientes de programar.";
+  }
 }
 
 
@@ -2377,19 +2413,65 @@ function queueNativeNotificationSync({ force = false, delay = 4000 } = {}) {
 }
 
 async function syncNativeNotificationsIfNeeded({ force = false } = {}) {
-  if (!isCapacitor() || !state.notificationEnabled || nativeNotificationSyncRunning) return 0;
-  const last = Date.parse(state.lastNativeNotificationSync || "");
-  if (!force && Number.isFinite(last) && Date.now() - last < NATIVE_NOTIFICATION_SYNC_MS) return 0;
-
+  if (!isCapacitor() || !state.notificationEnabled) return 0;
+  if (nativeNotificationSyncRunning) {
+    // Even a normal request must reconcile changes made during the active run.
+    nativeNotificationSyncPending = true;
+    return 0;
+  }
+  const LocalNotifications = getLocalNotifications();
+  if (!LocalNotifications) return 0;
   nativeNotificationSyncRunning = true;
+  let scheduled = 0;
   try {
-    await yieldToMainThread();
-    await cancelStaleNativeNotifications();
-    await yieldToMainThread();
-    const scheduled = await scheduleNativeNotifications();
-    state.lastNativeNotificationSync = new Date().toISOString();
-    await browserApi.storage.local.set({ lastNativeNotificationSync: state.lastNativeNotificationSync });
-    return scheduled || 0;
+    do {
+      nativeNotificationSyncPending = false;
+      const forceSync = force;
+      force = true;
+      try {
+        const previousDisplay = state.nativeDisplayPermission;
+        const previousExact = state.nativeExactPermission;
+        state.nativeDisplayPermission = (await LocalNotifications.checkPermissions()).display;
+        state.nativeExactPermission = (await LocalNotifications.checkExactNotificationSetting()).exact_alarm;
+        updateNotificationButton();
+        if (state.nativeDisplayPermission !== "granted") continue;
+        const last = Date.parse(state.lastNativeNotificationSync || "");
+        const migrate = state.nativeNotificationVersion !== NATIVE_NOTIFICATION_VERSION;
+        const permissionRestored = previousDisplay === "denied" || (previousExact !== "granted" && state.nativeExactPermission === "granted");
+        if (!forceSync && !migrate && !permissionRestored && !state.nativeNotificationError && Number.isFinite(last) && Date.now() - last < NATIVE_NOTIFICATION_SYNC_MS) continue;
+        await createNativeNotificationChannel(LocalNotifications);
+        await yieldToMainThread();
+        if (migrate) {
+          const { notifications } = await LocalNotifications.getPending();
+          if (notifications.length) await LocalNotifications.cancel({ notifications });
+        }
+        await cancelStaleNativeNotifications();
+        await yieldToMainThread();
+        if (!state.notificationEnabled) continue;
+        const windowEnd = Date.now() + NATIVE_NOTIFICATION_WINDOW_MS;
+        scheduled += await scheduleNativeNotifications(windowEnd);
+        // Disabling while the bridge was scheduling must also cancel that batch.
+        if (!state.notificationEnabled) {
+          const { notifications } = await LocalNotifications.getPending();
+          if (notifications.length) await LocalNotifications.cancel({ notifications });
+          continue;
+        }
+        const completed = {
+          lastNativeNotificationSync: new Date().toISOString(),
+          nativeNotificationVersion: NATIVE_NOTIFICATION_VERSION,
+          nativeNotificationsUntil: new Date(windowEnd).toISOString()
+        };
+        await browserApi.storage.local.set(completed);
+        Object.assign(state, completed);
+        state.nativeNotificationError = false;
+      } catch (error) {
+        state.nativeNotificationError = true;
+        console.warn("Error al sincronizar notificaciones nativas:", error);
+      } finally {
+        updateNotificationButton();
+      }
+    } while (nativeNotificationSyncPending && state.notificationEnabled);
+    return scheduled;
   } finally {
     nativeNotificationSyncRunning = false;
   }
@@ -2519,74 +2601,78 @@ function isCapacitor() {
   } catch (_) { return false; }
 }
 
-async function scheduleNativeNotifications() {
-  if (!isCapacitor() || !state.notificationEnabled) return;
-  const LocalNotifications = getLocalNotifications();
-  if (!LocalNotifications) return;
-
+async function createNativeNotificationChannel(LocalNotifications) {
   try {
-    const allPending = await LocalNotifications.getPending();
-    const pendingIds = new Set(allPending.notifications.map((n) => n.id));
-
-    const now = Date.now();
-    const favorites = state.releases.filter((item) => item.favorite);
-    const toSchedule = [];
-
-    for (const item of favorites) {
-      if (!policy.hasConfirmedTime(item)) continue;
-      const releaseAt = new Date(item.releaseDate).getTime();
-      if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
-      if (releaseAt > now + 7 * 24 * 3600 * 1000) continue;
-      const notifId = hashNotificationId(item);
-      if (pendingIds.has(notifId)) continue;
-
-      const displayService = getDisplayService(item);
-      toSchedule.push({
-        id: notifId,
-        title: `${item.title} ${item.episode}`,
-        body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
-        schedule: { at: new Date(releaseAt) },
-        extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
-        smallIcon: "ic_stat_icon",
-        iconColor: "#111827",
-        actionTypeId: "",
-        group: "anime-countdown",
-        groupSummary: false
-      });
-    }
-
-    if (toSchedule.length) {
-      await LocalNotifications.schedule({ notifications: toSchedule });
-    }
-    return toSchedule.length;
+    await LocalNotifications.createChannel({
+      id: NATIVE_NOTIFICATION_CHANNEL,
+      name: "Estrenos de Anime",
+      description: "Notificaciones de episodios al momento del estreno",
+      importance: 4,
+      visibility: 1,
+      vibration: true
+    });
   } catch (error) {
-    console.warn("Error al programar notificaciones nativas:", error);
-    return 0;
+    // The plugin reports UNAVAILABLE on Android < 8, where channels don't exist.
+    if (error.code !== "UNAVAILABLE") throw error;
   }
+}
+
+async function scheduleNativeNotifications(windowEnd = Date.now() + NATIVE_NOTIFICATION_WINDOW_MS) {
+  if (!isCapacitor() || !state.notificationEnabled) return 0;
+  const LocalNotifications = getLocalNotifications();
+  if (!LocalNotifications) throw new Error("Plugin de notificaciones no disponible");
+
+  const now = Date.now();
+  const favorites = state.releases.filter((item) => item.favorite);
+  const toSchedule = [];
+
+  for (const item of favorites) {
+    if (!policy.hasConfirmedTime(item)) continue;
+    const releaseAt = new Date(item.releaseDate).getTime();
+    if (!Number.isFinite(releaseAt) || releaseAt <= now) continue;
+    if (releaseAt > windowEnd) continue;
+    const notifId = hashNotificationId(item);
+
+    const displayService = getDisplayService(item);
+    toSchedule.push({
+      id: notifId,
+      title: `${item.title} ${item.episode}`,
+      body: displayService === "No legal platform" ? "Ya disponible." : `Ya disponible en ${displayService}.`,
+      schedule: { at: new Date(releaseAt), allowWhileIdle: true },
+      channelId: NATIVE_NOTIFICATION_CHANNEL,
+      extra: { url: getBestWatchUrl(item, displayService) || location.href, title: item.title },
+      smallIcon: "ic_stat_icon",
+      iconColor: "#111827",
+      actionTypeId: "",
+      group: "anime-countdown",
+      groupSummary: false
+    });
+  }
+
+  if (toSchedule.length) {
+    await LocalNotifications.schedule({ notifications: toSchedule });
+  }
+  return toSchedule.length;
 }
 
 async function cancelStaleNativeNotifications() {
   if (!isCapacitor()) return;
   const LocalNotifications = getLocalNotifications();
   if (!LocalNotifications) return;
-  try {
-    const pending = await LocalNotifications.getPending();
-    const validIds = new Set();
-    const now = Date.now();
-    const favorites = state.releases.filter((item) => item.favorite);
-    for (const item of favorites) {
-      if (!policy.hasConfirmedTime(item)) continue;
-      const releaseAt = new Date(item.releaseDate).getTime();
-      if (Number.isFinite(releaseAt) && releaseAt > now) {
-        validIds.add(hashNotificationId(item));
-      }
+  const pending = await LocalNotifications.getPending();
+  const validIds = new Set();
+  const now = Date.now();
+  const favorites = state.releases.filter((item) => item.favorite);
+  for (const item of favorites) {
+    if (!policy.hasConfirmedTime(item)) continue;
+    const releaseAt = new Date(item.releaseDate).getTime();
+    if (Number.isFinite(releaseAt) && releaseAt > now) {
+      validIds.add(hashNotificationId(item));
     }
-    const toCancel = pending.notifications.filter((n) => !validIds.has(n.id));
-    if (toCancel.length) {
-      await LocalNotifications.cancel({ notifications: toCancel });
-    }
-  } catch (error) {
-    console.warn("Error al limpiar notificaciones nativas:", error);
+  }
+  const toCancel = pending.notifications.filter((n) => !validIds.has(n.id));
+  if (toCancel.length) {
+    await LocalNotifications.cancel({ notifications: toCancel });
   }
 }
 
