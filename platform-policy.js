@@ -166,5 +166,21 @@
       platformStale: Boolean(record?.lastError || record?.pendingNegative) || Boolean(record?.checkedAt && now - Date.parse(record.checkedAt) > 24 * 3600000)
     };
   }
-  return { COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, anilistOffers, basePlatforms, applyCountryPlatforms };
+  // One-time cleanup of retired local preferences; public platform data is untouched.
+  function migrateLocalPreferences(settings) {
+    if (!settings || typeof settings !== "object") return false;
+    let changed = false;
+    if (Object.hasOwn(settings, "jellyfinServer")) {
+      delete settings.jellyfinServer;
+      changed = true;
+    }
+    for (const override of Object.values(settings.userOverrides || {})) {
+      if (override && typeof override === "object" && override.activeLink === "jellyfin") {
+        delete override.activeLink;
+        changed = true;
+      }
+    }
+    return changed;
+  }
+  return { migrateLocalPreferences, COUNTRIES, seriesKey, searchTitles, findMatch, allowedOffers, anilistOffers, basePlatforms, applyCountryPlatforms };
 });

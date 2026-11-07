@@ -68,6 +68,8 @@ const browserApi = {
 async function persistStorageValues(values) {
   const raw = readSmallStorage();
   const store = parseStoredState(raw);
+  platformPolicy.migrateLocalPreferences(store);
+  platformPolicy.migrateLocalPreferences(values);
   const smallValues = {};
   const largeValues = {};
   for (const [key, value] of Object.entries(values || {})) {
@@ -246,7 +248,7 @@ const CONTENT_FILTERS = [
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
 
 const $ = (id) => document.getElementById(id);
-const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", personalLinkName: "", jellyfinServer: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
+const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, personalSearchTemplate: "", personalLinkName: "", customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
 const els = {};
 const autoSaveTimers = {};
 let quarterNotificationTimer = null;
@@ -363,7 +365,9 @@ function bindElements() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","jellyfinServer","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const preferencesMigrated = platformPolicy.migrateLocalPreferences(data);
+  if (preferencesMigrated) await browserApi.storage.local.set({ userOverrides: data.userOverrides });
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
     .filter(item => item && typeof item === "object" && typeof item.title === "string")
     .map(sanitizePlatformFields)
@@ -389,15 +393,13 @@ async function loadState() {
   renderPersonalSearchValidation();
   state.personalLinkName = cleanPersonalLinkName(data.personalLinkName);
   $("personalLinkNameInput").value = state.personalLinkName;
-  state.jellyfinServer = validateJellyfinServer(data.jellyfinServer);
-  $("jellyfinInput").value = state.jellyfinServer || (typeof data.jellyfinServer === "string" ? data.jellyfinServer : "");
-  renderJellyfinValidation();
   state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
   if (data.contentFiltersVersion !== 1) {
     state.hiddenContent = state.hiddenContent.filter(key => key !== "ona");
     await browserApi.storage.local.set({ hiddenContent: state.hiddenContent, contentFiltersVersion: 1 });
   }
   state.notificationEnabled = Boolean(data.notificationEnabled);
+  if (preferencesMigrated) queueNativeNotificationSync({ force: true });
   state.showAnilistScore = data.showAnilistScore !== false;
   state.notifiedReleaseIds = data.notifiedReleaseIds && typeof data.notifiedReleaseIds === "object" && !Array.isArray(data.notifiedReleaseIds) ? data.notifiedReleaseIds : {};
   state.lastSharedSync = data.lastSharedSync || "";
@@ -442,7 +444,6 @@ function bindEvents() {
   els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
   $("personalLinkNameInput").addEventListener("input", savePersonalLinkName);
   $("personalSearchInput").addEventListener("input", savePersonalSearchTemplate);
-  $("jellyfinInput").addEventListener("input", saveJellyfinServer);
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   document.getElementById("platformFilterContainer")?.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -740,33 +741,6 @@ function getPersonalSearchUrl(item) {
   const slug = romaji.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   if (template.includes("{slug}") && !slug) return "";
   return template.replaceAll("{titulo}", encodeURIComponent(title)).replaceAll("{slug}", slug);
-}
-function validateJellyfinServer(value) {
-  if (typeof value !== "string" || !value.trim()) return "";
-  try {
-    const url = new URL(value.trim());
-    if (!["http:", "https:"].includes(url.protocol) || url.username || url.password || value.includes("?") || value.includes("#")) return "";
-    return url.href.replace(/\/+$/, "");
-  } catch { return ""; }
-}
-function renderJellyfinValidation() {
-  const input = $("jellyfinInput");
-  const invalid = Boolean(input.value.trim() && !validateJellyfinServer(input.value));
-  input.setAttribute("aria-invalid", String(invalid));
-  $("jellyfinWarning").hidden = !invalid;
-}
-async function saveJellyfinServer() {
-  state.jellyfinServer = validateJellyfinServer($("jellyfinInput").value);
-  renderJellyfinValidation();
-  await browserApi.storage.local.set({ jellyfinServer: state.jellyfinServer });
-  queueNativeNotificationSync({ force: true });
-  render();
-}
-function getJellyfinSearchUrl(item) {
-  const base = validateJellyfinServer(state.jellyfinServer);
-  const title = String(item.title || "");
-  return base && title.trim()
-    ? `${base}/web/#/search.html?query=${encodeURIComponent(title)}` : "";
 }
 function getDetectedPlatforms() { return Object.keys(SUBSCRIPTIONS); }
 
@@ -3230,8 +3204,6 @@ function getWatchSources(item) {
   const personal = getPersonalSearchUrl(item);
   const name = cleanPersonalLinkName(state.personalLinkName);
   if (personal) sources.push({ id: "personal", kind: "personal", label: name || "Enlace personal", buttonLabel: name ? `Ver en ${name}` : "Buscar", url: personal });
-  const jellyfin = getJellyfinSearchUrl(item);
-  if (jellyfin) sources.push({ id: "jellyfin", kind: "jellyfin", label: "Jellyfin", buttonLabel: "Jellyfin", url: jellyfin });
   const custom = normalizeUrl(item.customUrl);
   if (custom) sources.push({ id: "custom", kind: "custom", label: item.customPlatformName?.trim() || "link asociado", buttonLabel: `Ver en ${item.customPlatformName?.trim() || "link asociado"}`, url: custom });
   return sources;
@@ -3245,7 +3217,6 @@ function getActiveWatchSource(item) {
   return sources.find(source => source.id === getUserOverride(item)?.activeLink) || getAutomaticWatchSource(item, sources);
 }
 function getSecondaryWatchSource(item, active = getActiveWatchSource(item)) {
-  // Jellyfin is only reachable from the per-series panel: the card never shows a button for it.
   if (active?.kind === "platform" || active?.id === "personal") return null;
   return getWatchSources(item).find(source => source.id === "personal") || null;
 }
@@ -3448,7 +3419,7 @@ function createCardModern(item) {
   const secondarySource = getSecondaryWatchSource(item, activeSource);
   const secondaryButton = secondarySource
     ? `<button class="small-btn" type="button" data-action="secondary" data-id="${escapeHtml(item.id)}">${escapeHtml(secondarySource.label)}</button>` : "";
-  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${secondaryButton && watchButton ? " has-jellyfin" : ""}">${watchButton}${secondaryButton}${customButton}</div></div>`;
+  card.innerHTML = `<div class="cover-stack">${renderCover(item, "cover")}${scorePill}</div><div class="card-main"><div class="card-top"><div class="card-heading"><div class="anime-title">${escapeHtml(item.title)}</div><div class="anime-episode">${escapeHtml(item.episode)} · ${escapeHtml(serviceLabel(getDisplayService(item)))}${isToday(item.releaseDate) ? '<span class="today-pill">HOY</span>' : ""}</div></div><button class="favorite-btn ${item.favorite ? 'favorite' : 'add'}" type="button" aria-label="${item.favorite ? "Quitar de favoritos" : "Añadir a favoritos"}" data-action="favorite" data-key="${escapeHtml(getAnimeKey(item))}">${item.favorite ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>` : "+"}</button></div>${unscheduled ? "" : `<div class="countdown">${escapeHtml(c.text)}</div>`}<div class="meta">${escapeHtml(unscheduled ? getReleaseTimingLabel(item) : item.confirmedSubDate && item.scheduleStatus === "date-confirmed" ? `Fecha SUB: ${item.confirmedSubDate}` : formatDate(item.releaseDate))}${renderOfficialEvidence(item)}</div><div class="badges"><span class="badge badge-purple">${escapeHtml(badgeLabel)}</span>${unverifiedBadge}${premiereBadge}${delayedBadge}</div><div class="card-actions${secondaryButton && watchButton ? " has-secondary" : ""}">${watchButton}${secondaryButton}${customButton}</div></div>`;
   return card;
 }
 

@@ -136,7 +136,6 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
             favorite: Boolean(test.favorite), customUrl: test.custom ? "https://ejemplo.test/propio" : "", customPlatformName: test.custom ? "MiSitio" : "", platformSource: "anilist" }];
           state.hiddenPlatforms = test.hidden;
           state.personalSearchTemplate = test.template ? "https://ejemplo.test/media/{slug}" : test.invalidTemplate ? "http://ejemplo.test/{titulo}" : "";
-          state.jellyfinServer = "http://servidor.test:8096";
           invalidateDataCaches(); setMode("all");
           const item = state.releases[0];
           return { service: getDisplayService(item), url: getBestWatchUrl(item), next: Boolean(state.currentNext) };
@@ -146,7 +145,6 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         assert.equal(result.next, true);
         assert.equal(await page.locator(".badge-purple").textContent(), test.display);
         const noPlatform = result.service === "No legal platform";
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
         assert.equal(test.hidden.includes(result.service), false);
         if (test.display === "Sin plataforma") {
           assert.equal(await page.locator(".primary-link").count(), 0);
@@ -225,68 +223,6 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.equal(await page.locator("#personalSearchInput").inputValue(), "https://ejemplo.test/media/{slug}");
       assert.equal(await page.locator("#personalSearchHelp").textContent(), "Pega una dirección con {titulo} o {slug}.");
     });
-    for (const native of [false, true]) {
-      await scenario(`F6R1 Jellyfin validation, opening and 360px buttons native=${native}`, async page => {
-        if (native) await page.addInitScript(() => {
-          window.Capacitor = { isNativePlatform: () => true, getPlatform: () => "android", Plugins: {} };
-        });
-        await page.goto(base); await ready(page);
-        await page.evaluate(() => {
-          window.openedUrls = [];
-          window.openExternalUrl = url => openedUrls.push(url);
-          state.releases = [{ ...state.releases[0], title: "Título & / ? # 日本", service: "HIDIVE", allServices: ["HIDIVE"], favorite: true }];
-          state.personalSearchTemplate = "https://ejemplo.test/media/{slug}";
-          invalidateDataCaches(); setMode("all");
-        });
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
-        await page.locator("#settingsBtn").click();
-        const input = page.getByRole("textbox", { name: "Servidor Jellyfin" });
-        assert.equal(await input.inputValue(), "");
-        for (const invalid of ["ftp://servidor.test:8096", "http://usuario:clave@servidor.test:8096", "http://servidor.test:8096/?q=a", "http://servidor.test:8096/#a", "no es URL"]) {
-          await input.fill(invalid);
-          assert.equal(await page.locator("#jellyfinWarning").isVisible(), true);
-          assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
-        }
-        await input.fill("http://servidor.test:8096/");
-        await page.waitForFunction(() => state.jellyfinServer === "http://servidor.test:8096");
-        assert.equal(await page.locator("#jellyfinWarning").isVisible(), false);
-        await page.locator("#closeSettingsBtn").click();
-        const expected = `http://servidor.test:8096/web/#/search.html?query=${encodeURIComponent("Título & / ? # 日本")}`;
-        // The card has no Jellyfin button: it opens only once chosen as the active link of the series.
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
-        await page.evaluate(() => { upsertUserOverride(state.releases[0], { activeLink: "jellyfin" }); invalidateDataCaches(); render(); });
-        await page.locator(".primary-link").click();
-        assert.deepEqual(await page.evaluate(() => openedUrls), [expected]);
-        await page.evaluate(() => { upsertUserOverride(state.releases[0], { activeLink: "auto" }); invalidateDataCaches(); render(); });
-        await page.locator(".primary-link").click();
-        assert.equal((await page.evaluate(() => openedUrls)).length, 2);
-        await page.setViewportSize({ width: 360, height: 800 });
-        fs.mkdirSync("/tmp/f6-r1-screenshots", { recursive: true });
-        for (const theme of ["dark", "light"]) {
-          await page.evaluate(theme => applyTheme(theme), theme);
-          await page.screenshot({ path: `/tmp/f6-r1-screenshots/360-${theme}-${native}.png`, animations: "disabled" });
-          assert.equal(await page.evaluate(() => {
-            const card = document.querySelector(".anime-card");
-            return document.documentElement.scrollWidth <= 360 && [...card.querySelectorAll("button")].every(button => button.getBoundingClientRect().right <= card.getBoundingClientRect().right);
-          }), true);
-        }
-        await page.evaluate(() => { state.releases[0].customUrl = "https://ejemplo.test/propio"; state.releases[0].customPlatformName = "MiSitio"; invalidateDataCaches(); render(); });
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
-        assert.equal(await page.locator('[data-action="secondary"]').textContent(), "Enlace personal");
-        await page.evaluate(() => { state.releases[0].service = "Netflix"; state.releases[0].allServices = ["Netflix"]; invalidateDataCaches(); render(); });
-        assert.equal(await page.getByRole("button", { name: "Jellyfin", exact: true }).count(), 0);
-        await page.reload(); await ready(page);
-        assert.equal(await page.locator("#jellyfinInput").inputValue(), "http://servidor.test:8096");
-        await page.locator("#settingsBtn").click();
-        await input.fill("https://servidor.test:8096/base/");
-        await page.waitForFunction(() => state.jellyfinServer === "https://servidor.test:8096/base");
-        await input.fill("");
-        await page.waitForFunction(() => state.jellyfinServer === "");
-        assert.equal(await page.locator("#jellyfinWarning").isVisible(), false);
-        await page.reload(); await ready(page);
-        assert.equal(await page.locator("#jellyfinInput").inputValue(), "");
-      });
-    }
     await scenario("F6 fixed chips, migration, ignored services and exceptions", async page => {
       await page.addInitScript(() => localStorage.setItem("animeCountdownStorage", JSON.stringify({ hiddenPlatforms: ["HIDIVE", "No legal platform", "Crunchyroll Amazon Channel", "Netflix"] })));
       await page.goto(base); await ready(page);

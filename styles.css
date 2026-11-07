@@ -1242,12 +1242,12 @@ html.light .score-value, html.light .countdown, html.light .next-label, html.lig
 
 .next-label.next-favorite-label { display: block; }
 
-.card-actions.has-jellyfin {
+.card-actions.has-secondary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.card-actions.has-jellyfin > :last-child {
+.card-actions.has-secondary > :last-child {
   grid-column: 1 / -1;
 }
 
