@@ -26,8 +26,9 @@ async function fixture(t, scenario) {
     const target=new URL(url);
     if(target.hostname==='apis.justwatch.com') {
       const body=JSON.parse(options.body);
+      if(body.variables.country!=='ES') throw Error('Unexpected JustWatch country');
       return Response.json({data:{popularTitles:{edges:[{node:{id:'ts1',objectType:'SHOW',content:{title:'Current'},offers:[{
-        package:{technicalName:body.variables.country==='MX'?'hidive':'netflix'},standardWebURL:'https://www.netflix.com/title/test',monetizationType:'FLATRATE'
+        package:{technicalName:'netflix'},standardWebURL:'https://www.netflix.com/title/test',monetizationType:'FLATRATE'
       }]}}]}}});
     }
     if(target.searchParams.has('api_token')) throw Error('Token in URL');
@@ -53,7 +54,7 @@ async function fixture(t, scenario) {
     cwd: dir, env: { ...process.env, ANIMESCHEDULE_TOKEN: "test-placeholder", INCLUDE_ANILIST_MISSING: "false", ANIMESCHEDULE_RETRIES: "1" }
   }); } catch (failure) { error = failure; }
   if (scenario === "platforms" && !error) {
-    await execFile(process.execPath, ["--require", "./hook.cjs", "scripts/enrich-platforms.js"], { cwd: dir, env: { ...process.env, JUSTWATCH_COUNTRIES: "ES,MX" } });
+    await execFile(process.execPath, ["--require", "./hook.cjs", "scripts/enrich-platforms.js"], { cwd: dir, env: { ...process.env, JUSTWATCH_COUNTRIES: "ES" } });
   }
   const schedule = JSON.parse(await fs.readFile(path.join(dir, "schedule.json")));
   return { error, schedule, previous, output };
@@ -79,11 +80,11 @@ test("an empty upstream cannot report success or overwrite the old file", async 
 test("scheduled pipeline publishes SUB times and precomputed regional platforms in one dataset", async t => {
   const result = await fixture(t, "platforms");
   assert.equal(result.error, undefined);
-  assert.equal(result.schedule.platforms.checked, 2);
+  assert.equal(result.schedule.platforms.checked, 1);
   for (const item of result.schedule.releases) {
     assert.equal(item.service, "Netflix");
     assert.equal(item.platformsByCountry.ES.offers[0].service, "Netflix");
-    assert.equal(item.platformsByCountry.MX.offers[0].service, "HIDIVE");
+    assert.deepEqual(Object.keys(item.platformsByCountry), ["ES"]);
     assert.ok(Date.parse(item.releaseDate) > Date.now());
   }
 });

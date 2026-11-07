@@ -48,20 +48,17 @@ Cada tres horas, `Update anime schedule` prepara y publica en una sola ejecució
 2. Las plataformas regionales de JustWatch mediante `npm run sync:platforms`.
 3. El `schedule.json` enriquecido y la caché reutilizable `platform-cache.json`.
 
-El catálogo incluye los doce países del selector, con España por defecto.
-`JUSTWATCH_COUNTRIES=ES,MX` permite limitar la generación si se desea. Cada episodio
+El catálogo incluye únicamente la disponibilidad de España (ES). Cada episodio
 incluye `basePlatforms` (fuente original) y `platformsByCountry` con ofertas,
-fecha de comprobación y estado por país. Cambiar de país selecciona esos datos
-localmente; las ofertas regionales de JustWatch tienen prioridad. Si la serie no
-se encuentra o la consulta está pendiente o falla, se utilizan los enlaces de
+fecha de comprobación y estado de España. Las ofertas regionales de JustWatch
+tienen prioridad. Si la serie no se encuentra o la consulta está pendiente o falla, se utilizan los enlaces de
 streaming de AniList como alternativa, sin marcarlos como disponibilidad regional
 verificada. No se recurre a plataformas globales de AnimeSchedule.
 
 Las consultas se agrupan por serie y país, se reutilizan durante doce horas y se
 limitan a tres simultáneas y cuatro minutos por ejecución. Los pendientes continúan
-en los próximos cron. Las peticiones se espacian al menos 1,3 segundos y se
-prioriza completar España antes de otros países. Un límite 429 detiene nuevas
-consultas hasta otra ejecución. Si falta un alias (por ejemplo, «Ao no Exorcist»
+en los próximos cron. Las peticiones se espacian al menos 1,3 segundos. Un límite
+429 detiene nuevas consultas hasta otra ejecución. Si falta un alias (por ejemplo, «Ao no Exorcist»
 frente a «Blue Exorcist»), se consulta AniList por ID o nombre exacto y se
 reintenta JustWatch con los nombres de esa misma serie. Estos alias se guardan
 para futuras actualizaciones. Los enlaces de AniList se guardan también en la

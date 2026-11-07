@@ -373,7 +373,9 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
       assert.deepEqual(result.cancelled, [result.oldId, result.newId]);
       assert.equal(result.count, result.finalCount);
     });
-    await scenario("shared platforms work before AniList sync and changing country never queries JustWatch", async page => {
+    await scenario("shared platforms use Spain with a stored MX preference and no country selector", async page => {
+      const consoleErrors = [];
+      page.on("console", message => { if (message.type() === "error") consoleErrors.push(message.text()); });
       let requests = 0;
       page.on("request", request => { if (/justwatch/i.test(request.url())) requests++; });
       const regional = { ...baseRow, basePlatforms: { service: "Crunchyroll", serviceUrl: baseRow.serviceUrl, allServices: ["Crunchyroll"], hasAllowedPlatform: true }, platformsByCountry: {
@@ -381,20 +383,25 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
         MX: { status: "verified", checkedAt: now, offers: [{ service: "Prime Video", url: "https://www.primevideo.com/detail/shared", monetizationType: "FLATRATE" }] }
       } };
       await page.route("**/schedule.json", route => route.fulfill({ json: { ...payload, releases: [regional] } }));
+      await page.addInitScript(() => {
+        if (!localStorage.getItem("animeCountdownStorage")) localStorage.setItem("animeCountdownStorage", JSON.stringify({ jwCountry: "MX" }));
+      });
       await page.goto(base);
       await ready(page);
       await page.locator("#showAllBtn").click();
       assert.match(await page.locator("#animeList").innerText(), /Netflix/);
       assert.equal(await page.locator("#refreshDataBtn").count(), 0);
       await page.locator("#settingsBtn").click();
-      await page.locator("#countryInput").selectOption("MX");
-      await page.waitForFunction(() => state.releases[0].service === "Prime Video");
-      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://www.primevideo.com/detail/shared");
+      assert.equal(await page.locator("#countryInput").count(), 0);
+      assert.equal(await page.evaluate(() => state.jwCountry), "ES");
+      assert.equal(await page.evaluate(async () => (await browserApi.storage.local.get("jwCountry")).jwCountry), "ES");
+      assert.equal(await page.evaluate(() => getBestWatchUrl(state.releases[0])), "https://www.netflix.com/title/shared");
       await page.clock.fastForward(60000);
       assert.equal(requests, 0);
       await page.reload();
       await ready(page);
-      assert.equal(await page.evaluate(() => state.releases[0].service), "Prime Video");
+      assert.equal(await page.evaluate(() => state.releases[0].service), "Netflix");
+      assert.deepEqual(consoleErrors, []);
     });
     await scenario("AniList sync changes only the personal library and keeps shared platforms, including delayed favorites", async page => {
       let scheduleRequests = 0, justwatchRequests = 0, anilistRequests = 0;

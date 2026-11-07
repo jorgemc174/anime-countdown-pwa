@@ -241,7 +241,6 @@ const CONTENT_FILTERS = [
   { key: "music", label: "Music", defaultHidden: true }
 ];
 const DEFAULT_HIDDEN_CONTENT = CONTENT_FILTERS.filter((item) => item.defaultHidden).map((item) => item.key);
-const JUSTWATCH_COUNTRIES = platformPolicy.COUNTRIES;
 
 const $ = (id) => document.getElementById(id);
 const state = { releases: [], anilistLibrary: [], anilistMap: {}, customLinks: {}, customPlatforms: {}, userOverrides: {}, viewMode: "today", currentNext: null, timezone: "Europe/Madrid", jwCountry: "ES", hiddenPlatforms: [], hiddenContent: DEFAULT_HIDDEN_CONTENT.slice(), notificationEnabled: false, showAnilistScore: true, notifiedReleaseIds: {}, scheduleHealth: { loading: true }, lastSharedSync: "", lastAnilistSync: "", lastAnilistSyncUsername: "", lastPublicAnilistSync: "", lastPlatformSync: "", lastNativeNotificationSync: "", searchQuery: "", sortAsc: true };
@@ -346,7 +345,7 @@ function registerServiceWorker() {
 }
 
 function bindElements() {
-  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","countryInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
+  ["settingsBtn","closeSettingsBtn","settingsPanel","statusBox","nextRelease","animeList","showAllBtn","showTodayBtn","showFavsBtn","timezoneInput","notificationBtn","anilistInput","syncAnilistBtn","resetBtn","themeBtn","scoreBtn","contentFilterContainer"].forEach((id) => els[id] = $(id));
   const missing = ["settingsBtn","settingsPanel","nextRelease","animeList"].filter((id) => !els[id]);
   if (missing.length) throw new Error("Faltan elementos HTML: " + missing.join(", "));
 }
@@ -438,7 +437,8 @@ async function loadState() {
   state.viewMode = data.viewMode || "today";
   state.timezone = data.timezone || "Europe/Madrid";
   try { new Intl.DateTimeFormat("es", { timeZone: state.timezone }); } catch { state.timezone = "Europe/Madrid"; }
-  state.jwCountry = JUSTWATCH_COUNTRIES.some(country => country.code === data.jwCountry) ? data.jwCountry : "ES";
+  state.jwCountry = "ES";
+  if (data.jwCountry !== "ES") await browserApi.storage.local.set({ jwCountry: "ES" });
   state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
   state.hiddenPlatforms = Array.isArray(data.hiddenPlatforms) ? data.hiddenPlatforms : [];
   state.hiddenContent = Array.isArray(data.hiddenContent) ? data.hiddenContent : DEFAULT_HIDDEN_CONTENT.slice();
@@ -446,8 +446,6 @@ async function loadState() {
     state.hiddenContent = state.hiddenContent.filter(key => key !== "ona");
     await browserApi.storage.local.set({ hiddenContent: state.hiddenContent, contentFiltersVersion: 1 });
   }
-  populateCountryOptions();
-  if (els.countryInput) els.countryInput.value = state.jwCountry;
   state.notificationEnabled = Boolean(data.notificationEnabled);
   state.showAnilistScore = data.showAnilistScore !== false;
   state.notifiedReleaseIds = data.notifiedReleaseIds && typeof data.notifiedReleaseIds === "object" && !Array.isArray(data.notifiedReleaseIds) ? data.notifiedReleaseIds : {};
@@ -489,7 +487,6 @@ function bindEvents() {
   els.showFavsBtn.addEventListener("click", () => switchTab("favorites"));
   els.tokenInput?.addEventListener("input", () => debounceAutoSave("token", saveToken));
   els.timezoneInput.addEventListener("change", saveTimezone);
-  els.countryInput?.addEventListener("change", saveJwCountry);
   document.getElementById("platformFilterContainer")?.addEventListener("click", (e) => {
     e.stopPropagation();
     const chip = e.target.closest(".platform-chip");
@@ -724,25 +721,6 @@ function debounceAutoSave(key, fn, delay = 450) { clearTimeout(autoSaveTimers[ke
 async function saveToken() { await browserApi.storage.local.set({ animeScheduleToken: els.tokenInput.value.trim() }); }
 async function saveTimezone() { state.timezone = els.timezoneInput.value.trim() || "Europe/Madrid"; invalidateDataCaches(); await browserApi.storage.local.set({ timezone: state.timezone }); render(); scheduleMidnightRefresh(); }
 async function saveAnilistUsername() { await browserApi.storage.local.set({ anilistUsername: els.anilistInput.value.trim() }); }
-
-function populateCountryOptions() {
-  if (!els.countryInput) return;
-  els.countryInput.innerHTML = JUSTWATCH_COUNTRIES
-    .map((c) => `<option value="${escapeHtml(c.code)}">${escapeHtml(c.name)}</option>`)
-    .join("");
-}
-
-async function saveJwCountry() {
-  const code = els.countryInput?.value || "ES";
-  state.jwCountry = JUSTWATCH_COUNTRIES.some(country => country.code === code) ? code : "ES";
-  state.releases = state.releases.map(item => sanitizePlatformFields(platformPolicy.applyCountryPlatforms(item, state.jwCountry)));
-  await browserApi.storage.local.set({ jwCountry: state.jwCountry });
-  applyCustomToReleases();
-  await saveAllLists();
-  render();
-  const name = JUSTWATCH_COUNTRIES.find(country => country.code === state.jwCountry)?.name || state.jwCountry;
-  showStatus(`Mostrando plataformas de ${name}.`, "success");
-}
 
 function getDetectedPlatforms() {
   const platforms = new Set();

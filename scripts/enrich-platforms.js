@@ -167,7 +167,10 @@ async function enrichPlatforms(payload, cache = { version: 1, series: {} }, {
     return fetch(url, options);
   };
   const priorSeries = cache.series || {};
-  cache = { version: 1, series: { ...priorSeries }, cooldowns: { ...cache.cooldowns } };
+  const allowedCountries = new Set(countries.map(country => country.code));
+  cache = { version: 1, series: Object.fromEntries(Object.entries(priorSeries).map(([key, entry]) => [key, {
+    ...entry, countries: Object.fromEntries(Object.entries(entry.countries || {}).filter(([code]) => allowedCountries.has(code)))
+  }])), cooldowns: { ...cache.cooldowns } };
   const series = new Map();
   for (const row of rows) {
     if (row.scheduleStatus === "cancelled" || (!isPending(row) && Date.parse(row.releaseDate) < now - 7 * 86400000)) continue;

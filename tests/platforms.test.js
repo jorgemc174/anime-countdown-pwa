@@ -9,7 +9,7 @@ const row = { id: "a4", animeKey: "sample", title: "Sample", episodeNumber: 4,
 const payload = { source: "AnimeSchedule", updatedAt: "2026-10-30T10:00:00Z", releases: [row, { ...row, id: "a5", episodeNumber: 5, releaseDate: "2026-11-08T18:00:00Z" }] };
 const offers = [{ service: "Netflix", url: "https://www.netflix.com/title/a", monetizationType: "FLATRATE" }];
 const es = policy.COUNTRIES.find(country => country.code === "ES");
-const mx = policy.COUNTRIES.find(country => country.code === "MX");
+const mx = { code: "MX", name: "México", lang: "es" };
 const positive = { status: "verified", offers };
 
 test("backend checks each series once per country, including existing Crunchyroll series", async () => {
@@ -25,6 +25,30 @@ test("backend checks each series once per country, including existing Crunchyrol
   }
   assert.deepEqual(result.payload.releases.map(item => [item.id, item.episodeNumber, item.releaseDate]), payload.releases.map(item => [item.id, item.episodeNumber, item.releaseDate]));
   assert.equal(result.payload.updatedAt, payload.updatedAt);
+});
+test("default policy only queries Spain and prunes all cached and published countries", async () => {
+  assert.deepEqual(policy.COUNTRIES.map(country => country.code), ["ES"]);
+  const record = { ...positive, checkedAt: new Date(now).toISOString(), lookupVersion: LOOKUP_VERSION };
+  const cache = { version: 1, series: {
+    sample: { countries: { ES: record, MX: { ...record, justwatchId: "mexican" } } },
+    absent: { lastSeenAt: new Date(now).toISOString(), countries: { ES: record, MX: record } }
+  } };
+  const input = { ...payload, releases: [
+    ...payload.releases.map(item => ({ ...item, platformsByCountry: { ES: record, MX: record } })),
+    { ...row, id: "cancelled", animeKey: "absent", scheduleStatus: "cancelled", platformsByCountry: { MX: record } }
+  ] };
+  const result = await enrichPlatforms(input, cache, { now, lookup: async () => { throw Error("must not run"); } });
+  assert.equal(result.summary.checked, 0);
+  for (const entry of Object.values(result.cache.series)) {
+    assert.deepEqual(Object.keys(entry.countries), ["ES"]);
+    assert.deepEqual(entry.countries.ES, record);
+  }
+  for (const item of result.payload.releases) {
+    assert.deepEqual(Object.keys(item.platformsByCountry), ["ES"]);
+    assert.deepEqual(item.platformsByCountry.ES, record);
+  }
+  assert.deepEqual(cache.series.sample.countries.ES, record);
+  assert.ok(cache.series.sample.countries.MX);
 });
 test("fresh shared cache serves every device without another upstream check", async () => {
   const first = await enrichPlatforms(payload, undefined, { now, countries: [es], lookup: async () => positive });

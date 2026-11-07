@@ -4,14 +4,7 @@
   else root.PlatformPolicy = policy;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
-  const COUNTRIES = [
-    { code: "ES", name: "España", lang: "es" }, { code: "MX", name: "México", lang: "es" },
-    { code: "AR", name: "Argentina", lang: "es" }, { code: "CL", name: "Chile", lang: "es" },
-    { code: "CO", name: "Colombia", lang: "es" }, { code: "US", name: "EE. UU.", lang: "en" },
-    { code: "GB", name: "Reino Unido", lang: "en" }, { code: "DE", name: "Alemania", lang: "de" },
-    { code: "FR", name: "Francia", lang: "fr" }, { code: "IT", name: "Italia", lang: "it" },
-    { code: "BR", name: "Brasil", lang: "pt" }, { code: "PT", name: "Portugal", lang: "pt" }
-  ];
+  const COUNTRIES = [{ code: "ES", name: "España", lang: "es" }];
   const PRIORITY = { Crunchyroll: 1, HIDIVE: 2, "Prime Video": 3, Netflix: 4, "Disney+": 5, Hulu: 6, Max: 7, "Apple TV+": 8 };
   const normalize = value => String(value || "").normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
   const seriesKey = item => item.anilistId ? `anilist-${item.anilistId}` : normalize(item.animeKey || item.route || item.title);
