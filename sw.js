@@ -1,12 +1,12 @@
-const CACHE_NAME = "anime-countdown-pwa-v123";
+const CACHE_NAME = "anime-countdown-pwa-v124";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=123",
-  "./schedule-policy.js?v=123",
-  "./platform-policy.js?v=123",
-  "./config.js?v=123",
-  "./app.js?v=123",
+  "./styles.css?v=124",
+  "./schedule-policy.js?v=124",
+  "./platform-policy.js?v=124",
+  "./config.js?v=124",
+  "./app.js?v=124",
   "./manifest.json",
   "./icons/favicon.ico"
 ];

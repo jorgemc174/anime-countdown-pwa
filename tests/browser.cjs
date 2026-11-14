@@ -33,6 +33,26 @@ const payload = { source: "AnimeSchedule", updatedAt: now, checkedAt: now, relea
     finally { await context.close(); }
   }
   try {
+    await scenario("startup always opens Today", async page => {
+      for (const width of [390, 1440]) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(base); await ready(page);
+        assert.equal(await page.evaluate(() => state.viewMode), "today");
+        for (const [mode, button] of [["all", "#showAllBtn"], ["favorites", "#showFavsBtn"]]) {
+          await page.locator(button).click();
+          assert.equal(await page.evaluate(() => state.viewMode), mode);
+          // Simulate a tab preference saved by an older app version.
+          await page.evaluate(mode => browserApi.storage.local.set({ viewMode: mode }), mode);
+          await page.reload(); await ready(page);
+          assert.equal(await page.evaluate(() => state.viewMode), "today");
+          assert.ok(await page.locator("#showTodayBtn").evaluate(el => el.classList.contains("active")));
+          assert.equal(await page.locator(".tab.active").count(), 1);
+        }
+      }
+      await page.screenshot({ path: "/tmp/anicountdown-hoy-desktop.png" });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.screenshot({ path: "/tmp/anicountdown-hoy-mobile.png" });
+    });
     await require("./app-updates.browser.cjs")({ scenario, base, ready });
     await require("./active-links.browser.cjs")({ scenario, base, ready, nativeMock });
     await scenario("F8R1 manual subscription links follow chips without losing saved data", async page => {

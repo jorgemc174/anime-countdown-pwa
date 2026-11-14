@@ -446,7 +446,7 @@ function bindElements() {
 }
 
 async function loadState() {
-  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","viewMode","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","lastUpdateCheck","latestUpdateVersion","dismissedUpdateVersion","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
+  const data = await browserApi.storage.local.get(["releases","anilistLibrary","anilistMap","customLinks","customPlatforms","userOverrides","animeScheduleToken","jwCountry","hiddenPlatforms","personalSearchTemplate","personalLinkName","lastUpdateCheck","latestUpdateVersion","dismissedUpdateVersion","hiddenContent","contentFiltersVersion","anilistUsername","notificationEnabled","showAnilistScore","notifiedReleaseIds","lastSharedSync","lastAnilistSync","lastAnilistSyncUsername","lastPublicAnilistSync","lastPlatformSync","lastNativeNotificationSync","nativeNotificationVersion","nativeNotificationsUntil","theme","scheduleMetadata"]);
   const preferencesMigrated = platformPolicy.migrateLocalPreferences(data);
   if (preferencesMigrated) await browserApi.storage.local.set({ userOverrides: data.userOverrides });
   state.releases = (Array.isArray(data.releases) ? data.releases : [])
@@ -462,7 +462,7 @@ async function loadState() {
   migrateLegacyUserOverrides();
   applyCustomToReleases();
   applyUserOverridesToLists();
-  state.viewMode = data.viewMode || "today";
+  state.viewMode = "today";
   state.timezone = getDeviceTimezone();
   state.jwCountry = "ES";
   if (data.jwCountry !== "ES") await browserApi.storage.local.set({ jwCountry: "ES" });
@@ -615,7 +615,6 @@ function setSettingsOpen(open) {
 
 async function setMode(mode, direction) {
   state.viewMode = mode;
-  browserApi.storage.local.set({ viewMode: mode });
   render();
 }
 
