@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-20T11:51:48.226Z",
-  "checkedAt": "2026-11-20T11:51:48.226Z",
+  "updatedAt": "2026-11-20T20:29:44.908Z",
+  "checkedAt": "2026-11-20T20:29:44.908Z",
   "timezone": "Europe/Madrid",
   "source": "AnimeSchedule+AniList",
   "releases": [
@@ -238,8 +238,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
@@ -247,7 +247,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/@mahoiku2official",
         "OceanVeil": "https://oceanveil.net/anime_titles/544"
@@ -326,8 +326,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         }
       },
@@ -335,7 +335,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39540",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433665",
@@ -666,8 +666,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"La frontera azul\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         }
       },
@@ -675,7 +675,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00393473/suikoden",
         "YouTube": "https://www.youtube.com/playlist?list=PLVEC_1AvVqqE"
@@ -1462,12 +1462,12 @@
           ],
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 36,
-          "nextRetryAt": "2026-11-20T17:51:48.360Z"
+          "consecutiveErrors": 37,
+          "nextRetryAt": "2026-11-21T02:29:45.130Z"
         }
       },
       "platformSource": "anilist",
@@ -1567,8 +1567,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
@@ -1576,7 +1576,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39506",
         "Prime Video": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T",
@@ -1829,8 +1829,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
@@ -1838,7 +1838,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2432495"
@@ -2076,8 +2076,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         }
       },
@@ -2085,7 +2085,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39542",
         "YouTube": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
@@ -2249,8 +2249,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         }
       },
@@ -2258,7 +2258,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
       },
@@ -2416,24 +2416,77 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T02:24:03.500Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
-          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-20T12:06:48.360Z"
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
+          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]"
         }
       },
       "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T02:24:03.500Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/channel/UC9_koculzguUeaTpeYJ3aSA"
       },
       "platformStatus": "not-found",
+      "platformStale": false
+    },
+    {
+      "id": "schedule-yu-gi-oh-card-game-the-chronicles-2025-20-2026-11-20t01-01-00-01-00",
+      "animeKey": "yu-gi-oh-card-game-the-chronicles-2025",
+      "titles": [
+        "Yu-Gi-Oh! CARD GAME: THE CHRONICLES (2025)",
+        "Yu-Gi-Oh! CARD GAME THE CHRONICLES"
+      ],
+      "title": "Yu-Gi-Oh! CARD GAME: THE CHRONICLES (2025)",
+      "route": "yu-gi-oh-card-game-the-chronicles-2025",
+      "episode": "Ep 20",
+      "episodeNumber": "20",
+      "airType": "SUB",
+      "delayed": false,
+      "scheduleStatus": "scheduled",
+      "releaseDate": "2026-11-20T00:01:00.000Z",
+      "originalReleaseDate": "",
+      "service": "YouTube",
+      "serviceUrl": "https://www.youtube.com/playlist?list=PL6roPjQtdsM7n71HGmWNiKTE0UcOa9DxV",
+      "allServices": [
+        "YouTube"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://img.animeschedule.net/production/assets/public/img/anime/jpg/default/yu-gi-oh-card-game-the-chronicles-2025-4bb5dbb4b3.jpg",
+      "anilistOffers": [
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PL6roPjQtdsM7n71HGmWNiKTE0UcOa9DxV"
+        }
+      ],
+      "basePlatforms": {
+        "service": "No legal platform",
+        "serviceUrl": "",
+        "allServices": [],
+        "hasAllowedPlatform": false
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "error",
+          "offers": [],
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
+          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
+          "errorProvider": "JustWatch",
+          "consecutiveErrors": 1,
+          "nextRetryAt": "2026-11-20T20:44:45.130Z"
+        }
+      },
+      "platformSource": "anilist",
+      "jwVerified": false,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "",
+      "serviceUrls": {
+        "YouTube": "https://www.youtube.com/playlist?list=PL6roPjQtdsM7n71HGmWNiKTE0UcOa9DxV"
+      },
+      "platformStatus": "error",
       "platformStale": true
     },
     {
@@ -3198,11 +3251,11 @@
         "ES": {
           "status": "error",
           "offers": [],
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 32,
-          "nextRetryAt": "2026-11-20T17:51:48.360Z"
+          "consecutiveErrors": 33,
+          "nextRetryAt": "2026-11-21T02:29:45.130Z"
         }
       },
       "platformSource": "",
@@ -3850,8 +3903,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
@@ -3859,7 +3912,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00371633",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2431959",
@@ -4716,8 +4769,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         }
       },
@@ -4725,7 +4778,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
@@ -5223,8 +5276,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         }
       },
@@ -5232,7 +5285,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
@@ -6203,8 +6256,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
@@ -6212,7 +6265,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/"
       },
@@ -6281,8 +6334,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         }
       },
@@ -6290,7 +6343,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/523"
       },
@@ -6356,8 +6409,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -6365,7 +6418,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
@@ -6435,8 +6488,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -6444,7 +6497,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39541"
       },
@@ -6700,8 +6753,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
@@ -6709,7 +6762,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/@mahoiku2official",
         "OceanVeil": "https://oceanveil.net/anime_titles/544"
@@ -6788,8 +6841,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         }
       },
@@ -6797,7 +6850,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39540",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433665",
@@ -7128,8 +7181,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"La frontera azul\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         }
       },
@@ -7137,7 +7190,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00393473/suikoden",
         "YouTube": "https://www.youtube.com/playlist?list=PLVEC_1AvVqqE"
@@ -7924,12 +7977,12 @@
           ],
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 36,
-          "nextRetryAt": "2026-11-20T17:51:48.360Z"
+          "consecutiveErrors": 37,
+          "nextRetryAt": "2026-11-21T02:29:45.130Z"
         }
       },
       "platformSource": "anilist",
@@ -8029,8 +8082,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
@@ -8038,7 +8091,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39506",
         "Prime Video": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T",
@@ -8291,8 +8344,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
@@ -8300,7 +8353,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2432495"
@@ -8359,8 +8412,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Fool Night\",\"Fool night\",\"フールナイト\"]]"
         }
       },
@@ -8368,7 +8421,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Netflix": "https://www.netflix.com/title/81991076"
       },
@@ -8605,8 +8658,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         }
       },
@@ -8614,7 +8667,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39542",
         "YouTube": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
@@ -8778,8 +8831,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         }
       },
@@ -8787,7 +8840,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
       },
@@ -8945,25 +8998,21 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T02:24:03.500Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
-          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-20T12:06:48.360Z"
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
+          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]"
         }
       },
       "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T02:24:03.500Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/channel/UC9_koculzguUeaTpeYJ3aSA"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-10-2026-11-27t09-01-00-01-00",
@@ -9743,8 +9792,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
         }
       },
@@ -9752,7 +9801,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
@@ -10395,8 +10444,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
@@ -10404,7 +10453,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00371633",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2431959",
@@ -11261,8 +11310,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         }
       },
@@ -11270,7 +11319,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
@@ -11768,8 +11817,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         }
       },
@@ -11777,7 +11826,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
@@ -12748,8 +12797,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
         }
       },
@@ -12757,7 +12806,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/"
       },
@@ -12826,8 +12875,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Hitozukiai ga Nigate na Miboujin no Yukionna-san to Noroi no Yubiwa\",\"The Lonely Snow Widow and the Cursed Ring\",\"The Shy Snow Woman and the Cursed Ring\",\"人付き合いが苦手な未亡人の雪女さんと呪いの指輪\"]]"
         }
       },
@@ -12835,7 +12884,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/523"
       },
@@ -12901,8 +12950,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -12910,7 +12959,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
@@ -12980,8 +13029,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -12989,7 +13038,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39541"
       },
@@ -13245,8 +13294,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
@@ -13254,7 +13303,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/@mahoiku2official",
         "OceanVeil": "https://oceanveil.net/anime_titles/544"
@@ -13333,8 +13382,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         }
       },
@@ -13342,7 +13391,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39540",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433665",
@@ -13673,8 +13722,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"La frontera azul\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         }
       },
@@ -13682,7 +13731,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00393473/suikoden",
         "YouTube": "https://www.youtube.com/playlist?list=PLVEC_1AvVqqE"
@@ -14469,12 +14518,12 @@
           ],
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 36,
-          "nextRetryAt": "2026-11-20T17:51:48.360Z"
+          "consecutiveErrors": 37,
+          "nextRetryAt": "2026-11-21T02:29:45.130Z"
         }
       },
       "platformSource": "anilist",
@@ -14574,8 +14623,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
@@ -14583,7 +14632,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39506",
         "Prime Video": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T",
@@ -14836,8 +14885,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
@@ -14845,7 +14894,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2432495"
@@ -14904,8 +14953,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Fool Night\",\"Fool night\",\"フールナイト\"]]"
         }
       },
@@ -14913,7 +14962,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Netflix": "https://www.netflix.com/title/81991076"
       },
@@ -15150,8 +15199,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         }
       },
@@ -15159,7 +15208,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39542",
         "YouTube": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
@@ -15323,8 +15372,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         }
       },
@@ -15332,7 +15381,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
       },
@@ -15490,25 +15539,21 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T02:24:03.500Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
-          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-20T12:06:48.360Z"
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
+          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]"
         }
       },
       "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T02:24:03.500Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/channel/UC9_koculzguUeaTpeYJ3aSA"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-jojo-no-kimyou-na-bouken-part-7-steel-ball-run-2nd-3rd-stage-11-2026-12-04t09-01-00-01-00",
@@ -16288,8 +16333,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
         }
       },
@@ -16297,7 +16342,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
@@ -16940,8 +16985,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
@@ -16949,7 +16994,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00371633",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2431959",
@@ -17517,8 +17562,8 @@
           ],
           "anilistOffers": [],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"SHOW\",null,[\"Made In Abyss 3\",\"Made in Abyss: Awakening Mystery\",\"Made in Abyss: Mezameru Shinpi\",\"メイドインアビス 目覚める神秘\"]]"
         }
       },
@@ -17526,7 +17571,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {},
       "platformStatus": "not-found",
       "platformStale": false
@@ -17862,8 +17907,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         }
       },
@@ -17871,7 +17916,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
@@ -18369,8 +18414,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         }
       },
@@ -18378,7 +18423,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
@@ -19343,8 +19388,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -19352,7 +19397,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
@@ -19422,8 +19467,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -19431,7 +19476,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39541"
       },
@@ -19772,8 +19817,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"MAGICAL GIRL RAISING PROJECT restart\",\"Magical Girl Raising Project Restart\",\"Magical Girl Raising Project: Restart\",\"MahoIku\",\"Mahou Shoujo Ikusei Keikaku: Restart\",\"Mahou Shoujo Ikusei Keikaku: restart\",\"まほいく\",\"魔法少女育成計画 restart\"]]"
         }
       },
@@ -19781,7 +19826,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/@mahoiku2official",
         "OceanVeil": "https://oceanveil.net/anime_titles/544"
@@ -19860,8 +19905,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Kyouran Reijou Nia Liston\",\"Kyouran Reijou Nia Liston: Byoujaku Reijou ni Tensei shita Kamigoroshi no Bujin no Karei Naru Musouroku\",\"Nia Liston, la spietata nobildonna - Cronache delle grandiose gesta dell'impareggiabile guerriera ammazzadèi reincarnatasi in una giovane nobildonna cagionevole di salute\",\"Nia Liston: The Merciless Maiden\",\"凶乱令嬢ニア・リストン\",\"凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録\"]]"
         }
       },
@@ -19869,7 +19914,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39540",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433665",
@@ -20200,8 +20245,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Gensou Suikoden\",\"La frontera azul\",\"Suikoden\",\"Suikoden: The Anime\",\"幻想水滸伝\"]]"
         }
       },
@@ -20209,7 +20254,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00393473/suikoden",
         "YouTube": "https://www.youtube.com/playlist?list=PLVEC_1AvVqqE"
@@ -20996,12 +21041,12 @@
           ],
           "lookupVersion": 7,
           "checkedAt": "2026-11-06T21:44:21.721Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Magic Knight Rayearth (2026)\",\"Magical Knight Rayearth New Project\",\"魔法騎士レイアース (2026)\"]]",
           "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
           "errorProvider": "JustWatch",
-          "consecutiveErrors": 36,
-          "nextRetryAt": "2026-11-20T17:51:48.360Z"
+          "consecutiveErrors": 37,
+          "nextRetryAt": "2026-11-21T02:29:45.130Z"
         }
       },
       "platformSource": "anilist",
@@ -21101,8 +21146,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"I Became the Sword by Transmigrating 2\",\"Moi quand je me réincarne en épée\",\"Reincarnated as a Sword\",\"Reincarnated as a Sword 2\",\"Reincarnated as a Sword II\",\"Reincarnated as a Sword Season 2\",\"TENKEN - Reincarnato in una spada\",\"TenKen 2\",\"Tenken - Reincarnato in una spada\",\"Tensei Shitara Ken Deshita\",\"Tensei Shitara Ken Deshita 2\",\"Tensei Shitara Ken Deshita 2nd Season\",\"Tensei shitara Ken deshita 2\",\"ซวยเหลือหลาย เกิดใหม่กลายเป็นดาบ ภาค 2\",\"転生したら剣でした 第2期\",\"転生したら剣でした2\"]]"
         }
       },
@@ -21110,7 +21155,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39506",
         "Prime Video": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T",
@@ -21363,8 +21408,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"A Returner's Magic Should Be Special\",\"A Returner's Magic Should Be Special 2nd Season\",\"A Returner's Magic Should be Special Season 2\",\"Gwihwanjaui Mabeobeun\",\"Kikansha no Mahou wa Tokubetsu desu 2nd Season\",\"La magia de un retornado debe ser especial\",\"Teukbyeolhaeya Hamnida\",\"帰還者の魔法は特別です 第2期\",\"帰還者の魔法は特別です2期\",\"귀환자의 마법은 특별해야 합니다\"]]"
         }
       },
@@ -21372,7 +21417,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2432495"
@@ -21431,8 +21476,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Fool Night\",\"Fool night\",\"フールナイト\"]]"
         }
       },
@@ -21440,7 +21485,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Netflix": "https://www.netflix.com/title/81991076"
       },
@@ -21677,8 +21722,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"TETSURYO! Meet With Tetsudou Musume\",\"TETSURYO! Meet with Tetsudou Musume\",\"TETSURYO! meet with Tetsudou Musume\",\"Tetsuryou! Meet with Tetsudou Musume\",\"Tetsuryou! meet with Tetsudou Musume\",\"てつりょー！meet with 鉄道むすめ\"]]"
         }
       },
@@ -21686,7 +21731,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39542",
         "YouTube": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
@@ -21850,8 +21895,8 @@
           "aliases": [],
           "season": 2,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kizu darake Seijo yori Houfuku wo Komete 2nd Season\",\"Kizu darake Seijo yori Houfuku wo Komete Season2\",\"With Vengeance, Sincerely, Your Broken Saintess\",\"With Vengeance, Sincerely, Your Broken Saintess 2nd Season\",\"With Vengeance, Sincerely, Your Broken Saintess Season 2\",\"傷だらけ聖女より報復をこめて 2\",\"傷だらけ聖女より報復をこめて Season2\"]]"
         }
       },
@@ -21859,7 +21904,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLcnM8O8NMtiU"
       },
@@ -22017,25 +22062,21 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T02:24:03.500Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
-          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]",
-          "lastError": "No se pudo consultar JustWatch; se reintentará automáticamente.",
-          "errorProvider": "JustWatch",
-          "consecutiveErrors": 1,
-          "nextRetryAt": "2026-11-20T12:06:48.360Z"
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
+          "inputSignature": "[\"TV\",null,[\"Aoki Denshou Welsh & Shedar\",\"Aoki Denshou: Welsh & Shedar\",\"Welsh & Shedar\",\"蒼き伝承 ウェルシュ&シェーダー\",\"蒼き伝承 ウェルシュ＆シェダー\"]]"
         }
       },
       "platformSource": "anilist",
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T02:24:03.500Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/channel/UC9_koculzguUeaTpeYJ3aSA"
       },
       "platformStatus": "not-found",
-      "platformStale": true
+      "platformStale": false
     },
     {
       "id": "schedule-demons-crest-7-2026-12-11t13-01-00-01-00",
@@ -22735,8 +22776,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Ghost Meets Gal!\",\"ごーすと・みーつ・ぎゃる！\"]]"
         }
       },
@@ -22744,7 +22785,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PLMeyOW8qY3fA"
       },
@@ -23387,8 +23428,8 @@
           "aliases": [],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"A Tale of the Secret Saint\",\"Daiseijo\",\"Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"Tensei shita Dai Seijo wa, Seijo de Aru Koto wo Hita Kakusu\",\"Tensei shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu\",\"大聖女\",\"転生した大聖女は、聖女であることをひた隠す\"]]"
         }
       },
@@ -23396,7 +23437,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/series/GT00371633",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2431959",
@@ -24253,8 +24294,8 @@
           ],
           "season": null,
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV\",null,[\"Anche il consiglio studentesco cade in fallo!\",\"Even the Student Council Has Its Holes !\",\"Even the Student Council Has Its Holes!\",\"NamaAnaru\",\"Seitokai ni mo Ana wa Aru!\",\"สภานักเรียนฉบับรั่ว!\",\"生徒会にも穴はある！\",\"生穴る\"]]"
         }
       },
@@ -24262,7 +24303,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/542",
         "Bilibili TV": "https://www.bilibili.tv/en/media/2433041",
@@ -24760,8 +24801,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"ONA\",null,[\"Holo Graffiti\",\"Holo no Graffiti\",\"Hologra\",\"Hologra 3D Short Animation\",\"Hololive\",\"הולולייב\",\"ホロぐら\",\"ホロのぐらふぃてぃ\"]]"
         }
       },
@@ -24769,7 +24810,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "YouTube": "https://www.youtube.com/playlist?list=PL1NeGg1woXqngQytLzL8lJJLYwmzk1Wuq"
       },
@@ -25734,8 +25775,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Kanojo no Tomodachi\",\"My Girlfriend's Friend\",\"彼女の友達\"]]"
         }
       },
@@ -25743,7 +25784,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "OceanVeil": "https://oceanveil.net/anime_titles/537"
       },
@@ -25813,8 +25854,8 @@
             }
           ],
           "lookupVersion": 9,
-          "checkedAt": "2026-11-20T11:51:48.360Z",
-          "lastAttemptAt": "2026-11-20T11:51:48.360Z",
+          "checkedAt": "2026-11-20T20:29:45.130Z",
+          "lastAttemptAt": "2026-11-20T20:29:45.130Z",
           "inputSignature": "[\"TV_SHORT\",null,[\"Dark Summoner to Dekiteiru\",\"I'm Dating a Dark Summoner\",\"I'm Dating a Dark Summoner!\",\"ダークサモナーとデキている\"]]"
         }
       },
@@ -25822,7 +25863,7 @@
       "jwVerified": false,
       "jwSource": "shared",
       "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-20T11:51:48.360Z",
+      "jwVerifiedAt": "2026-11-20T20:29:45.130Z",
       "serviceUrls": {
         "HIDIVE": "https://www.hidive.com/season/39541"
       },
@@ -26033,7 +26074,7 @@
     }
   ],
   "platforms": {
-    "checked": 78,
+    "checked": 21,
     "errors": 3,
     "issues": [
       {
@@ -26043,16 +26084,16 @@
         "reason": "lookup-error",
         "status": "not-found",
         "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-20T11:51:48.360Z"
+        "lastAttemptAt": "2026-11-20T20:29:45.130Z"
       },
       {
-        "key": "anilist-216895",
-        "title": "Aoki Denshou Welsh & Shedar",
+        "key": "yugiohcardgamethechronicles2025",
+        "title": "Yu-Gi-Oh! CARD GAME: THE CHRONICLES (2025)",
         "country": "ES",
         "reason": "lookup-error",
-        "status": "not-found",
+        "status": "error",
         "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-20T11:51:48.360Z"
+        "lastAttemptAt": "2026-11-20T20:29:45.130Z"
       },
       {
         "key": "anilist-214536",
@@ -26061,7 +26102,7 @@
         "reason": "lookup-error",
         "status": "error",
         "errorProvider": "JustWatch",
-        "lastAttemptAt": "2026-11-20T11:51:48.360Z"
+        "lastAttemptAt": "2026-11-20T20:29:45.130Z"
       },
       {
         "key": "anilist-208025",
@@ -26070,7 +26111,7 @@
         "reason": "unresolved-title-with-source-platform",
         "status": "not-found",
         "errorProvider": null,
-        "lastAttemptAt": "2026-11-20T11:51:48.360Z"
+        "lastAttemptAt": "2026-11-20T20:29:45.130Z"
       }
     ],
     "degraded": false,
@@ -26079,9 +26120,9 @@
     "rateLimited": false,
     "coverage": {
       "ES": {
-        "total": 78,
+        "total": 79,
         "verified": 58,
-        "pending": 1,
+        "pending": 2,
         "stale": 3
       }
     },
@@ -26089,7 +26130,7 @@
       "ES"
     ],
     "source": "JustWatch",
-    "checkedAt": "2026-11-20T11:51:48.360Z",
-    "series": 78
+    "checkedAt": "2026-11-20T20:29:45.130Z",
+    "series": 79
   }
 }
