@@ -1,51 +1,6 @@
 {
   "releases": [
     {
-      "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
-      "animeKey": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
-      "titles": [
-        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-        "Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!",
-        "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
-        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
-        "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
-        "Click Me All Over",
-        "Mouse Cursor, I'm Gonna Click Away On The Girls!"
-      ],
-      "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
-      "route": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
-      "episode": "Ep 7",
-      "episodeNumber": "7",
-      "airType": "SUB",
-      "delayed": true,
-      "scheduleStatus": "rescheduled",
-      "releaseDate": "2026-11-29T16:01:00.000Z",
-      "originalReleaseDate": "2026-11-29T16:01:00.000Z",
-      "service": "No legal platform",
-      "serviceUrl": "",
-      "allServices": [],
-      "hasAllowedPlatform": false,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206774-gXVdrySlLY6y.jpg",
-      "anilistId": 206774,
-      "anilistOffers": [
-        {
-          "service": "OceanVeil",
-          "url": "https://oceanveil.net/"
-        }
-      ],
-      "anilistTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
-      "anilistUrl": "https://anilist.co/anime/206774",
-      "anilistFormat": "TV_SHORT",
-      "anilistYear": null,
-      "anilistScore": 52,
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-23T01:49:21.977Z",
-      "officialSources": [],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
-    },
-    {
       "id": "schedule-psyяen-7-2026-11-30t15-30-00-01-00",
       "animeKey": "psyяen",
       "titles": [
@@ -137,6 +92,91 @@
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
       },
       "platformStatus": "verified",
+      "platformStale": false
+    },
+    {
+      "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
+      "animeKey": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
+      "titles": [
+        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
+        "Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!",
+        "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+        "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+        "Click Me All Over",
+        "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+      ],
+      "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
+      "route": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
+      "episode": "Ep 7",
+      "episodeNumber": "7",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-11-29T16:01:00.000Z",
+      "originalReleaseDate": "2026-11-29T16:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206774-gXVdrySlLY6y.jpg",
+      "anilistId": 206774,
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/"
+        }
+      ],
+      "anilistTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+      "anilistUrl": "https://anilist.co/anime/206774",
+      "anilistFormat": "TV_SHORT",
+      "anilistYear": null,
+      "anilistScore": 52,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-23T01:49:21.977Z",
+      "officialSources": [],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "No legal platform",
+        "serviceUrl": "",
+        "allServices": [],
+        "hasAllowedPlatform": false
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "not-found",
+          "offers": [],
+          "season": null,
+          "aliases": [
+            "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+            "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+            "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+            "Click Me All Over",
+            "Mouse Cursor, I'm Gonna Click Away On The Girls!"
+          ],
+          "anilistOffers": [
+            {
+              "service": "OceanVeil",
+              "url": "https://oceanveil.net/"
+            }
+          ],
+          "lookupVersion": 9,
+          "checkedAt": "2026-11-23T01:49:22.317Z",
+          "lastAttemptAt": "2026-11-23T01:49:22.317Z",
+          "inputSignature": "[\"TV_SHORT\",null,[\"Click Me All Over\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu\",\"Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu\",\"Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!\",\"Now That I Can Control Reality With A Mouse Cursor, I’m Gonna Click Away On The Girls!\",\"Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!\",\"マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす\"]]"
+        }
+      },
+      "platformSource": "anilist",
+      "jwVerified": false,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-23T01:49:22.317Z",
+      "serviceUrls": {
+        "OceanVeil": "https://oceanveil.net/"
+      },
+      "platformStatus": "not-found",
       "platformStale": false
     }
   ]
