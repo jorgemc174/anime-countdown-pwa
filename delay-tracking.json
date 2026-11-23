@@ -1,113 +1,49 @@
 {
   "releases": [
     {
-      "id": "schedule-tensei-goblin-dakedo-shitsumon-aru-7-2026-11-16t14-01-00-01-00",
-      "animeKey": "tensei-goblin-dakedo-shitsumon-aru",
+      "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
+      "animeKey": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
       "titles": [
-        "Tensei Goblin dakedo Shitsumon Aru?",
-        "So What's Wrong with Getting Reborn as a Goblin?",
-        "転生ゴブリンだけど質問ある？",
-        "Tensei Goblin Dakedo Shitsumon Aru?",
-        "転ゴブ",
-        "เกิดใหม่เป็นก็อบลินแล้วไง มีคำถามอะไรไหม?",
-        "Tengobu"
+        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
+        "Now That I Can Control Reality with a Mouse Cursor, I'm Gonna Click Away on the Girls!",
+        "マウスカーソルで現実を操作できるようになったので、女の子をいっぱいクリックしまーす",
+        "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onnanoko wo Ippai Click Shimasu",
+        "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+        "Click Me All Over",
+        "Mouse Cursor, I'm Gonna Click Away On The Girls!"
       ],
-      "title": "Tensei Goblin dakedo Shitsumon Aru?",
-      "route": "tensei-goblin-dakedo-shitsumon-aru",
+      "title": "Mouse Cursor de Genjitsu wo Sousa Dekiru You ni Natta node, Onna no Ko wo Ippai Click Shimaasu",
+      "route": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
       "episode": "Ep 7",
       "episodeNumber": "7",
       "airType": "SUB",
       "delayed": true,
       "scheduleStatus": "rescheduled",
-      "releaseDate": "2026-11-16T13:01:00.000Z",
-      "originalReleaseDate": "2026-11-16T13:01:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00384010",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Bilibili"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209219-3yhKlRx0LX3p.jpg",
-      "anilistId": 209219,
+      "releaseDate": "2026-11-29T16:01:00.000Z",
+      "originalReleaseDate": "2026-11-29T16:01:00.000Z",
+      "service": "No legal platform",
+      "serviceUrl": "",
+      "allServices": [],
+      "hasAllowedPlatform": false,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx206774-gXVdrySlLY6y.jpg",
+      "anilistId": 206774,
       "anilistOffers": [
         {
-          "service": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
-        },
-        {
-          "service": "YouTube",
-          "url": "https://www.youtube.com/playlist?list=PLYld27spJ0aA"
-        },
-        {
-          "service": "Bilibili TV",
-          "url": "https://www.bilibili.tv/en/media/2433441"
-        },
-        {
-          "service": "iQ",
-          "url": "https://www.iq.com/album/ffeb3x9fd5"
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/"
         }
       ],
-      "anilistTitle": "So What's Wrong with Getting Reborn as a Goblin?",
-      "anilistUrl": "https://anilist.co/anime/209219",
-      "anilistFormat": "ONA",
+      "anilistTitle": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+      "anilistUrl": "https://anilist.co/anime/206774",
+      "anilistFormat": "TV_SHORT",
       "anilistYear": null,
-      "anilistScore": 64,
+      "anilistScore": 52,
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-09T22:29:13.714Z",
-      "officialSources": [
-        "https://tengobu-anime.com/"
-      ],
+      "lastDelayCheck": "2026-11-23T01:49:21.977Z",
+      "officialSources": [],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://www.crunchyroll.com/series/GT00384010",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll",
-          "Bilibili"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384315JAJP",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.54582d74-ea67-4d28-b986-9eff6b42c5b9",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts524845",
-          "matchedTitle": "Tensei Goblin dakedo Shitsumon Aru?",
-          "aliases": [],
-          "season": 1,
-          "lookupVersion": 9,
-          "checkedAt": "2026-11-09T11:45:46.796Z",
-          "lastAttemptAt": "2026-11-09T11:45:46.796Z",
-          "inputSignature": "[\"ONA\",null,[\"Reborn Goblin\",\"So What's Wrong with Getting Reborn as a Goblin?\",\"Tengobu\",\"Tensei Goblin Dakedo Shitsumon Aru?\",\"Tensei Goblin dakedo Shitsumon Aru?\",\"เกิดใหม่เป็นก็อบลินแล้วไง มีคำถามอะไรไหม?\",\"転ゴブ\",\"転生ゴブリンだけど質問ある？\"]]"
-        }
-      },
-      "platformSource": "justwatch",
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-09T11:45:46.796Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384315JAJP",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.54582d74-ea67-4d28-b986-9eff6b42c5b9"
-      },
-      "platformStatus": "verified",
-      "platformStale": false
+      "delayResearchStatus": "unconfirmed"
     },
     {
       "id": "schedule-psyяen-7-2026-11-30t15-30-00-01-00",
