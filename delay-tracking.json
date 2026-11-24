@@ -1,79 +1,6 @@
 {
   "releases": [
     {
-      "id": "schedule-detective-conan-1222-2026-12-05t13-30-00-01-00",
-      "animeKey": "detective-conan",
-      "titles": [
-        "Detective Conan",
-        "Meitantei Conan",
-        "名探偵コナン",
-        "Case Closed",
-        "Detectiu Conan",
-        "הבלש קונאן",
-        "Detektyw Conan",
-        "المحقق كونان",
-        "名侦探柯南",
-        "Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story",
-        "名探偵コナン 警察学校編 Wild Police Story",
-        "Détective Conan",
-        "ยอดนักสืบจิ๋วโคนัน",
-        "Thám Tử Lừng Danh Conan",
-        "Detektiv Conan",
-        "Detetive Conan"
-      ],
-      "title": "Detective Conan",
-      "route": "detective-conan",
-      "episode": "Ep 1222",
-      "episodeNumber": "1222",
-      "airType": "SUB",
-      "delayed": true,
-      "scheduleStatus": "rescheduled",
-      "releaseDate": "2026-12-05T12:30:00.000Z",
-      "originalReleaseDate": "2026-12-05T12:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/case-closed",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll",
-        "Netflix"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
-      "anilistId": 235,
-      "anilistOffers": [
-        {
-          "service": "Prime Video",
-          "url": "https://www.amazon.com/The-Bizarre-Manhunt-Murder/dp/B09Q2CH8RS/ref=sr_1_1?crid=3667GOL0MHJ0P"
-        },
-        {
-          "service": "Crackle",
-          "url": "https://www.crackle.com/details/00bf3d7c-564a-49a7-9661-b57c8743882c/case-closed"
-        },
-        {
-          "service": "Tubi TV",
-          "url": "https://tubitv.com/series/300010357/case-closed-subbed?start=true"
-        },
-        {
-          "service": "YouTube",
-          "url": "https://www.youtube.com/@conan_anime"
-        }
-      ],
-      "anilistTitle": "Detective Conan",
-      "anilistUrl": "https://anilist.co/anime/235",
-      "anilistFormat": "TV",
-      "anilistYear": null,
-      "anilistScore": 82,
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-24T02:17:36.025Z",
-      "officialSources": [
-        "https://www.ytv.co.jp/conan/",
-        "https://www.ytv.co.jp/conan/police/"
-      ],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
-    },
-    {
       "id": "schedule-psyяen-7-2026-11-30t15-30-00-01-00",
       "animeKey": "psyяen",
       "titles": [
@@ -250,6 +177,149 @@
         "OceanVeil": "https://oceanveil.net/"
       },
       "platformStatus": "not-found",
+      "platformStale": false
+    },
+    {
+      "id": "schedule-detective-conan-1222-2026-12-05t13-30-00-01-00",
+      "animeKey": "detective-conan",
+      "titles": [
+        "Detective Conan",
+        "Meitantei Conan",
+        "名探偵コナン",
+        "Case Closed",
+        "Detectiu Conan",
+        "הבלש קונאן",
+        "Detektyw Conan",
+        "المحقق كونان",
+        "名侦探柯南",
+        "Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story",
+        "名探偵コナン 警察学校編 Wild Police Story",
+        "Détective Conan",
+        "ยอดนักสืบจิ๋วโคนัน",
+        "Thám Tử Lừng Danh Conan",
+        "Detektiv Conan",
+        "Detetive Conan"
+      ],
+      "title": "Detective Conan",
+      "route": "detective-conan",
+      "episode": "Ep 1222",
+      "episodeNumber": "1222",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-12-05T12:30:00.000Z",
+      "originalReleaseDate": "2026-12-05T12:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/case-closed",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll",
+        "Netflix"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "anilistId": 235,
+      "anilistOffers": [
+        {
+          "service": "Prime Video",
+          "url": "https://www.amazon.com/The-Bizarre-Manhunt-Murder/dp/B09Q2CH8RS/ref=sr_1_1?crid=3667GOL0MHJ0P"
+        },
+        {
+          "service": "Crackle",
+          "url": "https://www.crackle.com/details/00bf3d7c-564a-49a7-9661-b57c8743882c/case-closed"
+        },
+        {
+          "service": "Tubi TV",
+          "url": "https://tubitv.com/series/300010357/case-closed-subbed?start=true"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/@conan_anime"
+        }
+      ],
+      "anilistTitle": "Detective Conan",
+      "anilistUrl": "https://anilist.co/anime/235",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 82,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-24T02:17:36.025Z",
+      "officialSources": [
+        "https://www.ytv.co.jp/conan/",
+        "https://www.ytv.co.jp/conan/police/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://www.crunchyroll.com/case-closed",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll",
+          "Netflix"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/G8WUN280N",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Prime Video",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Amazon Prime Video with Ads",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "CanalSurMas",
+              "url": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
+              "monetizationType": "ADS"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb9e6f4c-156e-4505-a492-a4185715ad5b",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Rakuten TV",
+              "url": "https://www.rakuten.tv/es/tv_shows/detective-conan",
+              "monetizationType": "ADS"
+            }
+          ],
+          "justwatchId": "ts10145",
+          "matchedTitle": "O Detective Conan",
+          "aliases": [],
+          "season": 1,
+          "lookupVersion": 9,
+          "checkedAt": "2026-11-24T02:17:37.543Z",
+          "lastAttemptAt": "2026-11-24T02:17:37.543Z",
+          "inputSignature": "[\"TV\",null,[\"Case Closed\",\"Detectiu Conan\",\"Detective Conan\",\"Detektiv Conan\",\"Detektyw Conan\",\"Detetive Conan\",\"Détective Conan\",\"Meitantei Conan\",\"Meitantei Conan: Keisaku Gakkou Hen - Wild Police Story\",\"O Detective Conan\",\"Thám Tử Lừng Danh Conan\",\"הבלש קונאן\",\"المحقق كونان\",\"ยอดนักสืบจิ๋วโคนัน\",\"名侦探柯南\",\"名探偵コナン\",\"名探偵コナン 警察学校編 Wild Police Story\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-24T02:17:37.543Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/G8WUN280N",
+        "Prime Video": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+        "Amazon Prime Video with Ads": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.28bc4759-75bf-845c-8267-87b5b6e52fcc",
+        "CanalSurMas": "https://www.canalsurmas.es/videos/detail/270447-asesinato-en-la-monta%C3%B1a-rusa",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.fb9e6f4c-156e-4505-a492-a4185715ad5b",
+        "Rakuten TV": "https://www.rakuten.tv/es/tv_shows/detective-conan"
+      },
+      "platformStatus": "verified",
       "platformStale": false
     }
   ]
