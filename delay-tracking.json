@@ -1,6 +1,63 @@
 {
   "releases": [
     {
+      "id": "schedule-seitokai-ni-mo-ana-wa-aru-9-2026-12-05t19-00-00-01-00",
+      "animeKey": "seitokai-ni-mo-ana-wa-aru",
+      "titles": [
+        "Seitokai ni mo Ana wa Aru!",
+        "Even the Student Council Has Its Holes!",
+        "生徒会にも穴はある！",
+        "生穴る",
+        "NamaAnaru",
+        "สภานักเรียนฉบับรั่ว!"
+      ],
+      "title": "Seitokai ni mo Ana wa Aru!",
+      "route": "seitokai-ni-mo-ana-wa-aru",
+      "episode": "Ep 9",
+      "episodeNumber": "9",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-12-05T18:00:00.000Z",
+      "originalReleaseDate": "2026-12-05T18:00:00.000Z",
+      "service": "Bilibili",
+      "serviceUrl": "https://www.bilibili.tv/en/media/2433041",
+      "allServices": [
+        "Bilibili"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx191656-xFHtxM8SUTdU.png",
+      "anilistId": 191656,
+      "anilistOffers": [
+        {
+          "service": "OceanVeil",
+          "url": "https://oceanveil.net/anime_titles/542"
+        },
+        {
+          "service": "Bilibili TV",
+          "url": "https://www.bilibili.tv/en/media/2433041"
+        },
+        {
+          "service": "iQ",
+          "url": "https://www.iq.com/album/28ki6pjn6a1"
+        }
+      ],
+      "anilistTitle": "Even the Student Council Has Its Holes!",
+      "anilistUrl": "https://anilist.co/anime/191656",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 74,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-25T19:24:09.583Z",
+      "officialSources": [
+        "https://nama-anaru.com/",
+        "https://aniplexusa.com/studentholes/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
       "id": "schedule-psyяen-7-2026-11-30t15-30-00-01-00",
       "animeKey": "psyяen",
       "titles": [
@@ -17,7 +74,7 @@
       "airType": "SUB",
       "delayed": true,
       "scheduleStatus": "rescheduled",
-      "releaseDate": "2026-11-30T14:30:00.000Z",
+      "releaseDate": "2026-12-07T14:30:00.000Z",
       "originalReleaseDate": "2026-11-30T14:30:00.000Z",
       "service": "Crunchyroll",
       "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
@@ -41,58 +98,13 @@
       "anilistScore": 69,
       "confirmedSubDate": "",
       "officialEvidence": [],
-      "lastDelayCheck": "2026-11-17T16:12:01.261Z",
+      "lastDelayCheck": "2026-11-25T19:24:09.583Z",
       "officialSources": [
         "https://psyren-anime.com/",
         "https://psyren-anime-global.com/"
       ],
       "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed",
-      "basePlatforms": {
-        "service": "Crunchyroll",
-        "serviceUrl": "https://crunchyroll.com/series/GT00371866/psyren",
-        "allServices": [
-          "Apple TV+",
-          "Crunchyroll"
-        ],
-        "hasAllowedPlatform": true
-      },
-      "platformsByCountry": {
-        "ES": {
-          "status": "verified",
-          "offers": [
-            {
-              "service": "Crunchyroll",
-              "url": "https://www.crunchyroll.com/watch/GE00384252FRFR",
-              "monetizationType": "FLATRATE"
-            },
-            {
-              "service": "Crunchyroll Amazon Channel",
-              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a",
-              "monetizationType": "FLATRATE"
-            }
-          ],
-          "justwatchId": "ts492175",
-          "matchedTitle": "Psyren",
-          "aliases": [],
-          "season": 1,
-          "lookupVersion": 9,
-          "checkedAt": "2026-11-17T16:12:02.678Z",
-          "lastAttemptAt": "2026-11-17T16:12:02.678Z",
-          "inputSignature": "[\"TV\",null,[\"PSYREN\",\"PSYREN -サイレン-\",\"PSYЯEN\",\"PSYЯEN -サイレン-\",\"Psyren\",\"САЙРЕН\"]]"
-        }
-      },
-      "platformSource": "justwatch",
-      "jwVerified": true,
-      "jwSource": "shared",
-      "jwCountry": "ES",
-      "jwVerifiedAt": "2026-11-17T16:12:02.678Z",
-      "serviceUrls": {
-        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384252FRFR",
-        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
-      },
-      "platformStatus": "verified",
-      "platformStale": false
+      "delayResearchStatus": "unconfirmed"
     },
     {
       "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
