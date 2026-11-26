@@ -1,6 +1,56 @@
 {
   "releases": [
     {
+      "id": "schedule-battle-spirits-re-zekkai-no-ku-10-2026-12-15t15-30-00-01-00",
+      "animeKey": "battle-spirits-re-zekkai-no-ku",
+      "titles": [
+        "Battle Spirits [Re] Zekkai No Ku",
+        "Battle Spirits [Re] 絶界の空",
+        "Battle Spirits [Re] Zekkai no Kuu"
+      ],
+      "title": "Battle Spirits [Re] Zekkai No Ku",
+      "route": "battle-spirits-re-zekkai-no-ku",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-12-15T14:30:00.000Z",
+      "originalReleaseDate": "2026-12-15T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187990-tNyQPmr9TkYi.png",
+      "anilistId": 187990,
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLWdHQdMNZfrM"
+        }
+      ],
+      "anilistTitle": "Battle Spirits [Re] Zekkai No Ku",
+      "anilistUrl": "https://anilist.co/anime/187990",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 51,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-26T17:02:22.744Z",
+      "officialSources": [
+        "https://www.bn-pictures.co.jp/battlespirits/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed"
+    },
+    {
       "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
       "animeKey": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
       "titles": [
@@ -274,7 +324,7 @@
       "anilistUrl": "https://anilist.co/anime/191656",
       "anilistFormat": "TV",
       "anilistYear": null,
-      "anilistScore": 74,
+      "anilistScore": 75,
       "confirmedSubDate": "",
       "officialEvidence": [],
       "lastDelayCheck": "2026-11-25T19:24:09.583Z",
