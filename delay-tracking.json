@@ -1,56 +1,6 @@
 {
   "releases": [
     {
-      "id": "schedule-battle-spirits-re-zekkai-no-ku-10-2026-12-15t15-30-00-01-00",
-      "animeKey": "battle-spirits-re-zekkai-no-ku",
-      "titles": [
-        "Battle Spirits [Re] Zekkai No Ku",
-        "Battle Spirits [Re] 絶界の空",
-        "Battle Spirits [Re] Zekkai no Kuu"
-      ],
-      "title": "Battle Spirits [Re] Zekkai No Ku",
-      "route": "battle-spirits-re-zekkai-no-ku",
-      "episode": "Ep 10",
-      "episodeNumber": "10",
-      "airType": "SUB",
-      "delayed": true,
-      "scheduleStatus": "rescheduled",
-      "releaseDate": "2026-12-15T14:30:00.000Z",
-      "originalReleaseDate": "2026-12-15T14:30:00.000Z",
-      "service": "Crunchyroll",
-      "serviceUrl": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku",
-      "allServices": [
-        "Apple TV+",
-        "Crunchyroll"
-      ],
-      "hasAllowedPlatform": true,
-      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187990-tNyQPmr9TkYi.png",
-      "anilistId": 187990,
-      "anilistOffers": [
-        {
-          "service": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
-        },
-        {
-          "service": "YouTube",
-          "url": "https://www.youtube.com/playlist?list=PLWdHQdMNZfrM"
-        }
-      ],
-      "anilistTitle": "Battle Spirits [Re] Zekkai No Ku",
-      "anilistUrl": "https://anilist.co/anime/187990",
-      "anilistFormat": "TV",
-      "anilistYear": null,
-      "anilistScore": 51,
-      "confirmedSubDate": "",
-      "officialEvidence": [],
-      "lastDelayCheck": "2026-11-26T17:02:22.744Z",
-      "officialSources": [
-        "https://www.bn-pictures.co.jp/battlespirits/"
-      ],
-      "delayCheckError": "",
-      "delayResearchStatus": "unconfirmed"
-    },
-    {
       "id": "schedule-mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu-7-2026-11-29t17-01-00-01-00",
       "animeKey": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onna-no-ko-wo-ippai-click-shimaasu",
       "titles": [
@@ -466,6 +416,101 @@
       "serviceUrls": {
         "Crunchyroll": "https://www.crunchyroll.com/watch/GE00384252FRFR",
         "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.859f6f1e-02c3-4d8d-83f5-4f2971a4d06a"
+      },
+      "platformStatus": "verified",
+      "platformStale": false
+    },
+    {
+      "id": "schedule-battle-spirits-re-zekkai-no-ku-10-2026-12-15t15-30-00-01-00",
+      "animeKey": "battle-spirits-re-zekkai-no-ku",
+      "titles": [
+        "Battle Spirits [Re] Zekkai No Ku",
+        "Battle Spirits [Re] 絶界の空",
+        "Battle Spirits [Re] Zekkai no Kuu"
+      ],
+      "title": "Battle Spirits [Re] Zekkai No Ku",
+      "route": "battle-spirits-re-zekkai-no-ku",
+      "episode": "Ep 10",
+      "episodeNumber": "10",
+      "airType": "SUB",
+      "delayed": true,
+      "scheduleStatus": "rescheduled",
+      "releaseDate": "2026-12-15T14:30:00.000Z",
+      "originalReleaseDate": "2026-12-15T14:30:00.000Z",
+      "service": "Crunchyroll",
+      "serviceUrl": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku",
+      "allServices": [
+        "Apple TV+",
+        "Crunchyroll"
+      ],
+      "hasAllowedPlatform": true,
+      "coverUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187990-tNyQPmr9TkYi.png",
+      "anilistId": 187990,
+      "anilistOffers": [
+        {
+          "service": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        },
+        {
+          "service": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLWdHQdMNZfrM"
+        }
+      ],
+      "anilistTitle": "Battle Spirits [Re] Zekkai No Ku",
+      "anilistUrl": "https://anilist.co/anime/187990",
+      "anilistFormat": "TV",
+      "anilistYear": null,
+      "anilistScore": 51,
+      "confirmedSubDate": "",
+      "officialEvidence": [],
+      "lastDelayCheck": "2026-11-26T17:02:22.744Z",
+      "officialSources": [
+        "https://www.bn-pictures.co.jp/battlespirits/"
+      ],
+      "delayCheckError": "",
+      "delayResearchStatus": "unconfirmed",
+      "basePlatforms": {
+        "service": "Crunchyroll",
+        "serviceUrl": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku",
+        "allServices": [
+          "Apple TV+",
+          "Crunchyroll"
+        ],
+        "hasAllowedPlatform": true
+      },
+      "platformsByCountry": {
+        "ES": {
+          "status": "verified",
+          "offers": [
+            {
+              "service": "Crunchyroll",
+              "url": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+              "monetizationType": "FLATRATE"
+            },
+            {
+              "service": "Crunchyroll Amazon Channel",
+              "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef",
+              "monetizationType": "FLATRATE"
+            }
+          ],
+          "justwatchId": "ts527826",
+          "matchedTitle": "Battle Spirits [Re]: Zekkai no Kuu",
+          "aliases": [],
+          "season": 1,
+          "lookupVersion": 9,
+          "checkedAt": "2026-11-26T17:02:24.415Z",
+          "lastAttemptAt": "2026-11-26T17:02:24.415Z",
+          "inputSignature": "[\"TV\",null,[\"Battle Spirits [Re] ZEKKAI NO KU\",\"Battle Spirits [Re] Zekkai No Ku\",\"Battle Spirits [Re] Zekkai no Kuu\",\"Battle Spirits [Re] 絶界の空\",\"Battle Spirits [Re]: Zekkai no Kuu\"]]"
+        }
+      },
+      "platformSource": "justwatch",
+      "jwVerified": true,
+      "jwSource": "shared",
+      "jwCountry": "ES",
+      "jwVerifiedAt": "2026-11-26T17:02:24.415Z",
+      "serviceUrls": {
+        "Crunchyroll": "https://www.crunchyroll.com/watch/GE00385794JAJP",
+        "Crunchyroll Amazon Channel": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9c3aad11-76d3-4cc0-bea3-087c1947a3ef"
       },
       "platformStatus": "verified",
       "platformStale": false
